@@ -4,6 +4,10 @@ Implemented and verified in Unity 6000.3.12f1 on 26 October 2026.
 
 **Confirmed platform direction: portrait only on Android and iOS.** Player Settings use Portrait with landscape and upside-down rotation disabled. The Editor Game View is set to 1080 × 1920 portrait. Design future gameplay, camera framing, and HUDs for portrait safe areas.
 
+## UI artwork rule
+
+Use dummy images and placeholder UI assets for now. The user will later supply a UI reference image, a sprite sheet, or both. From a UI reference, create the needed sprites and assemble them into a sprite sheet. If the user supplies a sprite sheet, use its sprites and follow the supplied UI reference for the layout. Keep placeholders easy to replace with these final assets. This rule also lives in the project-root `AGENTS.md` for future agent work.
+
 ## Try it
 
 Open `Assets/0_ProjectData/0_Scenes/0_MainMenu.unity` and press Play. MainMenu is an entry scene with no menu controls. It shows the shared loading panel and asynchronously opens `Assets/0_ProjectData/0_Scenes/1_Gameplay.unity`.
