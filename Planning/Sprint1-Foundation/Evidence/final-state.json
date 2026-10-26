@@ -1,0 +1,29 @@
+{
+  "success": true,
+  "command": "command script eval",
+  "data": {
+    "command": "script eval",
+    "parameters": {
+      "code": "return new{scene=UnityEngine.SceneManagement.SceneManager.GetActiveScene().path,playing=UnityEditor.EditorApplication.isPlaying,background=UnityEngine.Application.runInBackground,cinemachine=System.AppDomain.CurrentDomain.GetAssemblies().Any(a=>a.GetName().Name.Contains(\"Cinemachine\")),logcat=System.AppDomain.CurrentDomain.GetAssemblies().Any(a=>a.GetName().Name.Contains(\"AndroidLogcat\"))};"
+    },
+    "result": {
+      "output": null,
+      "diagnostics": [],
+      "success": true,
+      "result": {
+        "scene": "Assets/0_ProjectData/0_Scenes/0_MainMenu.unity",
+        "playing": false,
+        "background": false,
+        "cinemachine": true,
+        "logcat": true
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "/Users/smarnovativelabs/Desktop/Bulldozer_Simulator"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

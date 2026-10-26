@@ -51,3 +51,17 @@ Separate meaningful resource pickups from cosmetic chunks. Limit the duration an
 ## Extra systems can wait
 
 The [ocean-site display in episode 9](https://www.youtube.com/watch?v=Apa6GFfilGk&t=1363s) has a countdown and numbered site. The strategy guide shows a reward track and rental task at [03:47](https://www.youtube.com/watch?v=IwMD7SOjFTs&t=227s), and separate mining/carrying progression at [08:32](https://www.youtube.com/watch?v=IwMD7SOjFTs&t=512s). These are later-system references. Do not add event timers, rentals, premium currencies, worker management or multiple upgrade trees to prove the first playable loop.
+
+## Additional lessons from the supplied 9:22 recording
+
+See [the local sequence review](02_OBSERVATIONS.md#supplied-phone-recording--deeper-sequence-review-26-october-2026) for observations L01–L09 and saved evidence.
+
+1. **Make mining and hauling distinct capabilities.** The observed wheelbarrow expands capacity from 6 to 25 while pickaxe work happens on foot. If our machine does both, make that deliberate. If it does only one, explain its role before purchase.
+2. **Make the next interaction explicit.** Pair a rented vehicle's arrival with a visible destination and a clear “Use” control. When dismounting requires stopping, show the reason immediately. The reference recording spends substantial time around the wheelbarrow before first use.
+3. **Keep recommendations consistent with the active lesson.** Here, the quest asks for a sledgehammer while the recommended wheelbarrow consumes most available cash. In our onboarding, either align the recommendation or acknowledge the alternate valid path and update guidance.
+4. **Track inventories independently.** If processing and vehicles enter scope, model character cargo, vehicle cargo, refinery input, refinery output, and truck load as separate owners. Mount/dismount must not silently merge or discard them. The visual evidence supports this separation without revealing the original code.
+5. **Choose a clear full-capacity rule.** The observed final hit can complete after MAX appears, followed by a pause at the next face. For our design, specify whether an already committed hit may finish and where any resulting resources go. This is a proposed rule to resolve, not a proven reference algorithm.
+6. **Separate site clearing from earnings.** Progress increases at the mine before selling. A prototype may use cleared deposits or a delivery contract, but its displayed progress should explain the selected objective consistently.
+7. **Do not treat a truck counter as an upgrade level.** The panel shows a capacity range and consecutive trucks vary within it. If used later, varied trucks could change collection cadence; it is not necessary for the first playable loop.
+
+Suggested checks when these features are implemented: mount with nonempty personal cargo, dismount after vehicle unloading, collect while personal cargo is full, leave processing input with blocked output, and deliver across a departing truck. Verify conservation of resources at each transition. These are design acceptance cases, not tests run against the reference or Unity project.

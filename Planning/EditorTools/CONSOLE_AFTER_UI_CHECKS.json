@@ -1,0 +1,43 @@
+{
+  "success": true,
+  "command": "command console get",
+  "data": {
+    "command": "console get",
+    "parameters": {
+      "tail": "50",
+      "level": "error",
+      "since": "190",
+      "since_session": "cfe37a9739d5498f83f6a06b94bc30ab"
+    },
+    "result": {
+      "entries": [],
+      "cursor": 190,
+      "session": "cfe37a9739d5498f83f6a06b94bc30ab",
+      "returned": 0,
+      "dropped": false,
+      "reset": false,
+      "counts": {
+        "error": 6,
+        "warn": 184,
+        "log": 0
+      },
+      "groundTruth": {
+        "sampledUtc": "2026-10-26T15:52:03.493681Z",
+        "ageMs": 45,
+        "compilationFailed": false,
+        "compiling": false,
+        "consoleErrors": 5,
+        "consoleWarnings": 4,
+        "consoleLogs": 0,
+        "seeded": true
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "/Users/smarnovativelabs/Desktop/Bulldozer_Simulator"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

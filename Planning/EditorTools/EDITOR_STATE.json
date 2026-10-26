@@ -1,0 +1,35 @@
+{
+  "success": true,
+  "command": "command script eval",
+  "data": {
+    "command": "script eval",
+    "parameters": {
+      "code": "var type = typeof(Bulldozer.EditorTools.SceneSwitcherWindow).Assembly.GetType(\"Bulldozer.EditorTools.HierarchyComponentIcons\");\nvar flags = System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic;\nvar register = type.GetMethod(\"Register\", flags); register.Invoke(null, null); register.Invoke(null, null);\nvar field = typeof(UnityEditor.EditorApplication).GetField(\"hierarchyWindowItemOnGUI\", flags);\nvar callback = field?.GetValue(null) as System.Delegate;\nvar count = callback == null ? -1 : callback.GetInvocationList().Count(d => d.Method.DeclaringType == type);\nreturn new { hierarchySubscriptionsAfterRepeatedRegistration = count, playing = UnityEditor.EditorApplication.isPlaying, compilationFailed = UnityEditor.EditorUtility.scriptCompilationFailed, activeScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().path, dirty = UnityEngine.SceneManagement.SceneManager.GetActiveScene().isDirty, editorOnly = UnityEditor.Compilation.CompilationPipeline.GetAssemblies(UnityEditor.Compilation.AssembliesType.Player).All(a => a.name != \"Bulldozer.EditorTools\"), loadedTools = UnityEngine.Resources.FindObjectsOfTypeAll<UnityEditor.EditorWindow>().Where(w => w.GetType().Namespace == \"Bulldozer.EditorTools\").Select(w => w.GetType().Name).ToArray() };"
+    },
+    "result": {
+      "output": null,
+      "diagnostics": [],
+      "success": true,
+      "result": {
+        "hierarchySubscriptionsAfterRepeatedRegistration": 1,
+        "playing": false,
+        "compilationFailed": false,
+        "activeScene": "Assets/0_ProjectData/0_Scenes/0_MainMenu.unity",
+        "dirty": false,
+        "editorOnly": true,
+        "loadedTools": [
+          "MobileAuditWindow",
+          "GameDataToolsWindow",
+          "SceneSwitcherWindow"
+        ]
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "/Users/smarnovativelabs/Desktop/Bulldozer_Simulator"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

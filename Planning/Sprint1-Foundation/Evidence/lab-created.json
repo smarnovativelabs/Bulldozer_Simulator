@@ -1,0 +1,45 @@
+{
+  "success": true,
+  "command": "command script eval_file",
+  "data": {
+    "command": "script eval_file",
+    "parameters": {
+      "file": "Planning/Sprint1-Foundation/Source/CreateAnimationLab.cs"
+    },
+    "result": {
+      "output": null,
+      "diagnostics": [],
+      "success": true,
+      "result": {
+        "scenePath": "Assets/Sprint1Foundation/CharacterAnimationTest.unity",
+        "avatarValid": true,
+        "clips": [
+          {
+            "name": "CharacterArmature|Sprint1_Idle",
+            "length": 2
+          },
+          {
+            "name": "CharacterArmature|Sprint1_Interact",
+            "length": 1.50000012
+          },
+          {
+            "name": "CharacterArmature|Sprint1_Run",
+            "length": 0.6666667
+          },
+          {
+            "name": "CharacterArmature|Sprint1_Walk",
+            "length": 1
+          }
+        ],
+        "materials": 11
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "/Users/smarnovativelabs/Desktop/Bulldozer_Simulator"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

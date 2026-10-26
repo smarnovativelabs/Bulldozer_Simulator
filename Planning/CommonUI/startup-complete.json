@@ -1,0 +1,32 @@
+{
+  "success": true,
+  "command": "command script eval",
+  "data": {
+    "command": "script eval",
+    "parameters": {
+      "code": "var ui=Bulldozer.UI.CommonUI.Instance;return new{frame=UnityEngine.Time.frameCount,scene=UnityEngine.SceneManagement.SceneManager.GetActiveScene().path,commonCount=UnityEngine.Object.FindObjectsByType<Bulldozer.UI.CommonUI>(UnityEngine.FindObjectsSortMode.None).Length,eventSystems=UnityEngine.Object.FindObjectsByType<UnityEngine.EventSystems.EventSystem>(UnityEngine.FindObjectsSortMode.None).Length,isLoading=ui.SceneLoading.IsLoading,progress=ui.SceneLoading.Progress,blocksInput=ui.BlocksGameplayInput,lastError=ui.SceneLoading.LastError};"
+    },
+    "result": {
+      "output": null,
+      "diagnostics": [],
+      "success": true,
+      "result": {
+        "frame": 18478,
+        "scene": "Assets/0_ProjectData/0_Scenes/1_Gameplay.unity",
+        "commonCount": 1,
+        "eventSystems": 1,
+        "isLoading": false,
+        "progress": 1,
+        "blocksInput": false,
+        "lastError": null
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "/Users/smarnovativelabs/Desktop/Bulldozer_Simulator"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

@@ -276,3 +276,86 @@ Limit: No fuel consumption rate, speed, steering or collision measurement.
 Equipment upgrade panel separates MINING and CARRYING; a vertical sequence shows a check mark and locked steps.
 
 Limit: Reconfirms earlier E07 observation. Exact prerequisite chain and costs not established.
+
+---
+
+## Supplied phone recording — deeper sequence review, 26 October 2026
+
+**Source:** `/Users/smarnovativelabs/Downloads/Record_2026-10-26-20-11-48_a06c95e1083300f56f0f9a400175b1ee.mp4`.
+
+**Coverage:** Duration 9:22.190. Inspected 113 frames at five-second intervals across the recording, plus 40 samples at 04:21–04:35 and 07:56–08:50 for specific transitions (some timestamps overlap). This is a visual sequence review, not continuous playback, audio analysis, or an instrumented input test. Frames were decoded locally with AVFoundation. Contact sheets preserve timestamps; individual evidence frames are 432 × 960. Loading occupies approximately the first 25 seconds. The visible session remains in Stage 1 and reaches 0.7%. No complete stage transition is shown.
+
+**Version confirmed:** The settings panel at 09:10 explicitly reads **Build Version 11.3.0**, matching the version label of the previously inspected APK. Matching labels do not establish identical remote configuration or binary contents. [Settings evidence](local-recording-evidence/frame_550.jpg).
+
+### L01 — Early progression follows mining before selling
+
+00:25–01:25: Stage 1 reads 0.0%, with a Break Ores objective, wooden carrier and manual pickaxe. At 01:30, a removed cell, MAX cargo, Collect Minerals objective, and 0.1% are visible. At 02:00, further breaking coincides with 0.2%, before the subsequent refinery/sale cycle. At 04:23 the player is MAX at 0.4%; a further break visible at 04:24 accompanies 0.5%. Progress remains 0.7% throughout the later refinery and truck sequence.
+
+**Conclusion:** Visible stage progress can advance at the mine before sale; it is not solely a cash-earned meter. The exact denominator, rounding, ore weighting, and whether break or collection triggers every increment remain unverified. [Opening](local-recording-evidence/sheet_0.jpg), [second cycle](local-recording-evidence/sheet_1.jpg), [04:21–04:35](local-recording-evidence/full-cargo-sequence.jpg).
+
+### L02 — Cargo full does not immediately erase an in-progress break
+
+At 04:23 MAX is already shown; at 04:24 large fragments appear and a deposit cell is gone. From 04:27–04:31 the player remains against the next ore face with MAX, with no further visible cell removal or stage increase. The player then returns toward the hub.
+
+**Conclusion:** At least one break completes while MAX is displayed. The stationary full interval is consistent with further mining being blocked, but does not prove a universal rule: input, hit timing, queued damage, and target hardness are not observable. Do not turn this into either “mining always stops instantly at full” or “unlimited mining while full.” A controlled full-capacity test is still needed. [Sequence](local-recording-evidence/full-cargo-sequence.jpg).
+
+### L03 — Refining is a buffered transfer chain
+
+The tutorial at 01:40 says raw material must be smelted before sale. There are distinct REFINING input and output LOAD pads. In the denser later sequence, the input reads LOAD: 9 at 08:34, then LOAD: 7 at 08:36 while the output reads LOAD: 8 and the character is MAX. The wheelbarrow remains parked nearby. These visible stocks establish that the refinery is more than an instantaneous sell trigger.
+
+**Conclusion:** Input storage, processing, output storage, carried stock, and truck loading are separate visible states. The roughly two-second difference is insufficient to establish a reliable production rate, especially while output pickup is also happening. Pad proximity accompanies transfers, but exact hitboxes, dwell requirements, and touch inputs are not proven. [Input](local-recording-evidence/frame_514.jpg), [output](local-recording-evidence/frame_516.jpg).
+
+### L04 — Truck capacities vary without a truck upgrade
+
+At 02:30 the truck upgrade row displays a capacity range **2–5 → 2–6**, costing 275. It remains level 1 at 02:35. Later trucks show denominators 4 at 08:38, 2 at 08:40, 3 at 08:45, and 5 at 08:50, while no upgrade purchase occurs in that sequence.
+
+**Correction to earlier interpretation:** A larger displayed truck denominator does not by itself demonstrate progression. This footage supports varying individual truck capacities within a configured range. It does not establish their selection probabilities. [Upgrade range](local-recording-evidence/frame_150.jpg), [truck sequence](local-recording-evidence/wheelbarrow-refinery-sequence.jpg).
+
+### L05 — Upgrades target five different bottlenecks
+
+At 02:30 the upgrade panel shows the following current-to-next values. These are reference observations, not proposed balancing constants.
+
+| Upgrade | Visible values | Next cost |
+|---|---|---:|
+| Player movement | Level 1 → 2; 6 → 6.05 | 366 |
+| Pickaxe mining power | Level 1 → 2; 10 → 10.4 | 10 |
+| Wooden Carrier capacity | Level 1 → 2; 5 → 6 | 12 |
+| Furnace processing speed | Level 1 → 2; 1 → 1.25 | 275 |
+| Sales Trucks capacity range | Level 1 → 2; 2–5 → 2–6 | 275 |
+
+At 02:35 the pickaxe is level 3 (10.8, next 11.2 for 15), and the carrier is level 2 (6, next 7 for 15). The panel explicitly puts equipped and rented items first and recommends the carrier. Cash also receives task rewards in this interval, so wallet differences cannot be used alone to infer purchase costs. [Before](local-recording-evidence/frame_150.jpg), [after](local-recording-evidence/frame_155.jpg).
+
+### L06 — The tutorial permits a purchase that diverges from its active objective
+
+The observed task order includes Break Ores, Collect Minerals, Deliver Minerals to the Furnace, Sell Ingots, Go to Upgrade, Break Rocky Ores, Hold 250 or more Cash, Go to Machinery Center, and Purchase Sledgehammer. Around 04:55–05:00 the shop is introduced. The active Purchase Sledgehammer objective remains unfinished through the end, but the player rents the recommended **Wheelbarrow for 300** around 05:40–05:45. Cash changes from 324 to 24. The wheelbarrow becomes SOLD OUT / Contracted and instructs the player to check the base camp. A wheelbarrow is subsequently present outside the shop.
+
+**Design inference:** Competing recommendation and quest cues can divert a player into another equipment path. This recording shows the divergence; it does not establish whether the player was confused or deliberately exploring. No rental timer or expiry is established. [Offer](local-recording-evidence/frame_335.jpg), [shop sequence](local-recording-evidence/sheet_3.jpg).
+
+### L07 — Rented equipment and equipped inventory are different states
+
+At 06:30, inventory still identifies the Wooden Carrier as EQUIPPED with CAP 6, despite the wheelbarrow rental. The nearby wheelbarrow uses a green steering-wheel marker; after mounting, a red exit marker and CARGO 0/25 appear. At 07:40 the tutorial explicitly says to stop fully before dismounting. This is tutorial evidence, not an independently tested speed threshold.
+
+From approximately 05:50 to 07:25, the recording shows inventory inspection and movement around the parked wheelbarrow before the mounted tutorial appears at 07:30. Treat the elapsed time as observed interaction overhead in this recording, not a measured usability score or required unlock delay. [Inventory](local-recording-evidence/frame_390.jpg), [mounting sequence](local-recording-evidence/sheet_4.jpg), [dismount instruction](local-recording-evidence/frame_460.jpg).
+
+### L08 — Manual mining and larger hauling alternate
+
+At 07:55–08:10, the wheelbarrow is parked while the character uses the pickaxe and fills the wooden carrier. At 08:12 the wheelbarrow shows 2/25; at 08:18 it shows 9/25, and at 08:26 it shows 11/25 while moving toward the refinery. At 08:28 it is empty beside the refinery input. At 08:30, after dismounting, the character again shows a full wooden-carrier stack. At 08:34 that carrier is empty and the refinery holds input stock.
+
+**Conclusion:** The wheelbarrow provides 25 capacity versus the upgraded carrier's 6 (about 4.17× capacity), and the footage supports separately retained character and equipment cargo across mounting. It does not prove a 4.17× income improvement. Collection range, cargo priority, and all transfer rules remain unverified. The observed wheelbarrow role is hauling; no mounted mining action is established. [2/25](local-recording-evidence/frame_492.jpg), [9/25](local-recording-evidence/frame_498.jpg), [11/25](local-recording-evidence/frame_506.jpg), [carrier restored on foot](local-recording-evidence/frame_510.jpg).
+
+### L09 — Presentation and settings details
+
+The early HUD is relatively sparse: stage progress, currencies, one task, cargo, home distance, and context-dependent equipment controls. Green ground arrows guide tutorial destinations. Deposits crack before breaking; oversized fragments communicate impact, while useful cargo is represented by ordered stacks. Later screenshots with many event widgets should not be treated as the initial UI specification.
+
+Settings at 09:05–09:15 expose Ambience, SFX, Vibration, Perf. Mode, and language. A performance-mode switch is visible; its technical effect and actual device performance were not tested. No ad screen appears in the inspected samples; this does not establish ad cadence or absence between samples. No fuel-powered machine, workers, offline cycle, save/reload, stage completion, or rental expiry is demonstrated in this clip.
+
+### Evidence contact sheets
+
+- [00:00–01:35](local-recording-evidence/sheet_0.jpg)
+- [01:40–03:15](local-recording-evidence/sheet_1.jpg)
+- [03:20–04:55](local-recording-evidence/sheet_2.jpg)
+- [05:00–06:35](local-recording-evidence/sheet_3.jpg)
+- [06:40–08:15](local-recording-evidence/sheet_4.jpg)
+- [08:20–09:20](local-recording-evidence/sheet_5.jpg)
+
+The original recording remains in Downloads; it was not copied into Unity Assets. These observations add evidence to the existing research and do not select between the competing Sprint 1 plans.

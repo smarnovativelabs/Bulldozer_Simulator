@@ -34,3 +34,9 @@ Copy this whole folder beside those packs. The standalone ZIP contains this adde
 The two existing Sprint 1 proposals differ in materials, full-cargo behavior, upgrades and the completion goal. This research adds useful evidence without selecting or merging those proposals. Read the comparison in [04_SPRINT_1_APPLICATION.md](04_SPRINT_1_APPLICATION.md) before implementation.
 
 No Unity import, build, game-code edit, package upgrade or asset extraction was performed for this update. Use original artwork, names, interface layout, level design and tuning. Reference footage is research material, not a source of shipping assets.
+
+## New: supplied phone recording, 26 October 2026
+
+A deeper review of the user's 9:22 local recording is appended to [02_OBSERVATIONS.md](02_OBSERVATIONS.md#supplied-phone-recording--deeper-sequence-review-26-october-2026), with nine findings, five-second contact sheets and closer transition evidence in `local-recording-evidence/`. This is additional coverage beyond the online-video counts above. [03_GAMEPLAY_LESSONS.md](03_GAMEPLAY_LESSONS.md#additional-lessons-from-the-supplied-922-recording) adds the resulting design implications.
+
+Key additions: build 11.3.0 is visible; the upgraded carrier holds 6 and rented wheelbarrow holds 25; character/equipment cargo appear separately retained; refinery input/output are distinct stocks; truck capacities vary between arrivals; stage progress can advance before selling. Full-capacity behavior is narrowed but not completely resolved. The earlier statements about unknown video versions and no saved screenshots describe the earlier online-video review, not this new local recording. Existing machine-readable JSON catalogs still cover the earlier online sources only.

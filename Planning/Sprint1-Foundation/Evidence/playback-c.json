@@ -1,0 +1,55 @@
+{
+  "success": true,
+  "command": "command script eval",
+  "data": {
+    "command": "script eval",
+    "parameters": {
+      "code": "return new {frame=UnityEngine.Time.frameCount, actors=UnityEngine.Object.FindObjectsByType<UnityEngine.Animator>(UnityEngine.FindObjectsSortMode.None).Select(a=>new {a.name,time=a.GetCurrentAnimatorStateInfo(0).normalizedTime,leg=a.GetBoneTransform(UnityEngine.HumanBodyBones.LeftUpperLeg).localRotation.ToString(),chest=a.GetBoneTransform(UnityEngine.HumanBodyBones.Chest).localRotation.ToString(),arm=a.GetBoneTransform(UnityEngine.HumanBodyBones.RightUpperArm).localRotation.ToString()}).ToArray()};"
+    },
+    "result": {
+      "output": null,
+      "diagnostics": [],
+      "success": true,
+      "result": {
+        "frame": 163,
+        "actors": [
+          {
+            "name": "Idle Worker",
+            "time": 8.017018,
+            "leg": "(0.70696, -0.01451, 0.70696, -0.01451)",
+            "chest": "(0.02752, 0.00000, 0.00000, 0.99962)",
+            "arm": "(0.77587, -0.33951, -0.30720, -0.43404)"
+          },
+          {
+            "name": "Walk Worker",
+            "time": 16.0340366,
+            "leg": "(0.70595, -0.04040, 0.70595, -0.04040)",
+            "chest": "(0.02752, 0.00000, 0.00000, 0.99962)",
+            "arm": "(0.76936, -0.35387, -0.31906, -0.42552)"
+          },
+          {
+            "name": "Run Worker",
+            "time": 24.0510578,
+            "leg": "(0.70314, -0.07480, 0.70314, -0.07480)",
+            "chest": "(0.02752, 0.00000, 0.00000, 0.99962)",
+            "arm": "(0.75971, -0.37302, -0.33445, -0.41453)"
+          },
+          {
+            "name": "Interact Worker",
+            "time": 10.6893578,
+            "leg": "(0.70696, -0.01451, 0.70696, -0.01451)",
+            "chest": "(0.02752, 0.00000, 0.00000, 0.99962)",
+            "arm": "(0.58719, -0.42052, -0.25600, -0.64252)"
+          }
+        ]
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "/Users/smarnovativelabs/Desktop/Bulldozer_Simulator"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

@@ -1,0 +1,24 @@
+ M "Assets/Epic Toon FX/.DS_Store"
+ M Assets/Plugins/Demigiant/DOTweenPro/DOTweenAnimation.cs
+ M Assets/Plugins/Demigiant/DOTweenPro/DOTweenTextMeshPro.cs
+ M Assets/Plugins/Demigiant/DOTweenPro/Editor/DOTweenAnimationInspector.cs
+ M Assets/StreamingAssets/build_info
+ M Packages/packages-lock.json
+ M Planning/Codex-Handoff/Bulldozer_Video_Addendum_2026-10-26/00_START_HERE.md
+ M Planning/Codex-Handoff/Bulldozer_Video_Addendum_2026-10-26/02_OBSERVATIONS.md
+ M Planning/Codex-Handoff/Bulldozer_Video_Addendum_2026-10-26/03_GAMEPLAY_LESSONS.md
+ M ProjectSettings/ProjectVersion.txt
+?? .DS_Store
+?? .vscode/
+?? Assets/.DS_Store
+?? Assets/1_Plugins/.DS_Store
+?? Assets/1_Plugins/kenney_nature-kit.meta
+?? Assets/1_Plugins/kenney_nature-kit/
+?? Assets/Editor.meta
+?? Assets/Editor/
+?? Assets/Feel/.DS_Store
+?? Assets/Resources.meta
+?? Assets/Resources/
+?? Planning/Codex-Handoff/Bulldozer_Video_Addendum_2026-10-26/local-recording-evidence/
+?? Planning/EditorTools/
+?? Planning/Sprint1-Foundation/

@@ -1,0 +1,16 @@
+PASS
+MainMenu automatically opens Gameplay
+Overlay hidden and input released after startup
+Reload accepted at timeScale zero
+Overlapping scene request rejected
+Loading blocks input immediately
+Load and reveal complete at timeScale zero
+Return to bootstrap scene accepted
+Reentering MainMenu automatically returns to Gameplay
+Exactly one persistent CommonUI after repeated transitions
+Exactly one active EventSystem
+Missing scene rejected before starting an operation
+Failed request presents a recoverable modal
+Retry button available after rejected request
+Authored retry button starts a new valid request
+Recovery completes and clears error state

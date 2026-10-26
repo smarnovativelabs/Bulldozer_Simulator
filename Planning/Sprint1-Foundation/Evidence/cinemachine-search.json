@@ -1,0 +1,34 @@
+{
+  "success": true,
+  "command": "command package search",
+  "data": {
+    "command": "package search",
+    "parameters": {
+      "query": "com.unity.cinemachine"
+    },
+    "result": {
+      "success": true,
+      "query": "com.unity.cinemachine",
+      "count": 1,
+      "packages": [
+        {
+          "name": "com.unity.cinemachine",
+          "version": "3.1.7",
+          "displayName": "Cinemachine",
+          "source": "Registry",
+          "resolvedPath": "",
+          "isDirectDependency": false,
+          "isInstalled": false
+        }
+      ],
+      "message": "1 package(s)."
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "/Users/smarnovativelabs/Desktop/Bulldozer_Simulator"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

@@ -1,0 +1,51 @@
+{
+  "success": true,
+  "command": "command console get",
+  "data": {
+    "command": "console get",
+    "parameters": {
+      "level": "error",
+      "since": "347"
+    },
+    "result": {
+      "entries": [
+        {
+          "seq": 348,
+          "timestampUtc": "2026-10-26T17:09:10.814819Z",
+          "level": "error",
+          "logType": "Exception",
+          "message": "MissingReferenceException: The object of type 'UnityEngine.Rendering.Universal.UniversalAdditionalLightData' has been destroyed but you are still trying to access it.\nYour script should either check if it is null or you should not destroy the object.",
+          "stackTrace": "UnityEngine.Object+MarshalledUnityObject.TryThrowEditorNullExceptionObject (UnityEngine.Object unityObj, System.String parameterName) (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/UnityEngineObject.bindings.cs:1064)\nUnityEngine.Bindings.ThrowHelper.ThrowNullReferenceException (System.Object obj) (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/BindingsHelpers.cs:61)\nUnityEngine.Behaviour.get_enabled () (at <9a2f474df7f6484195698f7aa6ae5cb0>:0)\nBulldozer.EditorTools.HierarchyComponentIcons.Draw (System.Int32 id, UnityEngine.Rect rect) (at Assets/Editor/BulldozerTools/HierarchyComponentIcons.cs:110)\nUnityEditor.GameObjectTreeViewGUI.UserCallbackRowGUI (System.Int32 itemID, UnityEngine.Rect rect) (at /Users/bokken/build/output/unity/unity/Editor/Mono/GUI/TreeView/GameObjectTreeViewGUI.cs:388)\nUnityEditor.SceneHierarchy.OnRowGUICallback (UnityEngine.EntityId itemID, UnityEngine.Rect rect) (at /Users/bokken/build/output/unity/unity/Editor/Mono/SceneHierarchy.cs:718)\nUnityEditor.IMGUI.Controls.TreeViewController`1[TIdentifier].DoItemGUI (UnityEditor.IMGUI.Controls.TreeViewItem`1[TIdentifier] item, System.Int32 row, System.Single rowWidth, System.Boolean hasFocus) (at /Users/bokken/build/output/unity/unity/Editor/Mono/GUI/TreeView/TreeViewController.cs:587)\nUnityEditor.IMGUI.Controls.TreeViewController`1[TIdentifier].IterateVisibleItems (System.Int32 firstRow, System.Int32 numVisibleRows, System.Single rowWidth, System.Boolean hasFocus) (at /Users/bokken/build/output/unity/unity/Editor/Mono/GUI/TreeView/TreeViewController.cs:837)\nUnityEditor.IMGUI.Controls.TreeViewController`1[TIdentifier].OnGUI (UnityEngine.Rect rect, System.Int32 keyboardControlID) (at /Users/bokken/build/output/unity/unity/Editor/Mono/GUI/TreeView/TreeViewController.cs:727)\nUnityEditor.SceneHierarchy.DoTreeView (System.Single searchPathHeight) (at /Users/bokken/build/output/unity/unity/Editor/Mono/SceneHierarchy.cs:869)\nUnityEditor.SceneHierarchy.OnGUI (UnityEngine.Rect rect) (at /Users/bokken/build/output/unity/unity/Editor/Mono/SceneHierarchy.cs:654)\nUnityEditor.SceneHierarchyWindow.DoSceneHierarchy () (at /Users/bokken/build/output/unity/unity/Editor/Mono/SceneHierarchyWindow.cs:172)\nUnityEditor.SceneHierarchyWindow.OnGUI () (at /Users/bokken/build/output/unity/unity/Editor/Mono/SceneHierarchyWindow.cs:153)\nUnityEditor.HostView.InvokeOnGUI (UnityEngine.Rect onGUIPosition) (at /Users/bokken/build/output/unity/unity/Editor/Mono/HostView.cs:517)\nUnityEditor.DockArea.DrawView (UnityEngine.Rect dockAreaRect) (at /Users/bokken/build/output/unity/unity/Editor/Mono/GUI/DockArea.cs:409)\nUnityEditor.DockArea.OldOnGUI () (at /Users/bokken/build/output/unity/unity/Editor/Mono/GUI/DockArea.cs:400)\nUnityEngine.UIElements.IMGUIContainer.DoOnGUI (UnityEngine.Event evt, UnityEngine.Matrix4x4 parentTransform, UnityEngine.Rect clippingRect, System.Boolean isComputingLayout, UnityEngine.Rect layoutSize, System.Action onGUIHandler, System.Boolean canAffectFocus) (at /Users/bokken/build/output/unity/unity/Modules/UIElements/Core/IMGUIContainer.cs:433)\nUnityEngine.UIElements.IMGUIContainer.HandleIMGUIEvent (UnityEngine.Event e, UnityEngine.Matrix4x4 worldTransform, UnityEngine.Rect clippingRect, System.Action onGUIHandler, System.Boolean canAffectFocus) (at /Users/bokken/build/output/unity/unity/Modules/UIElements/Core/IMGUIContainer.cs:732)\nUnityEngine.UIElements.IMGUIContainer.DoIMGUIRepaint () (at /Users/bokken/build/output/unity/unity/Modules/UIElements/Core/IMGUIContainer.cs:594)\nUnityEngine.UIElements.UIR.RenderChainCommand.ExecuteNonDrawMesh (UnityEngine.UIElements.UIR.DrawParams drawParams, System.Single pixelsPerPoint, System.Exception& immediateException) (at /Users/bokken/build/output/unity/unity/Modules/UIElements/Core/Renderer/UIRenderer/UIRenderers.cs:145)\nRethrow as ImmediateModeException\nUnityEngine.UIElements.UIR.RenderTreeManager.RenderSingleTree (UnityEngine.UIElements.UIR.RenderTree renderTree, UnityEngine.RenderTexture nestedTreeRT, UnityEngine.RectInt nestedTreeViewport, UnityEngine.Rect bounds) (at /Users/bokken/build/output/unity/unity/Modules/UIElements/Core/Renderer/UIRRenderTreeManager.cs:452)\nUnityEngine.UIElements.UIR.RenderTreeManager.RenderRootTree () (at /Users/bokken/build/output/unity/unity/Modules/UIElements/Core/Renderer/UIRRenderTreeManager.cs:358)\nUnityEngine.UIElements.UIRRepaintUpdater.Render () (at /Users/bokken/build/output/unity/unity/Modules/UIElements/Core/Renderer/UIRRepaintUpdater.cs:145)\nUnityEngine.UIElements.BaseVisualElementPanel.Render () (at /Users/bokken/build/output/unity/unity/Modules/UIElements/Core/Panel.cs:913)\nUnityEngine.UIElements.Panel.Render () (at /Users/bokken/build/output/unity/unity/Modules/UIElements/Core/Panel.cs:1604)\nUnityEngine.UIElements.UIElementsUtility.DoDispatch (UnityEngine.UIElements.BaseVisualElementPanel panel) (at /Users/bokken/build/output/unity/unity/Modules/UIElements/Core/UIElementsUtility.cs:516)\nUnityEngine.UIElements.UIElementsUtility.UnityEngine.UIElements.IUIElementsUtility.ProcessEvent (System.Int32 instanceID, System.IntPtr nativeEventPtr, System.Boolean& eventHandled) (at /Users/bokken/build/output/unity/unity/Modules/UIElements/Core/UIElementsUtility.cs:244)\nUnityEngine.UIElements.UIEventRegistration.ProcessEvent (System.Int32 instanceID, System.IntPtr nativeEventPtr) (at /Users/bokken/build/output/unity/unity/Modules/UIElements/Core/UIElementsUtility.cs:79)\nUnityEngine.UIElements.UIEventRegistration+<>c.<.cctor>b__1_2 (System.Int32 i, System.IntPtr ptr) (at /Users/bokken/build/output/unity/unity/Modules/UIElements/Core/UIElementsUtility.cs:33)\nUnityEngine.GUIUtility.ProcessEvent (System.Int32 instanceID, System.IntPtr nativeEventPtr, System.Boolean& result) (at /Users/bokken/build/output/unity/unity/Modules/IMGUI/GUIUtility.cs:224)\n",
+          "seeded": false
+        }
+      ],
+      "cursor": 351,
+      "session": "cfe37a9739d5498f83f6a06b94bc30ab",
+      "returned": 1,
+      "dropped": false,
+      "reset": false,
+      "counts": {
+        "error": 9,
+        "warn": 342,
+        "log": 0
+      },
+      "groundTruth": {
+        "sampledUtc": "2026-10-26T17:09:15.91179Z",
+        "ageMs": 182,
+        "compilationFailed": false,
+        "compiling": false,
+        "consoleErrors": 1,
+        "consoleWarnings": 3,
+        "consoleLogs": 0,
+        "seeded": true
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "/Users/smarnovativelabs/Desktop/Bulldozer_Simulator"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

@@ -1,0 +1,31 @@
+{
+  "success": true,
+  "command": "command script eval",
+  "data": {
+    "command": "script eval",
+    "parameters": {
+      "code": "var p=UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(\"Assets/0_ProjectData/UI/Common/CommonUI.prefab\");var missing=new System.Collections.Generic.List<string>();foreach(var component in p.GetComponentsInChildren<MonoBehaviour>(true)){if(component==null){missing.Add(\"Missing script\");continue;}if(component.GetType().Namespace!=\"Bulldozer.UI\")continue;foreach(var field in component.GetType().GetFields(System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.DeclaredOnly))if(field.IsDefined(typeof(SerializeField),true) && typeof(UnityEngine.Object).IsAssignableFrom(field.FieldType) && (UnityEngine.Object)field.GetValue(component)==null)missing.Add(component.GetType().Name+\".\"+field.Name);}return new{missingRequiredReferences=missing,canvasCount=p.GetComponentsInChildren<Canvas>(true).Length,safeArea=p.GetComponentInChildren<Crystal.SafeArea>(true)!=null,defaultGraphicMaterialsValid=p.GetComponentsInChildren<Bulldozer.UI.LoadingDiscGraphic>(true).All(g=>g.material!=null),scene=UnityEngine.SceneManagement.SceneManager.GetActiveScene().path,dirty=UnityEngine.SceneManagement.SceneManager.GetActiveScene().isDirty,background=UnityEditor.PlayerSettings.runInBackground};"
+    },
+    "result": {
+      "output": null,
+      "diagnostics": [],
+      "success": true,
+      "result": {
+        "missingRequiredReferences": [],
+        "canvasCount": 1,
+        "safeArea": true,
+        "defaultGraphicMaterialsValid": true,
+        "scene": "Assets/0_ProjectData/0_Scenes/0_MainMenu.unity",
+        "dirty": false,
+        "background": false
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "/Users/smarnovativelabs/Desktop/Bulldozer_Simulator"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

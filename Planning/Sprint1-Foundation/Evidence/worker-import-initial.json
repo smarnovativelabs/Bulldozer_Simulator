@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "command": "command script eval",
+  "data": {
+    "command": "script eval",
+    "parameters": {
+      "code": "var p=\"Assets/Sprint1Foundation/Art/QuaterniusWorker/Worker.fbx\"; var i=(UnityEditor.ModelImporter)UnityEditor.AssetImporter.GetAtPath(p); return new {rig=i.animationType.ToString(), clips=UnityEditor.AssetDatabase.LoadAllAssetsAtPath(p).OfType<UnityEngine.AnimationClip>().Select(c=>new{c.name,c.length}).ToArray(), renderers=UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEngine.GameObject>(p).GetComponentsInChildren<UnityEngine.SkinnedMeshRenderer>().Select(r=>new{r.name, vertices=r.sharedMesh.vertexCount, materials=r.sharedMaterials.Select(m=>m == null ? \"NULL\" : m.name).ToArray()}).ToArray()};"
+    },
+    "result": {
+      "output": null,
+      "diagnostics": [],
+      "success": true,
+      "result": {
+        "rig": "Generic",
+        "clips": [],
+        "renderers": [
+          {
+            "name": "Worker_Body",
+            "vertices": 5278,
+            "materials": [
+              "Worker_Yellow",
+              "Worker_Vest",
+              "LightBrown",
+              "Skin"
+            ]
+          },
+          {
+            "name": "Worker_Feet",
+            "vertices": 822,
+            "materials": [
+              "Black",
+              "Grey"
+            ]
+          },
+          {
+            "name": "Worker_Head",
+            "vertices": 1733,
+            "materials": [
+              "Skin",
+              "Eyebrows",
+              "Worker_Yellow",
+              "Eye",
+              "Moustache"
+            ]
+          },
+          {
+            "name": "Worker_Legs",
+            "vertices": 1491,
+            "materials": [
+              "Brown2",
+              "Brown"
+            ]
+          }
+        ]
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "/Users/smarnovativelabs/Desktop/Bulldozer_Simulator"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

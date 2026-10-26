@@ -1,0 +1,9 @@
+Quaternius — Ultimate Modular Men Pack — Worker (Humanoid Rig / Individual Characters / FBX)
+Source: https://quaternius.com/packs/ultimatemodularcharacters.html
+Author-linked folder: https://drive.google.com/drive/folders/1USAAquX2JJWuA2m6zol0KUkFe3UkZ8zX
+File: https://drive.google.com/file/d/10dPAOOrlH6m6ASa3hOcc-ElclT_cIQjU/view
+License: CC0 1.0, as stated on the official pack page; commercial use permitted.
+License terms: https://creativecommons.org/publicdomain/zero/1.0/
+Downloaded 2026-10-26. Official page snapshot retained under Planning/Sprint1-Foundation/Evidence.
+The separate Google Drive License.txt download returned a quota error; it has NOT been represented as a downloaded license.
+Original FBX preserved. Unity import settings and new URP materials are project adaptations.

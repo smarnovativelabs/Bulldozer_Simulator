@@ -1,0 +1,27 @@
+{
+  "source_project": "I_Am_Janitor",
+  "destination_project": "Bulldozer_Simulator",
+  "date": "2026-10-26",
+  "source_unchanged": true,
+  "source_files": [
+    {
+      "path": "/Users/smarnovativelabs/Desktop/I_Am_Janitor/Assets/Editor/SceneViewWindow.cs",
+      "sha256": "2676f666d95b5cecfdfc363337d983a0b3c7c1f56afc4fd068f127ed4a05456c"
+    },
+    {
+      "path": "/Users/smarnovativelabs/Desktop/I_Am_Janitor/Assets/Editor/Hierponent.cs",
+      "sha256": "2ba66a24e91c37265a509dc8013edcfe50731c605a2c33fd69d6935a0689a1c8"
+    },
+    {
+      "path": "/Users/smarnovativelabs/Desktop/I_Am_Janitor/Assets/Editor/ClearGameDataEditor.cs",
+      "sha256": "6845037efb5257356345b8305def2e40450c15af5718c05e05102bcf82e6b23e"
+    },
+    {
+      "path": "/Users/smarnovativelabs/Desktop/I_Am_Janitor/Assets/0_Project Data/Editor/MobileTextureAuditor.cs",
+      "sha256": "5ff867e255243988d1c958ee68e75187308bd543c82b0b8ce7baca283d7f6d09"
+    }
+  ],
+  "excluded": "Tenjin BuildPostProcessor and Janitor-specific scene/gameplay tools",
+  "editor_version_observed": "6000.3.12f1",
+  "assembly_scope": "Editor only"
+}

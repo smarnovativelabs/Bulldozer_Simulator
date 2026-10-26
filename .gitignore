@@ -107,3 +107,22 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# Local OS and editor files
+.DS_Store
+._*
+/.vscode/
+
+# Xcode / iOS build output and per-user state
+/ios/
+/iOS/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+*.xcarchive/
+*.ipa
+*.dSYM/
+*.dSYM.zip
+
+# Local authoring backup snapshots
+/Planning/CommonUI/Before/

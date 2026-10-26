@@ -1,0 +1,132 @@
+{
+  "success": true,
+  "command": "command script eval_file",
+  "data": {
+    "command": "script eval_file",
+    "parameters": {
+      "file": "/tmp/sprint1-sample.cs"
+    },
+    "result": {
+      "output": null,
+      "diagnostics": [],
+      "success": true,
+      "result": [
+        {
+          "name": "Idle",
+          "changedBones": 1,
+          "bones": [
+            {
+              "name": "Chest",
+              "degrees": 0.855002046
+            }
+          ]
+        },
+        {
+          "name": "Walk",
+          "changedBones": 8,
+          "bones": [
+            {
+              "name": "Chest",
+              "degrees": 0.857743859
+            },
+            {
+              "name": "UpperArm.L",
+              "degrees": 11.6674967
+            },
+            {
+              "name": "LowerArm.L",
+              "degrees": 3.92009115
+            },
+            {
+              "name": "UpperArm.R",
+              "degrees": 11.62232
+            },
+            {
+              "name": "LowerArm.R",
+              "degrees": 4.14433146
+            },
+            {
+              "name": "UpperLeg.L",
+              "degrees": 20.0368385
+            },
+            {
+              "name": "UpperLeg.R",
+              "degrees": 20.02034
+            },
+            {
+              "name": "LowerLeg.R",
+              "degrees": 25.7571373
+            }
+          ]
+        },
+        {
+          "name": "Run",
+          "changedBones": 8,
+          "bones": [
+            {
+              "name": "Chest",
+              "degrees": 0.855917
+            },
+            {
+              "name": "UpperArm.L",
+              "degrees": 18.296257
+            },
+            {
+              "name": "LowerArm.L",
+              "degrees": 6.064568
+            },
+            {
+              "name": "UpperArm.R",
+              "degrees": 18.39493
+            },
+            {
+              "name": "LowerArm.R",
+              "degrees": 6.634238
+            },
+            {
+              "name": "UpperLeg.L",
+              "degrees": 31.3514366
+            },
+            {
+              "name": "UpperLeg.R",
+              "degrees": 31.5126667
+            },
+            {
+              "name": "LowerLeg.R",
+              "degrees": 25.78308
+            }
+          ]
+        },
+        {
+          "name": "Interact",
+          "changedBones": 4,
+          "bones": [
+            {
+              "name": "Chest",
+              "degrees": 0.855002046
+            },
+            {
+              "name": "UpperArm.R",
+              "degrees": 24.929245
+            },
+            {
+              "name": "LowerArm.R",
+              "degrees": 14.5278635
+            },
+            {
+              "name": "Hand.R",
+              "degrees": 1.799668
+            }
+          ]
+        }
+      ]
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "/Users/smarnovativelabs/Desktop/Bulldozer_Simulator"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

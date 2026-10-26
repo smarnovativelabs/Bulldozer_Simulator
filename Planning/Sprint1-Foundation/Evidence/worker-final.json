@@ -1,0 +1,29 @@
+{
+  "success": true,
+  "command": "command script eval",
+  "data": {
+    "command": "script eval",
+    "parameters": {
+      "code": "UnityEngine.Application.runInBackground=UnityEditor.SessionState.GetBool(\"Sprint1.PreviousRunInBackground\",false);var c=UnityEngine.Camera.main;c.transform.position=new UnityEngine.Vector3(0,2.4f,8);c.transform.LookAt(new UnityEngine.Vector3(0,.95f,0));c.orthographicSize=2.7f;UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(c.gameObject.scene);UnityEditor.SceneManagement.EditorSceneManager.SaveScene(c.gameObject.scene);var model=UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEngine.GameObject>(\"Assets/Sprint1Foundation/Art/QuaterniusWorker/Worker.fbx\");var result=new{triangles=model.GetComponentsInChildren<UnityEngine.SkinnedMeshRenderer>().Sum(r=>r.sharedMesh.triangles.Length/3),vertices=model.GetComponentsInChildren<UnityEngine.SkinnedMeshRenderer>().Sum(r=>r.sharedMesh.vertexCount),renderers=model.GetComponentsInChildren<UnityEngine.SkinnedMeshRenderer>().Length,slots=model.GetComponentsInChildren<UnityEngine.SkinnedMeshRenderer>().Sum(r=>r.sharedMaterials.Length),avatarValid=model.GetComponent<UnityEngine.Animator>().avatar.isValid};UnityEditor.SceneManagement.EditorSceneManager.OpenScene(\"Assets/0_ProjectData/0_Scenes/0_MainMenu.unity\");return result;"
+    },
+    "result": {
+      "output": null,
+      "diagnostics": [],
+      "success": true,
+      "result": {
+        "triangles": 5240,
+        "vertices": 9324,
+        "renderers": 4,
+        "slots": 13,
+        "avatarValid": true
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "/Users/smarnovativelabs/Desktop/Bulldozer_Simulator"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

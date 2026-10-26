@@ -1,0 +1,23 @@
+{
+  "success": true,
+  "command": "command script eval",
+  "data": {
+    "command": "script eval",
+    "parameters": {
+      "code": "return Bulldozer.EditorTools.EditorToolValidation.Run();"
+    },
+    "result": {
+      "output": null,
+      "diagnostics": [],
+      "success": true,
+      "result": "{\n    \"passed\": true,\n    \"checks\": [\n        \"Rejected unsafe save path: \",\n        \"Rejected unsafe save path: .\",\n        \"Rejected unsafe save path: ..\",\n        \"Rejected unsafe save path: ../other\",\n        \"Rejected unsafe save path: data/../../other\",\n        \"Rejected unsafe save path: /tmp/other\",\n        \"Rejected unsafe save path: C:\\\\other\",\n        \"Rejected unsafe save path: data//other\",\n        \"Rejected unsafe save path: EditorToolBackups/old\",\n        \"Allowed nested save subfolder\",\n        \"Archive retains fixture bytes and resets source folder\",\n        \"Restore refuses to overwrite existing saves\",\n        \"Archive restore round-trip preserves fixture bytes\",\n        \"Restore rejects a path outside the dedicated backup folder\",\n        \"Scene list deduplicates full paths and indexes only enabled scenes\",\n        \"Scene audit includes inactive objects and deduplicates overlapping selection roots\",\n        \"Audit reports missing material slots\",\n        \"Hierarchy omits Transform components\",\n        \"Cancelled scene audit is explicitly partial\",\n        \"Line topology is not counted as triangles\",\n        \"Small source texture is not misreported as 2048px because of its cap\",\n        \"Texture audit detects Read/Write\",\n        \"Texture audit leaves importer settings unchanged\"\n    ]\n}"
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "/Users/smarnovativelabs/Desktop/Bulldozer_Simulator"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

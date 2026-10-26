@@ -1,0 +1,40 @@
+{
+  "success": true,
+  "command": "command script eval_file",
+  "data": {
+    "command": "script eval_file",
+    "parameters": {
+      "file": "Planning/CommonUI/BuildCommonUI.cs"
+    },
+    "result": {
+      "output": null,
+      "diagnostics": [],
+      "success": true,
+      "result": {
+        "prefabPath": "Assets/0_ProjectData/UI/Common/CommonUI.prefab",
+        "mainMenu": "Assets/0_ProjectData/0_Scenes/0_MainMenu.unity",
+        "buildScenes": [
+          {
+            "path": "Assets/0_ProjectData/0_Scenes/0_MainMenu.unity",
+            "enabled": true
+          },
+          {
+            "path": "Assets/0_ProjectData/0_Scenes/1_Gameplay.unity",
+            "enabled": true
+          },
+          {
+            "path": "Assets/Scenes/SampleScene.unity",
+            "enabled": true
+          }
+        ]
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "/Users/smarnovativelabs/Desktop/Bulldozer_Simulator"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}
