@@ -1,0 +1,94 @@
+{
+  "researched_on": "2026-10-23",
+  "timezone": "Asia/Karachi",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Google Play — Bulldozer Master: Crush & Mine",
+      "url": "https://play.google.com/store/apps/details?id=io.supercent.bulldozermasters&hl=en",
+      "type": "official_store",
+      "access": "Read directly with web tool on 2026-10-23; US English response. Contains publisher claims and individual reviews."
+    },
+    {
+      "id": "V1",
+      "title": "Bulldozer Master: Crush and Mine - Tips, Cheats, and Strategy Guide!",
+      "url": "https://www.youtube.com/watch?v=IwMD7SOjFTs",
+      "type": "user_supplied_video",
+      "creator": "Game Hydro",
+      "duration": "09:29",
+      "published": "2026-10-15",
+      "access": "YouTube browser UI; selected visual samples and chapter list. Transcript panel did not load; no complete transcript obtained."
+    },
+    {
+      "id": "V2",
+      "title": "Bulldozer Master: Crush & Mine #1 | Gameplay",
+      "url": "https://www.youtube.com/watch?v=R_zuyy1o2UE",
+      "type": "user_supplied_video",
+      "creator": "DARIO_111",
+      "duration": "32:51",
+      "published": "Not recorded as an exact date; page displayed two months ago.",
+      "access": "YouTube browser UI; selected visual samples across the recording. In-game text in Spanish. Video opened without the incomplete supplied playlist parameter."
+    },
+    {
+      "id": "S2",
+      "title": "Apple App Store — official listing and version history",
+      "url": "https://apps.apple.com/us/app/bulldozer-master-crush-mine/id6747710694?platform=ipad",
+      "type": "official_store_indexed",
+      "access": "Search-index excerpts from the official listing; direct page fetch failed. Indexed histories varied in freshness. 11.2.0 / Oct 12 appeared in the newer result; do not assume Android parity."
+    },
+    {
+      "id": "U1",
+      "title": "Unity ScriptableObject manual",
+      "url": "https://docs.unity3d.com/6000.1/Documentation/Manual/class-ScriptableObject.html",
+      "type": "official_technical_documentation",
+      "access": "Read documentation search result; shared configuration versus runtime state."
+    },
+    {
+      "id": "U2",
+      "title": "Unity Input System on-screen controls",
+      "url": "https://docs.unity3d.com/Packages/com.unity.inputsystem@1.14/manual/OnScreen.html",
+      "type": "official_technical_documentation",
+      "access": "Opened official documentation; use installed package-compatible docs when implementing."
+    },
+    {
+      "id": "U3",
+      "title": "Unity Application.persistentDataPath",
+      "url": "https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Application-persistentDataPath.html",
+      "type": "official_technical_documentation",
+      "access": "Opened official API documentation; verify target-platform behavior."
+    },
+    {
+      "id": "U4",
+      "title": "Unity persistent game data guide",
+      "url": "https://unity.com/blog/games/persistent-data-how-to-save-your-game-states-and-settings",
+      "type": "official_technical_documentation",
+      "access": "Read official guide excerpt; JsonUtility and persistence responsibilities."
+    },
+    {
+      "id": "A1",
+      "title": "User-supplied Bulldozer.apk",
+      "filename": "Bulldozer.apk",
+      "type": "user_supplied_apk",
+      "sha256": "b8c79b5afd638cef9536b9239ab0fa695135dc46f8bfe26e4df8c2078e981414",
+      "version_name": "11.3.0",
+      "version_code": 102,
+      "access": "Local static inspection; not executed or installed. Publisher signing identity not independently authenticated. Requires a missing ABI split.",
+      "report": "08_APK_FINDINGS.md",
+      "details": "apk_findings.json"
+    },
+    {
+      "id": "T1",
+      "title": "Android App Bundle format",
+      "url": "https://developer.android.com/guide/app-bundle/app-bundle-format",
+      "type": "official_technical_documentation",
+      "access": "Opened official documentation; base and configuration APK roles."
+    },
+    {
+      "id": "T2",
+      "title": "UnityPy project",
+      "url": "https://pypi.org/project/UnityPy/",
+      "type": "parser_documentation",
+      "access": "Reviewed project documentation; actual local parser version 1.25.2."
+    }
+  ]
+}

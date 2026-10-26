@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "scope_policy": "Supplement the latest human-selected scope; do not merge the conflicting earlier proposals.",
+  "tasks": [
+    {
+      "id": "V-CARGO",
+      "title": "Cargo amount, rack and full state",
+      "status": "proposal_not_implemented",
+      "phase": "first_sprint",
+      "dependencies": [
+        "inventory"
+      ],
+      "evidence_ids": [
+        "V26-005",
+        "V26-029"
+      ],
+      "source_urls": [
+        "https://www.youtube.com/watch?v=qKD38PeG2q4&t=799s",
+        "https://www.youtube.com/watch?v=7DGYwDg_-Hc&t=1557s"
+      ],
+      "acceptance": "All cargo views agree after fill, unload and reload."
+    },
+    {
+      "id": "V-RETURN",
+      "title": "Contextual depot return cue",
+      "status": "proposal_not_implemented",
+      "phase": "first_sprint",
+      "dependencies": [
+        "camera",
+        "depot"
+      ],
+      "evidence_ids": [
+        "V26-007",
+        "V26-017"
+      ],
+      "source_urls": [
+        "https://www.youtube.com/watch?v=ovlJLqLo9I8&t=35s",
+        "https://www.youtube.com/watch?v=x2Uq2HHjeD8&t=838s"
+      ],
+      "acceptance": "Cue is readable and points to the intended reachable depot; clears when appropriate."
+    },
+    {
+      "id": "V-TARGET",
+      "title": "Eligible front-target and break feedback",
+      "status": "proposal_not_implemented",
+      "phase": "first_sprint",
+      "dependencies": [
+        "movement",
+        "selected_damage_rules"
+      ],
+      "evidence_ids": [
+        "V26-002",
+        "V26-010"
+      ],
+      "source_urls": [
+        "https://www.youtube.com/watch?v=qKD38PeG2q4&t=114s",
+        "https://www.youtube.com/watch?v=ovlJLqLo9I8&t=641s"
+      ],
+      "acceptance": "Invalid contacts do not mine; one destruction result per deposit."
+    },
+    {
+      "id": "V-TRANSFER",
+      "title": "Atomic delivery and reward presentation",
+      "status": "proposal_not_implemented",
+      "phase": "first_sprint",
+      "dependencies": [
+        "inventory",
+        "wallet"
+      ],
+      "evidence_ids": [
+        "V26-009",
+        "V26-013"
+      ],
+      "source_urls": [
+        "https://www.youtube.com/watch?v=ovlJLqLo9I8&t=385s",
+        "https://www.youtube.com/watch?v=ZvYnKFfRzRo&t=328s"
+      ],
+      "acceptance": "Pad dwell, re-entry and interrupted animation cannot duplicate payment."
+    },
+    {
+      "id": "V-COMPLETE",
+      "title": "Explicit completion state",
+      "status": "proposal_not_implemented",
+      "phase": "first_sprint",
+      "dependencies": [
+        "selected_objective",
+        "save"
+      ],
+      "evidence_ids": [
+        "V26-031",
+        "V26-033"
+      ],
+      "source_urls": [
+        "https://www.youtube.com/watch?v=FF1XXfoSh8A&t=4264s",
+        "https://www.youtube.com/watch?v=NGAMLxMZhbs&t=2390s"
+      ],
+      "acceptance": "Chosen objective completes once and stays completed after reload."
+    },
+    {
+      "id": "V-FX",
+      "title": "Bounded cosmetic feedback",
+      "status": "proposal_not_implemented",
+      "phase": "first_sprint",
+      "dependencies": [
+        "gameplay_events",
+        "pool_lifecycle"
+      ],
+      "evidence_ids": [
+        "V26-021",
+        "V26-028"
+      ],
+      "source_urls": [
+        "https://www.youtube.com/watch?v=LPnO57yl8lg&t=1219s",
+        "https://www.youtube.com/watch?v=lXuiGjgeTSM&t=1245s"
+      ],
+      "acceptance": "Resource accounting is correct with effects disabled; active cosmetic count stabilizes."
+    },
+    {
+      "id": "V-REFINE",
+      "title": "Separate raw input, processing and output",
+      "status": "proposal_not_implemented",
+      "phase": "later",
+      "dependencies": [
+        "stable_core_loop",
+        "inventory_transactions",
+        "save_schema"
+      ],
+      "evidence_ids": [
+        "V26-009"
+      ],
+      "source_urls": [
+        "https://www.youtube.com/watch?v=ovlJLqLo9I8&t=385s"
+      ],
+      "acceptance": "Partial input, blocked output and reload preserve quantities."
+    },
+    {
+      "id": "V-VEHICLE",
+      "title": "One alternative machine",
+      "status": "proposal_not_implemented",
+      "phase": "later",
+      "dependencies": [
+        "stable_core_loop",
+        "input_ownership"
+      ],
+      "evidence_ids": [
+        "V26-011",
+        "V26-024"
+      ],
+      "source_urls": [
+        "https://www.youtube.com/watch?v=ovlJLqLo9I8&t=898s",
+        "https://www.youtube.com/watch?v=mka1GPEnH-w&t=1379s"
+      ],
+      "acceptance": "Switching, parking and reload preserve control and cargo."
+    },
+    {
+      "id": "V-SITE",
+      "title": "One new original worksite",
+      "status": "proposal_not_implemented",
+      "phase": "later",
+      "dependencies": [
+        "completion",
+        "site_persistence"
+      ],
+      "evidence_ids": [
+        "V26-028",
+        "V26-032"
+      ],
+      "source_urls": [
+        "https://www.youtube.com/watch?v=lXuiGjgeTSM&t=1245s",
+        "https://www.youtube.com/watch?v=NGAMLxMZhbs&t=1327s"
+      ],
+      "acceptance": "New site has reachable resources and an explicit carry-over policy."
+    },
+    {
+      "id": "V-EVENT",
+      "title": "Optional timed alternate job",
+      "status": "proposal_not_implemented",
+      "phase": "much_later",
+      "dependencies": [
+        "stable_sites",
+        "clock_policy"
+      ],
+      "evidence_ids": [
+        "V26-023"
+      ],
+      "source_urls": [
+        "https://www.youtube.com/watch?v=Apa6GFfilGk&t=1363s"
+      ],
+      "acceptance": "Entry, expiry and return cannot corrupt the main save."
+    }
+  ]
+}

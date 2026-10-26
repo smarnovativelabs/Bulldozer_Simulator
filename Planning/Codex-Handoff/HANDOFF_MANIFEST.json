@@ -1,0 +1,205 @@
+{
+  "added_on": "2026-10-26",
+  "timezone": "Asia/Karachi",
+  "project_head_at_copy": "b57be43724b8a2988bb7fdd024a4dfdb907d678e",
+  "purpose": "Completed research and review deliverables; existing project content preserved.",
+  "copied_file_count": 39,
+  "copied_bytes": 1377378,
+  "files": [
+    {
+      "path": "bulldozer-master-research/00_START_HERE.md",
+      "bytes": 4795,
+      "sha256": "138027c27c947cba6b123a149f88aa5326a6e7b09b6ede472b0acbf88ac9baa7"
+    },
+    {
+      "path": "bulldozer-master-research/01_REFERENCE_RESEARCH.md",
+      "bytes": 7463,
+      "sha256": "d192227dac1d1397c595f0671d0b4f1fa60a7e9556e89efd1e6e645e498c4b6f"
+    },
+    {
+      "path": "bulldozer-master-research/02_ORIGINAL_GAME_DIRECTION.md",
+      "bytes": 4487,
+      "sha256": "79cc745a31d376aa7f05107b471364587c1ab478ffd4dd4f726386ea309a87ec"
+    },
+    {
+      "path": "bulldozer-master-research/03_SPRINT_1_BUILD_PLAN.md",
+      "bytes": 6385,
+      "sha256": "2eadd2aec4984e9717aa937ae38d3e8593e3f15dba66130ed25acb8e0b761730"
+    },
+    {
+      "path": "bulldozer-master-research/04_UNITY_TECHNICAL_HANDOFF.md",
+      "bytes": 11293,
+      "sha256": "be9f84be80ff7e1af49effd90233f351b3b5985d53883e07dfccf76eee960b8f"
+    },
+    {
+      "path": "bulldozer-master-research/05_ACCEPTANCE_AND_PLAYTEST.md",
+      "bytes": 6930,
+      "sha256": "dc95e235866dc6d96b3b1345a4f42d0ce05656b52b39be6a3fd06d60e8847db4"
+    },
+    {
+      "path": "bulldozer-master-research/06_LATER_SPRINT_ROADMAP.md",
+      "bytes": 4480,
+      "sha256": "8b3ca09a4f28310401809cea89044d5ab60d471f8af69115346fe044223ff7b6"
+    },
+    {
+      "path": "bulldozer-master-research/07_SOURCES_AND_EVIDENCE.md",
+      "bytes": 9697,
+      "sha256": "e56ea88aa212df5d4ea38684ccb62a5f3f7ad9b50c2883f6da9746ea475f57f4"
+    },
+    {
+      "path": "bulldozer-master-research/08_APK_FINDINGS.md",
+      "bytes": 13792,
+      "sha256": "519c51df7ead02a651953045a6bfb6729b0503b20f070aeab7f54dc73ae2275d"
+    },
+    {
+      "path": "bulldozer-master-research/09_APK_LESSONS_FOR_SPRINT_1.md",
+      "bytes": 5665,
+      "sha256": "7e79e704be0d2232bf26bf158f80f77f0bc490e0787a051ff02e2b17f02b6bb5"
+    },
+    {
+      "path": "bulldozer-master-research/LAPTOP_AGENT_PROMPT.txt",
+      "bytes": 4042,
+      "sha256": "b868402a622fb82faddaf572a10c3c0906a7c198747cea2188c60688ae25f211"
+    },
+    {
+      "path": "bulldozer-master-research/PACK_VALIDATION.txt",
+      "bytes": 2434,
+      "sha256": "78ce84f2ccd60bcd98db56396608f4c9e69ab4766a29695bb928f30e3b391bd6"
+    },
+    {
+      "path": "bulldozer-master-research/SHA256SUMS.json",
+      "bytes": 3228,
+      "sha256": "de9c2799684bccefbadea6561a80b87d0e46cc813597751afb2bbc7a6bbb06e8"
+    },
+    {
+      "path": "bulldozer-master-research/START_HERE.html",
+      "bytes": 12637,
+      "sha256": "c4418656c5abb8c9e59643b57bef05a59e86f352567349c54bf28b75efb37562"
+    },
+    {
+      "path": "bulldozer-master-research/apk_findings.json",
+      "bytes": 4985,
+      "sha256": "52d63dd7c5c122576f92186d2d836e1063a1fbd4dd8c474fd564476063847bf9"
+    },
+    {
+      "path": "bulldozer-master-research/apk_table_catalog.json",
+      "bytes": 22192,
+      "sha256": "05fb0084e388f6dd77535ac4f3c1a55316aec6ce66cf5763f5f74b8778ffc6f6"
+    },
+    {
+      "path": "bulldozer-master-research/evidence_index.json",
+      "bytes": 4570,
+      "sha256": "b8f3dc0d6318d021ecc365bb9f5d7e60af629976a5b980925246c0e7ab47f363"
+    },
+    {
+      "path": "bulldozer-master-research/original_layout.png",
+      "bytes": 167904,
+      "sha256": "fdca8621ee869399f05496b35b88b038e0e892a52fdc53a17c9a1777f1de71fe"
+    },
+    {
+      "path": "bulldozer-master-research/original_layout.svg",
+      "bytes": 6052,
+      "sha256": "94d5937bdb8f1cda64e8104246fe0763624319441b5deaa8ca8b267904ed40fd"
+    },
+    {
+      "path": "bulldozer-master-research/prototype_config.json",
+      "bytes": 2522,
+      "sha256": "f3ed323191ffdcad6dbb36f68057a6f7a2882b98addd5b3d89a5f4677c5485d7"
+    },
+    {
+      "path": "bulldozer-master-research/references/e01_v2_0020s.png",
+      "bytes": 75822,
+      "sha256": "4a5de3af251f95b70f2b7316efae1a1d9ff9bf54716451587d695bb8bedbbe35"
+    },
+    {
+      "path": "bulldozer-master-research/references/e02_v1_0030s.png",
+      "bytes": 89725,
+      "sha256": "18f76ae3f7f4d75407f4f40fe80de4cab38cb80dcea682412dcab7a6a6754e95"
+    },
+    {
+      "path": "bulldozer-master-research/references/e03_v1_0093s.png",
+      "bytes": 99555,
+      "sha256": "b271d21d3791f6508af74e3275255751ed9396fa0eca25c5aa3a33d7dc3fba12"
+    },
+    {
+      "path": "bulldozer-master-research/references/e04_v1_0192s.png",
+      "bytes": 71253,
+      "sha256": "b28bbd77605f4db5721ab63fcc08907d2e381e8dcb910f31ae959b3008ec1ac0"
+    },
+    {
+      "path": "bulldozer-master-research/references/e05_v1_0294s.png",
+      "bytes": 77703,
+      "sha256": "366d610cc50672837f4bd1c8d1031418f5a71b4174b0640e0018683fc8e1f4de"
+    },
+    {
+      "path": "bulldozer-master-research/references/e06_v1_0341s.png",
+      "bytes": 74746,
+      "sha256": "357c8fa2450898ea770f8bb9b0230e8acd689054d4bff53563cfc73e015db86a"
+    },
+    {
+      "path": "bulldozer-master-research/references/e07_v1_0512s.png",
+      "bytes": 56903,
+      "sha256": "7bea11c68f94502a38a274e4259ba7a500ca1c6869325d228be37f40c5b06468"
+    },
+    {
+      "path": "bulldozer-master-research/references/e08_v2_0599s.png",
+      "bytes": 101064,
+      "sha256": "0512bccbba2b5e4e871ad49664f0c38d7015da7d13349d0f6416abf40b18f948"
+    },
+    {
+      "path": "bulldozer-master-research/references/e09_v2_0788s.png",
+      "bytes": 95075,
+      "sha256": "5145a9b493822eae85170a78ad46372cfd284233c30b0dd9f694d0db5c64f3f7"
+    },
+    {
+      "path": "bulldozer-master-research/references/e10_v2_1182s.png",
+      "bytes": 115483,
+      "sha256": "ab42625c5b756cd28cc811f210c733b3aebe779b193190752c9e7ff26a03afef"
+    },
+    {
+      "path": "bulldozer-master-research/references/e11_v2_1576s.png",
+      "bytes": 93451,
+      "sha256": "e4d225d76bc705ad0007b9f9f6781b8cbacdc1ebe2a358a7f705d64633a5a1c0"
+    },
+    {
+      "path": "bulldozer-master-research/references/e12_v2_1773s.png",
+      "bytes": 79643,
+      "sha256": "cca064e68eadcf310524390f184f639221bba9b47d0f3b0c760c04f1f4b700c8"
+    },
+    {
+      "path": "bulldozer-master-research/sources.json",
+      "bytes": 4234,
+      "sha256": "47a6e92223396a78e63cc025e724918508e1ae6abc5b373830b37137dbc52b50"
+    },
+    {
+      "path": "bulldozer-master-research/sprint_1_backlog.json",
+      "bytes": 3814,
+      "sha256": "195cd7ddee276f31682e14ab3abffcd5bea2c3da2fdfb0aab3239e947cacefde"
+    },
+    {
+      "path": "Bulldozer_Simulator_Review_2026-10-26/LAPTOP_AGENT_CHECKLIST.txt",
+      "bytes": 3624,
+      "sha256": "2bd55b2a4921b5a746eb1bde0560354765d7850c773cbed598b4dcc8bbe1e174"
+    },
+    {
+      "path": "Bulldozer_Simulator_Review_2026-10-26/REVIEW.md",
+      "bytes": 16274,
+      "sha256": "c5e88265ae9d926463a7c8e08e22439f00b1693ae2629e0ee0f6fc06e0ac1b4b"
+    },
+    {
+      "path": "Bulldozer_Simulator_Review_2026-10-26/REVIEW_FINDINGS.json",
+      "bytes": 11492,
+      "sha256": "4fc17fbccfc2c46c4a4e510ba8713d8ac90d05f476f1140621c2826a0e5e4c89"
+    },
+    {
+      "path": "Bulldozer_Simulator_Review_2026-10-26/SHA256SUMS.json",
+      "bytes": 368,
+      "sha256": "4519bf10e7a036d26e55c6274d187d41a6df24313ee368d64def074a6921b783"
+    },
+    {
+      "path": "Bulldozer_Simulator_Review_2026-10-26/VALIDATION.txt",
+      "bytes": 1596,
+      "sha256": "bebd27d4e33378a810f504c1d374f5a07bd9e0156944561827a1238f27b31af4"
+    }
+  ]
+}

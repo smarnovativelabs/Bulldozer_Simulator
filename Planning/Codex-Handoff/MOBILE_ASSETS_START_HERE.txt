@@ -1,0 +1,25 @@
+MOBILE ASSETS UPDATE — START HERE
+Added 26 October 2026.
+
+Read Bulldozer_Free_Assets_Mobile_2026-10-26/00_START_HERE.md.
+The separate Unity store guide is 02_UNITY_FREE_ASSETS.md.
+Use LAPTOP_AGENT_ASSET_PROMPT.txt in that folder for the laptop agent.
+
+Confirmed direction: mobile users and low-end performance are the priority.
+Walking as a third-person worker and driving are equally important. The user
+accepted the initial 30 FPS / modest Android / 3–4 GB RAM target. Exact phone,
+orientation and final device support still need to be defined and tested.
+This supersedes any earlier desktop-first platform assumption.
+
+The pack covers 16 free asset sources (9 external/author packs and 7 Unity store
+options), Blender preparation, conditional credits, proposed mobile budgets,
+eight existing Kenney OBJ observations and a combined walking/driving slice.
+Price, license and publisher counts are dated observations, not certification.
+No new assets were downloaded, imported or performance-tested for this review.
+
+The earlier research and two differing economy proposals remain available.
+This addendum does not choose cargo sizes, upgrade rules or win conditions.
+No previous handoff files, Unity code, scenes, packages or settings were changed.
+
+MOBILE_ASSET_RESEARCH_MANIFEST.json records this additive documentation copy.
+The prior manifests describe their respective historical copies.

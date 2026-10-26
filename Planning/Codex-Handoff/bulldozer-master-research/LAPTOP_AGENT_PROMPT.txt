@@ -1,0 +1,30 @@
+I want you to implement Sprint 1 of an original Unity mining / hauling game using the attached research pack.
+
+My confirmed requirements:
+- Use Unity.
+- Take inspiration from the broad gameplay loop of Bulldozer Master: Crush & Mine, while creating our own game identity and content.
+- Add features one sprint at a time. Implement Sprint 1 only now.
+
+Read, in order:
+1. 00_START_HERE.md
+2. 02_ORIGINAL_GAME_DIRECTION.md
+3. 03_SPRINT_1_BUILD_PLAN.md
+4. 04_UNITY_TECHNICAL_HANDOFF.md
+5. 09_APK_LESSONS_FOR_SPRINT_1.md
+6. 05_ACCEPTANCE_AND_PLAYTEST.md
+Also inspect prototype_config.json, sprint_1_backlog.json, and original_layout.svg. Use 01_REFERENCE_RESEARCH.md, 07_SOURCES_AND_EVIDENCE.md and 08_APK_FINDINGS.md for context. apk_findings.json and apk_table_catalog.json describe static evidence only, not tested runtime behavior or content to import. The reference screenshots are research, not production assets. 06_LATER_SPRINT_ROADMAP.md is future work, not current authorization to expand scope.
+
+Working concept: Strata Salvage, a compact original salvage rover recovering mineral fragments at a coastal worksite. The name is only a temporary codename.
+
+Sprint outcome:
+Create one playable scene with responsive movement, an oblique follow camera, automatic short-range drilling, breakable deposits, limited cargo, pickups that remain when capacity is full, a delivery zone, one drill upgrade, a contract-completion beacon, clear HUD, and reliable local save/load. Use our proposed original visual direction. Keep the first implementation small and complete.
+
+Inspect the existing workspace and project instructions first. Reuse a suitable existing Unity project, version, packages, and conventions; do not overwrite existing work or silently upgrade the Editor. If no project is present, use an installed supported Unity LTS and 3D URP template. Record the exact version. The proposed default is portrait mobile with Android as a future first device target, plus keyboard/mouse testing in the Editor. If another platform is already established, keep it and explain the adaptation. Do not block ordinary gameplay work just because a mobile module/device is unavailable.
+
+The config values are design starting points, not extracted values from the reference. Implement direct sales in Sprint 1; refining starts in Sprint 2. Do not add workers, fuel, events, purchases, ads, cloud services, or a full progression tree now. No external publishing or paid asset purchases are part of this request.
+
+Use original or properly licensed assets. Keep reference images outside Unity Assets and game builds. Do not copy the reference game's logo, characters, dialogue, UI artwork/layout, levels, sounds, code, or distinctive equipment designs. Maintain a short asset-provenance record. Do not import APK contents or reproduce its table rows, source identifiers, package identity, SDK integrations or balance values. Its Unity version and render pipeline are reference facts, not requirements to change our project.
+
+Build through the ordered backlog. Validate one-time destruction, pickup ownership, exact capacity, sale accounting, upgrade affordability, input cancellation, and coherent saving. Prevent duplicated cash or ore across reloads. Include A19–A21: destroyed-collider cleanup, clean reused object state if pooling is used, and hints that advance only after successful actions. Check conservation of the original 90-fragment supply across ground, cargo, deliveries and unbroken deposits. Update a progress file after each checkpoint and document any decisions that differ from the brief.
+
+Do the implementation, not just a plan. Run appropriate tests, inspect the actual scene, and create a local build when tooling supports it. At the end, provide exact run instructions, versions, changed files, build location or concrete build blocker, acceptance results, screenshots, a short gameplay recording if possible, and known issues. Distinguish tested facts from intended behavior. Stop at Sprint 1 and report what is ready for review.

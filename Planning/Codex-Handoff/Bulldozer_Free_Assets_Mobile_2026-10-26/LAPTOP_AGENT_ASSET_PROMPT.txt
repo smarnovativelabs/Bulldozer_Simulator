@@ -1,0 +1,13 @@
+Read this folder's 00_START_HERE.md and the separate 02_UNITY_FREE_ASSETS.md, then the existing gameplay, repository, plugin and video handoff packs.
+
+Confirmed requirements: this is a mobile game for low-end users. Walking as a third-person worker and driving the bulldozer are equally important. The accepted initial target is 30 FPS on a modest Android phone with 3–4 GB RAM, to be verified on an exact real phone. Do not treat desktop controls as the shipping experience. Orientation and exact minimum device remain open.
+
+Use this asset research as a dated shortlist, not as proof assets are imported or game-ready. Preferred first set: 200097's Sketchfab dozer (CC BY 4.0), one Quaternius Ultimate Modular Men character (CC0), existing Kenney Nature rocks/cliffs (CC0), selected purepoly ore props (CC BY 4.0), and one Kenney Industrial depot (CC0). Existing DOTween/Feel/joystick/SafeArea/particle tools cover the basic presentation needs.
+
+For future implementation when requested: include OnFoot -> EnteringVehicle -> Driving -> ExitingVehicle -> OnFoot with one input owner and camera, safe exit placement, and touch interruption handling. Assess installed KCC for walking; the current official Unity controller (196526) is an alternative, not an additional motor. Do not add a second motor/input stack. It does not provide bulldozer driving. First use bundled character clips; Human Basic Motions is only a backup.
+
+Follow 03_BLENDER_PREPARATION.md for our own silhouette/palette, pivots, colliders and explicit FBX exports. Source files stay outside Unity Assets. Preserve licenses/credits. Do not extract art from the reference APK. Do not assume standard Unity EULA assets are permitted as AI model inputs; follow the actual license/permission. Prefer selected CC0 art for AI-assisted experiments.
+
+Use asset_catalog.json to distinguish facts from unknowns and mobile_budget.json as provisional guardrails, not measured performance. Existing Kenney OBJ estimates are in local_nature_inspection.json; these are not Unity FBX/render counts. Verify imported geometry, materials, texture memory and animation first. Then run the mobile guide's 20-minute device test covering both walking and driving.
+
+Do not blindly download every alternative, upgrade plugins, convert the whole project, delete vendor folders or change the economy proposal. Follow the chosen earlier Sprint 1 economy; this pack does not choose between conflicting cargo/resource specifications. If the next user request is only review/planning, remain in that scope. If implementation is requested, implement the smallest combined walking/driving slice and record what actually passes testing.

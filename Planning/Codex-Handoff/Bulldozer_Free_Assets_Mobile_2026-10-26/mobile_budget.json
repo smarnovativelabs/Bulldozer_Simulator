@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "status": "proposed_initial_budget_not_measured",
+  "confirmed_user_requirements": [
+    "Mobile users; low-end performance",
+    "Walking and driving are equally important",
+    "Accept initial 30 FPS target on modest Android phone with 3–4 GB RAM"
+  ],
+  "unresolved": [
+    "Exact baseline phone/SoC/GPU/OS",
+    "Portrait or landscape",
+    "iOS support scope",
+    "Which earlier Sprint 1 economy proposal to follow"
+  ],
+  "target_fps": 30,
+  "nominal_frame_ms": 33.333333333333336,
+  "suggested_cpu_and_gpu_busy_frame_target_each_ms": 25,
+  "art_targets": {
+    "vehicle_triangles": [
+      2000,
+      6000
+    ],
+    "worker_triangles": [
+      3000,
+      6000
+    ],
+    "hero_materials_max": 2,
+    "selected_worker_skinned_renderers_target": 1,
+    "small_prop_triangles": [
+      50,
+      500
+    ],
+    "building_triangles": [
+      500,
+      3000
+    ],
+    "visible_triangles_review_threshold": 150000,
+    "render_batches_review_threshold": 120,
+    "shared_palette_pixels": [
+      256,
+      512
+    ],
+    "hero_texture_max_start_pixels": 1024
+  },
+  "effects_starting_caps": {
+    "active_cosmetic_chunks": 24,
+    "active_short_particles": 150,
+    "simultaneous_one_shot_audio_voices": 8
+  },
+  "soak_minutes": 20,
+  "notes": [
+    "Budgets are design guardrails, not Unity limits or guaranteed device capability.",
+    "A 1.9k-triangle vehicle is acceptable; lower bound is not a requirement to add geometry.",
+    "If phone profiling fails below these thresholds, reduce actual bottleneck; do not trust counts alone.",
+    "A second active input controller, per-track rigidbodies, or excess transparent particles can dominate cost.",
+    "No universal process-memory cap chosen without baseline-device measurement."
+  ]
+}

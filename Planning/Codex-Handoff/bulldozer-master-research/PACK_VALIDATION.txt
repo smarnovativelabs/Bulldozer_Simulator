@@ -1,0 +1,38 @@
+RESEARCH PACK VALIDATION — 23 October 2026, updated with APK inspection
+
+Completed:
+- 7 JSON files parse successfully, including the new APK findings and schema catalog.
+- 98 local Markdown/HTML links resolve within the portable pack.
+- Ten sprint tasks have valid dependencies and remain unstarted.
+- Acceptance IDs A01-A21 are complete and unique.
+- Original design, prototype tuning, layout and timestamped evidence files are unchanged.
+- Tuning arithmetic agrees: full load 40 credits; two loads minus upgrade 20;
+  90 available fragments; 60 required; three baseline hits versus two upgraded hits.
+- Twelve curated reference frames retain their source IDs and timestamp links.
+- 13 PNG files pass image-file integrity checks; SVG is well-formed XML.
+- The original SVG was rendered and visually inspected during the earlier research.
+- All 36 selected APK table schemas, row counts and entry/path IDs match the local analysis.
+- Key Android manifest identity/split values match the independent binary-XML decode.
+- The supplied APK's ZIP CRC passed and SHA-256 matches its pre-inspection hash:
+  b8c79b5afd638cef9536b9239ab0fa695135dc46f8bfe26e4df8c2078e981414
+- No APK, native program library, DEX, DLL, original table rows or extracted
+  production assets are included in the handoff.
+- The rebuilt ZIP passes CRC and matches the deliverable inventory.
+- SHA256SUMS.json records hashes of every other file inside the pack.
+
+Limits:
+- APK inspection was static. The supplied base requires an absent ABI split;
+  no installation, execution, gameplay session or network trace was attempted.
+- Publisher signing identity was not independently authenticated.
+- 3,589 Unity serialized files were scanned; 117 TextAssets were found;
+  110 JSON payloads parsed. 16,161 custom MonoBehaviour reads were incomplete.
+- Table/assembly/symbol presence does not prove active runtime behavior.
+- HTML received static structure/link checks; browser rendering was unavailable
+  in this session. The original SVG diagram was reviewed separately.
+- No Unity project was created, compiled, played, profiled or built in this task.
+- Acceptance tests are future implementation requirements, not claimed results.
+- Source coverage is sampled and dated; see 07_SOURCES_AND_EVIDENCE.md and
+  08_APK_FINDINGS.md.
+
+Share the full ZIP and begin with LAPTOP_AGENT_PROMPT.txt.
+Reference screenshots are research material and must stay outside game builds.

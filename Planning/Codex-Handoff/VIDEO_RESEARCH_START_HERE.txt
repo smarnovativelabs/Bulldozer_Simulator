@@ -1,0 +1,24 @@
+VIDEO RESEARCH UPDATE — START HERE
+Added 26 October 2026.
+
+Read Bulldozer_Video_Addendum_2026-10-26/00_START_HERE.md.
+Use LAPTOP_AGENT_VIDEO_PROMPT.txt in that folder for the laptop agent.
+
+The supplied playlist is valid and had 17 episodes on this date. This corrects
+the earlier unverified-playlist note. All episodes are indexed, with new samples
+for episodes 2–17 and earlier evidence retained for episode 1. Four standalone
+videos are covered. There are 36 new paused-frame observations across 20 videos;
+the complete register covers 21 videos including the earlier episode 1 review.
+This is selected visual research, not complete transcripts or full playthroughs.
+
+The pack adds timestamped evidence, gameplay lessons, first-sprint applications,
+later feature candidates, a Unity/DOTween/Feel feedback map and machine-readable
+source/task records. It does not choose between the two existing Sprint 1
+proposals; their differences are made explicit in 04_SPRINT_1_APPLICATION.md.
+
+The original research, APK findings, repository review and plugin reference stay
+alongside this addendum. No earlier files were changed. No gameplay assets,
+packages, Unity scenes, source code or project settings were modified.
+
+VIDEO_RESEARCH_MANIFEST.json records hashes for this added pack and this guide.
+The earlier manifests continue to describe their respective historical copies.

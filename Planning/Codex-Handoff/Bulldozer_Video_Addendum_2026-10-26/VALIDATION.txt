@@ -1,0 +1,20 @@
+VIDEO ADDENDUM VALIDATION
+Date: 2026-10-26
+
+PASS: 17 unique playlist entries with contiguous episode numbers 1–17.
+PASS: 4 standalone videos; 21 distinct gameplay video IDs in the source register.
+PASS: 36 unique new timestamped frame observations across 20 videos.
+PASS: Every observation maps to a source; timestamps converted to seek URLs.
+PASS: Episode 1 is explicitly attributed to the earlier six-sample review.
+PASS: 10 implementation candidates link to existing observation records.
+PASS: JSON parses and Markdown local links resolve in the complete sibling-pack layout.
+PASS: Ad/buffering samples excluded from gameplay conclusions.
+PASS: SHA-256 manifest generated for all pack content except the manifest itself.
+PASS: ZIP CRC and archived-file bytes checked after packaging.
+
+Review type: selected paused video frames and visible YouTube metadata.
+No complete transcripts or uninterrupted watch-throughs.
+No Unity import, compile, runtime test, APK install or device profiling.
+No downloaded video, extracted game art, vendor code or new screenshots included.
+Earlier research files are preserved; this is an additive update.
+Desktop project copy has a separate byte-verification receipt in outputs.

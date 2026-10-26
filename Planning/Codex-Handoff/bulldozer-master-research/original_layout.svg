@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="960" viewBox="0 0 1440 960">
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9" fill="none" stroke="#168b82" stroke-width="1.5"/></marker></defs>
+<rect width="1440" height="960" fill="#f5f1e8"/>
+<g font-family="Arial, sans-serif" fill="#163541">
+<text x="48" y="60" font-size="18" letter-spacing="3">ORIGINAL SPRINT 1 • PLANNING SCHEMATIC</text>
+<text x="48" y="112" font-size="42" font-weight="700">Strata Salvage</text>
+<text x="48" y="148" font-size="20">One site. One machine. A complete mining → delivery → upgrade loop.</text>
+<rect x="48" y="185" width="820" height="665" rx="24" fill="#e9dec6"/>
+<text x="78" y="226" font-size="21" font-weight="700">SITE PLAN · conceptual, not to scale</text>
+<path d="M110 270 Q185 235 240 290T395 276T575 280T790 265L820 680Q750 690 770 800H100Z" fill="#d2c8b0"/>
+<path d="M390 740Q540 680 440 550T250 405Q330 300 490 350T690 465Q710 620 540 710" fill="none" stroke="#fff8ea" stroke-width="78" stroke-linecap="round"/>
+<path d="M415 725Q560 640 450 550T265 408" fill="none" stroke="#168b82" stroke-width="4" stroke-dasharray="10 8" marker-end="url(#arrow)"/>
+<path d="M680 480Q700 610 545 705" fill="none" stroke="#168b82" stroke-width="4" stroke-dasharray="10 8" marker-end="url(#arrow)"/>
+<path d="M150 315L163 300L192 305L200 331L179 350L154 340Z" fill="#50666a" stroke="#163541" stroke-width="2"/><path d="M168 313l14 7 -5 14 -12 -6Z" fill="#43c6b6"/><path d="M181 290L198 271L227 276L239 306L214 329L185 315Z" fill="#50666a" stroke="#163541" stroke-width="2"/><path d="M203 288l14 7 -5 14 -12 -6Z" fill="#43c6b6"/><path d="M222 319L233 306L262 311L268 335L249 352L226 344Z" fill="#50666a" stroke="#163541" stroke-width="2"/><path d="M238 317l14 7 -5 14 -12 -6Z" fill="#43c6b6"/><path d="M175 343L190 326L219 331L229 359L206 380L179 368Z" fill="#50666a" stroke="#163541" stroke-width="2"/><path d="M195 341l14 7 -5 14 -12 -6Z" fill="#43c6b6"/><path d="M485 330L498 315L527 320L535 346L514 365L489 355Z" fill="#50666a" stroke="#163541" stroke-width="2"/><path d="M503 328l14 7 -5 14 -12 -6Z" fill="#43c6b6"/><path d="M516 305L533 286L562 291L574 321L549 344L520 330Z" fill="#50666a" stroke="#163541" stroke-width="2"/><path d="M538 303l14 7 -5 14 -12 -6Z" fill="#43c6b6"/><path d="M557 334L568 321L597 326L603 350L584 367L561 359Z" fill="#50666a" stroke="#163541" stroke-width="2"/><path d="M573 332l14 7 -5 14 -12 -6Z" fill="#43c6b6"/><path d="M510 358L525 341L554 346L564 374L541 395L514 383Z" fill="#50666a" stroke="#163541" stroke-width="2"/><path d="M530 356l14 7 -5 14 -12 -6Z" fill="#43c6b6"/><path d="M590 540L603 525L632 530L640 556L619 575L594 565Z" fill="#50666a" stroke="#163541" stroke-width="2"/><path d="M608 538l14 7 -5 14 -12 -6Z" fill="#43c6b6"/><path d="M621 515L638 496L667 501L679 531L654 554L625 540Z" fill="#50666a" stroke="#163541" stroke-width="2"/><path d="M643 513l14 7 -5 14 -12 -6Z" fill="#43c6b6"/><path d="M662 544L673 531L702 536L708 560L689 577L666 569Z" fill="#50666a" stroke="#163541" stroke-width="2"/><path d="M678 542l14 7 -5 14 -12 -6Z" fill="#43c6b6"/><path d="M615 568L630 551L659 556L669 584L646 605L619 593Z" fill="#50666a" stroke="#163541" stroke-width="2"/><path d="M635 566l14 7 -5 14 -12 -6Z" fill="#43c6b6"/><text x="126" y="406" font-size="18">Starter cluster</text><text x="495" y="285" font-size="18">Cluster 2</text><text x="672" y="610" font-size="18">Cluster 3</text>
+<rect x="190" y="694" width="180" height="105" rx="18" fill="#163541"/><text x="218" y="735" fill="#fff8ea" font-size="23" font-weight="700">DEPOT</text><text x="218" y="765" fill="#43c6b6" font-size="17">Unload → credits</text>
+<rect x="545" y="712" width="195" height="87" rx="18" fill="#f08768"/><text x="568" y="748" font-size="22" font-weight="700">WORKSHOP</text><text x="568" y="778" font-size="17">One drill upgrade</text>
+<circle cx="780" cy="380" r="23" fill="#fff8ea" stroke="#43c6b6" stroke-width="7"/><path d="M780 402V460" stroke="#163541" stroke-width="9"/><text x="720" y="492" font-size="17">Beacon</text>
+<g transform="translate(391 588)"><rect x="-31" y="-25" width="16" height="64" rx="6" fill="#163541"/><rect x="22" y="-25" width="16" height="64" rx="6" fill="#163541"/><rect x="-21" y="-33" width="47" height="79" rx="12" fill="#43c6b6"/><path d="M-14 -33L2 -59L19 -33Z" fill="#f08768"/><rect x="-12" y="8" width="29" height="28" rx="3" fill="#fff8ea"/></g>
+<text x="303" y="668" font-size="18">Compact rover / cargo tray</text>
+<rect x="922" y="185" width="470" height="665" rx="24" fill="#163541"/>
+<text x="950" y="226" font-size="21" font-weight="700" fill="#fff8ea">PORTRAIT HUD · wireframe</text>
+<rect x="1000" y="252" width="315" height="554" rx="28" fill="#e9dec6" stroke="#526d74" stroke-width="5"/>
+<rect x="1019" y="274" width="276" height="76" rx="13" fill="#fff8ea"/><text x="1038" y="303" font-size="17" font-weight="700">RESTORE THE BEACON</text><text x="1038" y="330" font-size="16">Delivered 16 / 60     80 credits</text>
+<circle cx="1160" cy="485" r="27" fill="#43c6b6" stroke="#163541" stroke-width="7"/><path d="M1146 456L1160 432L1174 456" fill="#f08768"/>
+<text x="1056" y="572" font-size="17">Open space for the world</text>
+<rect x="1020" y="620" width="274" height="45" rx="12" fill="#fff8ea"/><text x="1040" y="648" font-size="16">Cargo full · return to depot</text>
+<circle cx="1070" cy="728" r="43" fill="#163541" opacity="0.15"/><circle cx="1070" cy="728" r="22" fill="#163541" opacity="0.75"/>
+<rect x="1140" y="690" width="152" height="73" rx="12" fill="#fff8ea"/><text x="1158" y="718" font-size="16" font-weight="700">CARGO 8 / 8</text><rect x="1158" y="734" width="114" height="9" rx="4" fill="#43c6b6"/>
+<text x="48" y="898" font-size="20" font-weight="700">Sprint 1 gate: deliver 60 fragments + buy the drill upgrade.</text>
+<text x="48" y="930" font-size="17">Refining, workers, fuel and live events are future sprints. Shapes and values here are original proposals.</text>
+</g></svg>

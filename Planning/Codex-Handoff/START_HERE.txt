@@ -1,0 +1,52 @@
+BULLDOZER SIMULATOR — RESEARCH AND REVIEW HANDOFF
+Added 26 October 2026.
+
+This folder contains the completed game research and local-APK findings, the
+original Unity Sprint 1 proposal, and the repository review. Everything is under
+Planning so reference screenshots and research documents stay outside Unity Assets.
+
+READ FIRST
+1. Bulldozer_Simulator_Review_2026-10-26/REVIEW.md
+2. Bulldozer_Simulator_Review_2026-10-26/LAPTOP_AGENT_CHECKLIST.txt
+3. bulldozer-master-research/00_START_HERE.md
+4. bulldozer-master-research/09_APK_LESSONS_FOR_SPRINT_1.md
+
+For the offline visual overview, open:
+bulldozer-master-research/START_HERE.html
+
+BEFORE IMPLEMENTATION
+The repository review applies to commit:
+b57be43724b8a2988bb7fdd024a4dfdb907d678e
+That matches the project's HEAD when these files were added. Future changes may
+make some findings stale; inspect the actual project before acting.
+
+Planning/Project-Exploration.md and the research pack contain different proposed
+first sprints. The repository proposes bridge rebuilding, two materials, 15-unit
+cargo and optional upgrades. The research pack proposes a delivery beacon, one
+material, 8-unit cargo and one required drill upgrade. Full-cargo rules differ too.
+Use the latest human-approved direction and one authoritative spec before coding.
+Do not silently combine the two proposals. The existing planning file is preserved.
+
+The ready-to-paste implementation prompt is:
+bulldozer-master-research/LAPTOP_AGENT_PROMPT.txt
+Resolve the specification differences above before using it as an implementation
+contract. Merely reading these files is not a request to implement either proposal.
+
+CONTENTS
+- Original direction, Sprint 1 plan, Unity architecture and acceptance checks.
+- Google Play and sampled YouTube research, timestamped reference images.
+- Static APK findings, selected schema summaries and practical engineering lessons.
+- Repository findings, storage breakdown and laptop-agent checklist.
+- JSON tuning/backlog/evidence files and per-pack checksums.
+
+The APK itself, extracted production assets, parser dependencies, scratch files and
+duplicate ZIP archives are not included. The two unpacked packs contain all the
+finished research/review deliverables and can be read directly here.
+
+RESEARCH LIMITS
+The supplied APK was inspected statically and not executed. The repository was
+reviewed without a Unity import, compilation or playtest. Reference screenshots
+are research material; do not copy them into game Assets or builds. The new game
+should use original or properly licensed content.
+
+HANDOFF_MANIFEST.json records every copied file and its SHA-256 for verification.

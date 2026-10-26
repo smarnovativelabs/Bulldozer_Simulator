@@ -1,0 +1,155 @@
+{
+  "source_id": "A1",
+  "inspected_on": "2026-10-23",
+  "input": {
+    "filename": "Bulldozer.apk",
+    "sha256": "b8c79b5afd638cef9536b9239ab0fa695135dc46f8bfe26e4df8c2078e981414",
+    "bytes": 188182527,
+    "provenance": "User-supplied file; publisher signing identity not independently authenticated.",
+    "modified": false,
+    "executed": false,
+    "installed": false
+  },
+  "package": {
+    "id": "io.supercent.bulldozermasters",
+    "version_name": "11.3.0",
+    "version_code": 102,
+    "compile_sdk": 36,
+    "min_sdk": 24,
+    "target_sdk": 36,
+    "required_split_types": "base__abi",
+    "native_library_entries": 0,
+    "standalone_installable": false,
+    "reason": "Manifest requires an ABI split; supplied base contains no native libraries.",
+    "activity_orientation": "portrait",
+    "cpu_architecture": "Not established from this incomplete base APK"
+  },
+  "engine": {
+    "serialized_header_versions": [
+      "2022.3.76f1"
+    ],
+    "il2cpp_metadata_version": 31,
+    "render_pipeline_evidence": "GraphicsSettings and the single quality level have null customRenderPipeline references.",
+    "render_pipeline_inference": "Consistent with Built-in pipeline configuration; not an argument to change our proposed URP prototype.",
+    "configured_scene_count": 2
+  },
+  "coverage": {
+    "serialized_files_scanned": 3589,
+    "text_assets": 117,
+    "json_payloads": 110,
+    "named_objects": 28511,
+    "incomplete_custom_monobehaviour_reads": 16161,
+    "parser": "UnityPy 1.25.2",
+    "binary_xml_crosscheck": "pyaxmlparser 0.3.31",
+    "limitations": [
+      "Many custom MonoBehaviour fields could not be decoded.",
+      "Native IL2CPP program library is absent from this base APK.",
+      "No source-level control flow, runtime state, network traffic or playtesting was inspected."
+    ]
+  },
+  "archive": {
+    "entries": 6063,
+    "uncompressed_bytes": 286256819,
+    "crc_passed": true,
+    "size_groups": {
+      "Other": {
+        "entry_count": 230,
+        "uncompressed_bytes": 2223274,
+        "compressed_bytes": 718202
+      },
+      "Other bundled DEX": {
+        "entry_count": 2,
+        "uncompressed_bytes": 5294676,
+        "compressed_bytes": 2501450
+      },
+      "Unity data": {
+        "entry_count": 3725,
+        "uncompressed_bytes": 163313308,
+        "compressed_bytes": 70211686
+      },
+      "Root DEX": {
+        "entry_count": 16,
+        "uncompressed_bytes": 109395888,
+        "compressed_bytes": 109395888
+      },
+      "Android resources": {
+        "entry_count": 2090,
+        "uncompressed_bytes": 6029673,
+        "compressed_bytes": 4288210
+      }
+    }
+  },
+  "packaged_object_counts": {
+    "Texture2D": 1390,
+    "Sprite": 1254,
+    "Mesh": 370,
+    "Material": 384,
+    "Shader": 75,
+    "AudioClip": 122,
+    "AnimationClip": 515,
+    "ParticleSystem": 2020,
+    "Canvas": 440,
+    "NavMeshAgent": 21,
+    "NavMeshObstacle": 136
+  },
+  "object_count_limit": "Serialized packaged definitions, including prefabs; not simultaneous live scene counts or performance measurements.",
+  "evidence": [
+    {
+      "id": "A1-MANIFEST",
+      "apk_entry": "AndroidManifest.xml",
+      "facts": [
+        "Package and version",
+        "SDK declarations",
+        "Required ABI split",
+        "Portrait UnityPlayerActivity",
+        "Split-required metadata"
+      ],
+      "method": "Binary XML parsed with a local parser and cross-checked using pyaxmlparser 0.3.31."
+    },
+    {
+      "id": "A1-UNITY",
+      "apk_entry": "assets/bin/Data/globalgamemanagers",
+      "facts": [
+        "Unity version from serialized header",
+        "PlayerSettings product identity",
+        "GraphicsSettings has no custom render pipeline assigned",
+        "BuildSettings contains two scene paths"
+      ],
+      "method": "UnityPy 1.25.2 serialized-object inspection."
+    },
+    {
+      "id": "A1-ASSEMBLIES",
+      "apk_entry": "assets/bin/Data/ScriptingAssemblies.json",
+      "facts": [
+        "Packaged assembly references"
+      ],
+      "limit": "A listed assembly is not proof that its features are used during play."
+    },
+    {
+      "id": "A1-SYMBOLS",
+      "apk_entry": "assets/bin/Data/Managed/Metadata/global-metadata.dat",
+      "facts": [
+        "IL2CPP metadata header version 31",
+        "Readable gameplay, pooling, onboarding and save-category identifiers"
+      ],
+      "limit": "Identifiers are evidence of packaged concepts, not recovered function bodies or algorithms."
+    },
+    {
+      "id": "A1-TABLES",
+      "catalog": "apk_table_catalog.json",
+      "facts": [
+        "Selected TextAsset names, row counts and field schemas"
+      ],
+      "limit": "Multiple table versions and remote overrides may exist; active values were not tested."
+    },
+    {
+      "id": "A1-ARCHIVE",
+      "facts": [
+        "ZIP entry counts and sizes",
+        "No lib/ native-library entries",
+        "CRC passed"
+      ],
+      "limit": "APK size is not full installed size or runtime memory."
+    }
+  ]
+}

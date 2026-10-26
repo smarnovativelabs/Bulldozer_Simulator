@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "status": "PROPOSED_UNTESTED_TUNING",
+  "codename": "Strata Salvage",
+  "purpose": "Planning data for Sprint 1. Not extracted from the reference and not a Unity asset.",
+  "assumptions": {
+    "engine": "Unity",
+    "dimension": "3D",
+    "orientation": "portrait",
+    "device_target": "Android proposed; confirm against existing project",
+    "desktop_test_controls": "WASD or arrows plus mouse",
+    "monetization": "none in Sprint 1"
+  },
+  "player": {
+    "move_speed_units_per_second": 4.0,
+    "cargo_capacity_units": 8,
+    "pickup_radius_units": 1.5
+  },
+  "drill": {
+    "damage_levels": [
+      20,
+      30
+    ],
+    "strike_interval_seconds": 0.45,
+    "first_strike_immediate": true,
+    "range_units": 1.6,
+    "forward_cone_total_degrees": 100,
+    "max_targets_per_strike": 1,
+    "continues_at_full_cargo": true
+  },
+  "deposit": {
+    "count": 30,
+    "health": 60,
+    "fragment_yield": 3,
+    "fragment_value_credits": 5,
+    "types_in_sprint": 1,
+    "stable_ids_required": true
+  },
+  "economy": {
+    "starting_credits": 0,
+    "upgrade_price_credits": 60,
+    "upgrade_max_level": 1,
+    "direct_sale_in_sprint_1": true,
+    "partial_collection": true
+  },
+  "contract": {
+    "delivered_units_required": 60,
+    "drill_upgrade_level_required": 1,
+    "completion_cash_bonus": 0,
+    "allow_delivery_overflow": true,
+    "beacon_activates_on_completion": true
+  },
+  "camera": {
+    "projection": "orthographic proposed",
+    "pitch_down_degrees": 50,
+    "yaw_degrees": 35,
+    "follow": "smooth; tune framing in scene"
+  },
+  "save": {
+    "schema_version": 1,
+    "save_on": [
+      "delivery",
+      "upgrade",
+      "application_pause",
+      "debounced_world_mutation"
+    ],
+    "mutation_debounce_seconds": 0.5,
+    "backup_required": true,
+    "stable_deposit_and_drop_ids": true
+  },
+  "performance_targets": {
+    "preferred_fps": 60,
+    "minimum_stable_mobile_fps": 30,
+    "maximum_logical_fragments": 90,
+    "verified_on_device": false
+  },
+  "out_of_scope": [
+    "refinery",
+    "workers",
+    "stamina",
+    "fuel",
+    "vehicle switching",
+    "ads",
+    "IAP",
+    "offline rewards",
+    "cloud services",
+    "multiplayer",
+    "events"
+  ],
+  "acceptance_arithmetic": {
+    "full_load_credits": 40,
+    "two_full_loads_after_upgrade_credits": 20,
+    "total_site_fragments": 90,
+    "gross_credits_at_exact_contract_target": 300,
+    "net_credits_at_exact_contract_target_after_upgrade": 240,
+    "baseline_hits": 3,
+    "upgraded_hits": 2
+  }
+}

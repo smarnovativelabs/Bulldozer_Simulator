@@ -1,0 +1,24 @@
+Remote repository review validation — 26 October 2026
+Commit: b57be43724b8a2988bb7fdd024a4dfdb907d678e
+
+Completed:
+- Complete GitHub recursive tree received: 23,297 entries; not truncated.
+- Current file payload summed from 22,083 blob entries: 1,045,523,843 bytes.
+- 117 selected text files (369,448 bytes) read; every Git blob SHA-1 verified against the tree.
+- Both intended project scenes have exactly two named GameObjects, no MonoBehaviour blocks and no prefab instances.
+- Intended project folder contains no C# scripts.
+- Default enabled build scene is SampleScene, whose GUID matches its committed metadata.
+- Direct dependency versions match manifest and packages-lock.
+- 21 inspected Feel assembly references resolve to committed local assembly definitions.
+- AssetCleaner is restricted to the Editor assembly platform.
+- Inspected duplicate Fixed Joystick prefabs point to the surviving FixedJoystick script GUID.
+- Root Library/Temp/Logs and GitHub workflow paths are absent from the complete tree.
+- Finding links use the reviewed immutable commit and valid inspected line anchors.
+- Review JSON parses; local review links resolve; final review ZIP passes CRC.
+
+Not performed:
+- No full clone, Unity import, package installation, compilation, build or playtest.
+- No complete vendor-source audit, shader compilation, model review, dependency-removal test, device profile or license clearance.
+- No repository edits, deletions, visibility changes, commits, PRs or external messages.
+
+The accompanying files contain review prose and derived metadata, not copied vendor code or art.

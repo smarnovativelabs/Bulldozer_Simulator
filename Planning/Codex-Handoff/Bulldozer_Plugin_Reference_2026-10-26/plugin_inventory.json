@@ -1,0 +1,1288 @@
+{
+  "schema_version": 1,
+  "research_date": "2026-10-26",
+  "project_name": "Bulldozer_Simulator",
+  "git_head_at_audit": "b57be43724b8a2988bb7fdd024a4dfdb907d678e",
+  "unity_version": "6000.3.13f1",
+  "active_input_handler": 1,
+  "active_input_meaning": "Input System package only",
+  "scope": "Installed vendor libraries/tools and art libraries under Assets, plus all manifest direct packages. Sample libraries are distinguished from required gameplay dependencies. No Unity import/build/runtime test.",
+  "size_note": "Filesystem payload excluding .DS_Store; includes .meta files. Nested plugin roots overlap. Not build size or imported Library size.",
+  "plugins": [
+    {
+      "id": "dotween",
+      "name": "DOTween core + Pro + DemiLib",
+      "roots": [
+        "Assets/Plugins/Demigiant"
+      ],
+      "installed_version": "core DLL 1.2.420; Pro DLL 1.0.244; DemiEditor DLL string 1.0.060",
+      "version_evidence": [
+        "Assets/Plugins/Demigiant/DOTween/DOTween.dll",
+        "Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.dll",
+        "Assets/Plugins/Demigiant/DemiLib/Core/Editor/DemiEditor.dll"
+      ],
+      "category": "runtime tween engine + editor tooling",
+      "sprint_recommendation": "Use for UI and cosmetic tweens",
+      "purpose": "Code tweens, sequences, visual Animation/Path components, TMP animation; DemiLib supports vendor tooling.",
+      "setup_and_api": "See 01_DOTWEEN_PRO.md. Use DG.Tweening. Configure modules through the Utility Panel. Add coherent assembly definitions if custom game assemblies need loose modules.",
+      "cautions": "DLL product strings do not certify every loose script version. Handle pool return explicitly. Avoid a second core copy and competing Feel/Animator property writers.",
+      "entry_points": [
+        "Assets/Plugins/Demigiant/DOTweenPro/DOTweenAnimation.cs",
+        "Assets/Plugins/Demigiant/DOTweenPro/DOTweenTextMeshPro.cs",
+        "Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUI.cs",
+        "Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics.cs",
+        "Assets/Plugins/Demigiant/DOTween/DOTween.XML",
+        "Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.XML"
+      ],
+      "files": 331,
+      "bytes": 1536304,
+      "csharp_files": 15,
+      "extension_counts": {
+        ".cs": 15,
+        ".dll": 6,
+        ".jpg": 1,
+        ".lighting": 3,
+        ".png": 121,
+        ".txt": 3,
+        ".unity": 3,
+        ".xml": 6,
+        ".zip": 1
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "feel",
+      "name": "Feel / MMFeedbacks",
+      "roots": [
+        "Assets/Feel"
+      ],
+      "installed_version": "5.6.1",
+      "version_evidence": [
+        "Assets/Feel/readme.txt"
+      ],
+      "category": "runtime feedback orchestration + demos",
+      "sprint_recommendation": "Use a small event-driven subset",
+      "purpose": "Inspector-authored coordinated visual, audio, UI, camera and haptic responses.",
+      "setup_and_api": "See 02_FEEL.md. Bind MMF_Player and explicit targets; play after an accepted gameplay event. Code namespace MoreMountains.Feedbacks.",
+      "cautions": "Online docs are 6.3, with APIs absent locally and a higher minimum Editor. The root includes MMTools, Nice Vibrations and demos; nested inventory sizes overlap.",
+      "entry_points": [
+        "Assets/Feel/MMFeedbacks/MMFeedbacks/Core/MMF_Player/MMF_Player.cs",
+        "Assets/Feel/MMFeedbacks/MMFeedbacks/Core/MMF_Player/MMF_Feedback.cs",
+        "Assets/Feel/MMFeedbacks/MMFeedbacks/Core/Legacy/MMFeedbacks.cs",
+        "Assets/Feel/MMFeedbacks/MMFeedbacks/Feedbacks/MMF_ParticlesInstantiation.cs",
+        "Assets/Feel/MMFeedbacks/MMFeedbacks/Feedbacks/MMF_CameraShake.cs",
+        "Assets/Feel/MMFeedbacks/MMFeedbacks/Feedbacks/MMF_Scale.cs",
+        "Assets/Feel/MMFeedbacks/MMFeedbacks/Feedbacks/MMF_Pause.cs"
+      ],
+      "files": 4901,
+      "bytes": 382217323,
+      "csharp_files": 872,
+      "extension_counts": {
+        "": 1,
+        ".aar": 1,
+        ".anim": 19,
+        ".asmdef": 5,
+        ".asmref": 21,
+        ".asset": 76,
+        ".controller": 16,
+        ".cs": 872,
+        ".curves": 4,
+        ".dll": 1,
+        ".dylib": 1,
+        ".exr": 12,
+        ".fbx": 35,
+        ".h": 1,
+        ".haptic": 141,
+        ".hdr": 3,
+        ".lighting": 11,
+        ".mask": 1,
+        ".mat": 258,
+        ".md": 1,
+        ".mixer": 1,
+        ".modulemap": 1,
+        ".obj": 1,
+        ".otf": 2,
+        ".physicmaterial": 2,
+        ".physicsmaterial2d": 1,
+        ".plist": 1,
+        ".png": 300,
+        ".prefab": 73,
+        ".rendertexture": 5,
+        ".shader": 14,
+        ".tga": 4,
+        ".tss": 1,
+        ".ttf": 24,
+        ".txt": 12,
+        ".unity": 43,
+        ".uss": 9,
+        ".uxml": 1,
+        ".wav": 233,
+        ".webm": 3
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "mmtools",
+      "name": "MMTools (bundled with Feel)",
+      "roots": [
+        "Assets/Feel/MMTools"
+      ],
+      "installed_version": "bundled in Feel 5.6.1",
+      "version_evidence": [
+        "Assets/Feel/readme.txt"
+      ],
+      "category": "runtime utility library + editor helpers",
+      "sprint_recommendation": "Keep required runtime; adopt utilities only when needed",
+      "purpose": "Audio management, pools, progress bars, time helpers and numerous supporting systems used by feedbacks.",
+      "setup_and_api": "MoreMountains.Tools namespace. MMSoundManager can own sound tracks/pooling; MMProgressBar displays game values. Inspect the local API index and demo before adopting an optional helper.",
+      "cautions": "The runtime assembly is also the target of Feel asmrefs in this checkout. Do not delete it as an optional demo library. Avoid adding another save/time/pool system without a clear owner.",
+      "entry_points": [
+        "Assets/Feel/MMTools/Core/MoreMountains.Tools.asmdef",
+        "Assets/Feel/MMTools/Core/MMAudio/MMSoundManager/MMSoundManager.cs",
+        "Assets/Feel/MMTools/Core/MMUI/MMProgressBar.cs",
+        "Assets/Feel/MMTools/Core/MMTimeManager/MMTimeManager.cs"
+      ],
+      "files": 1513,
+      "bytes": 75643005,
+      "csharp_files": 380,
+      "extension_counts": {
+        ".anim": 2,
+        ".asmdef": 2,
+        ".asmref": 5,
+        ".asset": 27,
+        ".controller": 2,
+        ".cs": 380,
+        ".curves": 2,
+        ".exr": 4,
+        ".fbx": 1,
+        ".lighting": 2,
+        ".mat": 62,
+        ".mixer": 1,
+        ".png": 103,
+        ".prefab": 28,
+        ".shader": 13,
+        ".ttf": 19,
+        ".txt": 2,
+        ".unity": 18,
+        ".uss": 1
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "nice-vibrations",
+      "name": "Nice Vibrations / Lofelt",
+      "roots": [
+        "Assets/Feel/NiceVibrations"
+      ],
+      "installed_version": "4.1.2; Lofelt SDK 1.3.4",
+      "version_evidence": [
+        "Assets/Feel/NiceVibrations/readme.txt"
+      ],
+      "category": "native mobile/gamepad haptics",
+      "sprint_recommendation": "Optional after the loop works",
+      "purpose": "Preset, emphasis, continuous and authored-clip haptics, exposed through direct APIs and Feel feedbacks.",
+      "setup_and_api": "Prefer MMF_NVPreset/MMF_NVEmphasis through a game haptic adapter. Check MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED per target; Android has the define in this checkout.",
+      "cautions": "Device verification required. MMF_Haptics is deprecated. Choose this or CandyCoded per event; do not double-fire. OlderVersions content is not another package that needs importing.",
+      "entry_points": [
+        "Assets/Feel/NiceVibrations/Scripts/Components/HapticPatterns.cs",
+        "Assets/Feel/NiceVibrations/Scripts/Components/HapticController.cs",
+        "Assets/Feel/MMFeedbacks/MMFeedbacksForThirdParty/NiceVibrations/Feedbacks/MMF_NVPreset.cs",
+        "Assets/Feel/MMFeedbacks/MMFeedbacksForThirdParty/NiceVibrations/Feedbacks/MMF_NVEmphasis.cs"
+      ],
+      "files": 857,
+      "bytes": 45335252,
+      "csharp_files": 43,
+      "extension_counts": {
+        "": 1,
+        ".aar": 1,
+        ".anim": 7,
+        ".asmdef": 3,
+        ".controller": 3,
+        ".cs": 43,
+        ".dll": 1,
+        ".dylib": 1,
+        ".h": 1,
+        ".haptic": 141,
+        ".mat": 3,
+        ".md": 1,
+        ".modulemap": 1,
+        ".otf": 1,
+        ".physicsmaterial2d": 1,
+        ".plist": 1,
+        ".png": 24,
+        ".prefab": 5,
+        ".shader": 1,
+        ".ttf": 4,
+        ".txt": 8,
+        ".unity": 1,
+        ".wav": 145
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "leantween",
+      "name": "LeanTween",
+      "roots": [
+        "Assets/LeanTween"
+      ],
+      "installed_version": "2.50",
+      "version_evidence": [
+        "Assets/LeanTween/Framework/LeanTween.cs"
+      ],
+      "category": "runtime tween engine + demos",
+      "sprint_recommendation": "Keep for existing dependencies; prefer DOTween for new work",
+      "purpose": "Alternative tween implementation using LeanTween static calls and LTDescr handles.",
+      "setup_and_api": "Typical routes are LeanTween.move/scale/value and cancel by the specific tween ID. Framework and examples are separate folders; the readme points to bundled/offline documentation.",
+      "cautions": "Do not run LeanTween and DOTween on the same property. Inventory its callers before a later removal. Tween cancellation and pool baseline reset remain necessary.",
+      "entry_points": [
+        "Assets/LeanTween/Framework/LeanTween.cs",
+        "Assets/LeanTween/Framework/LTDescr.cs",
+        "Assets/LeanTween/ReadMe.txt",
+        "Assets/LeanTween/License.txt"
+      ],
+      "files": 434,
+      "bytes": 7501045,
+      "csharp_files": 47,
+      "extension_counts": {
+        ".cs": 47,
+        ".css": 1,
+        ".fbx": 14,
+        ".html": 15,
+        ".ico": 1,
+        ".lighting": 33,
+        ".mat": 32,
+        ".physicmaterial": 1,
+        ".png": 6,
+        ".prefab": 14,
+        ".psd": 6,
+        ".txt": 2,
+        ".unity": 33,
+        ".zip": 3
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "particle-image",
+      "name": "Particle Image",
+      "roots": [
+        "Assets/AssetKits/ParticleImage"
+      ],
+      "installed_version": "1.2.0 (editor source header)",
+      "version_evidence": [
+        "Assets/AssetKits/ParticleImage/Editor/ParticleImageEditor.cs"
+      ],
+      "category": "uGUI particle renderer",
+      "sprint_recommendation": "Optional UI polish",
+      "purpose": "Canvas-based particles, attractors, trails, texture-sheet animation, sub-particles and masking.",
+      "setup_and_api": "Create GameObject > UI > Particle Image. Runtime type AssetKits.ParticleImage.ParticleImage exposes Play, Pause, Stop, Stop(bool), Clear and AddBurst. Use for reward sparkles in Overlay/Camera Canvas modes.",
+      "cautions": "This is not a world ParticleSystem. Its asmdef has Burst/Collections/Mathematics dependencies. Check UI material/masking and particle counts; particle-completion events must not grant currency.",
+      "entry_points": [
+        "Assets/AssetKits/ParticleImage/README.md",
+        "Assets/AssetKits/ParticleImage/Runtime/ParticleImage.cs",
+        "Assets/AssetKits/ParticleImage/Runtime/ParticleImage.asmdef"
+      ],
+      "files": 195,
+      "bytes": 4361516,
+      "csharp_files": 16,
+      "extension_counts": {
+        ".asmdef": 2,
+        ".cs": 16,
+        ".mat": 1,
+        ".md": 1,
+        ".png": 38,
+        ".prefab": 19,
+        ".shader": 1,
+        ".unity": 13
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "joystick",
+      "name": "Joystick Pack",
+      "roots": [
+        "Assets/Unity_Packages/Joystick Pack",
+        "Assets/Joystick Pack"
+      ],
+      "installed_version": null,
+      "version_evidence": [],
+      "category": "uGUI mobile input controls",
+      "sprint_recommendation": "Use one chosen joystick with the Input System UI route",
+      "purpose": "Fixed, floating, dynamic and variable touch joystick variants; analog Direction/Horizontal/Vertical values.",
+      "setup_and_api": "Use a Canvas/GraphicRaycaster and one EventSystem with InputSystemUIInputModule. Assign background/handle and read Direction from a game input adapter. The bundled PDF is Documentaion.pdf (original spelling).",
+      "cautions": "Confirmed AxisOptions getter recursion at base Joystick.cs:24; fix before calling it. Top-level folder is prefab/art content, not a proven second script implementation. Prefabs still need input-module verification.",
+      "entry_points": [
+        "Assets/Unity_Packages/Joystick Pack/Scripts/Base/Joystick.cs",
+        "Assets/Unity_Packages/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs",
+        "Assets/Unity_Packages/Joystick Pack/Scripts/Joysticks/FixedJoystick.cs",
+        "Assets/Unity_Packages/Joystick Pack/Documentaion.pdf"
+      ],
+      "files": 168,
+      "bytes": 1314646,
+      "csharp_files": 11,
+      "extension_counts": {
+        ".cs": 11,
+        ".mat": 4,
+        ".pdf": 2,
+        ".png": 48,
+        ".prefab": 8,
+        ".unity": 2
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "touch-controls",
+      "name": "TouchControlsKit Lite",
+      "roots": [
+        "Assets/Unity_Packages/VictorsAssets/TouchControlsKit-Lite"
+      ],
+      "installed_version": null,
+      "version_evidence": [],
+      "category": "touch joystick, button and touchpad framework",
+      "sprint_recommendation": "Defer unless retaining a specific existing consumer",
+      "purpose": "Named controllers queried through TouchControlsKit.TCKInput; contains first-person examples.",
+      "setup_and_api": "GetAxis(controllerName), GetButtonDown(name), GetButton(name), GetButtonUp(name); controllers and names must exist. Review TCKInput initialization before bringing a prefab into the scene.",
+      "cautions": "CheckUIEventSystem creates legacy StandaloneInputModule and controls read Input.touchCount. This conflicts with assuming a new-only Input System setup. Do not run a second movement-input route.",
+      "entry_points": [
+        "Assets/Unity_Packages/VictorsAssets/TouchControlsKit-Lite/Scripts/Runtime/TCKInput.cs",
+        "Assets/Unity_Packages/VictorsAssets/TouchControlsKit-Lite/Scripts/Runtime/Controllers/TCKJoystick.cs",
+        "Assets/Unity_Packages/VictorsAssets/TouchControlsKit-Lite/Scripts/Runtime/Controllers/TCKButton.cs"
+      ],
+      "files": 78,
+      "bytes": 158609,
+      "csharp_files": 27,
+      "extension_counts": {
+        ".cs": 27,
+        ".png": 1
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "safe-area",
+      "name": "Crystal Safe Area",
+      "roots": [
+        "Assets/CrystalFramework"
+      ],
+      "installed_version": null,
+      "version_evidence": [],
+      "category": "uGUI layout utility",
+      "sprint_recommendation": "Useful in Sprint 1",
+      "purpose": "Fits a RectTransform to Screen.safeArea and responds to screen/orientation changes; includes device simulation options.",
+      "setup_and_api": "Add Crystal.SafeArea to the intended HUD safe-area container under the Canvas. Keep full-screen backgrounds outside that constrained container. Validate layout anchors on the chosen aspect ratios.",
+      "cautions": "Do not apply it to every nested element or double-apply safe-area compensation. Check scaled Canvas behavior and orientation in the actual game. Simulation is not a replacement for a phone test.",
+      "entry_points": [
+        "Assets/CrystalFramework/Utility/SafeArea.cs",
+        "Assets/CrystalFramework/Utility/Demos/SafeAreaDemo.cs"
+      ],
+      "files": 19,
+      "bytes": 282365,
+      "csharp_files": 2,
+      "extension_counts": {
+        ".asset": 1,
+        ".cs": 2,
+        ".exr": 1,
+        ".lighting": 1,
+        ".prefab": 1,
+        ".rtf": 1,
+        ".unity": 1
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "ui-effect",
+      "name": "Coffee UIEffect / UI Shiny",
+      "roots": [
+        "Assets/Unity_Packages/UI Shiny/UIEffect-upm"
+      ],
+      "installed_version": "4.0.0-preview.9",
+      "version_evidence": [
+        "Assets/Unity_Packages/UI Shiny/UIEffect-upm/package.json"
+      ],
+      "category": "uGUI material/mesh effects",
+      "sprint_recommendation": "Optional upgrade-button polish",
+      "purpose": "UIShiny, dissolve, transition, HSV, gradients, shadows and related graphic effects.",
+      "setup_and_api": "Add the appropriate Coffee.UIEffects component to a supported Graphic. UIShiny.Play(bool reset=true) and Stop(bool reset=true) exist locally. The bundled README describes components and effect parameters.",
+      "cautions": "Old preview version vendored under Assets; current upstream APIs may differ. Do not install a second UPM copy. Test masking, material compatibility and modified mesh/material interactions. Local LICENSE.md is MIT.",
+      "entry_points": [
+        "Assets/Unity_Packages/UI Shiny/UIEffect-upm/Scripts/UIShiny.cs",
+        "Assets/Unity_Packages/UI Shiny/UIEffect-upm/Scripts/UIEffect.cs",
+        "Assets/Unity_Packages/UI Shiny/UIEffect-upm/Scripts/UITransitionEffect.cs",
+        "Assets/Unity_Packages/UI Shiny/UIEffect-upm/README.md",
+        "Assets/Unity_Packages/UI Shiny/UIEffect-upm/package.json"
+      ],
+      "files": 91,
+      "bytes": 226796,
+      "csharp_files": 31,
+      "extension_counts": {
+        ".cginc": 2,
+        ".cs": 31,
+        ".json": 1,
+        ".md": 3,
+        ".png": 1,
+        ".shader": 5
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "awesome-mask",
+      "name": "AwesomeMask",
+      "roots": [
+        "Assets/_CrazyMinds/AwesomeMask"
+      ],
+      "installed_version": null,
+      "version_evidence": [],
+      "category": "uGUI spotlight/masking utility",
+      "sprint_recommendation": "Later tutorial onboarding",
+      "purpose": "Screen overlay with hollow areas to highlight UI/objects and control pointer passthrough.",
+      "setup_and_api": "Crazyminds.AwesomeMask.AwesomeMask with AwesomeMaskHollow. Available methods include Add, Remove, SetElementPosition and CanRayCast. Use supplied prefabs/manual when binding highlight shapes.",
+      "cautions": "Verify actual raycast behavior before a tutorial can block the screen. Check Canvas coordinate conversion, safe area and aspect ratio. It is not a gameplay unlock/step system.",
+      "entry_points": [
+        "Assets/_CrazyMinds/AwesomeMask/Scripts/Core/AwesomeMask.cs",
+        "Assets/_CrazyMinds/AwesomeMask/Scripts/Core/AwesomeMaskHollow.cs"
+      ],
+      "files": 38,
+      "bytes": 2240464,
+      "csharp_files": 3,
+      "extension_counts": {
+        ".cs": 3,
+        ".mat": 4,
+        ".pdf": 1,
+        ".png": 5,
+        ".prefab": 3
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "kcc",
+      "name": "Kinematic Character Controller",
+      "roots": [
+        "Assets/KinematicCharacterController"
+      ],
+      "installed_version": null,
+      "version_evidence": [],
+      "category": "kinematic character locomotion framework + examples",
+      "sprint_recommendation": "Evaluate only if choosing character-style movement",
+      "purpose": "Capsule-based character motor, ground/collision handling and physics movers. This is not a bulldozer driving simulator.",
+      "setup_and_api": "Implement ICharacterController callbacks such as UpdateRotation and UpdateVelocity and assign it to KinematicCharacterMotor. Review core separately from walkthrough/example input and camera code.",
+      "cautions": "Examples include legacy Input and locally present mobile joystick/TCK dependencies. Do not use a demo as the production input contract. Vehicle collision geometry and pushing need an explicit design.",
+      "entry_points": [
+        "Assets/KinematicCharacterController/Core/ICharacterController.cs",
+        "Assets/KinematicCharacterController/Core/KinematicCharacterMotor.cs",
+        "Assets/KinematicCharacterController/ExampleCharacter/Scripts/ExamplePlayer.cs",
+        "Assets/KinematicCharacterController/ExampleCharacter/Scripts/ExampleCharacterController.cs"
+      ],
+      "files": 171,
+      "bytes": 603606,
+      "csharp_files": 60,
+      "extension_counts": {
+        ".cs": 60,
+        ".lighting": 1,
+        ".mat": 1,
+        ".unity": 1
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "nav-path",
+      "name": "Navmesh Path Draw + legacy NavMeshComponents",
+      "roots": [
+        "Assets/Navmesh Path Draw"
+      ],
+      "installed_version": null,
+      "version_evidence": [],
+      "category": "navigation route visualization + bundled legacy components",
+      "sprint_recommendation": "Later objective/depot route hint",
+      "purpose": "Draws a path with LineRenderer; local code has movement/recalculation thresholds, ground projection and direct fallback settings.",
+      "setup_and_api": "Assign destination and LineRenderer/material, ground layers and agent settings. Local methods setDestinationAndDrawPath(Transform), Draw() and Stop() are case-sensitive.",
+      "cautions": "A line is not vehicle control. Inspect fallback paths for unreachable destinations. Bundled UnityEngine.AI.NavMeshSurface coexists with modern AI Navigation; choose the intended namespace rather than assuming identical components.",
+      "entry_points": [
+        "Assets/Navmesh Path Draw/Scripts/NavmeshPathDraw.cs",
+        "Assets/Navmesh Path Draw/Scripts/NavMeshComponents/Assets/NavMeshComponents/Scripts/NavMeshSurface.cs",
+        "Assets/Navmesh Path Draw/Readme.md"
+      ],
+      "files": 70,
+      "bytes": 977314,
+      "csharp_files": 14,
+      "extension_counts": {
+        ".asset": 1,
+        ".cs": 14,
+        ".mat": 5,
+        ".md": 1,
+        ".pdf": 1,
+        ".png": 4,
+        ".prefab": 1,
+        ".unity": 1
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "offscreen",
+      "name": "Pixel Play Off-Screen Indicator",
+      "roots": [
+        "Assets/Pixel Play"
+      ],
+      "installed_version": "not established; bundled guide filename says 3.0",
+      "version_evidence": [],
+      "category": "UI navigation/target indicators",
+      "sprint_recommendation": "Later, if a depot can leave the camera view",
+      "purpose": "Targets with off-screen arrows, boxes and distance labels, with associated indicator pools.",
+      "setup_and_api": "Bind the camera and Canvas/indicator prefabs in OffScreenIndicator. Add Target to desired objects. Target enable/disable calls SetTargetState; configure NeedBoxIndicator/NeedArrowIndicator/NeedDistanceText in its Inspector.",
+      "cautions": "Target and indicator classes have broad/global names; use a game namespace for your code. Validate camera behind/front tests, safe-area boundaries and despawn cleanup. ExtendedFlycam is a demo camera, not production vehicle input.",
+      "entry_points": [
+        "Assets/Pixel Play/Scripts/OffScreenIndicator/OffScreenIndicator.cs",
+        "Assets/Pixel Play/Scripts/OffScreenIndicator/Target.cs",
+        "Assets/Pixel Play/Scripts/OffScreenIndicator/OffScreenIndicatorCore.cs"
+      ],
+      "files": 32,
+      "bytes": 155704,
+      "csharp_files": 7,
+      "extension_counts": {
+        ".cs": 7,
+        ".pdf": 1,
+        ".png": 2,
+        ".prefab": 2,
+        ".unity": 1
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "litjson",
+      "name": "LitJson",
+      "roots": [
+        "Assets/LitJson"
+      ],
+      "installed_version": null,
+      "version_evidence": [],
+      "category": "JSON serialization library",
+      "sprint_recommendation": "Use only if the chosen data format needs it",
+      "purpose": "JsonData/JsonReader/JsonWriter and JsonMapper conversions between objects and JSON.",
+      "setup_and_api": "Use LitJson.JsonMapper.ToJson and ToObject<T> with deliberate data transfer types. Add schema versioning, validation, defaults and migration rules at the game layer.",
+      "cautions": "A serializer is not a complete save system. Avoid multiple serializers for one save schema; verify IL2CPP/reflection/stripping behavior for chosen types and corrupted-file recovery on Android.",
+      "entry_points": [
+        "Assets/LitJson/JsonMapper.cs",
+        "Assets/LitJson/JsonData.cs",
+        "Assets/LitJson/JsonReader.cs"
+      ],
+      "files": 20,
+      "bytes": 122535,
+      "csharp_files": 10,
+      "extension_counts": {
+        ".cs": 10
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "candy-haptics",
+      "name": "CandyCoded Haptic Feedback",
+      "roots": [
+        "Assets/Haptic/Plugins/CandyCoded.HapticFeedback"
+      ],
+      "installed_version": "1.0.3",
+      "version_evidence": [
+        "Assets/Haptic/Plugins/CandyCoded.HapticFeedback/package.json"
+      ],
+      "category": "native mobile haptic wrapper",
+      "sprint_recommendation": "Alternative to Nice Vibrations, not an additional simultaneous route",
+      "purpose": "Simple LightFeedback, MediumFeedback and HeavyFeedback calls with Android/iOS bridges.",
+      "setup_and_api": "API namespace/type CandyCoded.HapticFeedback.HapticFeedback. Keep a game-level preference/throttle and call one selected provider only. Inspect native target import and AndroidJNI module dependency.",
+      "cautions": "Package JSON is vendored in Assets, not installed as a manifest dependency. No device test was run. The local package metadata declares MIT; retain original notices.",
+      "entry_points": [
+        "Assets/Haptic/Plugins/CandyCoded.HapticFeedback/Scripts/HapticFeedback.cs",
+        "Assets/Haptic/Plugins/CandyCoded.HapticFeedback/Plugins/Android/HapticFeedback.cs",
+        "Assets/Haptic/Plugins/CandyCoded.HapticFeedback/Plugins/iOS/HapticFeedback.cs",
+        "Assets/Haptic/Plugins/CandyCoded.HapticFeedback/package.json"
+      ],
+      "files": 26,
+      "bytes": 14843,
+      "csharp_files": 4,
+      "extension_counts": {
+        ".aar": 1,
+        ".asmdef": 3,
+        ".cs": 4,
+        ".java": 1,
+        ".json": 1,
+        ".mm": 1
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "logs",
+      "name": "Unity Logs Viewer / Reporter",
+      "roots": [
+        "Assets/Unity-Logs-Viewer"
+      ],
+      "installed_version": "readme changelog latest entry 1.8",
+      "version_evidence": [
+        "Assets/Unity-Logs-Viewer/README.md"
+      ],
+      "category": "in-game diagnostics overlay",
+      "sprint_recommendation": "Development-only option after input adaptation",
+      "purpose": "Shows console logs in a running game, traditionally opened with a circle gesture.",
+      "setup_and_api": "Bundled README describes Reporter > Create and script execution order. Inspect Reporter/Reporter.cs and ReporterGUI.cs. Verify opening/closing without intercepting normal gameplay.",
+      "cautions": "Reporter uses UnityEngine.Input touch/mouse calls and needs attention under new-only input. Keep logs bounded and avoid shipping noisy debug UI or sensitive game/session data in release builds.",
+      "entry_points": [
+        "Assets/Unity-Logs-Viewer/Reporter/Reporter.cs",
+        "Assets/Unity-Logs-Viewer/Reporter/ReporterGUI.cs",
+        "Assets/Unity-Logs-Viewer/README.md"
+      ],
+      "files": 139,
+      "bytes": 979390,
+      "csharp_files": 7,
+      "extension_counts": {
+        ".cs": 7,
+        ".css": 1,
+        ".guiskin": 1,
+        ".htm": 1,
+        ".lighting": 3,
+        ".md": 1,
+        ".png": 50,
+        ".unity": 3
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "asset-cleaner",
+      "name": "Asset Cleaner (with internal LeoECS helper)",
+      "roots": [
+        "Assets/Unity_Packages/Asset Cleaner"
+      ],
+      "installed_version": null,
+      "version_evidence": [],
+      "category": "Editor-only dependency/reference tool",
+      "sprint_recommendation": "Use later for a reviewed cleanup",
+      "purpose": "Reference/search and cleanup tooling. The vendored LeoECS sources support the tool, not an established gameplay ECS architecture.",
+      "setup_and_api": "Inspect the editor window/menu entry and search results. Start with reference inspection and a reversible cleanup plan.",
+      "cautions": "AssetCleaner.asmdef explicitly targets Editor. Do not flag its UnityEditor usages as player failures based only on folder names. Dynamic/string loads and Resources require manual review before deleting assets.",
+      "entry_points": [
+        "Assets/Unity_Packages/Asset Cleaner/AssetCleaner.asmdef",
+        "Assets/Unity_Packages/Asset Cleaner/Systems/External/AufWindow.cs",
+        "Assets/Unity_Packages/Asset Cleaner/Systems/SysProcessSearch.cs"
+      ],
+      "files": 112,
+      "bytes": 295612,
+      "csharp_files": 43,
+      "extension_counts": {
+        ".asmdef": 1,
+        ".asset": 1,
+        ".cs": 43,
+        ".png": 7
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "tiny-trail",
+      "name": "MiniGames / Tiny Trail",
+      "roots": [
+        "Assets/Unity_Packages/MiniGames/Trail"
+      ],
+      "installed_version": null,
+      "version_evidence": [],
+      "category": "runtime procedural trail + editor",
+      "sprint_recommendation": "Later vehicle/tool visual trail",
+      "purpose": "Builds a mesh trail along an array of points, with duration, material and corner settings.",
+      "setup_and_api": "Use Tiny.Trail; configure Points, material and duration. Clear() exists for restarting from a new position. The source header contains an MIT-style permission notice.",
+      "cautions": "A generated visual trail is not persistent tire tracks or terrain deformation. Check Clear and enable/pool behavior, URP material and mesh allocations before frequent reuse.",
+      "entry_points": [
+        "Assets/Unity_Packages/MiniGames/Trail/Trail.cs",
+        "Assets/Unity_Packages/MiniGames/Trail/Editor/TrailEditor.cs"
+      ],
+      "files": 5,
+      "bytes": 17728,
+      "csharp_files": 2,
+      "extension_counts": {
+        ".cs": 2
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "epic-toon",
+      "name": "Epic Toon FX",
+      "roots": [
+        "Assets/Epic Toon FX"
+      ],
+      "installed_version": "changelog latest entry v1.81 (2023-03-01)",
+      "version_evidence": [
+        "Assets/Epic Toon FX/Changelog.txt"
+      ],
+      "category": "world particle/audio library + demo controllers",
+      "sprint_recommendation": "Use a small curated set",
+      "purpose": "Large selection of impact, dust, explosion, environment, pickup and reward prefabs.",
+      "setup_and_api": "Choose a few prefabs, inspect their components, then create game-owned variants. Drive playback from Feel or one VFX service. ETFXLightFade, ETFXPitchRandomizer and ETFXRotation are small supporting scripts.",
+      "cautions": "Largest source folder. Old URP notes do not prove Unity 6 renderer compatibility. Check lights, soft particles, sound, stop action and demo scripts before pooling. No visual preview was run in this project.",
+      "entry_points": [
+        "Assets/Epic Toon FX/Changelog.txt",
+        "Assets/Epic Toon FX/Upgrade/URP Compatibility.txt",
+        "Assets/Epic Toon FX/Scripts/ETFXLightFade.cs",
+        "Assets/Epic Toon FX/Scripts/ETFXPitchRandomizer.cs",
+        "Assets/Epic Toon FX/Prefabs/Combat/Explosions (Misc)/HitDustExplosion.prefab"
+      ],
+      "files": 5091,
+      "bytes": 568886766,
+      "csharp_files": 17,
+      "extension_counts": {
+        ".anim": 2,
+        ".asset": 2,
+        ".controller": 2,
+        ".cs": 17,
+        ".exr": 1,
+        ".fbx": 21,
+        ".mat": 358,
+        ".pdf": 1,
+        ".png": 369,
+        ".prefab": 1449,
+        ".shader": 2,
+        ".txt": 5,
+        ".unity": 39,
+        ".wav": 79
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "cartoon-fx",
+      "name": "JMO Cartoon FX Remaster + Easy Editor",
+      "roots": [
+        "Assets/JMO Assets"
+      ],
+      "installed_version": null,
+      "version_evidence": [],
+      "category": "partial import: effect/runtime/editor scripts only",
+      "sprint_recommendation": "Reference helpers; no ready VFX library here",
+      "purpose": "The local folder contains 16 C# scripts and metadata, including effect behavior, particle text and material/shader editor helpers. No prefabs, textures, materials or shaders were found in this root.",
+      "setup_and_api": "Inspect CFXR_Effect before integrating a separately supplied, licensed complete effect. Its camera-shake and auto-disable/destroy behavior need one clear owner. Particle text needs its supporting assets.",
+      "cautions": "Do not ask the agent to select a Cartoon FX prefab from this checkout: none was found. Camera shake can duplicate Feel. Demo Kino Bloom is not the URP bloom setup. Source presence does not imply a complete installed asset pack.",
+      "entry_points": [
+        "Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Scripts/CFXR_Effect.cs",
+        "Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Scripts/CFXR_Effect.CameraShake.cs",
+        "Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Scripts/CFXR_ParticleText.cs"
+      ],
+      "files": 41,
+      "bytes": 197277,
+      "csharp_files": 16,
+      "extension_counts": {
+        ".cs": 16
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "particle-samples",
+      "name": "Particlecollection Free samples",
+      "roots": [
+        "Assets/Particlecollection_Free samples"
+      ],
+      "installed_version": null,
+      "version_evidence": [],
+      "category": "partial import: effect helper scripts only",
+      "sprint_recommendation": "Defer",
+      "purpose": "The local folder contains 11 C# scripts and metadata, including custom effect and rendering/editor helpers. No actual particle prefabs, materials, textures or shaders were found here.",
+      "setup_and_api": "Inspect EffectController and RenderEffect only if a future selected effect needs them. Do not assume the sample effect content is installed.",
+      "cautions": "Not a mandatory dependency for Feel or DOTween. A complete licensed effect and compatible shader would need to be supplied separately before visual use. Avoid bringing example camera/input controllers into gameplay.",
+      "entry_points": [
+        "Assets/Particlecollection_Free samples/Plugins/Effect/Script/EffectController.cs",
+        "Assets/Particlecollection_Free samples/Plugins/Effect/Script/RenderEffect.cs"
+      ],
+      "files": 27,
+      "bytes": 47818,
+      "csharp_files": 11,
+      "extension_counts": {
+        ".cs": 11
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "sparkles",
+      "name": "Sparkles",
+      "roots": [
+        "Assets/Sparkles"
+      ],
+      "installed_version": null,
+      "version_evidence": [],
+      "category": "partial import: demo scripts only",
+      "sprint_recommendation": "Do not depend on this as a ready effect pack",
+      "purpose": "Only four C# demo scripts and metadata were found: looping, mouse orbit, scene button and gem rotation. No sparkle effect prefab/material/texture/shader is present in this root.",
+      "setup_and_api": "Treat SparkleLoopEffect and other controllers as sample code. Choose an actual existing Epic Toon FX or Particle Image effect for current implementation instead.",
+      "cautions": "Folder name is not proof of usable VFX content. A future complete pack would require a separate license/import/render check; do not create references to nonexistent Sparkles assets.",
+      "entry_points": [
+        "Assets/Sparkles/Demo/Scene Setup/Scripts/SparkleLoopEffect.cs",
+        "Assets/Sparkles/Demo/Scene Setup/Scripts/GemSimpleRotate.cs"
+      ],
+      "files": 11,
+      "bytes": 6684,
+      "csharp_files": 4,
+      "extension_counts": {
+        ".cs": 4
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "standard-assets",
+      "name": "Legacy Unity Standard Assets",
+      "roots": [
+        "Assets/Standard Assets"
+      ],
+      "installed_version": null,
+      "version_evidence": [],
+      "category": "partial legacy sample source library",
+      "sprint_recommendation": "Reference only unless deliberately adapted",
+      "purpose": "88 C# scripts and metadata for older cross-platform input, first/third-person controllers, cars/aircraft, follow cameras and particle utilities. No ready prefabs/materials/scenes were found in this root.",
+      "setup_and_api": "Inspect the specific subsystem if reusing it. Existing CrossPlatformInput and vehicle examples are separate architectures, not the current Input System setup.",
+      "cautions": "Contains legacy Input calls. CarController is not an automatically suitable tracked-vehicle motor. A future complete example scene could add conflicting cameras/input/effects; none is supplied in this folder.",
+      "entry_points": [
+        "Assets/Standard Assets/CrossPlatformInput/Scripts/CrossPlatformInputManager.cs",
+        "Assets/Standard Assets/Vehicles/Car/Scripts/CarController.cs",
+        "Assets/Standard Assets/Vehicles/Car/Scripts/CarUserControl.cs",
+        "Assets/Standard Assets/Cameras/Scripts/AutoCam.cs"
+      ],
+      "files": 200,
+      "bytes": 315571,
+      "csharp_files": 88,
+      "extension_counts": {
+        ".cs": 88
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "tmp-assets",
+      "name": "TextMesh Pro project resources and examples",
+      "roots": [
+        "Assets/TextMesh Pro"
+      ],
+      "installed_version": "runtime supplied by uGUI 2.0.0; resource asset version not established",
+      "version_evidence": [],
+      "category": "fonts/resources/examples",
+      "sprint_recommendation": "Use TMP for HUD text; keep examples out of gameplay",
+      "purpose": "Project font/material resources and sample content used with Unity TMP components.",
+      "setup_and_api": "Use TMP_Text/TextMeshProUGUI with chosen font assets and required glyphs. DOTween has TMP shortcuts and Feel has conditional TMP feedbacks.",
+      "cautions": "Do not install duplicate standalone TMP runtime based on an old tutorial. Keep the font/material/glyph resources actually referenced by game UI. Example scripts are not the HUD implementation.",
+      "entry_points": [
+        "Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs"
+      ],
+      "files": 366,
+      "bytes": 9909202,
+      "csharp_files": 34,
+      "extension_counts": {
+        ".asset": 18,
+        ".cginc": 4,
+        ".cs": 34,
+        ".hlsl": 1,
+        ".jpg": 10,
+        ".json": 1,
+        ".mat": 26,
+        ".png": 4,
+        ".prefab": 3,
+        ".psd": 6,
+        ".shader": 14,
+        ".shadergraph": 4,
+        ".ttf": 7,
+        ".txt": 10,
+        ".unity": 31
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "kenney-factory",
+      "name": "Kenney Factory Kit",
+      "roots": [
+        "Assets/1_Plugins/kenney_factory-kit_3.0"
+      ],
+      "installed_version": "Factory Kit (3.0)",
+      "version_evidence": [
+        "Assets/1_Plugins/kenney_factory-kit_3.0/License.txt"
+      ],
+      "category": "art/audio source library",
+      "sprint_recommendation": "Select original-game prototype content as needed",
+      "purpose": "Reusable source content rather than a runtime plugin. Use selectively for prototype scenery, structures or effect textures.",
+      "setup_and_api": "Keep original license files; choose assets matching the new game visual direction and create game-owned variants/materials. Names and versions above come from the bundled license heading.",
+      "cautions": "Bundled notices identify CC0. Actual models/materials/audio were not previewed or auditioned here. Check scale, colliders, texture import and renderer settings; folder presence does not make a prefab gameplay-ready.",
+      "entry_points": [
+        "Assets/1_Plugins/kenney_factory-kit_3.0/License.txt"
+      ],
+      "files": 1463,
+      "bytes": 13457927,
+      "csharp_files": 0,
+      "extension_counts": {
+        ".fbx": 143,
+        ".glb": 143,
+        ".html": 1,
+        ".mtl": 143,
+        ".obj": 143,
+        ".png": 150,
+        ".txt": 1,
+        ".url": 3
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "kenney-nature",
+      "name": "Kenney Nature Kit",
+      "roots": [
+        "Assets/1_Plugins/kenney_nature-kit"
+      ],
+      "installed_version": "Nature Kit (2.1)",
+      "version_evidence": [
+        "Assets/1_Plugins/kenney_nature-kit/License.txt"
+      ],
+      "category": "art/audio source library",
+      "sprint_recommendation": "Select original-game prototype content as needed",
+      "purpose": "Reusable source content rather than a runtime plugin. Use selectively for prototype scenery, structures or effect textures.",
+      "setup_and_api": "Keep original license files; choose assets matching the new game visual direction and create game-owned variants/materials. Names and versions above come from the bundled license heading.",
+      "cautions": "Bundled notices identify CC0. Actual models/materials/audio were not previewed or auditioned here. Check scale, colliders, texture import and renderer settings; folder presence does not make a prefab gameplay-ready.",
+      "entry_points": [
+        "Assets/1_Plugins/kenney_nature-kit/License.txt"
+      ],
+      "files": 7244,
+      "bytes": 37654317,
+      "csharp_files": 0,
+      "extension_counts": {
+        ".dae": 329,
+        ".fbx": 329,
+        ".glb": 329,
+        ".mtl": 329,
+        ".obj": 329,
+        ".png": 1640,
+        ".stl": 329,
+        ".txt": 1,
+        ".url": 3
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "kenney-impact",
+      "name": "Kenney Impact Sounds",
+      "roots": [
+        "Assets/1_Plugins/kenney_impact-sounds"
+      ],
+      "installed_version": "Impact Sounds (1.0)",
+      "version_evidence": [
+        "Assets/1_Plugins/kenney_impact-sounds/License.txt"
+      ],
+      "category": "art/audio source library",
+      "sprint_recommendation": "Select original-game prototype content as needed",
+      "purpose": "Reusable source content rather than a runtime plugin. Impact clips are candidates for drill/deposit sound variation.",
+      "setup_and_api": "Keep original license files; choose assets matching the new game visual direction and create game-owned variants/materials. Names and versions above come from the bundled license heading.",
+      "cautions": "Bundled notices identify CC0. Actual models/materials/audio were not previewed or auditioned here. Check scale, colliders, texture import and renderer settings; folder presence does not make a prefab gameplay-ready.",
+      "entry_points": [
+        "Assets/1_Plugins/kenney_impact-sounds/License.txt"
+      ],
+      "files": 267,
+      "bytes": 1098692,
+      "csharp_files": 0,
+      "extension_counts": {
+        ".ogg": 130,
+        ".txt": 1,
+        ".url": 2
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    },
+    {
+      "id": "kenney-particle",
+      "name": "Kenney Particle Pack",
+      "roots": [
+        "Assets/1_Plugins/kenney_particle-pack"
+      ],
+      "installed_version": "Particle Pack (1.1)",
+      "version_evidence": [
+        "Assets/1_Plugins/kenney_particle-pack/License.txt"
+      ],
+      "category": "art/audio source library",
+      "sprint_recommendation": "Select original-game prototype content as needed",
+      "purpose": "Reusable source content rather than a runtime plugin. Use selectively for prototype scenery, structures or effect textures.",
+      "setup_and_api": "Keep original license files; choose assets matching the new game visual direction and create game-owned variants/materials. Names and versions above come from the bundled license heading.",
+      "cautions": "Bundled notices identify CC0. Actual models/materials/audio were not previewed or auditioned here. Check scale, colliders, texture import and renderer settings; folder presence does not make a prefab gameplay-ready.",
+      "entry_points": [
+        "Assets/1_Plugins/kenney_particle-pack/License.txt"
+      ],
+      "files": 393,
+      "bytes": 10353887,
+      "csharp_files": 0,
+      "extension_counts": {
+        ".png": 193,
+        ".txt": 1
+      },
+      "verification": "static local inspection; not imported, compiled or run"
+    }
+  ],
+  "direct_packages": [
+    {
+      "id": "com.unity.ai.navigation",
+      "version": "2.0.16",
+      "lock_version": "2.0.16",
+      "role": "NavMesh authoring/runtime support; optional for later NPC/helper or route visualization, not required for direct player steering."
+    },
+    {
+      "id": "com.unity.collab-proxy",
+      "version": "2.12.4",
+      "lock_version": "2.12.4",
+      "role": "Unity Version Control integration; not a gameplay dependency or a reason to change the existing Git workflow."
+    },
+    {
+      "id": "com.unity.ide.rider",
+      "version": "3.0.39",
+      "lock_version": "3.0.39",
+      "role": "Rider IDE integration; editor convenience."
+    },
+    {
+      "id": "com.unity.ide.visualstudio",
+      "version": "2.0.26",
+      "lock_version": "2.0.26",
+      "role": "Visual Studio IDE integration; editor convenience."
+    },
+    {
+      "id": "com.unity.inputsystem",
+      "version": "1.19.0",
+      "lock_version": "1.19.0",
+      "role": "Primary input package; use actions and the matching UI module for new input."
+    },
+    {
+      "id": "com.unity.multiplayer.center",
+      "version": "1.0.1",
+      "lock_version": "1.0.1",
+      "role": "Editor guidance for multiplayer tooling; not evidence that networking is implemented."
+    },
+    {
+      "id": "com.unity.render-pipelines.universal",
+      "version": "17.3.0",
+      "lock_version": "17.3.0",
+      "role": "Active graphics framework; check materials/effects against Android renderer settings."
+    },
+    {
+      "id": "com.unity.test-framework",
+      "version": "1.6.0",
+      "lock_version": "1.6.0",
+      "role": "Edit/Play Mode tests when implementing behavior; this research did not run them."
+    },
+    {
+      "id": "com.unity.timeline",
+      "version": "1.8.12",
+      "lock_version": "1.8.12",
+      "role": "Authored temporal/cinematic tracks; optional and unnecessary for a few UI pulses."
+    },
+    {
+      "id": "com.unity.ugui",
+      "version": "2.0.0",
+      "lock_version": "2.0.0",
+      "role": "Canvas/uGUI and Unity 6 TMP runtime used by the installed UI tools."
+    },
+    {
+      "id": "com.unity.visualscripting",
+      "version": "1.9.11",
+      "lock_version": "1.9.11",
+      "role": "Unity graph-based scripting; distinct from DOTween Pro visual components. No graph architecture chosen."
+    },
+    {
+      "id": "com.unity.modules.accessibility",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.adaptiveperformance",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.ai",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.androidjni",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.animation",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.assetbundle",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.audio",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.cloth",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.director",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.imageconversion",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.imgui",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.jsonserialize",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.particlesystem",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.physics",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.physics2d",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.screencapture",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.terrain",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.terrainphysics",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.tilemap",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.ui",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.uielements",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.umbra",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.unityanalytics",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.unitywebrequest",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.unitywebrequestassetbundle",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.unitywebrequestaudio",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.unitywebrequesttexture",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.unitywebrequestwww",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.vectorgraphics",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.vehicles",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.video",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.vr",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.wind",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.modules.xr",
+      "version": "1.0.0",
+      "lock_version": "1.0.0",
+      "role": "Unity built-in module dependency."
+    },
+    {
+      "id": "com.unity.pipeline",
+      "version": "0.9.1-exp.1",
+      "lock_version": "0.9.1-exp.1",
+      "role": "Experimental package entry. Its actual role/API was not established by manifest inspection; do not assume it is URP or needed for gameplay."
+    }
+  ],
+  "other_asset_roots": {
+    "0_ProjectData": "Present, no C# game implementation found in prior review.",
+    "Scenes": "Project scenes, not a plugin.",
+    "Settings": "URP/input/project settings assets, not a plugin.",
+    "StreamingAssets": "Runtime data location, not a package; assess contents before cleanup.",
+    "TutorialInfo": "Unity template tutorial/readme editor content, not gameplay middleware."
+  }
+}

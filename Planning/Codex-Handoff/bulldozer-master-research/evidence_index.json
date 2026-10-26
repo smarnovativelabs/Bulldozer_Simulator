@@ -1,0 +1,134 @@
+[
+  {
+    "id": "E01",
+    "source_id": "V2",
+    "seconds": 20,
+    "timestamp": "00:20",
+    "file": "references/e01_v2_0020s.png",
+    "title": "Processing tutorial",
+    "observation": "The opening tutorial directs raw material through a refinery before sale.",
+    "evidence_kind": "observed_video_frame",
+    "url": "https://www.youtube.com/watch?v=R_zuyy1o2UE&t=20s"
+  },
+  {
+    "id": "E02",
+    "source_id": "V1",
+    "seconds": 30,
+    "timestamp": "00:30",
+    "file": "references/e02_v1_0030s.png",
+    "title": "Processing and delivery area",
+    "observation": "Refinery input/output, carried-load count, a sale area and truck are visible.",
+    "evidence_kind": "observed_video_frame",
+    "url": "https://www.youtube.com/watch?v=IwMD7SOjFTs&t=30s"
+  },
+  {
+    "id": "E03",
+    "source_id": "V1",
+    "seconds": 93,
+    "timestamp": "01:33",
+    "file": "references/e03_v1_0093s.png",
+    "title": "Worker management",
+    "observation": "Roles, star ratings, equipment, four stat labels and a stage-only hiring notice.",
+    "evidence_kind": "observed_video_frame",
+    "url": "https://www.youtube.com/watch?v=IwMD7SOjFTs&t=93s"
+  },
+  {
+    "id": "E04",
+    "source_id": "V1",
+    "seconds": 192,
+    "timestamp": "03:12",
+    "file": "references/e04_v1_0192s.png",
+    "title": "Worker facility",
+    "observation": "A worker building and ground interaction marker are visible.",
+    "evidence_kind": "observed_video_frame",
+    "url": "https://www.youtube.com/watch?v=IwMD7SOjFTs&t=192s"
+  },
+  {
+    "id": "E05",
+    "source_id": "V1",
+    "seconds": 294,
+    "timestamp": "04:54",
+    "file": "references/e05_v1_0294s.png",
+    "title": "Heavy equipment rental",
+    "observation": "A roller-crusher offer illustrates a separate heavy-equipment layer.",
+    "evidence_kind": "observed_video_frame",
+    "url": "https://www.youtube.com/watch?v=IwMD7SOjFTs&t=294s"
+  },
+  {
+    "id": "E06",
+    "source_id": "V1",
+    "seconds": 341,
+    "timestamp": "05:41",
+    "file": "references/e06_v1_0341s.png",
+    "title": "Fuel-powered machinery",
+    "observation": "Rental signage, a gauge and large machinery are visible; exact fuel rules are unverified.",
+    "evidence_kind": "observed_video_frame",
+    "url": "https://www.youtube.com/watch?v=IwMD7SOjFTs&t=341s"
+  },
+  {
+    "id": "E07",
+    "source_id": "V1",
+    "seconds": 512,
+    "timestamp": "08:32",
+    "file": "references/e07_v1_0512s.png",
+    "title": "Equipment progression",
+    "observation": "Mining and carrying tabs with locked equipment progression.",
+    "evidence_kind": "observed_video_frame",
+    "url": "https://www.youtube.com/watch?v=IwMD7SOjFTs&t=512s"
+  },
+  {
+    "id": "E08",
+    "source_id": "V2",
+    "seconds": 599,
+    "timestamp": "09:59",
+    "file": "references/e08_v2_0599s.png",
+    "title": "Mining and full cargo",
+    "observation": "Rock corridors, fragments, cargo-full feedback, task card and direction cue.",
+    "evidence_kind": "observed_video_frame",
+    "url": "https://www.youtube.com/watch?v=R_zuyy1o2UE&t=599s"
+  },
+  {
+    "id": "E09",
+    "source_id": "V2",
+    "seconds": 788,
+    "timestamp": "13:08",
+    "file": "references/e09_v2_0788s.png",
+    "title": "Cargo and vehicle scale",
+    "observation": "Tall carried material and a large vehicle occupy the cleared route.",
+    "evidence_kind": "observed_video_frame",
+    "url": "https://www.youtube.com/watch?v=R_zuyy1o2UE&t=788s"
+  },
+  {
+    "id": "E10",
+    "source_id": "V2",
+    "seconds": 1182,
+    "timestamp": "19:42",
+    "file": "references/e10_v2_1182s.png",
+    "title": "Repeated mining loop",
+    "observation": "A later sample still shows the mining corridor, full load and persistent task UI.",
+    "evidence_kind": "observed_video_frame",
+    "url": "https://www.youtube.com/watch?v=R_zuyy1o2UE&t=1182s"
+  },
+  {
+    "id": "E11",
+    "source_id": "V2",
+    "seconds": 1576,
+    "timestamp": "26:16",
+    "file": "references/e11_v2_1576s.png",
+    "title": "Return route",
+    "observation": "Loaded character, direction marker and distance indicator on a longer route.",
+    "evidence_kind": "observed_video_frame",
+    "url": "https://www.youtube.com/watch?v=R_zuyy1o2UE&t=1576s"
+  },
+  {
+    "id": "E12",
+    "source_id": "V2",
+    "seconds": 1773,
+    "timestamp": "29:33",
+    "file": "references/e12_v2_1773s.png",
+    "title": "Equipment and upgrade task",
+    "observation": "The later view includes vehicles, walkways and an upgrade-related task.",
+    "evidence_kind": "observed_video_frame",
+    "url": "https://www.youtube.com/watch?v=R_zuyy1o2UE&t=1773s"
+  }
+]

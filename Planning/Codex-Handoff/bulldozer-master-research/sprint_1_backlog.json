@@ -1,0 +1,160 @@
+{
+  "sprint": 1,
+  "status": "not_started",
+  "scope": "Original playable mining and hauling loop",
+  "tasks": [
+    {
+      "id": "S1-01",
+      "title": "Project baseline",
+      "depends_on": [],
+      "status": "todo",
+      "acceptance": [
+        "Project compiles",
+        "Correct pipeline and materials",
+        "Versions and assumptions recorded"
+      ]
+    },
+    {
+      "id": "S1-02",
+      "title": "Movement and camera",
+      "depends_on": [
+        "S1-01"
+      ],
+      "status": "todo",
+      "acceptance": [
+        "Keyboard and touch supported",
+        "No stuck input or fast diagonals",
+        "Collision and camera usable"
+      ]
+    },
+    {
+      "id": "S1-03",
+      "title": "Drilling and deposits",
+      "depends_on": [
+        "S1-02"
+      ],
+      "status": "todo",
+      "acceptance": [
+        "Stable deposit IDs",
+        "Three baseline hits",
+        "One destruction event",
+        "Destroyed collider is disabled and remains absent after reload"
+      ]
+    },
+    {
+      "id": "S1-04",
+      "title": "Fragments and cargo",
+      "depends_on": [
+        "S1-03"
+      ],
+      "status": "todo",
+      "acceptance": [
+        "Exactly three drops per deposit",
+        "Eight-unit cap",
+        "Overflow survives collection and unload",
+        "Material ownership changes once, independently of visual effects",
+        "Reused views reset IDs and interaction state, if pooling is used"
+      ]
+    },
+    {
+      "id": "S1-05",
+      "title": "Depot and wallet",
+      "depends_on": [
+        "S1-04"
+      ],
+      "status": "todo",
+      "acceptance": [
+        "One full load pays 40 once",
+        "Cumulative deliveries separate from wallet",
+        "HUD updates from authoritative state"
+      ]
+    },
+    {
+      "id": "S1-06",
+      "title": "Drill upgrade",
+      "depends_on": [
+        "S1-05"
+      ],
+      "status": "todo",
+      "acceptance": [
+        "Costs 60 credits",
+        "Two upgraded hits",
+        "Atomic and non-repeatable purchase"
+      ]
+    },
+    {
+      "id": "S1-07",
+      "title": "Contract and basic UI",
+      "depends_on": [
+        "S1-06"
+      ],
+      "status": "todo",
+      "acceptance": [
+        "60 delivered plus upgrade completes once",
+        "Beacon and hints readable",
+        "Pause mute and reset work",
+        "Hints advance once on successful actions; failed actions do not advance them"
+      ]
+    },
+    {
+      "id": "S1-08",
+      "title": "Persistence",
+      "depends_on": [
+        "S1-03",
+        "S1-04",
+        "S1-05",
+        "S1-06",
+        "S1-07"
+      ],
+      "status": "todo",
+      "acceptance": [
+        "Partial HP and drops survive restart",
+        "Wallet and inventory remain consistent",
+        "Backup recovery tested",
+        "Hint progress restores coherently",
+        "The fixed-layout 90-fragment conservation invariant survives reload"
+      ]
+    },
+    {
+      "id": "S1-09",
+      "title": "Visual and performance pass",
+      "depends_on": [
+        "S1-02",
+        "S1-03",
+        "S1-04",
+        "S1-05",
+        "S1-06",
+        "S1-07",
+        "S1-08"
+      ],
+      "status": "todo",
+      "acceptance": [
+        "Original cohesive look",
+        "Safe-area HUD",
+        "Stress case inspected"
+      ]
+    },
+    {
+      "id": "S1-10",
+      "title": "Validation and build",
+      "depends_on": [
+        "S1-01",
+        "S1-02",
+        "S1-03",
+        "S1-04",
+        "S1-05",
+        "S1-06",
+        "S1-07",
+        "S1-08",
+        "S1-09"
+      ],
+      "status": "todo",
+      "acceptance": [
+        "Acceptance results reported",
+        "Standalone build or concrete blocker",
+        "Screenshots and run instructions",
+        "A19-A21 results reported, with pooling branch N/A explained if appropriate"
+      ]
+    }
+  ]
+}

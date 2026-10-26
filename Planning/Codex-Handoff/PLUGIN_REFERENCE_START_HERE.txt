@@ -1,0 +1,29 @@
+PLUGIN REFERENCE — START HERE
+Added 26 October 2026.
+
+Read Bulldozer_Plugin_Reference_2026-10-26/00_START_HERE.md first.
+Then use LAPTOP_AGENT_PLUGIN_PROMPT.txt inside that same folder.
+
+The pack covers DOTween Pro, Feel and the other installed plugin/library roots,
+with verified local APIs, a full installed plugin catalog, first-sprint recipes,
+known issues, compatibility notes, sampled video/source references, and a
+read-only source fingerprint checker. It contains 15 reference files.
+
+Important local findings:
+- Feel is 5.6.1; the current 6.3 release requires a newer Editor than this project.
+- DOTween DLL strings indicate core 1.2.420 and Pro 1.0.244; use local APIs.
+- Joystick.cs has a recursive AxisOptions getter; documented, not changed.
+- JMO Assets, Sparkles and Particlecollection are partial script-only imports.
+
+Run the included check_reference.py with --project pointing at this project's
+root to detect changed tracked source evidence. New files/art and Unity runtime
+behavior are outside that check. Read VALIDATION.txt for the research checks.
+
+This is documentation only. No Unity import, package upgrade, gameplay change,
+asset deletion, compilation, build, commit or push was performed.
+
+The earlier game research/repository review packs are preserved next to this
+pack. This reference does not resolve their differing Sprint 1 specifications.
+
+PLUGIN_REFERENCE_MANIFEST.json records the new files' hashes. The older
+HANDOFF_MANIFEST.json continues to describe the previous research/review copy.

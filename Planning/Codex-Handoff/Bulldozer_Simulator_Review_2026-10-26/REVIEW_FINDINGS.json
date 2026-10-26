@@ -1,0 +1,283 @@
+{
+  "review_date": "2026-10-26",
+  "timezone": "Asia/Karachi",
+  "repository": "https://github.com/smarnovativelabs/Bulldozer_Simulator",
+  "branch": "main",
+  "commit": "b57be43724b8a2988bb7fdd024a4dfdb907d678e",
+  "visibility_at_review": "public",
+  "scope": "Read-only remote review, complete path/size inventory and selected text inspection; no clone, Unity import, compilation or gameplay execution.",
+  "inventory": {
+    "truncated": false,
+    "entries": 23297,
+    "files": 22083,
+    "current_tree_blob_bytes": 1045523843,
+    "github_reported_size_kib": 333042,
+    "csharp_path_count": 1351,
+    "important_size_limit": "GitHub repository size, checkout payload, Unity Library, installed Editor, package cache and final build are different quantities."
+  },
+  "inspection": {
+    "text_files_read": 117,
+    "text_bytes_read": 369448,
+    "git_blob_hashes_verified": true,
+    "all_vendor_implementations_reviewed": false,
+    "unity_compile_test": "not_run",
+    "unity_gameplay_test": "not_run"
+  },
+  "setup": {
+    "unity_editor": "6000.3.13f1",
+    "urp": "17.3.0",
+    "input_system": "1.19.0",
+    "ai_navigation": "2.0.16",
+    "test_framework": "1.6.0",
+    "active_input_handler_serialized": 1,
+    "default_build_scene": "Assets/Scenes/SampleScene.unity",
+    "manifest_lock_direct_dependency_mismatches": 0
+  },
+  "scenes": [
+    {
+      "path": "Assets/0_ProjectData/0_Scenes/0_MainMenu.unity",
+      "gameobject_names": [
+        "Directional Light",
+        "Main Camera"
+      ],
+      "monobehaviour_blocks": 0,
+      "prefab_instance_blocks": 0
+    },
+    {
+      "path": "Assets/0_ProjectData/0_Scenes/1_Gameplay.unity",
+      "gameobject_names": [
+        "Main Camera",
+        "Directional Light"
+      ],
+      "monobehaviour_blocks": 0,
+      "prefab_instance_blocks": 0
+    },
+    {
+      "path": "Assets/Scenes/SampleScene.unity",
+      "gameobject_names": [
+        "Main Camera",
+        "Directional Light",
+        "Global Volume"
+      ],
+      "monobehaviour_blocks": 3,
+      "prefab_instance_blocks": 0
+    }
+  ],
+  "largest_groups": [
+    {
+      "path": "Assets/Epic Toon FX",
+      "files": 5092,
+      "bytes": 568892914
+    },
+    {
+      "path": "Assets/Feel",
+      "files": 4901,
+      "bytes": 382217323
+    },
+    {
+      "path": "Assets/1_Plugins",
+      "files": 9371,
+      "bytes": 62565511
+    },
+    {
+      "path": "Assets/TextMesh Pro",
+      "files": 366,
+      "bytes": 9909202
+    },
+    {
+      "path": "Assets/LeanTween",
+      "files": 434,
+      "bytes": 7501045
+    },
+    {
+      "path": "Assets/AssetKits",
+      "files": 196,
+      "bytes": 4361688
+    },
+    {
+      "path": "Assets/_CrazyMinds",
+      "files": 39,
+      "bytes": 2240636
+    },
+    {
+      "path": "Assets/Plugins",
+      "files": 332,
+      "bytes": 1536476
+    },
+    {
+      "path": "Assets/Unity_Packages",
+      "files": 391,
+      "bytes": 1364972
+    },
+    {
+      "path": "Assets/Unity-Logs-Viewer",
+      "files": 139,
+      "bytes": 979390
+    },
+    {
+      "path": "Assets/Navmesh Path Draw",
+      "files": 70,
+      "bytes": 977314
+    },
+    {
+      "path": "Assets/Joystick Pack",
+      "files": 71,
+      "bytes": 649795
+    },
+    {
+      "path": "Assets/KinematicCharacterController",
+      "files": 171,
+      "bytes": 603606
+    },
+    {
+      "path": "Assets/Standard Assets",
+      "files": 200,
+      "bytes": 315571
+    },
+    {
+      "path": "Assets/CrystalFramework",
+      "files": 19,
+      "bytes": 282365
+    },
+    {
+      "path": "Maintenance/2026-10-23-plugin-audit",
+      "files": 35,
+      "bytes": 265072
+    },
+    {
+      "path": "Assets/JMO Assets",
+      "files": 41,
+      "bytes": 197277
+    },
+    {
+      "path": "Assets/Pixel Play",
+      "files": 32,
+      "bytes": 155704
+    },
+    {
+      "path": "Assets/LitJson",
+      "files": 20,
+      "bytes": 122535
+    },
+    {
+      "path": "Assets/Settings",
+      "files": 14,
+      "bytes": 68751
+    }
+  ],
+  "demo_review_candidates_not_approved_deletions": [
+    {
+      "path": "Assets/Feel/FeelDemos/",
+      "bytes": 169103288
+    },
+    {
+      "path": "Assets/Feel/FeelDemosHDRP/",
+      "bytes": 28686933
+    },
+    {
+      "path": "Assets/Feel/MMFeedbacks/Demos/",
+      "bytes": 59864148
+    },
+    {
+      "path": "Assets/Feel/MMTools/Demos/",
+      "bytes": 34627474
+    },
+    {
+      "path": "Assets/Epic Toon FX/Demo/",
+      "bytes": 11063347
+    }
+  ],
+  "findings": [
+    {
+      "id": "R1",
+      "priority": "high",
+      "category": "implementation_gap",
+      "title": "The intended game is not implemented in the project scenes",
+      "evidence": [
+        "https://github.com/smarnovativelabs/Bulldozer_Simulator/blob/b57be43724b8a2988bb7fdd024a4dfdb907d678e/Assets/0_ProjectData/0_Scenes/0_MainMenu.unity#L133",
+        "https://github.com/smarnovativelabs/Bulldozer_Simulator/blob/b57be43724b8a2988bb7fdd024a4dfdb907d678e/Assets/0_ProjectData/0_Scenes/1_Gameplay.unity#L134",
+        "https://github.com/smarnovativelabs/Bulldozer_Simulator/tree/b57be43724b8a2988bb7fdd024a4dfdb907d678e/Assets/0_ProjectData"
+      ],
+      "observation": "Both project scenes contain only Main Camera and Directional Light, with no MonoBehaviour or prefab-instance blocks. No scripts exist beneath Assets/0_ProjectData in the complete tree.",
+      "impact": "There is no implemented driving/mining/cargo/selling/upgrade/save loop in those scenes to review or play.",
+      "action": "Treat this as setup completed and gameplay not started. Build one minimal vertical slice before expanding assets.",
+      "confidence": "high_static"
+    },
+    {
+      "id": "R2",
+      "priority": "high",
+      "category": "distribution_rights_review",
+      "title": "Public source includes vendor asset packages",
+      "evidence": [
+        "https://github.com/smarnovativelabs/Bulldozer_Simulator",
+        "https://github.com/smarnovativelabs/Bulldozer_Simulator/tree/b57be43724b8a2988bb7fdd024a4dfdb907d678e/Assets/Feel",
+        "https://github.com/smarnovativelabs/Bulldozer_Simulator/tree/b57be43724b8a2988bb7fdd024a4dfdb907d678e/Assets/Epic%20Toon%20FX",
+        "https://github.com/smarnovativelabs/Bulldozer_Simulator/tree/b57be43724b8a2988bb7fdd024a4dfdb907d678e/Assets/Plugins/Demigiant/DOTweenPro",
+        "https://unity.com/legal/as-terms"
+      ],
+      "observation": "Repository is public and contains raw vendor source/assets. Separate rights to redistribute these files were not established.",
+      "impact": "A game-use license may not authorize public source redistribution.",
+      "action": "Verify each applicable license and source-distribution permission. Consider private collaboration or an original-code-only public repository. Do not change visibility or rewrite history as part of this review.",
+      "confidence": "public_presence_verified_legal_entitlement_unknown"
+    },
+    {
+      "id": "R3",
+      "priority": "medium",
+      "category": "build_configuration",
+      "title": "Default build scene list points only to SampleScene",
+      "evidence": [
+        "https://github.com/smarnovativelabs/Bulldozer_Simulator/blob/b57be43724b8a2988bb7fdd024a4dfdb907d678e/ProjectSettings/EditorBuildSettings.asset#L7"
+      ],
+      "observation": "Only Assets/Scenes/SampleScene.unity is enabled. No committed BuildProfile assets were found in the tree.",
+      "impact": "A build using the committed default list will not start the intended game scene.",
+      "action": "After implementing the slice, set the intended entry scene in Build Profiles/scene list and test a standalone launch.",
+      "confidence": "high_static"
+    },
+    {
+      "id": "R4",
+      "priority": "medium",
+      "category": "conditional_integration_issue",
+      "title": "Bundled example controller uses legacy input under new-input-only settings",
+      "evidence": [
+        "https://github.com/smarnovativelabs/Bulldozer_Simulator/blob/b57be43724b8a2988bb7fdd024a4dfdb907d678e/ProjectSettings/ProjectSettings.asset#L930",
+        "https://github.com/smarnovativelabs/Bulldozer_Simulator/blob/b57be43724b8a2988bb7fdd024a4dfdb907d678e/Assets/KinematicCharacterController/ExampleCharacter/Scripts/ExamplePlayer.cs#L33",
+        "https://github.com/smarnovativelabs/Bulldozer_Simulator/blob/b57be43724b8a2988bb7fdd024a4dfdb907d678e/Assets/KinematicCharacterController/ExampleCharacter/Scripts/ExamplePlayer.cs#L88",
+        "https://docs.unity3d.com/Packages/com.unity.inputsystem@1.19/manual/Installation.html"
+      ],
+      "observation": "activeInputHandler is 1; ExamplePlayer calls UnityEngine.Input.GetMouseButtonDown and GetKeyDown/GetKeyUp without a legacy-backend guard.",
+      "impact": "Reusing/enabling that example with the current backend can raise invalid input-operation errors. It is not attached in the empty project scenes.",
+      "action": "Use Input System actions in the new vehicle controller. If a legacy demo must run, test an explicit compatibility choice instead of assuming the example works.",
+      "confidence": "high_static_condition_not_playtested"
+    },
+    {
+      "id": "R5",
+      "priority": "medium",
+      "category": "specification_conflict",
+      "title": "Repository proposal differs materially from the earlier handoff",
+      "evidence": [
+        "https://github.com/smarnovativelabs/Bulldozer_Simulator/blob/b57be43724b8a2988bb7fdd024a4dfdb907d678e/Planning/Project-Exploration.md#L7",
+        "https://github.com/smarnovativelabs/Bulldozer_Simulator/blob/b57be43724b8a2988bb7fdd024a4dfdb907d678e/Planning/Project-Exploration.md#L47",
+        "https://github.com/smarnovativelabs/Bulldozer_Simulator/blob/b57be43724b8a2988bb7fdd024a4dfdb907d678e/Planning/Project-Exploration.md#L64",
+        "https://github.com/smarnovativelabs/Bulldozer_Simulator/blob/b57be43724b8a2988bb7fdd024a4dfdb907d678e/Planning/Project-Exploration.md#L73"
+      ],
+      "observation": "The planning note still describes an empty non-Unity workspace and proposes two materials, 15-capacity cargo, optional upgrades, bridge rebuilding and Power Push. The earlier brief uses one material, 8-capacity cargo, a mandatory single drill upgrade and a delivery beacon.",
+      "impact": "An implementation agent can combine incompatible economy, completion and full-cargo rules.",
+      "action": "Write one current authoritative Sprint 1 spec using the latest human-approved direction; label the other proposal historical. Preserve unresolved product choices instead of silently combining them.",
+      "confidence": "high_static"
+    },
+    {
+      "id": "R6",
+      "priority": "medium",
+      "category": "storage_and_scope",
+      "title": "Asset-library footprint dominates the checkout",
+      "evidence": [
+        "https://github.com/smarnovativelabs/Bulldozer_Simulator/tree/b57be43724b8a2988bb7fdd024a4dfdb907d678e/Assets/Epic%20Toon%20FX",
+        "https://github.com/smarnovativelabs/Bulldozer_Simulator/tree/b57be43724b8a2988bb7fdd024a4dfdb907d678e/Assets/Feel"
+      ],
+      "observation": "1,045,523,843 bytes of tracked current-tree content; the two named folders total 951,110,237 bytes (90.97%).",
+      "impact": "Importing the entire library creates storage and processing costs before the first playable loop exists.",
+      "action": "Prepare a small dependency-complete prototype checkout or branch, retaining required .meta files and licenses. Review demo dependencies before exclusions. No files were removed during this review.",
+      "confidence": "high_inventory_measurement"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "checked_on": "2026-10-26",
+  "method": "Read local OBJ text. Triangle estimate is sum(face_vertex_count - 2). It assumes ordinary polygon triangulation and is not a Unity imported mesh/render vertex count. usemtl is not runtime draw calls.",
+  "entries": [
+    {
+      "name": "rock_largeA",
+      "obj_path": "Assets/1_Plugins/kenney_nature-kit/Models/OBJ format/rock_largeA.obj",
+      "fbx_path": "Assets/1_Plugins/kenney_nature-kit/Models/FBX format/rock_largeA.fbx",
+      "obj_sha256": "fbba0afedb8bca589fcf81be46a994075a2614273ef35bf2dcb9d38e26b2b462",
+      "obj_bytes": 7889,
+      "vertex_positions": 42,
+      "faces": 80,
+      "triangle_estimate": 80,
+      "unique_usemtl": 2,
+      "material_names": [
+        "dirt",
+        "grass"
+      ]
+    },
+    {
+      "name": "rock_smallA",
+      "obj_path": "Assets/1_Plugins/kenney_nature-kit/Models/OBJ format/rock_smallA.obj",
+      "fbx_path": "Assets/1_Plugins/kenney_nature-kit/Models/FBX format/rock_smallA.fbx",
+      "obj_sha256": "73fbc87b857155457416e4f28abaf46d78e43b8e2fad8a252277da32177ae626",
+      "obj_bytes": 1572,
+      "vertex_positions": 10,
+      "faces": 16,
+      "triangle_estimate": 16,
+      "unique_usemtl": 2,
+      "material_names": [
+        "dirt",
+        "grass"
+      ]
+    },
+    {
+      "name": "cliff_block_rock",
+      "obj_path": "Assets/1_Plugins/kenney_nature-kit/Models/OBJ format/cliff_block_rock.obj",
+      "fbx_path": "Assets/1_Plugins/kenney_nature-kit/Models/FBX format/cliff_block_rock.fbx",
+      "obj_sha256": "d2e9981e3b377e23c864f56da4fe2ad136f3201c555b0efcf203074563121806",
+      "obj_bytes": 679,
+      "vertex_positions": 8,
+      "faces": 12,
+      "triangle_estimate": 12,
+      "unique_usemtl": 2,
+      "material_names": [
+        "dirt",
+        "grass"
+      ]
+    },
+    {
+      "name": "cliff_rock",
+      "obj_path": "Assets/1_Plugins/kenney_nature-kit/Models/OBJ format/cliff_rock.obj",
+      "fbx_path": "Assets/1_Plugins/kenney_nature-kit/Models/FBX format/cliff_rock.fbx",
+      "obj_sha256": "333d86e7b653f41f5f69d05923d3954b1350f8810f0b16d18843baccae465f31",
+      "obj_bytes": 2329,
+      "vertex_positions": 18,
+      "faces": 32,
+      "triangle_estimate": 32,
+      "unique_usemtl": 1,
+      "material_names": [
+        "dirt"
+      ]
+    },
+    {
+      "name": "tree_simple",
+      "obj_path": "Assets/1_Plugins/kenney_nature-kit/Models/OBJ format/tree_simple.obj",
+      "fbx_path": "Assets/1_Plugins/kenney_nature-kit/Models/FBX format/tree_simple.fbx",
+      "obj_sha256": "ef238c925886423bc668a19c04b1b1cd80c5a20cec503c9a432cc8ed22f95d7a",
+      "obj_bytes": 4596,
+      "vertex_positions": 33,
+      "faces": 62,
+      "triangle_estimate": 62,
+      "unique_usemtl": 2,
+      "material_names": [
+        "leafsGreen",
+        "woodBark"
+      ]
+    },
+    {
+      "name": "tree_pineSmallA",
+      "obj_path": "Assets/1_Plugins/kenney_nature-kit/Models/OBJ format/tree_pineSmallA.obj",
+      "fbx_path": "Assets/1_Plugins/kenney_nature-kit/Models/FBX format/tree_pineSmallA.fbx",
+      "obj_sha256": "a999304afd18a93686edcebff595658f305ce2182c678511767b5646ea402aa6",
+      "obj_bytes": 10066,
+      "vertex_positions": 84,
+      "faces": 164,
+      "triangle_estimate": 164,
+      "unique_usemtl": 2,
+      "material_names": [
+        "leafsDark",
+        "woodBarkDark"
+      ]
+    },
+    {
+      "name": "ground_pathRocks",
+      "obj_path": "Assets/1_Plugins/kenney_nature-kit/Models/OBJ format/ground_pathRocks.obj",
+      "fbx_path": "Assets/1_Plugins/kenney_nature-kit/Models/FBX format/ground_pathRocks.fbx",
+      "obj_sha256": "b40cc4c9899a6d365f5ef3ab8ca0922fd0049dd679cdfb21c749241e81aeb019",
+      "obj_bytes": 7672,
+      "vertex_positions": 60,
+      "faces": 102,
+      "triangle_estimate": 102,
+      "unique_usemtl": 3,
+      "material_names": [
+        "dirt",
+        "dirtDark",
+        "grass"
+      ]
+    },
+    {
+      "name": "log_stack",
+      "obj_path": "Assets/1_Plugins/kenney_nature-kit/Models/OBJ format/log_stack.obj",
+      "fbx_path": "Assets/1_Plugins/kenney_nature-kit/Models/FBX format/log_stack.fbx",
+      "obj_sha256": "45dd680667ad8d7110111836b91a1d03f65929718227417c49f8c4fa11cf9204",
+      "obj_bytes": 13339,
+      "vertex_positions": 92,
+      "faces": 184,
+      "triangle_estimate": 184,
+      "unique_usemtl": 2,
+      "material_names": [
+        "woodBark",
+        "woodInner"
+      ]
+    }
+  ]
+}

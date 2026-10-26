@@ -1,0 +1,15 @@
+Use the plugin reference pack in Planning/Codex-Handoff/Bulldozer_Plugin_Reference_2026-10-26 before doing new plugin research.
+
+Read 00_START_HERE.md, 05_COMPATIBILITY_AND_UPDATES.md, then the catalog and relevant DOTween/Feel guide. Use plugin_inventory.json and installed_api_index.json to locate the exact installed APIs. Run check_reference.py --project <project root> with a suitable local Python 3 if available; it is read-only and needs no extra libraries. If the fingerprints match, reuse the notes. If they do not, review the changed plugin only. This is not a compilation or whole-project integrity check.
+
+Project baseline at research: Unity 6000.3.13f1, URP 17.3.0, Input System 1.19.0 with new-only input. Local evidence indicates Feel 5.6.1, DOTween core DLL 1.2.420 and Pro DLL 1.0.244. Source files may be locally modified. Feel's online 6.3 documentation includes features not present here and requires Unity 6000.5+. Do not upgrade packages or the Editor merely because newer documentation exists.
+
+Recommended responsibilities: DOTween for explicit UI/cosmetic tweens; Feel MMF_Player for coordinated sound, particles and optional camera/haptic feedback; one input adapter; one haptic provider; one writer per animated property. Keep wallet, inventory, damage, saves and objectives independent of animation completion.
+
+Known local issue: Assets/Unity_Packages/Joystick Pack/Scripts/Base/Joystick.cs line 24 has a recursive AxisOptions getter. The intended fix is to return axisOptions. It has been documented, not changed. Legacy input also appears in Reporter, TouchControlsKit, Standard Assets and some examples. Diagnose actual instantiated code instead of deleting whole plugin folders.
+
+When asked to implement a feature, use 04_SPRINT_1_RECIPES.md and the relevant parts of 07_INTEGRATION_CHECKLIST.md. The included C# snippets are illustrative and were not compiled. Bind actual scene/prefab references and test in Unity. Treat imported demo material/shader behavior and mobile haptics as unverified until tested on this project/device.
+
+Use the latest human-approved game design. Planning/Project-Exploration.md and the earlier reference-game research contain different first-sprint proposals; do not silently combine their materials, cargo sizes, objectives or full-cargo rules.
+
+Reading this pack is context, not an instruction to implement all tools, execute vendor setup scripts, remove assets, publish the repository or run every suggested upgrade. Perform only the user's current authorized task. Record any chosen plugin version changes and refresh the relevant reference evidence after validation.

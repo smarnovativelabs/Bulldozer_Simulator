@@ -1,0 +1,823 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-26",
+  "playlist": {
+    "url": "https://www.youtube.com/playlist?list=PLeWEdw2WOkRc",
+    "title": "Bulldozer master: Crush & Mine",
+    "creator": "DARIO_111",
+    "count": 17,
+    "verified": true
+  },
+  "playlist_episodes": [
+    {
+      "episode": 1,
+      "video_id": "R_zuyy1o2UE",
+      "rounded_minutes": 32,
+      "title": "Bulldozer Master: Crush & Mine #1 | Gameplay",
+      "coverage": "Six samples from 2026-10-23 retained in the original research pack; not watched again in this addendum.",
+      "sample_times": [
+        "00:20",
+        "09:59",
+        "13:08",
+        "19:42",
+        "26:16",
+        "29:33"
+      ],
+      "url": "https://www.youtube.com/watch?v=R_zuyy1o2UE",
+      "duration_basis": "Rounded minutes displayed in playlist listing; not exact player duration.",
+      "observation_ids": []
+    },
+    {
+      "episode": 2,
+      "video_id": "7SEfUECxP7g",
+      "rounded_minutes": 49,
+      "title": "Bulldozer master: Crush & Mine #2 | Gameplay",
+      "coverage": "One selected paused gameplay frame reviewed on 2026-10-26",
+      "sample_times": [
+        "24:51"
+      ],
+      "url": "https://www.youtube.com/watch?v=7SEfUECxP7g",
+      "duration_basis": "Rounded minutes displayed in playlist listing; not exact player duration.",
+      "observation_ids": [
+        "V26-016"
+      ]
+    },
+    {
+      "episode": 3,
+      "video_id": "x2Uq2HHjeD8",
+      "rounded_minutes": 27,
+      "title": "Bulldozer master: Crush & Mine #3 | Gameplay",
+      "coverage": "One selected paused gameplay frame reviewed on 2026-10-26",
+      "sample_times": [
+        "13:58"
+      ],
+      "url": "https://www.youtube.com/watch?v=x2Uq2HHjeD8",
+      "duration_basis": "Rounded minutes displayed in playlist listing; not exact player duration.",
+      "observation_ids": [
+        "V26-017"
+      ]
+    },
+    {
+      "episode": 4,
+      "video_id": "g2WKV2rCINU",
+      "rounded_minutes": 36,
+      "title": "Bulldozer master: Crush & Mine #4 | Gameplay",
+      "coverage": "One selected paused gameplay frame reviewed on 2026-10-26",
+      "sample_times": [
+        "18:19"
+      ],
+      "url": "https://www.youtube.com/watch?v=g2WKV2rCINU",
+      "duration_basis": "Rounded minutes displayed in playlist listing; not exact player duration.",
+      "observation_ids": [
+        "V26-018"
+      ]
+    },
+    {
+      "episode": 5,
+      "video_id": "Jc_D_vt144A",
+      "rounded_minutes": 35,
+      "title": "Bulldozer master: Crush & Mine #5 | Gameplay",
+      "coverage": "One selected paused gameplay frame reviewed on 2026-10-26",
+      "sample_times": [
+        "17:39"
+      ],
+      "url": "https://www.youtube.com/watch?v=Jc_D_vt144A",
+      "duration_basis": "Rounded minutes displayed in playlist listing; not exact player duration.",
+      "observation_ids": [
+        "V26-019"
+      ]
+    },
+    {
+      "episode": 6,
+      "video_id": "-EoW5HpxxWY",
+      "rounded_minutes": 34,
+      "title": "Bulldozer master: Crush & Mine #6 | Gameplay",
+      "coverage": "One selected paused gameplay frame reviewed on 2026-10-26",
+      "sample_times": [
+        "17:02"
+      ],
+      "url": "https://www.youtube.com/watch?v=-EoW5HpxxWY",
+      "duration_basis": "Rounded minutes displayed in playlist listing; not exact player duration.",
+      "observation_ids": [
+        "V26-020"
+      ]
+    },
+    {
+      "episode": 7,
+      "video_id": "LPnO57yl8lg",
+      "rounded_minutes": 40,
+      "title": "Bulldozer master: Crush & Mine #7 | Gameplay",
+      "coverage": "One selected paused gameplay frame reviewed on 2026-10-26",
+      "sample_times": [
+        "20:19"
+      ],
+      "url": "https://www.youtube.com/watch?v=LPnO57yl8lg",
+      "duration_basis": "Rounded minutes displayed in playlist listing; not exact player duration.",
+      "observation_ids": [
+        "V26-021"
+      ]
+    },
+    {
+      "episode": 8,
+      "video_id": "hoZzYcfZ6-U",
+      "rounded_minutes": 40,
+      "title": "Bulldozer master: Crush & Mine #8 | Gameplay",
+      "coverage": "One selected paused gameplay frame reviewed on 2026-10-26",
+      "sample_times": [
+        "20:01"
+      ],
+      "url": "https://www.youtube.com/watch?v=hoZzYcfZ6-U",
+      "duration_basis": "Rounded minutes displayed in playlist listing; not exact player duration.",
+      "observation_ids": [
+        "V26-022"
+      ]
+    },
+    {
+      "episode": 9,
+      "video_id": "Apa6GFfilGk",
+      "rounded_minutes": 45,
+      "title": "Bulldozer master: Crush & Mine #9 | Gameplay",
+      "coverage": "One selected paused gameplay frame reviewed on 2026-10-26",
+      "sample_times": [
+        "22:43"
+      ],
+      "url": "https://www.youtube.com/watch?v=Apa6GFfilGk",
+      "duration_basis": "Rounded minutes displayed in playlist listing; not exact player duration.",
+      "observation_ids": [
+        "V26-023"
+      ]
+    },
+    {
+      "episode": 10,
+      "video_id": "mka1GPEnH-w",
+      "rounded_minutes": 45,
+      "title": "Bulldozer master: Crush & Mine #10 | Gameplay",
+      "coverage": "One selected paused gameplay frame reviewed on 2026-10-26",
+      "sample_times": [
+        "22:59"
+      ],
+      "url": "https://www.youtube.com/watch?v=mka1GPEnH-w",
+      "duration_basis": "Rounded minutes displayed in playlist listing; not exact player duration.",
+      "observation_ids": [
+        "V26-024"
+      ]
+    },
+    {
+      "episode": 11,
+      "video_id": "jKxhm3XFG_0",
+      "rounded_minutes": 59,
+      "title": "Bulldozer master: Crush & Mine #11 | Gameplay",
+      "coverage": "One selected paused gameplay frame reviewed on 2026-10-26",
+      "sample_times": [
+        "29:37"
+      ],
+      "url": "https://www.youtube.com/watch?v=jKxhm3XFG_0",
+      "duration_basis": "Rounded minutes displayed in playlist listing; not exact player duration.",
+      "observation_ids": [
+        "V26-025"
+      ]
+    },
+    {
+      "episode": 12,
+      "video_id": "OWhGI_Pouo0",
+      "rounded_minutes": 54,
+      "title": "Bulldozer master: Crush & Mine #12 | Gameplay",
+      "coverage": "One selected paused gameplay frame reviewed on 2026-10-26",
+      "sample_times": [
+        "27:14"
+      ],
+      "url": "https://www.youtube.com/watch?v=OWhGI_Pouo0",
+      "duration_basis": "Rounded minutes displayed in playlist listing; not exact player duration.",
+      "observation_ids": [
+        "V26-026"
+      ]
+    },
+    {
+      "episode": 13,
+      "video_id": "R5GMszzXpX0",
+      "rounded_minutes": 33,
+      "title": "Bulldozer master: Crush & Mine #13 | Gameplay",
+      "coverage": "One selected paused gameplay frame reviewed on 2026-10-26",
+      "sample_times": [
+        "16:43"
+      ],
+      "url": "https://www.youtube.com/watch?v=R5GMszzXpX0",
+      "duration_basis": "Rounded minutes displayed in playlist listing; not exact player duration.",
+      "observation_ids": [
+        "V26-027"
+      ]
+    },
+    {
+      "episode": 14,
+      "video_id": "lXuiGjgeTSM",
+      "rounded_minutes": 41,
+      "title": "Bulldozer master: Crush & Mine #14 | Gameplay",
+      "coverage": "One selected paused gameplay frame reviewed on 2026-10-26",
+      "sample_times": [
+        "20:45"
+      ],
+      "url": "https://www.youtube.com/watch?v=lXuiGjgeTSM",
+      "duration_basis": "Rounded minutes displayed in playlist listing; not exact player duration.",
+      "observation_ids": [
+        "V26-028"
+      ]
+    },
+    {
+      "episode": 15,
+      "video_id": "7DGYwDg_-Hc",
+      "rounded_minutes": 51,
+      "title": "Bulldozer master: Crush & Mine #15 | Gameplay",
+      "coverage": "One selected paused gameplay frame reviewed on 2026-10-26",
+      "sample_times": [
+        "25:57"
+      ],
+      "url": "https://www.youtube.com/watch?v=7DGYwDg_-Hc",
+      "duration_basis": "Rounded minutes displayed in playlist listing; not exact player duration.",
+      "observation_ids": [
+        "V26-029"
+      ]
+    },
+    {
+      "episode": 16,
+      "video_id": "FF1XXfoSh8A",
+      "rounded_minutes": 78,
+      "title": "Bulldozer master: Crush & Mine #16 | Gameplay",
+      "coverage": "Two selected paused gameplay frames reviewed on 2026-10-26",
+      "sample_times": [
+        "39:29",
+        "1:11:04"
+      ],
+      "url": "https://www.youtube.com/watch?v=FF1XXfoSh8A",
+      "duration_basis": "Rounded minutes displayed in playlist listing; not exact player duration.",
+      "observation_ids": [
+        "V26-030",
+        "V26-031"
+      ]
+    },
+    {
+      "episode": 17,
+      "video_id": "NGAMLxMZhbs",
+      "rounded_minutes": 44,
+      "title": "Bulldozer master: Crush & Mine #17 | Gameplay",
+      "coverage": "Two selected paused gameplay frames reviewed on 2026-10-26",
+      "sample_times": [
+        "22:07",
+        "39:50"
+      ],
+      "url": "https://www.youtube.com/watch?v=NGAMLxMZhbs",
+      "duration_basis": "Rounded minutes displayed in playlist listing; not exact player duration.",
+      "observation_ids": [
+        "V26-032",
+        "V26-033"
+      ]
+    }
+  ],
+  "standalone_videos": [
+    {
+      "video_id": "qKD38PeG2q4",
+      "title": "Bulldozer Master: Crush & Mine | Gameplay Walkthrough-Android, iOS",
+      "creator": "Elkholasa Gaming",
+      "duration": "19:02",
+      "url": "https://www.youtube.com/watch?v=qKD38PeG2q4",
+      "sample_times": [
+        "00:02",
+        "01:54",
+        "05:42",
+        "09:31",
+        "13:19",
+        "17:07"
+      ],
+      "observation_ids": [
+        "V26-001",
+        "V26-002",
+        "V26-003",
+        "V26-004",
+        "V26-005",
+        "V26-006"
+      ]
+    },
+    {
+      "video_id": "ovlJLqLo9I8",
+      "title": "Bulldozer Master: Crush & Mine - Gameplay Walkthrough Part 1 - Bulldozer Master Mine (iOS, Android)",
+      "creator": "Pryszard Android iOS Gameplays",
+      "duration": "21:23",
+      "url": "https://www.youtube.com/watch?v=ovlJLqLo9I8",
+      "sample_times": [
+        "00:35",
+        "02:08",
+        "06:25",
+        "10:41",
+        "14:58"
+      ],
+      "observation_ids": [
+        "V26-007",
+        "V26-008",
+        "V26-009",
+        "V26-010",
+        "V26-011"
+      ]
+    },
+    {
+      "video_id": "ZvYnKFfRzRo",
+      "title": "Bulldozer Master: Crush & Mine - Gameplay Walkthrough Part 2 - Bulldozer Master Mine (iOS, Android)",
+      "creator": "Pryszard Android iOS Gameplays",
+      "duration": "18:14",
+      "url": "https://www.youtube.com/watch?v=ZvYnKFfRzRo",
+      "sample_times": [
+        "01:49",
+        "05:28",
+        "12:46",
+        "16:25"
+      ],
+      "observation_ids": [
+        "V26-012",
+        "V26-013",
+        "V26-014",
+        "V26-015"
+      ]
+    },
+    {
+      "video_id": "IwMD7SOjFTs",
+      "title": "Bulldozer Master: Crush and Mine - Tips, Cheats, and Strategy Guide!",
+      "creator": "Game Hydro",
+      "duration": "09:29",
+      "earlier_coverage": "Six visual samples in the 2026-10-23 research pack; three checkpoints revisited on 2026-10-26.",
+      "url": "https://www.youtube.com/watch?v=IwMD7SOjFTs",
+      "sample_times": [
+        "03:47",
+        "06:38",
+        "08:32"
+      ],
+      "observation_ids": [
+        "V26-034",
+        "V26-035",
+        "V26-036"
+      ]
+    }
+  ],
+  "unique_video_count": 21,
+  "new_paused_frame_observations": 36,
+  "method": {
+    "reviewed_on": "2026-10-26",
+    "method": "YouTube browser metadata and selected paused decoded frames; no full watch-through, complete transcript or interactive game test.",
+    "new_sample_count": 36,
+    "prior_pack": "bulldozer-master-research",
+    "playlist_correction": "The supplied playlist ID is valid and lists 17 episodes on this date; supersedes the earlier unverified/incomplete characterization."
+  },
+  "excluded_samples": [
+    {
+      "video_id": "ovlJLqLo9I8",
+      "attempted_at": "19:15",
+      "reason": "YouTube ad appeared; not treated as gameplay evidence."
+    },
+    {
+      "video_id": "ZvYnKFfRzRo",
+      "attempted_at": "09:07",
+      "reason": "Buffering with stale previous frame; discarded."
+    }
+  ],
+  "limitations": [
+    "Not uninterrupted watch-throughs or complete transcripts.",
+    "No interactive game test.",
+    "Recording versions unknown; do not equate with supplied APK 11.3.0.",
+    "Playlist membership may change. Dates are review dates, not publication dates.",
+    "No new screenshot assets or downloaded videos included. Earlier screenshots remain in the original pack."
+  ],
+  "observations": [
+    {
+      "video_id": "qKD38PeG2q4",
+      "at": "00:02",
+      "observation": "Stage 1 grid of large gray block deposits with colored ore patches, scattered fragments and an avatar/cart close to the block face. Small carried-capacity display beneath avatar; task card at upper left.",
+      "id": "V26-001",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 2,
+      "source_url": "https://www.youtube.com/watch?v=qKD38PeG2q4&t=2s",
+      "screenshot_in_this_pack": false,
+      "limit": "Opening sampled state; not a first-time onboarding claim."
+    },
+    {
+      "video_id": "qKD38PeG2q4",
+      "inference": "For an original prototype, discrete cell/deposit state is sufficient to express this feedback.",
+      "at": "01:54",
+      "observation": "Cracked block faces next to an empty mined bay; avatar holds pickaxe near the wall. Removed sections interrupt a regular deposit grid.",
+      "id": "V26-002",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 114,
+      "source_url": "https://www.youtube.com/watch?v=qKD38PeG2q4&t=114s",
+      "screenshot_in_this_pack": false,
+      "limit": "A grid-like appearance does not establish the underlying terrain or destruction implementation."
+    },
+    {
+      "video_id": "qKD38PeG2q4",
+      "at": "05:42",
+      "observation": "Wide hub view shows separate SHOP and UPGRADE buildings, a locked kiosk, refinery machinery, three parked blue flatbed trucks, a SELL ground rectangle and a material-price board. One visible truck counter reads 0/3.",
+      "id": "V26-003",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 342,
+      "source_url": "https://www.youtube.com/watch?v=qKD38PeG2q4&t=342s",
+      "screenshot_in_this_pack": false,
+      "limit": "Truck counter and prices are screenshot-specific UI, not calibrated design constants. The sample does not establish whether all trucks depart or sell automatically."
+    },
+    {
+      "video_id": "qKD38PeG2q4",
+      "design_note": "Diegetic zones make a hub readable; use original layout, labels and building silhouettes.",
+      "at": "09:31",
+      "observation": "Physical hub buildings use labeled ground interaction rectangles: ENTER at SHOP and OPEN at UPGRADE. A green exclamation marker floats above Upgrade; an OIL kiosk remains locked and says rent fuel-powered equipment. A separate Speed Boost pad is visible beside heavy machinery.",
+      "id": "V26-004",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 571,
+      "source_url": "https://www.youtube.com/watch?v=qKD38PeG2q4&t=571s",
+      "screenshot_in_this_pack": false,
+      "limit": "Selected frame; no runtime behavior tested."
+    },
+    {
+      "video_id": "qKD38PeG2q4",
+      "at": "13:19",
+      "observation": "An extensively cleared Stage 1 area retains many loose rubble pieces. The player carries a tall red stack and shows a red MAX capacity cue.",
+      "id": "V26-005",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 799,
+      "source_url": "https://www.youtube.com/watch?v=qKD38PeG2q4&t=799s",
+      "screenshot_in_this_pack": false,
+      "limit": "The material identity and collection/full-capacity rules cannot be determined from this single frame."
+    },
+    {
+      "video_id": "qKD38PeG2q4",
+      "inference": "Later machinery offers a distinct material-handling presentation from the avatar/pickaxe loop. The frame alone does not reveal solver, conveyors, fuel drain, AI or exact transfer logic.",
+      "at": "17:07",
+      "observation": "A yellow front-blade vehicle is positioned in a loose-rubble lane directly above a receiving hopper/bin at a track-side edge; dense loose fragments and tire marks are visible.",
+      "id": "V26-006",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 1027,
+      "source_url": "https://www.youtube.com/watch?v=qKD38PeG2q4&t=1027s",
+      "screenshot_in_this_pack": false,
+      "limit": "Selected frame; no runtime behavior tested."
+    },
+    {
+      "video_id": "ovlJLqLo9I8",
+      "at": "00:35",
+      "observation": "Stage 1 deposit grid; avatar mining with pickaxe/cart; yellow cargo bar; home/direction arrow shows 19 m. Task says Deliver Minerals to the Furnace.",
+      "limit": "Recorded early gameplay, not a complete onboarding sequence.",
+      "id": "V26-007",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 35,
+      "source_url": "https://www.youtube.com/watch?v=ovlJLqLo9I8&t=35s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "ovlJLqLo9I8",
+      "at": "02:08",
+      "observation": "Cracked and removed deposit cells, home arrow 16 m and Break Rocky Ores task. Stage display remains 0% despite visible mined sections.",
+      "limit": "Stage-progress formula cannot be inferred from broken-cell count.",
+      "id": "V26-008",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 128,
+      "source_url": "https://www.youtube.com/watch?v=ovlJLqLo9I8&t=128s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "ovlJLqLo9I8",
+      "at": "06:25",
+      "observation": "Hub has separate REFINE input pad and LOAD output tray, bar-shaped output, truck 1/3, UPGRADE building, locked OIL and WORKER buildings, plus PIZZA truck/picnic area.",
+      "limit": "A frame establishes station layout and labels; worker recovery rules and transfer algorithms remain unverified.",
+      "id": "V26-009",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 385,
+      "source_url": "https://www.youtube.com/watch?v=ovlJLqLo9I8&t=385s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "ovlJLqLo9I8",
+      "at": "10:41",
+      "observation": "Mine corridors follow a curved rail track. A large spiked roller is parked near the mine; avatar with pickaxe works beside blue ore. Task says Go to Machinery.",
+      "limit": "Do not infer autonomous driving or the collision implementation.",
+      "id": "V26-010",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 641,
+      "source_url": "https://www.youtube.com/watch?v=ovlJLqLo9I8&t=641s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "ovlJLqLo9I8",
+      "at": "14:58",
+      "observation": "Yellow articulated excavator-like machine works between block rows; orange OIL gauge and red exit-style icon visible. Rail-side bin reads CARGO; loose rubble fills the cleared area.",
+      "limit": "Fuel consumption rate, controls, and bin transfer trigger not established.",
+      "id": "V26-011",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 898,
+      "source_url": "https://www.youtube.com/watch?v=ovlJLqLo9I8&t=898s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "ZvYnKFfRzRo",
+      "at": "01:49",
+      "observation": "Stage 1 at 17%; excavator at a block face with an OIL gauge; large quantities of gray and colored rubble; visible track-side receiving bin.",
+      "limit": "Shows machinery plus debris workload, not measured fuel use or break rate.",
+      "id": "V26-012",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 109,
+      "source_url": "https://www.youtube.com/watch?v=ZvYnKFfRzRo&t=109s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "ZvYnKFfRzRo",
+      "at": "05:28",
+      "observation": "Stage 1 at 21%; hub has tall stacks of differently colored processed bars, multiple trucks (one at 3/3), green currency effects near a loaded truck, WORKER building and picnic area.",
+      "limit": "A single frame suggests reward feedback; exact sale trigger and worker-rest rules are not established.",
+      "id": "V26-013",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 328,
+      "source_url": "https://www.youtube.com/watch?v=ZvYnKFfRzRo&t=328s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "ZvYnKFfRzRo",
+      "at": "12:46",
+      "observation": "Stage 1 at 31%; Upgrade at Quarry task, SELL ground pad, long carried stack, currency effects and a truck display at 0/5.",
+      "limit": "Different truck capacity display from 3/3 earlier; do not infer exact upgrade schedule or prices.",
+      "id": "V26-014",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 766,
+      "source_url": "https://www.youtube.com/watch?v=ZvYnKFfRzRo&t=766s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "ZvYnKFfRzRo",
+      "at": "16:25",
+      "observation": "Blue front-blade vehicle beside WORKER building's OPEN pad and picnic benches; task continues Upgrade at Quarry. Orange bar below vehicle.",
+      "limit": "Vehicle appearance and contextual pad visible; entry/exit, worker scheduling and controls not tested.",
+      "id": "V26-015",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 985,
+      "source_url": "https://www.youtube.com/watch?v=ZvYnKFfRzRo&t=985s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "7SEfUECxP7g",
+      "at": "24:51",
+      "observation": "Level 1 portrait view with an excavator, a small cart/character nearby and green interaction-style marker.",
+      "limit": "Low-resolution sample: omit small text and exact stats.",
+      "id": "V26-016",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 1491,
+      "source_url": "https://www.youtube.com/watch?v=7SEfUECxP7g&t=1491s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "x2Uq2HHjeD8",
+      "at": "13:58",
+      "observation": "Level 1 character carries a tall red stack; red MAX banner; yellow directional breadcrumbs extend ahead; home/distance cue below.",
+      "limit": "Breadcrumb destination/activation not established by one frame.",
+      "id": "V26-017",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 838,
+      "source_url": "https://www.youtube.com/watch?v=x2Uq2HHjeD8&t=838s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "g2WKV2rCINU",
+      "at": "18:19",
+      "observation": "Level 2 yellow wheeled loader/hauler with a tall mixed-color cargo stack and MAX banner beside ore cells; tire tracks behind it.",
+      "limit": "Vehicle role is described visually; exact capacity and handling unknown.",
+      "id": "V26-018",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 1099,
+      "source_url": "https://www.youtube.com/watch?v=g2WKV2rCINU&t=1099s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "Jc_D_vt144A",
+      "at": "17:39",
+      "observation": "Level 2 repeats loaded yellow vehicle with MAX, mixed rubble and curved tire tracks; a spiked machine is further up the lane.",
+      "limit": "Confirms continued cargo presentation, not a new mechanic or measured progression speed.",
+      "id": "V26-019",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 1059,
+      "source_url": "https://www.youtube.com/watch?v=Jc_D_vt144A&t=1059s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "-EoW5HpxxWY",
+      "at": "17:02",
+      "observation": "Level 3 has greenish cracked ground; a very tall stacked load at a station with a cargo label.",
+      "limit": "Small labels too soft for reliable capacity transcription; stage theme change is visible.",
+      "id": "V26-020",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 1022,
+      "source_url": "https://www.youtube.com/watch?v=-EoW5HpxxWY&t=1022s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "LPnO57yl8lg",
+      "at": "20:19",
+      "observation": "Level 3 yellow drill-nose vehicle among dense rubble, broken chunks and bright impact effects at ore cells.",
+      "limit": "Visual frame only: effect density is visible but performance cost and collision/fragment method are unknown.",
+      "id": "V26-021",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 1219,
+      "source_url": "https://www.youtube.com/watch?v=LPnO57yl8lg&t=1219s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "hoZzYcfZ6-U",
+      "at": "20:01",
+      "observation": "Level 3 very large yellow dump truck by the hub, separate fuel and cargo readouts; green Completar Nivel button beneath stage progress; small sale truck reads 4/4.",
+      "limit": "Completion threshold and vehicle unlock conditions are not shown.",
+      "id": "V26-022",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 1201,
+      "source_url": "https://www.youtube.com/watch?v=hoZzYcfZ6-U&t=1201s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "Apa6GFfilGk",
+      "at": "22:43",
+      "observation": "A different mode/site heading says Sitio oceanico #03/10, with MAPA button, countdown around 22 minutes, colored status icons and an OIL kiosk with lock; avatar and sale truck still present.",
+      "limit": "Supports a separate multi-site/timed presentation. Exact event rules, rewards and reset behavior unknown.",
+      "id": "V26-023",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 1363,
+      "source_url": "https://www.youtube.com/watch?v=Apa6GFfilGk&t=1363s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "mka1GPEnH-w",
+      "at": "22:59",
+      "observation": "Level 4 orange tanker-like truck beside OIL station; green circular interaction icon on cab; character/cart in outlined ground pad; another character below has a ring and bar.",
+      "limit": "Refueling mechanism and worker status cannot be inferred from a static frame.",
+      "id": "V26-024",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 1379,
+      "source_url": "https://www.youtube.com/watch?v=mka1GPEnH-w&t=1379s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "jKxhm3XFG_0",
+      "at": "29:37",
+      "observation": "Level 5 hub retains refinery/output/sale zones. Tall green bar-shaped load near VENDER pad and blue sale truck displaying 0/8.",
+      "limit": "Shows loop persistence and a larger displayed truck denominator than early footage, not a verified capacity progression curve.",
+      "id": "V26-025",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 1777,
+      "source_url": "https://www.youtube.com/watch?v=jKxhm3XFG_0&t=1777s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "OWhGI_Pouo0",
+      "at": "27:14",
+      "observation": "Level 6 landscape-format capture; giant yellow dump truck with tall blue cargo stack, fuel display and exit-style icon; adjacent glowing receiver marked 85/300; green Completar Nivel control.",
+      "limit": "Receiver purpose and amount-to-reward conversion unknown; landscape capture does not prove player orientation controls.",
+      "id": "V26-026",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 1634,
+      "source_url": "https://www.youtube.com/watch?v=OWhGI_Pouo0&t=1634s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "R5GMszzXpX0",
+      "at": "16:43",
+      "observation": "Level 7 landscape-format capture; enormous loaded dump truck in narrow mine-edge corridor; blue, dark and red-accented deposit varieties visible.",
+      "limit": "Different appearance supports stage variety; hardness, price and unlock requirements not measured.",
+      "id": "V26-027",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 1003,
+      "source_url": "https://www.youtube.com/watch?v=R5GMszzXpX0&t=1003s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "lXuiGjgeTSM",
+      "at": "20:45",
+      "observation": "Level 8 pale icy terrain; a heavy machine surrounded by dense bright cyan/white fragments; separate fuel label; event icon at lower right.",
+      "limit": "Impact debris can visually obscure the vehicle in this frame; no measured frame rate or particle count.",
+      "id": "V26-028",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 1245,
+      "source_url": "https://www.youtube.com/watch?v=lXuiGjgeTSM&t=1245s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "7DGYwDg_-Hc",
+      "at": "25:57",
+      "observation": "Level 9 on icy ground: large yellow dump truck beside OIL kiosk, red can-shaped items in a marked pad, rails and tire tracks; separate cargo and fuel readouts; home cue 5 m.",
+      "limit": "This is a visible refueling-area arrangement, not proof of the exact refill transaction.",
+      "id": "V26-029",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 1557,
+      "source_url": "https://www.youtube.com/watch?v=7DGYwDg_-Hc&t=1557s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "FF1XXfoSh8A",
+      "at": "39:29",
+      "observation": "Level 10 large yellow vehicle combines a bucket-like front and mechanical rear; cargo/fuel readouts and a home indicator at 68 m; long tire tracks on icy ground.",
+      "limit": "Distance is this frame only, not a required level size. Control response and fuel cost remain unknown.",
+      "id": "V26-030",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 2369,
+      "source_url": "https://www.youtube.com/watch?v=FF1XXfoSh8A&t=2369s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "FF1XXfoSh8A",
+      "at": "1:11:04",
+      "observation": "Level 10 shows 100% and green Completar Nivel button. Character/cart stands beside OIL kiosk and large roller-equipped machine.",
+      "limit": "Button availability visible; stage-transition reset/persistence behavior not inspected.",
+      "id": "V26-031",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 4264,
+      "source_url": "https://www.youtube.com/watch?v=FF1XXfoSh8A&t=4264s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "NGAMLxMZhbs",
+      "at": "22:07",
+      "observation": "Etapa 13 at 5.8%; green block grid with purple ore faces, narrow mined channel, towering cargo, MAX banner and home/distance arrow. Several event/countdown widgets occupy the side HUD.",
+      "limit": "UI differs from earlier episodes; game version unknown. Do not infer exact season/event rules.",
+      "id": "V26-032",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 1327,
+      "source_url": "https://www.youtube.com/watch?v=NGAMLxMZhbs&t=1327s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "NGAMLxMZhbs",
+      "at": "39:50",
+      "observation": "Etapa 13 at 100%; green Completar Etapa button, yellow heavy machine with green interaction marker, large station stack labelled CARGA: 2178, event widgets and a prominent optional rocket-style icon.",
+      "limit": "Large stored count is a screenshot value, not a recommended simulation count. Stage reset and optional icon effects were not tested.",
+      "id": "V26-033",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 2390,
+      "source_url": "https://www.youtube.com/watch?v=NGAMLxMZhbs&t=2390s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "IwMD7SOjFTs",
+      "at": "03:47",
+      "observation": "Stage 2 hub; machinery-rental task, shop entry pad, sold-out-style indicator and cash-spending reward track.",
+      "limit": "Offer availability and reward-track rules are not established; not a Sprint 1 requirement.",
+      "id": "V26-034",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 227,
+      "source_url": "https://www.youtube.com/watch?v=IwMD7SOjFTs&t=227s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "IwMD7SOjFTs",
+      "at": "06:38",
+      "observation": "Stage 2 yellow dump/hauling vehicle in a cleared route near green ore; orange gauge, cargo readout and home-distance cue.",
+      "limit": "No fuel consumption rate, speed, steering or collision measurement.",
+      "id": "V26-035",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 398,
+      "source_url": "https://www.youtube.com/watch?v=IwMD7SOjFTs&t=398s",
+      "screenshot_in_this_pack": false
+    },
+    {
+      "video_id": "IwMD7SOjFTs",
+      "at": "08:32",
+      "observation": "Equipment upgrade panel separates MINING and CARRYING; a vertical sequence shows a check mark and locked steps.",
+      "limit": "Reconfirms earlier E07 observation. Exact prerequisite chain and costs not established.",
+      "id": "V26-036",
+      "reviewed_on": "2026-10-26",
+      "evidence_type": "OBSERVED_PAUSED_FRAME",
+      "seconds": 512,
+      "source_url": "https://www.youtube.com/watch?v=IwMD7SOjFTs&t=512s",
+      "screenshot_in_this_pack": false
+    }
+  ]
+}

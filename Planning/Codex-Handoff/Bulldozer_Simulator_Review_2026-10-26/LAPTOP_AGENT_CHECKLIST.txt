@@ -1,0 +1,19 @@
+Use this checklist when I ask you to prepare or continue Bulldozer_Simulator.
+
+Review baseline: main at b57be43724b8a2988bb7fdd024a4dfdb907d678e, reviewed 26 October 2026.
+Read REVIEW.md and REVIEW_FINDINGS.json first. Refresh the branch/commit before acting; later commits may have resolved these findings.
+
+The reviewed repository is setup and a vendor asset collection. Its two project scenes contain only a camera and light. No playable first-sprint loop is integrated yet. Do not treat imported plugins or scene names as completed features.
+
+1. Inspect local project instructions, uncommitted work and any newer implementation. Preserve them. Use the existing Unity 6000.3.13f1 / URP 17.3.0 baseline unless a verified compatibility issue justifies change.
+2. Establish one authoritative Sprint 1 specification. The repository proposes a bridge, two materials, 15-unit cargo, optional 20-credit upgrades and Power Push. The earlier research pack proposes a delivery beacon, one material, 8-unit cargo and one required 60-credit upgrade. Full-cargo rules also differ. Use the latest human-approved direction; if that is not available, resolve these choices before dependent gameplay work. Do not merge both proposals silently.
+3. Respect limited storage. Inventory before downloading/importing. Epic Toon FX and Feel account for approximately 91% of current tracked bytes. Prepare a small dependency-complete asset set on an isolated branch or suitable checkout. Preserve retained .meta GUIDs, shared dependencies, and licenses; keep removed vendor content recoverable. The report's demo folders are review candidates, not permission for blind deletion or history rewriting.
+4. Check the public repository's redistribution rights for vendor packages. Report the result. Do not change repository visibility, expose new content or rewrite history without user authorization for that action.
+5. Once storage is sufficient, verify Editor import/compilation and a minimal standalone build before expanding scope. The remote review did not run these checks. Resolve package/assembly references from the installed packages rather than assuming every vendor integration is needed.
+6. Use Input System actions for the new vehicle. The bundled KCC ExamplePlayer still calls old UnityEngine.Input under new-input-only settings. It is an example, not a ready game controller. Test keyboard, touch, cancellation and UI input isolation.
+7. Implement one scene: responsive movement and camera; front-facing damage; stable deposit/drop IDs; logical cargo ownership; one depot transaction; the selected upgrade/objective; HUD and coherent save/load. Start with original primitives if art is not ready. Avoid extra systems until this works.
+8. Set the correct build entry scene; the committed default list currently contains only SampleScene. Add a root README with exact run/build steps. Set project-specific application identity and the agreed orientation before the first Android build.
+9. Run meaningful acceptance checks: one-time destruction, collider removal, exact capacity, no lost/duplicated material, atomic sale/purchase, partial-world save/reload, input cancellation and completion persistence. Use the chosen spec's economy numbers, not a mixture of both briefs.
+10. Report changed files, removed/reused dependencies, checkout/import sizes, versions, actual tests, build result, screenshots, and limitations. Do not call the sprint complete until the chosen loop is playable and tested.
+
+This checklist is preparation for a later authorized implementation task. The review itself made no repository or Unity project changes.

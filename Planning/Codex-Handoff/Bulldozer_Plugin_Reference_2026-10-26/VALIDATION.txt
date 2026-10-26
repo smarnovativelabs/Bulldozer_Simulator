@@ -1,0 +1,20 @@
+PLUGIN REFERENCE VALIDATION — 26 October 2026
+
+PASS: All JSON files parse.
+PASS: 8 local Markdown links resolve.
+PASS: 29 catalog entries have existing roots/evidence paths.
+PASS: All 46 direct manifest versions match lockfile versions.
+PASS: 1107 selected declaration locations exist.
+PASS: 79 selected DOTween XML member locations exist.
+PASS: 196 Feel feedback menu entries have source files.
+PASS: check_reference.py parses and runs using Python standard library only.
+PASS: 2875 source/config/evidence fingerprints match the local project.
+PASS: Partial VFX imports distinguished from complete content libraries.
+
+Research validation only. Unity was not imported, compiled, opened or built.
+C# samples were not compiled. No runtime, shader, native haptic or performance
+claim is made. Source snapshots do not detect newly added files or all art changes.
+Video coverage is explicitly sampled, not full viewing/transcription.
+
+The project copy and ZIP checks are recorded separately in the copy receipt.
+SHA256SUMS.json hashes all deliverables except itself; no self-referential hash.

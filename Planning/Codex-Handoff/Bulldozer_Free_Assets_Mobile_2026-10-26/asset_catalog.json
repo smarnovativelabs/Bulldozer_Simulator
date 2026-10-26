@@ -1,0 +1,566 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-26",
+  "scope": "Recommendation research only. Price and license labels are dated observations, not permanent guarantees.",
+  "statistics_note": "Sketchfab counts are rounded publisher/platform listings, not measured downloaded meshes. Package bytes are NOT runtime memory or frame cost.",
+  "assets": [
+    {
+      "id": "sf_bulldozer",
+      "name": "Low poly Bulldozer",
+      "author": "200097",
+      "source": "Sketchfab",
+      "url": "https://sketchfab.com/3d-models/low-poly-bulldozer-f536793b630d4137a701a68ab7b565ce",
+      "checked_on": "2026-10-26",
+      "free_status": "Listed free on research date",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "priority": "first_slice",
+      "proposed_role": "Player vehicle base",
+      "listed_facts": [
+        "FBX original; converted glTF/GLB/USDZ listed",
+        "Non-PBR, UVs, no rig or animations"
+      ],
+      "acquisition_checks": [
+        "Verify separate blade and track objects and pivots",
+        "Consolidate four materials if practical",
+        "Texture dimensions unknown"
+      ],
+      "listed_stats": {
+        "triangles_approx": 1900,
+        "vertices_approx": 1100,
+        "materials": 4,
+        "textures": 1,
+        "animations": 0,
+        "scope": "entire model"
+      },
+      "installed_in_project": false,
+      "evidence": "Live browser model information and rendered model visually inspected; download button visible",
+      "downloaded_this_review": false,
+      "imported_this_review": false,
+      "blender_inspected": false,
+      "unity_tested": false,
+      "device_profiled": false
+    },
+    {
+      "id": "sf_mining",
+      "name": "Free Low Poly Mining Assets",
+      "author": "purepoly",
+      "source": "Sketchfab",
+      "url": "https://sketchfab.com/3d-models/free-low-poly-mining-assets-fb8c435dc8644a1ea4555f59a17313fc",
+      "checked_on": "2026-10-26",
+      "free_status": "Listed free on research date",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "priority": "first_slice_selective",
+      "proposed_role": "Ore and a few mining props",
+      "listed_facts": [
+        "16 unique assets",
+        "Shared 256 x 256 texture stated by author",
+        "FBX original; no rig or animations"
+      ],
+      "acquisition_checks": [
+        "Use selected ore/gems; rustic horse cart is a poor industrial-theme fit",
+        "Inspect each exported object rather than importing the display arrangement"
+      ],
+      "listed_stats": {
+        "triangles_approx": 7700,
+        "vertices_approx": 3900,
+        "materials": 1,
+        "textures": 1,
+        "scope": "whole set; NOT per object",
+        "author_per_object_triangles": {
+          "gems_each": "20–40",
+          "ore_stone": 270,
+          "pickaxe": 232,
+          "shovel": 538,
+          "lantern": 2294,
+          "horse_cart": 1500
+        }
+      },
+      "installed_in_project": false,
+      "evidence": "Live browser model information, author description and rendered set visually inspected",
+      "downloaded_this_review": false,
+      "imported_this_review": false,
+      "blender_inspected": false,
+      "unity_tested": false,
+      "device_profiled": false
+    },
+    {
+      "id": "sf_excavator",
+      "name": "Low Poly Excavator",
+      "author": "FSkala",
+      "source": "Sketchfab",
+      "url": "https://sketchfab.com/3d-models/low-poly-excavator-9be8a258f34f4a08b50414791b921d66",
+      "checked_on": "2026-10-26",
+      "free_status": "Listed free on research date",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "priority": "alternative_later",
+      "proposed_role": "Alternative tracked vehicle base",
+      "listed_facts": [
+        "Pixel-art texture; FBX original",
+        "One material/texture, no rig or animations"
+      ],
+      "acquisition_checks": [
+        "Preview is a front-bucket tracked vehicle, not a conventional long-boom excavator",
+        "Pixel texture needs restyling to match a clean flat-color world",
+        "Moving parts and texture dimensions unverified"
+      ],
+      "listed_stats": {
+        "triangles_approx": 5600,
+        "vertices_approx": 3400,
+        "materials": 1,
+        "textures": 1,
+        "animations": 0,
+        "scope": "entire model"
+      },
+      "installed_in_project": false,
+      "evidence": "Live browser model information and rendered model visually inspected",
+      "downloaded_this_review": false,
+      "imported_this_review": false,
+      "blender_inspected": false,
+      "unity_tested": false,
+      "device_profiled": false
+    },
+    {
+      "id": "kenney_nature",
+      "name": "Nature Kit",
+      "author": "Kenney",
+      "source": "Kenney",
+      "url": "https://kenney.nl/assets/nature-kit",
+      "checked_on": "2026-10-26",
+      "free_status": "Listed free on research date",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "priority": "reuse_now",
+      "proposed_role": "Rocks, cliffs, sparse vegetation",
+      "listed_facts": [
+        "Official listing: 330 files",
+        "Local license identifies version 2.1 and CC0"
+      ],
+      "acquisition_checks": [
+        "Use existing project copy; no re-download required",
+        "Local OBJ estimates are separate from Unity-imported FBX geometry"
+      ],
+      "listed_stats": {},
+      "installed_in_project": true,
+      "evidence": "Official page, local License.txt, selected local OBJ geometry and FBX filenames",
+      "downloaded_this_review": false,
+      "imported_this_review": false,
+      "blender_inspected": false,
+      "unity_tested": false,
+      "device_profiled": false
+    },
+    {
+      "id": "kenney_industrial",
+      "name": "City Kit (Industrial)",
+      "author": "Kenney",
+      "source": "Kenney",
+      "url": "https://kenney.nl/assets/city-kit-industrial",
+      "checked_on": "2026-10-26",
+      "free_status": "Listed free on research date",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "priority": "first_slice_selective",
+      "proposed_role": "One depot/workshop silhouette",
+      "listed_facts": [
+        "40 files listed; factory/warehouse theme"
+      ],
+      "acquisition_checks": [
+        "Choose only one or two structures; inspect geometry/material counts and scale"
+      ],
+      "listed_stats": {
+        "triangles_approx": null,
+        "materials": null
+      },
+      "installed_in_project": false,
+      "evidence": "official product page read",
+      "downloaded_this_review": false,
+      "imported_this_review": false,
+      "blender_inspected": false,
+      "unity_tested": false,
+      "device_profiled": false
+    },
+    {
+      "id": "kenney_roads",
+      "name": "City Kit (Roads)",
+      "author": "Kenney",
+      "source": "Kenney",
+      "url": "https://kenney.nl/assets/city-kit-roads",
+      "checked_on": "2026-10-26",
+      "free_status": "Listed free on research date",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "priority": "later_or_selective",
+      "proposed_role": "Short depot approach and signs",
+      "listed_facts": [
+        "90 files listed"
+      ],
+      "acquisition_checks": [
+        "A plain ground route may be enough for Sprint 1",
+        "Choose this OR the Unity road pack"
+      ],
+      "listed_stats": {
+        "triangles_approx": null,
+        "materials": null
+      },
+      "installed_in_project": false,
+      "evidence": "official product page read",
+      "downloaded_this_review": false,
+      "imported_this_review": false,
+      "blender_inspected": false,
+      "unity_tested": false,
+      "device_profiled": false
+    },
+    {
+      "id": "quaternius_worker",
+      "name": "Ultimate Modular Men Pack",
+      "author": "Quaternius",
+      "source": "Quaternius",
+      "url": "https://quaternius.com/packs/ultimatemodularcharacters.html",
+      "checked_on": "2026-10-26",
+      "free_status": "Listed free on research date",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "priority": "first_slice",
+      "proposed_role": "Playable third-person worker base",
+      "listed_facts": [
+        "11 characters, 24 animations",
+        "Four swappable model parts per character",
+        "FBX, OBJ, glTF and Blend listed"
+      ],
+      "acquisition_checks": [
+        "Triangle count not listed; measure selected worker",
+        "Test animation/Avatar compatibility",
+        "Create own hardhat, vest and palette; combine chosen renderers if practical"
+      ],
+      "listed_stats": {
+        "triangles_approx": null,
+        "materials": null,
+        "animation_count_pack": 24
+      },
+      "installed_in_project": false,
+      "evidence": "official product page read",
+      "downloaded_this_review": false,
+      "imported_this_review": false,
+      "blender_inspected": false,
+      "unity_tested": false,
+      "device_profiled": false
+    },
+    {
+      "id": "kenney_impact",
+      "name": "Impact Sounds",
+      "author": "Kenney",
+      "source": "Kenney",
+      "url": "https://kenney.nl/assets/impact-sounds",
+      "checked_on": "2026-10-26",
+      "free_status": "Listed free on research date",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "priority": "first_slice_selective",
+      "proposed_role": "Short contact/break/delivery sounds",
+      "listed_facts": [
+        "130 files listed"
+      ],
+      "acquisition_checks": [
+        "Audition a handful; these are not a verified seamless diesel engine loop"
+      ],
+      "listed_stats": {},
+      "installed_in_project": false,
+      "evidence": "official product page read",
+      "downloaded_this_review": false,
+      "imported_this_review": false,
+      "blender_inspected": false,
+      "unity_tested": false,
+      "device_profiled": false
+    },
+    {
+      "id": "kenney_ui",
+      "name": "UI Pack",
+      "author": "Kenney",
+      "source": "Kenney",
+      "url": "https://kenney.nl/assets/ui-pack",
+      "checked_on": "2026-10-26",
+      "free_status": "Listed free on research date",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "priority": "first_slice_selective",
+      "proposed_role": "Button/panel source shapes for touch HUD",
+      "listed_facts": [
+        "430 files listed"
+      ],
+      "acquisition_checks": [
+        "Graphics do not provide input code",
+        "Use a small atlas and customize icons for enter/exit/cargo"
+      ],
+      "listed_stats": {},
+      "installed_in_project": false,
+      "evidence": "official product page read",
+      "downloaded_this_review": false,
+      "imported_this_review": false,
+      "blender_inspected": false,
+      "unity_tested": false,
+      "device_profiled": false
+    },
+    {
+      "id": "unity_controllers",
+      "name": "First Person + Third Person | Character Controllers",
+      "author": "Unity Technologies",
+      "source": "Unity Asset Store",
+      "url": "https://marketplace.unity.com/packages/3d/characters/first-person-third-person-character-controllers-196526",
+      "checked_on": "2026-10-26",
+      "free_status": "Listed free on research date",
+      "license": "Unity Companion License; listing says non-standard EULA",
+      "license_url": "https://unity.com/legal/licenses/unity-companion-license",
+      "priority": "optional_controller_alternative",
+      "proposed_role": "On-foot controller alternative to installed KCC",
+      "listed_facts": [
+        "Free v2.0.1, listed 76.7 MB",
+        "URP compatibility lists Unity 6000.3.0f1",
+        "Description identifies Input System, Cinemachine and mobile UI Toolkit overlays"
+      ],
+      "acquisition_checks": [
+        "Not a bulldozer controller",
+        "Choose one character motor and one touch input route",
+        "Cinemachine is not in current manifest",
+        "Project compatibility not tested"
+      ],
+      "listed_stats": {
+        "package_size_display": "76.7 MB",
+        "version": "2.0.1"
+      },
+      "installed_in_project": false,
+      "evidence": "Official live listing plus official indexed product description; no package inspection",
+      "downloaded_this_review": false,
+      "imported_this_review": false,
+      "blender_inspected": false,
+      "unity_tested": false,
+      "device_profiled": false
+    },
+    {
+      "id": "unity_motions",
+      "name": "Human Basic Motions FREE",
+      "author": "Kevin Iglesias",
+      "source": "Unity Asset Store",
+      "url": "https://assetstore.unity.com/packages/3d/animations/human-basic-motions-free-154271",
+      "checked_on": "2026-10-26",
+      "free_status": "Listed free on research date",
+      "license": "Standard Unity Asset Store EULA",
+      "license_url": "https://unity.com/legal/as-terms",
+      "priority": "optional_animation_backup",
+      "proposed_role": "Worker locomotion if chosen character clips are insufficient",
+      "listed_facts": [
+        "Free v2.4.2, listed 15.3 MB",
+        "Humanoid locomotion keywords; Unity 6000.0.59f2 compatibility row"
+      ],
+      "acquisition_checks": [
+        "Retarget selected clips and test feet/root motion",
+        "No verified enter/exit or mining clip set"
+      ],
+      "listed_stats": {
+        "package_size_display": "15.3 MB",
+        "version": "2.4.2"
+      },
+      "installed_in_project": false,
+      "evidence": "official product page read",
+      "downloaded_this_review": false,
+      "imported_this_review": false,
+      "blender_inspected": false,
+      "unity_tested": false,
+      "device_profiled": false
+    },
+    {
+      "id": "unity_nature",
+      "name": "Low-Poly Simple Nature Pack",
+      "author": "JustCreate",
+      "source": "Unity Asset Store",
+      "url": "https://assetstore.unity.com/packages/3d/environments/landscapes/low-poly-simple-nature-pack-162153",
+      "checked_on": "2026-10-26",
+      "free_status": "Listed free on research date",
+      "license": "Standard Unity Asset Store EULA",
+      "license_url": "https://unity.com/legal/as-terms",
+      "priority": "alternative_no_need_now",
+      "proposed_role": "Alternative environment art",
+      "listed_facts": [
+        "Free v1.24, listed 1.9 MB",
+        "Indexed description: 24 prefabs, shared texture, supplied pipeline conversion packages"
+      ],
+      "acquisition_checks": [
+        "Already have Kenney Nature Kit",
+        "URP 17.3 conversion must be checked"
+      ],
+      "listed_stats": {
+        "package_size_display": "1.9 MB",
+        "version": "1.24"
+      },
+      "installed_in_project": false,
+      "evidence": "Live listing for price/version/license; official indexed description for contents",
+      "downloaded_this_review": false,
+      "imported_this_review": false,
+      "blender_inspected": false,
+      "unity_tested": false,
+      "device_profiled": false
+    },
+    {
+      "id": "unity_roads",
+      "name": "Low Poly Road Pack",
+      "author": "Broken Vector",
+      "source": "Unity Asset Store",
+      "url": "https://assetstore.unity.com/packages/3d/environments/roadways/low-poly-road-pack-67288",
+      "checked_on": "2026-10-26",
+      "free_status": "Listed free on research date",
+      "license": "Standard Unity Asset Store EULA",
+      "license_url": "https://unity.com/legal/as-terms",
+      "priority": "alternative_later",
+      "proposed_role": "Roads if choosing this visual style",
+      "listed_facts": [
+        "Free v1.3, listed 1.2 MB, original Unity 5.6",
+        "Author itch page describes 61 tiles and two cars"
+      ],
+      "acquisition_checks": [
+        "Older shaders need URP validation",
+        "Use Unity distribution under its listed terms; do not assume itch download is CC0",
+        "Alternative to Kenney Roads"
+      ],
+      "listed_stats": {
+        "package_size_display": "1.2 MB",
+        "version": "1.3"
+      },
+      "installed_in_project": false,
+      "evidence": "Official Unity listing; author page https://brokenvector.itch.io/low-poly-road-pack",
+      "downloaded_this_review": false,
+      "imported_this_review": false,
+      "blender_inspected": false,
+      "unity_tested": false,
+      "device_profiled": false
+    },
+    {
+      "id": "unity_smallpack",
+      "name": "Free Low Poly Pack",
+      "author": "Broken Vector",
+      "source": "Unity Asset Store",
+      "url": "https://assetstore.unity.com/packages/3d/free-low-poly-pack-65375",
+      "checked_on": "2026-10-26",
+      "free_status": "Listed free on research date",
+      "license": "Standard Unity Asset Store EULA",
+      "license_url": "https://unity.com/legal/as-terms",
+      "priority": "fallback_no_need_now",
+      "proposed_role": "Tiny scenery fallback",
+      "listed_facts": [
+        "Free v1.2, listed 91.9 KB, original Unity 5.6",
+        "Two trees, one rock and one fence"
+      ],
+      "acquisition_checks": [
+        "Redundant with installed nature kit",
+        "Old material compatibility untested"
+      ],
+      "listed_stats": {
+        "package_size_display": "91.9 KB",
+        "version": "1.2"
+      },
+      "installed_in_project": false,
+      "evidence": "official product page read",
+      "downloaded_this_review": false,
+      "imported_this_review": false,
+      "blender_inspected": false,
+      "unity_tested": false,
+      "device_profiled": false
+    },
+    {
+      "id": "unity_sfx",
+      "name": "FREE Casual Game SFX Pack",
+      "author": "Dustyroom",
+      "source": "Unity Asset Store",
+      "url": "https://assetstore.unity.com/packages/audio/sound-fx/free-casual-game-sfx-pack-54116",
+      "checked_on": "2026-10-26",
+      "free_status": "Listed free on research date",
+      "license": "Standard Unity Asset Store EULA",
+      "license_url": "https://unity.com/legal/as-terms",
+      "priority": "first_slice_optional",
+      "proposed_role": "Audition UI and reward sounds",
+      "listed_facts": [
+        "Free v1.1, listed 8.6 MB",
+        "Compatibility table includes URP"
+      ],
+      "acquisition_checks": [
+        "Clips not auditioned in this review",
+        "Select few sounds and set import/voice limits"
+      ],
+      "listed_stats": {
+        "package_size_display": "8.6 MB",
+        "version": "1.1"
+      },
+      "installed_in_project": false,
+      "evidence": "official product page read",
+      "downloaded_this_review": false,
+      "imported_this_review": false,
+      "blender_inspected": false,
+      "unity_tested": false,
+      "device_profiled": false
+    },
+    {
+      "id": "unity_polygon",
+      "name": "POLYGON Starter Pack - Art by Synty",
+      "author": "Synty Studios",
+      "source": "Unity Asset Store",
+      "url": "https://assetstore.unity.com/packages/3d/environments/polygon-starter-pack-art-by-synty-156819",
+      "checked_on": "2026-10-26",
+      "free_status": "Listed free on research date",
+      "license": "Standard Unity Asset Store EULA",
+      "license_url": "https://unity.com/legal/as-terms",
+      "priority": "optional_blockout",
+      "proposed_role": "Alternative prototype art",
+      "listed_facts": [
+        "Free v1.2.1, listed 109.4 MB"
+      ],
+      "acquisition_checks": [
+        "Not the POLYGON Construction pack",
+        "Exact prop list unverified; no claim it supplies our vehicles",
+        "Primitives and existing assets are enough for first blockout"
+      ],
+      "listed_stats": {
+        "package_size_display": "109.4 MB",
+        "version": "1.2.1"
+      },
+      "installed_in_project": false,
+      "evidence": "official product page read",
+      "downloaded_this_review": false,
+      "imported_this_review": false,
+      "blender_inspected": false,
+      "unity_tested": false,
+      "device_profiled": false
+    }
+  ],
+  "rejected_or_deferred": [
+    {
+      "name": "Low-Poly Dump Truck — Premisul",
+      "url": "https://assetstore.unity.com/packages/3d/vehicles/land/low-poly-dump-truck-244775",
+      "reason": "Current official price $4.99 USD; older third-party free listings are outdated."
+    },
+    {
+      "name": "Starter Assets Character Controllers URP — old ID 267961",
+      "url": "https://assetstore.unity.com/packages/essentials/starter-assets-character-controllers-urp-267961",
+      "reason": "Deprecated for new acquisition. Use current listing 196526 if choosing this controller."
+    },
+    {
+      "name": "Construction Equipment LowPoly Free 3D Models — GOGA",
+      "url": "https://sketchfab.com/3d-models/construction-equipment-lowpoly-free-3d-models-dcd9c8edd2cd4ed3bee650a82e3f091d",
+      "reason": "Listed approximately 1.6 million triangles for the entire collection, not per vehicle. Too much uninspected content for first import."
+    },
+    {
+      "name": "Bulldozer — semyon.kan",
+      "url": "https://sketchfab.com/3d-models/bulldozer-b06a715d23a7450babac383b8bb7fb0a",
+      "reason": "Listed 111.5k triangles and realistic PBR style; substantially more preparation than chosen model."
+    },
+    {
+      "name": "Stylized Excavator — Lluc Guardiolaa",
+      "url": "https://sketchfab.com/3d-models/stylized-excavator-ab77d4892fbb4743a638e29df7f51e7a",
+      "reason": "CC BY-NC and preview is a bucket/prop composition; exclude from the commercial-use shortlist."
+    },
+    {
+      "name": "Free Low Poly Vehicles Pack — RgsDev",
+      "url": "https://sketchfab.com/3d-models/free-low-poly-vehicles-pack-cb7640039e7a40679a53be705ebff50e",
+      "reason": "Description says CC0 while page license says CC Attribution. Resolve license discrepancy before selection."
+    }
+  ]
+}

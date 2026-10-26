@@ -1,0 +1,13 @@
+Use Planning/Codex-Handoff/Bulldozer_Video_Addendum_2026-10-26 as the latest video research addendum for our original Unity mining/bulldozer game.
+
+Read 00_START_HERE.md, then 04_SPRINT_1_APPLICATION.md and 06_UNITY_FEEDBACK_MAP.md. Consult the existing original research, project review and installed-plugin reference beside this folder. Use video_evidence.json and 01_VIDEO_CATALOG.md to locate a specific observation without repeating general research.
+
+The playlist is valid and had 17 episodes on 26 October 2026. This supersedes the earlier unverified-playlist note. The addendum contains 36 new paused-frame observations; it is not a full transcript, game test or measurement of the original balance. Episode 1's evidence comes from the older pack. Recorded game versions are unknown.
+
+Follow my latest selected implementation scope. The original research proposes a one-material salvage rover, eight-unit cargo, persistent overflow pickups and a required upgrade. Planning/Project-Exploration.md proposes a bridge, two materials, 15-unit starting cargo, optional upgrades and stopping damage when full. Do not silently combine them or treat this addendum as a decision between them. Common steering, camera, target and inventory work can proceed independently; settle the conflicting rules before finalizing economy and acceptance behavior.
+
+For the first sprint, prioritize one playable loop with clear cargo, a depot return cue, front-target feedback, single-commit damage and delivery, an understandable upgrade/objective, and reliable local saving. Use original art, layout and tuning. Refinery queues, helpers, fuel, rentals, additional vehicles, events and monetization remain later candidates unless I explicitly expand the scope.
+
+Use DOTween for controlled cosmetic/UI motion and Feel for coordinated feedback according to the installed plugin guide. Keep game state independent of effects; one owner per animated property; handle pooled object lifetime explicitly. Do not infer the reference's plugins from its appearance, and do not upgrade packages just to follow newer examples.
+
+When implementation is requested, inspect the current project, make the changes, run appropriate Unity/build/device checks where available, and report what actually passed. Documentation integrity checks in this pack are not gameplay tests. When only research is requested, do not start implementation, import Unity, install packages, or change gameplay assets.

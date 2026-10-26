@@ -1,0 +1,11 @@
+Documentation validation completed 26 October 2026.
+- 16 shortlisted sources: 9 external/author packs and 7 Unity Asset Store options.
+- 6 excluded/deferred results retained with reasons.
+- All local Markdown target links resolve within this portable pack.
+- JSON files parse; all source records include dated evidence and untested status.
+- 8 existing Kenney OBJ files counted and hashed; matching FBX paths exist.
+- No external vendor models downloaded, imported, edited or device-tested.
+- No gameplay files, Unity settings, packages or scenes changed by pack generation.
+- SHA256SUMS.json covers every payload file except itself.
+- ZIP integrity and payload hashes checked after packaging.
+This validates the documentation package, not Unity compatibility or mobile performance.

@@ -1,0 +1,83 @@
+{
+  "copied_on": "2026-10-26",
+  "purpose": "Free asset selection and low-end mobile walking/driving guidance",
+  "pack_folder": "Planning/Codex-Handoff/Bulldozer_Free_Assets_Mobile_2026-10-26",
+  "files": [
+    {
+      "path": "Planning/Codex-Handoff/Bulldozer_Free_Assets_Mobile_2026-10-26/00_START_HERE.md",
+      "sha256": "fbd6158445879605bbb6260e82165d4f7cd004191c5d3cffb812edc4b5904899",
+      "bytes": 3325
+    },
+    {
+      "path": "Planning/Codex-Handoff/Bulldozer_Free_Assets_Mobile_2026-10-26/01_SKETCHFAB_AND_OTHER_FREE_ASSETS.md",
+      "sha256": "5bb85585f0f70c98aeb390028dd8921aac4fe223141749138da6ee7edb5a00bf",
+      "bytes": 5799
+    },
+    {
+      "path": "Planning/Codex-Handoff/Bulldozer_Free_Assets_Mobile_2026-10-26/02_UNITY_FREE_ASSETS.md",
+      "sha256": "cebb693f9c8cad800413d195eee7c4d70253c27997ca6b8426a4f69a1595339d",
+      "bytes": 5862
+    },
+    {
+      "path": "Planning/Codex-Handoff/Bulldozer_Free_Assets_Mobile_2026-10-26/03_BLENDER_PREPARATION.md",
+      "sha256": "2e8e3d76b415df4a49510a485acf0612e2c7d53befaf7698d030dfe5cce9d440",
+      "bytes": 5093
+    },
+    {
+      "path": "Planning/Codex-Handoff/Bulldozer_Free_Assets_Mobile_2026-10-26/04_LOW_END_MOBILE_BUDGET.md",
+      "sha256": "2bfa65213421fb6f842bf659e5d4b602184b8736dbc713cc98aad1d3f1a626c6",
+      "bytes": 6778
+    },
+    {
+      "path": "Planning/Codex-Handoff/Bulldozer_Free_Assets_Mobile_2026-10-26/05_LICENSES_AND_ATTRIBUTION.md",
+      "sha256": "410b113f58ddae3ef3cc873601bcdf84af21e851a0f6ab7f527833dac9ac2c75",
+      "bytes": 3970
+    },
+    {
+      "path": "Planning/Codex-Handoff/Bulldozer_Free_Assets_Mobile_2026-10-26/06_FIRST_SLICE_PLAN.md",
+      "sha256": "3169b5b4d528726526532101d7602f6e68be9f9a0af259a6261b6d910a666c81",
+      "bytes": 4170
+    },
+    {
+      "path": "Planning/Codex-Handoff/Bulldozer_Free_Assets_Mobile_2026-10-26/07_EVIDENCE_AND_SOURCES.md",
+      "sha256": "22df0e1b9b860dec143a2200aefc3777b6c764eb6e8d504baa464fd2b2d83e8d",
+      "bytes": 3845
+    },
+    {
+      "path": "Planning/Codex-Handoff/Bulldozer_Free_Assets_Mobile_2026-10-26/LAPTOP_AGENT_ASSET_PROMPT.txt",
+      "sha256": "ff560c1b3d6a13ec053c30076e3ca9c5fdbd62fea336dd31d74df6b2903badc0",
+      "bytes": 2675
+    },
+    {
+      "path": "Planning/Codex-Handoff/Bulldozer_Free_Assets_Mobile_2026-10-26/SHA256SUMS.json",
+      "sha256": "ff938de5f2745ed13df1aadaa1dc0ced2106c2a12c262a2fa11edcd3315734ea",
+      "bytes": 1278
+    },
+    {
+      "path": "Planning/Codex-Handoff/Bulldozer_Free_Assets_Mobile_2026-10-26/VALIDATION.txt",
+      "sha256": "a1fd0b47f9651cfc0d354f00d7d1d37485e503940111cd7c53746cf001f79215",
+      "bytes": 783
+    },
+    {
+      "path": "Planning/Codex-Handoff/Bulldozer_Free_Assets_Mobile_2026-10-26/asset_catalog.json",
+      "sha256": "825e37e2a39cd1b66c97f8108d9f82bacbe033e4425ec4eb8ca8278cdddbae08",
+      "bytes": 21771
+    },
+    {
+      "path": "Planning/Codex-Handoff/Bulldozer_Free_Assets_Mobile_2026-10-26/local_nature_inspection.json",
+      "sha256": "8707f7b6d8251e062919952daa00eaae4e75b10f72a0b36b2c238c9eb7e9dff5",
+      "bytes": 4394
+    },
+    {
+      "path": "Planning/Codex-Handoff/Bulldozer_Free_Assets_Mobile_2026-10-26/mobile_budget.json",
+      "sha256": "923c6fe7a1b0c27b346fb3f2b7c0fcd3248e9d4b31f64918d913d761e2a1fec7",
+      "bytes": 1779
+    },
+    {
+      "path": "Planning/Codex-Handoff/MOBILE_ASSETS_START_HERE.txt",
+      "sha256": "29fc90944b27501f3ec41979801cbc1c992c80dee603c077e3058ad4285b19d4",
+      "bytes": 1397
+    }
+  ],
+  "scope": "Documentation only; all previous handoff files preserved. ZIP remains in research workspace."
+}
