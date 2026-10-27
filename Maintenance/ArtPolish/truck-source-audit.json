@@ -1,0 +1,206 @@
+{
+  "objects": [
+    {
+      "name": "hydraulic_part1",
+      "triangles": 498,
+      "dimensions": [
+        0.17665530741214752,
+        0.17665556073188782,
+        1.4242221117019653
+      ],
+      "materials": [
+        "dumper_truck_metal_dark"
+      ]
+    },
+    {
+      "name": "hydraulic_part2",
+      "triangles": 132,
+      "dimensions": [
+        0.09274905920028687,
+        0.11814898252487183,
+        1.0121209621429443
+      ],
+      "materials": [
+        "dumper_truck_metal_chromed",
+        "dumper_truck_metal_dark"
+      ]
+    },
+    {
+      "name": "platform_door",
+      "triangles": 304,
+      "dimensions": [
+        1.8731979131698608,
+        0.6835910081863403,
+        0.05432271957397461
+      ],
+      "materials": [
+        "dumper_truck_main_color",
+        "dumper_truck_metal_chromed"
+      ]
+    },
+    {
+      "name": "platform",
+      "triangles": 1778,
+      "dimensions": [
+        2.0182876586914062,
+        1.3653887510299683,
+        4.349069118499756
+      ],
+      "materials": [
+        "dumper_truck_main_color",
+        "dumper_truck_metal_chromed",
+        "dumper_truck_metal_dark"
+      ]
+    },
+    {
+      "name": "wheel_back_axis1_left",
+      "triangles": 1196,
+      "dimensions": [
+        0.5123189091682434,
+        0.8148929476737976,
+        0.8148928880691528
+      ],
+      "materials": [
+        "dumper_truck_wheels_metal",
+        "dumper_truck_wheels"
+      ]
+    },
+    {
+      "name": "wheel_back_axis1_right",
+      "triangles": 1196,
+      "dimensions": [
+        0.5123189091682434,
+        0.8148929476737976,
+        0.8148928880691528
+      ],
+      "materials": [
+        "dumper_truck_wheels_metal",
+        "dumper_truck_wheels"
+      ]
+    },
+    {
+      "name": "wheel_back_axis2_left",
+      "triangles": 1196,
+      "dimensions": [
+        0.5123189091682434,
+        0.8148929476737976,
+        0.8148928880691528
+      ],
+      "materials": [
+        "dumper_truck_wheels_metal",
+        "dumper_truck_wheels"
+      ]
+    },
+    {
+      "name": "wheel_back_axis2_right",
+      "triangles": 1196,
+      "dimensions": [
+        0.5123189091682434,
+        0.8148929476737976,
+        0.8148928880691528
+      ],
+      "materials": [
+        "dumper_truck_wheels_metal",
+        "dumper_truck_wheels"
+      ]
+    },
+    {
+      "name": "wheel_front_left",
+      "triangles": 764,
+      "dimensions": [
+        0.2561597228050232,
+        0.8148929476737976,
+        0.8148932456970215
+      ],
+      "materials": [
+        "dumper_truck_wheels",
+        "dumper_truck_wheels_metal"
+      ]
+    },
+    {
+      "name": "wheel_front_right",
+      "triangles": 764,
+      "dimensions": [
+        0.2561597228050232,
+        0.8148929476737976,
+        0.8148932456970215
+      ],
+      "materials": [
+        "dumper_truck_wheels",
+        "dumper_truck_wheels_metal"
+      ]
+    },
+    {
+      "name": "body_main_1",
+      "triangles": 16440,
+      "dimensions": [
+        2.099186658859253,
+        2.4950175285339355,
+        5.821464538574219
+      ],
+      "materials": [
+        "dumper_truck_main_color",
+        "dumper_truck_metal_dark",
+        "dumper_truck_plastic",
+        "dumper_truck_metal_chromed",
+        "dumper_truck_mirrors",
+        "dumper_truck_lights",
+        "dumper_truck_windows"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "name": "DiffuseColor_Texture",
+      "path": "C:\\Users\\Administrator\\Downloads\\man-tga-dump-truck\\dumper_truck.png"
+    },
+    {
+      "name": "DiffuseColor_Texture.001",
+      "path": "C:\\Users\\Administrator\\Downloads\\man-tga-dump-truck\\dumper_truck.png"
+    },
+    {
+      "name": "DiffuseColor_Texture.002",
+      "path": "C:\\Users\\Administrator\\Downloads\\man-tga-dump-truck\\dumper_truck.png"
+    },
+    {
+      "name": "DiffuseColor_Texture.003",
+      "path": "C:\\Users\\Administrator\\Downloads\\man-tga-dump-truck\\dumper_truck.png"
+    },
+    {
+      "name": "DiffuseColor_Texture.004",
+      "path": "C:\\Users\\Administrator\\Downloads\\man-tga-dump-truck\\dumper_truck.png"
+    },
+    {
+      "name": "DiffuseColor_Texture.005",
+      "path": "C:\\Users\\Administrator\\Downloads\\man-tga-dump-truck\\dumper_truck.png"
+    },
+    {
+      "name": "DiffuseColor_Texture.006",
+      "path": "C:\\Users\\Administrator\\Downloads\\man-tga-dump-truck\\dumper_truck.png"
+    },
+    {
+      "name": "DiffuseColor_Texture_1",
+      "path": "C:\\Users\\Administrator\\Downloads\\man-tga-dump-truck\\glass.png"
+    },
+    {
+      "name": "DiffuseColor_Texture_1.001",
+      "path": "C:\\Users\\Administrator\\Downloads\\man-tga-dump-truck\\glass.png"
+    },
+    {
+      "name": "DiffuseColor_Texture_2",
+      "path": "C:\\Users\\Administrator\\Downloads\\man-tga-dump-truck\\wheels_metal.png"
+    },
+    {
+      "name": "DiffuseColor_Texture_2.001",
+      "path": "C:\\Users\\Administrator\\Downloads\\man-tga-dump-truck\\wheels_metal.png"
+    },
+    {
+      "name": "DiffuseColor_Texture_3",
+      "path": "C:\\Users\\Administrator\\Downloads\\man-tga-dump-truck\\wheels.png"
+    },
+    {
+      "name": "DiffuseColor_Texture_3.001",
+      "path": "C:\\Users\\Administrator\\Downloads\\man-tga-dump-truck\\wheels.png"
+    }
+  ]
+}

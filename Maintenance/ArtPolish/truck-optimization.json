@@ -1,0 +1,67 @@
+{
+  "parts": [
+    {
+      "name": "hydraulic_part1",
+      "source": 498,
+      "triangles": 99
+    },
+    {
+      "name": "hydraulic_part2",
+      "source": 132,
+      "triangles": 100
+    },
+    {
+      "name": "platform_door",
+      "source": 304,
+      "triangles": 100
+    },
+    {
+      "name": "platform",
+      "source": 1778,
+      "triangles": 650
+    },
+    {
+      "name": "wheel_back_axis1_left",
+      "source": 1196,
+      "triangles": 158
+    },
+    {
+      "name": "wheel_back_axis1_right",
+      "source": 1196,
+      "triangles": 158
+    },
+    {
+      "name": "wheel_back_axis2_left",
+      "source": 1196,
+      "triangles": 158
+    },
+    {
+      "name": "wheel_back_axis2_right",
+      "source": 1196,
+      "triangles": 158
+    },
+    {
+      "name": "wheel_front_left",
+      "source": 764,
+      "triangles": 160
+    },
+    {
+      "name": "wheel_front_right",
+      "source": 764,
+      "triangles": 160
+    },
+    {
+      "name": "body_main_1",
+      "source": 16440,
+      "triangles": 2499
+    }
+  ],
+  "triangles": 4400,
+  "materials": 1,
+  "atlas": 1024,
+  "dimensions": [
+    2.0921080112457275,
+    5.8221821784973145,
+    2.6886606216430664
+  ]
+}

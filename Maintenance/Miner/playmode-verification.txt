@@ -1,0 +1,8 @@
+passed=True
+frames=51
+movementMetres=2.271
+jumpRiseMetres=0.778
+landed=True
+swingPeak=1.000
+player=(0.00, 0.03, 2.53)
+camera=(0.00, 2.87, -2.04)

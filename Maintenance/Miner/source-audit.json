@@ -1,0 +1,1060 @@
+[
+  {
+    "file": "Assets/0_ProjectData/Breathing Idle.fbx",
+    "meshes": [
+      {
+        "name": "Ch17_Body",
+        "triangles": 18240,
+        "vertices": 9188,
+        "materials": [
+          "Ch17_body"
+        ],
+        "bounds": [
+          [
+            -0.890125036239624,
+            0.890125036239624
+          ],
+          [
+            -0.14911364018917084,
+            0.0821172297000885
+          ],
+          [
+            1.3533493280410767,
+            1.7636098861694336
+          ]
+        ],
+        "groups": 41
+      },
+      {
+        "name": "Ch17_Boots",
+        "triangles": 4112,
+        "vertices": 2048,
+        "materials": [
+          "Ch17_body"
+        ],
+        "bounds": [
+          [
+            -0.22235001623630524,
+            0.22235001623630524
+          ],
+          [
+            -0.18977035582065582,
+            0.11427344381809235
+          ],
+          [
+            -0.0015589231625199318,
+            0.1797257512807846
+          ]
+        ],
+        "groups": 6
+      },
+      {
+        "name": "Ch17_Eyelashes",
+        "triangles": 768,
+        "vertices": 600,
+        "materials": [
+          "Ch17_hair"
+        ],
+        "bounds": [
+          [
+            -0.05541757494211197,
+            0.054824694991111755
+          ],
+          [
+            -0.11945290863513947,
+            -0.1011870726943016
+          ],
+          [
+            1.638475775718689,
+            1.6580262184143066
+          ]
+        ],
+        "groups": 1
+      },
+      {
+        "name": "Ch17_Hair",
+        "triangles": 8230,
+        "vertices": 7599,
+        "materials": [
+          "Ch17_hair"
+        ],
+        "bounds": [
+          [
+            -0.10898904502391815,
+            0.10411777347326279
+          ],
+          [
+            -0.1412149965763092,
+            0.08675099164247513
+          ],
+          [
+            1.507639765739441,
+            1.7331804037094116
+          ]
+        ],
+        "groups": 5
+      },
+      {
+        "name": "Ch17_Helmet",
+        "triangles": 6576,
+        "vertices": 3296,
+        "materials": [
+          "Ch17_body"
+        ],
+        "bounds": [
+          [
+            -0.10026394575834274,
+            0.10026386380195618
+          ],
+          [
+            -0.15516579151153564,
+            0.09649056941270828
+          ],
+          [
+            1.6159956455230713,
+            1.7866184711456299
+          ]
+        ],
+        "groups": 2
+      },
+      {
+        "name": "Ch17_Pants",
+        "triangles": 7666,
+        "vertices": 3865,
+        "materials": [
+          "Ch17_body"
+        ],
+        "bounds": [
+          [
+            -0.2300945222377777,
+            0.21972393989562988
+          ],
+          [
+            -0.15619532763957977,
+            0.11128437519073486
+          ],
+          [
+            0.08009927719831467,
+            1.050547480583191
+          ]
+        ],
+        "groups": 11
+      },
+      {
+        "name": "Ch17_Shirt",
+        "triangles": 2996,
+        "vertices": 1563,
+        "materials": [
+          "Ch17_body"
+        ],
+        "bounds": [
+          [
+            -0.6229254007339478,
+            0.6221485733985901
+          ],
+          [
+            -0.14418016374111176,
+            0.11173298209905624
+          ],
+          [
+            1.2387117147445679,
+            1.5642304420471191
+          ]
+        ],
+        "groups": 13
+      },
+      {
+        "name": "Ch17_Vest",
+        "triangles": 5150,
+        "vertices": 2577,
+        "materials": [
+          "Ch17_body"
+        ],
+        "bounds": [
+          [
+            -0.2074374258518219,
+            0.2061259150505066
+          ],
+          [
+            -0.16506487131118774,
+            0.12465519458055496
+          ],
+          [
+            0.9434910416603088,
+            1.513869285583496
+          ]
+        ],
+        "groups": 12
+      }
+    ],
+    "rigs": [
+      {
+        "name": "Armature",
+        "bones": 65,
+        "names": [
+          "mixamorig1:Hips",
+          "mixamorig1:Spine",
+          "mixamorig1:Spine1",
+          "mixamorig1:Spine2",
+          "mixamorig1:Neck",
+          "mixamorig1:Head",
+          "mixamorig1:HeadTop_End",
+          "mixamorig1:LeftShoulder",
+          "mixamorig1:LeftArm",
+          "mixamorig1:LeftForeArm",
+          "mixamorig1:LeftHand",
+          "mixamorig1:LeftHandThumb1"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "name": "Armature|mixamo.com|Layer0",
+        "range": [
+          1.0,
+          299.0
+        ]
+      }
+    ],
+    "images": [
+      {
+        "name": "file1",
+        "size": [
+          4096,
+          4096
+        ],
+        "packed": true,
+        "path": "C:\\Users\\Administrator\\Desktop\\TalhaProjects\\Bulldozer_Simulator\\Assets\\0_ProjectData\\..\\..\\..\\..\\home\\app\\mixamo-mini\\tmp\\skins_554a76c4-5d21-4156-a147-628490f9d8b9.fbm\\Ch17_1001_Diffuse.png"
+      },
+      {
+        "name": "file3",
+        "size": [
+          4096,
+          4096
+        ],
+        "packed": true,
+        "path": "C:\\Users\\Administrator\\Desktop\\TalhaProjects\\Bulldozer_Simulator\\Assets\\0_ProjectData\\..\\..\\..\\..\\home\\app\\mixamo-mini\\tmp\\skins_554a76c4-5d21-4156-a147-628490f9d8b9.fbm\\Ch17_1001_Normal.png"
+      },
+      {
+        "name": "file5",
+        "size": [
+          4096,
+          4096
+        ],
+        "packed": true,
+        "path": "C:\\Users\\Administrator\\Desktop\\TalhaProjects\\Bulldozer_Simulator\\Assets\\0_ProjectData\\..\\..\\..\\..\\home\\app\\mixamo-mini\\tmp\\skins_554a76c4-5d21-4156-a147-628490f9d8b9.fbm\\Ch17_1001_Specular.png"
+      },
+      {
+        "name": "file6",
+        "size": [
+          4096,
+          4096
+        ],
+        "packed": true,
+        "path": "C:\\Users\\Administrator\\Desktop\\TalhaProjects\\Bulldozer_Simulator\\Assets\\0_ProjectData\\..\\..\\..\\..\\home\\app\\mixamo-mini\\tmp\\skins_554a76c4-5d21-4156-a147-628490f9d8b9.fbm\\Ch17_1001_Glossiness.png"
+      },
+      {
+        "name": "file7",
+        "size": [
+          2048,
+          2048
+        ],
+        "packed": true,
+        "path": "C:\\Users\\Administrator\\Desktop\\TalhaProjects\\Bulldozer_Simulator\\Assets\\0_ProjectData\\..\\..\\..\\..\\home\\app\\mixamo-mini\\tmp\\skins_554a76c4-5d21-4156-a147-628490f9d8b9.fbm\\Ch17_1002_Diffuse.png"
+      },
+      {
+        "name": "file7.001",
+        "size": [
+          2048,
+          2048
+        ],
+        "packed": true,
+        "path": "C:\\Users\\Administrator\\Desktop\\TalhaProjects\\Bulldozer_Simulator\\Assets\\0_ProjectData\\..\\..\\..\\..\\home\\app\\mixamo-mini\\tmp\\skins_554a76c4-5d21-4156-a147-628490f9d8b9.fbm\\Ch17_1002_Diffuse.png"
+      },
+      {
+        "name": "file7.002",
+        "size": [
+          2048,
+          2048
+        ],
+        "packed": true,
+        "path": "C:\\Users\\Administrator\\Desktop\\TalhaProjects\\Bulldozer_Simulator\\Assets\\0_ProjectData\\..\\..\\..\\..\\home\\app\\mixamo-mini\\tmp\\skins_554a76c4-5d21-4156-a147-628490f9d8b9.fbm\\Ch17_1002_Diffuse.png"
+      },
+      {
+        "name": "file8",
+        "size": [
+          2048,
+          2048
+        ],
+        "packed": true,
+        "path": "C:\\Users\\Administrator\\Desktop\\TalhaProjects\\Bulldozer_Simulator\\Assets\\0_ProjectData\\..\\..\\..\\..\\home\\app\\mixamo-mini\\tmp\\skins_554a76c4-5d21-4156-a147-628490f9d8b9.fbm\\Ch17_1002_Normal.png"
+      }
+    ]
+  },
+  {
+    "file": "Assets/0_ProjectData/Player/Art/Miner.fbx",
+    "meshes": [
+      {
+        "name": "BackpackStrap",
+        "triangles": 108,
+        "vertices": 56,
+        "materials": [
+          "Charcoal"
+        ],
+        "bounds": [
+          [
+            -0.15250001847743988,
+            -0.10750000923871994
+          ],
+          [
+            -0.10499998182058334,
+            0.23499998450279236
+          ],
+          [
+            1.0850000381469727,
+            1.4749999046325684
+          ]
+        ],
+        "groups": 1
+      },
+      {
+        "name": "BackpackStrap.001",
+        "triangles": 108,
+        "vertices": 56,
+        "materials": [
+          "Charcoal"
+        ],
+        "bounds": [
+          [
+            0.10749997943639755,
+            0.1524999886751175
+          ],
+          [
+            -0.10499998182058334,
+            0.23499998450279236
+          ],
+          [
+            1.0850000381469727,
+            1.4749999046325684
+          ]
+        ],
+        "groups": 1
+      },
+      {
+        "name": "HardHat",
+        "triangles": 224,
+        "vertices": 114,
+        "materials": [
+          "SafetyYellow"
+        ],
+        "bounds": [
+          [
+            -0.14499999582767487,
+            0.14499998092651367
+          ],
+          [
+            -0.11499997973442078,
+            0.16500000655651093
+          ],
+          [
+            1.6999999284744263,
+            1.8899999856948853
+          ]
+        ],
+        "groups": 1
+      },
+      {
+        "name": "HatBrim",
+        "triangles": 224,
+        "vertices": 114,
+        "materials": [
+          "SafetyYellow"
+        ],
+        "bounds": [
+          [
+            -0.18000000715255737,
+            0.17999999225139618
+          ],
+          [
+            -0.1679999828338623,
+            0.19199998676776886
+          ],
+          [
+            1.7369999885559082,
+            1.7730000019073486
+          ]
+        ],
+        "groups": 1
+      },
+      {
+        "name": "HeadLamp",
+        "triangles": 224,
+        "vertices": 114,
+        "materials": [
+          "Lamp"
+        ],
+        "bounds": [
+          [
+            -0.030000032857060432,
+            0.02999996393918991
+          ],
+          [
+            -0.16199997067451477,
+            -0.1379999816417694
+          ],
+          [
+            1.7630000114440918,
+            1.816999912261963
+          ]
+        ],
+        "groups": 1
+      },
+      {
+        "name": "LampHousing",
+        "triangles": 108,
+        "vertices": 56,
+        "materials": [
+          "Charcoal"
+        ],
+        "bounds": [
+          [
+            -0.04250001907348633,
+            0.042499981820583344
+          ],
+          [
+            -0.14549997448921204,
+            -0.09049997478723526
+          ],
+          [
+            1.7549999952316284,
+            1.8249999284744263
+          ]
+        ],
+        "groups": 1
+      },
+      {
+        "name": "MinerBody",
+        "triangles": 4894,
+        "vertices": 2449,
+        "materials": [
+          "MinerAtlas"
+        ],
+        "bounds": [
+          [
+            -0.6993715763092041,
+            0.6993715763092041
+          ],
+          [
+            -0.14990167319774628,
+            0.16531920433044434
+          ],
+          [
+            -0.002921541454270482,
+            1.8257466554641724
+          ]
+        ],
+        "groups": 52
+      },
+      {
+        "name": "OreBackpack",
+        "triangles": 108,
+        "vertices": 56,
+        "materials": [
+          "CanvasBrown"
+        ],
+        "bounds": [
+          [
+            -0.1900000125169754,
+            0.18999998271465302
+          ],
+          [
+            0.07500000298023224,
+            0.32499995827674866
+          ],
+          [
+            0.98499995470047,
+            1.415000081062317
+          ]
+        ],
+        "groups": 1
+      },
+      {
+        "name": "OreLoad",
+        "triangles": 20,
+        "vertices": 12,
+        "materials": [
+          "Ore"
+        ],
+        "bounds": [
+          [
+            -0.18549825251102448,
+            -0.02450176700949669
+          ],
+          [
+            0.11344238370656967,
+            0.26655760407447815
+          ],
+          [
+            1.3299999237060547,
+            1.5099999904632568
+          ]
+        ],
+        "groups": 1
+      },
+      {
+        "name": "OreLoad.001",
+        "triangles": 20,
+        "vertices": 12,
+        "materials": [
+          "Ore"
+        ],
+        "bounds": [
+          [
+            -0.08049826323986053,
+            0.08049823343753815
+          ],
+          [
+            0.11344238370656967,
+            0.26655757427215576
+          ],
+          [
+            1.375,
+            1.5550000667572021
+          ]
+        ],
+        "groups": 1
+      },
+      {
+        "name": "OreLoad.002",
+        "triangles": 20,
+        "vertices": 12,
+        "materials": [
+          "Ore"
+        ],
+        "bounds": [
+          [
+            0.024501731619238853,
+            0.1854982227087021
+          ],
+          [
+            0.11344238370656967,
+            0.26655760407447815
+          ],
+          [
+            1.3299999237060547,
+            1.5099999904632568
+          ]
+        ],
+        "groups": 1
+      },
+      {
+        "name": "OreLoad.003",
+        "triangles": 20,
+        "vertices": 12,
+        "materials": [
+          "Ore"
+        ],
+        "bounds": [
+          [
+            -0.18549825251102448,
+            -0.02450176700949669
+          ],
+          [
+            0.17844237387180328,
+            0.33155757188796997
+          ],
+          [
+            1.375,
+            1.5550000667572021
+          ]
+        ],
+        "groups": 1
+      },
+      {
+        "name": "OreLoad.004",
+        "triangles": 20,
+        "vertices": 12,
+        "materials": [
+          "Ore"
+        ],
+        "bounds": [
+          [
+            -0.08049826323986053,
+            0.08049823343753815
+          ],
+          [
+            0.17844238877296448,
+            0.33155760169029236
+          ],
+          [
+            1.3299999237060547,
+            1.5099999904632568
+          ]
+        ],
+        "groups": 1
+      },
+      {
+        "name": "OreLoad.005",
+        "triangles": 20,
+        "vertices": 12,
+        "materials": [
+          "Ore"
+        ],
+        "bounds": [
+          [
+            0.024501729756593704,
+            0.1854982227087021
+          ],
+          [
+            0.17844237387180328,
+            0.33155757188796997
+          ],
+          [
+            1.375,
+            1.5550000667572021
+          ]
+        ],
+        "groups": 1
+      },
+      {
+        "name": "OreLoad.006",
+        "triangles": 20,
+        "vertices": 12,
+        "materials": [
+          "Ore"
+        ],
+        "bounds": [
+          [
+            -0.18549826741218567,
+            -0.024501780048012733
+          ],
+          [
+            0.2434423565864563,
+            0.3965575397014618
+          ],
+          [
+            1.3299999237060547,
+            1.5099999904632568
+          ]
+        ],
+        "groups": 1
+      },
+      {
+        "name": "PackFrame",
+        "triangles": 108,
+        "vertices": 56,
+        "materials": [
+          "Charcoal"
+        ],
+        "bounds": [
+          [
+            -0.1600000113248825,
+            0.15999998152256012
+          ],
+          [
+            0.3174999952316284,
+            0.3425000011920929
+          ],
+          [
+            0.9900000095367432,
+            1.3900001049041748
+          ]
+        ],
+        "groups": 1
+      },
+      {
+        "name": "PickaxeHandle",
+        "triangles": 108,
+        "vertices": 56,
+        "materials": [
+          "CanvasBrown"
+        ],
+        "bounds": [
+          [
+            -0.6234999895095825,
+            -0.5885000228881836
+          ],
+          [
+            0.0005000000819563866,
+            0.035499997437000275
+          ],
+          [
+            0.5900000333786011,
+            1.2300000190734863
+          ]
+        ],
+        "groups": 1
+      },
+      {
+        "name": "PickaxeHead",
+        "triangles": 108,
+        "vertices": 56,
+        "materials": [
+          "Steel"
+        ],
+        "bounds": [
+          [
+            -0.7960000038146973,
+            -0.41600003838539124
+          ],
+          [
+            -0.014499995857477188,
+            0.05049999803304672
+          ],
+          [
+            1.1875,
+            1.252500057220459
+          ]
+        ],
+        "groups": 1
+      },
+      {
+        "name": "PickaxeTip",
+        "triangles": 108,
+        "vertices": 56,
+        "materials": [
+          "Steel"
+        ],
+        "bounds": [
+          [
+            -0.9078341126441956,
+            -0.74416583776474
+          ],
+          [
+            -0.00699999975040555,
+            0.0429999977350235
+          ],
+          [
+            1.124741792678833,
+            1.2352581024169922
+          ]
+        ],
+        "groups": 1
+      },
+      {
+        "name": "PickaxeTip.001",
+        "triangles": 108,
+        "vertices": 56,
+        "materials": [
+          "Steel"
+        ],
+        "bounds": [
+          [
+            -0.4678341746330261,
+            -0.30416589975357056
+          ],
+          [
+            -0.006999996956437826,
+            0.0429999977350235
+          ],
+          [
+            1.124741792678833,
+            1.2352581024169922
+          ]
+        ],
+        "groups": 1
+      }
+    ],
+    "rigs": [
+      {
+        "name": "Armature",
+        "bones": 65,
+        "names": [
+          "mixamorig:Hips",
+          "mixamorig:Spine",
+          "mixamorig:Spine1",
+          "mixamorig:Spine2",
+          "mixamorig:Neck",
+          "mixamorig:Head",
+          "mixamorig:HeadTop_End",
+          "mixamorig:LeftShoulder",
+          "mixamorig:LeftArm",
+          "mixamorig:LeftForeArm",
+          "mixamorig:LeftHand",
+          "mixamorig:LeftHandThumb1"
+        ]
+      }
+    ],
+    "actions": [],
+    "images": [
+      {
+        "name": "MinerAtlas",
+        "size": [
+          1024,
+          512
+        ],
+        "packed": true,
+        "path": "C:\\Users\\Administrator\\Desktop\\TalhaProjects\\Bulldozer_Simulator\\Assets\\0_ProjectData\\Player\\Art\\MinerAtlas.png"
+      }
+    ]
+  },
+  {
+    "file": "C:/Users/Administrator/Downloads/Taunt.fbx",
+    "meshes": [
+      {
+        "name": "Ch38_Body",
+        "triangles": 18600,
+        "vertices": 9404,
+        "materials": [
+          "Ch38_body"
+        ],
+        "bounds": [
+          [
+            -0.8903809785842896,
+            0.8903809785842896
+          ],
+          [
+            -0.14496606588363647,
+            0.10609370470046997
+          ],
+          [
+            0.33696720004081726,
+            1.7635221481323242
+          ]
+        ],
+        "groups": 26
+      },
+      {
+        "name": "Ch38_Eyelashes",
+        "triangles": 960,
+        "vertices": 750,
+        "materials": [
+          "Ch38_hair"
+        ],
+        "bounds": [
+          [
+            -0.05647227168083191,
+            0.05673738196492195
+          ],
+          [
+            -0.11743488907814026,
+            -0.09887667745351791
+          ],
+          [
+            1.639026165008545,
+            1.660392165184021
+          ]
+        ],
+        "groups": 1
+      },
+      {
+        "name": "Ch38_Hair",
+        "triangles": 9528,
+        "vertices": 8170,
+        "materials": [
+          "Ch38_hair"
+        ],
+        "bounds": [
+          [
+            -0.09923947602510452,
+            0.10142263770103455
+          ],
+          [
+            -0.1152278408408165,
+            0.09905335307121277
+          ],
+          [
+            1.5603219270706177,
+            1.7849723100662231
+          ]
+        ],
+        "groups": 2
+      },
+      {
+        "name": "Ch38_Shirt",
+        "triangles": 7554,
+        "vertices": 3779,
+        "materials": [
+          "Ch38_body"
+        ],
+        "bounds": [
+          [
+            -0.7148402333259583,
+            0.7330515384674072
+          ],
+          [
+            -0.13926832377910614,
+            0.12134606391191483
+          ],
+          [
+            0.9007441401481628,
+            1.533090591430664
+          ]
+        ],
+        "groups": 18
+      },
+      {
+        "name": "Ch38_Shoes",
+        "triangles": 3480,
+        "vertices": 1744,
+        "materials": [
+          "Ch38_body"
+        ],
+        "bounds": [
+          [
+            -0.22629310190677643,
+            0.22629307210445404
+          ],
+          [
+            -0.1881365329027176,
+            0.10345589369535446
+          ],
+          [
+            0.00026804517256096005,
+            0.1317415088415146
+          ]
+        ],
+        "groups": 6
+      },
+      {
+        "name": "Ch38_Shorts",
+        "triangles": 7024,
+        "vertices": 3596,
+        "materials": [
+          "Ch38_body"
+        ],
+        "bounds": [
+          [
+            -0.19516681134700775,
+            0.19496594369411469
+          ],
+          [
+            -0.13528451323509216,
+            0.10143683850765228
+          ],
+          [
+            0.5719910264015198,
+            0.967078447341919
+          ]
+        ],
+        "groups": 5
+      },
+      {
+        "name": "Ch38_Socks",
+        "triangles": 1000,
+        "vertices": 520,
+        "materials": [
+          "Ch38_body"
+        ],
+        "bounds": [
+          [
+            -0.20035915076732635,
+            0.20096544921398163
+          ],
+          [
+            -0.02362755872309208,
+            0.10812518745660782
+          ],
+          [
+            0.0513056181371212,
+            0.37683501839637756
+          ]
+        ],
+        "groups": 8
+      }
+    ],
+    "rigs": [
+      {
+        "name": "Armature",
+        "bones": 65,
+        "names": [
+          "mixamorig5:Hips",
+          "mixamorig5:Spine",
+          "mixamorig5:Spine1",
+          "mixamorig5:Spine2",
+          "mixamorig5:Neck",
+          "mixamorig5:Head",
+          "mixamorig5:HeadTop_End",
+          "mixamorig5:LeftShoulder",
+          "mixamorig5:LeftArm",
+          "mixamorig5:LeftForeArm",
+          "mixamorig5:LeftHand",
+          "mixamorig5:LeftHandThumb1"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "name": "Armature|mixamo.com|Layer0",
+        "range": [
+          1.0,
+          156.0
+        ]
+      }
+    ],
+    "images": [
+      {
+        "name": "Ch12__mod__V01_01_Ch12_Body_Diffuse_1",
+        "size": [
+          4096,
+          4096
+        ],
+        "packed": true,
+        "path": "C:\\Users\\Administrator\\Downloads\\..\\..\\..\\..\\home\\app\\mixamo-mini\\tmp\\skins_7e40d8e6-836c-4703-92cf-e29c3b170150.fbm\\Ch38_1001_Diffuse.png"
+      },
+      {
+        "name": "file3",
+        "size": [
+          4096,
+          4096
+        ],
+        "packed": true,
+        "path": "C:\\Users\\Administrator\\Downloads\\..\\..\\..\\..\\home\\app\\mixamo-mini\\tmp\\skins_7e40d8e6-836c-4703-92cf-e29c3b170150.fbm\\Ch38_1001_Normal.png"
+      },
+      {
+        "name": "file4",
+        "size": [
+          4096,
+          4096
+        ],
+        "packed": true,
+        "path": "C:\\Users\\Administrator\\Downloads\\..\\..\\..\\..\\home\\app\\mixamo-mini\\tmp\\skins_7e40d8e6-836c-4703-92cf-e29c3b170150.fbm\\Ch38_1001_Specular.png"
+      },
+      {
+        "name": "file5",
+        "size": [
+          4096,
+          4096
+        ],
+        "packed": true,
+        "path": "C:\\Users\\Administrator\\Downloads\\..\\..\\..\\..\\home\\app\\mixamo-mini\\tmp\\skins_7e40d8e6-836c-4703-92cf-e29c3b170150.fbm\\Ch38_1001_Glossiness.png"
+      },
+      {
+        "name": "file6",
+        "size": [
+          2048,
+          2048
+        ],
+        "packed": true,
+        "path": "C:\\Users\\Administrator\\Downloads\\..\\..\\..\\..\\home\\app\\mixamo-mini\\tmp\\skins_7e40d8e6-836c-4703-92cf-e29c3b170150.fbm\\Ch38_1002_Diffuse.png"
+      },
+      {
+        "name": "file6.001",
+        "size": [
+          2048,
+          2048
+        ],
+        "packed": true,
+        "path": "C:\\Users\\Administrator\\Downloads\\..\\..\\..\\..\\home\\app\\mixamo-mini\\tmp\\skins_7e40d8e6-836c-4703-92cf-e29c3b170150.fbm\\Ch38_1002_Diffuse.png"
+      },
+      {
+        "name": "file6.002",
+        "size": [
+          2048,
+          2048
+        ],
+        "packed": true,
+        "path": "C:\\Users\\Administrator\\Downloads\\..\\..\\..\\..\\home\\app\\mixamo-mini\\tmp\\skins_7e40d8e6-836c-4703-92cf-e29c3b170150.fbm\\Ch38_1002_Diffuse.png"
+      },
+      {
+        "name": "file7",
+        "size": [
+          2048,
+          2048
+        ],
+        "packed": true,
+        "path": "C:\\Users\\Administrator\\Downloads\\..\\..\\..\\..\\home\\app\\mixamo-mini\\tmp\\skins_7e40d8e6-836c-4703-92cf-e29c3b170150.fbm\\Ch38_1002_Normal.png"
+      }
+    ]
+  }
+]

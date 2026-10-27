@@ -1,0 +1,4 @@
+PASS Input pad automatically unloads and timed furnace produces two ingots
+PASS Output area automatically collects matching ingots
+PASS Sell area automatically fills truck, pays 30 coins once and dispatches
+PASS Upgrade button is visible, wired and purchases exactly once

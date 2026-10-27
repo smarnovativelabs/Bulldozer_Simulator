@@ -1,0 +1,4 @@
+PASS New Play session restores upgrades and coins
+PASS Mixed raw and ingot cargo restores visually
+PASS Refinery and partial truck inventories survive restart
+PASS Mined blocks remain depleted after restart

@@ -1,0 +1,17 @@
+PASS No damage before strike 0
+PASS One damage per block swing 0 health=2 status=Rock 2/3
+PASS One contact event per swing 0
+PASS No damage before strike 1
+PASS One damage per block swing 1 health=1 status=Rock 1/3
+PASS One contact event per swing 1
+PASS No damage before strike 2
+PASS One damage per block swing 2 health=0 status=Ore collected
+PASS One contact event per swing 2
+PASS Depleted rock removes collision and mesh
+PASS Broken rock adds exactly one visible cargo item
+PASS Nearby rocks were not damaged
+PASS Hidden pickaxe cannot damage rocks
+PASS Wall rock selects wall animation and receives contact damage
+PASS Full rack blocks damage without losing ore
+PASS Out-of-range swing cannot damage or collect
+PASS Player loop advanced 629 frames

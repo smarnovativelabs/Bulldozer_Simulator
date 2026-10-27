@@ -1,0 +1,317 @@
+[
+  {
+    "file": "C:/Users/Administrator/Downloads/construction-worker/source/complete.fbx",
+    "meshes": [
+      {
+        "name": "Body",
+        "triangles": 16794,
+        "vertices": 8592,
+        "materials": [
+          "PackedMaterial0mat"
+        ],
+        "bounds": [
+          [
+            -0.9704758524894714,
+            0.9704380035400391
+          ],
+          [
+            -0.13671931624412537,
+            0.10595989972352982
+          ],
+          [
+            1.3385957479476929,
+            1.762561321258545
+          ]
+        ],
+        "groups": 41
+      },
+      {
+        "name": "Bottoms",
+        "triangles": 1532,
+        "vertices": 768,
+        "materials": [
+          "PackedMaterial1mat"
+        ],
+        "bounds": [
+          [
+            -0.217993825674057,
+            0.21807724237442017
+          ],
+          [
+            -0.15424907207489014,
+            0.15662796795368195
+          ],
+          [
+            0.020087936893105507,
+            1.0275166034698486
+          ]
+        ],
+        "groups": 10
+      },
+      {
+        "name": "default",
+        "triangles": 1520,
+        "vertices": 764,
+        "materials": [
+          "PackedMaterial0mat"
+        ],
+        "bounds": [
+          [
+            -0.045935243368148804,
+            0.0485922135412693
+          ],
+          [
+            -0.10089191794395447,
+            -0.06618211418390274
+          ],
+          [
+            1.6576917171478271,
+            1.6930779218673706
+          ]
+        ],
+        "groups": 1
+      },
+      {
+        "name": "Eyelashes",
+        "triangles": 114,
+        "vertices": 106,
+        "materials": [
+          "PackedMaterial0mat"
+        ],
+        "bounds": [
+          [
+            -0.051789961755275726,
+            0.05410829558968544
+          ],
+          [
+            -0.1112755611538887,
+            -0.09018886089324951
+          ],
+          [
+            1.6631687879562378,
+            1.6789873838424683
+          ]
+        ],
+        "groups": 1
+      },
+      {
+        "name": "Hats",
+        "triangles": 1698,
+        "vertices": 881,
+        "materials": [
+          "PackedMaterial1mat"
+        ],
+        "bounds": [
+          [
+            -0.10495956987142563,
+            0.10897787660360336
+          ],
+          [
+            -0.16576384007930756,
+            0.10185466706752777
+          ],
+          [
+            1.632047176361084,
+            1.8303966522216797
+          ]
+        ],
+        "groups": 2
+      },
+      {
+        "name": "Shoes",
+        "triangles": 2204,
+        "vertices": 1130,
+        "materials": [
+          "PackedMaterial1mat"
+        ],
+        "bounds": [
+          [
+            -0.1809554398059845,
+            0.18102702498435974
+          ],
+          [
+            -0.2078091949224472,
+            0.14766713976860046
+          ],
+          [
+            -0.02510717697441578,
+            0.47382935881614685
+          ]
+        ],
+        "groups": 8
+      },
+      {
+        "name": "Tops",
+        "triangles": 2904,
+        "vertices": 1454,
+        "materials": [
+          "PackedMaterial1mat"
+        ],
+        "bounds": [
+          [
+            -0.7684468030929565,
+            0.7685068249702454
+          ],
+          [
+            -0.18203307688236237,
+            0.16366228461265564
+          ],
+          [
+            0.8206990957260132,
+            1.5879219770431519
+          ]
+        ],
+        "groups": 21
+      }
+    ],
+    "rigs": [
+      {
+        "name": "Armature",
+        "bones": 78,
+        "names": [
+          "mixamorig:Hips",
+          "mixamorig:Spine",
+          "mixamorig:Spine1",
+          "mixamorig:Spine2",
+          "mixamorig:Neck",
+          "mixamorig:Head",
+          "mixamorig:HeadTop_End",
+          "mixamorig:HeadTop_End_end",
+          "mixamorig:LeftShoulder",
+          "mixamorig:LeftArm",
+          "mixamorig:LeftForeArm",
+          "mixamorig:LeftHand"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "name": "Armature|Armature|Disappointed",
+        "range": [
+          1.0,
+          317.0
+        ]
+      },
+      {
+        "name": "Armature|Armature|Sad_Idle",
+        "range": [
+          1.0,
+          168.0
+        ]
+      },
+      {
+        "name": "Armature|Armature|Victory_Idle",
+        "range": [
+          1.0,
+          119.0
+        ]
+      },
+      {
+        "name": "Armature|Armature|Walk",
+        "range": [
+          1.0,
+          67.0
+        ]
+      },
+      {
+        "name": "Armature|Armature|Waving",
+        "range": [
+          1.0,
+          191.0
+        ]
+      }
+    ],
+    "images": [
+      {
+        "name": "worker_Packed0_Diffuse.001",
+        "size": [
+          0,
+          0
+        ],
+        "packed": false,
+        "path": "C:\\Users\\Administrator\\Downloads\\construction-worker\\source\\complete.fbm\\worker_Packed0_Diffuse.png"
+      },
+      {
+        "name": "worker_Packed0_Gloss.001",
+        "size": [
+          0,
+          0
+        ],
+        "packed": false,
+        "path": "C:\\Users\\Administrator\\Downloads\\construction-worker\\source\\complete.fbm\\worker_Packed0_Gloss.png"
+      },
+      {
+        "name": "worker_Packed0_Normal.001",
+        "size": [
+          0,
+          0
+        ],
+        "packed": false,
+        "path": "C:\\Users\\Administrator\\Downloads\\construction-worker\\source\\complete.fbm\\worker_Packed0_Normal.png"
+      },
+      {
+        "name": "worker_Packed0_Opacity.001",
+        "size": [
+          0,
+          0
+        ],
+        "packed": false,
+        "path": "C:\\Users\\Administrator\\Downloads\\construction-worker\\source\\complete.fbm\\worker_Packed0_Opacity.png"
+      },
+      {
+        "name": "worker_Packed0_Specular.001",
+        "size": [
+          0,
+          0
+        ],
+        "packed": false,
+        "path": "C:\\Users\\Administrator\\Downloads\\construction-worker\\source\\complete.fbm\\worker_Packed0_Specular.png"
+      },
+      {
+        "name": "worker_Packed1_Diffuse.001",
+        "size": [
+          0,
+          0
+        ],
+        "packed": false,
+        "path": "C:\\Users\\Administrator\\Downloads\\construction-worker\\source\\complete.fbm\\worker_Packed1_Diffuse.png"
+      },
+      {
+        "name": "worker_Packed1_Gloss.001",
+        "size": [
+          0,
+          0
+        ],
+        "packed": false,
+        "path": "C:\\Users\\Administrator\\Downloads\\construction-worker\\source\\complete.fbm\\worker_Packed1_Gloss.png"
+      },
+      {
+        "name": "worker_Packed1_Normal.001",
+        "size": [
+          0,
+          0
+        ],
+        "packed": false,
+        "path": "C:\\Users\\Administrator\\Downloads\\construction-worker\\source\\complete.fbm\\worker_Packed1_Normal.png"
+      },
+      {
+        "name": "worker_Packed1_Opacity.001",
+        "size": [
+          0,
+          0
+        ],
+        "packed": false,
+        "path": "C:\\Users\\Administrator\\Downloads\\construction-worker\\source\\complete.fbm\\worker_Packed1_Opacity.png"
+      },
+      {
+        "name": "worker_Packed1_Specular.001",
+        "size": [
+          0,
+          0
+        ],
+        "packed": false,
+        "path": "C:\\Users\\Administrator\\Downloads\\construction-worker\\source\\complete.fbm\\worker_Packed1_Specular.png"
+      }
+    ]
+  }
+]

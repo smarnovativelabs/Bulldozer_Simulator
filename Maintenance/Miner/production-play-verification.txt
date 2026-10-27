@@ -1,0 +1,21 @@
+PASS Seed isolated economy
+PASS Cannot purchase outside upgrade area
+PASS Upgrade area purchases damage and spends exactly its cost
+PASS Rack upgrade increases capacity and spends once
+PASS Unaffordable upgrade cannot change stats or coins
+PASS Collect distinct raw resource 0
+PASS Collect distinct raw resource 1
+PASS Collect distinct raw resource 2
+PASS Cargo retains resource identities
+PASS Truck rejects unrefined ore
+PASS Raw inventory transfers to buffered furnace input
+PASS Furnace produces corresponding ingot types without selling
+PASS Output moves onto player rack exactly once
+PASS Partial truck load waits without premature payment
+PASS Partial truck cargo survives disk reload
+PASS Full truck pays resource values exactly once
+PASS Departing truck cannot pay twice
+PASS Full upgraded rack prevents ore loss
+PASS Purchased damage is applied to rocks
+PASS Overkill final strike awards one item and persists depletion
+PASS Seed mixed state for restart verification

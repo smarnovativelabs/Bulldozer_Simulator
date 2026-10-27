@@ -1,0 +1,8 @@
+PASS Isolated first launch is empty
+PASS Collected two ore items
+PASS Cannot sell from outside the deposit area
+PASS Walking into pad automatically sells two ore for 20 coins
+PASS Rack stays empty after in-flight collection is cancelled by deposit
+PASS Repeated trigger/empty deposit cannot award duplicate coins
+PASS Collect more ore after unloading
+PASS Progress is on disk before quitting

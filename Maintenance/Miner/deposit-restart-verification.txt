@@ -1,0 +1,1 @@
+PASS New Play session restores 1 cargo, 20 coins and one visible rack item

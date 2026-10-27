@@ -1,0 +1,10 @@
+PASS Fresh game starts empty
+PASS Save cargo and coins together
+PASS Fresh store restores both balances
+PASS Deposit commits cleared cargo and payment in one snapshot
+PASS Deposit survives reload without duplicated cargo
+PASS Corrupt primary recovers the previous backup
+PASS Recovered save can be committed again
+PASS Future-version save is not overwritten
+PASS Unreadable save is preserved
+PASS Write failure leaves balances unchanged

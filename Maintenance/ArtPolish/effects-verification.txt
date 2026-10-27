@@ -1,0 +1,4 @@
+PASS Forty stored products use eight visible props
+PASS Idle furnace stops smoke
+PASS Stock label retains full inventory count
+PASS Transfer pool remains bounded

@@ -1,0 +1,12 @@
+{
+  "smokeParticleLimit": 24,
+  "truckTriangles": 4400,
+  "effectStressCalls": 100,
+  "pooledFlights": 12,
+  "effectInventoryUnchanged": true,
+  "deviceProfiled": false,
+  "textureAtlasMaxSize": 1024,
+  "sparkParticleLimit": 10,
+  "visibleStockPerStation": 8,
+  "truckMaterials": 1
+}

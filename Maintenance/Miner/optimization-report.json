@@ -1,0 +1,38 @@
+{
+  "source": "Breathing Idle.fbx",
+  "before": 53738,
+  "meshes": [
+    {
+      "name": "Ch17_Body",
+      "before": 18240,
+      "after": 3000
+    },
+    {
+      "name": "Ch17_Boots",
+      "before": 4112,
+      "after": 450
+    },
+    {
+      "name": "Ch17_Helmet",
+      "before": 6576,
+      "after": 499
+    },
+    {
+      "name": "Ch17_Pants",
+      "before": 7666,
+      "after": 1100
+    },
+    {
+      "name": "Ch17_Shirt",
+      "before": 2996,
+      "after": 650
+    },
+    {
+      "name": "Ch17_Vest",
+      "before": 5150,
+      "after": 850
+    }
+  ],
+  "body_triangles": 6549,
+  "total_with_equipment": 7217
+}

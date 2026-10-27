@@ -1,0 +1,1 @@
+Idle batches=144; idle vertices=0; active=false: True; coins=25. Active measured: 145 batches, 312 vertices, 288 triangles, one UI material.

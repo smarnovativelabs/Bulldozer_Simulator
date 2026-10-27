@@ -1,0 +1,46 @@
+{
+  "triangles": 4400,
+  "maxMappingError": 9.702932857180713e-07,
+  "verticesByBone": {
+    "Chassis": 2448,
+    "wheel_back_axis1_left": 81,
+    "wheel_back_axis1_right": 81,
+    "wheel_back_axis2_left": 81,
+    "wheel_back_axis2_right": 81,
+    "wheel_front_left": 82,
+    "wheel_front_right": 82
+  },
+  "wheelCenters": {
+    "wheel_back_axis1_left": [
+      0.7169081568717957,
+      0.8763012290000916,
+      0.4037822484970093
+    ],
+    "wheel_back_axis1_right": [
+      -0.7169081568717957,
+      0.8763012290000916,
+      0.4037822484970093
+    ],
+    "wheel_back_axis2_left": [
+      0.7169081568717957,
+      1.8441529273986816,
+      0.4037821888923645
+    ],
+    "wheel_back_axis2_right": [
+      -0.7169081568717957,
+      1.8441529273986816,
+      0.4037821888923645
+    ],
+    "wheel_front_left": [
+      0.8248138427734375,
+      -1.7664207220077515,
+      0.40619075298309326
+    ],
+    "wheel_front_right": [
+      -0.824813723564148,
+      -1.7664207220077515,
+      0.40619075298309326
+    ]
+  },
+  "materials": 1
+}

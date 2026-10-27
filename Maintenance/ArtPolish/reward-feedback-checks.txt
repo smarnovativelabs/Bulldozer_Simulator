@@ -1,0 +1,12 @@
+PASS Rejected payment does not start reward feedback
+PASS Partial load does not show payout coins
+PASS Successful full truck starts one burst after payment
+PASS Coins are already on disk before the animation finishes
+PASS Busy truck cannot duplicate payment or coin burst
+PASS 100 bursts create no extra GameObjects
+PASS Repeated visual bursts cannot change saved money
+PASS Cancelling an effect preserves the completed payment
+PASS Zero payment produces no animation
+PASS Reward overlay cannot intercept player input
+PASS Eight-coin graphic stays within 312 vertices, 288 triangles and one material
+PASS Fresh session restores 25 saved coins without replaying reward feedback

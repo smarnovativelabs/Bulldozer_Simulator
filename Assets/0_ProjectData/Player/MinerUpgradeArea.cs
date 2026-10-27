@@ -1,0 +1,31 @@
+using UnityEngine;
+namespace Bulldozer.Player
+{
+    public sealed class MinerUpgradeArea : MonoBehaviour
+    {
+        public BoxCollider zone;
+        public GameObject panel;
+        public UnityEngine.UI.Button damageButton,capacityButton;
+        public TMPro.TMP_Text damageText,capacityText,feedback;
+        MinerController player;MinerEquipment equipment;
+        void Start()
+        {
+            player=FindFirstObjectByType<MinerController>();equipment=player.visual.GetComponent<MinerEquipment>();
+            damageButton.onClick.AddListener(()=>Purchase(false));capacityButton.onClick.AddListener(()=>Purchase(true));panel.SetActive(false);
+        }
+        void Update()
+        {
+            bool inside=player&&!player.InputBlocked&&MiningProduction.Contains(zone,player.transform.position);panel.SetActive(inside);if(!inside)return;
+            damageText.text=equipment.DamageLevel>=10?"PICKAXE MAX":$"PICKAXE {equipment.Damage} > {equipment.Damage+1}\n{equipment.DamageCost} COINS";
+            capacityText.text=equipment.CapacityLevel>=15?"RACK MAX":$"RACK {equipment.Capacity} > {equipment.Capacity+1}\n{equipment.CapacityCost} COINS";
+            damageButton.interactable=equipment.DamageLevel<10&&equipment.Coins>=equipment.DamageCost;
+            capacityButton.interactable=equipment.CapacityLevel<15&&equipment.Coins>=equipment.CapacityCost;
+        }
+        public bool Purchase(bool capacity)
+        {
+            if(!player||player.InputBlocked||player.IsMining||!MiningProduction.Contains(zone,player.transform.position))return false;
+            bool ok=equipment.TryUpgrade(capacity);feedback.text=ok?"UPGRADE SAVED":string.IsNullOrEmpty(equipment.SaveError)?"NOT ENOUGH COINS OR MAX LEVEL":"SAVE FAILED - PURCHASE CANCELLED";return ok;
+        }
+        void OnDisable(){if(panel)panel.SetActive(false);}
+    }
+}

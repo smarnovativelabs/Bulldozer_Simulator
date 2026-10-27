@@ -65,7 +65,14 @@ namespace Bulldozer.EditorTools
         private static Row GetRow(GameObject go)
         {
             int id = go.GetInstanceID();
-            if (Cache.TryGetValue(id, out var row) && row.Target == go) return row;
+            if (Cache.TryGetValue(id, out var row) && row.Target == go)
+            {
+                bool stale=false;
+                foreach(var component in row.Components)
+                    if(!ReferenceEquals(component,null) && !component){stale=true;break;}
+                if(!stale)return row;
+                Cache.Remove(id);
+            }
             if (Cache.Count >= MaxCacheRows) Cache.Clear();
             Buffer.Clear();
             go.GetComponents(Buffer);
@@ -107,7 +114,7 @@ namespace Bulldozer.EditorTools
                 {
                     x -= 19;
                     var component = row.Components[i];
-                    bool inactive = !go.activeInHierarchy || (component is Behaviour behaviour && !behaviour.enabled) ||
+                    bool inactive = !component || !go.activeInHierarchy || (component is Behaviour behaviour && !behaviour.enabled) ||
                                     (component is Renderer renderer && !renderer.enabled) || (component is Collider collider && !collider.enabled);
                     GUI.color = inactive ? new Color(oldColor.r, oldColor.g, oldColor.b, oldColor.a * .45f) : oldColor;
                     if (GUI.Button(new Rect(x, rect.y + 1, 17, 16), row.Icons[i], GUIStyle.none)) Inspect(component, go);
@@ -138,3 +145,4 @@ namespace Bulldozer.EditorTools
         }
     }
 }
+

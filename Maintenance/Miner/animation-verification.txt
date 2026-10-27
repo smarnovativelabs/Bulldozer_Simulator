@@ -1,0 +1,3 @@
+Scene:9.685755E-07,Armature|Armature|Armature|Walk:0.999999
+Human=True
+Triangles=7415

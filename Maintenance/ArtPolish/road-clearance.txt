@@ -1,0 +1,1 @@
+PASS Complete truck route has ground support and body clearance at 65 sample points

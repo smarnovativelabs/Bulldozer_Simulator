@@ -1,0 +1,1 @@
+Environment triangles=7136; renderers=9; shared materials=9; no new realtime lights, shadow casters, particles or runtime scripts.

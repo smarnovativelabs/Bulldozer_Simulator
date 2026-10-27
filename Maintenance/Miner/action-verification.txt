@@ -1,0 +1,8 @@
+Run speed=5.999988
+Ground mining=True; movement=0; grip error=1.192093E-07
+Hide cancels mining=True; tool active=False
+Hidden tool blocks mining=True
+Landed=True; peakY=0.9389991
+Frames=107
+Clips=HumanM@Walk01_Forward, HumanM@Run01_Forward, HumanM@Sprint01_Forward, Scene, HumanM@MiningOneHand01_R - Ground, HumanM@MiningOneHand01_R - Wall, HumanM@Fall01, HumanM@Jump01 - Land
+Triangles=7217

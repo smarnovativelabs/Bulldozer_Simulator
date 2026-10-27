@@ -1,0 +1,6 @@
+PASS V1 cargo and coins migrate without loss
+PASS Full production snapshot commits
+PASS Legacy balance API remains compatible
+PASS Balance changes preserve upgrades, queues, truck and mined blocks
+PASS Invalid item cannot corrupt inventory
+PASS Write failure cannot grant an unsaved upgrade

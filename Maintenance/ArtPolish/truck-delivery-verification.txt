@@ -1,0 +1,28 @@
+PASS Partial load stays parked without payment
+PASS Full load begins delivery and pays exactly once
+PASS Loading delay rejects additional cargo
+PASS Full cargo remains visible after saved inventory is cleared
+PASS Truck retains 4400 triangles, one material and seven rigid bones
+PASS Moving truck disables parking collision
+PASS Off-screen truck and delivered cargo are hidden before recycling
+PASS Truck drives away beyond the loading area
+PASS Wheel bones rotate during travel
+PASS Wheel rotation follows travelled distance and radius
+PASS Absent truck rejects loading
+PASS Arriving truck is empty and cannot load before parking
+PASS Replacement parks exactly at the loading bay
+PASS Truck and eight cargo slots are reused across deliveries
+PASS Animation never changes the committed payment
+PASS Replacement accepts its larger next order
+PASS Moving truck disables parking collision
+PASS Off-screen truck and delivered cargo are hidden before recycling
+PASS Truck drives away beyond the loading area
+PASS Wheel bones rotate during travel
+PASS Wheel rotation follows travelled distance and radius
+PASS Absent truck rejects loading
+PASS Arriving truck is empty and cannot load before parking
+PASS Replacement parks exactly at the loading bay
+PASS Truck and eight cargo slots are reused across deliveries
+PASS Animation never changes the committed payment
+PASS Disk reload retains both payments with no delivered cargo
+EDITOR OBSERVATION: average batches=144, max batches=150, max SetPass=18. Not a device performance measurement.
