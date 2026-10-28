@@ -10,4 +10,4 @@ PASS Guidance does not mutate inventory or cash
 PASS Dialog does not intercept movement input
 PASS Arrows and marker use one shared material and <=256 triangles
 PASS Refinery input is reachable from behind the machine
-EDITOR ONLY: batches=147, SetPass=17. No device FPS measurement.
+EDITOR ONLY: batches=337, SetPass=22. No device FPS measurement.

@@ -1659,7 +1659,7 @@ GameObject:
   - component: {fileID: 42525699}
   - component: {fileID: 42525698}
   m_Layer: 0
-  m_Name: Weathered Diamond ore 3-3
+  m_Name: Firm Diamond ore (4 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1709,7 +1709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 5
+  maxHealth: 4
   resourceType: 3
   blockId: quarry-expansion-0-3-3
   wallMining: 1
@@ -2492,12 +2492,13 @@ RectTransform:
   - {fileID: 711923351}
   - {fileID: 1616342121}
   - {fileID: 1888347228}
+  - {fileID: 1598364961}
   m_Father: {fileID: 2078394724}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 80}
-  m_SizeDelta: {x: 480, y: 210}
+  m_AnchoredPosition: {x: 120, y: 40}
+  m_SizeDelta: {x: 480, y: 310}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &59378084
 MonoBehaviour:
@@ -2550,7 +2551,7 @@ GameObject:
   - component: {fileID: 60049532}
   - component: {fileID: 60049531}
   m_Layer: 0
-  m_Name: Weathered Diamond ore 5-2
+  m_Name: Firm Diamond ore (4 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2600,7 +2601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 5
+  maxHealth: 4
   resourceType: 3
   blockId: quarry-expansion-0-5-2
   wallMining: 1
@@ -3566,7 +3567,7 @@ GameObject:
   - component: {fileID: 86146309}
   - component: {fileID: 86146308}
   m_Layer: 0
-  m_Name: Weathered Iron ore 4-1
+  m_Name: Weathered Iron ore (2 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3616,7 +3617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 4
+  maxHealth: 2
   resourceType: 0
   blockId: quarry-expansion-0-4-1
   wallMining: 1
@@ -4819,7 +4820,7 @@ GameObject:
   - component: {fileID: 123808370}
   - component: {fileID: 123808372}
   m_Layer: 0
-  m_Name: Purple crystal 1-3
+  m_Name: Weathered Amethyst ore (3 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4853,7 +4854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 4
+  maxHealth: 3
   resourceType: 5
   blockId: quarry-v1-1-3
   wallMining: 1
@@ -5089,7 +5090,7 @@ GameObject:
   - component: {fileID: 128278120}
   - component: {fileID: 128278122}
   m_Layer: 0
-  m_Name: Gold ore 1-2
+  m_Name: Weathered Gold ore (2 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5123,7 +5124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 4
+  maxHealth: 2
   resourceType: 4
   blockId: quarry-v1-1-2
   wallMining: 1
@@ -5633,7 +5634,7 @@ GameObject:
   - component: {fileID: 144728467}
   - component: {fileID: 144728466}
   m_Layer: 0
-  m_Name: Dense Diamond ore 2-3
+  m_Name: Weathered Diamond ore (3 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5683,7 +5684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 11
+  maxHealth: 3
   resourceType: 3
   blockId: quarry-expansion-1-2-3
   wallMining: 1
@@ -5813,7 +5814,7 @@ GameObject:
   - component: {fileID: 149004516}
   - component: {fileID: 149004515}
   m_Layer: 0
-  m_Name: Dense Gold ore 1-1
+  m_Name: Weathered Gold ore (2 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5863,7 +5864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 12
+  maxHealth: 2
   resourceType: 4
   blockId: quarry-expansion-1-1-1
   wallMining: 1
@@ -11312,7 +11313,7 @@ GameObject:
   - component: {fileID: 173008408}
   - component: {fileID: 173008407}
   m_Layer: 0
-  m_Name: Dense Amethyst ore 2-1
+  m_Name: Firm Amethyst ore (6 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11362,7 +11363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 13
+  maxHealth: 6
   resourceType: 5
   blockId: quarry-expansion-1-2-1
   wallMining: 1
@@ -12251,7 +12252,7 @@ GameObject:
   - component: {fileID: 207952481}
   - component: {fileID: 207952480}
   m_Layer: 0
-  m_Name: Weathered Diamond ore 3-0
+  m_Name: Weathered Diamond ore (3 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12301,7 +12302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 5
+  maxHealth: 3
   resourceType: 3
   blockId: quarry-expansion-0-3-0
   wallMining: 1
@@ -12791,7 +12792,7 @@ GameObject:
   - component: {fileID: 227997418}
   - component: {fileID: 227997417}
   m_Layer: 0
-  m_Name: Weathered Copper ore 5-1
+  m_Name: Weathered Copper ore (3 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12841,7 +12842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 4
+  maxHealth: 3
   resourceType: 1
   blockId: quarry-expansion-0-5-1
   wallMining: 1
@@ -12911,6 +12912,7 @@ MonoBehaviour:
   sparks: {fileID: 2033065219}
   fracture: {fileID: 1471342602}
   pickupRadius: 0.72
+  carrierPickup: {fileID: 0}
 --- !u!4 &233702074
 Transform:
   m_ObjectHideFlags: 0
@@ -14031,7 +14033,7 @@ GameObject:
   - component: {fileID: 277343534}
   - component: {fileID: 277343533}
   m_Layer: 0
-  m_Name: Dense Iron ore 5-3
+  m_Name: Weathered Iron ore (2 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14081,7 +14083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 8
+  maxHealth: 2
   resourceType: 0
   blockId: quarry-expansion-1-5-3
   wallMining: 1
@@ -14121,7 +14123,7 @@ GameObject:
   - component: {fileID: 278039293}
   - component: {fileID: 278039295}
   m_Layer: 0
-  m_Name: Blue crystal 1-0
+  m_Name: Weathered Blue mineral (2 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14155,7 +14157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 3
+  maxHealth: 2
   resourceType: 2
   blockId: quarry-v1-1-0
   wallMining: 1
@@ -14517,7 +14519,7 @@ GameObject:
   - component: {fileID: 295667967}
   - component: {fileID: 295667969}
   m_Layer: 0
-  m_Name: White crystal 0-3
+  m_Name: Weathered Diamond ore (3 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15665,7 +15667,7 @@ GameObject:
   - component: {fileID: 340840629}
   - component: {fileID: 340840628}
   m_Layer: 0
-  m_Name: Weathered Copper ore 1-3
+  m_Name: Weathered Copper ore (3 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15715,7 +15717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 4
+  maxHealth: 3
   resourceType: 1
   blockId: quarry-expansion-0-1-3
   wallMining: 1
@@ -16164,7 +16166,7 @@ GameObject:
   - component: {fileID: 359503870}
   - component: {fileID: 359503869}
   m_Layer: 0
-  m_Name: Dense Iron ore 1-2
+  m_Name: Weathered Iron ore (2 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16214,7 +16216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 8
+  maxHealth: 2
   resourceType: 0
   blockId: quarry-expansion-1-1-2
   wallMining: 1
@@ -16451,7 +16453,7 @@ GameObject:
   - component: {fileID: 370510567}
   - component: {fileID: 370510569}
   m_Layer: 0
-  m_Name: Orange ore 0-1
+  m_Name: Weathered Copper ore (3 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16485,7 +16487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 2
+  maxHealth: 3
   resourceType: 1
   blockId: quarry-v1-0-1
   wallMining: 1
@@ -17385,7 +17387,7 @@ GameObject:
   - component: {fileID: 398432700}
   - component: {fileID: 398432699}
   m_Layer: 0
-  m_Name: Dense Gold ore 3-0
+  m_Name: Firm Gold ore (5 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17435,7 +17437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 12
+  maxHealth: 5
   resourceType: 4
   blockId: quarry-expansion-1-3-0
   wallMining: 1
@@ -18126,6 +18128,83 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427892221}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &430542986
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 430542987}
+  - component: {fileID: 430542989}
+  - component: {fileID: 430542988}
+  m_Layer: 0
+  m_Name: Replaceable Cargo Icon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &430542987
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430542986}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1316304366}
+  - {fileID: 715422900}
+  m_Father: {fileID: 1539351195}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -78, y: 1}
+  m_SizeDelta: {x: 24, y: 23}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &430542988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430542986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.65, g: 0.9, b: 0.8, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &430542989
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430542986}
+  m_CullTransparentMesh: 1
 --- !u!1 &431261938
 GameObject:
   m_ObjectHideFlags: 0
@@ -18563,7 +18642,7 @@ GameObject:
   - component: {fileID: 456415832}
   - component: {fileID: 456415831}
   m_Layer: 0
-  m_Name: Weathered Copper ore 1-0
+  m_Name: Weathered Copper ore (3 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18613,7 +18692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 4
+  maxHealth: 3
   resourceType: 1
   blockId: quarry-expansion-0-1-0
   wallMining: 1
@@ -18744,7 +18823,7 @@ GameObject:
   - component: {fileID: 456579958}
   - component: {fileID: 456579960}
   m_Layer: 0
-  m_Name: Blue crystal 0-2
+  m_Name: Weathered Blue mineral (2 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18778,7 +18857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 3
+  maxHealth: 2
   resourceType: 2
   blockId: quarry-v1-0-2
   wallMining: 1
@@ -19898,7 +19977,7 @@ GameObject:
   - component: {fileID: 504544153}
   - component: {fileID: 504544152}
   m_Layer: 0
-  m_Name: Dense Blue mineral 1-3
+  m_Name: Weathered Blue mineral (2 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19948,7 +20027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 10
+  maxHealth: 2
   resourceType: 2
   blockId: quarry-expansion-1-1-3
   wallMining: 1
@@ -20022,7 +20101,7 @@ GameObject:
   - component: {fileID: 519165337}
   - component: {fileID: 519165336}
   m_Layer: 0
-  m_Name: Dense Iron ore 3-1
+  m_Name: Firm Iron ore (4 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20072,7 +20151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 8
+  maxHealth: 4
   resourceType: 0
   blockId: quarry-expansion-1-3-1
   wallMining: 1
@@ -26922,7 +27001,7 @@ GameObject:
   - component: {fileID: 571639789}
   - component: {fileID: 571639788}
   m_Layer: 0
-  m_Name: Dense Amethyst ore 4-0
+  m_Name: Firm Amethyst ore (6 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26972,7 +27051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 13
+  maxHealth: 6
   resourceType: 5
   blockId: quarry-expansion-1-4-0
   wallMining: 1
@@ -28260,7 +28339,7 @@ GameObject:
   - component: {fileID: 612584911}
   - component: {fileID: 612584910}
   m_Layer: 0
-  m_Name: Dense Blue mineral 3-2
+  m_Name: Weathered Blue mineral (2 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28310,7 +28389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 10
+  maxHealth: 2
   resourceType: 2
   blockId: quarry-expansion-1-3-2
   wallMining: 1
@@ -29673,7 +29752,7 @@ GameObject:
   - component: {fileID: 654142622}
   - component: {fileID: 654142621}
   m_Layer: 0
-  m_Name: Dense Copper ore 2-2
+  m_Name: Weathered Copper ore (3 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29723,7 +29802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 9
+  maxHealth: 3
   resourceType: 1
   blockId: quarry-expansion-1-2-2
   wallMining: 1
@@ -30736,6 +30815,143 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696232822}
   m_CullTransparentMesh: 1
+--- !u!1 &697064663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 697064664}
+  - component: {fileID: 697064666}
+  - component: {fileID: 697064665}
+  m_Layer: 0
+  m_Name: Capacity
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &697064664
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697064663}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1539351195}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 17, y: 1}
+  m_SizeDelta: {x: 151, y: 34}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &697064665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697064663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: CARGO 0/5
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 25
+  m_fontSizeBase: 25
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &697064666
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697064663}
+  m_CullTransparentMesh: 1
 --- !u!1 &697577915
 GameObject:
   m_ObjectHideFlags: 0
@@ -31160,7 +31376,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115, y: 10}
+  m_AnchoredPosition: {x: -115, y: 60}
   m_SizeDelta: {x: 215, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &711923352
@@ -31258,7 +31474,7 @@ GameObject:
   - component: {fileID: 713618989}
   - component: {fileID: 713618991}
   m_Layer: 0
-  m_Name: Purple crystal 3-5
+  m_Name: Firm Amethyst ore (6 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31292,7 +31508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 4
+  maxHealth: 6
   resourceType: 5
   blockId: quarry-v1-3-5
   wallMining: 1
@@ -31425,6 +31641,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714754650}
   m_Mesh: {fileID: 4300000, guid: 7f5c89166bde4024abafd631da51d12e, type: 2}
+--- !u!1 &715422899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 715422900}
+  - component: {fileID: 715422902}
+  - component: {fileID: 715422901}
+  m_Layer: 0
+  m_Name: Crate strap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &715422900
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715422899}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 430542987}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 3}
+  m_SizeDelta: {x: 24, y: 3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &715422901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715422899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.05, g: 0.1, b: 0.1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &715422902
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715422899}
+  m_CullTransparentMesh: 1
 --- !u!1 &717424476
 GameObject:
   m_ObjectHideFlags: 0
@@ -31640,7 +31931,7 @@ GameObject:
   - component: {fileID: 726214580}
   - component: {fileID: 726214579}
   m_Layer: 0
-  m_Name: Weathered Blue mineral 2-3
+  m_Name: Firm Blue mineral (6 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31690,7 +31981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 5
+  maxHealth: 6
   resourceType: 2
   blockId: quarry-expansion-0-2-3
   wallMining: 1
@@ -31854,7 +32145,7 @@ GameObject:
   - component: {fileID: 736662195}
   - component: {fileID: 736662194}
   m_Layer: 0
-  m_Name: Dense Gold ore 5-2
+  m_Name: Weathered Gold ore (2 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31904,7 +32195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 12
+  maxHealth: 2
   resourceType: 4
   blockId: quarry-expansion-1-5-2
   wallMining: 1
@@ -33573,7 +33864,7 @@ GameObject:
   - component: {fileID: 797059697}
   - component: {fileID: 797059699}
   m_Layer: 0
-  m_Name: Purple crystal 2-1
+  m_Name: Dense Amethyst ore (8 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33607,7 +33898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 4
+  maxHealth: 8
   resourceType: 5
   blockId: quarry-v1-2-1
   wallMining: 1
@@ -34488,7 +34779,7 @@ GameObject:
   - component: {fileID: 822421770}
   - component: {fileID: 822421772}
   m_Layer: 0
-  m_Name: Orange ore 2-3
+  m_Name: Dense Copper ore (9 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34522,7 +34813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 2
+  maxHealth: 9
   resourceType: 1
   blockId: quarry-v1-2-3
   wallMining: 1
@@ -35212,7 +35503,7 @@ GameObject:
   - component: {fileID: 844265437}
   - component: {fileID: 844265436}
   m_Layer: 0
-  m_Name: Weathered Blue mineral 0-1
+  m_Name: Weathered Blue mineral (2 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35262,7 +35553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 5
+  maxHealth: 2
   resourceType: 2
   blockId: quarry-expansion-0-0-1
   wallMining: 1
@@ -35302,7 +35593,7 @@ GameObject:
   - component: {fileID: 846831325}
   - component: {fileID: 846831324}
   m_Layer: 0
-  m_Name: Weathered Gold ore 4-0
+  m_Name: Weathered Gold ore (2 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35352,7 +35643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 6
+  maxHealth: 2
   resourceType: 4
   blockId: quarry-expansion-0-4-0
   wallMining: 1
@@ -35714,6 +36005,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 705317855}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &859501027
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 859501028}
+  - component: {fileID: 859501030}
+  - component: {fileID: 859501029}
+  m_Layer: 0
+  m_Name: Capacity Fill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &859501028
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859501027}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1773651871}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &859501029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859501027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.65, g: 0.9, b: 0.8, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &859501030
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859501027}
+  m_CullTransparentMesh: 1
 --- !u!1 &860836798
 GameObject:
   m_ObjectHideFlags: 0
@@ -35851,7 +36217,7 @@ GameObject:
   - component: {fileID: 870935525}
   - component: {fileID: 870935524}
   m_Layer: 0
-  m_Name: Dense Diamond ore 2-0
+  m_Name: Firm Diamond ore (4 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35901,7 +36267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 11
+  maxHealth: 4
   resourceType: 3
   blockId: quarry-expansion-1-2-0
   wallMining: 1
@@ -36123,7 +36489,7 @@ GameObject:
   - component: {fileID: 876905061}
   - component: {fileID: 876905063}
   m_Layer: 0
-  m_Name: White crystal 2-5
+  m_Name: Firm Diamond ore (4 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36157,7 +36523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 3
+  maxHealth: 4
   resourceType: 3
   blockId: quarry-v1-2-5
   wallMining: 1
@@ -38080,7 +38446,7 @@ GameObject:
   - component: {fileID: 938573675}
   - component: {fileID: 938573677}
   m_Layer: 0
-  m_Name: Gold ore 3-4
+  m_Name: Dense Gold ore (12 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38114,7 +38480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 4
+  maxHealth: 12
   resourceType: 4
   blockId: quarry-v1-3-4
   wallMining: 1
@@ -38640,6 +39006,8 @@ MonoBehaviour:
   damageText: {fileID: 895456075}
   capacityText: {fileID: 1634885955}
   feedback: {fileID: 1888347226}
+  speedButton: {fileID: 1598364962}
+  speedText: {fileID: 1344920189}
 --- !u!1 &961002431
 GameObject:
   m_ObjectHideFlags: 0
@@ -38653,7 +39021,7 @@ GameObject:
   - component: {fileID: 961002434}
   - component: {fileID: 961002433}
   m_Layer: 0
-  m_Name: Weathered Amethyst ore 5-3
+  m_Name: Firm Amethyst ore (6 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39501,7 +39869,7 @@ GameObject:
   - component: {fileID: 995186795}
   - component: {fileID: 995186797}
   m_Layer: 0
-  m_Name: Gray ore 3-0
+  m_Name: Firm Iron ore (4 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39535,7 +39903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 2
+  maxHealth: 4
   resourceType: 0
   blockId: quarry-v1-3-0
   wallMining: 1
@@ -40109,7 +40477,7 @@ GameObject:
   - component: {fileID: 1016635379}
   - component: {fileID: 1016635378}
   m_Layer: 0
-  m_Name: Weathered Gold ore 2-1
+  m_Name: Weathered Gold ore (2 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40159,7 +40527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 6
+  maxHealth: 2
   resourceType: 4
   blockId: quarry-expansion-0-2-1
   wallMining: 1
@@ -40199,7 +40567,7 @@ GameObject:
   - component: {fileID: 1016766802}
   - component: {fileID: 1016766804}
   m_Layer: 0
-  m_Name: Blue crystal 2-4
+  m_Name: Dense Blue mineral (10 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40233,7 +40601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 3
+  maxHealth: 10
   resourceType: 2
   blockId: quarry-v1-2-4
   wallMining: 1
@@ -40734,7 +41102,7 @@ GameObject:
   - component: {fileID: 1036509559}
   - component: {fileID: 1036509558}
   m_Layer: 0
-  m_Name: Dense Amethyst ore 0-2
+  m_Name: Weathered Amethyst ore (3 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40784,7 +41152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 13
+  maxHealth: 3
   resourceType: 5
   blockId: quarry-expansion-1-0-2
   wallMining: 1
@@ -41004,7 +41372,7 @@ GameObject:
   - component: {fileID: 1053414400}
   - component: {fileID: 1053414402}
   m_Layer: 0
-  m_Name: Gray ore 2-2
+  m_Name: Dense Iron ore (8 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41038,7 +41406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 2
+  maxHealth: 8
   resourceType: 0
   blockId: quarry-v1-2-2
   wallMining: 1
@@ -42086,7 +42454,7 @@ GameObject:
   - component: {fileID: 1080790606}
   - component: {fileID: 1080790608}
   m_Layer: 0
-  m_Name: Gold ore 0-4
+  m_Name: Weathered Gold ore (2 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42120,7 +42488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 4
+  maxHealth: 2
   resourceType: 4
   blockId: quarry-v1-0-4
   wallMining: 1
@@ -42626,7 +42994,7 @@ GameObject:
   - component: {fileID: 1114287375}
   - component: {fileID: 1114287377}
   m_Layer: 0
-  m_Name: Purple crystal 0-5
+  m_Name: Weathered Amethyst ore (3 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42660,7 +43028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 4
+  maxHealth: 3
   resourceType: 5
   blockId: quarry-v1-0-5
   wallMining: 1
@@ -42716,7 +43084,7 @@ GameObject:
   - component: {fileID: 1114852662}
   - component: {fileID: 1114852661}
   m_Layer: 0
-  m_Name: Dense Copper ore 0-3
+  m_Name: Weathered Copper ore (3 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42766,7 +43134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 9
+  maxHealth: 3
   resourceType: 1
   blockId: quarry-expansion-1-0-3
   wallMining: 1
@@ -43403,7 +43771,7 @@ GameObject:
   - component: {fileID: 1131329355}
   - component: {fileID: 1131329357}
   m_Layer: 0
-  m_Name: Purple crystal 4-3
+  m_Name: Dense Amethyst ore (8 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43437,7 +43805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 4
+  maxHealth: 8
   resourceType: 5
   blockId: quarry-v1-4-3
   wallMining: 1
@@ -49452,7 +49820,7 @@ GameObject:
   - component: {fileID: 1174883360}
   - component: {fileID: 1174883359}
   m_Layer: 0
-  m_Name: Weathered Amethyst ore 1-2
+  m_Name: Weathered Amethyst ore (3 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49502,7 +49870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 6
+  maxHealth: 3
   resourceType: 5
   blockId: quarry-expansion-0-1-2
   wallMining: 1
@@ -50614,7 +50982,7 @@ GameObject:
   - component: {fileID: 1202577482}
   - component: {fileID: 1202577481}
   m_Layer: 0
-  m_Name: Weathered Copper ore 3-2
+  m_Name: Firm Copper ore (5 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50664,7 +51032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 4
+  maxHealth: 5
   resourceType: 1
   blockId: quarry-expansion-0-3-2
   wallMining: 1
@@ -50884,7 +51252,7 @@ GameObject:
   - component: {fileID: 1204502749}
   - component: {fileID: 1204502751}
   m_Layer: 0
-  m_Name: Blue crystal 4-0
+  m_Name: Firm Blue mineral (6 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50918,7 +51286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 3
+  maxHealth: 6
   resourceType: 2
   blockId: quarry-v1-4-0
   wallMining: 1
@@ -51191,7 +51559,7 @@ GameObject:
   - component: {fileID: 1215441046}
   - component: {fileID: 1215441045}
   m_Layer: 0
-  m_Name: Weathered Iron ore 2-2
+  m_Name: Firm Iron ore (4 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51602,7 +51970,7 @@ GameObject:
   - component: {fileID: 1243829263}
   - component: {fileID: 1243829265}
   m_Layer: 0
-  m_Name: Orange ore 4-5
+  m_Name: Firm Copper ore (5 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51636,7 +52004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 2
+  maxHealth: 5
   resourceType: 1
   blockId: quarry-v1-4-5
   wallMining: 1
@@ -52134,7 +52502,7 @@ GameObject:
   - component: {fileID: 1274588238}
   - component: {fileID: 1274588237}
   m_Layer: 0
-  m_Name: Dense Diamond ore 0-1
+  m_Name: Weathered Diamond ore (3 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52184,7 +52552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 11
+  maxHealth: 3
   resourceType: 3
   blockId: quarry-expansion-1-0-1
   wallMining: 1
@@ -53001,6 +53369,81 @@ Transform:
   - {fileID: 1652852025}
   m_Father: {fileID: 2137070307}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1316304365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1316304366}
+  - component: {fileID: 1316304368}
+  - component: {fileID: 1316304367}
+  m_Layer: 0
+  m_Name: Crate seam
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1316304366
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316304365}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 430542987}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 3, y: 23}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1316304367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316304365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.05, g: 0.1, b: 0.1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1316304368
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316304365}
+  m_CullTransparentMesh: 1
 --- !u!1 &1321940679
 GameObject:
   m_ObjectHideFlags: 0
@@ -53105,7 +53548,7 @@ GameObject:
   - component: {fileID: 1324188177}
   - component: {fileID: 1324188179}
   m_Layer: 0
-  m_Name: Gray ore 1-4
+  m_Name: Weathered Iron ore (2 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54088,6 +54531,145 @@ Transform:
   - {fileID: 893642024}
   m_Father: {fileID: 1348787311}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1344920187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1344920188}
+  - component: {fileID: 1344920190}
+  - component: {fileID: 1344920189}
+  m_Layer: 0
+  m_Name: Label
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1344920188
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344920187}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1598364961}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 425, y: 66}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1344920189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344920187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'SPEED 80% > 88%
+
+    $25'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 19
+  m_fontSizeBase: 19
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1344920190
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344920187}
+  m_CullTransparentMesh: 1
 --- !u!1 &1348005115
 GameObject:
   m_ObjectHideFlags: 0
@@ -54472,7 +55054,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'UPGRADES
 
-    PICKAXE + RACK'
+    PICKAXE / RACK / SPEED'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -55048,6 +55630,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1372081704}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1376259468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1376259469}
+  - component: {fileID: 1376259471}
+  - component: {fileID: 1376259470}
+  m_Layer: 0
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1376259469
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376259468}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1539351195}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 46}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1376259470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376259468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.025, g: 0.035, b: 0.04, a: 0.92}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1376259471
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376259468}
+  m_CullTransparentMesh: 1
 --- !u!1 &1376416042
 GameObject:
   m_ObjectHideFlags: 0
@@ -55948,7 +56605,7 @@ GameObject:
   - component: {fileID: 1409783649}
   - component: {fileID: 1409783648}
   m_Layer: 0
-  m_Name: Weathered Blue mineral 4-2
+  m_Name: Firm Blue mineral (6 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55998,7 +56655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 5
+  maxHealth: 6
   resourceType: 2
   blockId: quarry-expansion-0-4-2
   wallMining: 1
@@ -56797,7 +57454,7 @@ GameObject:
   - component: {fileID: 1437829544}
   - component: {fileID: 1437829543}
   m_Layer: 0
-  m_Name: Weathered Blue mineral 2-0
+  m_Name: Weathered Blue mineral (2 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56847,7 +57504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 5
+  maxHealth: 2
   resourceType: 2
   blockId: quarry-expansion-0-2-0
   wallMining: 1
@@ -57678,7 +58335,7 @@ GameObject:
   - component: {fileID: 1464618254}
   - component: {fileID: 1464618256}
   m_Layer: 0
-  m_Name: Gray ore 0-0
+  m_Name: Weathered Iron ore (2 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58790,7 +59447,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 70}
+  m_AnchoredPosition: {x: 0, y: 120}
   m_SizeDelta: {x: 460, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1491409660
@@ -58906,7 +59563,7 @@ GameObject:
   - component: {fileID: 1494908729}
   - component: {fileID: 1494908731}
   m_Layer: 0
-  m_Name: White crystal 3-3
+  m_Name: Dense Diamond ore (11 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58940,7 +59597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 3
+  maxHealth: 11
   resourceType: 3
   blockId: quarry-v1-3-3
   wallMining: 1
@@ -59626,7 +60283,7 @@ GameObject:
   - component: {fileID: 1519608429}
   - component: {fileID: 1519608428}
   m_Layer: 0
-  m_Name: Weathered Diamond ore 1-1
+  m_Name: Weathered Diamond ore (3 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59676,7 +60333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 5
+  maxHealth: 3
   resourceType: 3
   blockId: quarry-expansion-0-1-1
   wallMining: 1
@@ -60505,6 +61162,86 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1539120052}
   m_Mesh: {fileID: 4300000, guid: 56a265f726888604aaf96391f6d338fc, type: 2}
+--- !u!1 &1539351194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1539351195}
+  - component: {fileID: 1539351197}
+  - component: {fileID: 1539351196}
+  m_Layer: 0
+  m_Name: Player Cargo Badge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1539351195
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539351194}
+  m_LocalRotation: {x: 0.15643448, y: -0, z: -0, w: 0.98768836}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.007, y: 0.007, z: 0.007}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1376259469}
+  - {fileID: 430542987}
+  - {fileID: 697064664}
+  - {fileID: 1773651871}
+  m_Father: {fileID: 1993466819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 2.25}
+  m_SizeDelta: {x: 200, y: 46}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1539351196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539351194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53942122ee5237649b5ff83b3f5ae7d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.PlayerCargoBadge
+  equipment: {fileID: 5866666020923161179}
+  label: {fileID: 697064665}
+  icon: {fileID: 430542988}
+  fill: {fileID: 859501029}
+--- !u!223 &1539351197
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539351194}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 5
+  m_TargetDisplay: 0
 --- !u!1 &1542357324
 GameObject:
   m_ObjectHideFlags: 0
@@ -60698,7 +61435,7 @@ GameObject:
   - component: {fileID: 1544765981}
   - component: {fileID: 1544765983}
   m_Layer: 0
-  m_Name: White crystal 1-1
+  m_Name: Weathered Diamond ore (3 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60968,7 +61705,7 @@ GameObject:
   - component: {fileID: 1552687497}
   - component: {fileID: 1552687499}
   m_Layer: 0
-  m_Name: Blue crystal 3-2
+  m_Name: Dense Blue mineral (10 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61002,7 +61739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 3
+  maxHealth: 10
   resourceType: 2
   blockId: quarry-v1-3-2
   wallMining: 1
@@ -61567,7 +62304,7 @@ GameObject:
   - component: {fileID: 1585747470}
   - component: {fileID: 1585747469}
   m_Layer: 0
-  m_Name: Dense Blue mineral 5-1
+  m_Name: Firm Blue mineral (6 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61617,7 +62354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 10
+  maxHealth: 6
   resourceType: 2
   blockId: quarry-expansion-1-5-1
   wallMining: 1
@@ -61871,7 +62608,7 @@ GameObject:
   - component: {fileID: 1588203456}
   - component: {fileID: 1588203458}
   m_Layer: 0
-  m_Name: Orange ore 1-5
+  m_Name: Weathered Copper ore (3 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61905,7 +62642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 2
+  maxHealth: 3
   resourceType: 1
   blockId: quarry-v1-1-5
   wallMining: 1
@@ -62128,6 +62865,127 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591392770}
   m_Mesh: {fileID: 4300000, guid: b7677254e9cb7394489dec2735615f68, type: 2}
+--- !u!1 &1598364960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1598364961}
+  - component: {fileID: 1598364964}
+  - component: {fileID: 1598364963}
+  - component: {fileID: 1598364962}
+  m_Layer: 0
+  m_Name: SpeedUpgrade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1598364961
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598364960}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1344920188}
+  m_Father: {fileID: 59378083}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -30}
+  m_SizeDelta: {x: 440, y: 70}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1598364962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598364960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1598364963}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1598364963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598364960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.2, g: 0.37, b: 0.43, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1598364964
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598364960}
+  m_CullTransparentMesh: 1
 --- !u!1 &1600410080
 GameObject:
   m_ObjectHideFlags: 0
@@ -62592,7 +63450,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 115, y: 10}
+  m_AnchoredPosition: {x: 115, y: 60}
   m_SizeDelta: {x: 215, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1616342122
@@ -63866,7 +64724,7 @@ GameObject:
   - component: {fileID: 1652222602}
   - component: {fileID: 1652222601}
   m_Layer: 0
-  m_Name: Dense Iron ore 5-0
+  m_Name: Firm Iron ore (4 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63916,7 +64774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 8
+  maxHealth: 4
   resourceType: 0
   blockId: quarry-expansion-1-5-0
   wallMining: 1
@@ -64359,7 +65217,7 @@ GameObject:
   - component: {fileID: 1670999426}
   - component: {fileID: 1670999428}
   m_Layer: 0
-  m_Name: Gray ore 4-4
+  m_Name: Dense Iron ore (8 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64393,7 +65251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 2
+  maxHealth: 8
   resourceType: 0
   blockId: quarry-v1-4-4
   wallMining: 1
@@ -64629,7 +65487,7 @@ GameObject:
   - component: {fileID: 1680301901}
   - component: {fileID: 1680301900}
   m_Layer: 0
-  m_Name: Dense Blue mineral 1-0
+  m_Name: Weathered Blue mineral (2 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64679,7 +65537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 10
+  maxHealth: 2
   resourceType: 2
   blockId: quarry-expansion-1-1-0
   wallMining: 1
@@ -65159,7 +66017,7 @@ GameObject:
   - component: {fileID: 1699149198}
   - component: {fileID: 1699149200}
   m_Layer: 0
-  m_Name: Gold ore 2-0
+  m_Name: Firm Gold ore (5 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65193,7 +66051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 4
+  maxHealth: 5
   resourceType: 4
   blockId: quarry-v1-2-0
   wallMining: 1
@@ -65655,7 +66513,7 @@ GameObject:
   - component: {fileID: 1723994262}
   - component: {fileID: 1723994261}
   m_Layer: 0
-  m_Name: Dense Copper ore 0-0
+  m_Name: Weathered Copper ore (3 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65705,7 +66563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 9
+  maxHealth: 3
   resourceType: 1
   blockId: quarry-expansion-1-0-0
   wallMining: 1
@@ -66576,6 +67434,82 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1754556297}
   m_Mesh: {fileID: 4300000, guid: 7f5c89166bde4024abafd631da51d12e, type: 2}
+--- !u!1 &1773651870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1773651871}
+  - component: {fileID: 1773651873}
+  - component: {fileID: 1773651872}
+  m_Layer: 0
+  m_Name: Capacity Track
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1773651871
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773651870}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 859501028}
+  m_Father: {fileID: 1539351195}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -19}
+  m_SizeDelta: {x: 184, y: 3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1773651872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773651870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.16, g: 0.21, b: 0.21, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1773651873
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773651870}
+  m_CullTransparentMesh: 1
 --- !u!1 &1773913771
 GameObject:
   m_ObjectHideFlags: 0
@@ -67019,7 +67953,7 @@ GameObject:
   - component: {fileID: 1785723350}
   - component: {fileID: 1785723349}
   m_Layer: 0
-  m_Name: Dense Diamond ore 4-2
+  m_Name: Weathered Diamond ore (3 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67069,7 +68003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 11
+  maxHealth: 3
   resourceType: 3
   blockId: quarry-expansion-1-4-2
   wallMining: 1
@@ -67610,7 +68544,7 @@ GameObject:
   - component: {fileID: 1814136368}
   - component: {fileID: 1814136367}
   m_Layer: 0
-  m_Name: Dense Amethyst ore 4-3
+  m_Name: Weathered Amethyst ore (3 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67660,7 +68594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 13
+  maxHealth: 3
   resourceType: 5
   blockId: quarry-expansion-1-4-3
   wallMining: 1
@@ -68258,7 +69192,7 @@ GameObject:
   - component: {fileID: 1828910012}
   - component: {fileID: 1828910011}
   m_Layer: 0
-  m_Name: Weathered Gold ore 0-2
+  m_Name: Weathered Gold ore (2 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68308,7 +69242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 6
+  maxHealth: 2
   resourceType: 4
   blockId: quarry-expansion-0-0-2
   wallMining: 1
@@ -74883,7 +75817,7 @@ GameObject:
   - component: {fileID: 1880757622}
   - component: {fileID: 1880757624}
   m_Layer: 0
-  m_Name: Gold ore 4-2
+  m_Name: Dense Gold ore (12 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74917,7 +75851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 4
+  maxHealth: 12
   resourceType: 4
   blockId: quarry-v1-4-2
   wallMining: 1
@@ -75274,7 +76208,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -70}
+  m_AnchoredPosition: {x: 0, y: -115}
   m_SizeDelta: {x: 450, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1890201577
@@ -76187,7 +77121,7 @@ GameObject:
   - component: {fileID: 1910284007}
   - component: {fileID: 1910284009}
   m_Layer: 0
-  m_Name: Orange ore 3-1
+  m_Name: Dense Copper ore (9 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76221,7 +77155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 2
+  maxHealth: 9
   resourceType: 1
   blockId: quarry-v1-3-1
   wallMining: 1
@@ -76761,7 +77695,7 @@ GameObject:
   - component: {fileID: 1924014214}
   - component: {fileID: 1924014213}
   m_Layer: 0
-  m_Name: Dense Copper ore 4-1
+  m_Name: Firm Copper ore (5 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76811,7 +77745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 9
+  maxHealth: 5
   resourceType: 1
   blockId: quarry-expansion-1-4-1
   wallMining: 1
@@ -77031,7 +77965,7 @@ GameObject:
   - component: {fileID: 1928513503}
   - component: {fileID: 1928513502}
   m_Layer: 0
-  m_Name: Weathered Iron ore 0-0
+  m_Name: Weathered Iron ore (2 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77081,7 +78015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 4
+  maxHealth: 2
   resourceType: 0
   blockId: quarry-expansion-0-0-0
   wallMining: 1
@@ -77624,7 +78558,7 @@ GameObject:
   - component: {fileID: 1944742493}
   - component: {fileID: 1944742492}
   m_Layer: 0
-  m_Name: Weathered Iron ore 0-3
+  m_Name: Weathered Iron ore (2 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77674,7 +78608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 4
+  maxHealth: 2
   resourceType: 0
   blockId: quarry-expansion-0-0-3
   wallMining: 1
@@ -77984,7 +78918,7 @@ GameObject:
   - component: {fileID: 1966286475}
   - component: {fileID: 1966286474}
   m_Layer: 0
-  m_Name: Weathered Amethyst ore 3-1
+  m_Name: Weathered Amethyst ore (3 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78034,7 +78968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 6
+  maxHealth: 3
   resourceType: 5
   blockId: quarry-expansion-0-3-1
   wallMining: 1
@@ -78378,7 +79312,7 @@ GameObject:
   - component: {fileID: 1976193944}
   - component: {fileID: 1976193946}
   m_Layer: 0
-  m_Name: White crystal 4-1
+  m_Name: Dense Diamond ore (11 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78412,7 +79346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 3
+  maxHealth: 11
   resourceType: 3
   blockId: quarry-v1-4-1
   wallMining: 1
@@ -78769,7 +79703,7 @@ GameObject:
   - component: {fileID: 1983968212}
   - component: {fileID: 1983968211}
   m_Layer: 0
-  m_Name: Weathered Amethyst ore 5-0
+  m_Name: Weathered Amethyst ore (3 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78819,7 +79753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 6
+  maxHealth: 3
   resourceType: 5
   blockId: quarry-expansion-0-5-0
   wallMining: 1
@@ -78859,7 +79793,7 @@ GameObject:
   - component: {fileID: 1984261569}
   - component: {fileID: 1984261568}
   m_Layer: 0
-  m_Name: Weathered Gold ore 4-3
+  m_Name: Firm Gold ore (5 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78909,7 +79843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 6
+  maxHealth: 5
   resourceType: 4
   blockId: quarry-expansion-0-4-3
   wallMining: 1
@@ -79083,6 +80017,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 543450652740116512}
+  - {fileID: 1539351195}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &1993466820
@@ -85332,7 +86267,7 @@ GameObject:
   - component: {fileID: 2051832137}
   - component: {fileID: 2051832136}
   m_Layer: 0
-  m_Name: Dense Gold ore 3-3
+  m_Name: Weathered Gold ore (2 HP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85382,7 +86317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2219f784259449a6f40e3928b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MineableRock
-  maxHealth: 12
+  maxHealth: 2
   resourceType: 4
   blockId: quarry-expansion-1-3-3
   wallMining: 1

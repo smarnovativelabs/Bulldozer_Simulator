@@ -26,6 +26,14 @@ namespace Bulldozer.Player
         public int Cash=>progress?.Current.coins??0;
         public int Coins=>Cash;
         public int DamageLevel=>progress?.Current.damageLevel??0;
+        public int SpeedLevel=>progress?.Current.speedLevel??0;
+        public int SpeedCost=>25+SpeedLevel*25;
+        public float MovementMultiplier=>.8f+SpeedLevel*.08f;
+        public bool TryUpgradeSpeed()
+        {
+            if(progress==null||SpeedLevel>=5||Cash<SpeedCost)return false;
+            var next=Snapshot;next.coins-=SpeedCost;next.speedLevel++;return Commit(next);
+        }
         public int CapacityLevel=>progress?.Current.capacityLevel??0;
         public int Damage=>1+DamageLevel;
         public int DamageCost=>20+DamageLevel*20;

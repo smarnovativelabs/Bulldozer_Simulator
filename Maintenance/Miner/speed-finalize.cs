@@ -1,0 +1,4 @@
+if(EditorApplication.isPlaying)throw new System.Exception("Edit mode required");
+var u=UnityEngine.Object.FindFirstObjectByType<Bulldozer.Player.MinerUpgradeArea>();u.panel.GetComponent<RectTransform>().anchoredPosition=new Vector2(120,40);
+foreach(var text in UnityEngine.Object.FindObjectsByType<TMPro.TMP_Text>(FindObjectsInactive.Include,FindObjectsSortMode.None))if(text.text=="UPGRADES\nPICKAXE + RACK") {text.text="UPGRADES\nPICKAXE / RACK / SPEED";EditorUtility.SetDirty(text);}
+PlayerSettings.runInBackground=SessionState.GetBool("SpeedCheck.Background",false);SessionState.EraseString("Bulldozer.Mining.TestSavePath");UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(u.gameObject.scene);UnityEditor.SceneManagement.EditorSceneManager.SaveOpenScenes();AssetDatabase.SaveAssets();return "Saved layout and restored normal player save";

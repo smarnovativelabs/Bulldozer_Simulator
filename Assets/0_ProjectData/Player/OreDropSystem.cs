@@ -13,6 +13,7 @@ namespace Bulldozer.Player
         public int DustBursts {get;private set;}
         public RockFractureEffects fracture;
         public float pickupRadius=.72f;
+        public Transform carrierPickup;
         sealed class Slot {public string id;public int item;public Transform root,visual;public MeshFilter mesh;public MeshRenderer renderer;public SphereCollider trigger;public Vector3 start,end;public float age;}
         readonly Slot[] slots=new Slot[PoolSize];
         readonly Matrix4x4[][] instances=new Matrix4x4[6][];
@@ -84,13 +85,13 @@ namespace Bulldozer.Player
                 emit.startSize=Random.Range(.675f,1.275f);
                 emit.startLifetime=Random.Range(.55f,.9f);dust.Emit(emit,1);
             }
-            if(chips)for(int i=0;i<(broken?14:5);i++)
+            if(chips)for(int i=0;i<(broken?14:8);i++)
             {
                 var emit=new ParticleSystem.EmitParams();
                 emit.position=point+Random.insideUnitSphere*(broken?.16f:.04f);
                 emit.velocity=normal*Random.Range(.8f,broken?2.6f:1.6f)+Vector3.up*Random.Range(.8f,2f)+Random.insideUnitSphere*.65f;
                 emit.startColor=Color.Lerp(stone,Color.white,Random.Range(0,.15f));
-                emit.startSize=Random.Range(broken?.12f:.045f,broken?.32f:.11f);
+                emit.startSize=Random.Range(broken?.12f:.035f,broken?.32f:.075f);
                 emit.startLifetime=Random.Range(.25f,broken?.65f:.4f);
                 emit.rotation3D=Random.insideUnitSphere*180;chips.Emit(emit,1);
             }
@@ -106,7 +107,9 @@ namespace Bulldozer.Player
             }
             pickupTimer-=Time.deltaTime;if(pickupTimer>0||!player||player.InputBlocked||equipment.IsFull)return;pickupTimer=.12f;
             // Query the pickup trigger volume without dynamic rigidbodies or per-item Update callbacks.
-            int n=Physics.OverlapSphereNonAlloc(player.transform.position+Vector3.up*.18f,pickupRadius,overlaps,~0,QueryTriggerInteraction.Collide);
+            Vector3 pickup=equipment.UsingWheelbarrow&&carrierPickup?carrierPickup.position:player.transform.position;
+            pickup.y=player.transform.position.y+.18f;
+            int n=Physics.OverlapSphereNonAlloc(pickup,equipment.UsingWheelbarrow?.85f:pickupRadius,overlaps,~0,QueryTriggerInteraction.Collide);
             for(int i=0;i<n;i++)foreach(var slot in slots)
                 if(slot.id!=null&&slot.age>=1&&overlaps[i]==slot.trigger){equipment.TryCollectDrop(slot.id,slot.visual.position);return;}
         }

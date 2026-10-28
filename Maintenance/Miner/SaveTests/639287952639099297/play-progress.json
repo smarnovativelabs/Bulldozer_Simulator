@@ -1,0 +1,36 @@
+{
+    "format": "bulldozer-mining",
+    "version": 3,
+    "cargo": 0,
+    "coins": 40,
+    "damageLevel": 0,
+    "capacityLevel": 0,
+    "items": [],
+    "refineryInput": [],
+    "refineryOutput": [],
+    "truckItems": [],
+    "depletedBlocks": [],
+    "groundDrops": [
+        {
+            "id": "cart-forward-test",
+            "item": 0,
+            "position": {
+                "x": -3.0,
+                "y": 0.12999999523162843,
+                "z": -1.4500000476837159
+            }
+        }
+    ],
+    "trucksCompleted": 0,
+    "loadingQueue": [],
+    "wheelbarrowUnlocked": true,
+    "usingWheelbarrow": true,
+    "backpackItems": [],
+    "barrowItems": [],
+    "barrowPosition": {
+        "x": -3.0,
+        "y": 0.05000000074505806,
+        "z": -1.9500000476837159
+    },
+    "refiningSeconds": 0.0
+}

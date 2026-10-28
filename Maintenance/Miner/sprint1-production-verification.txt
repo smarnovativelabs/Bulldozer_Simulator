@@ -1,0 +1,15 @@
+PASS Raw items first enter persistent refinery input buffer
+PASS Refinery converts and returns matching finished items
+PASS Loading pad buffers cargo before truck payment
+PASS First truck fills first and pays once
+PASS Second truck waits for first to clear shared loading bay
+PASS Delivery Truck uses shared lane and bounded single-renderer rig
+PASS Delivery Truck 2 uses shared lane and bounded single-renderer rig
+PASS Three sequential deliveries pay $170 including third-delivery bonus
+PASS Visible trucks retain shared-lane spacing; min=5
+PASS Both trucks move out and return across actual frames
+PASS Production cash survives disk reload
+PASS Refinery shows current stone countdown before completion
+PASS Timed production finishes exactly one correct item
+PASS Item transfer effects stay inside pool of 12
+EDITOR ONLY max batches=335, SetPass=31; not device profiling

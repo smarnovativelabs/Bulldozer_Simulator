@@ -1,0 +1,47 @@
+SPRINT 1 GAMEPLAY POLISH - 28 OCTOBER 2026
+
+Scope: current quarry mining/collection/refining/delivery/upgrade loop.
+This is the current gameplay sprint, not the historical October 26 foundation audit.
+
+Changes in this closeout:
+- Final partial truck automatically dispatches after all registered quarry rocks are depleted and every other inventory/buffer is empty.
+- Final delivery commits cargo removal, cash and delivery count together; respects existing milestone bonuses and guards integer overflow.
+- Guidance recovers parked wheelbarrow/backpack cargo instead of overlooking it.
+- Loading an existing speed upgrade no longer triggers a false upgrade celebration.
+
+Verified in isolated Unity Play sessions (normal player save not used):
+- save-store-verification.txt: 10 save integrity/recovery/failure checks.
+- equipment-polish-verification.txt: forward cart pickup, all three production stations, actual mining contact; max measured IK error 0.000868478 m, palm-relative pickaxe rotation 0 degrees.
+- speed-progression-verification.txt: 12 affordability, cash, persistence, cap, UI and pooled particle checks.
+- guidance-verification.txt: 12 navigation, objective, non-mutating guidance and arrow budget checks.
+- sprint1-production-verification.txt: 14 checks, sequential shared-lane trucks, 5-unit minimum visible spacing, $170 for three deliveries, saved payment, timed refinery and fixed transfer pool.
+- sprint1-final-load-verification.txt: 12 checks including all remaining-cargo gates, overflow, single final payment and disk reload.
+- sprint1-timer-verification.txt: countdown and conversion observed across simulation time.
+- sprint1-game-view.png: actual Game view; grip-checked-2.png: diagnostic animation view.
+- Current console sampled with 0 errors. Historical tool error log includes older hot-reload errors and is not the current console.
+
+Test harness correction: older ProductionFlowVerification assumes two independent parked trucks and is superseded for shared-lane gameplay by sprint1-production-check.cs. First countdown assertion assumed 30 Hz but observed Editor steps were 0.02 s; corrected to simulation elapsed time and reran all 14 checks successfully. Separate timer observation also passed.
+
+Performance evidence is EDITOR ONLY:
+- Trucks retain 4400 triangles, one body renderer/material and six wheel bones each.
+- One baked lightmap and one gameplay camera observed.
+- Guidance mesh <=256 triangles. Transfer pool <=12. Hit particles reuse existing pools.
+- Production run max batches 335, SetPass 31. These are not phone performance results.
+- adb devices returned no connected device. Touch usability, thermal behavior, device memory and FPS remain unverified.
+
+RELEASE DECISION
+Sprint 1 is a finite-quarry tester candidate, not a public production release.
+Local development APK build result is recorded separately in sprint1-build-result.txt.
+It uses debug signing and the gameplay scene only; template package ID remains unchanged.
+
+Small next release sprint (required before recommended public launch):
+1. Repeatable excavation rounds in the existing environment, with controlled rock/material/target variation.
+2. Completion summary and Next Excavation; preserve cash/equipment/upgrades; persist round seed/index to prevent reset exploits.
+3. Keep difficulty bounded; maintain affordable easy rocks, useful upgrades and a playable endgame once upgrades cap.
+4. Real Android device checks, app identity/signing/store configuration and verify asset provenance (supplied wheelbarrow license remains unconfirmed).
+
+Later updates: equipment garage/catalog, selected new tools, visible construction delivery objectives, then more locations/workers. Story can be a light presentation layer over task-based rounds; no large story campaign needed for the first public release.
+Each update must preserve the previous version's save/progression and add a player-visible benefit. Do not reset earned cash or equipment to introduce a sprint.
+
+Google Play internal testing reference:
+https://support.google.com/googleplay/android-developer/answer/9845334

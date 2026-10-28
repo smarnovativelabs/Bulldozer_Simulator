@@ -23,6 +23,7 @@ namespace Bulldozer.Player
         float miningWeight;
         Transform[] fingers;
         Quaternion[] fingerRotations;
+        int rightFingerCount;
         static readonly int Speed = Animator.StringToHash("Speed");
         void OnEnable(){if(Application.isPlaying && !animator)Awake();}
         void Awake()
@@ -45,6 +46,9 @@ namespace Bulldozer.Player
             var list=new System.Collections.Generic.List<Transform>();
             for(int i=(int)HumanBodyBones.RightThumbProximal;i<=(int)HumanBodyBones.RightLittleDistal;i++)
             {var bone=animator.GetBoneTransform((HumanBodyBones)i);if(bone)list.Add(bone);}
+            rightFingerCount=list.Count;
+            for(int i=(int)HumanBodyBones.LeftThumbProximal;i<=(int)HumanBodyBones.LeftLittleDistal;i++)
+            {var bone=animator.GetBoneTransform((HumanBodyBones)i);if(bone)list.Add(bone);}
             fingers=list.ToArray();fingerRotations=new Quaternion[fingers.Length];
             try
             {
@@ -54,7 +58,7 @@ namespace Bulldozer.Player
                     for(int i=0;i<HumanTrait.MuscleCount;i++)
                     {
                         string name=HumanTrait.MuscleName[i];
-                        if(name.StartsWith("Right ")&&name.Contains("Stretched"))pose.muscles[i]=name.Contains("Thumb")?-.35f:name.Contains("Index")?-.75f:-.82f;
+                        if((name.StartsWith("Right ")||name.StartsWith("Left "))&&name.Contains("Stretched"))pose.muscles[i]=name.Contains("Thumb")?-.35f:name.Contains("Index")?-.75f:-.82f;
                     }
                     handler.SetHumanPose(ref pose);
                     for(int i=0;i<fingers.Length;i++)fingerRotations[i]=fingers[i].localRotation;
@@ -73,10 +77,18 @@ namespace Bulldozer.Player
         }
         void LateUpdate()
         {
-            if(!controller || !hand || !equipment || !equipment.PickaxeVisible)return;
+            if(!controller || !hand || !equipment)return;
+            if(equipment.UsingWheelbarrow){for(int i=0;i<fingers.Length;i++)fingers[i].localRotation=fingerRotations[i];return;}
+            if(!equipment.PickaxeVisible)return;
             // Close the fingers around the shaft, retaining the authored wrist/arm animation.
-            for(int i=0;i<fingers.Length;i++)fingers[i].localRotation=fingerRotations[i];
-            miningWeight=Mathf.MoveTowards(miningWeight,controller.IsMining?1:0,Time.deltaTime*(controller.IsMining?12:5));
+            for(int i=0;i<rightFingerCount;i++)fingers[i].localRotation=fingerRotations[i];
+            // Gameplay's contact timer can finish before the animation recovery. Keep the
+            // authored wrist through that recovery instead of twisting it toward carry mid-swing.
+            var state=animator.GetCurrentAnimatorStateInfo(0);
+            bool animatedMining=state.IsName("Mine Ground")||state.IsName("Mine Wall");
+            if(animator.IsInTransition(0)){var next=animator.GetNextAnimatorStateInfo(0);animatedMining|=next.IsName("Mine Ground")||next.IsName("Mine Wall");}
+            bool holdSwing=controller.IsMining||animatedMining;
+            miningWeight=Mathf.MoveTowards(miningWeight,holdSwing?1:0,Time.deltaTime*(holdSwing?12:5));
             if(!rightHandIK || !gripTarget)return;
             float blend=miningWeight*miningWeight*(3-2*miningWeight);
             Vector3 animatedElbow=elbow.position;

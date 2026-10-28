@@ -1,0 +1,18 @@
+if(!EditorApplication.isPlaying||string.IsNullOrEmpty(SessionState.GetString("Bulldozer.Mining.TestSavePath","")))throw new System.Exception("Isolated play required");
+var p=UnityEngine.Object.FindFirstObjectByType<Bulldozer.Player.MiningProduction>();var e=UnityEngine.Object.FindFirstObjectByType<Bulldozer.Player.MinerEquipment>();var g=UnityEngine.Object.FindFirstObjectByType<Bulldozer.Player.QuarryGuidance>();
+p.enabled=false;g.player.autoMine=false;g.player.CancelMining();
+var report=new System.Collections.Generic.List<string>();System.Action<bool,string> check=(ok,msg)=>report.Add((ok?"PASS ":"FAIL ")+msg);
+var s=e.Snapshot;s.items=System.Array.Empty<int>();s.backpackItems=System.Array.Empty<int>();s.barrowItems=System.Array.Empty<int>();s.groundDrops=System.Array.Empty<Bulldozer.Player.Persistence.GroundOreState>();s.refineryInput=System.Array.Empty<int>();s.refineryOutput=System.Array.Empty<int>();s.loadingQueue=System.Array.Empty<int>();s.truckItems=new[]{6};s.trucksCompleted=0;s.coins=0;s.depletedBlocks=System.Array.Empty<string>();e.Commit(s);
+check(!p.TryDispatchFinalLoad()&&e.Cash==0,"Partial truck cannot depart while rocks remain");
+s=e.Snapshot;s.depletedBlocks=UnityEngine.Object.FindObjectsByType<Bulldozer.Player.MineableRock>(FindObjectsInactive.Include,FindObjectsSortMode.None).Select(r=>r.blockId).ToArray();s.wheelbarrowUnlocked=true;s.barrowItems=new[]{0};e.Commit(s);
+check(!p.TryDispatchFinalLoad(),"Parked cart cargo prevents premature final delivery");g.RefreshObjective();check(g.heading.text=="CARGO IN YOUR CART","Guidance retrieves parked cart cargo");
+s=e.Snapshot;s.barrowItems=System.Array.Empty<int>();s.backpackItems=new[]{0};e.Commit(s);check(!p.TryDispatchFinalLoad(),"Stored backpack cargo prevents final delivery");
+s=e.Snapshot;s.backpackItems=System.Array.Empty<int>();s.refineryInput=new[]{0};e.Commit(s);check(!p.TryDispatchFinalLoad(),"Processing input prevents final delivery");
+s=e.Snapshot;s.refineryInput=System.Array.Empty<int>();s.refineryOutput=new[]{6};e.Commit(s);check(!p.TryDispatchFinalLoad(),"Ready output prevents final delivery");
+s=e.Snapshot;s.refineryOutput=System.Array.Empty<int>();s.loadingQueue=new[]{6};e.Commit(s);check(!p.TryDispatchFinalLoad(),"Loading buffer must drain before final delivery");
+s=e.Snapshot;s.loadingQueue=System.Array.Empty<int>();s.groundDrops=new[]{new Bulldozer.Player.Persistence.GroundOreState{id="final-ore",item=0,position=Vector3.zero}};e.Commit(s);check(!p.TryDispatchFinalLoad(),"Loose ore prevents final delivery");
+s=e.Snapshot;s.groundDrops=System.Array.Empty<Bulldozer.Player.Persistence.GroundOreState>();s.coins=int.MaxValue;e.Commit(s);check(!p.TryDispatchFinalLoad()&&e.Snapshot.truckItems.Length==1,"Payment overflow keeps cargo intact");
+s=e.Snapshot;s.coins=0;e.Commit(s);check(p.TryDispatchFinalLoad()&&e.Cash==10&&e.Snapshot.truckItems.Length==0&&e.TrucksCompleted==1,"Last single item dispatches and pays exactly $10");
+check(!p.TryDispatchFinalLoad()&&e.Cash==10,"Repeated final dispatch cannot duplicate cash");
+var disk=new Bulldozer.Player.Persistence.MiningProgressStore(e.SavePath).Current;check(disk.coins==10&&disk.truckItems.Length==0&&disk.trucksCompleted==1,"Final payment and cargo removal survive disk reload");
+System.IO.File.WriteAllLines("Maintenance/Miner/sprint1-final-load-verification.txt",report);return string.Join("\n",report);

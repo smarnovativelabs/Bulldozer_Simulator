@@ -17,6 +17,7 @@ namespace Bulldozer.Player.Persistence
         public string format;
         public int version;
         public int cargo,coins,damageLevel,capacityLevel;
+        public int speedLevel;
         public int[] items=new int[0],refineryInput=new int[0],refineryOutput=new int[0],truckItems=new int[0];
         public string[] depletedBlocks=new string[0];
         public GroundOreState[] groundDrops=new GroundOreState[0];
@@ -59,6 +60,7 @@ namespace Bulldozer.Player.Persistence
         {
             return s!=null && s.format=="bulldozer-mining" && s.version==3 && s.cargo>=0 && s.cargo<=100000 && s.coins>=0
                 && s.damageLevel>=0 && s.damageLevel<=10 && s.capacityLevel>=0 && s.capacityLevel<=15
+                && s.speedLevel>=0 && s.speedLevel<=5
                 && s.items!=null && s.items.Length==s.cargo && s.items.All(MiningResources.Valid)
                 && s.backpackItems!=null && s.backpackItems.Length<=100000 && s.backpackItems.All(MiningResources.Valid)
                 && s.barrowItems!=null && s.barrowItems.Length<=12 && s.barrowItems.All(MiningResources.Valid) && Finite(s.barrowPosition)

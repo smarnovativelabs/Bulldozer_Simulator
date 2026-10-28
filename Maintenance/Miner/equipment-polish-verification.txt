@@ -1,0 +1,7 @@
+PASS Cart collects ore 1.55m ahead of player; cargo=1
+PASS Cart transfers at refinery trigger; carried=0
+PASS Swing contacts rock; hits=1
+Maximum IK target error=0.000868478m; pickaxe rotation relative to palm=0 degrees
+
+PASS Cart unloads at truck pad
+PASS Cart collects finished refinery output

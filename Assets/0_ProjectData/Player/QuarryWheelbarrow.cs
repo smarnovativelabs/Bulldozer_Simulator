@@ -10,11 +10,13 @@ namespace Bulldozer.Player
         public MinerController player;public MinerEquipment equipment;public Transform wheel,loadRoot,leftGrip,rightGrip;public Transform[] loadSlots;
         public UnityEngine.UI.Button actionButton;public TMPro.TMP_Text actionText,counter;
         public Material[] stockMaterials;public int unlockCost=60;
+        Transform chassis;Quaternion chassisRest;float engagement;float actionCooldown;
         public bool Pushing=>equipment&&equipment.UsingWheelbarrow;
         Transform backpackRoot;Vector3 dock,lastPlayer,lastWheel;float originalSpeed,saveAt,poll;FastIKFabric leftIK,rightIK;Transform oldRightTarget;BoxCollider bodyCollider;readonly Collider[] overlaps=new Collider[16];
         void Start()
         {
             backpackRoot=equipment.cargoRoot;dock=transform.position;originalSpeed=player.runSpeed;bodyCollider=GetComponent<BoxCollider>();
+            equipment.drops.carrierPickup=transform;chassis=wheel?wheel.parent:null;if(chassis)chassisRest=chassis.localRotation;
             var s=equipment.Snapshot;if(s.wheelbarrowUnlocked&&s.barrowPosition!=Vector3.zero)transform.position=s.barrowPosition;
             // Resume parked, retaining both inventories; never force a player into a moving carrier on load.
             if(s.usingWheelbarrow){s.barrowItems=s.items;s.items=s.backpackItems;s.backpackItems=Array.Empty<int>();s.usingWheelbarrow=false;equipment.Commit(s);}
@@ -25,7 +27,7 @@ namespace Bulldozer.Player
         }
         public void Interact()
         {
-            if(player.InputBlocked||player.IsMining)return;var s=equipment.Snapshot;float distance=Vector3.Distance(player.transform.position,transform.position);
+            if(player.InputBlocked||player.IsMining||Time.time<actionCooldown)return;var s=equipment.Snapshot;float distance=Vector3.Distance(player.transform.position,transform.position);
             if(!s.wheelbarrowUnlocked)
             {
                 if(distance>2.5f||s.coins<unlockCost)return;s.coins-=unlockCost;s.wheelbarrowUnlocked=true;s.barrowPosition=transform.position;if(!equipment.Commit(s))return;
@@ -37,6 +39,9 @@ namespace Bulldozer.Player
             s.barrowPosition=transform.position;if(!equipment.Commit(s))return;
             equipment.cargoRoot=Pushing?loadRoot:backpackRoot;equipment.SetPickaxeVisible(!Pushing);player.CancelMining();player.touchControls.Move=Vector2.zero;
             player.runSpeed=Pushing?2.5f:originalSpeed;bodyCollider.enabled=!Pushing;lastPlayer=player.transform.position;Refresh();
+            actionCooldown=Time.time+.35f;
+            player.visual.GetComponent<MinerMining>().ShowStatus(Pushing?"Wheelbarrow ready - push over ore to collect":"Wheelbarrow parked - cargo kept inside");
+            var dust=equipment.drops.dust;if(dust){var burst=new ParticleSystem.EmitParams();burst.position=transform.position+Vector3.up*.08f;burst.startSize=.3f;burst.startLifetime=.4f;burst.startColor=new Color(.65f,.59f,.48f,.35f);burst.velocity=Vector3.up*.25f;dust.Emit(burst,6);}
         }
         void Update()
         {
@@ -46,6 +51,8 @@ namespace Bulldozer.Player
         }
         void LateUpdate()
         {
+            engagement=Mathf.MoveTowards(engagement,Pushing?1:0,Time.deltaTime*4);
+            if(chassis)chassis.localRotation=Quaternion.AngleAxis(-4*engagement,Vector3.right)*chassisRest;
             if(!Pushing)return;
             Quaternion rotation=player.visual.rotation;Vector3 target=player.transform.position+rotation*Vector3.forward*1.05f;target.y=.05f;
             int n=Physics.OverlapBoxNonAlloc(target+Vector3.up*.55f,new Vector3(.38f,.32f,.55f),overlaps,rotation,~0,QueryTriggerInteraction.Ignore);bool blocked=false;

@@ -38,7 +38,7 @@ namespace Bulldozer.Player
             rocks=FindObjectsByType<MineableRock>(FindObjectsSortMode.None);rockObstacles=new NavMeshObstacle[rocks.Length];
             for(int i=0;i<rocks.Length;i++)rockObstacles[i]=rocks[i].GetComponent<NavMeshObstacle>();
             mesh=new Mesh{name="Guidance pooled arrow mesh"};mesh.MarkDynamic();pathFilter.sharedMesh=mesh;pathRenderer.sharedMaterial=pathMaterial;
-            restingPosition=dialog.anchoredPosition;lastDeliveries=equipment.TrucksCompleted;lastLevel=equipment.DamageLevel+equipment.CapacityLevel;
+            restingPosition=dialog.anchoredPosition;lastDeliveries=equipment.TrucksCompleted;lastLevel=equipment.DamageLevel+equipment.CapacityLevel+equipment.SpeedLevel;
             dialogGroup.blocksRaycasts=false;dialogGroup.interactable=false;RefreshObjective();
         }
         void Update()
@@ -63,6 +63,8 @@ namespace Bulldozer.Player
             else if(s.groundDrops.Length>0&&!equipment.IsFull){goal=Goal.PickUp;target=s.groundDrops[0].position;foreach(var drop in s.groundDrops)if((drop.position-player.transform.position).sqrMagnitude<(target-player.transform.position).sqrMagnitude)target=drop.position;title="PICK UP YOUR STONES";body="Walk over the loose stones to collect them. Let's fill that rack!";step=1;}
             else if(raw>0){goal=Goal.Refine;target=production.inputZone.transform.position;title="FEED THE REFINERY";body="Follow the arrows to the input pad. Unloading happens automatically.";step=2;}
             else if(s.refineryOutput.Length>0){goal=Goal.Collect;target=production.outputZone.transform.position;title="YOUR STONE IS READY";body="Step onto COLLECT to pick up the finished stone. Next stop: the trucks!";step=3;}
+            else if(!equipment.UsingWheelbarrow&&s.barrowItems.Length>0&&equipment.drops&&equipment.drops.carrierPickup){goal=Goal.PickUp;target=equipment.drops.carrierPickup.position;title="CARGO IN YOUR CART";body="Return to your wheelbarrow and tap USE CART to finish unloading its cargo.";step=2;}
+            else if(equipment.UsingWheelbarrow&&s.backpackItems.Length>0){goal=Goal.PickUp;target=player.transform.position;title="CHECK YOUR BACKPACK";body="Tap PARK CART to carry and unload the stones stored in your backpack.";step=2;}
             else if(upgrades&&s.trucksCompleted>0&&s.damageLevel<3&&s.coins>=equipment.DamageCost){goal=Goal.Upgrade;target=upgrades.zone.transform.position;title="PUT THAT CASH TO WORK";body="Visit the workbench and upgrade your pickaxe for tougher rocks. Break rocks with fewer swings!";step=5;}
             else
             {
@@ -75,8 +77,8 @@ namespace Bulldozer.Player
             bool changed=!initialized||goal!=CurrentGoal||body!=currentBody;
             if(initialized&&((goal==Goal.PickUp&&CurrentGoal==Goal.Mine)||(goal==Goal.Refine&&CurrentGoal==Goal.PickUp)||(goal==Goal.Collect&&CurrentGoal==Goal.Refine)||(goal==Goal.Mine&&CurrentGoal==Goal.Load)))Celebrate("NICE WORK! NEXT STEP");
             if(s.trucksCompleted>lastDeliveries)Celebrate("DELIVERY PAID!  CASH +");
-            if(s.damageLevel+s.capacityLevel>lastLevel)Celebrate("UPGRADE COMPLETE!");
-            lastDeliveries=s.trucksCompleted;lastLevel=s.damageLevel+s.capacityLevel;
+            if(s.damageLevel+s.capacityLevel+s.speedLevel>lastLevel)Celebrate("UPGRADE COMPLETE!");
+            lastDeliveries=s.trucksCompleted;lastLevel=s.damageLevel+s.capacityLevel+s.speedLevel;
             CurrentGoal=goal;Destination=target;currentBody=body;
             tint=goal==Goal.Load||goal==Goal.Upgrade?new Color(.45f,1,.6f):new Color(1,.77f,.2f);
             if(changed){changedAt=Time.unscaledTime;heading.text=title;message.text=body;stepLabel.text="QUARRY GUIDE  /  "+step+" OF 5";progress.fillAmount=step/5f;accent.color=progress.color=tint;initialized=true;}
@@ -140,5 +142,6 @@ namespace Bulldozer.Player
         void OnDestroy(){if(mesh)Destroy(mesh);}
     }
 }
+
 
 

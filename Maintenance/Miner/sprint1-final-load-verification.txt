@@ -1,0 +1,12 @@
+PASS Partial truck cannot depart while rocks remain
+PASS Parked cart cargo prevents premature final delivery
+PASS Guidance retrieves parked cart cargo
+PASS Stored backpack cargo prevents final delivery
+PASS Processing input prevents final delivery
+PASS Ready output prevents final delivery
+PASS Loading buffer must drain before final delivery
+PASS Loose ore prevents final delivery
+PASS Payment overflow keeps cargo intact
+PASS Last single item dispatches and pays exactly $10
+PASS Repeated final dispatch cannot duplicate cash
+PASS Final payment and cargo removal survive disk reload

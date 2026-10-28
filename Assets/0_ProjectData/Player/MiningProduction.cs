@@ -21,6 +21,7 @@ namespace Bulldozer.Player
         readonly int[][] shownTrucks=new int[2][];
         readonly int[][] departingItems={Array.Empty<int>(),Array.Empty<int>()};
         int activeTruck;
+        string[] quarryBlockIds;
         float poll,processing,transfer,inputReady,loadingReady,truckTransfer;
         bool feeding;
         public int TruckCapacity=>2+(equipment?equipment.TrucksCompleted:0)%4;
@@ -30,6 +31,7 @@ namespace Bulldozer.Player
         void Start()
         {
             player=FindFirstObjectByType<MinerController>();equipment=player.visual.GetComponent<MinerEquipment>();
+            quarryBlockIds=FindObjectsByType<MineableRock>(FindObjectsInactive.Include,FindObjectsSortMode.None).Select(r=>r.blockId).Where(id=>!string.IsNullOrEmpty(id)).Distinct().ToArray();
             Prewarm(inputStack);Prewarm(outputStack);Prewarm(truckStack);
             if(secondDelivery)Prewarm(secondDelivery.cargo);if(loadingStack)Prewarm(loadingStack);
             inputReady=loadingReady=Time.time+.85f;Refresh();
@@ -56,12 +58,14 @@ namespace Bulldozer.Player
             if(transfer<=0&&!player.InputBlocked&&!player.IsMining)
             {
                 transfer=.35f;
-                if(Contains(inputZone,player.transform.position))DepositRaw();
-                else if(Contains(outputZone,player.transform.position))CollectOutput();
-                else if(Contains(sellZone,player.transform.position))LoadTruck();
+                Vector3 interaction=equipment.UsingWheelbarrow&&equipment.drops&&equipment.drops.carrierPickup?equipment.drops.carrierPickup.position:player.transform.position;
+                interaction.y=player.transform.position.y;
+                if(Contains(inputZone,interaction))DepositRaw();
+                else if(Contains(outputZone,interaction))CollectOutput();
+                else if(Contains(sellZone,interaction))LoadTruck();
             }
             truckTransfer-=Time.deltaTime;
-            if(truckTransfer<=0&&Time.time>=loadingReady){truckTransfer=.8f;TransferToTruck();}
+            if(truckTransfer<=0&&Time.time>=loadingReady){truckTransfer=.8f;if(!TransferToTruck())TryDispatchFinalLoad();}
             poll-=Time.deltaTime;if(poll<=0){poll=.1f;Refresh();}
         }
         public bool DepositRaw()
@@ -126,6 +130,26 @@ namespace Bulldozer.Player
             Refresh();return true;
         }
         void Status(string text)=>player.visual.GetComponent<MinerMining>().ShowStatus(text);
+        // Only the final exhausted-quarry load may leave below capacity. Commit payment
+        // and removal together so restarting cannot sell the same material twice.
+        public bool TryDispatchFinalLoad()
+        {
+            if(!equipment||quarryBlockIds==null||quarryBlockIds.Length==0)return false;
+            var s=equipment.Snapshot;var truck=ActiveTruck;
+            if(!truck||truck.IsBusy||s.truckItems.Length==0||s.items.Length>0||s.backpackItems.Length>0||s.barrowItems.Length>0||s.groundDrops.Length>0||s.refineryInput.Length>0||s.refineryOutput.Length>0||s.loadingQueue.Length>0)return false;
+            if(!quarryBlockIds.All(id=>Array.IndexOf(s.depletedBlocks,id)>=0))return false;
+            bool bonus=(s.trucksCompleted+1)%3==0;
+            int payment=s.truckItems.Sum(item=>MiningResources.Prices[item%6])+(bonus?30:0);
+            if(s.coins>int.MaxValue-payment||s.trucksCompleted==int.MaxValue)return false;
+            var loaded=s.truckItems;int capacity=TruckCapacity;
+            s.coins+=payment;s.trucksCompleted++;s.truckItems=Array.Empty<int>();
+            if(!equipment.Commit(s))return false;
+            departingItems[activeTruck]=loaded;truck.loadedCount=loaded.Length;truck.orderCapacity=capacity;truck.Dispatch();
+            Status("Final delivery +$"+payment+(bonus?" | 3-delivery bonus +$30!":""));
+            if(rewardFeedback)rewardFeedback.PlayReward(truck.cargo.position,payment);
+            if(Truck(1-activeTruck))activeTruck=1-activeTruck;
+            Refresh();return true;
+        }
         void Refresh()
         {
             var s=equipment.Snapshot;

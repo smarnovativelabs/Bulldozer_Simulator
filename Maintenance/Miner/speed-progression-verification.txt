@@ -1,0 +1,12 @@
+PASS Fresh save starts at 80% movement
+PASS Unaffordable purchase leaves level unchanged
+PASS Speed button purchase costs $25 and reaches level 1
+PASS Speed level survives disk reload
+PASS Further speed tier 2
+PASS Further speed tier 3
+PASS Further speed tier 4
+PASS Further speed tier 5
+PASS Maximum level is 5 at 120%; repeated purchase cannot charge
+PASS Normal hit emits sparkle without completion dust
+PASS Repeated hits stay within existing object and particle caps
+PASS Upgrade UI displays max level and disables purchase
