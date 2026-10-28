@@ -1,0 +1,9 @@
+PASS Movement test advanced 166 frames
+PASS Maximum moving wrist target error 0.00100 m
+PASS Body follows all four turns; minimum heading dot 0.960
+PASS Shaft stays fixed in palm during carry and turns
+PASS 100 repeated break bursts create no additional objects
+PASS Particle caps: dust=24 chips=32
+PASS No particle collisions or debris rigidbodies added
+BUDGET chip mesh 44 triangles; maximum 1408 chip triangles; two shared particle renderers; ore pool 96
+PASS Progressive crack segments 1 then 3

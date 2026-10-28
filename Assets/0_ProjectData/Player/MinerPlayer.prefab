@@ -151,11 +151,11 @@ Transform:
   m_GameObject: {fileID: 1049076521777599559}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.054523975, y: 0.2306863, z: 0.3285363}
+  m_LocalPosition: {x: -0.047610596, y: 0.1663872, z: 0.33060136}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2210780586906419886}
+  m_Father: {fileID: 2201131472009895014}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1208269247441053617
 GameObject:
@@ -485,12 +485,14 @@ MonoBehaviour:
   followCamera: {fileID: 0}
   touchControls: {fileID: 0}
   walkSpeed: 2.2
-  runSpeed: 6
-  acceleration: 14
+  runSpeed: 4.2
+  acceleration: 24
   jumpHeight: 1.05
   gravity: -24
   MineWall: 0
   miningDuration: 0.9666667
+  autoMine: 1
+  analogRun: 1
 --- !u!1 &1797777205684704331
 GameObject:
   m_ObjectHideFlags: 0
@@ -2177,8 +2179,10 @@ MonoBehaviour:
   rightHandIK: {fileID: 8061316011440749645}
   gripTarget: {fileID: 926446183717945958}
   elbowPole: {fileID: 7911524643837053714}
-  carryPosition: {x: 0.30755064, y: 0.9897853, z: 0.08865621}
+  carryPosition: {x: 0.36, y: 1.1, z: 0.12}
   carryRotation: {x: 0.8214605, y: 0.04029617, z: -0.55219126, w: 0.1366175}
+  toolGrip: {fileID: 2201131472009895014}
+  carryToolRotation: {x: 0.402912, y: -0.49738008, z: 0.76124066, w: -0.10386744}
 --- !u!114 &4212217042320760674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2191,7 +2195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66a065b6ae5da57428f335c373ec7d8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MinerEquipment
-  pickaxe: {fileID: 8132861395423397166}
+  pickaxe: {fileID: 8244430021508610525}
   cargoRoot: {fileID: 541111876023338123}
   cargoSlots:
   - {fileID: 1797777205684704331}
@@ -2214,6 +2218,7 @@ MonoBehaviour:
   - {fileID: 4300000, guid: de782f5cfd58a884fa75278dc9089c48, type: 2}
   - {fileID: 4300000, guid: 2c2aa2534bd3f2f45961553929bb2974, type: 2}
   - {fileID: 4300000, guid: 8caef2c353046214ebef653afc878884, type: 2}
+  drops: {fileID: 0}
   cargoCount: 0
 --- !u!114 &2949752051723904910
 MonoBehaviour:
@@ -2233,8 +2238,8 @@ MonoBehaviour:
   - {fileID: 2950858297143134395}
   - {fileID: 2392064133524843498}
   - {fileID: 9028973234500178729}
-  reach: 1.65
-  contactRadius: 0.08
+  reach: 0.95
+  contactRadius: 0.12
   cargoLabel: {fileID: 0}
 --- !u!1 &5798047057141940008
 GameObject:
@@ -2469,7 +2474,7 @@ SkinnedMeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6567332506508098021}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2676,11 +2681,11 @@ Transform:
   m_GameObject: {fileID: 6773921507209556613}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1274973, y: 0.35318962, z: -0.22154292}
+  m_LocalPosition: {x: 0.13441068, y: 0.2888905, z: -0.21947785}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2210780586906419886}
+  m_Father: {fileID: 2201131472009895014}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6809629800085872012
 GameObject:
@@ -2941,9 +2946,7 @@ Transform:
   - {fileID: 4731936947045761205}
   - {fileID: 3941925301715698888}
   - {fileID: 7779360782928272193}
-  - {fileID: 2950858297143134395}
-  - {fileID: 2392064133524843498}
-  - {fileID: 9028973234500178729}
+  - {fileID: 2201131472009895014}
   m_Father: {fileID: 2441520651287879794}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8061316011440749645
@@ -2961,7 +2964,7 @@ MonoBehaviour:
   ChainLength: 2
   Target: {fileID: 926446183717945958}
   Pole: {fileID: 7911524643837053714}
-  Iterations: 12
+  Iterations: 8
   Delta: 0.001
   SnapBackStrength: 0
 --- !u!1 &8132861395423397166
@@ -3249,6 +3252,99 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00032530352, y: 0.79464674, z: 0.14651683}
     m_Extent: {x: 0.034972485, y: 0.027499735, z: 0.02539843}
   m_DirtyAABB: 0
+--- !u!1 &8244430021508610525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2201131472009895014}
+  - component: {fileID: 5158531225338005807}
+  - component: {fileID: 4623381326262849181}
+  m_Layer: 0
+  m_Name: Pickaxe Palm Grip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2201131472009895014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8244430021508610525}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0069133798, y: 0.06429911, z: -0.0020650742}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2950858297143134395}
+  - {fileID: 2392064133524843498}
+  - {fileID: 9028973234500178729}
+  m_Father: {fileID: 2210780586906419886}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &5158531225338005807
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8244430021508610525}
+  m_Mesh: {fileID: 4300000, guid: 6e28c81b9b596df4bafeec2959ca302a, type: 2}
+--- !u!23 &4623381326262849181
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8244430021508610525}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 7845a566df881f644bc59012f44a7c70, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &8303262533917087540
 GameObject:
   m_ObjectHideFlags: 0
@@ -3587,11 +3683,11 @@ Transform:
   m_GameObject: {fileID: 8957838219894254809}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0203636, y: 0.34937462, z: 0.06664738}
+  m_LocalPosition: {x: 0.027276982, y: 0.28507552, z: 0.06871246}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2210780586906419886}
+  m_Father: {fileID: 2201131472009895014}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9002021123900316644
 GameObject:

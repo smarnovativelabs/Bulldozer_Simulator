@@ -1,0 +1,29 @@
+{
+    "format": "bulldozer-mining",
+    "version": 3,
+    "cargo": 2,
+    "coins": 100,
+    "damageLevel": 2,
+    "capacityLevel": 3,
+    "items": [
+        0,
+        0
+    ],
+    "refineryInput": [
+        1,
+        2
+    ],
+    "refineryOutput": [
+        9
+    ],
+    "truckItems": [
+        6
+    ],
+    "depletedBlocks": [
+        "test-block"
+    ],
+    "groundDrops": [],
+    "trucksCompleted": 0,
+    "loadingQueue": [],
+    "refiningSeconds": 0.0
+}

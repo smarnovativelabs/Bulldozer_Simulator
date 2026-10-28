@@ -11,9 +11,10 @@ namespace Bulldozer.Player
         public float reach=1.65f;
         public float contactRadius=.08f;
         public TMPro.TMP_Text cargoLabel;
+        public bool guidanceOwnsInstructions;
         public MineableRock Target { get; private set; }
         public int SuccessfulHits { get; private set; }
-        public string Status { get; private set; }="Approach a rock and press SWING";
+        public string Status { get; private set; }="Move close to a rock and stop to mine";
         readonly Collider[] nearby=new Collider[32];
         readonly RaycastHit[] sweep=new RaycastHit[16];
         Vector3[] previous;
@@ -22,6 +23,7 @@ namespace Bulldozer.Player
         public bool TryBeginSwing()
         {
             contactOpen=hitThisSwing=tracking=false;Target=null;
+            if(equipment.UsingWheelbarrow){Status="Park the wheelbarrow before mining";return false;}
             if(equipment.IsFull){Status="Rack full - deliver raw ore to REFINING or ingots to SELL";return false;}
             Vector3 origin=controller.transform.position+Vector3.up*.65f;
             int count=Physics.OverlapSphereNonAlloc(origin,reach,nearby,~0,QueryTriggerInteraction.Ignore);
@@ -42,8 +44,7 @@ namespace Bulldozer.Player
                 if(direction.sqrMagnitude>.001f)transform.rotation=Quaternion.LookRotation(direction);
                 controller.MineWall=Target.wallMining;Status="Mining";
             }
-            else Status="No rock in reach";
-            return true; // Empty swings remain possible, but cannot award damage or cargo.
+            return Target!=null;
         }
         bool ClearPath(MineableRock rock)
         {
@@ -59,7 +60,8 @@ namespace Bulldozer.Player
         public void EndMiningContact(){contactOpen=false;}
         void LateUpdate()
         {
-            if(cargoLabel)cargoLabel.text=$"CARGO {equipment.CargoCount}/{equipment.Capacity}  |  COINS {equipment.Coins}  |  {(!string.IsNullOrEmpty(equipment.SaveError)?"SAVE FAILED - progress unchanged":equipment.IsFull?"RACK FULL - REFINING / SELL":Status)}";
+            if(cargoLabel)cargoLabel.text=$"{(equipment.UsingWheelbarrow?"CART":"CARGO")} {equipment.CargoCount}/{equipment.Capacity}  |  CASH ${equipment.Cash}  |  {(!string.IsNullOrEmpty(equipment.SaveError)?"SAVE FAILED - progress unchanged":equipment.IsFull?"RACK FULL - REFINING / SELL":Status)}";
+            if(cargoLabel&&guidanceOwnsInstructions)cargoLabel.text=$"{(equipment.UsingWheelbarrow?"CART":"CARGO")} {equipment.CargoCount}/{equipment.Capacity}  |  CASH ${equipment.Cash}"+(!string.IsNullOrEmpty(equipment.SaveError)?"  |  SAVE FAILED - progress unchanged":"");
             if(headProbes==null || headProbes.Length==0)return;
             if(previous==null || previous.Length!=headProbes.Length)previous=new Vector3[headProbes.Length];
             bool active=controller.IsMining && equipment.PickaxeVisible && !controller.InputBlocked && controller.Grounded;
@@ -81,7 +83,7 @@ namespace Bulldozer.Player
                     {
                         hitThisSwing=true;
                         if(Target.TryHit(equipment,collider.ClosestPoint(point)))
-                        {SuccessfulHits++;Status=Target.Depleted?"Ore collected":$"Rock {Target.Health}/{Target.maxHealth}";}
+                        {SuccessfulHits++;Status=Target.Depleted?"Rock broken - walk over the stones to collect":$"Rock {Target.Health}/{Target.maxHealth}";}
                     }
                 }
                 previous[i]=point;
@@ -90,5 +92,8 @@ namespace Bulldozer.Player
         }
     }
 }
+
+
+
 
 

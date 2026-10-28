@@ -17,7 +17,7 @@ namespace Bulldozer.Player.Editor
   {
    checks=new List<string>();var dir=Path.GetFullPath("Maintenance/Miner/SaveTests/production-"+DateTime.UtcNow.Ticks);Directory.CreateDirectory(dir);var path=Path.Combine(dir,"legacy.json");
    File.WriteAllText(path,"{\"format\":\"bulldozer-mining\",\"version\":1,\"cargo\":3,\"coins\":77}");
-   var store=new MiningProgressStore(path);Check(store.Current.version==2&&store.Current.items.SequenceEqual(new[]{0,0,0})&&store.Current.coins==77,"V1 cargo and coins migrate without loss");
+   var store=new MiningProgressStore(path);Check(store.Current.version==3&&store.Current.items.SequenceEqual(new[]{0,0,0})&&store.Current.coins==77,"V1 cargo and coins migrate without loss");
    var s=store.Current.Copy();s.damageLevel=2;s.capacityLevel=3;s.refineryInput=new[]{1,2};s.refineryOutput=new[]{9};s.truckItems=new[]{6};s.depletedBlocks=new[]{"test-block"};Check(store.TryCommit(s),"Full production snapshot commits");
    Check(store.TryCommit(2,100),"Legacy balance API remains compatible");var restored=new MiningProgressStore(path).Current;
    Check(restored.damageLevel==2&&restored.capacityLevel==3&&restored.refineryInput.Length==2&&restored.refineryOutput[0]==9&&restored.truckItems[0]==6&&restored.depletedBlocks[0]=="test-block","Balance changes preserve upgrades, queues, truck and mined blocks");
@@ -46,7 +46,7 @@ namespace Bulldozer.Player.Editor
    Check(e.IsFull&&!rock.TryHit(e,rock.transform.position)&&rock.Health==health,"Full upgraded rack prevents ore loss");
    clear=e.Snapshot;clear.items=new int[0];e.Commit(clear);int before=e.CargoCount;
    Check(rock.TryHit(e,rock.transform.position)&&rock.Health==health-2,"Purchased damage is applied to rocks");rock.TryHit(e,rock.transform.position);
-   Check(rock.Depleted&&e.CargoCount==before+1&&e.IsBlockDepleted(rock.blockId),"Overkill final strike awards one item and persists depletion");
+   Check(rock.Depleted&&e.CargoCount==before&&e.Snapshot.groundDrops.Count(d=>d.id.StartsWith(rock.blockId+"/"))==3&&e.IsBlockDepleted(rock.blockId),"Overkill final strike creates three ground pickups and persists depletion");
    var save=e.Snapshot;save.items=new[]{1,8};save.refineryInput=new[]{2};save.refineryOutput=new[]{7};save.truckItems=new[]{6};Check(e.Commit(save),"Seed mixed state for restart verification");
    Place(p,new Vector3(0,0,-1));File.WriteAllLines("Maintenance/Miner/production-play-verification.txt",checks);return string.Join("\n",checks);
   }
@@ -61,3 +61,4 @@ namespace Bulldozer.Player.Editor
   }
  }
 }
+

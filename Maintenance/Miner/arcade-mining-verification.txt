@@ -1,0 +1,17 @@
+PASS Automatic mining starts without early damage
+PASS Three physical pickaxe contacts break the rock automatically
+PASS One broken rock produces three ground pieces, not instant cargo
+PASS Visible dust and stone chips emit on hits
+PASS Rock depletion and all three uncollected pieces save together
+PASS Entering the pickup trigger collects all three pieces once
+PASS Collected ore returns to the fixed pool
+PASS Full rack leaves excess ore on the ground
+PASS Remaining pickups survive a disk reload
+PASS Moving the joystick cancels mining and immediately moves the player
+PASS Real game frames advanced during automatic mining and pickup
+PASS Ore and particle pool object count stays fixed
+PASS New Play session restores two uncollected pieces and hides depleted rocks without duplicating cargo
+PASS V2 migration preserves cargo, coins, upgrades and all production inventories
+PASS Duplicate ground-drop IDs are rejected
+PASS Non-finite pickup positions are rejected
+PASS Future saves remain protected from overwrite

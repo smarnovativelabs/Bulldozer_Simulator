@@ -1,0 +1,4 @@
+PASS Joystick immediately cancels mining and moves player
+PASS Cancelled windup causes no damage
+PASS Carry grip recovers after cancelled swing
+EDITOR same-view batches: idle=150 effect peak=152 after=150 (not device FPS)

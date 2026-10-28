@@ -1,0 +1,13 @@
+PASS Fresh player gets a complete route to a reachable rock
+PASS Loose ore is prioritized before refinery delivery
+PASS Raw cargo points to the refinery input
+PASS Refined cargo points to the loading pad
+PASS Ready output points to collection
+PASS Guide encourages mining while the refinery works
+PASS First affordable pickaxe upgrade is suggested
+PASS Guide resumes production after the upgrade
+PASS Guidance does not mutate inventory or cash
+PASS Dialog does not intercept movement input
+PASS Arrows and marker use one shared material and <=256 triangles
+PASS Refinery input is reachable from behind the machine
+EDITOR ONLY: batches=147, SetPass=17. No device FPS measurement.

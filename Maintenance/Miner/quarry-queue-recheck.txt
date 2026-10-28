@@ -1,0 +1,1 @@
+Frame-stepped production verification: deliveries=4, cash=210, same lane=True, minimum center gap=5, remaining buffer=0

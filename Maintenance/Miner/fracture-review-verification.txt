@@ -1,0 +1,12 @@
+PASS Three physical pickaxe strikes break the block
+PASS Eight large pieces replace the block
+PASS Visible upward lift 0.443 m
+PASS Temporary fragments finish and renderer releases
+PASS Exactly three saved collectible ore pieces remain
+PASS Broken block collider removed
+PASS Advancing Play frames 103
+PASS Repeated breaks reuse a fixed 24-piece pool
+BUDGET combined fracture renderer: 576 vertices / 192 triangles; one shared material; no rigidbodies
+EDITOR batches before=139 effect peak=141 (includes animation/crack changes, not device FPS)
+
+Overlapping full-size stress: pieces=24 objects added=0

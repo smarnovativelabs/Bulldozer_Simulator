@@ -16,7 +16,7 @@ namespace Bulldozer.Player.Editor
             if(string.IsNullOrEmpty(UnityEditor.SessionState.GetString("Bulldozer.Mining.TestSavePath","")))throw new System.InvalidOperationException("Prepare an isolated save with DepositVerification.Prepare before running destructive player tests.");
    if(!EditorApplication.isPlaying)throw new InvalidOperationException("Enter Play mode first");
    player=UnityEngine.Object.FindFirstObjectByType<MinerController>();mining=player.visual.GetComponent<MinerMining>();equipment=mining.equipment;rock=UnityEngine.Object.FindObjectsByType<MineableRock>(FindObjectsSortMode.None).First(r=>r.blockId=="quarry-v1-0-0");
-   equipment.SetCargoCount(0);player.touchControls.Move=Vector2.zero;player.touchControls.Sprinting=false;Place(rock.transform.position-Vector3.forward*1.15f+Vector3.up*.02f);report=new List<string>();stage=0;swings=0;firstFrame=Time.frameCount;began=Time.time;EditorApplication.update-=Tick;EditorApplication.update+=Tick;
+   player.autoMine=false;equipment.SetCargoCount(0);player.touchControls.Move=Vector2.zero;player.touchControls.Sprinting=false;Place(rock.transform.position-Vector3.forward*1.15f+Vector3.up*.02f);report=new List<string>();stage=0;swings=0;firstFrame=Time.frameCount;began=Time.time;EditorApplication.update-=Tick;EditorApplication.update+=Tick;
   }
   static void Begin(){healthBefore=rock.Health;hitsBefore=mining.SuccessfulHits;earlyChecked=false;player.Mine();began=Time.time;}
   static void Tick()
@@ -32,7 +32,7 @@ namespace Bulldozer.Player.Editor
     Check(mining.SuccessfulHits==hitsBefore+1,"One contact event per swing "+swings);
     if(++swings<3){Begin();return;}
     Check(rock.Depleted && !rock.HitCollider.enabled && !rock.rockRenderer.enabled,"Depleted rock removes collision and mesh");
-    Check(equipment.CargoCount==1 && equipment.cargoSlots[0].activeSelf,"Broken rock adds exactly one visible cargo item");
+    Check(equipment.CargoCount==0 && equipment.Snapshot.groundDrops.Count(d=>d.id.StartsWith(rock.blockId+"/"))==3,"Broken rock creates exactly three ground pickups");
     Check(UnityEngine.Object.FindObjectsByType<MineableRock>(FindObjectsSortMode.None).Where(r=>r!=rock).All(r=>r.Health==r.maxHealth),"Nearby rocks were not damaged");
     rock=UnityEngine.Object.FindObjectsByType<MineableRock>(FindObjectsSortMode.None).First(r=>r.blockId=="quarry-v1-0-1");Place(rock.transform.position-Vector3.forward*1.15f+Vector3.up*.02f);began=Time.time;stage=2;
    }

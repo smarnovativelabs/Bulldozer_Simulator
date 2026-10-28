@@ -1,0 +1,9 @@
+PASS Successful non-final hit emits sparks without completion dust
+PASS Exactly one dust burst on completed stone break
+PASS Depleted stone cannot repeat effects
+PASS 100 repeated bursts create no GameObjects
+PASS Bounded particles: sparks <=48, dust <=24, chips <=32
+PASS Sparks add no collisions, particle lights or trails
+PASS Particles stay at impact when the player moves
+PASS Sparks and dust remain visible during the break burst
+Particle budget: at most 104 live mining particles across three reused renderers; sparks/dust are billboards. Device FPS not measured.

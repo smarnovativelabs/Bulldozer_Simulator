@@ -13,20 +13,54 @@ namespace Bulldozer.Player
         public Transform gripTarget, elbowPole;
         public Vector3 carryPosition = new Vector3(.32f, .98f, .10f);
         public Quaternion carryRotation = Quaternion.identity;
+        public Transform toolGrip;
+        public Quaternion carryToolRotation=Quaternion.identity;
         Animator animator;
         Transform hand, elbow;
-        HumanPoseHandler poseHandler;
-        HumanPose pose;
+        Transform shoulder;
+        float armLength;
+        public float LastGripError {get;private set;}
         float miningWeight;
+        Transform[] fingers;
+        Quaternion[] fingerRotations;
         static readonly int Speed = Animator.StringToHash("Speed");
-        void OnEnable(){if(Application.isPlaying && poseHandler==null)Awake();}
+        void OnEnable(){if(Application.isPlaying && !animator)Awake();}
         void Awake()
         {
             animator=GetComponent<Animator>();
             hand=animator.GetBoneTransform(HumanBodyBones.RightHand);
             elbow=animator.GetBoneTransform(HumanBodyBones.RightLowerArm);
-            poseHandler=new HumanPoseHandler(animator.avatar,transform);
+            shoulder=animator.GetBoneTransform(HumanBodyBones.RightUpperArm);
+            armLength=Vector3.Distance(shoulder.position,elbow.position)+Vector3.Distance(elbow.position,hand.position);
+            CacheGrip();
             if(rightHandIK)rightHandIK.enabled=false; // Solve once, after targets and fingers are updated.
+        }
+        void CacheGrip()
+        {
+            // Convert the humanoid grip once. Reapplying HumanPose every frame can change the
+            // body/root orientation while turning, and needlessly solves the whole avatar.
+            var transforms=GetComponentsInChildren<Transform>(true);
+            var positions=new Vector3[transforms.Length];var rotations=new Quaternion[transforms.Length];
+            for(int i=0;i<transforms.Length;i++){positions[i]=transforms[i].localPosition;rotations[i]=transforms[i].localRotation;}
+            var list=new System.Collections.Generic.List<Transform>();
+            for(int i=(int)HumanBodyBones.RightThumbProximal;i<=(int)HumanBodyBones.RightLittleDistal;i++)
+            {var bone=animator.GetBoneTransform((HumanBodyBones)i);if(bone)list.Add(bone);}
+            fingers=list.ToArray();fingerRotations=new Quaternion[fingers.Length];
+            try
+            {
+                using(var handler=new HumanPoseHandler(animator.avatar,transform))
+                {
+                    HumanPose pose=new HumanPose();handler.GetHumanPose(ref pose);
+                    for(int i=0;i<HumanTrait.MuscleCount;i++)
+                    {
+                        string name=HumanTrait.MuscleName[i];
+                        if(name.StartsWith("Right ")&&name.Contains("Stretched"))pose.muscles[i]=name.Contains("Thumb")?-.35f:name.Contains("Index")?-.75f:-.82f;
+                    }
+                    handler.SetHumanPose(ref pose);
+                    for(int i=0;i<fingers.Length;i++)fingerRotations[i]=fingers[i].localRotation;
+                }
+            }
+            finally{for(int i=0;i<transforms.Length;i++){transforms[i].localPosition=positions[i];transforms[i].localRotation=rotations[i];}}
         }
         void Update()
         {
@@ -41,20 +75,23 @@ namespace Bulldozer.Player
         {
             if(!controller || !hand || !equipment || !equipment.PickaxeVisible)return;
             // Close the fingers around the shaft, retaining the authored wrist/arm animation.
-            poseHandler.GetHumanPose(ref pose);
-            for(int i=0;i<HumanTrait.MuscleCount;i++)
-                if(HumanTrait.MuscleName[i].StartsWith("Right ") && HumanTrait.MuscleName[i].Contains("Stretched"))
-                    pose.muscles[i]=HumanTrait.MuscleName[i].Contains("Thumb") ? -.15f : -.65f;
-            poseHandler.SetHumanPose(ref pose);
-            miningWeight=Mathf.MoveTowards(miningWeight,controller.IsMining?1:0,Time.deltaTime*10);
+            for(int i=0;i<fingers.Length;i++)fingers[i].localRotation=fingerRotations[i];
+            miningWeight=Mathf.MoveTowards(miningWeight,controller.IsMining?1:0,Time.deltaTime*(controller.IsMining?12:5));
             if(!rightHandIK || !gripTarget)return;
-            gripTarget.position=Vector3.Lerp(transform.TransformPoint(carryPosition),hand.position,miningWeight);
-            gripTarget.rotation=Quaternion.Slerp(transform.rotation*carryRotation,hand.rotation,miningWeight);
-            elbowPole.position=elbow.position+transform.right*.25f-transform.forward*.1f;
+            float blend=miningWeight*miningWeight*(3-2*miningWeight);
+            Vector3 animatedElbow=elbow.position;
+            Vector3 carry=transform.TransformPoint(carryPosition);
+            // Locomotion moves the shoulder; preserve elbow bend instead of stretching to an unreachable target.
+            carry=shoulder.position+Vector3.ClampMagnitude(carry-shoulder.position,armLength*.92f);
+            gripTarget.position=Vector3.Lerp(carry,hand.position,blend);
+            // Rotate the wrist with the tool, never spin the shaft inside the closed palm.
+            gripTarget.rotation=Quaternion.Slerp(transform.rotation*carryRotation*carryToolRotation,hand.rotation,blend);
+            if(elbowPole)elbowPole.position=Vector3.Lerp(transform.TransformPoint(new Vector3(.65f,1.05f,-.18f)),animatedElbow,blend);
             rightHandIK.Solve();
             hand.rotation=gripTarget.rotation;
+            LastGripError=Vector3.Distance(hand.position,gripTarget.position);
+            if(toolGrip)toolGrip.localRotation=Quaternion.identity;
         }
-        void OnDisable(){poseHandler?.Dispose();poseHandler=null;}
     }
 }
 

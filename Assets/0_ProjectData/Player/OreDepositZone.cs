@@ -7,7 +7,7 @@ namespace Bulldozer.Player
         [Min(1)] public int coinsPerItem=10;
         BoxCollider zone;
         public int Deposits { get; private set; }
-        void Awake(){zone=GetComponent<BoxCollider>();var sign=GetComponentInChildren<TMPro.TMP_Text>();if(sign)sign.text=$"DEPOSIT ORE\n{coinsPerItem} COINS EACH";}
+        void Awake(){zone=GetComponent<BoxCollider>();var sign=GetComponentInChildren<TMPro.TMP_Text>();if(sign)sign.text=$"DEPOSIT ORE\n${coinsPerItem} EACH";}
         void OnTriggerEnter(Collider other){Process(other);}
         void OnTriggerStay(Collider other){Process(other);}
         void Process(Collider other)
@@ -24,9 +24,10 @@ namespace Bulldozer.Player
             var equipment=player.visual.GetComponent<MinerEquipment>();
             if(!equipment || !equipment.TryDeposit(coinsPerItem,out int earned))return false;
             Deposits++;
-            player.visual.GetComponent<MinerMining>()?.ShowStatus($"Deposited ore: +{earned} coins");
+            player.visual.GetComponent<MinerMining>()?.ShowStatus($"Deposited ore: +${earned} cash");
             return true;
         }
     }
 }
+
 

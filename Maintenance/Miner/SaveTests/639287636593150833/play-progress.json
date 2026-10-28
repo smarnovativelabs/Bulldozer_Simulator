@@ -1,0 +1,66 @@
+{
+    "format": "bulldozer-mining",
+    "version": 3,
+    "cargo": 0,
+    "coins": 0,
+    "damageLevel": 0,
+    "capacityLevel": 0,
+    "items": [],
+    "refineryInput": [],
+    "refineryOutput": [],
+    "truckItems": [],
+    "depletedBlocks": [
+        "quarry-v1-0-0",
+        "quarry-v1-0-1",
+        "quarry-v1-0-3"
+    ],
+    "groundDrops": [
+        {
+            "id": "quarry-v1-0-1/1",
+            "item": 1,
+            "position": {
+                "x": -1.7699999809265137,
+                "y": 0.12999999523162843,
+                "z": 2.700000047683716
+            }
+        },
+        {
+            "id": "quarry-v1-0-1/2",
+            "item": 1,
+            "position": {
+                "x": -1.4700000286102296,
+                "y": 0.12999999523162843,
+                "z": 2.299999952316284
+            }
+        },
+        {
+            "id": "quarry-v1-0-3/0",
+            "item": 3,
+            "position": {
+                "x": 0.28999996185302737,
+                "y": 0.12999999523162843,
+                "z": 2.299999952316284
+            }
+        },
+        {
+            "id": "quarry-v1-0-3/1",
+            "item": 3,
+            "position": {
+                "x": 0.5899999737739563,
+                "y": 0.12999999523162843,
+                "z": 2.700000047683716
+            }
+        },
+        {
+            "id": "quarry-v1-0-3/2",
+            "item": 3,
+            "position": {
+                "x": 0.8899999856948853,
+                "y": 0.12999999523162843,
+                "z": 2.299999952316284
+            }
+        }
+    ],
+    "trucksCompleted": 0,
+    "refiningSeconds": 0.0
+}

@@ -22,11 +22,13 @@ namespace Bulldozer.Player
         public float VerticalSpeed => vertical;
         public bool MineWall;
         public float miningDuration = .967f;
+        public bool autoMine=true;
+        public bool analogRun=true;
         public void CancelMining() { swingTime=0; Swing=0; mineRequested=false; }
         public bool InputBlocked => Bulldozer.UI.CommonUI.Instance != null && Bulldozer.UI.CommonUI.Instance.BlocksGameplayInput;
         CharacterController motor;
         Vector3 velocity, spawn;
-        float vertical, swingTime;
+        float vertical, swingTime, idleTime, nextSwing;
         bool jumpRequested, mineRequested;
         MinerMining mining;
         public void Jump() => jumpRequested = true;
@@ -49,12 +51,14 @@ namespace Bulldozer.Player
             }
             if (pad != null) { input += pad.leftStick.ReadValue(); run |= pad.leftStickButton.isPressed; jumpRequested |= pad.buttonSouth.wasPressedThisFrame; mineRequested |= pad.buttonWest.wasPressedThisFrame; }
             if (InputBlocked) { CancelMining(); input = Vector2.zero; run = false; jumpRequested = mineRequested = false; }
-            if(IsMining && !Grounded) CancelMining();
+            input=Vector2.ClampMagnitude(input,1);
+            if(input.magnitude<.12f)input=Vector2.zero;
+            if(IsMining && (!Grounded||input.sqrMagnitude>.0225f||jumpRequested)) CancelMining();
             if(IsMining) { input=Vector2.zero; jumpRequested=false; }
             MoveInput = Vector2.ClampMagnitude(input, 1);
             float yaw = followCamera ? followCamera.Yaw : 0;
             Vector3 direction = Quaternion.Euler(0, yaw, 0) * new Vector3(MoveInput.x, 0, MoveInput.y);
-            velocity = Vector3.MoveTowards(velocity, direction * (run ? runSpeed : walkSpeed), acceleration * Time.deltaTime);
+            velocity = Vector3.MoveTowards(velocity, direction * (run||analogRun ? runSpeed : walkSpeed), acceleration * Time.deltaTime);
             if (direction.sqrMagnitude > .01f && visual) visual.rotation = Quaternion.Slerp(visual.rotation, Quaternion.LookRotation(direction), 1 - Mathf.Exp(-14 * Time.deltaTime));
             if (motor.isGrounded && vertical < 0) vertical = -2;
             if (jumpRequested && motor.isGrounded) vertical = Mathf.Sqrt(jumpHeight * -2 * gravity);
@@ -62,7 +66,13 @@ namespace Bulldozer.Player
             var flags = motor.Move((velocity + Vector3.up * vertical) * Time.deltaTime);
             if ((flags & CollisionFlags.Above) != 0 && vertical > 0) vertical = 0;
             Speed = new Vector2(motor.velocity.x, motor.velocity.z).magnitude;
-            if (mineRequested && swingTime <= 0 && Grounded && visual && visual.TryGetComponent<MinerEquipment>(out var equipment) && equipment.PickaxeVisible && (!mining || mining.TryBeginSwing())) { swingTime = miningDuration; velocity=Vector3.zero; }
+            idleTime=MoveInput.sqrMagnitude<.01f?idleTime+Time.deltaTime:0;
+            bool autoRequested=autoMine&&idleTime>.16f&&Time.time>=nextSwing&&Speed<.12f&&!InputBlocked;
+            if ((mineRequested||autoRequested) && swingTime <= 0 && Grounded && visual && visual.TryGetComponent<MinerEquipment>(out var equipment) && equipment.PickaxeVisible)
+            {
+                nextSwing=Time.time+.16f;
+                if(mining&&mining.TryBeginSwing()){swingTime=miningDuration;nextSwing=Time.time+miningDuration+.22f;velocity=Vector3.zero;}
+            }
             swingTime = Mathf.Max(0, swingTime - Time.deltaTime);
             Swing = swingTime > 0 ? Mathf.Sin((1 - swingTime / miningDuration) * Mathf.PI) : 0;
             jumpRequested = mineRequested = false;

@@ -1,0 +1,13 @@
+Quarry revision recheck — 2026-10-28
+
+Verified in Unity Editor with an isolated save (normal player save untouched):
+- Four production deliveries completed during 1,800 controlled frames. Same lane throughout; minimum truck center gap 5 units; loading buffer drained completely; cash increased from 40 to 210 including the third-delivery bonus.
+- 78 rocks, 78 distinct persistence IDs, health 2–13.
+- Wheelbarrow purchase: $60; capacity 12. Backpack inventory 2 and cart inventory 1 remained separate across use/park/use and a Play-mode restart. Restart resumes parked. Pickaxe upgrade increased damage from 1 to 2; breaking rocks through equipment is blocked while pushing.
+- Repaired overlapping concrete top faces; lighting rebaked to one lightmap atlas.
+- Found and removed an imported CINEMA_4D_Editor camera from the supplied wheelbarrow. Model importer now excludes cameras and lights; one gameplay camera remains.
+- Mesh counts: truck 4,400 triangles; wheelbarrow approximately 3,154 including additions and label geometry, excluding cargo. These are editor counts, not device performance results.
+
+Saved screenshots: quarry-geometry-review.png and quarry-final-recheck.png.
+Unverified: physical low-end device performance; cart recall was not runtime-verified (the final probe arrived after Play mode had ended).
+Asset licensing: the supplied wheelbarrow folder contained no license. Styling changes do not establish rights to publish the source model. Existing reference research identifies Bulldozer Master Crush & Mine; no verified wheelbarrow footage was available for a detailed visual comparison.

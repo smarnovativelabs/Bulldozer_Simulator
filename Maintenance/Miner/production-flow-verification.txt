@@ -1,0 +1,21 @@
+PASS Raw stone moves onto persistent input buffer
+PASS Refinery preserves resource identities
+PASS Finished stone can be collected
+PASS Loading pad accepts goods without paying before truck transfer
+PASS Loading pad survives disk reload
+PASS Partial truck load has no payout
+PASS First full truck pays exactly $25
+PASS Second truck loads and pays while first is delivering
+PASS Player can unload while both trucks are away
+PASS Both busy vehicles leave buffered goods intact
+PASS Delivery Truck retains <5000 triangles, one body renderer/material and six wheel bones
+PASS Delivery Truck 2 retains <5000 triangles, one body renderer/material and six wheel bones
+PASS Player loop advances during delivery test
+PASS Both reusable trucks depart and return
+PASS Third delivery pays $40 plus $30 milestone bonus
+PASS Empty buffer cannot duplicate reward
+PASS Cash and milestone persist atomically
+PASS Machine displays countdown before production completes
+PASS Timed refinery produces exactly one correct stone
+PASS Transfers stay within fixed 12-item pool
+EDITOR ONLY: max batches=162, max SetPass=18; no device FPS claim.

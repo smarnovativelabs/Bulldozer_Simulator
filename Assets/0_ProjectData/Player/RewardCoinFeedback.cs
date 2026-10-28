@@ -11,7 +11,7 @@ namespace Bulldozer.Player
     {
         public TMP_Text balanceText;
         public Camera worldCamera;
-        [Tooltip("Optional replacement for the placeholder coin artwork; all coins share this texture.")]
+        [Tooltip("Optional replacement for the placeholder banknote artwork; all notes share this texture.")]
         public Sprite coinSprite;
         public const int CoinLimit=8;
         struct Coin { public Vector2 start,position; public float delay,scale,alpha; }
@@ -40,7 +40,7 @@ namespace Bulldozer.Player
         }
         Vector2 BalancePosition()
         {
-            int first=balanceText.text.IndexOf("COINS ",System.StringComparison.Ordinal);
+            int first=balanceText.text.IndexOf("CASH $",System.StringComparison.Ordinal);
             if(first>=0&&balanceText.textInfo.characterCount>first+6)
             {
                 first+=6;int last=first;
@@ -83,11 +83,15 @@ namespace Bulldozer.Player
                 }
                 else
                 {
-                    Disc(vh,c.position,radius,new Color(.65f,.32f,.025f,c.alpha));
-                    Disc(vh,c.position+Vector2.up*radius*.1f,radius*.76f,new Color(1,.77f,.16f,c.alpha));
-                    Disc(vh,c.position+new Vector2(-.2f,.28f)*radius,radius*.24f,new Color(1,.96f,.6f,c.alpha));
+                    Note(vh,c.position,new Vector2(radius*1.4f,radius*.7f),new Color(.08f,.3f,.16f,c.alpha));
+                    Note(vh,c.position,new Vector2(radius*1.17f,radius*.5f),new Color(.44f,.88f,.56f,c.alpha));
+                    Disc(vh,c.position,radius*.31f,new Color(.12f,.45f,.24f,c.alpha));
                 }
             }
+        }
+        static void Note(VertexHelper vh,Vector2 p,Vector2 size,Color tint)
+        {
+            int n=vh.currentVertCount;vh.AddVert(p+new Vector2(-size.x,-size.y),tint,Vector2.zero);vh.AddVert(p+new Vector2(-size.x,size.y),tint,Vector2.zero);vh.AddVert(p+size,tint,Vector2.zero);vh.AddVert(p+new Vector2(size.x,-size.y),tint,Vector2.zero);vh.AddTriangle(n,n+1,n+2);vh.AddTriangle(n,n+2,n+3);
         }
         static void Disc(VertexHelper vh,Vector2 p,float r,Color tint)
         {
@@ -97,3 +101,4 @@ namespace Bulldozer.Player
         }
     }
 }
+

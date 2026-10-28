@@ -26,7 +26,8 @@ namespace Bulldozer.Player
             if (action != Action.Move) return;
             var rect = (RectTransform)transform;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(rect, e.position, e.pressEventCamera, out Vector2 point);
-            controls.Move = Vector2.ClampMagnitude(point / (rect.rect.width * .35f), 1);
+            Vector2 raw=Vector2.ClampMagnitude(point / (rect.rect.width * .35f), 1);
+            controls.Move = raw.magnitude<.12f?Vector2.zero:raw.normalized*Mathf.InverseLerp(.12f,1,raw.magnitude);
             if (knob) knob.anchoredPosition = controls.Move * rect.rect.width * .35f;
         }
         public void OnPointerUp(PointerEventData e) { if (pointer == e.pointerId) ResetInput(); }

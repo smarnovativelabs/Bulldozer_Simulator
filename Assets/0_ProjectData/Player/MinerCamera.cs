@@ -8,11 +8,13 @@ namespace Bulldozer.Player
         public MinerController target;
         public float distance = 4.8f;
         public float sensitivity = .15f;
+        public float startPitch=48f;
+        public float startYaw;
         public LayerMask obstacleMask = ~0;
         public float Yaw { get; private set; }
         float pitch = 18, actualDistance;
         readonly RaycastHit[] hits = new RaycastHit[32];
-        void OnEnable() { actualDistance = distance; }
+        void OnEnable() { actualDistance = distance; pitch=startPitch; Yaw=startYaw; }
         void LateUpdate()
         {
             if (!target) return;

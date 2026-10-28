@@ -6,11 +6,17 @@ namespace Bulldozer.Player
     // Reuse the same truck off screen; never instantiate a vehicle per delivery.
     public sealed class TruckDelivery : MonoBehaviour
     {
-        public enum DeliveryPhase { Parked, Loading, Departing, Away, Arriving }
+        public enum DeliveryPhase { Parked, Loading, Departing, Away, Arriving, Queued }
+        public bool singleLane;
+        public TruckDelivery queuePeer;
+        public Vector3 queueBay;
+        public float queueGap=5f;
         public Transform[] wheels;
         public SkinnedMeshRenderer body;
         public Collider parkingCollider;
         public Transform cargo;
+        public TMPro.TMP_Text counter;
+        public int loadedCount,orderCapacity=2;
         public Vector3 localTravelDirection = Vector3.right;
         [Min(.01f)] public float wheelRadius = .265f;
         [Min(5f)] public float travelDistance = 32f;
@@ -24,7 +30,7 @@ namespace Bulldozer.Player
         float elapsed;
         bool initialized;
 
-        void Awake() { home = transform.localPosition; initialized = true; }
+        void Awake() { home = transform.localPosition; initialized = true; if(singleLane&&Vector3.Distance(home,queueBay)>.1f)Phase=DeliveryPhase.Queued; }
         public void Dispatch()
         {
             if (IsBusy) return;
@@ -33,6 +39,7 @@ namespace Bulldozer.Player
         }
         void Update()
         {
+            if(singleLane){UpdateQueue();return;}
             if (!IsBusy) return;
             elapsed += Time.deltaTime;
             switch (Phase)
@@ -62,6 +69,41 @@ namespace Bulldozer.Player
                     break;
             }
         }
+        void UpdateQueue()
+        {
+            elapsed+=Time.deltaTime;
+            Vector3 direction=localTravelDirection.normalized;
+            float progress=Vector3.Dot(transform.localPosition-queueBay,direction);
+            if(Phase==DeliveryPhase.Parked)return;
+            if(Phase==DeliveryPhase.Loading){if(elapsed>=.85f){parkingCollider.enabled=false;Next(DeliveryPhase.Departing);}return;}
+            if(Phase==DeliveryPhase.Departing)
+            {
+                MoveTo(transform.localPosition+direction*(Mathf.Min(12,2+elapsed*5)*Time.deltaTime));
+                if(progress>=travelDistance){body.enabled=false;cargo.gameObject.SetActive(false);Next(DeliveryPhase.Away);}return;
+            }
+            if(Phase==DeliveryPhase.Away)
+            {
+                if(elapsed>=.7f){transform.localPosition=queueBay-direction*travelDistance;body.enabled=true;cargo.gameObject.SetActive(true);loadedCount=0;Next(DeliveryPhase.Arriving);}return;
+            }
+            float target=0;
+            if(queuePeer&&queuePeer.Phase!=DeliveryPhase.Away)
+            {
+                float ahead=Vector3.Dot(queuePeer.transform.localPosition-queueBay,direction);
+                if(ahead>progress+.1f)target=Mathf.Min(0,ahead-queueGap);
+            }
+            Vector3 destination=queueBay+direction*target;
+            MoveTo(Vector3.MoveTowards(transform.localPosition,destination,3.5f*Time.deltaTime));
+            parkingCollider.enabled=true;
+            if(Vector3.Distance(transform.localPosition,queueBay)<.025f)Next(DeliveryPhase.Parked);
+            else if(Phase==DeliveryPhase.Arriving&&Mathf.Abs(progress+queueGap)<.1f)Next(DeliveryPhase.Queued);
+        }
+        void LateUpdate()
+        {
+            if(!counter)return;
+            counter.gameObject.SetActive(Phase!=DeliveryPhase.Away);
+            counter.text=Phase==DeliveryPhase.Queued?"QUEUED":(Phase==DeliveryPhase.Arriving?"0/"+orderCapacity+"\nRETURNING":loadedCount+"/"+orderCapacity+(Phase==DeliveryPhase.Departing?"\nDELIVERING":""));
+            var camera=Camera.main;if(camera)counter.transform.rotation=camera.transform.rotation;
+        }
         void Next(DeliveryPhase phase) { Phase = phase; elapsed = 0; }
         void MoveTo(Vector3 position)
         {
@@ -87,3 +129,5 @@ namespace Bulldozer.Player
         }
     }
 }
+
+
