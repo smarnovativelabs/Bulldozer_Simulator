@@ -1,0 +1,3 @@
+errorCount=0
+warningCount=2
+logCount=0

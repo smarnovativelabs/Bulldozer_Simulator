@@ -1,0 +1,12 @@
+PASS MainMenu entry transitions to gameplay
+PASS one persistent services root after scene transition
+PASS all service references assigned
+PASS components remain enabled
+PASS startup did not request initialization
+PASS connectivity polling did not initialize
+PASS UI retry, privacy and focus cannot start services
+PASS IAP controller not created
+PASS Tenjin not initialized despite preference toggle
+PASS Firebase, MAX and UMP initialization not running
+PASS purchase unavailable until explicit initialization
+PASS CommonUI no longer owns online SDK services

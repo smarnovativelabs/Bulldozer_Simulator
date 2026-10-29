@@ -1,0 +1,5 @@
+PASS store persists without duplication after scene reload
+PASS online services persist without duplication
+PASS cash, receipts and Remove Ads survive reload
+PASS one active EventSystem after reload
+PASS shop and privacy panels rebind to new gameplay scene

@@ -30,8 +30,10 @@ namespace Bulldozer.Player.Persistence
         public int[] backpackItems=new int[0],barrowItems=new int[0];
         public Vector3 barrowPosition;
         public float refiningSeconds;
+        public bool removeAds;
+        public string[] fulfilledPurchases = Array.Empty<string>();
         public MiningSnapshot Copy()=>JsonUtility.FromJson<MiningSnapshot>(JsonUtility.ToJson(this));
-        public static MiningSnapshot Create(int cargo,int coins)=>new MiningSnapshot{format="bulldozer-mining",version=5,cargo=cargo,coins=coins,items=new int[Mathf.Max(0,cargo)]};
+        public static MiningSnapshot Create(int cargo,int coins)=>new MiningSnapshot{format="bulldozer-mining",version=6,cargo=cargo,coins=coins,items=new int[Mathf.Max(0,cargo)]};
     }
     public sealed class MiningProgressStore
     {
@@ -61,7 +63,9 @@ namespace Bulldozer.Player.Persistence
         }
         static bool Valid(MiningSnapshot s)
         {
-            return s!=null && s.format=="bulldozer-mining" && s.version==5 && s.roundIndex>=0 && s.cargo>=0 && s.cargo<=100000 && s.coins>=0
+            return s!=null && s.format=="bulldozer-mining" && s.version==6 && s.roundIndex>=0 && s.cargo>=0 && s.cargo<=100000 && s.coins>=0
+                && s.fulfilledPurchases!=null && s.fulfilledPurchases.All(id=>!string.IsNullOrWhiteSpace(id)&&id.Length<=128)
+                && s.fulfilledPurchases.Distinct().Count()==s.fulfilledPurchases.Length
                 && s.taskRocks>=0&&s.taskRocks<=1000&&s.taskDense>=0&&s.taskDense<=1000&&s.taskOreMask>=0&&s.taskOreMask<=63
                 && s.taskRefined>=0&&s.taskRefined<=1000&&s.taskDeliveries>=0&&s.taskDeliveries<=1000&&s.taskClaimedMask>=0&&s.taskClaimedMask<=7
                 && s.damageLevel>=0 && s.damageLevel<=10 && s.capacityLevel>=0 && s.capacityLevel<=15
@@ -90,12 +94,13 @@ namespace Bulldozer.Player.Persistence
                 if(data!=null && data.loadingQueue==null)data.loadingQueue=Array.Empty<int>();
                 if(data!=null&&data.backpackItems==null)data.backpackItems=Array.Empty<int>();
                 if(data!=null&&data.barrowItems==null)data.barrowItems=Array.Empty<int>();
-                future=data!=null&&data.format=="bulldozer-mining"&&data.version>5;
+                future=data!=null&&data.format=="bulldozer-mining"&&data.version>6;
                 if(data!=null&&data.format=="bulldozer-mining"&&data.version==1&&data.cargo>=0&&data.cargo<=100000&&data.coins>=0)
                     data=MiningSnapshot.Create(data.cargo,data.coins);
                 if(data!=null&&data.format=="bulldozer-mining"&&data.version==2){data.version=3;data.groundDrops=Array.Empty<GroundOreState>();}
                 if(data!=null&&data.format=="bulldozer-mining"&&data.version==3){data.version=4;data.roundIndex=0;data.roundBonusClaimed=false;}
                 if(data!=null&&data.format=="bulldozer-mining"&&data.version==4){data.version=5;OptionalTaskRules.Reset(data);}
+                if(data!=null&&data.format=="bulldozer-mining"&&data.version==5){data.version=6;data.fulfilledPurchases=Array.Empty<string>();data.removeAds=false;}
                 return Valid(data);
             }
             catch(Exception){return false;}

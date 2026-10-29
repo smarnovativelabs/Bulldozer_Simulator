@@ -9,7 +9,7 @@ using Bulldozer.Player;
 namespace Bulldozer.UI {
  public sealed class QuarryGameUI : MonoBehaviour {
   public MinerController player;public MinerEquipment equipment;public MinerUpgradeArea workbench;public QuarryUIFeedback feedback;public QuarryModal modal;
-  public GameObject settingsPage,pausePage,upgradePage,inventoryPage,confirmationPage,performanceOptions;
+  public GameObject settingsPage,pausePage,upgradePage,inventoryPage,confirmationPage,performanceOptions,shopPage,privacyPage;
   public TMP_Text modalTitle,cash,inventorySummary,inventoryFooter,upgradeFooter,performanceLabel,notificationText;
   public TMP_Text[] inventoryCounts,upgradeValues,upgradePrices;public RectTransform[] upgradeIcons;public UnityEngine.UI.Image[] upgradeCards;public UnityEngine.UI.Button[] buyButtons;
   public UnityEngine.UI.Slider volume;public QuarryToggle soundToggle,vibrationToggle;public CanvasGroup notification;public RectTransform notificationRect;
@@ -19,7 +19,7 @@ namespace Bulldozer.UI {
   void Awake(){Instance=this;modal.Closed=ReleasePause;modal.gameObject.SetActive(false);notification.gameObject.SetActive(false);noticeHome=notificationRect.anchoredPosition;priceHomes=upgradePrices.Select(t=>t.rectTransform.anchoredPosition).ToArray();}
   void Start(){previousCash=equipment.Cash;volume.SetValueWithoutNotify(PlayerPrefs.GetFloat(QuarryUIFeedback.PreferencePrefix+"Volume",.8f));volume.onValueChanged.AddListener(SetVolume);for(int i=0;i<3;i++){int n=i;buyButtons[i].onClick.AddListener(()=>Purchase(n));}Refresh();}
   void Update(){if(Keyboard.current!=null&&Keyboard.current.escapeKey.wasPressedThisFrame){if(BlocksInput)Close();else Open("pause");}if(Time.unscaledTime<poll)return;poll=Time.unscaledTime+.2f;int current=equipment.Cash;if(current>previousCash)Notify("CASH RECEIVED  +$"+(current-previousCash));previousCash=current;bool near=MiningProduction.Contains(workbench.zone,player.transform.position);if(near&&!insideWorkbench&&!BlocksInput&&!player.InputBlocked)Open("upgrades");insideWorkbench=near;Refresh();}
-  public void Open(string target){if(player.ExcavationInputBlocked||CommonUI.Instance&&CommonUI.Instance.BlocksGameplayInput)return;if(!modal.gameObject.activeSelf){previousTimeScale=Time.timeScale;Time.timeScale=0;player.CancelMining();player.touchControls.Move=Vector2.zero;player.touchControls.Sprinting=false;}CancelUpgradeMotion();page=target;settingsPage.SetActive(target=="settings");pausePage.SetActive(target=="pause");upgradePage.SetActive(target=="upgrades");inventoryPage.SetActive(target=="inventory");confirmationPage.SetActive(target=="confirmation");performanceOptions.SetActive(false);modalTitle.text=target=="confirmation"?"RESET SETTINGS?":target=="upgrades"?"EQUIPMENT UPGRADES":target=="inventory"?"WORKSITE INVENTORY":target=="pause"?"SHIFT PAUSED":"SETTINGS";modal.Open();feedback.Play();Refresh();}
+  public void Open(string target){if(player.ExcavationInputBlocked||CommonUI.Instance&&CommonUI.Instance.BlocksGameplayInput)return;if(!modal.gameObject.activeSelf){previousTimeScale=Time.timeScale;Time.timeScale=0;player.CancelMining();player.touchControls.Move=Vector2.zero;player.touchControls.Sprinting=false;}CancelUpgradeMotion();page=target;settingsPage.SetActive(target=="settings");pausePage.SetActive(target=="pause");upgradePage.SetActive(target=="upgrades");inventoryPage.SetActive(target=="inventory");confirmationPage.SetActive(target=="confirmation");if(shopPage)shopPage.SetActive(target=="shop");if(privacyPage)privacyPage.SetActive(target=="privacy");performanceOptions.SetActive(false);modalTitle.text=target=="shop"?"QUARRY STORE":target=="privacy"?"PRIVACY CHOICES":target=="confirmation"?"RESET SETTINGS?":target=="upgrades"?"EQUIPMENT UPGRADES":target=="inventory"?"WORKSITE INVENTORY":target=="pause"?"SHIFT PAUSED":"SETTINGS";modal.Open();feedback.Play();Refresh();}
   public void Close(){CancelUpgradeMotion();feedback.Play();modal.Close();}
   void ReleasePause(){Time.timeScale=previousTimeScale;page="";player.touchControls.Move=Vector2.zero;}
   public void SetVolume(float v){PlayerPrefs.SetFloat(QuarryUIFeedback.PreferencePrefix+"Volume",v);PlayerPrefs.Save();QuarryUIFeedback.ApplySettings();}
@@ -69,6 +69,7 @@ namespace Bulldozer.UI {
   void OnDisable(){noticeTween?.Kill();notices.Clear();for(int i=0;i<3;i++){cardTweens[i]?.Kill();iconTweens[i]?.Kill();priceTweens[i]?.Kill();valueTweens[i]?.Kill();}if(modal&&modal.gameObject.activeSelf){modal.gameObject.SetActive(false);Time.timeScale=previousTimeScale;}if(Instance==this)Instance=null;}
  }
 }
+
 
 
 

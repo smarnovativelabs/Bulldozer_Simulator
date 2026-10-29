@@ -1,0 +1,83 @@
+QUARRY SERVICES / SHOP SETUP
+
+Unity: 6000.3.13f1. No player build produced.
+
+Installed official releases:
+Unity IAP com.unity.purchasing 5.4.4 (Unity Package Manager)
+Firebase Analytics + Crashlytics 14.1.0
+AppLovin MAX 8.6.6 (native Android/iOS 13.6.4)
+Google Mobile Ads / UMP 11.6.0
+Tenjin 1.23.2
+External Dependency Manager com.unity.external-dependency-manager 2.1.0 (Unity Registry)
+Redundant asset-based 1.2.186 / 1.2.190 copies removed.
+
+Sources:
+https://github.com/firebase/firebase-unity-sdk/releases/tag/v14.1.0
+https://github.com/AppLovin/AppLovin-MAX-Unity-Plugin/releases/tag/release_8_6_6
+https://github.com/googleads/googleads-mobile-unity/releases/tag/v11.6.0
+https://github.com/tenjin/tenjin-unity-sdk/releases/tag/1.23.2
+https://developers.google.com/unity/archive
+
+Account configuration:
+Assets/Resources/QuarryServiceSettings.asset
+All account/product IDs intentionally blank, per user's answer that they are not ready.
+Services are attached to Persistent Systems in MainMenu and Gameplay via Assets/0_ProjectData/Services/Prefabs/QuarryServices.prefab. Components remain enabled. Initialization is deliberately not requested, even if configuration is filled in. The future explicit entry point is QuarryServicesRoot.InitializeServices(); it has no game/UI callers. Missing configuration leaves initialized services in
+setup-pending state instead of initializing native SDKs with another game's IDs.
+
+1. Register this game's Android application identifier / iOS bundle identifier.
+2. Download this game's google-services.json / GoogleService-Info.plist from Firebase
+   and add to Assets. Set firebaseConfigurationAdded after registration is complete.
+3. Add this game's MAX SDK key to AppLovin Integration Manager AND the quarry settings.
+   Add the matching interstitial ad unit ID to quarry settings.
+4. Add this game's AdMob application IDs to Google Mobile Ads editor settings.
+   Configure and publish the UMP messages in the account; then set
+   adApplicationIdsConfigured. Google Mobile Ads is installed and supplies UMP;
+   MAX owns round-transition interstitial delivery. No competing second ad loader.
+   Additional mediated networks/adapters must be selected in MAX Integration Manager
+   for the actual production waterfall and tested with native dependency resolution.
+5. Add Android/iOS Tenjin keys to quarry settings.
+6. Create Remove Ads (non-consumable) and one cash pack (consumable) in the stores.
+   Enter exact platform product IDs. Cash amount defaults to an editable 1,000;
+   choose the final amount before releasing the product. Prices come from the store.
+7. Add the Google Play public licensing key for Android receipt signature verification.
+   iOS uses the adapted Janitor StoreKit verified-transaction bridge, requires iOS 15+.
+8. Set privacyPolicyUrl to your published HTTPS policy and confirm audience settings.
+
+Store UI:
+Tap the cash display or Pause > Quarry Store. Existing Barlow fonts, sliced sprites,
+safe-area modal sizing, DOTween panel motion and Feel button sounds are reused.
+Missing IDs display SETUP PENDING; no fake live prices or free grants.
+Restore Purchases restores Remove Ads; it never refills already consumed cash packs.
+Shop/privacy pages are part of the existing gameplay scene; no new menu or map.
+
+Persistence and consent:
+Save v5 migrates to v6 preserving existing gameplay state. Purchase transaction hashes,
+cash and Remove Ads commit atomically through MiningProgressStore before acknowledgement.
+Verified pending purchases wait briefly for the gameplay wallet during loading.
+SDK callbacks are prepared for one persistent service set. Purchasing, Online Services (Firebase/Ads/Consent/Tenjin) and Internet Connectivity are separate child objects; CommonUI now owns UI only. Next rounds retain purchases.
+Automatic interstitials are only attempted at the next-round action, after cooldown.
+Unavailable ads/consent do not block mining. Remove Ads suppresses automatic ads.
+Analytics, crash reports and attribution are separate player choices in Privacy Choices.
+Native Firebase collection defaults await those choices; no SDK is removed or compiled out.
+iOS attribution additionally requires ATT authorization. Under-age setting blocks attribution
+and automatic ads in this integration. UMP CanRequestAds is not treated as analytics consent.
+Connectivity is advisory and never forces an always-online game. Optional probe URLs are blank.
+
+Janitor reuse:
+InternetConnectivity, StoreReceiptVerifier, AppleTransactionVerifier and native Swift verification
+were adapted from I_Am_Janitor. Store orchestration, atomic wallet integration, CMP startup,
+privacy collection defaults and service ownership follow its patterns, with quarry-specific UI.
+No Janitor production account IDs or project configuration files were copied.
+
+Verification reports live beside this file. Device-store sandbox purchases, native Android/iOS
+dependency/build validation, real UMP responses, live attribution and Firebase dashboard delivery
+still require this game's account configuration and a later explicitly requested device build.
+Do not interpret Editor tests as native-store certification or mobile FPS measurements.
+
+
+Verification summary: Maintenance/Services/verification-summary.txt
+Shop preview: Maintenance/Services/quarry-store.png
+
+
+
+Prepared-only startup verification: prepared-services-results.txt — 12 Editor checks passed. MainMenu-to-gameplay transition, UI Retry, privacy preference and app focus did not initialize SDKs. Earlier verification-summary.txt describes the prior integration checks; no build produced.

@@ -1,0 +1,13 @@
+PASS: v5 cash/upgrades migrate to v6
+PASS: cash and receipt ledger commit atomically
+PASS: cash rewarded once
+PASS: duplicate receipt after restart does not grant again
+PASS: Remove Ads durable entitlement
+PASS: restore is idempotent and grants no cash
+PASS: next round preserves purchases, cash and upgrades
+PASS: cash overflow rejected
+PASS: empty transaction rejected
+PASS: mixed restore/consumable reward rejected
+PASS: negative reward rejected
+PASS: failed disk commit does not grant cash or consume receipt
+PASS: future save is not overwritten

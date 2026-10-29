@@ -1,0 +1,3 @@
+PASS stale confirmation preserves newer checkout
+PASS matching confirmation completes its checkout
+PASS late confirmation preserves restore operation

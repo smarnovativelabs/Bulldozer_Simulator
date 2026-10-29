@@ -1,0 +1,25 @@
+if(EditorApplication.isPlaying)throw new System.Exception("Edit mode required");
+var results=new System.Collections.Generic.List<string>();
+void Check(bool ok,string name){if(!ok)throw new System.Exception("FAIL: "+name);results.Add("PASS: "+name);}
+string folder=System.IO.Path.GetFullPath("Maintenance/Services/SaveTests/"+System.DateTime.UtcNow.Ticks);System.IO.Directory.CreateDirectory(folder);
+string file=System.IO.Path.Combine(folder,"progress.json");
+var original=Bulldozer.Player.Persistence.MiningSnapshot.Create(0,125);original.version=5;original.damageLevel=2;original.speedLevel=1;System.IO.File.WriteAllText(file,JsonUtility.ToJson(original));
+var store=new Bulldozer.Player.Persistence.MiningProgressStore(file);
+Check(store.Current.version==6&&store.Current.coins==125&&store.Current.damageLevel==2&&store.Current.speedLevel==1,"v5 cash/upgrades migrate to v6");
+Check(Bulldozer.Services.QuarryPurchaseGrant.Prepare(store.Current,"verified-cash-1",1000,false,out var next)&&store.TryCommit(next),"cash and receipt ledger commit atomically");
+Check(store.Current.coins==1125&&store.Current.fulfilledPurchases.Length==1,"cash rewarded once");
+store=new Bulldozer.Player.Persistence.MiningProgressStore(file);
+Check(Bulldozer.Services.QuarryPurchaseGrant.Prepare(store.Current,"verified-cash-1",1000,false,out next)&&store.TryCommit(next)&&store.Current.coins==1125&&store.Current.fulfilledPurchases.Length==1,"duplicate receipt after restart does not grant again");
+Check(Bulldozer.Services.QuarryPurchaseGrant.Prepare(store.Current,"verified-remove-1",0,true,out next)&&store.TryCommit(next)&&store.Current.removeAds,"Remove Ads durable entitlement");
+Check(Bulldozer.Services.QuarryPurchaseGrant.Prepare(store.Current,"verified-remove-1",0,true,out next)&&store.TryCommit(next)&&store.Current.coins==1125,"restore is idempotent and grants no cash");
+next=store.Current.Copy();next.roundBonusClaimed=true;next.depletedBlocks=new[]{"test-rock"};
+Check(Bulldozer.Player.Persistence.ExcavationRules.TryAdvance(next,new[]{"test-rock"},out var round)&&store.TryCommit(round)&&store.Current.removeAds&&store.Current.fulfilledPurchases.Length==2&&store.Current.coins==1125,"next round preserves purchases, cash and upgrades");
+var maximum=store.Current.Copy();maximum.coins=int.MaxValue;
+Check(!Bulldozer.Services.QuarryPurchaseGrant.Prepare(maximum,"overflow",1,false,out _),"cash overflow rejected");
+Check(!Bulldozer.Services.QuarryPurchaseGrant.Prepare(store.Current,"",100,false,out _),"empty transaction rejected");
+Check(!Bulldozer.Services.QuarryPurchaseGrant.Prepare(store.Current,"mixed",100,true,out _),"mixed restore/consumable reward rejected");
+Check(!Bulldozer.Services.QuarryPurchaseGrant.Prepare(store.Current,"negative",-10,false,out _),"negative reward rejected");
+string blocked=System.IO.Path.Combine(folder,"directory-not-file");System.IO.Directory.CreateDirectory(blocked);var failed=new Bulldozer.Player.Persistence.MiningProgressStore(blocked);
+Check(Bulldozer.Services.QuarryPurchaseGrant.Prepare(failed.Current,"save-failure",100,false,out next)&&!failed.TryCommit(next)&&failed.Current.coins==0&&failed.Current.fulfilledPurchases.Length==0,"failed disk commit does not grant cash or consume receipt");
+next=store.Current.Copy();next.version=7;System.IO.File.WriteAllText(file,JsonUtility.ToJson(next));var future=new Bulldozer.Player.Persistence.MiningProgressStore(file);Check(!future.TryCommit(Bulldozer.Player.Persistence.MiningSnapshot.Create(0,0)),"future save is not overwritten");
+System.IO.File.WriteAllLines("Maintenance/Services/transaction-results.txt",results);return string.Join("\n",results);

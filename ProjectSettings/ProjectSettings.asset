@@ -830,10 +830,10 @@ PlayerSettings:
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
   scriptingDefineSymbols:
-    Android: CROSS_PLATFORM_INPUT;MOBILE_INPUT;MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED;SENTIS_ANALYTICS_ENABLED;APP_UI_EDITOR_ONLY
+    Android: CROSS_PLATFORM_INPUT;MOBILE_INPUT;MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED;SENTIS_ANALYTICS_ENABLED;APP_UI_EDITOR_ONLY;tenjin_admob_enabled;tenjin_applovin_enabled
     Standalone: CROSS_PLATFORM_INPUT
     Windows Store Apps: MOBILE_INPUT
-    iPhone: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    iPhone: CROSS_PLATFORM_INPUT;MOBILE_INPUT;tenjin_admob_enabled;tenjin_applovin_enabled
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

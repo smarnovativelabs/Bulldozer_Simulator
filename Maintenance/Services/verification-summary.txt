@@ -1,0 +1,14 @@
+VERIFICATION (Editor only; native store/device validation still pending account setup)
+13 atomic purchase/save and migration checks passed.
+20 Play Mode shop/privacy/fake-store checks passed.
+3 late purchase confirmation regression checks passed.
+224 layout/control checks passed across 2796x1242, 2688x1242, 1280x720, 2732x2048, 1670x720, 2400x1080 and 1920x1080, including simulated notch safe areas.
+5 scene reload/singleton/purchase-persistence checks passed.
+No production accounts or real payments used. All Play purchases used a separate test save.
+UI sprites were reused from the provided sprite sheets; no new artwork needed.
+Unity hit host memory exhaustion and later a full C: drive during SDK reloads. Only the failed quarry Editor was restarted; this project's regenerable Android caches and downloaded SDK archives were cleared. Source assets were retained.
+Final retry-handling compile completed. Store smoke test and callback regression rerun successfully.
+Final console: 0 errors, 2 warnings (one transient EventSystem warning and one Unity AI account-service timeout). Scene reload assertion confirms one active EventSystem.
+Cleanup complete: Play Mode stopped; original Game View/start scene restored; test save and preference overrides cleared; SDK components remain enabled; production account IDs remain blank.
+265 checks passed in total. No native/device build was produced.
+

@@ -1,0 +1,20 @@
+PASS gameplay UI and persistent services exist
+PASS single store service
+PASS single online service
+PASS service components enabled
+PASS shop opens as a modal and pauses gameplay
+PASS unconfigured purchase buttons do not simulate payment
+PASS analytics toggle passes true
+PASS analytics toggle passes false
+PASS crash reports toggle works independently
+PASS attribution choice saved without configured key
+PASS Play Mode advances while UI paused
+PASS IAP fake store connects and fetches products
+PASS verified fake purchase grants cash through real pending callback
+PASS purchase receipt recorded in same save
+PASS Remove Ads purchase sets durable entitlement
+PASS both transactions recorded
+PASS restore never regrants consumable cash
+PASS owned Remove Ads cannot be bought again
+PASS purchase state survives reopening save
+PASS Remove Ads or unavailable SDK immediately continues round

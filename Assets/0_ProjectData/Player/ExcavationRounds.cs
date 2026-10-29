@@ -61,10 +61,12 @@ namespace Bulldozer.Player
             // Durable round state is written before any visual transition or scene reload.
             if(!equipment.Commit(next)){summary.text="Could not save the next excavation. Please retry.\nYour current progress is unchanged.";return;}
             Bulldozer.UI.QuarryGameUI.Instance?.feedback.Play();transitioning=true;nextButton.interactable=false;player.ExcavationInputBlocked=true;fade.blocksRaycasts=true;
-            fadeTween=fade.DOFade(1,.45f).SetUpdate(true).SetLink(gameObject).OnComplete(()=>{var ui=Bulldozer.UI.CommonUI.Instance;if(ui!=null)ui.SceneLoading.TryLoadScene(gameObject.scene.path);else SceneManager.LoadSceneAsync(gameObject.scene.path);});
+            System.Action proceed=()=>{fadeTween=fade.DOFade(1,.45f).SetUpdate(true).SetLink(gameObject).OnComplete(()=>{var ui=Bulldozer.UI.CommonUI.Instance;if(ui!=null)ui.SceneLoading.TryLoadScene(gameObject.scene.path);else SceneManager.LoadSceneAsync(gameObject.scene.path);});};
+            var services=Bulldozer.Services.QuarryOnlineServices.Instance;if(services){services.Event("quarry_round_complete",next.roundIndex);services.RoundBreak(proceed);}else proceed();
         }
         void OnDestroy(){panelTween?.Kill();fadeTween?.Kill();if(player)player.ExcavationInputBlocked=false;}
     }
 }
+
 
 
