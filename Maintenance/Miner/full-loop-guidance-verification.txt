@@ -1,0 +1,2 @@
+PASS Completed-round guidance prioritizes next excavation over upgrades and clears route
+PASS Normal guidance and controls resume after next excavation

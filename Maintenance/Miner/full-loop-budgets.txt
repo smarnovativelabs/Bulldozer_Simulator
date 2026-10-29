@@ -1,0 +1,4 @@
+Delivery Truck: triangles=4400, materials=1, cargo slots=8
+Delivery Truck 2: triangles=4400, materials=1, cargo slots=8
+Ore pool children=96
+Editor batches=49, SetPass=14 (not device profiling)

@@ -1,0 +1,8 @@
+PASS Restart restores completed first round without paying again
+PASS Double-click advances once and saves before fade
+PASS Next excavation reloads the same scene, no new map
+PASS Cash, all three upgrades and cart ownership survive actual scene reload
+PASS All 78 mineable rocks restored in next excavation
+PASS Next excavation resumes controls and hides completion UI
+PASS Scene transition leaves no growing set of playing tweens; playing=0
+PASS New round index and cash persisted to disk

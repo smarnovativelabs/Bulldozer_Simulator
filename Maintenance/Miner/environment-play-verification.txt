@@ -1,0 +1,8 @@
+PASS Guide collapses after five seconds without losing objective heading
+PASS Short guidance trail remains navigable within 112 triangle budget
+PASS HUD cash no longer repeats world cargo counter
+PASS Guidance arrows disappear during the pickaxe swing
+PASS Completed optional task card collapses after reward feedback
+PASS Guidance and task panels do not intercept movement input
+PASS Large world delivery message remains hidden at runtime
+PASS Three production points keep clear short labels

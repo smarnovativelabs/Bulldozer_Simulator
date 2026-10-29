@@ -1,0 +1,13 @@
+PASS All 378 paving top triangles stay within stone atlas UV bounds
+PASS No overlapping paving faces at 1470 interior samples
+PASS Redundant ground renderers remain hidden; colliders retained
+PASS All three production triggers remain enabled
+PASS Each station has a distinct shared paint material
+PASS Oversized duplicate delivery text hidden
+PASS Redundant guide step/progress widgets hidden
+PASS Guide remains nonblocking
+PASS All gameplay rocks and natural pilot preserved
+PASS Destructible rocks do not leave permanent baked shadows
+PASS Fresh bake includes repaired paving in one lightmap
+PASS Existing four lights retained; no added runtime light
+BUDGET paving/environment stone mesh=490 triangles; lightmap=256px; 3 shared station paint materials; no new texture atlas

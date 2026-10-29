@@ -1,0 +1,45 @@
+Round and upgrade balance — existing gameplay scene
+
+Early progression:
+- Break 2 rocks: optional $10 bonus. First pickaxe costs $10 and doubles damage from 1 to 2.
+- Guidance encourages the two-rock starter objective, then points to the workbench when affordable.
+- First rack upgrade $15; first speed upgrade $20. Existing purchases are preserved.
+- Pickaxe tiers: 10, 70, 180, 350, 650, 1100, 1800, 2800, 4200, 6000.
+- Rack tiers: 15, 45, 90, 150, 240, 360, 520, 750, 1050, 1450, 1950, 2600, 3400, 4400, 5600.
+- Speed tiers: 20, 75, 180, 360, 650. Existing 80%-120% movement range retained.
+- Scene base ore value per full quarry: $5,265, before bonuses. Total pickaxe spend $17,160; rack $22,620; speed $1,285. These are economy totals, not measured human completion times.
+
+Round variety:
+- Round 1: starter rewards.
+- Round 2: Rich Veins, designated ore +25% value; premium ore rotates on later rich-vein rounds.
+- Round 3: Quick Shift, processing time x0.8 (25% faster processing; feeding time unchanged).
+- Round 4: Tough Seam, tougher central rocks and +20% delivery value.
+- These three work conditions repeat in the same scene. Easy edges stay at 2-3 health; central health is capped at 16 rather than scaling forever.
+- Premium rounding happens once per delivery, including final partial deliveries.
+
+Optional objectives:
+- Three small tasks per round: excavation, refinement, deliveries.
+- Excavation rotates between rock count, different ore types, and tough rocks (6+ HP).
+- Starter goals: 2 rocks +$10, 6 refined stones +$15, 2 deliveries +$20.
+- Later targets/rewards remain bounded. No time limit, penalty, claim button, story or new map.
+- Rewards and counters commit atomically with the action. Restart cannot pay twice.
+- Next round resets task progress and retains cash, upgrades and wheelbarrow ownership. Unfinished optional tasks never block round advancement.
+- Save version 5 migrates earlier saves without repricing owned upgrades or retroactively paying objectives.
+
+UI/performance:
+- Nonblocking placeholder HUD; existing font/material workflow retained.
+- One panel Image + five TMP labels, one reusable DOTween reward pulse, one task presenter after repeated scene reloads.
+- Existing 96 ore slots remain; no extra world meshes, rigidbodies or particle systems.
+- Reviewed 1280x720 Game View: balance-round-three.png.
+- Editor verification is not device profiling. Human-session pacing and mobile touch/performance remain to be validated.
+
+Verification:
+- 25 balance/transaction/migration checks passed.
+- 25 existing excavation/save checks passed with updated version/cap expectations.
+- 13 real gameplay checks passed: animated mining, first workbench purchase, refinery processing and truck task payouts.
+- 12 restart/round checks passed, including skipping all optional tasks and actual quick-shift cycle at 1.86 s with feeding.
+- 12 speed-tier/UI/effect regression checks passed.
+- 2 final partial-delivery reward checks passed.
+- No APK or other build created. All playtests used isolated files under Maintenance/Miner/SaveTests.
+
+Final save-integrity suite: 10/10 passed. Total checks in this balance pass: 99 passed, 0 failed. Unity console: 0 errors. Normal save selection and original background setting restored; Editor left stopped.

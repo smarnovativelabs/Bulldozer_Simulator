@@ -1,0 +1,15 @@
+PASS Fresh isolated start
+PASS First pickaxe bought with earned starter reward
+PASS Speed purchase with earned delivery cash
+PASS Rack purchase with earned delivery cash
+PASS All 78 rocks broken by animation contact
+PASS Repeated animated strikes exercised
+PASS All ground, carried, refinery and truck inventory settled
+PASS Every mined item refined once: 234
+FAIL Every refined item sold once: 237
+PASS Both trucks dispatched through the shared lane
+PASS Truck separation stays safe: 5
+PASS Earned-cash pickaxe, rack and speed purchases completed
+PASS Completion bonus cannot pay twice
+PASS Round complete; ready for restart and next-round verification
+NOTE Sale-observer FAIL was a harness error: it selected the older departing truck when both trucks were busy. Corrected observer now counts each transition into Loading. Independent runtime ledger: ore $5265 + 22 delivery bonuses ($660) + optional rewards $45 + round $50 - purchases $45 = $5975, matching actual cash; 234 items refined and all inventories empty.

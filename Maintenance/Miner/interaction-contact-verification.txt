@@ -1,0 +1,16 @@
+PASS quarry-expansion-0-0-0 side=0 hits=1 time=0.420 grip=0.0009 toolTwist=0.00
+PASS quarry-expansion-0-0-0 side=90 hits=1 time=0.420 grip=0.0008 toolTwist=0.00
+PASS quarry-expansion-0-0-0 side=180 hits=1 time=0.420 grip=0.0008 toolTwist=0.00
+PASS quarry-expansion-0-0-0 side=270 hits=1 time=0.420 grip=0.0008 toolTwist=0.00
+PASS quarry-expansion-0-0-1 side=0 hits=1 time=0.420 grip=0.0008 toolTwist=0.00
+PASS quarry-expansion-0-0-1 side=90 hits=1 time=0.420 grip=0.0008 toolTwist=0.00
+PASS quarry-expansion-0-0-1 side=180 hits=1 time=0.420 grip=0.0008 toolTwist=0.00
+PASS quarry-expansion-0-0-1 side=270 hits=1 time=0.420 grip=0.0008 toolTwist=0.00
+PASS quarry-expansion-0-0-2 side=0 hits=1 time=0.420 grip=0.0008 toolTwist=0.00
+PASS quarry-expansion-0-0-2 side=90 hits=1 time=0.420 grip=0.0008 toolTwist=0.00
+PASS quarry-expansion-0-0-2 side=180 hits=1 time=0.420 grip=0.0008 toolTwist=0.00
+PASS quarry-expansion-0-0-2 side=270 hits=1 time=0.420 grip=0.0008 toolTwist=0.00
+PASS quarry-expansion-0-0-3 side=0 hits=1 time=0.420 grip=0.0008 toolTwist=0.00
+PASS quarry-expansion-0-0-3 side=90 hits=1 time=0.420 grip=0.0008 toolTwist=0.00
+PASS quarry-expansion-0-0-3 side=180 hits=1 time=0.420 grip=0.0008 toolTwist=0.00
+PASS quarry-expansion-0-0-3 side=270 hits=1 time=0.420 grip=0.0008 toolTwist=0.00

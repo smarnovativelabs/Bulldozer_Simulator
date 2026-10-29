@@ -25,7 +25,8 @@ namespace Bulldozer.Player
         public bool autoMine=true;
         public bool analogRun=true;
         public void CancelMining() { swingTime=0; Swing=0; mineRequested=false; }
-        public bool InputBlocked => Bulldozer.UI.CommonUI.Instance != null && Bulldozer.UI.CommonUI.Instance.BlocksGameplayInput;
+        public bool ExcavationInputBlocked {get;set;}
+        public bool InputBlocked => ExcavationInputBlocked || (Bulldozer.UI.CommonUI.Instance != null && Bulldozer.UI.CommonUI.Instance.BlocksGameplayInput);
         CharacterController motor;
         Vector3 velocity, spawn;
         float vertical, swingTime, idleTime, nextSwing;

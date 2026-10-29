@@ -32,6 +32,10 @@ Performance evidence is EDITOR ONLY:
 RELEASE DECISION
 Sprint 1 is a finite-quarry tester candidate, not a public production release.
 Local development APK build result is recorded separately in sprint1-build-result.txt.
+BUILD VERIFIED: Succeeded, 0 errors, 999 reported warnings. APK is 69,562,825 bytes (66.34 MiB), ARM64, minimum Android API 25, target API 36. APK v2 signature verifies. No connected phone was available to install/run it.
+SHA256: 92C9E364FF3F30B05C5327A6E68EAA45F0588B0A8DA09AB5C9DA37ADAB737276
+The CLI request timed out after 1,800 seconds; the Unity build continued and completed successfully in 36m49s. Verified the actual BuildReport, APK manifest and signature afterward. BuildReport total size also includes development outputs and is not the APK download size.
+Representative warnings include obsolete APIs in bundled ParticleImage/Standard Assets and OnMouse handlers affecting handheld performance. Warning cleanup/package audit remains release hardening work.
 It uses debug signing and the gameplay scene only; template package ID remains unchanged.
 
 Small next release sprint (required before recommended public launch):

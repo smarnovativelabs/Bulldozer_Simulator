@@ -24,10 +24,11 @@ namespace Bulldozer.Player
         public int TrucksCompleted=>progress.Current.trucksCompleted;
         // Keep the serialized coins field for existing save compatibility.
         public int Cash=>progress?.Current.coins??0;
+        public int RoundIndex=>progress?.Current.roundIndex??0;
         public int Coins=>Cash;
         public int DamageLevel=>progress?.Current.damageLevel??0;
         public int SpeedLevel=>progress?.Current.speedLevel??0;
-        public int SpeedCost=>25+SpeedLevel*25;
+        public int SpeedCost=>QuarryBalance.SpeedCost(SpeedLevel);
         public float MovementMultiplier=>.8f+SpeedLevel*.08f;
         public bool TryUpgradeSpeed()
         {
@@ -36,8 +37,8 @@ namespace Bulldozer.Player
         }
         public int CapacityLevel=>progress?.Current.capacityLevel??0;
         public int Damage=>1+DamageLevel;
-        public int DamageCost=>20+DamageLevel*20;
-        public int CapacityCost=>15+CapacityLevel*15;
+        public int DamageCost=>QuarryBalance.DamageCost(DamageLevel);
+        public int CapacityCost=>QuarryBalance.CapacityCost(CapacityLevel);
         public string SaveError=>progress?.Error;
         public string SavePath=>progress?.Path;
         public bool UsingWheelbarrow=>progress?.Current.usingWheelbarrow??false;
@@ -99,13 +100,14 @@ namespace Bulldozer.Player
             ApplyCargoCount(state.cargo);return true;
         }
         public bool IsBlockDepleted(string id)=>!string.IsNullOrEmpty(id)&&progress!=null&&Array.IndexOf(progress.Current.depletedBlocks,id)>=0;
-        public bool TryBreakIntoDrops(int item,string blockId,Vector3 center)
+        public bool TryBreakIntoDrops(int item,string blockId,Vector3 center,bool tough=false)
         {
             if(UsingWheelbarrow||IsFull||progress==null||string.IsNullOrEmpty(blockId)||IsBlockDepleted(blockId)||item<0||item>=6)return false;
             var next=Snapshot;if(next.groundDrops.Length+3>OreDropSystem.PoolSize)return false;
             int n=next.groundDrops.Length;Array.Resize(ref next.groundDrops,n+3);
             for(int i=0;i<3;i++)next.groundDrops[n+i]=new GroundOreState{id=blockId+"/"+i,item=item,position=new Vector3(center.x+(i-1)*.30f,.13f,center.z+(i==1?.20f:-.20f))};
             next.depletedBlocks=next.depletedBlocks.Append(blockId).ToArray();
+            OptionalTaskRules.Rock(next,item,tough);
             if(!Commit(next))return false;
             if(drops)drops.Sync(next.groundDrops,center+Vector3.up*.6f,true);return true;
         }

@@ -1,0 +1,11 @@
+if(EditorApplication.isPlaying)throw new System.Exception("Edit mode required");
+string folder="Assets/0_ProjectData/Player/Environment/Natural/";
+var existing=GameObject.Find("Natural Quarry Banks");if(existing)return "Natural banks already exist";
+var material=AssetDatabase.LoadAssetAtPath<Material>("Assets/0_ProjectData/Player/Environment/Cut Rock.mat");if(!material)material=AssetDatabase.LoadAssetAtPath<Material>("Assets/0_ProjectData/Player/Production/PolishedStone.mat");
+var combines=new System.Collections.Generic.List<CombineInstance>();
+for(int i=0;i<19;i++){var mesh=AssetDatabase.LoadAssetAtPath<Mesh>(folder+"Boulder"+(i%4)+".asset");Vector3 pos=i<9?new Vector3(-13+i*3.2f,.2f,12.6f):new Vector3(i<14?-15.2f:15.2f,.05f,1+(i%5)*2.45f);Vector3 scale=new Vector3(i<9?3.9f:2.6f,2.4f+(i%3)*.35f,3.8f);combines.Add(new CombineInstance{mesh=mesh,transform=Matrix4x4.TRS(pos,Quaternion.Euler(0,i*53,0),scale)});}
+var combined=new Mesh{name="Combined natural quarry banks"};combined.CombineMeshes(combines.ToArray(),true,true);Unwrapping.GenerateSecondaryUVSet(combined);AssetDatabase.CreateAsset(combined,folder+"NaturalBanks.asset");
+var root=new GameObject("Natural Quarry Banks",typeof(MeshFilter),typeof(MeshRenderer));root.GetComponent<MeshFilter>().sharedMesh=combined;var renderer=root.GetComponent<MeshRenderer>();renderer.sharedMaterial=material;renderer.shadowCastingMode=UnityEngine.Rendering.ShadowCastingMode.Off;GameObjectUtility.SetStaticEditorFlags(root,StaticEditorFlags.BatchingStatic);
+var ground=AssetDatabase.LoadAssetAtPath<Material>("Assets/0_ProjectData/Player/Production/QuarryDirt.mat");ground.SetColor("_BaseColor",new Color(.74f,.76f,.72f));EditorUtility.SetDirty(ground);
+foreach(string name in new[]{"BlueMineral","Amethyst","CopperVein","Gold","Diamond"}){var mat=AssetDatabase.LoadAssetAtPath<Material>("Assets/0_ProjectData/Player/Production/"+name+".mat");if(!mat)continue;Color color=mat.GetColor("_BaseColor");Color.RGBToHSV(color,out float h,out float s,out float v);mat.SetColor("_BaseColor",Color.HSVToRGB(h,s*.58f,Mathf.Min(v,.8f)));EditorUtility.SetDirty(mat);}
+AssetDatabase.SaveAssets();UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(root.scene);UnityEditor.SceneManagement.EditorSceneManager.SaveOpenScenes();return new {bankTriangles=combined.triangles.Length/3,extraRenderers=1,extraMaterials=0};

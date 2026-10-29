@@ -20,9 +20,9 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 50
   m_LinearFogEnd: 100
-  m_AmbientSkyColor: {r: 0.78, g: 0.84, b: 0.9, a: 1}
-  m_AmbientEquatorColor: {r: 0.68, g: 0.73, b: 0.76, a: 1}
-  m_AmbientGroundColor: {r: 0.46, g: 0.43, b: 0.38, a: 1}
+  m_AmbientSkyColor: {r: 0.78, g: 0.82, b: 0.86, a: 1}
+  m_AmbientEquatorColor: {r: 0.66, g: 0.65, b: 0.6, a: 1}
+  m_AmbientGroundColor: {r: 0.43, g: 0.4, b: 0.35, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
@@ -417,7 +417,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1201750417}
@@ -1159,6 +1159,96 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22212763}
   m_Mesh: {fileID: 4300000, guid: b7677254e9cb7394489dec2735615f68, type: 2}
+--- !u!1 &22649679
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 22649682}
+  - component: {fileID: 22649681}
+  - component: {fileID: 22649680}
+  m_Layer: 0
+  m_Name: Natural Quarry Banks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4
+  m_IsActive: 1
+--- !u!23 &22649680
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22649679}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 54268957cabb7ff41a32b1b459e352e9, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &22649681
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22649679}
+  m_Mesh: {fileID: 4300000, guid: f7564647324c3f54a8aa6f3f1bf333a5, type: 2}
+--- !u!4 &22649682
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22649679}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &24439389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,6 +1283,80 @@ Transform:
   - {fileID: 1791947021}
   m_Father: {fileID: 1837215961}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &27076875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 27076877}
+  - component: {fileID: 27076876}
+  - component: {fileID: 27076878}
+  m_Layer: 0
+  m_Name: Excavation Rounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &27076876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27076875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9be6a1d7b415b641b04b60df2d5b20a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.ExcavationRounds
+  equipment: {fileID: 5866666020923161179}
+  player: {fileID: 1993466818}
+  production: {fileID: 1896738950}
+  completionPanel: {fileID: 534319997}
+  fade: {fileID: 975751103}
+  heading: {fileID: 1216005525}
+  summary: {fileID: 873716151}
+  roundLabel: {fileID: 2011478530}
+  nextButton: {fileID: 564217871}
+--- !u!4 &27076877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27076875}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &27076878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27076875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ab1a67b96fb2c43952ea961b80c5be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.QuarryOptionalTasks
+  equipment: {fileID: 5866666020923161179}
+  shiftLabel: {fileID: 75120300}
+  title: {fileID: 1522243614}
+  rows:
+  - {fileID: 1448663953}
+  - {fileID: 374138135}
+  - {fileID: 373889738}
+  card: {fileID: 1978601336}
 --- !u!1 &30204161
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,6 +1729,7 @@ GameObject:
   - component: {fileID: 41620986}
   - component: {fileID: 41620988}
   - component: {fileID: 41620987}
+  - component: {fileID: 41620989}
   m_Layer: 0
   m_Name: Block
   m_TagString: Untagged
@@ -1580,9 +1745,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41620985}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.575, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0.52249855, z: 0, w: 0.85264015}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.85, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 866977834}
@@ -1645,7 +1810,29 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41620985}
-  m_Mesh: {fileID: 4300000, guid: 56a265f726888604aaf96391f6d338fc, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 329c255006aa8c54ebae4ac6148d9956, type: 2}
+--- !u!64 &41620989
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41620985}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 329c255006aa8c54ebae4ac6148d9956, type: 2}
 --- !u!1 &42525696
 GameObject:
   m_ObjectHideFlags: 0
@@ -1713,6 +1900,8 @@ MonoBehaviour:
   resourceType: 3
   blockId: quarry-expansion-0-3-3
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1652108396}
   cracks: {fileID: 1212875299}
 --- !u!65 &42525700
@@ -1787,7 +1976,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &43700376
 Transform:
   m_ObjectHideFlags: 0
@@ -2031,7 +2220,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1539120053}
@@ -2605,6 +2794,8 @@ MonoBehaviour:
   resourceType: 3
   blockId: quarry-expansion-0-5-2
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 178273137}
   cracks: {fileID: 69205601}
 --- !u!65 &60049533
@@ -3374,6 +3565,143 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 75065586}
   m_Mesh: {fileID: 4300000, guid: 7f5c89166bde4024abafd631da51d12e, type: 2}
+--- !u!1 &75120297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 75120298}
+  - component: {fileID: 75120299}
+  - component: {fileID: 75120300}
+  m_Layer: 0
+  m_Name: Shift Condition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &75120298
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75120297}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1978601336}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 12, y: -8}
+  m_SizeDelta: {x: 386, y: 24}
+  m_Pivot: {x: 0, y: 1}
+--- !u!222 &75120299
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75120297}
+  m_CullTransparentMesh: 1
+--- !u!114 &75120300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75120297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'FIRST SHIFT: earn your first pickaxe upgrade'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4284927231
+  m_fontColor: {r: 1, g: 0.8, b: 0.4, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 17
+  m_fontSizeBase: 17
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 13
+  m_fontSizeMax: 17
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &77064447
 GameObject:
   m_ObjectHideFlags: 0
@@ -3621,6 +3949,8 @@ MonoBehaviour:
   resourceType: 0
   blockId: quarry-expansion-0-4-1
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1384816264}
   cracks: {fileID: 1717401709}
 --- !u!65 &86146310
@@ -3979,12 +4309,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23
-  m_fontSizeBase: 23
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 20
   m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -4048,8 +4378,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 18, y: -36}
-  m_SizeDelta: {x: 384, y: 32}
+  m_AnchoredPosition: {x: 14, y: -10}
+  m_SizeDelta: {x: 332, y: 34}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &102685061
 GameObject:
@@ -4858,6 +5188,8 @@ MonoBehaviour:
   resourceType: 5
   blockId: quarry-v1-1-3
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1842559041}
   cracks: {fileID: 1578597013}
 --- !u!65 &123808371
@@ -4925,7 +5257,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1149370326}
@@ -5128,6 +5460,8 @@ MonoBehaviour:
   resourceType: 4
   blockId: quarry-v1-1-2
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 2093021753}
   cracks: {fileID: 1922919260}
 --- !u!65 &128278121
@@ -5467,7 +5801,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2137070307}
@@ -5688,6 +6022,8 @@ MonoBehaviour:
   resourceType: 3
   blockId: quarry-expansion-1-2-3
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 2086565230}
   cracks: {fileID: 311987630}
 --- !u!65 &144728468
@@ -5868,6 +6204,8 @@ MonoBehaviour:
   resourceType: 4
   blockId: quarry-expansion-1-1-1
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 448836780}
   cracks: {fileID: 1602033097}
 --- !u!65 &149004517
@@ -10845,7 +11183,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 875541312}
@@ -11367,6 +11705,8 @@ MonoBehaviour:
   resourceType: 5
   blockId: quarry-expansion-1-2-1
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1782190843}
   cracks: {fileID: 392393278}
 --- !u!65 &173008409
@@ -11418,7 +11758,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 494986430}
@@ -11747,7 +12087,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 305562110}
@@ -11837,7 +12177,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1189073514}
@@ -12306,6 +12646,8 @@ MonoBehaviour:
   resourceType: 3
   blockId: quarry-expansion-0-3-0
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1488695653}
   cracks: {fileID: 1295372101}
 --- !u!65 &207952482
@@ -12627,7 +12969,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1387556003}
@@ -12715,9 +13057,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 222270835}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0.85, z: -0.45}
-  m_LocalScale: {x: 0.055, y: 0.055, z: 0.6}
+  m_LocalRotation: {x: 0.25038, y: 0, z: 0, w: 0.96814764}
+  m_LocalPosition: {x: 0.3, y: 1, z: -0.425}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.66}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1663049325}
@@ -12846,6 +13188,8 @@ MonoBehaviour:
   resourceType: 1
   blockId: quarry-expansion-0-5-1
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1149370327}
   cracks: {fileID: 1704454296}
 --- !u!65 &227997419
@@ -12959,7 +13303,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1454885309}
@@ -13658,6 +14002,8 @@ MonoBehaviour:
   resourceType: 0
   blockId: 
   wallMining: 0
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 11140658}
   cracks: {fileID: 0}
 --- !u!64 &256459462
@@ -14087,6 +14433,8 @@ MonoBehaviour:
   resourceType: 0
   blockId: quarry-expansion-1-5-3
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 912674512}
   cracks: {fileID: 1447741091}
 --- !u!65 &277343535
@@ -14161,6 +14509,8 @@ MonoBehaviour:
   resourceType: 2
   blockId: quarry-v1-1-0
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1478926502}
   cracks: {fileID: 1016874799}
 --- !u!65 &278039294
@@ -14320,7 +14670,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.8, y: 0.03, z: 0}
-  m_LocalScale: {x: 0.035, y: 0.02, z: 1.6}
+  m_LocalScale: {x: 0.075, y: 0.02, z: 1.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1479572566}
@@ -14350,7 +14700,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49c5a4786e68f6c4cab152e0c40d7f26, type: 2}
+  - {fileID: 2100000, guid: 95769e8ba172fd341852d39529f06d0c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14557,6 +14907,8 @@ MonoBehaviour:
   resourceType: 3
   blockId: quarry-v1-0-3
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 970711334}
   cracks: {fileID: 434509819}
 --- !u!65 &295667968
@@ -15200,7 +15552,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1820852565}
@@ -15560,7 +15912,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.03, z: 0.8}
-  m_LocalScale: {x: 1.6, y: 0.02, z: 0.035}
+  m_LocalScale: {x: 1.6, y: 0.02, z: 0.075}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2021033195}
@@ -15590,7 +15942,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49c5a4786e68f6c4cab152e0c40d7f26, type: 2}
+  - {fileID: 2100000, guid: 2cfafc04e4bf7ce4a95409846ff28761, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15667,7 +16019,7 @@ GameObject:
   - component: {fileID: 340840629}
   - component: {fileID: 340840628}
   m_Layer: 0
-  m_Name: Weathered Copper ore (3 HP)
+  m_Name: Natural Boulder quarry-expansion-0-1-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15699,11 +16051,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.56, y: 0.575, z: 0.56}
+  m_Extents: {x: 0.45, y: 0.47, z: 0.45}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Center: {x: 0, y: 0.44, z: 0}
   m_TimeToStationary: 0.1
 --- !u!114 &340840629
 MonoBehaviour:
@@ -15721,6 +16073,8 @@ MonoBehaviour:
   resourceType: 1
   blockId: quarry-expansion-0-1-3
   wallMining: 1
+  naturalBoulder: 1
+  contactCollider: {fileID: 703459875}
   rockRenderer: {fileID: 703459873}
   cracks: {fileID: 1020157596}
 --- !u!65 &340840630
@@ -15740,10 +16094,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 1.12, y: 1.15, z: 1.12}
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Size: {x: 0.9, y: 0.94, z: 0.9}
+  m_Center: {x: 0, y: 0.44, z: 0}
 --- !u!1 &340848446
 GameObject:
   m_ObjectHideFlags: 0
@@ -15825,7 +16179,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.03, z: -0.8}
-  m_LocalScale: {x: 1.6, y: 0.02, z: 0.035}
+  m_LocalScale: {x: 1.6, y: 0.02, z: 0.075}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2037873284}
@@ -15855,7 +16209,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49c5a4786e68f6c4cab152e0c40d7f26, type: 2}
+  - {fileID: 2100000, guid: ff2070652b33ca6429ba75e006636ff7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16220,6 +16574,8 @@ MonoBehaviour:
   resourceType: 0
   blockId: quarry-expansion-1-1-2
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 33722995}
   cracks: {fileID: 2070934625}
 --- !u!65 &359503871
@@ -16345,11 +16701,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1786088777}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 5, y: 154}
-  m_Pivot: {x: 0, y: 1}
+  m_SizeDelta: {x: 5, y: 0}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &364995685
 GameObject:
   m_ObjectHideFlags: 0
@@ -16491,6 +16847,8 @@ MonoBehaviour:
   resourceType: 1
   blockId: quarry-v1-0-1
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1387556004}
   cracks: {fileID: 1227500180}
 --- !u!65 &370510568
@@ -16530,6 +16888,280 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.575, z: 0}
   m_TimeToStationary: 0.1
+--- !u!1 &373889735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 373889736}
+  - component: {fileID: 373889737}
+  - component: {fileID: 373889738}
+  m_Layer: 0
+  m_Name: Delivery Task
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &373889736
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373889735}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1978601336}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 12, y: -122}
+  m_SizeDelta: {x: 386, y: 24}
+  m_Pivot: {x: 0, y: 1}
+--- !u!222 &373889737
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373889735}
+  m_CullTransparentMesh: 1
+--- !u!114 &373889738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373889735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Complete deliveries 0/2 +$20
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 16
+  m_fontSizeBase: 16
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 13
+  m_fontSizeMax: 16
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &374138132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 374138133}
+  - component: {fileID: 374138134}
+  - component: {fileID: 374138135}
+  m_Layer: 0
+  m_Name: Refinery Task
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &374138133
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374138132}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1978601336}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 12, y: -94}
+  m_SizeDelta: {x: 386, y: 24}
+  m_Pivot: {x: 0, y: 1}
+--- !u!222 &374138134
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374138132}
+  m_CullTransparentMesh: 1
+--- !u!114 &374138135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374138132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Refine stones 0/6 +$15
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 16
+  m_fontSizeBase: 16
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 13
+  m_fontSizeMax: 16
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &375654855
 GameObject:
   m_ObjectHideFlags: 0
@@ -17441,6 +18073,8 @@ MonoBehaviour:
   resourceType: 4
   blockId: quarry-expansion-1-3-0
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 2137070308}
   cracks: {fileID: 1315696938}
 --- !u!65 &398432701
@@ -17672,7 +18306,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.8, y: 0.03, z: 0}
-  m_LocalScale: {x: 0.035, y: 0.02, z: 1.6}
+  m_LocalScale: {x: 0.075, y: 0.02, z: 1.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2037873284}
@@ -17702,7 +18336,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49c5a4786e68f6c4cab152e0c40d7f26, type: 2}
+  - {fileID: 2100000, guid: ff2070652b33ca6429ba75e006636ff7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17796,7 +18430,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.03, z: 0.8}
-  m_LocalScale: {x: 1.6, y: 0.02, z: 0.035}
+  m_LocalScale: {x: 1.6, y: 0.02, z: 0.075}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1479572566}
@@ -17826,7 +18460,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49c5a4786e68f6c4cab152e0c40d7f26, type: 2}
+  - {fileID: 2100000, guid: 95769e8ba172fd341852d39529f06d0c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18312,7 +18946,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &433781203
 Transform:
   m_ObjectHideFlags: 0
@@ -18419,6 +19053,84 @@ Transform:
   - {fileID: 1632217097}
   m_Father: {fileID: 970711333}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &436450851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 436450852}
+  - component: {fileID: 436450854}
+  - component: {fileID: 436450853}
+  m_Layer: 0
+  m_Name: Completion Card
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &436450852
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436450851}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1216005523}
+  - {fileID: 873716149}
+  - {fileID: 564217874}
+  m_Father: {fileID: 534319994}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 580, y: 370}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &436450853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436450851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.055, g: 0.085, b: 0.09, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &436450854
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436450851}
+  m_CullTransparentMesh: 1
 --- !u!1 &445396427
 GameObject:
   m_ObjectHideFlags: 0
@@ -18642,7 +19354,7 @@ GameObject:
   - component: {fileID: 456415832}
   - component: {fileID: 456415831}
   m_Layer: 0
-  m_Name: Weathered Copper ore (3 HP)
+  m_Name: Natural Boulder quarry-expansion-0-1-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18674,11 +19386,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.56, y: 0.575, z: 0.56}
+  m_Extents: {x: 0.45, y: 0.47, z: 0.45}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Center: {x: 0, y: 0.44, z: 0}
   m_TimeToStationary: 0.1
 --- !u!114 &456415832
 MonoBehaviour:
@@ -18696,6 +19408,8 @@ MonoBehaviour:
   resourceType: 1
   blockId: quarry-expansion-0-1-0
   wallMining: 1
+  naturalBoulder: 1
+  contactCollider: {fileID: 1526451016}
   rockRenderer: {fileID: 1526451014}
   cracks: {fileID: 1718448887}
 --- !u!65 &456415833
@@ -18715,10 +19429,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 1.12, y: 1.15, z: 1.12}
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Size: {x: 0.9, y: 0.94, z: 0.9}
+  m_Center: {x: 0, y: 0.44, z: 0}
 --- !u!1 &456514221
 GameObject:
   m_ObjectHideFlags: 0
@@ -18861,6 +19575,8 @@ MonoBehaviour:
   resourceType: 2
   blockId: quarry-v1-0-2
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1348787312}
   cracks: {fileID: 1343994643}
 --- !u!65 &456579959
@@ -19134,6 +19850,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2078394724}
+  - {fileID: 975751100}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -19261,7 +19978,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1523913972}
@@ -19351,7 +20068,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1837215961}
@@ -19722,7 +20439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &485920042
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20031,6 +20748,8 @@ MonoBehaviour:
   resourceType: 2
   blockId: quarry-expansion-1-1-3
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 875541313}
   cracks: {fileID: 64287567}
 --- !u!65 &504544154
@@ -20155,6 +20874,8 @@ MonoBehaviour:
   resourceType: 0
   blockId: quarry-expansion-1-3-1
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1418104626}
   cracks: {fileID: 42720576}
 --- !u!65 &519165338
@@ -20259,7 +20980,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 555726414}
@@ -20681,6 +21402,95 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530010412}
   m_Mesh: {fileID: 4300000, guid: c067cd46f044a6f4d80b3866cb63010c, type: 2}
+--- !u!1 &534319993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 534319994}
+  - component: {fileID: 534319996}
+  - component: {fileID: 534319995}
+  - component: {fileID: 534319997}
+  m_Layer: 0
+  m_Name: Excavation Complete Overlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &534319994
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534319993}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 436450852}
+  m_Father: {fileID: 2078394724}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &534319995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534319993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.015, g: 0.025, b: 0.03, a: 0.82}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &534319996
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534319993}
+  m_CullTransparentMesh: 1
+--- !u!225 &534319997
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534319993}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &538647346
 GameObject:
   m_ObjectHideFlags: 0
@@ -20898,7 +21708,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 53024167}
@@ -26081,7 +26891,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2042230025}
@@ -26396,8 +27206,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -54}
-  m_SizeDelta: {x: 1100, y: 36}
+  m_AnchoredPosition: {x: 0, y: -24}
+  m_SizeDelta: {x: 260, y: 34}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &556882552
 MonoBehaviour:
@@ -26428,8 +27238,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4289920908
-  m_fontColor: {r: 0.55, g: 1, b: 0.7, a: 1}
+    rgba: 4292604121
+  m_fontColor: {r: 0.85, g: 0.94, b: 0.86, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -26446,12 +27256,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21
-  m_fontSizeBase: 21
+  m_fontSize: 23.9
+  m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 22
+  m_fontSizeMax: 24
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -26527,7 +27337,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 923140381}
@@ -26769,6 +27579,127 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564006143}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &564217870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 564217874}
+  - component: {fileID: 564217873}
+  - component: {fileID: 564217872}
+  - component: {fileID: 564217871}
+  m_Layer: 0
+  m_Name: Next Excavation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &564217871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564217870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 564217872}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &564217872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564217870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.78, g: 0.55, b: 0.22, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &564217873
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564217870}
+  m_CullTransparentMesh: 1
+--- !u!224 &564217874
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564217870}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1293302978}
+  m_Father: {fileID: 436450852}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -133}
+  m_SizeDelta: {x: 470, y: 58}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &565544195
 GameObject:
   m_ObjectHideFlags: 0
@@ -27055,6 +27986,8 @@ MonoBehaviour:
   resourceType: 5
   blockId: quarry-expansion-1-4-0
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 197689603}
   cracks: {fileID: 687461287}
 --- !u!65 &571639790
@@ -27106,7 +28039,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 448836779}
@@ -27758,7 +28691,7 @@ Transform:
   m_GameObject: {fileID: 592968686}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 0.85, z: -0.7}
+  m_LocalPosition: {x: -0.3, y: 1.15, z: -0.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27882,7 +28815,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1028465320}
@@ -28393,6 +29326,8 @@ MonoBehaviour:
   resourceType: 2
   blockId: quarry-expansion-1-3-2
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 53024168}
   cracks: {fileID: 649907489}
 --- !u!65 &612584912
@@ -28444,7 +29379,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 197689602}
@@ -29456,9 +30391,9 @@ MonoBehaviour:
   m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 24
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -29523,7 +30458,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -252}
-  m_SizeDelta: {x: 600, y: 40}
+  m_SizeDelta: {x: 380, y: 40}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &649907489
 GameObject:
@@ -29806,6 +30741,8 @@ MonoBehaviour:
   resourceType: 1
   blockId: quarry-expansion-1-2-2
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 826379404}
   cracks: {fileID: 996386445}
 --- !u!65 &654142623
@@ -29891,7 +30828,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 486282769}
@@ -30372,7 +31309,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 472232700}
@@ -30644,7 +31581,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1423014476}
@@ -30894,7 +31831,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -31028,6 +31965,7 @@ GameObject:
   - component: {fileID: 703459872}
   - component: {fileID: 703459874}
   - component: {fileID: 703459873}
+  - component: {fileID: 703459875}
   m_Layer: 0
   m_Name: Block
   m_TagString: Untagged
@@ -31043,9 +31981,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703459871}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.575, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0.26723844, z: 0, w: -0.96363044}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.85, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1904971674}
@@ -31108,7 +32046,29 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703459871}
-  m_Mesh: {fileID: 4300000, guid: 56a265f726888604aaf96391f6d338fc, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 5e143ad511ce15f48893f3208baa78dd, type: 2}
+--- !u!64 &703459875
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703459871}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 5e143ad511ce15f48893f3208baa78dd, type: 2}
 --- !u!1 &705317854
 GameObject:
   m_ObjectHideFlags: 0
@@ -31212,8 +32172,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 5
-  m_fontSizeBase: 5
+  m_fontSize: 3.3
+  m_fontSizeBase: 3.3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -31512,6 +32472,8 @@ MonoBehaviour:
   resourceType: 5
   blockId: quarry-v1-3-5
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1201750418}
   cracks: {fileID: 1637896854}
 --- !u!65 &713618990
@@ -31931,7 +32893,7 @@ GameObject:
   - component: {fileID: 726214580}
   - component: {fileID: 726214579}
   m_Layer: 0
-  m_Name: Firm Blue mineral (6 HP)
+  m_Name: Natural Boulder quarry-expansion-0-2-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31963,11 +32925,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.56, y: 0.575, z: 0.56}
+  m_Extents: {x: 0.45, y: 0.47, z: 0.45}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Center: {x: 0, y: 0.44, z: 0}
   m_TimeToStationary: 0.1
 --- !u!114 &726214580
 MonoBehaviour:
@@ -31985,6 +32947,8 @@ MonoBehaviour:
   resourceType: 2
   blockId: quarry-expansion-0-2-3
   wallMining: 1
+  naturalBoulder: 1
+  contactCollider: {fileID: 1689840944}
   rockRenderer: {fileID: 1689840942}
   cracks: {fileID: 543831497}
 --- !u!65 &726214581
@@ -32004,10 +32968,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 1.12, y: 1.15, z: 1.12}
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Size: {x: 0.9, y: 0.94, z: 0.9}
+  m_Center: {x: 0, y: 0.44, z: 0}
 --- !u!1 &726684790
 GameObject:
   m_ObjectHideFlags: 0
@@ -32199,6 +33163,8 @@ MonoBehaviour:
   resourceType: 4
   blockId: quarry-expansion-1-5-2
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1454885310}
   cracks: {fileID: 733900968}
 --- !u!65 &736662196
@@ -32250,7 +33216,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 178273136}
@@ -33337,7 +34303,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2052708523}
@@ -33427,7 +34393,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2070504819}
@@ -33699,7 +34665,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1478926501}
@@ -33902,6 +34868,8 @@ MonoBehaviour:
   resourceType: 5
   blockId: quarry-v1-2-1
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 884473663}
   cracks: {fileID: 2053803350}
 --- !u!65 &797059698
@@ -34693,7 +35661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &821274508
 Transform:
   m_ObjectHideFlags: 0
@@ -34817,6 +35785,8 @@ MonoBehaviour:
   resourceType: 1
   blockId: quarry-v1-2-3
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 131906312}
   cracks: {fileID: 697577915}
 --- !u!65 &822421771
@@ -35336,7 +36306,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 12340744}
@@ -35503,7 +36473,7 @@ GameObject:
   - component: {fileID: 844265437}
   - component: {fileID: 844265436}
   m_Layer: 0
-  m_Name: Weathered Blue mineral (2 HP)
+  m_Name: Natural Boulder quarry-expansion-0-0-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35535,11 +36505,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.56, y: 0.575, z: 0.56}
+  m_Extents: {x: 0.45, y: 0.47, z: 0.45}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Center: {x: 0, y: 0.44, z: 0}
   m_TimeToStationary: 0.1
 --- !u!114 &844265437
 MonoBehaviour:
@@ -35557,6 +36527,8 @@ MonoBehaviour:
   resourceType: 2
   blockId: quarry-expansion-0-0-1
   wallMining: 1
+  naturalBoulder: 1
+  contactCollider: {fileID: 1370590282}
   rockRenderer: {fileID: 1370590280}
   cracks: {fileID: 1286540048}
 --- !u!65 &844265438
@@ -35576,10 +36548,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 1.12, y: 1.15, z: 1.12}
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Size: {x: 0.9, y: 0.94, z: 0.9}
+  m_Center: {x: 0, y: 0.44, z: 0}
 --- !u!1 &846831322
 GameObject:
   m_ObjectHideFlags: 0
@@ -35647,6 +36619,8 @@ MonoBehaviour:
   resourceType: 4
   blockId: quarry-expansion-0-4-0
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1115013024}
   cracks: {fileID: 1405751954}
 --- !u!65 &846831326
@@ -35867,7 +36841,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &856679706
 Transform:
   m_ObjectHideFlags: 0
@@ -36131,7 +37105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &866977834
 Transform:
   m_ObjectHideFlags: 0
@@ -36271,6 +37245,8 @@ MonoBehaviour:
   resourceType: 3
   blockId: quarry-expansion-1-2-0
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 12340745}
   cracks: {fileID: 951444445}
 --- !u!65 &870935526
@@ -36294,6 +37270,143 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.12, y: 1.15, z: 1.12}
   m_Center: {x: 0, y: 0.575, z: 0}
+--- !u!1 &873716148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 873716149}
+  - component: {fileID: 873716150}
+  - component: {fileID: 873716151}
+  m_Layer: 0
+  m_Name: Summary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &873716149
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873716148}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 436450852}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 15}
+  m_SizeDelta: {x: 520, y: 170}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &873716150
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873716148}
+  m_CullTransparentMesh: 1
+--- !u!114 &873716151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873716148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Completion bonus
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 21
+  m_fontSizeBase: 21
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &874063832
 GameObject:
   m_ObjectHideFlags: 0
@@ -36527,6 +37640,8 @@ MonoBehaviour:
   resourceType: 3
   blockId: quarry-v1-2-5
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1820852566}
   cracks: {fileID: 1416794415}
 --- !u!65 &876905062
@@ -37433,7 +38548,7 @@ Transform:
   m_GameObject: {fileID: 909619751}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0.85, z: -0.7}
+  m_LocalPosition: {x: 0.3, y: 1.15, z: -0.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -37579,6 +38694,8 @@ MonoBehaviour:
   resourceType: 0
   blockId: 
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 115985738}
   cracks: {fileID: 0}
 --- !u!64 &912469697
@@ -38207,7 +39324,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.8, y: 0.03, z: 0}
-  m_LocalScale: {x: 0.035, y: 0.02, z: 1.6}
+  m_LocalScale: {x: 0.075, y: 0.02, z: 1.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2021033195}
@@ -38237,7 +39354,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49c5a4786e68f6c4cab152e0c40d7f26, type: 2}
+  - {fileID: 2100000, guid: 2cfafc04e4bf7ce4a95409846ff28761, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -38297,7 +39414,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 970711333}
@@ -38409,6 +39526,8 @@ MonoBehaviour:
   resourceType: 0
   blockId: 
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 2055024710}
   cracks: {fileID: 0}
 --- !u!64 &929421501
@@ -38484,6 +39603,8 @@ MonoBehaviour:
   resourceType: 4
   blockId: quarry-v1-3-4
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1423014477}
   cracks: {fileID: 188984559}
 --- !u!65 &938573676
@@ -38534,6 +39655,7 @@ GameObject:
   - component: {fileID: 948117831}
   - component: {fileID: 948117833}
   - component: {fileID: 948117832}
+  - component: {fileID: 948117834}
   m_Layer: 0
   m_Name: Block
   m_TagString: Untagged
@@ -38549,9 +39671,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 948117830}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.575, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0.13917312, z: 0, w: 0.9902681}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.85, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2141330500}
@@ -38614,7 +39736,29 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 948117830}
-  m_Mesh: {fileID: 4300000, guid: 56a265f726888604aaf96391f6d338fc, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 05dec06bd784b4741a8e6c48498be1c2, type: 2}
+--- !u!64 &948117834
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948117830}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 05dec06bd784b4741a8e6c48498be1c2, type: 2}
 --- !u!1 &949310586
 GameObject:
   m_ObjectHideFlags: 0
@@ -38767,7 +39911,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1488695652}
@@ -39075,6 +40219,8 @@ MonoBehaviour:
   resourceType: 5
   blockId: quarry-expansion-0-5-3
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 2062632782}
   cracks: {fileID: 858785808}
 --- !u!65 &961002435
@@ -39618,6 +40764,94 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974677725}
   m_Mesh: {fileID: 4300000, guid: 6fb9cfdef8b5ffc4f9619868c9d00c91, type: 2}
+--- !u!1 &975751099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 975751100}
+  - component: {fileID: 975751102}
+  - component: {fileID: 975751101}
+  - component: {fileID: 975751103}
+  m_Layer: 0
+  m_Name: Excavation Transition Fade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &975751100
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975751099}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 469102717}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &975751101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975751099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.015, g: 0.025, b: 0.03, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &975751102
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975751099}
+  m_CullTransparentMesh: 1
+--- !u!225 &975751103
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975751099}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &976142558
 GameObject:
   m_ObjectHideFlags: 0
@@ -39646,7 +40880,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1348787311}
@@ -39907,6 +41141,8 @@ MonoBehaviour:
   resourceType: 0
   blockId: quarry-v1-3-0
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1253342558}
   cracks: {fileID: 551263549}
 --- !u!65 &995186796
@@ -40477,7 +41713,7 @@ GameObject:
   - component: {fileID: 1016635379}
   - component: {fileID: 1016635378}
   m_Layer: 0
-  m_Name: Weathered Gold ore (2 HP)
+  m_Name: Natural Boulder quarry-expansion-0-2-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40509,11 +41745,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.56, y: 0.575, z: 0.56}
+  m_Extents: {x: 0.45, y: 0.47, z: 0.45}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Center: {x: 0, y: 0.44, z: 0}
   m_TimeToStationary: 0.1
 --- !u!114 &1016635379
 MonoBehaviour:
@@ -40531,6 +41767,8 @@ MonoBehaviour:
   resourceType: 4
   blockId: quarry-expansion-0-2-1
   wallMining: 1
+  naturalBoulder: 1
+  contactCollider: {fileID: 41620989}
   rockRenderer: {fileID: 41620987}
   cracks: {fileID: 1775132582}
 --- !u!65 &1016635380
@@ -40550,10 +41788,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 1.12, y: 1.15, z: 1.12}
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Size: {x: 0.9, y: 0.94, z: 0.9}
+  m_Center: {x: 0, y: 0.44, z: 0}
 --- !u!1 &1016766800
 GameObject:
   m_ObjectHideFlags: 0
@@ -40605,6 +41843,8 @@ MonoBehaviour:
   resourceType: 2
   blockId: quarry-v1-2-4
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1487514408}
   cracks: {fileID: 1971831385}
 --- !u!65 &1016766803
@@ -40849,6 +42089,8 @@ MonoBehaviour:
   resourceType: 0
   blockId: 
   wallMining: 0
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 621795112}
   cracks: {fileID: 0}
 --- !u!64 &1018592056
@@ -41156,6 +42398,8 @@ MonoBehaviour:
   resourceType: 5
   blockId: quarry-expansion-1-0-2
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1117039689}
   cracks: {fileID: 103214370}
 --- !u!65 &1036509560
@@ -41410,6 +42654,8 @@ MonoBehaviour:
   resourceType: 0
   blockId: quarry-v1-2-2
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1839203413}
   cracks: {fileID: 615386152}
 --- !u!65 &1053414401
@@ -41783,7 +43029,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 144315122}
@@ -42492,6 +43738,8 @@ MonoBehaviour:
   resourceType: 4
   blockId: quarry-v1-0-4
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1574473948}
   cracks: {fileID: 1997101146}
 --- !u!65 &1080790607
@@ -42739,7 +43987,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1574473947}
@@ -42829,8 +44077,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 12
   m_Type: 1
-  m_Color: {r: 1, g: 0.96, b: 0.87, a: 1}
-  m_Intensity: 1.45
+  m_Color: {r: 1, g: 0.96, b: 0.88, a: 1}
+  m_Intensity: 1.25
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -42839,7 +44087,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.65
+    m_Strength: 0.68
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -43032,6 +44280,8 @@ MonoBehaviour:
   resourceType: 5
   blockId: quarry-v1-0-5
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 345690809}
   cracks: {fileID: 66750308}
 --- !u!65 &1114287376
@@ -43138,6 +44388,8 @@ MonoBehaviour:
   resourceType: 1
   blockId: quarry-expansion-1-0-3
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 844195855}
   cracks: {fileID: 1478298371}
 --- !u!65 &1114852663
@@ -43809,6 +45061,8 @@ MonoBehaviour:
   resourceType: 5
   blockId: quarry-v1-4-3
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 144315123}
   cracks: {fileID: 1465935752}
 --- !u!65 &1131329356
@@ -43886,7 +45140,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LOADING PAD
+  m_text: 'LOAD
+
+    0 QUEUED'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -43895,8 +45151,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4289124761
+  m_fontColor: {r: 0.6, g: 0.85, b: 0.65, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -43913,8 +45169,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1.45
-  m_fontSizeBase: 1.45
+  m_fontSize: 3.2
+  m_fontSizeBase: 3.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -44018,7 +45274,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134165479}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44026,7 +45282,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.05}
+  m_AnchoredPosition: {x: 0, y: 0.055}
   m_SizeDelta: {x: 1.6, y: 1.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1139133028
@@ -44599,7 +45855,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1117039688}
@@ -49820,7 +51076,7 @@ GameObject:
   - component: {fileID: 1174883360}
   - component: {fileID: 1174883359}
   m_Layer: 0
-  m_Name: Weathered Amethyst ore (3 HP)
+  m_Name: Natural Boulder quarry-expansion-0-1-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49852,11 +51108,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.56, y: 0.575, z: 0.56}
+  m_Extents: {x: 0.45, y: 0.47, z: 0.45}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Center: {x: 0, y: 0.44, z: 0}
   m_TimeToStationary: 0.1
 --- !u!114 &1174883360
 MonoBehaviour:
@@ -49874,6 +51130,8 @@ MonoBehaviour:
   resourceType: 5
   blockId: quarry-expansion-0-1-2
   wallMining: 1
+  naturalBoulder: 1
+  contactCollider: {fileID: 1534883296}
   rockRenderer: {fileID: 1534883294}
   cracks: {fileID: 587339696}
 --- !u!65 &1174883361
@@ -49893,10 +51151,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 1.12, y: 1.15, z: 1.12}
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Size: {x: 0.9, y: 0.94, z: 0.9}
+  m_Center: {x: 0, y: 0.44, z: 0}
 --- !u!1 &1176552405
 GameObject:
   m_ObjectHideFlags: 0
@@ -50703,7 +51961,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1487514407}
@@ -51036,6 +52294,8 @@ MonoBehaviour:
   resourceType: 1
   blockId: quarry-expansion-0-3-2
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 680336045}
   cracks: {fileID: 1625555080}
 --- !u!65 &1202577483
@@ -51290,6 +52550,8 @@ MonoBehaviour:
   resourceType: 2
   blockId: quarry-v1-4-0
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 585875490}
   cracks: {fileID: 964967113}
 --- !u!65 &1204502750
@@ -51401,9 +52663,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'COLLECT INGOTS
+  m_text: 'COLLECT
 
-    LOAD: 0'
+    0 READY'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -51412,8 +52674,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4291938181
+  m_fontColor: {r: 0.52, g: 0.78, b: 0.82, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -51430,8 +52692,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1.45
-  m_fontSizeBase: 1.45
+  m_fontSize: 3.2
+  m_fontSizeBase: 3.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -51535,7 +52797,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215110329}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -51543,7 +52805,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.05}
+  m_AnchoredPosition: {x: 0, y: 0.055}
   m_SizeDelta: {x: 1.6, y: 1.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1215441043
@@ -51559,7 +52821,7 @@ GameObject:
   - component: {fileID: 1215441046}
   - component: {fileID: 1215441045}
   m_Layer: 0
-  m_Name: Firm Iron ore (4 HP)
+  m_Name: Natural Boulder quarry-expansion-0-2-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51591,11 +52853,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.56, y: 0.575, z: 0.56}
+  m_Extents: {x: 0.45, y: 0.47, z: 0.45}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Center: {x: 0, y: 0.44, z: 0}
   m_TimeToStationary: 0.1
 --- !u!114 &1215441046
 MonoBehaviour:
@@ -51613,6 +52875,8 @@ MonoBehaviour:
   resourceType: 0
   blockId: quarry-expansion-0-2-2
   wallMining: 1
+  naturalBoulder: 1
+  contactCollider: {fileID: 1900781684}
   rockRenderer: {fileID: 1900781682}
   cracks: {fileID: 1339188493}
 --- !u!65 &1215441047
@@ -51632,10 +52896,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 1.12, y: 1.15, z: 1.12}
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Size: {x: 0.9, y: 0.94, z: 0.9}
+  m_Center: {x: 0, y: 0.44, z: 0}
 --- !u!1 &1215596283
 GameObject:
   m_ObjectHideFlags: 0
@@ -51726,6 +52990,143 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215596283}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1216005522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1216005523}
+  - component: {fileID: 1216005524}
+  - component: {fileID: 1216005525}
+  m_Layer: 0
+  m_Name: Heading
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1216005523
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216005522}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 436450852}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 130}
+  m_SizeDelta: {x: 530, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1216005524
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216005522}
+  m_CullTransparentMesh: 1
+--- !u!114 &1216005525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216005522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: EXCAVATION COMPLETE
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 28
+  m_fontSizeBase: 28
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1224729833
 GameObject:
   m_ObjectHideFlags: 0
@@ -51754,7 +53155,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 625879402}
@@ -52008,6 +53409,8 @@ MonoBehaviour:
   resourceType: 1
   blockId: quarry-v1-4-5
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1189073515}
   cracks: {fileID: 71720752}
 --- !u!65 &1243829264
@@ -52075,7 +53478,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 884473662}
@@ -52556,6 +53959,8 @@ MonoBehaviour:
   resourceType: 3
   blockId: quarry-expansion-1-0-1
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 486282770}
   cracks: {fileID: 1632115707}
 --- !u!65 &1274588239
@@ -52755,7 +54160,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 345690808}
@@ -52941,6 +54346,143 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286680875}
   m_Mesh: {fileID: 4300000, guid: 6fb9cfdef8b5ffc4f9619868c9d00c91, type: 2}
+--- !u!1 &1293302977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1293302978}
+  - component: {fileID: 1293302980}
+  - component: {fileID: 1293302979}
+  m_Layer: 0
+  m_Name: Label
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1293302978
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293302977}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 564217874}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 450, y: 52}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1293302979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293302977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: NEXT EXCAVATION
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 23
+  m_fontSizeBase: 23
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1293302980
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293302977}
+  m_CullTransparentMesh: 1
 --- !u!1 &1295372101
 GameObject:
   m_ObjectHideFlags: 0
@@ -53586,6 +55128,8 @@ MonoBehaviour:
   resourceType: 0
   blockId: quarry-v1-1-4
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 803687270}
   cracks: {fileID: 1439943113}
 --- !u!65 &1324188178
@@ -54131,7 +55675,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1192958709}
@@ -54311,7 +55855,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 382598169}
@@ -55369,6 +56913,7 @@ GameObject:
   - component: {fileID: 1370590279}
   - component: {fileID: 1370590281}
   - component: {fileID: 1370590280}
+  - component: {fileID: 1370590282}
   m_Layer: 0
   m_Name: Block
   m_TagString: Untagged
@@ -55384,9 +56929,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1370590278}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.575, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0.39874908, z: 0, w: 0.9170601}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.85, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2011976453}
@@ -55449,7 +56994,29 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1370590278}
-  m_Mesh: {fileID: 4300000, guid: 56a265f726888604aaf96391f6d338fc, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 329c255006aa8c54ebae4ac6148d9956, type: 2}
+--- !u!64 &1370590282
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370590278}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 329c255006aa8c54ebae4ac6148d9956, type: 2}
 --- !u!1 &1372078177
 GameObject:
   m_ObjectHideFlags: 0
@@ -55566,9 +57133,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1372081704}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 0.85, z: -0.45}
-  m_LocalScale: {x: 0.055, y: 0.055, z: 0.6}
+  m_LocalRotation: {x: 0.25038, y: 0, z: 0, w: 0.96814764}
+  m_LocalPosition: {x: -0.3, y: 1, z: -0.425}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.66}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1663049325}
@@ -55874,8 +57441,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381165376}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 0.85, z: -0.7}
+  m_LocalRotation: {x: 0.25038, y: 0, z: 0, w: 0.96814764}
+  m_LocalPosition: {x: -0.3, y: 1.15, z: -0.7}
   m_LocalScale: {x: 0.075, y: 0.075, z: 0.18}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56228,7 +57795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1395484426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56406,7 +57973,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.03, z: -0.8}
-  m_LocalScale: {x: 1.6, y: 0.02, z: 0.035}
+  m_LocalScale: {x: 1.6, y: 0.02, z: 0.075}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1479572566}
@@ -56436,7 +58003,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49c5a4786e68f6c4cab152e0c40d7f26, type: 2}
+  - {fileID: 2100000, guid: 95769e8ba172fd341852d39529f06d0c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -56659,6 +58226,8 @@ MonoBehaviour:
   resourceType: 2
   blockId: quarry-expansion-0-4-2
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 916776603}
   cracks: {fileID: 1002780624}
 --- !u!65 &1409783650
@@ -56693,6 +58262,7 @@ GameObject:
   - component: {fileID: 1411586523}
   - component: {fileID: 1411586525}
   - component: {fileID: 1411586524}
+  - component: {fileID: 1411586526}
   m_Layer: 0
   m_Name: Block
   m_TagString: Untagged
@@ -56708,9 +58278,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1411586522}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.575, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0.7313537, z: 0, w: 0.6819984}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.85, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 433781203}
@@ -56773,7 +58343,29 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1411586522}
-  m_Mesh: {fileID: 4300000, guid: 56a265f726888604aaf96391f6d338fc, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 3324e328595d779478400aa531f9c3e7, type: 2}
+--- !u!64 &1411586526
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411586522}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 3324e328595d779478400aa531f9c3e7, type: 2}
 --- !u!1 &1412104181
 GameObject:
   m_ObjectHideFlags: 0
@@ -57289,7 +58881,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1842559040}
@@ -57454,7 +59046,7 @@ GameObject:
   - component: {fileID: 1437829544}
   - component: {fileID: 1437829543}
   m_Layer: 0
-  m_Name: Weathered Blue mineral (2 HP)
+  m_Name: Natural Boulder quarry-expansion-0-2-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57486,11 +59078,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.56, y: 0.575, z: 0.56}
+  m_Extents: {x: 0.45, y: 0.47, z: 0.45}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Center: {x: 0, y: 0.44, z: 0}
   m_TimeToStationary: 0.1
 --- !u!114 &1437829544
 MonoBehaviour:
@@ -57508,6 +59100,8 @@ MonoBehaviour:
   resourceType: 2
   blockId: quarry-expansion-0-2-0
   wallMining: 1
+  naturalBoulder: 1
+  contactCollider: {fileID: 948117834}
   rockRenderer: {fileID: 948117832}
   cracks: {fileID: 1586894511}
 --- !u!65 &1437829545
@@ -57527,10 +59121,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 1.12, y: 1.15, z: 1.12}
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Size: {x: 0.9, y: 0.94, z: 0.9}
+  m_Center: {x: 0, y: 0.44, z: 0}
 --- !u!1 &1438202851
 GameObject:
   m_ObjectHideFlags: 0
@@ -57569,7 +59163,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: REFINERY INPUT
+  m_text: 'REFINE
+
+    0 RAW'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -57578,8 +59174,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4282890482
+  m_fontColor: {r: 0.95, g: 0.72, b: 0.28, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -57596,8 +59192,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1.45
-  m_fontSizeBase: 1.45
+  m_fontSize: 3.2
+  m_fontSizeBase: 3.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -57701,7 +59297,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438202851}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -57709,7 +59305,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.05}
+  m_AnchoredPosition: {x: 0, y: 0.055}
   m_SizeDelta: {x: 1.6, y: 1.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1439943113
@@ -57870,6 +59466,143 @@ Transform:
   - {fileID: 406785659}
   m_Father: {fileID: 912674511}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1448663950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1448663951}
+  - component: {fileID: 1448663952}
+  - component: {fileID: 1448663953}
+  m_Layer: 0
+  m_Name: Excavation Task
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1448663951
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448663950}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1978601336}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 12, y: -66}
+  m_SizeDelta: {x: 386, y: 24}
+  m_Pivot: {x: 0, y: 1}
+--- !u!222 &1448663952
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448663950}
+  m_CullTransparentMesh: 1
+--- !u!114 &1448663953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448663950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Break rocks 0/2 +$10
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 16
+  m_fontSizeBase: 16
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 13
+  m_fontSizeMax: 16
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1450687799
 GameObject:
   m_ObjectHideFlags: 0
@@ -58373,6 +60106,8 @@ MonoBehaviour:
   resourceType: 0
   blockId: quarry-v1-0-0
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 456514223}
   cracks: {fileID: 260993455}
 --- !u!65 &1464618255
@@ -58658,12 +60393,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 17
+  m_fontSizeBase: 17
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 15
+  m_fontSizeMax: 17
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -58727,8 +60462,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 18, y: -73}
-  m_SizeDelta: {x: 378, y: 70}
+  m_AnchoredPosition: {x: 14, y: -48}
+  m_SizeDelta: {x: 332, y: 68}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1465935752
 GameObject:
@@ -59601,6 +61336,8 @@ MonoBehaviour:
   resourceType: 3
   blockId: quarry-v1-3-3
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 555726415}
   cracks: {fileID: 295023489}
 --- !u!65 &1494908730
@@ -60283,7 +62020,7 @@ GameObject:
   - component: {fileID: 1519608429}
   - component: {fileID: 1519608428}
   m_Layer: 0
-  m_Name: Weathered Diamond ore (3 HP)
+  m_Name: Natural Boulder quarry-expansion-0-1-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60315,11 +62052,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.56, y: 0.575, z: 0.56}
+  m_Extents: {x: 0.45, y: 0.47, z: 0.45}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Center: {x: 0, y: 0.44, z: 0}
   m_TimeToStationary: 0.1
 --- !u!114 &1519608429
 MonoBehaviour:
@@ -60337,6 +62074,8 @@ MonoBehaviour:
   resourceType: 3
   blockId: quarry-expansion-0-1-1
   wallMining: 1
+  naturalBoulder: 1
+  contactCollider: {fileID: 1775573288}
   rockRenderer: {fileID: 1775573286}
   cracks: {fileID: 506586123}
 --- !u!65 &1519608430
@@ -60356,10 +62095,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 1.12, y: 1.15, z: 1.12}
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Size: {x: 0.9, y: 0.94, z: 0.9}
+  m_Center: {x: 0, y: 0.44, z: 0}
 --- !u!1 &1520719386
 GameObject:
   m_ObjectHideFlags: 0
@@ -60540,6 +62279,143 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1520984546}
   m_Mesh: {fileID: 4300000, guid: 6fb9cfdef8b5ffc4f9619868c9d00c91, type: 2}
+--- !u!1 &1522243611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1522243612}
+  - component: {fileID: 1522243613}
+  - component: {fileID: 1522243614}
+  m_Layer: 0
+  m_Name: Task Heading
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1522243612
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522243611}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1978601336}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 12, y: -36}
+  m_SizeDelta: {x: 386, y: 24}
+  m_Pivot: {x: 0, y: 1}
+--- !u!222 &1522243613
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522243611}
+  m_CullTransparentMesh: 1
+--- !u!114 &1522243614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522243611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: OPTIONAL TASKS / AUTO REWARDS
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4292794790
+  m_fontColor: {r: 0.65, g: 0.85, b: 0.87, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 15
+  m_fontSizeBase: 15
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 13
+  m_fontSizeMax: 15
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1522558950
 GameObject:
   m_ObjectHideFlags: 0
@@ -60733,6 +62609,7 @@ GameObject:
   - component: {fileID: 1526451013}
   - component: {fileID: 1526451015}
   - component: {fileID: 1526451014}
+  - component: {fileID: 1526451016}
   m_Layer: 0
   m_Name: Block
   m_TagString: Untagged
@@ -60748,9 +62625,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526451012}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.575, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0.9975641, z: 0, w: -0.06975648}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.85, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 856679706}
@@ -60813,7 +62690,29 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526451012}
-  m_Mesh: {fileID: 4300000, guid: 56a265f726888604aaf96391f6d338fc, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 05dec06bd784b4741a8e6c48498be1c2, type: 2}
+--- !u!64 &1526451016
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526451012}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 05dec06bd784b4741a8e6c48498be1c2, type: 2}
 --- !u!1 &1531225241
 GameObject:
   m_ObjectHideFlags: 0
@@ -60864,6 +62763,8 @@ MonoBehaviour:
   resourceType: 0
   blockId: 
   wallMining: 0
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1962766952}
   cracks: {fileID: 0}
 --- !u!64 &1531225244
@@ -60916,7 +62817,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1652108395}
@@ -60989,6 +62890,7 @@ GameObject:
   - component: {fileID: 1534883293}
   - component: {fileID: 1534883295}
   - component: {fileID: 1534883294}
+  - component: {fileID: 1534883296}
   m_Layer: 0
   m_Name: Block
   m_TagString: Untagged
@@ -61004,9 +62906,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534883292}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.575, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0.6293205, z: 0, w: -0.77714586}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.85, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1542357325}
@@ -61069,7 +62971,29 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534883292}
-  m_Mesh: {fileID: 4300000, guid: 56a265f726888604aaf96391f6d338fc, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 3324e328595d779478400aa531f9c3e7, type: 2}
+--- !u!64 &1534883296
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534883292}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 3324e328595d779478400aa531f9c3e7, type: 2}
 --- !u!1 &1539120052
 GameObject:
   m_ObjectHideFlags: 0
@@ -61237,7 +63161,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 5
@@ -61259,7 +63183,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1542357325
 Transform:
   m_ObjectHideFlags: 0
@@ -61473,6 +63397,8 @@ MonoBehaviour:
   resourceType: 3
   blockId: quarry-v1-1-1
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 923140382}
   cracks: {fileID: 445396427}
 --- !u!65 &1544765982
@@ -61540,7 +63466,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 280614276}
@@ -61743,6 +63669,8 @@ MonoBehaviour:
   resourceType: 2
   blockId: quarry-v1-3-2
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 472232701}
   cracks: {fileID: 1327984134}
 --- !u!65 &1552687498
@@ -62358,6 +64286,8 @@ MonoBehaviour:
   resourceType: 2
   blockId: quarry-expansion-1-5-1
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 2042230026}
   cracks: {fileID: 263886309}
 --- !u!65 &1585747471
@@ -62646,6 +64576,8 @@ MonoBehaviour:
   resourceType: 1
   blockId: quarry-v1-1-5
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 494986431}
   cracks: {fileID: 749700236}
 --- !u!65 &1588203457
@@ -64269,6 +66201,7 @@ GameObject:
   - component: {fileID: 1640268849}
   - component: {fileID: 1640268851}
   - component: {fileID: 1640268850}
+  - component: {fileID: 1640268852}
   m_Layer: 0
   m_Name: Block
   m_TagString: Untagged
@@ -64285,8 +66218,8 @@ Transform:
   m_GameObject: {fileID: 1640268848}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.575, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.85, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1874011545}
@@ -64348,7 +66281,29 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1640268848}
-  m_Mesh: {fileID: 4300000, guid: 56a265f726888604aaf96391f6d338fc, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 05dec06bd784b4741a8e6c48498be1c2, type: 2}
+--- !u!64 &1640268852
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640268848}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 05dec06bd784b4741a8e6c48498be1c2, type: 2}
 --- !u!1 &1646935031
 GameObject:
   m_ObjectHideFlags: 0
@@ -64557,7 +66512,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2062632781}
@@ -64778,6 +66733,8 @@ MonoBehaviour:
   resourceType: 0
   blockId: quarry-expansion-1-5-0
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1600410082}
   cracks: {fileID: 190192436}
 --- !u!65 &1652222603
@@ -65052,7 +67009,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2093021752}
@@ -65255,6 +67212,8 @@ MonoBehaviour:
   resourceType: 0
   blockId: quarry-v1-4-4
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 14632804}
   cracks: {fileID: 1714417543}
 --- !u!65 &1670999427
@@ -65541,6 +67500,8 @@ MonoBehaviour:
   resourceType: 2
   blockId: quarry-expansion-1-1-0
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 2070504820}
   cracks: {fileID: 962012526}
 --- !u!65 &1680301902
@@ -65606,6 +67567,7 @@ GameObject:
   - component: {fileID: 1689840941}
   - component: {fileID: 1689840943}
   - component: {fileID: 1689840942}
+  - component: {fileID: 1689840944}
   m_Layer: 0
   m_Name: Block
   m_TagString: Untagged
@@ -65621,9 +67583,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1689840940}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.575, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0.9799247, z: 0, w: 0.19936794}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.85, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 43700376}
@@ -65686,7 +67648,29 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1689840940}
-  m_Mesh: {fileID: 4300000, guid: 56a265f726888604aaf96391f6d338fc, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 5e143ad511ce15f48893f3208baa78dd, type: 2}
+--- !u!64 &1689840944
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689840940}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 5e143ad511ce15f48893f3208baa78dd, type: 2}
 --- !u!1 &1690257223
 GameObject:
   m_ObjectHideFlags: 0
@@ -66055,6 +68039,8 @@ MonoBehaviour:
   resourceType: 4
   blockId: quarry-v1-2-0
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 2052708524}
   cracks: {fileID: 391940652}
 --- !u!65 &1699149199
@@ -66567,6 +68553,8 @@ MonoBehaviour:
   resourceType: 1
   blockId: quarry-expansion-1-0-0
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1837215962}
   cracks: {fileID: 24439389}
 --- !u!65 &1723994263
@@ -66618,7 +68606,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 680336044}
@@ -66708,7 +68696,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 844195854}
@@ -67538,7 +69526,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 585875489}
@@ -67645,6 +69633,7 @@ GameObject:
   - component: {fileID: 1775573285}
   - component: {fileID: 1775573287}
   - component: {fileID: 1775573286}
+  - component: {fileID: 1775573288}
   m_Layer: 0
   m_Name: Block
   m_TagString: Untagged
@@ -67660,9 +69649,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775573284}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.575, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0.8870108, z: 0, w: -0.46174866}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.85, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 821274508}
@@ -67725,7 +69714,29 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775573284}
-  m_Mesh: {fileID: 4300000, guid: 56a265f726888604aaf96391f6d338fc, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 329c255006aa8c54ebae4ac6148d9956, type: 2}
+--- !u!64 &1775573288
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775573284}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 329c255006aa8c54ebae4ac6148d9956, type: 2}
 --- !u!1 &1779433046
 GameObject:
   m_ObjectHideFlags: 0
@@ -67860,6 +69871,7 @@ GameObject:
   - component: {fileID: 1783935364}
   - component: {fileID: 1783935366}
   - component: {fileID: 1783935365}
+  - component: {fileID: 1783935367}
   m_Layer: 0
   m_Name: Block
   m_TagString: Untagged
@@ -67875,9 +69887,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783935363}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.575, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0.9426415, z: 0, w: 0.3338069}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.85, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1741827951}
@@ -67939,7 +69951,29 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783935363}
-  m_Mesh: {fileID: 4300000, guid: 56a265f726888604aaf96391f6d338fc, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 5e143ad511ce15f48893f3208baa78dd, type: 2}
+--- !u!64 &1783935367
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783935363}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 5e143ad511ce15f48893f3208baa78dd, type: 2}
 --- !u!1 &1785723347
 GameObject:
   m_ObjectHideFlags: 0
@@ -68007,6 +70041,8 @@ MonoBehaviour:
   resourceType: 3
   blockId: quarry-expansion-1-4-2
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 280614277}
   cracks: {fileID: 1871594857}
 --- !u!65 &1785723351
@@ -68137,8 +70173,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 22, y: -88}
-  m_SizeDelta: {x: 420, y: 154}
+  m_AnchoredPosition: {x: 22, y: -24}
+  m_SizeDelta: {x: 360, y: 126}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1787668761
 GameObject:
@@ -68598,6 +70634,8 @@ MonoBehaviour:
   resourceType: 5
   blockId: quarry-expansion-1-4-3
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1028465321}
   cracks: {fileID: 655591609}
 --- !u!65 &1814136369
@@ -68649,7 +70687,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.03, z: -0.8}
-  m_LocalScale: {x: 1.6, y: 0.02, z: 0.035}
+  m_LocalScale: {x: 1.6, y: 0.02, z: 0.075}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2021033195}
@@ -68679,7 +70717,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49c5a4786e68f6c4cab152e0c40d7f26, type: 2}
+  - {fileID: 2100000, guid: 2cfafc04e4bf7ce4a95409846ff28761, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -68729,7 +70767,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1818529461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69027,7 +71065,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 131906311}
@@ -69192,7 +71230,7 @@ GameObject:
   - component: {fileID: 1828910012}
   - component: {fileID: 1828910011}
   m_Layer: 0
-  m_Name: Weathered Gold ore (2 HP)
+  m_Name: Natural Boulder quarry-expansion-0-0-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69224,11 +71262,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.56, y: 0.575, z: 0.56}
+  m_Extents: {x: 0.45, y: 0.47, z: 0.45}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Center: {x: 0, y: 0.44, z: 0}
   m_TimeToStationary: 0.1
 --- !u!114 &1828910012
 MonoBehaviour:
@@ -69246,6 +71284,8 @@ MonoBehaviour:
   resourceType: 4
   blockId: quarry-expansion-0-0-2
   wallMining: 1
+  naturalBoulder: 1
+  contactCollider: {fileID: 1411586526}
   rockRenderer: {fileID: 1411586524}
   cracks: {fileID: 1560317276}
 --- !u!65 &1828910013
@@ -69265,10 +71305,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 1.12, y: 1.15, z: 1.12}
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Size: {x: 0.9, y: 0.94, z: 0.9}
+  m_Center: {x: 0, y: 0.44, z: 0}
 --- !u!1 &1837215960
 GameObject:
   m_ObjectHideFlags: 0
@@ -69594,6 +71634,8 @@ MonoBehaviour:
   resourceType: 0
   blockId: 
   wallMining: 0
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 272138000}
   cracks: {fileID: 0}
 --- !u!64 &1848009215
@@ -74641,8 +76683,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 5
-  m_fontSizeBase: 5
+  m_fontSize: 3.3
+  m_fontSizeBase: 3.3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -74795,8 +76837,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858235934}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0.85, z: -0.7}
+  m_LocalRotation: {x: 0.25038, y: 0, z: 0, w: 0.96814764}
+  m_LocalPosition: {x: 0.3, y: 1.15, z: -0.7}
   m_LocalScale: {x: 0.075, y: 0.075, z: 0.18}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -75286,7 +77328,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.03, z: 0.8}
-  m_LocalScale: {x: 1.6, y: 0.02, z: 0.035}
+  m_LocalScale: {x: 1.6, y: 0.02, z: 0.075}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2037873284}
@@ -75316,7 +77358,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49c5a4786e68f6c4cab152e0c40d7f26, type: 2}
+  - {fileID: 2100000, guid: ff2070652b33ca6429ba75e006636ff7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75365,7 +77407,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1878204636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75593,7 +77635,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1878650244
 RectTransform:
   m_ObjectHideFlags: 0
@@ -75742,7 +77784,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1782190842}
@@ -75855,6 +77897,8 @@ MonoBehaviour:
   resourceType: 4
   blockId: quarry-v1-4-2
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 382598170}
   cracks: {fileID: 635123429}
 --- !u!65 &1880757623
@@ -76012,7 +78056,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.8, y: 0.03, z: 0}
-  m_LocalScale: {x: 0.035, y: 0.02, z: 1.6}
+  m_LocalScale: {x: 0.075, y: 0.02, z: 1.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2021033195}
@@ -76042,7 +78086,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49c5a4786e68f6c4cab152e0c40d7f26, type: 2}
+  - {fileID: 2100000, guid: 2cfafc04e4bf7ce4a95409846ff28761, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -76637,6 +78681,7 @@ GameObject:
   - component: {fileID: 1900781681}
   - component: {fileID: 1900781683}
   - component: {fileID: 1900781682}
+  - component: {fileID: 1900781684}
   m_Layer: 0
   m_Name: Block
   m_TagString: Untagged
@@ -76652,9 +78697,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900781680}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.575, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0.81915206, z: 0, w: 0.57357645}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.85, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1339188494}
@@ -76716,7 +78761,29 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900781680}
-  m_Mesh: {fileID: 4300000, guid: 56a265f726888604aaf96391f6d338fc, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 3324e328595d779478400aa531f9c3e7, type: 2}
+--- !u!64 &1900781684
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900781680}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 3324e328595d779478400aa531f9c3e7, type: 2}
 --- !u!1 &1900787181
 GameObject:
   m_ObjectHideFlags: 0
@@ -76945,7 +79012,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1904971674
 Transform:
   m_ObjectHideFlags: 0
@@ -77159,6 +79226,8 @@ MonoBehaviour:
   resourceType: 1
   blockId: quarry-v1-3-1
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 305562111}
   cracks: {fileID: 458252509}
 --- !u!65 &1910284008
@@ -77496,7 +79565,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2086565229}
@@ -77586,7 +79655,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1115013023}
@@ -77749,6 +79818,8 @@ MonoBehaviour:
   resourceType: 1
   blockId: quarry-expansion-1-4-1
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 169767682}
   cracks: {fileID: 1060020155}
 --- !u!65 &1924014215
@@ -77800,7 +79871,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 169767681}
@@ -77965,7 +80036,7 @@ GameObject:
   - component: {fileID: 1928513503}
   - component: {fileID: 1928513502}
   m_Layer: 0
-  m_Name: Weathered Iron ore (2 HP)
+  m_Name: Natural Boulder quarry-expansion-0-0-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77997,11 +80068,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.56, y: 0.575, z: 0.56}
+  m_Extents: {x: 0.45, y: 0.47, z: 0.45}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Center: {x: 0, y: 0.44, z: 0}
   m_TimeToStationary: 0.1
 --- !u!114 &1928513503
 MonoBehaviour:
@@ -78019,6 +80090,8 @@ MonoBehaviour:
   resourceType: 0
   blockId: quarry-expansion-0-0-0
   wallMining: 1
+  naturalBoulder: 1
+  contactCollider: {fileID: 1640268852}
   rockRenderer: {fileID: 1640268850}
   cracks: {fileID: 1874011544}
 --- !u!65 &1928513504
@@ -78038,10 +80111,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 1.12, y: 1.15, z: 1.12}
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Size: {x: 0.9, y: 0.94, z: 0.9}
+  m_Center: {x: 0, y: 0.44, z: 0}
 --- !u!1 &1930140757
 GameObject:
   m_ObjectHideFlags: 0
@@ -78303,7 +80376,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.8, y: 0.03, z: 0}
-  m_LocalScale: {x: 0.035, y: 0.02, z: 1.6}
+  m_LocalScale: {x: 0.075, y: 0.02, z: 1.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1479572566}
@@ -78333,7 +80406,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49c5a4786e68f6c4cab152e0c40d7f26, type: 2}
+  - {fileID: 2100000, guid: 95769e8ba172fd341852d39529f06d0c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78558,7 +80631,7 @@ GameObject:
   - component: {fileID: 1944742493}
   - component: {fileID: 1944742492}
   m_Layer: 0
-  m_Name: Weathered Iron ore (2 HP)
+  m_Name: Natural Boulder quarry-expansion-0-0-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78590,11 +80663,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.56, y: 0.575, z: 0.56}
+  m_Extents: {x: 0.45, y: 0.47, z: 0.45}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Center: {x: 0, y: 0.44, z: 0}
   m_TimeToStationary: 0.1
 --- !u!114 &1944742493
 MonoBehaviour:
@@ -78612,6 +80685,8 @@ MonoBehaviour:
   resourceType: 0
   blockId: quarry-expansion-0-0-3
   wallMining: 1
+  naturalBoulder: 1
+  contactCollider: {fileID: 1783935367}
   rockRenderer: {fileID: 1783935365}
   cracks: {fileID: 1741827950}
 --- !u!65 &1944742494
@@ -78631,10 +80706,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 1.12, y: 1.15, z: 1.12}
-  m_Center: {x: 0, y: 0.575, z: 0}
+  m_Size: {x: 0.9, y: 0.94, z: 0.9}
+  m_Center: {x: 0, y: 0.44, z: 0}
 --- !u!1 &1948010704
 GameObject:
   m_ObjectHideFlags: 0
@@ -78972,6 +81047,8 @@ MonoBehaviour:
   resourceType: 5
   blockId: quarry-expansion-0-3-1
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 118756410}
   cracks: {fileID: 414133823}
 --- !u!65 &1966286476
@@ -79237,7 +81314,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 118756409}
@@ -79350,6 +81427,8 @@ MonoBehaviour:
   resourceType: 3
   blockId: quarry-v1-4-1
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 625879403}
   cracks: {fileID: 1483084788}
 --- !u!65 &1976193945
@@ -79389,6 +81468,99 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.575, z: 0}
   m_TimeToStationary: 0.1
+--- !u!1 &1978601335
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1978601336}
+  - component: {fileID: 1978601339}
+  - component: {fileID: 1978601338}
+  - component: {fileID: 1978601337}
+  m_Layer: 0
+  m_Name: Optional Quarry Tasks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1978601336
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978601335}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 75120298}
+  - {fileID: 1522243612}
+  - {fileID: 1448663951}
+  - {fileID: 374138133}
+  - {fileID: 373889736}
+  m_Father: {fileID: 2078394724}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -24, y: -66}
+  m_SizeDelta: {x: 410, y: 154}
+  m_Pivot: {x: 1, y: 1}
+--- !u!225 &1978601337
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978601335}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
+--- !u!114 &1978601338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978601335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.025, g: 0.045, b: 0.05, a: 0.87}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1978601339
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978601335}
+  m_CullTransparentMesh: 1
 --- !u!1 &1979528519
 GameObject:
   m_ObjectHideFlags: 0
@@ -79757,6 +81929,8 @@ MonoBehaviour:
   resourceType: 5
   blockId: quarry-expansion-0-5-0
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1523913973}
   cracks: {fileID: 860836798}
 --- !u!65 &1983968213
@@ -79847,6 +82021,8 @@ MonoBehaviour:
   resourceType: 4
   blockId: quarry-expansion-0-4-3
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1539120054}
   cracks: {fileID: 1618487253}
 --- !u!65 &1984261570
@@ -80459,6 +82635,143 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010602746}
   m_Mesh: {fileID: 4300000, guid: b7677254e9cb7394489dec2735615f68, type: 2}
+--- !u!1 &2011478527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2011478528}
+  - component: {fileID: 2011478529}
+  - component: {fileID: 2011478530}
+  m_Layer: 0
+  m_Name: Excavation Progress
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2011478528
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011478527}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2078394724}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -24, y: -24}
+  m_SizeDelta: {x: 420, y: 32}
+  m_Pivot: {x: 1, y: 1}
+--- !u!222 &2011478529
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011478527}
+  m_CullTransparentMesh: 1
+--- !u!114 &2011478530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011478527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: EXCAVATION 1  |  78 ROCKS LEFT
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 18
+  m_fontSizeBase: 18
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 4
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2011976452
 GameObject:
   m_ObjectHideFlags: 0
@@ -80476,7 +82789,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2011976453
 Transform:
   m_ObjectHideFlags: 0
@@ -86102,7 +88415,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 916776602}
@@ -86192,7 +88505,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.8, y: 0.03, z: 0}
-  m_LocalScale: {x: 0.035, y: 0.02, z: 1.6}
+  m_LocalScale: {x: 0.075, y: 0.02, z: 1.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2037873284}
@@ -86222,7 +88535,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49c5a4786e68f6c4cab152e0c40d7f26, type: 2}
+  - {fileID: 2100000, guid: ff2070652b33ca6429ba75e006636ff7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86321,6 +88634,8 @@ MonoBehaviour:
   resourceType: 4
   blockId: quarry-expansion-1-3-3
   wallMining: 1
+  naturalBoulder: 0
+  contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1192958710}
   cracks: {fileID: 201059521}
 --- !u!65 &2051832138
@@ -92306,6 +94621,9 @@ RectTransform:
   - {fileID: 1786088777}
   - {fileID: 646529122}
   - {fileID: 1324884539}
+  - {fileID: 2011478528}
+  - {fileID: 1978601336}
+  - {fileID: 534319994}
   m_Father: {fileID: 469102717}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -93081,7 +95399,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 826379403}
@@ -93342,7 +95660,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2141330500
 Transform:
   m_ObjectHideFlags: 0
@@ -95250,6 +97568,7 @@ MonoBehaviour:
   - {fileID: 1688947658}
   reach: 0.95
   contactRadius: 0.12
+  naturalStrikeDistance: 1.1
   cargoLabel: {fileID: 556882552}
   guidanceOwnsInstructions: 1
 --- !u!4 &5924434040717489948
@@ -96499,3 +98818,5 @@ SceneRoots:
   - {fileID: 65412766}
   - {fileID: 1566762112}
   - {fileID: 1663049325}
+  - {fileID: 27076877}
+  - {fileID: 22649682}

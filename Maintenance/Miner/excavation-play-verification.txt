@@ -1,0 +1,12 @@
+PASS Prepared first round with saved cash
+PASS Last standing rock prevents completion
+PASS Actual animated pickaxe contact breaks the natural boulder
+PASS Hit sparkle and Feel break dust triggered
+PASS Break feedback reuses fixed pool without new ore objects
+PASS Carried last ore prevents completion
+PASS Final partial delivery plus exactly one $50 completion bonus
+PASS Completion panel blocks mining and offers next excavation
+PASS Repeated evaluation cannot duplicate bonus
+PASS Completion and bonus persist on disk
+
+PASS Feel emits actual pooled dust particles: 14

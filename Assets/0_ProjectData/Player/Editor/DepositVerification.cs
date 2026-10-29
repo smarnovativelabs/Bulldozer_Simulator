@@ -26,7 +26,7 @@ namespace Bulldozer.Player.Editor
    Check(store.TryCommit(0,70),"Deposit commits cleared cargo and payment in one snapshot");store=new MiningProgressStore(path);Check(store.Current.cargo==0 && store.Current.coins==70,"Deposit survives reload without duplicated cargo");
    File.WriteAllText(path,"broken JSON");store=new MiningProgressStore(path);Check(store.RecoveredBackup && store.Current.cargo==3 && store.Current.coins==40,"Corrupt primary recovers the previous backup");
    Check(store.TryCommit(0,70) && new MiningProgressStore(path).Current.coins==70,"Recovered save can be committed again");
-   string future=Path.Combine(root,"future.json");string futureJson="{\"format\":\"bulldozer-mining\",\"version\":4,\"cargo\":2,\"coins\":999}";File.WriteAllText(future,futureJson);var newer=new MiningProgressStore(future);Check(!newer.TryCommit(0,0) && File.ReadAllText(future)==futureJson,"Future-version save is not overwritten");
+   string future=Path.Combine(root,"future.json");string futureJson="{\"format\":\"bulldozer-mining\",\"version\":6,\"cargo\":2,\"coins\":999}";File.WriteAllText(future,futureJson);var newer=new MiningProgressStore(future);Check(!newer.TryCommit(0,0) && File.ReadAllText(future)==futureJson,"Future-version save is not overwritten");
    string invalid=Path.Combine(root,"invalid.json");File.WriteAllText(invalid,"{}");var bad=new MiningProgressStore(invalid);Check(!bad.TryCommit(0,0) && File.ReadAllText(invalid)=="{}","Unreadable save is preserved");
    string blocked=Path.Combine(root,"blocked");Directory.CreateDirectory(blocked);var failing=new MiningProgressStore(blocked);Check(!failing.TryCommit(0,30) && failing.Current.coins==0 && failing.Current.cargo==0,"Write failure leaves balances unchanged");
    File.WriteAllLines("Maintenance/Miner/save-store-verification.txt",checks);return string.Join("\n",checks);
@@ -66,5 +66,6 @@ namespace Bulldozer.Player.Editor
   }
  }
 }
+
 
 

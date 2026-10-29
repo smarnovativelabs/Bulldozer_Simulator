@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using UnityEngine;
+using Bulldozer.Player.Persistence;
 namespace Bulldozer.Player
 {
     public sealed class MiningProduction : MonoBehaviour
@@ -25,7 +26,8 @@ namespace Bulldozer.Player
         float poll,processing,transfer,inputReady,loadingReady,truckTransfer;
         bool feeding;
         public int TruckCapacity=>2+(equipment?equipment.TrucksCompleted:0)%4;
-        public float ProcessingRemaining=>Mathf.Clamp(secondsPerItem+.65f-processing,0,secondsPerItem);
+        public float ProcessingSeconds=>secondsPerItem*QuarryBalance.ProcessingMultiplier(equipment?equipment.RoundIndex:0);
+        public float ProcessingRemaining=>Mathf.Clamp(ProcessingSeconds+.65f-processing,0,ProcessingSeconds);
         public TruckDelivery ActiveTruck=>activeTruck==0?delivery:secondDelivery;
         TruckDelivery Truck(int index)=>index==0?delivery:secondDelivery;
         void Start()
@@ -50,7 +52,7 @@ namespace Bulldozer.Player
                 if(!feeding){feeding=true;if(effects)effects.Fly(equipment.Snapshot.refineryInput[0],inputStack.position,effects.hopper.position);Refresh();}
                 processing+=Time.deltaTime;
                 // Feed flight precedes the processing countdown.
-                if(processing>=secondsPerItem+.65f&&ProcessOne()){processing=0;feeding=false;}
+                if(processing>=ProcessingSeconds+.65f&&ProcessOne()){processing=0;feeding=false;}
             }
             else {processing=0;feeding=false;}
             if(furnaceLight)furnaceLight.intensity=feeding?2.2f+Mathf.Sin(Time.time*14)*.3f:.3f;
@@ -82,6 +84,7 @@ namespace Bulldozer.Player
         {
             var s=equipment.Snapshot;if(s.refineryInput.Length==0||s.refineryOutput.Length>=100)return false;
             int id=s.refineryInput[0]+6;s.refineryOutput=s.refineryOutput.Append(id).ToArray();s.refineryInput=s.refineryInput.Skip(1).ToArray();
+            OptionalTaskRules.Refined(s);
             if(!equipment.Commit(s))return false;if(effects)effects.Finished(id);return true;
         }
         public bool CollectOutput()
@@ -114,9 +117,10 @@ namespace Bulldozer.Player
             if(complete)
             {
                 bonus=(s.trucksCompleted+1)%3==0;
-                payment=s.truckItems.Sum(item=>MiningResources.Prices[item%6])+(bonus?30:0);
+                payment=QuarryBalance.DeliveryValue(s.truckItems,s.roundIndex)+(bonus?30:0);
                 if(s.coins>int.MaxValue-payment||s.trucksCompleted==int.MaxValue)return false;
                 s.coins+=payment;s.trucksCompleted++;s.truckItems=Array.Empty<int>();
+                OptionalTaskRules.Delivered(s);
             }
             if(!equipment.Commit(s))return false;
             if(effects)effects.Fly(id,loadingStack.position,truck.cargo.position,truck.cargo);
@@ -139,10 +143,11 @@ namespace Bulldozer.Player
             if(!truck||truck.IsBusy||s.truckItems.Length==0||s.items.Length>0||s.backpackItems.Length>0||s.barrowItems.Length>0||s.groundDrops.Length>0||s.refineryInput.Length>0||s.refineryOutput.Length>0||s.loadingQueue.Length>0)return false;
             if(!quarryBlockIds.All(id=>Array.IndexOf(s.depletedBlocks,id)>=0))return false;
             bool bonus=(s.trucksCompleted+1)%3==0;
-            int payment=s.truckItems.Sum(item=>MiningResources.Prices[item%6])+(bonus?30:0);
+            int payment=QuarryBalance.DeliveryValue(s.truckItems,s.roundIndex)+(bonus?30:0);
             if(s.coins>int.MaxValue-payment||s.trucksCompleted==int.MaxValue)return false;
             var loaded=s.truckItems;int capacity=TruckCapacity;
             s.coins+=payment;s.trucksCompleted++;s.truckItems=Array.Empty<int>();
+            OptionalTaskRules.Delivered(s);
             if(!equipment.Commit(s))return false;
             departingItems[activeTruck]=loaded;truck.loadedCount=loaded.Length;truck.orderCapacity=capacity;truck.Dispatch();
             Status("Final delivery +$"+payment+(bonus?" | 3-delivery bonus +$30!":""));
@@ -153,10 +158,10 @@ namespace Bulldozer.Player
         void Refresh()
         {
             var s=equipment.Snapshot;
-            inputLabel.text="REFINERY INPUT\n"+s.refineryInput.Length+" STONES";
+            inputLabel.text="REFINE\n"+s.refineryInput.Length+" RAW";
             outputLabel.text="COLLECT\n"+s.refineryOutput.Length+" READY";
-            truckLabel.text="LOADING PAD\n"+s.loadingQueue.Length+" QUEUED";
-            if(refineryTimer)refineryTimer.text=s.refineryOutput.Length>=100?"OUTPUT FULL":s.refineryInput.Length==0?"ADD STONE":!feeding||processing<.65f?"FEEDING":MiningResources.Names[s.refineryInput[0]].ToUpperInvariant()+"\n"+Mathf.Max(0,secondsPerItem+.65f-processing).ToString("0.0")+"s";
+            truckLabel.text="LOAD\n"+s.loadingQueue.Length+" QUEUED";
+            if(refineryTimer)refineryTimer.text=s.refineryOutput.Length>=100?"OUTPUT FULL":s.refineryInput.Length==0?"ADD STONE":!feeding||processing<.65f?"FEEDING":MiningResources.Names[s.refineryInput[0]].ToUpperInvariant()+"\n"+ProcessingRemaining.ToString("0.0")+"s";
             if(orderLabel)orderLabel.text="DELIVERY BONUS "+(s.trucksCompleted%3)+"/3\n3 DELIVERIES = +$30";
             Stack(inputStack,feeding?s.refineryInput.Skip(1).ToArray():s.refineryInput,ref shownInput);
             Stack(outputStack,s.refineryOutput,ref shownOutput);Stack(loadingStack,s.loadingQueue,ref shownLoading);

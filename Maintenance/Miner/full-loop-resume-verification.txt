@@ -1,0 +1,11 @@
+PASS Resume genuine 59-rock checkpoint
+PASS All 78 rocks broken by animation contact
+PASS Repeated animated strikes exercised
+PASS All ground, carried, refinery and truck inventory settled
+PASS Every mined item refined once: 234
+PASS Every refined item sold once: 234
+PASS Both trucks dispatched through the shared lane
+PASS Truck separation stays safe: 5
+PASS Earned-cash pickaxe, rack and speed purchases completed
+PASS Completion bonus cannot pay twice
+PASS Round complete; ready for restart and next-round verification

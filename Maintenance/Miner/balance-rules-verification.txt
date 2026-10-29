@@ -1,0 +1,26 @@
+PASS First rock does not prematurely pay starter task
+PASS Second rock pays exactly $10
+PASS Starter task funds first pickaxe without a truck delivery
+PASS Task and cash save together
+PASS Reload retains progress and cannot duplicate reward
+PASS All three starter tasks total $45 once
+PASS Repeated reward evaluation is idempotent
+PASS Next round resets optional progress only
+PASS Cash and all upgrades survive round transition
+PASS Incomplete optional tasks do not block next round
+PASS Repeated same ore does not count as variety
+PASS Three different ore types complete variety task
+PASS Easy rocks do not count toward tough task
+PASS Three tough rocks complete tough task
+PASS Version 4 migration preserves purchases and cash without retroactive task rewards
+PASS Future version 6 save remains untouched
+PASS Failed write cannot award cash or task progress
+PASS Task cash overflow cannot wrap balance
+PASS First shift retains normal ore prices
+PASS Rich-vein delivery gets advertised 25 percent premium
+PASS Tough seam gives 20 percent delivery premium
+PASS Quick shift uses 80 percent processing time
+PASS Ten thousand rounds keep health and optional targets bounded
+PASS Pickaxe costs increase across all tiers
+PASS Pickaxe and rack progression extend beyond the first quarry
+ECONOMY base quarry gross=5265; total pickaxe=17160; rack=22620; speed=1285; excludes delivery/round/task bonuses and spending choices

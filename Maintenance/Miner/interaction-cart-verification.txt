@@ -1,0 +1,12 @@
+PASS Attach preserves separate backpack cargo
+PASS Both hands settle onto handles; L=0.0001 R=0.0006
+PASS Cart tray collects forward ore automatically
+PASS Moving and turning grip remains aligned L=0.0002 R=0.0008
+PASS Blocked turn restores position and facing together
+PASS Park restores backpack and keeps cart cargo
+PASS Pickaxe grip recovers after releasing handles
+PASS Parked cart does not collect remotely
+PASS Reattach restores the cart inventory
+PASS Full cart leaves ground ore intact
+PASS Both inventories persist without duplication
+PASS Pickup uses existing 96-item pool

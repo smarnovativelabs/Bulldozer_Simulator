@@ -1,0 +1,7 @@
+Result=Succeeded
+Errors=0
+Warnings=999
+Bytes=1095816748
+Duration=00:36:48.8332346
+Output=C:/Users/Administrator/Desktop/TalhaProjects/Bulldozer_Simulator/Builds/Sprint1/Quarry-Sprint1-Test.apk
+Development APK, debug signing, gameplay scene only. Not a store release.

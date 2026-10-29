@@ -1,0 +1,25 @@
+if(!EditorApplication.isPlaying||string.IsNullOrEmpty(SessionState.GetString("Bulldozer.Mining.TestSavePath","")))throw new System.Exception("Isolated play required");
+var c=UnityEngine.Object.FindFirstObjectByType<Bulldozer.Player.QuarryWheelbarrow>();var p=c.player;var e=c.equipment;var a=p.visual.GetComponent<Bulldozer.Player.MinerAnimator>();
+p.autoMine=false;p.CancelMining();p.touchControls.Move=Vector2.zero;
+System.Action<Vector3> place=pos=>{var cc=p.GetComponent<CharacterController>();cc.enabled=false;p.transform.position=pos;cc.enabled=true;Physics.SyncTransforms();};
+place(new Vector3(-3,.03f,-3));p.visual.rotation=Quaternion.identity;c.transform.position=new Vector3(-3,.05f,-1.95f);Physics.SyncTransforms();
+var s=e.Snapshot;s.items=new[]{0,1};s.barrowItems=System.Array.Empty<int>();s.groundDrops=System.Array.Empty<Bulldozer.Player.Persistence.GroundOreState>();s.wheelbarrowUnlocked=true;e.Commit(s);e.drops.Sync(s.groundDrops,Vector3.zero,false);c.Interact();
+var report=new System.Collections.Generic.List<string>();System.Action<bool,string> check=(ok,msg)=>report.Add((ok?"PASS ":"FAIL ")+msg);
+check(c.Pushing&&e.CargoCount==0&&e.Snapshot.backpackItems.Length==2,"Attach preserves separate backpack cargo");
+int phase=0,start=Time.frameCount;float maxLeft=0,maxRight=0;GameObject obstacle=null;Vector3 safePos=Vector3.zero;Quaternion safeRot=Quaternion.identity;
+EditorApplication.isPaused=true;Time.captureDeltaTime=1f/30;EditorApplication.CallbackFunction tick=null;
+tick=()=>{if(!EditorApplication.isPlaying){EditorApplication.update-=tick;return;}int f=Time.frameCount-start;
+ if(phase==0&&f>=35){check(c.LeftGripError<.025f&&c.RightGripError<.025f,"Both hands settle onto handles; L="+c.LeftGripError.ToString("F4")+" R="+c.RightGripError.ToString("F4"));Bulldozer.Player.Editor.HandMiningPolish.Capture("interaction-cart-grip",true);
+ var next=e.Snapshot;next.groundDrops=new[]{new Bulldozer.Player.Persistence.GroundOreState{id="interaction-cart-ore",item=2,position=c.loadRoot.position+Vector3.forward*.45f}};next.groundDrops[0].position.y=.13f;e.Commit(next);e.drops.Sync(next.groundDrops,Vector3.zero,false);phase=1;}
+ if(phase==1&&f>=65){check(e.CargoCount==1&&e.Snapshot.groundDrops.Length==0,"Cart tray collects forward ore automatically");p.touchControls.Move=Vector2.right*.35f;phase=2;}
+ if(phase==2){maxLeft=Mathf.Max(maxLeft,c.LeftGripError);maxRight=Mathf.Max(maxRight,c.RightGripError);}
+ if(phase==2&&f>=100){p.touchControls.Move=Vector2.zero;phase=3;}
+ if(phase==3&&f>=125){check(maxLeft<.04f&&maxRight<.04f,"Moving and turning grip remains aligned L="+maxLeft.ToString("F4")+" R="+maxRight.ToString("F4"));safePos=p.transform.position;safeRot=p.visual.rotation;
+ obstacle=GameObject.CreatePrimitive(PrimitiveType.Cube);obstacle.name="Temporary cart turn blocker";obstacle.transform.position=p.transform.position+Vector3.back*1.05f+Vector3.up*.55f;obstacle.transform.localScale=new Vector3(.6f,.7f,.6f);Physics.SyncTransforms();p.visual.rotation=Quaternion.LookRotation(Vector3.back);phase=4;}
+ if(phase==4&&f>=130){check(Vector3.Distance(p.transform.position,safePos)<.05f&&Quaternion.Angle(p.visual.rotation,safeRot)<1,"Blocked turn restores position and facing together");UnityEngine.Object.DestroyImmediate(obstacle);c.Interact();phase=5;}
+ if(phase==5&&f>=160){check(!c.Pushing&&e.CargoCount==2&&e.Snapshot.barrowItems.Length==1,"Park restores backpack and keeps cart cargo");check(e.PickaxeVisible&&a.LastGripError<.002f,"Pickaxe grip recovers after releasing handles");
+ var next=e.Snapshot;next.groundDrops=new[]{new Bulldozer.Player.Persistence.GroundOreState{id="parked-ore",item=0,position=p.transform.position+p.visual.forward*1.9f}};next.groundDrops[0].position.y=.13f;e.Commit(next);e.drops.Sync(next.groundDrops,Vector3.zero,false);phase=6;}
+ if(phase==6&&f>=190){check(e.CargoCount==2&&e.Snapshot.groundDrops.Length==1,"Parked cart does not collect remotely");c.Interact();phase=7;}
+ if(phase==7&&f>=220){check(c.Pushing&&e.CargoCount>=1&&e.Snapshot.backpackItems.Length==2,"Reattach restores the cart inventory");var next=e.Snapshot;next.items=Enumerable.Repeat(0,12).ToArray();next.groundDrops=new[]{new Bulldozer.Player.Persistence.GroundOreState{id="full-cart-ore",item=0,position=c.transform.position+Vector3.up*.08f}};e.Commit(next);e.drops.Sync(next.groundDrops,Vector3.zero,false);phase=8;}
+ if(phase==8&&f>=250){check(e.CargoCount==12&&e.Snapshot.groundDrops.Length==1,"Full cart leaves ground ore intact");var disk=new Bulldozer.Player.Persistence.MiningProgressStore(e.SavePath).Current;check(disk.items.Length==12&&disk.backpackItems.Length==2,"Both inventories persist without duplication");check(e.drops.transform.Cast<Transform>().Count(t=>t.name.StartsWith("Pooled Ore "))==96,"Pickup uses existing 96-item pool");System.IO.File.WriteAllLines("Maintenance/Miner/interaction-cart-verification.txt",report);EditorApplication.update-=tick;Time.captureDeltaTime=0;return;}
+ EditorApplication.Step();};EditorApplication.update+=tick;return "Testing cart attach, turn, pickup, park, capacity and save";

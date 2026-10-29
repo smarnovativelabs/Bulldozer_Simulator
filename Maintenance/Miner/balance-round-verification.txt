@@ -1,0 +1,12 @@
+PASS Full restart retains purchased pickaxe, cash and all claimed tasks
+PASS Restart renders completed tasks without paying again
+PASS Cleared first round can finish
+PASS Same-scene next round preserves upgrades and resets task progress
+PASS Round two displays rich-vein condition and new objective
+PASS Round completion works with every optional task skipped
+PASS Third round keeps prior cash and upgrade without task payout
+PASS Third round changes work condition and mining objective
+PASS Quick-shift production uses reduced processing duration
+PASS Real quick-shift processing updates saved optional progress
+PASS Quick-shift cycle duration includes feed + faster processing: 1.86s
+PASS Repeated rounds retain one task HUD presenter

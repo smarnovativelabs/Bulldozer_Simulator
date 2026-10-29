@@ -45,6 +45,9 @@ namespace Bulldozer.Player
         {
             if(Time.unscaledTime>=evaluateAt){evaluateAt=Time.unscaledTime+.4f;RefreshObjective();}
             float age=Time.unscaledTime-changedAt,t=Mathf.Clamp01(age/.35f),ease=1-Mathf.Pow(1-t,3);
+            bool expanded=age<5f;
+            message.gameObject.SetActive(expanded);
+            dialog.sizeDelta=new Vector2(dialog.sizeDelta.x,expanded?126:54);
             dialog.anchoredPosition=restingPosition+Vector2.up*(1-ease)*28;dialogGroup.alpha=ease;
             dialog.localScale=Vector3.one*(1+Mathf.Sin(t*Mathf.PI)*.035f);
             message.maxVisibleCharacters=Mathf.CeilToInt(Mathf.Max(0,age-.12f)*65);
@@ -58,7 +61,10 @@ namespace Bulldozer.Player
             for(int i=0;i<rocks.Length;i++)if(rocks[i]&&rockObstacles[i])rockObstacles[i].enabled=!rocks[i].Depleted;
             var s=equipment.Snapshot;int raw=0,refined=0;foreach(int id in s.items){if(MiningResources.Refined(id))refined++;else raw++;}
             Goal goal;Vector3 target;string title,body;int step;
-            if(refined>0){goal=Goal.Load;target=production.sellZone.transform.position;title="SHIP IT!";body="Walk onto the loading pad. Your stone will stack here, then load onto a truck automatically.";step=4;}
+            if(s.roundBonusClaimed){goal=Goal.Finished;target=player.transform.position;title="EXCAVATION COMPLETE";body="Choose NEXT EXCAVATION to continue. Your cash and upgrades carry forward.";step=5;}
+            else if(upgrades&&s.damageLevel==0&&s.coins>=equipment.DamageCost&&!equipment.UsingWheelbarrow){goal=Goal.Upgrade;target=upgrades.zone.transform.position;title="YOUR FIRST PICKAXE UPGRADE";body="You have enough cash! Visit the workbench: $"+equipment.DamageCost+" doubles your pickaxe damage. Your loose stone stays here.";step=5;}
+            else if(refined>0){goal=Goal.Load;target=production.sellZone.transform.position;title="SHIP IT!";body="Walk onto the loading pad. Your stone will stack here, then load onto a truck automatically.";step=4;}
+            else if(s.roundIndex==0&&s.damageLevel==0&&s.taskRocks<2&&!equipment.IsFull&&s.groundDrops.Length==0&&s.depletedBlocks.Length<rocks.Length){goal=Goal.Mine;target=NearestRock();if(target==Vector3.positiveInfinity)target=player.transform.position;title="STARTER BONUS: BREAK 2 ROCKS";body="Break two rocks to earn $10 for your first pickaxe upgrade. Collect loose stone as you go.";step=1;}
             else if(raw>0&&(equipment.IsFull||s.groundDrops.Length==0)){goal=Goal.Refine;target=production.inputZone.transform.position;title="FEED THE REFINERY";body="Stand inside the input outline. Put your stones down and watch them feed into the machine.";step=2;}
             else if(s.groundDrops.Length>0&&!equipment.IsFull){goal=Goal.PickUp;target=s.groundDrops[0].position;foreach(var drop in s.groundDrops)if((drop.position-player.transform.position).sqrMagnitude<(target-player.transform.position).sqrMagnitude)target=drop.position;title="PICK UP YOUR STONES";body="Walk over the loose stones to collect them. Let's fill that rack!";step=1;}
             else if(raw>0){goal=Goal.Refine;target=production.inputZone.transform.position;title="FEED THE REFINERY";body="Follow the arrows to the input pad. Unloading happens automatically.";step=2;}
@@ -75,12 +81,11 @@ namespace Bulldozer.Player
             }
             if(equipment.UsingWheelbarrow&&(goal==Goal.Mine||goal==Goal.Upgrade)){title="PARK TO USE YOUR PICKAXE";body="Tap PARK CART to leave the wheelbarrow. Its cargo stays safe while you mine on foot.";target=player.transform.position;}
             bool changed=!initialized||goal!=CurrentGoal||body!=currentBody;
-            if(initialized&&((goal==Goal.PickUp&&CurrentGoal==Goal.Mine)||(goal==Goal.Refine&&CurrentGoal==Goal.PickUp)||(goal==Goal.Collect&&CurrentGoal==Goal.Refine)||(goal==Goal.Mine&&CurrentGoal==Goal.Load)))Celebrate("NICE WORK! NEXT STEP");
             if(s.trucksCompleted>lastDeliveries)Celebrate("DELIVERY PAID!  CASH +");
             if(s.damageLevel+s.capacityLevel+s.speedLevel>lastLevel)Celebrate("UPGRADE COMPLETE!");
             lastDeliveries=s.trucksCompleted;lastLevel=s.damageLevel+s.capacityLevel+s.speedLevel;
             CurrentGoal=goal;Destination=target;currentBody=body;
-            tint=goal==Goal.Load||goal==Goal.Upgrade?new Color(.45f,1,.6f):new Color(1,.77f,.2f);
+            tint=goal==Goal.Load||goal==Goal.Upgrade?new Color(.5f,.8f,.66f,.72f):new Color(.93f,.7f,.32f,.72f);
             if(changed){changedAt=Time.unscaledTime;heading.text=title;message.text=body;stepLabel.text="QUARRY GUIDE  /  "+step+" OF 5";progress.fillAmount=step/5f;accent.color=progress.color=tint;initialized=true;}
             CalculateRoute();
         }
@@ -96,7 +101,7 @@ namespace Bulldozer.Player
                 for(int side=0;side<4;side++)
                 {
                     Vector3 dir=side==0?Vector3.back:side==1?Vector3.left:side==2?Vector3.right:Vector3.forward;
-                    Vector3 candidate=b.center+Vector3.Scale(dir,b.extents)+dir*.65f;candidate.y=0;
+                    Vector3 candidate=b.center+Vector3.Scale(dir,b.extents)+dir*(rock.naturalBoulder?.45f:.65f);candidate.y=0;
                     float distance=(candidate-player.transform.position).sqrMagnitude;if(distance>=best)continue;
                     if(NavMesh.SamplePosition(candidate,out var hit,.35f,filter)&&Mathf.Abs(hit.position.y-player.transform.position.y)<.8f){best=distance;chosen=hit.position;}
                 }
@@ -114,15 +119,15 @@ namespace Bulldozer.Player
         void DrawPath()
         {
             vertices.Clear();colors.Clear();indices.Clear();
-            if(HasRoute&&!player.InputBlocked)
+            if(HasRoute&&!player.InputBlocked&&!player.IsMining)
             {
                 float offset=.55f+Mathf.Repeat(Time.unscaledTime*.8f,.7f);int arrows=0;
-                for(int i=1;i<count&&arrows<48;i++)
+                for(int i=1;i<count&&arrows<12;i++)
                 {
                     Vector3 a=corners[i-1],b=corners[i],delta=b-a;delta.y=0;float length=delta.magnitude;if(length<.01f)continue;Vector3 forward=delta/length,right=Vector3.Cross(Vector3.up,forward);
-                    while(offset<length&&arrows<48){Vector3 c=a+forward*offset;c.y=.07f;Arrow(c,forward,right,tint);offset+=.7f;arrows++;}offset-=length;
+                    while(offset<length&&arrows<12){Vector3 c=a+forward*offset;c.y=.07f;Arrow(c,forward,right,tint);offset+=.9f;arrows++;}offset-=length;
                 }
-                float radius=.48f+Mathf.Sin(Time.unscaledTime*4)*.06f;
+                float radius=.36f+Mathf.Sin(Time.unscaledTime*3)*.025f;
                 for(int i=0;i<32;i++){float a=i*Mathf.PI/16,b=(i+1)*Mathf.PI/16;Vector3 c=new Vector3(Destination.x,.075f,Destination.z);Vector3 d1=new Vector3(Mathf.Cos(a),0,Mathf.Sin(a)),d2=new Vector3(Mathf.Cos(b),0,Mathf.Sin(b));Quad(c+d1*radius,c+d2*radius,c+d2*(radius+.07f),c+d1*(radius+.07f),tint);}
             }
             mesh.Clear();mesh.SetVertices(vertices);mesh.SetColors(colors);mesh.SetTriangles(indices,0);mesh.RecalculateBounds();
@@ -130,8 +135,8 @@ namespace Bulldozer.Player
         void Arrow(Vector3 c,Vector3 f,Vector3 r,Color color)
         {
             // Two quads form one chevron; all arrows and the destination ring share a draw call.
-            Quad(c-r*.22f-f*.18f,c-r*.22f-f*.07f,c+f*.16f,c+f*.05f,color);
-            Quad(c+f*.05f,c+f*.16f,c+r*.22f-f*.07f,c+r*.22f-f*.18f,color);
+            Quad(c-r*.16f-f*.14f,c-r*.16f-f*.06f,c+f*.12f,c+f*.04f,color);
+            Quad(c+f*.04f,c+f*.12f,c+r*.16f-f*.06f,c+r*.16f-f*.14f,color);
         }
         void Quad(Vector3 a,Vector3 b,Vector3 c,Vector3 d,Color color)
         {
@@ -142,6 +147,7 @@ namespace Bulldozer.Player
         void OnDestroy(){if(mesh)Destroy(mesh);}
     }
 }
+
 
 
 

@@ -1,0 +1,2 @@
+PASS Final partial truck pays sale, milestone and optional reward together
+PASS Partial delivery cannot duplicate optional cash and persists once

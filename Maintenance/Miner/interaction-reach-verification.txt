@@ -1,0 +1,16 @@
+PASS quarry-expansion-0-0-0 distance=1.09 hits=1 time=0.420 grip=0.0008 toolTwist=0.00
+PASS quarry-expansion-0-0-0 distance=1.24 hits=0 time=-1.000 grip=0.0010 toolTwist=0.00
+PASS quarry-expansion-0-0-0 distance=1.39 hits=0 time=-1.000 grip=0.0010 toolTwist=0.00
+PASS quarry-expansion-0-0-0 distance=1.54 hits=0 time=-1.000 grip=0.0010 toolTwist=0.00
+PASS quarry-expansion-0-0-1 distance=1.09 hits=1 time=0.420 grip=0.0008 toolTwist=0.00
+PASS quarry-expansion-0-0-1 distance=1.24 hits=0 time=-1.000 grip=0.0010 toolTwist=0.00
+PASS quarry-expansion-0-0-1 distance=1.39 hits=0 time=-1.000 grip=0.0010 toolTwist=0.00
+PASS quarry-expansion-0-0-1 distance=1.54 hits=0 time=-1.000 grip=0.0010 toolTwist=0.00
+PASS quarry-expansion-0-0-2 distance=1.09 hits=1 time=0.420 grip=0.0008 toolTwist=0.00
+PASS quarry-expansion-0-0-2 distance=1.24 hits=0 time=-1.000 grip=0.0010 toolTwist=0.00
+PASS quarry-expansion-0-0-2 distance=1.39 hits=0 time=-1.000 grip=0.0010 toolTwist=0.00
+PASS quarry-expansion-0-0-2 distance=1.54 hits=0 time=-1.000 grip=0.0010 toolTwist=0.00
+PASS quarry-expansion-0-0-3 distance=1.09 hits=1 time=0.420 grip=0.0008 toolTwist=0.00
+PASS quarry-expansion-0-0-3 distance=1.24 hits=0 time=-1.000 grip=0.0010 toolTwist=0.00
+PASS quarry-expansion-0-0-3 distance=1.39 hits=0 time=-1.000 grip=0.0010 toolTwist=0.00
+PASS quarry-expansion-0-0-3 distance=1.54 hits=0 time=-1.000 grip=0.0010 toolTwist=0.00

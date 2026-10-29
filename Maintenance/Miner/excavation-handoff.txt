@@ -1,0 +1,50 @@
+REPEATABLE EXCAVATIONS AND NATURAL ROCK PILOT - 29 OCTOBER 2026
+
+Implemented in the existing 1_Gameplay scene; no new scenes, maps or story content.
+
+Environment:
+- 12 natural boulders in the first three rows of the west ore bed. Four shared meshes, 168 triangles each, existing shared stone atlas material, no per-rock material instances.
+- Corrected atlas UVs, cap winding and removed square-block mineral decorations on the pilot rocks.
+- Natural quarry-bank backdrop: one combined 3,192-triangle mesh / one renderer / existing material.
+- Ground and mineral colors toned down for a less saturated quarry palette.
+- The remaining 66 rocks retain their existing forms; this is the requested small pilot section, not a complete quarry art replacement.
+
+Round loop:
+- HUD displays excavation number and rocks remaining.
+- Completion requires every registered rock depleted AND all loose ore, backpack/cart inventory, refinery queues, loading pad and truck inventory settled.
+- Existing last-partial-truck dispatch remains supported.
+- Bonus is $50 for excavation 1, +$10 per following excavation, capped at $150.
+- Bonus cash and claimed flag commit together. Reopening the app cannot award it twice.
+- Next Excavation commits the next index and cleared depletion state before fading/reloading the SAME scene. Double clicks cannot skip rounds.
+- Cash, damage/capacity/speed upgrades, delivery milestones and cart ownership remain. The empty cart returns parked at its dock and the player starts on foot.
+- Fixed safe spawn positions are reused. Later rounds vary bounded rock durability; natural boulders vary their visual yaw. No unlimited health scaling or runtime geometry generation.
+- Version 3 saves migrate to version 4 without losing progress. Future versions remain protected from overwrite.
+
+Effects:
+- DOTween reusable subtle rock impact punch and cargo-label pickup pulse; linked/killed with their scene owners.
+- DOTween completion-panel fade and fade-out/fade-in between excavations.
+- Feel MMF_Player controls the existing pooled break dust and completion title feedback; initialized explicitly. Two players are reused, no per-hit feedback object instantiation.
+- Existing sparkle, chip and fracture pools retained. No rigidbody debris added.
+
+Validation:
+- excavation-store-verification.txt: 25 passed migration/transaction/buffer/overflow/restart/difficulty checks.
+- excavation-play-verification.txt: 11 passed checks, including actual animated pickaxe contact on the natural boulder, real dust emission (14 particles), final partial delivery, $50 bonus and completion UI.
+- excavation-next-verification.txt: 8 passed checks including application Play-session restart, next-button double click and actual same-scene reload with all 78 rocks restored.
+- excavation-repeat-verification.txt: 6 passed checks for second completion (+$60) and third excavation, persistent upgrades, stable rock/Feel counts and controls.
+- Normal user save was isolated from all test data.
+- Editor console had 0 runtime errors during these checks.
+- Sampled gameplay view: 241 batches / 20 SetPass calls. This is an Editor observation, not device profiling and not a controlled before/after comparison.
+- One existing baked lightmap retained. Trucks remain 4,400 triangles each.
+
+Visual evidence:
+- natural-section-preview.png (pilot close-up)
+- excavation-complete.png (real completion UI)
+- excavation-round-three.png (actual gameplay camera, round 3 and retained cash)
+
+No APK was rebuilt in this task. Builds/Sprint1/Quarry-Sprint1-Test.apk is the earlier finite-quarry build, not this update. Device touch/performance validation remains pending.
+
+Primary documentation consulted:
+https://dotween.demigiant.com/documentation.php
+https://feel-docs.moremountains.com/mmf-player.html
+
+Final verification: 4 additional checks passed for round-three restart, fade/input restoration, retained upgrades/cart, and the 78-rock pool. Existing 10 save-integrity checks also passed after the final code changes.

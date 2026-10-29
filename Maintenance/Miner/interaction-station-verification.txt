@@ -1,0 +1,3 @@
+PASS Cart deposits raw ore through refinery trigger
+PASS Cart collects finished output through trigger
+PASS Cart unloads ingot through truck loading trigger

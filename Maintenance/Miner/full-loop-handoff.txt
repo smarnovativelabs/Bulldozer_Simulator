@@ -1,0 +1,30 @@
+Full gameplay loop verification - 2026-10-29
+
+Outcome: complete loop and resume checks passed. No player build generated.
+Runtime fix: completed-round guidance previously kept suggesting an upgrade while the completion modal blocked interaction. QuarryGuidance now prioritizes EXCAVATION COMPLETE / NEXT EXCAVATION, clears its route, and resumes normal guidance after advancing. Both states verified in Play mode.
+
+Full fresh-save run:
+78 rocks depleted through 185 successful animated pickaxe contacts (including the natural-rock pilot).
+234 actual ore drops picked up, processed using the refinery timer, and transferred through loading triggers.
+68 paid deliveries; final below-capacity delivery dispatched automatically. All inventory buffers empty at completion.
+Both trucks reused the shared lane, minimum observed separation 5 units.
+Earned starter cash purchased pickaxe level 1; delivery cash purchased rack and speed level 1.
+Ledger: ore $5265 + 22 delivery bonuses $660 + optional rewards $45 + round bonus $50 - upgrades $45 = $5975.
+Repeated completion cannot pay the bonus twice.
+
+Restart and next round:
+12 checks passed: exact saved cash/upgrades/claims, completion modal, double next-click protection, same-scene transition, 78 restored rocks and colliders, task reset, control return, durable round index, and actual natural-rock mining in round two.
+7 interruption checks passed using a captured real 59-rock checkpoint: cargo, refinery input, partial truck load, cash/upgrades and claims restored. Pending refinery items finished once.
+Remaining 19 rocks replayed from that checkpoint. Corrected delivery observer counted exactly 234 cumulative items sold, with identical $5975 completion balance (11 PASS checks).
+10 isolated store tests passed: save/reload, corruption backup recovery, future/unreadable file preservation and failed-write balance integrity.
+2 focused guidance regressions passed after the runtime fix.
+Final Console query: zero errors/exceptions.
+
+Test harness note:
+The first run's observer reported 237 sold because it sometimes read the older departing truck when both trucks were busy. The production ledger remained correct. Observer fixed to count each truck's transition into Loading; replay from the genuine checkpoint verified 234. Initial evidence retained in full-loop-verification.txt with explanation.
+
+Scope and budgets:
+Automated Editor Play-mode testing; player positioned near rocks/stations to shorten travel. Hits, pickup detection, timers, station transfers and truck movement used normal runtime code. Not a manual navigation/mobile touch/device performance certification.
+Truck: 4400 triangles, one shared material, 8 reused cargo slots each. Ore pool remains 96 objects. Sample Editor rendering: 49 batches / 14 SetPass (not device FPS).
+Isolated saves only; original user save untouched. Normal save routing/preferences restored and Editor stopped.
+Evidence: full-loop-resume-verification.txt, full-loop-restart-verification.txt, full-loop-interruption-verification.txt, full-loop-guidance-verification.txt, save-store-verification.txt, full-loop-budgets.txt, full-loop-complete.png.

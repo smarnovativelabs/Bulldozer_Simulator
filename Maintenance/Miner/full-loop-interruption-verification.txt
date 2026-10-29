@@ -1,0 +1,7 @@
+PASS Interrupted-session cash and upgrades restored exactly
+PASS Broken rocks and optional claims survive interruption
+PASS Every in-flight resource survives interruption, including refinery input and partial truck cargo
+PASS Partial truck cargo restored without duplicate sale
+PASS Restored refinery finishes with no ore loss or duplication
+PASS Only pending input earns new refining progress
+PASS Resume does not repay previously claimed rewards

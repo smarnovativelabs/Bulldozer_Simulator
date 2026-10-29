@@ -2,6 +2,7 @@ using UnityEngine;
 using Bulldozer.Player.Persistence;
 namespace Bulldozer.Player
 {
+    [DefaultExecutionOrder(250)]
     public sealed class OreDropSystem : MonoBehaviour
     {
         public const int PoolSize=96;
@@ -21,6 +22,9 @@ namespace Bulldozer.Player
         bool instanced;
         readonly Collider[] overlaps=new Collider[PoolSize];
         float pickupTimer;
+        Vector3 previousPickup;
+        bool hasPickupSample;
+        public void ResetPickupSweep(){hasPickupSample=false;pickupTimer=0;}
         public int ActiveCount {get;private set;}
         void Awake()
         {
@@ -34,7 +38,14 @@ namespace Bulldozer.Player
                 slots[i]=new Slot{root=go.transform,visual=v.transform,mesh=v.GetComponent<MeshFilter>(),renderer=r,trigger=trigger};go.SetActive(false);
             }
         }
-        void Start(){Sync(equipment.Snapshot.groundDrops,Vector3.zero,false);}
+        MoreMountains.Feedbacks.MMF_Player breakFeedback;
+        void Start()
+        {
+            Sync(equipment.Snapshot.groundDrops,Vector3.zero,false);
+            if(dust){var main=dust.main;main.startSize=new ParticleSystem.MinMaxCurve(.675f,1.275f);main.startLifetime=new ParticleSystem.MinMaxCurve(.55f,.9f);main.startSpeed=.65f;main.startColor=new Color(.84f,.78f,.65f,.8f);dust.transform.rotation=Quaternion.LookRotation(Vector3.up);var shape=dust.shape;shape.enabled=true;shape.shapeType=ParticleSystemShapeType.Cone;shape.angle=35;shape.radius=.18f;
+                breakFeedback=gameObject.AddComponent<MoreMountains.Feedbacks.MMF_Player>();
+                breakFeedback.AddFeedback(new MoreMountains.Feedbacks.MMF_Particles{BoundParticleSystem=dust,Mode=MoreMountains.Feedbacks.MMF_Particles.Modes.Emit,EmitCount=14,MoveToPosition=true,StopSystemOnInit=false,DeclaredDuration=.1f});breakFeedback.Initialization();}
+        }
         public void Sync(GroundOreState[] state,Vector3 origin,bool scatter)
         {
             ActiveCount=state.Length;
@@ -76,15 +87,7 @@ namespace Bulldozer.Player
                 }
             }
             if(dust&&broken)DustBursts++;
-            if(dust&&broken)for(int i=0;i<14;i++)
-            {
-                var emit=new ParticleSystem.EmitParams();
-                emit.position=point+Random.insideUnitSphere*.25f;
-                emit.velocity=normal*Random.Range(.25f,.65f)+Vector3.up*Random.Range(.3f,.7f)+Random.insideUnitSphere*.35f;
-                emit.startColor=new Color(.84f,.78f,.65f,.8f);
-                emit.startSize=Random.Range(.675f,1.275f);
-                emit.startLifetime=Random.Range(.55f,.9f);dust.Emit(emit,1);
-            }
+            if(dust&&broken&&breakFeedback)breakFeedback.PlayFeedbacks(point);
             if(chips)for(int i=0;i<(broken?14:8);i++)
             {
                 var emit=new ParticleSystem.EmitParams();
@@ -105,16 +108,24 @@ namespace Bulldozer.Player
                 slot.visual.localRotation=Quaternion.Euler(slot.age*80,slot.age*135,slot.age*30);
                 if(slot.age>=1)slot.trigger.enabled=true;
             }
-            pickupTimer-=Time.deltaTime;if(pickupTimer>0||!player||player.InputBlocked||equipment.IsFull)return;pickupTimer=.12f;
-            // Query the pickup trigger volume without dynamic rigidbodies or per-item Update callbacks.
+        }
+        void CollectNearby()
+        {
+            if(!player)return;
+            // Run after the cart has followed the player. Sweep between samples so turns and
+            // low frame rates cannot skip a ground pickup. Attach/recall resets the sweep.
             Vector3 pickup=equipment.UsingWheelbarrow&&carrierPickup?carrierPickup.position:player.transform.position;
             pickup.y=player.transform.position.y+.18f;
-            int n=Physics.OverlapSphereNonAlloc(pickup,equipment.UsingWheelbarrow?.85f:pickupRadius,overlaps,~0,QueryTriggerInteraction.Collide);
+            if(!hasPickupSample||player.InputBlocked||equipment.IsFull||(pickup-previousPickup).sqrMagnitude>4f){previousPickup=pickup;hasPickupSample=true;}
+            pickupTimer-=Time.deltaTime;if(player.InputBlocked||equipment.IsFull||pickupTimer>0)return;pickupTimer=.12f;
+            int n=Physics.OverlapCapsuleNonAlloc(previousPickup,pickup,equipment.UsingWheelbarrow?.75f:pickupRadius,overlaps,~0,QueryTriggerInteraction.Collide);
+            previousPickup=pickup;
             for(int i=0;i<n;i++)foreach(var slot in slots)
                 if(slot.id!=null&&slot.age>=1&&overlaps[i]==slot.trigger){equipment.TryCollectDrop(slot.id,slot.visual.position);return;}
         }
         void LateUpdate()
         {
+            CollectNearby();
             if(!instanced)return;
             System.Array.Clear(instanceCounts,0,6);
             foreach(var slot in slots)if(slot.id!=null)instances[slot.item][instanceCounts[slot.item]++]=slot.visual.localToWorldMatrix;

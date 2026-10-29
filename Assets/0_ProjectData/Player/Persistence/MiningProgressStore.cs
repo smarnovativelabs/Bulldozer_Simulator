@@ -18,6 +18,9 @@ namespace Bulldozer.Player.Persistence
         public int version;
         public int cargo,coins,damageLevel,capacityLevel;
         public int speedLevel;
+        public int roundIndex;
+        public bool roundBonusClaimed;
+        public int taskRocks,taskDense,taskOreMask,taskRefined,taskDeliveries,taskClaimedMask;
         public int[] items=new int[0],refineryInput=new int[0],refineryOutput=new int[0],truckItems=new int[0];
         public string[] depletedBlocks=new string[0];
         public GroundOreState[] groundDrops=new GroundOreState[0];
@@ -28,7 +31,7 @@ namespace Bulldozer.Player.Persistence
         public Vector3 barrowPosition;
         public float refiningSeconds;
         public MiningSnapshot Copy()=>JsonUtility.FromJson<MiningSnapshot>(JsonUtility.ToJson(this));
-        public static MiningSnapshot Create(int cargo,int coins)=>new MiningSnapshot{format="bulldozer-mining",version=3,cargo=cargo,coins=coins,items=new int[Mathf.Max(0,cargo)]};
+        public static MiningSnapshot Create(int cargo,int coins)=>new MiningSnapshot{format="bulldozer-mining",version=5,cargo=cargo,coins=coins,items=new int[Mathf.Max(0,cargo)]};
     }
     public sealed class MiningProgressStore
     {
@@ -58,7 +61,9 @@ namespace Bulldozer.Player.Persistence
         }
         static bool Valid(MiningSnapshot s)
         {
-            return s!=null && s.format=="bulldozer-mining" && s.version==3 && s.cargo>=0 && s.cargo<=100000 && s.coins>=0
+            return s!=null && s.format=="bulldozer-mining" && s.version==5 && s.roundIndex>=0 && s.cargo>=0 && s.cargo<=100000 && s.coins>=0
+                && s.taskRocks>=0&&s.taskRocks<=1000&&s.taskDense>=0&&s.taskDense<=1000&&s.taskOreMask>=0&&s.taskOreMask<=63
+                && s.taskRefined>=0&&s.taskRefined<=1000&&s.taskDeliveries>=0&&s.taskDeliveries<=1000&&s.taskClaimedMask>=0&&s.taskClaimedMask<=7
                 && s.damageLevel>=0 && s.damageLevel<=10 && s.capacityLevel>=0 && s.capacityLevel<=15
                 && s.speedLevel>=0 && s.speedLevel<=5
                 && s.items!=null && s.items.Length==s.cargo && s.items.All(MiningResources.Valid)
@@ -85,10 +90,12 @@ namespace Bulldozer.Player.Persistence
                 if(data!=null && data.loadingQueue==null)data.loadingQueue=Array.Empty<int>();
                 if(data!=null&&data.backpackItems==null)data.backpackItems=Array.Empty<int>();
                 if(data!=null&&data.barrowItems==null)data.barrowItems=Array.Empty<int>();
-                future=data!=null&&data.format=="bulldozer-mining"&&data.version>3;
+                future=data!=null&&data.format=="bulldozer-mining"&&data.version>5;
                 if(data!=null&&data.format=="bulldozer-mining"&&data.version==1&&data.cargo>=0&&data.cargo<=100000&&data.coins>=0)
                     data=MiningSnapshot.Create(data.cargo,data.coins);
                 if(data!=null&&data.format=="bulldozer-mining"&&data.version==2){data.version=3;data.groundDrops=Array.Empty<GroundOreState>();}
+                if(data!=null&&data.format=="bulldozer-mining"&&data.version==3){data.version=4;data.roundIndex=0;data.roundBonusClaimed=false;}
+                if(data!=null&&data.format=="bulldozer-mining"&&data.version==4){data.version=5;OptionalTaskRules.Reset(data);}
                 return Valid(data);
             }
             catch(Exception){return false;}

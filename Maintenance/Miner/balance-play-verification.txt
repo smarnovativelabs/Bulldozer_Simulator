@@ -1,0 +1,13 @@
+PASS Fresh save starts with $10 first pickaxe offer
+PASS First actual break advances task without payment
+PASS Two actual rock breaks fund first upgrade before any truck
+PASS Guidance routes starter reward to workbench
+PASS Optional HUD shows completion without blocking controls
+PASS Workbench purchase doubles damage for the earned $10
+PASS Upgrade and claimed starter bonus survive disk reload
+PASS Refining six actual dropped stones pays optional $15
+PASS Two actual truck dispatches complete delivery task
+PASS Cash equals $50 deliveries + $15 refinery + $20 task after pickaxe purchase
+PASS HUD shows all optional tasks completed
+PASS All rewards and upgrade persisted once
+PASS Optional completion does not skip the remaining quarry

@@ -1,0 +1,4 @@
+PASS Restart retains round three and cash
+PASS Fade-in finishes and restores input
+PASS Restart retains upgrades and cart
+PASS Same rock pool after restart

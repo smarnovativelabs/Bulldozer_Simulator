@@ -1,0 +1,20 @@
+Environment and guidance polish - 2026-10-29
+
+Implemented:
+- Rebuilt paving top-face UVs into bounded stone atlas tiles, without overlapping top faces. Existing redundant ground renderers stay disabled; collision retained.
+- Retuned stone, dirt, worn steel and paint materials using existing textures. Reduced oversized decorative mineral inclusions on 56 block rocks.
+- Softer sun shadows and brighter ambient lighting; completed fresh baked lighting. No new realtime lights.
+- Amber REFINE, blue COLLECT and green LOAD station outlines with shorter floor labels. Smaller truck counters. Removed duplicate delivery billboard.
+- Guidance collapses after five seconds; accent follows panel height and redundant progress track is hidden. Shorter path trail hides during mining. Cash HUD no longer duplicates world cargo counter. Finished optional tasks collapse. Parked wheelbarrow counter only appears nearby.
+- Background bank mesh recombined from current natural-rock source meshes; still one renderer/shared material.
+
+Verification:
+- 12 static checks PASS (environment-static-verification.txt).
+- 8 Play mode checks PASS (environment-play-verification.txt).
+- Final Game View advanced to frame 181; collapsed guide and accent both 54px, progress track hidden.
+- Console error/exception query returned 0.
+- Preview: environment-gameplay.png; additional station and quarry camera previews available.
+- Isolated test save used throughout; normal save routing and background preference restored; editor stopped.
+
+Budgets: combined paving/stone mesh 490 triangles; guidance at most 112 triangles; baked lightmap 256px; existing four lights; three shared station paint materials, reused textures; delivery truck geometry unchanged (4,400 triangles).
+These are Editor checks, not device FPS measurements. Existing block quarry art remains alongside the 12-rock natural pilot. UI remains replaceable placeholder artwork. No player build generated.

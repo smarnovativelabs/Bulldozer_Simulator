@@ -1,0 +1,6 @@
+PASS Second round awards $60 once
+PASS Second transition reaches third excavation without resetting cash
+PASS Equipment and upgrades survive repeated transitions
+PASS Third round restores same fixed rock pool
+PASS Feel player count stays fixed across rounds
+PASS Player remains controllable after repeated reloads

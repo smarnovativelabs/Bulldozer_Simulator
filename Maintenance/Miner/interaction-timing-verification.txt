@@ -1,0 +1,10 @@
+PASS Cancelling wind-up causes no damage or impact effects
+PASS Damage occurs during strike, time=0.420
+PASS One spark/chip burst accompanies one registered hit
+PASS Exactly one hit through full swing and recovery
+PASS Palm recovers after swing
+PASS Solid obstacle blocks target acquisition
+PASS Full backpack prevents mining
+PASS Breaking natural rock disables its mesh contact collider
+PASS Break dust fires on final hit
+PASS Effects remain within existing particle caps

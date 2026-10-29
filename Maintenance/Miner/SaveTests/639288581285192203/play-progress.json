@@ -1,0 +1,65 @@
+{
+    "format": "bulldozer-mining",
+    "version": 5,
+    "cargo": 0,
+    "coins": 5975,
+    "damageLevel": 1,
+    "capacityLevel": 1,
+    "speedLevel": 1,
+    "roundIndex": 1,
+    "roundBonusClaimed": false,
+    "taskRocks": 1,
+    "taskDense": 0,
+    "taskOreMask": 1,
+    "taskRefined": 0,
+    "taskDeliveries": 0,
+    "taskClaimedMask": 0,
+    "items": [],
+    "refineryInput": [],
+    "refineryOutput": [],
+    "truckItems": [],
+    "depletedBlocks": [
+        "quarry-expansion-0-0-0"
+    ],
+    "groundDrops": [
+        {
+            "id": "quarry-expansion-0-0-0/0",
+            "item": 0,
+            "position": {
+                "x": -9.100000381469727,
+                "y": 0.12999999523162843,
+                "z": 2.5999999046325685
+            }
+        },
+        {
+            "id": "quarry-expansion-0-0-0/1",
+            "item": 0,
+            "position": {
+                "x": -8.800000190734864,
+                "y": 0.12999999523162843,
+                "z": 3.0
+            }
+        },
+        {
+            "id": "quarry-expansion-0-0-0/2",
+            "item": 0,
+            "position": {
+                "x": -8.5,
+                "y": 0.12999999523162843,
+                "z": 2.5999999046325685
+            }
+        }
+    ],
+    "trucksCompleted": 68,
+    "loadingQueue": [],
+    "wheelbarrowUnlocked": false,
+    "usingWheelbarrow": false,
+    "backpackItems": [],
+    "barrowItems": [],
+    "barrowPosition": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "refiningSeconds": 0.0
+}

@@ -1,0 +1,83 @@
+Ground | parent=PlayerTestYard | bounds=Center: (0.00, -0.25, 0.00), Extents: (15.00, 0.25, 15.00) | mat=Ground | lm=-1
+Upgrade Workbench | parent=Upgrade Area | bounds=Center: (-4.50, 0.70, -0.80), Extents: (0.85, 0.09, 0.35) | mat=Timber | lm=0
+Glowing Mouth | parent=Refinery | bounds=Center: (5.00, 0.59, -0.64), Extents: (0.33, 0.29, 0.02) | mat=Hot Furnace | lm=-1
+Corner Brace | parent=Refinery Detail | bounds=Center: (4.34, 0.88, -0.65), Extents: (0.05, 0.70, 0.03) | mat=EdgeSteel | lm=-1
+Safety grip | parent=Quarry Caddy | bounds=Center: (-6.50, 1.20, -2.90), Extents: (0.04, 0.08, 0.10) | mat=Caddy Safety | lm=-1
+Weel | parent=Base | bounds=Center: (-6.80, 0.38, -1.09), Extents: (0.06, 0.18, 0.18) | mat=Caddy Rubber | lm=-1
+Bench Leg | parent=Upgrade Area | bounds=Center: (-3.80, 0.35, -0.80), Extents: (0.07, 0.35, 0.25) | mat=Dark Metal | lm=0
+Cut Rock | parent=QuarryEnvironment | bounds=Center: (4.00, 3.50, 0.27), Extents: (43.50, 3.60, 31.39) | mat=Cut Rock | lm=0
+Vent | parent=Refinery Detail | bounds=Center: (5.83, 0.72, -0.27), Extents: (0.02, 0.01, 0.20) | mat=EdgeSteel | lm=-1
+Corner Brace | parent=Refinery Detail | bounds=Center: (5.66, 0.88, -0.65), Extents: (0.05, 0.70, 0.03) | mat=EdgeSteel | lm=-1
+Tray Inlay | parent=Refinery Detail | bounds=Center: (5.00, 0.18, -1.85), Extents: (0.54, 0.01, 0.39) | mat=EdgeSteel | lm=-1
+Extended ergonomic handle | parent=Quarry Caddy | bounds=Center: (-6.50, 1.05, -2.63), Extents: (0.03, 0.19, 0.30) | mat=Caddy Rubber | lm=-1
+Border | parent=Refinery Input | bounds=Center: (3.10, 0.03, 0.80), Extents: (0.80, 0.01, 0.02) | mat=White Marking | lm=0
+Border | parent=Refinery Output | bounds=Center: (5.00, 0.03, -1.90), Extents: (0.80, 0.01, 0.02) | mat=White Marking | lm=0
+Timber | parent=QuarryEnvironment | bounds=Center: (2.55, 1.33, 0.84), Extents: (29.04, 1.33, 27.51) | mat=Timber | lm=0
+Output Tray | parent=Refinery | bounds=Center: (5.00, 0.10, -1.85), Extents: (0.60, 0.08, 0.45) | mat=WornSteel | lm=-1
+Chimney B | parent=Refinery | bounds=Center: (4.48, 1.20, 0.55), Extents: (0.09, 1.00, 0.09) | mat=WornSteel | lm=-1
+Pooled Guidance Arrows | parent=Quarry Guidance | bounds=Center: (0.00, 0.00, 0.00), Extents: (0.00, 0.00, 0.00) | mat=null | lm=-1
+White Marking | parent=QuarryEnvironment | bounds=Center: (2.50, 0.02, -6.20), Extents: (41.40, 0.01, 1.53) | mat=White Marking | lm=0
+Safety Ochre | parent=QuarryEnvironment | bounds=Center: (4.05, 0.30, -5.38), Extents: (3.74, 0.28, 1.81) | mat=Safety Ochre | lm=0
+Cooling Fin | parent=Refinery Detail | bounds=Center: (4.18, 0.77, -0.15), Extents: (0.07, 0.03, 0.35) | mat=WornSteel | lm=-1
+Border | parent=Upgrade Pad | bounds=Center: (-5.30, 0.03, -2.00), Extents: (0.02, 0.01, 0.80) | mat=White Marking | lm=0
+Rivet | parent=Refinery Detail | bounds=Center: (4.52, 0.25, -0.69), Extents: (0.04, 0.04, 0.02) | mat=EdgeSteel | lm=-1
+Dark Metal | parent=QuarryEnvironment | bounds=Center: (4.00, 1.60, 0.05), Extents: (41.10, 1.60, 10.30) | mat=Dark Metal | lm=0
+Bench Leg | parent=Upgrade Area | bounds=Center: (-5.20, 0.35, -0.80), Extents: (0.07, 0.35, 0.25) | mat=Dark Metal | lm=0
+Combined PaintedOrange | parent=Refinery | bounds=Center: (5.00, 0.79, 0.00), Extents: (1.05, 0.79, 0.90) | mat=PaintedOrange | lm=0
+Raised side storage | parent=Quarry Caddy | bounds=Center: (-7.23, 0.68, -2.03), Extents: (0.09, 0.14, 0.24) | mat=Caddy Teal | lm=-1
+Vent | parent=Refinery Detail | bounds=Center: (5.83, 0.80, -0.27), Extents: (0.02, 0.01, 0.20) | mat=EdgeSteel | lm=-1
+Control Panel | parent=Refinery Detail | bounds=Center: (5.78, 0.90, -0.25), Extents: (0.05, 0.29, 0.30) | mat=WornSteel | lm=-1
+Combined EdgeSteel | parent=Refinery | bounds=Center: (5.07, 0.87, -1.16), Extents: (0.77, 0.71, 1.09) | mat=EdgeSteel | lm=0
+Truck Counter | parent=Delivery Truck | bounds=Center: (4.00, 2.15, -6.20), Extents: (0.35, 0.20, 0.00) | mat=ProductionLabel | lm=-1
+Border | parent=Refinery Output | bounds=Center: (4.20, 0.03, -2.70), Extents: (0.02, 0.01, 0.80) | mat=White Marking | lm=0
+Caddy counter | parent=Quarry Caddy | bounds=Center: (-6.80, 1.54, -2.20), Extents: (0.88, 0.22, 0.00) | mat=ProductionLabel | lm=-1
+Border | parent=Refinery Input | bounds=Center: (3.90, 0.03, 0.00), Extents: (0.02, 0.01, 0.80) | mat=White Marking | lm=0
+Combined WornSteel | parent=Refinery | bounds=Center: (4.93, 1.24, -0.81), Extents: (0.89, 1.21, 1.49) | mat=WornSteel | lm=0
+Border | parent=Refinery Input | bounds=Center: (3.10, 0.03, -0.80), Extents: (0.80, 0.01, 0.02) | mat=White Marking | lm=0
+Cooling Fin | parent=Refinery Detail | bounds=Center: (4.18, 0.60, -0.15), Extents: (0.07, 0.03, 0.35) | mat=WornSteel | lm=-1
+Furnace Housing | parent=Refinery | bounds=Center: (5.00, 0.85, 0.00), Extents: (0.75, 0.73, 0.63) | mat=PaintedOrange | lm=-1
+Label | parent=Upgrade Pad | bounds=Center: (-4.49, 0.05, -2.00), Extents: (0.61, 0.00, 0.22) | mat=LiberationSans SDF Material | lm=-1
+Natural Quarry Banks | parent= | bounds=Center: (0.05, 1.78, 6.98), Extents: (16.94, 1.83, 7.74) | mat=Cut Rock | lm=-1
+Combined Hot Furnace | parent=Refinery | bounds=Center: (5.00, 0.59, -0.64), Extents: (0.33, 0.29, 0.02) | mat=Hot Furnace | lm=0
+Chimney A | parent=Refinery | bounds=Center: (4.15, 1.30, 0.30), Extents: (0.11, 1.15, 0.11) | mat=WornSteel | lm=-1
+Border | parent=Truck Loading | bounds=Center: (2.80, 0.03, -4.40), Extents: (0.02, 0.01, 0.80) | mat=White Marking | lm=0
+QuarryDirt | parent=QuarryEnvironment | bounds=Center: (2.00, -0.02, 3.00), Extents: (52.00, 0.00, 35.00) | mat=QuarryDirt | lm=0
+Border | parent=Truck Loading | bounds=Center: (2.00, 0.03, -5.20), Extents: (0.80, 0.01, 0.02) | mat=White Marking | lm=0
+Chute | parent=Refinery | bounds=Center: (5.00, 0.31, -1.05), Extents: (0.35, 0.18, 0.50) | mat=WornSteel | lm=-1
+Truck Counter | parent=Delivery Truck 2 | bounds=Center: (-1.00, 2.15, -6.20), Extents: (0.35, 0.20, 0.00) | mat=ProductionLabel | lm=-1
+Border | parent=Refinery Output | bounds=Center: (5.80, 0.03, -2.70), Extents: (0.02, 0.01, 0.80) | mat=White Marking | lm=0
+Open Hopper | parent=Refinery | bounds=Center: (5.20, 1.93, 0.10), Extents: (0.58, 0.43, 0.58) | mat=WornSteel | lm=-1
+Processing Timer | parent=Refinery | bounds=Center: (4.99, 3.10, 0.00), Extents: (0.87, 0.12, 0.00) | mat=ProductionLabel | lm=-1
+Chute Wall | parent=Refinery | bounds=Center: (5.40, 0.43, -1.05), Extents: (0.04, 0.12, 0.50) | mat=WornSteel | lm=-1
+Cooling Fin | parent=Refinery Detail | bounds=Center: (4.18, 1.11, -0.15), Extents: (0.07, 0.03, 0.35) | mat=WornSteel | lm=-1
+PolishedStone | parent=QuarryEnvironment | bounds=Center: (4.00, 1.65, -3.50), Extents: (21.30, 1.75, 4.85) | mat=PolishedStone | lm=0
+Vent | parent=Refinery Detail | bounds=Center: (5.83, 0.96, -0.27), Extents: (0.02, 0.01, 0.20) | mat=EdgeSteel | lm=-1
+Textured Quarry Ground | parent=MiningProductionSite | bounds=Center: (0.00, 0.01, 0.00), Extents: (15.00, 0.00, 15.00) | mat=QuarryDirt | lm=-1
+Border | parent=Truck Loading | bounds=Center: (2.00, 0.03, -3.60), Extents: (0.80, 0.01, 0.02) | mat=White Marking | lm=0
+Cooling Fin | parent=Refinery Detail | bounds=Center: (4.18, 0.94, -0.15), Extents: (0.07, 0.03, 0.35) | mat=WornSteel | lm=-1
+Label | parent=Refinery Input | bounds=Center: (3.11, 0.05, 0.00), Extents: (0.59, 0.00, 0.05) | mat=LiberationSans SDF Material | lm=-1
+Rivet | parent=Refinery Detail | bounds=Center: (5.00, 0.25, -0.69), Extents: (0.04, 0.04, 0.02) | mat=EdgeSteel | lm=-1
+Border | parent=Upgrade Pad | bounds=Center: (-4.50, 0.03, -2.80), Extents: (0.80, 0.01, 0.02) | mat=White Marking | lm=0
+Pine Green | parent=QuarryEnvironment | bounds=Center: (2.67, 2.50, 0.74), Extents: (30.06, 1.67, 28.81) | mat=Pine Green | lm=0
+Border | parent=Upgrade Pad | bounds=Center: (-4.50, 0.03, -1.20), Extents: (0.80, 0.01, 0.02) | mat=White Marking | lm=0
+Rivet | parent=Refinery Detail | bounds=Center: (4.52, 1.43, -0.69), Extents: (0.04, 0.04, 0.02) | mat=EdgeSteel | lm=-1
+Label | parent=Truck Loading | bounds=Center: (2.00, 0.05, -4.40), Extents: (0.48, 0.00, 0.05) | mat=LiberationSans SDF Material | lm=-1
+Foundation | parent=Refinery | bounds=Center: (5.00, 0.12, 0.00), Extents: (1.05, 0.12, 0.90) | mat=PaintedOrange | lm=-1
+Pooled Block Fracture | parent= | bounds=Center: (0.00, 0.00, 0.00), Extents: (0.00, 0.00, 0.00) | mat=PolishedStone | lm=-1
+Extended ergonomic handle | parent=Quarry Caddy | bounds=Center: (-7.10, 1.05, -2.63), Extents: (0.03, 0.19, 0.30) | mat=Caddy Rubber | lm=-1
+Quarry Asphalt | parent=QuarryEnvironment | bounds=Center: (3.00, 0.01, -6.20), Extents: (43.00, 0.01, 1.75) | mat=Quarry Asphalt | lm=0
+Rivet | parent=Refinery Detail | bounds=Center: (5.00, 1.43, -0.69), Extents: (0.04, 0.04, 0.02) | mat=EdgeSteel | lm=-1
+Chute Wall | parent=Refinery | bounds=Center: (4.60, 0.43, -1.05), Extents: (0.04, 0.12, 0.50) | mat=WornSteel | lm=-1
+Base | parent=Supplied wheelbarrow - quarry variant | bounds=Center: (-6.80, 0.52, -1.73), Extents: (0.36, 0.32, 0.87) | mat=Caddy Teal | lm=-1
+Border | parent=Refinery Input | bounds=Center: (2.30, 0.03, 0.00), Extents: (0.02, 0.01, 0.80) | mat=White Marking | lm=0
+Border | parent=Truck Loading | bounds=Center: (1.20, 0.03, -4.40), Extents: (0.02, 0.01, 0.80) | mat=White Marking | lm=0
+Border | parent=Refinery Output | bounds=Center: (5.00, 0.03, -3.50), Extents: (0.80, 0.01, 0.02) | mat=White Marking | lm=0
+Safety grip | parent=Quarry Caddy | bounds=Center: (-7.10, 1.20, -2.90), Extents: (0.04, 0.08, 0.10) | mat=Caddy Safety | lm=-1
+Label | parent=Refinery Output | bounds=Center: (5.00, 0.05, -2.70), Extents: (0.63, 0.00, 0.14) | mat=LiberationSans SDF Material | lm=-1
+Vent | parent=Refinery Detail | bounds=Center: (5.83, 0.88, -0.27), Extents: (0.02, 0.01, 0.20) | mat=EdgeSteel | lm=-1
+Delivery Bonus | parent=MiningProductionSite | bounds=Center: (-1.40, 1.20, -3.20), Extents: (1.08, 0.21, 0.00) | mat=ProductionLabel | lm=-1
+Vent | parent=Refinery Detail | bounds=Center: (5.83, 1.04, -0.27), Extents: (0.02, 0.01, 0.20) | mat=EdgeSteel | lm=-1
+Rivet | parent=Refinery Detail | bounds=Center: (5.48, 1.43, -0.69), Extents: (0.04, 0.04, 0.02) | mat=EdgeSteel | lm=-1
+Mouth Lintel | parent=Refinery | bounds=Center: (5.00, 0.92, -0.72), Extents: (0.46, 0.08, 0.09) | mat=WornSteel | lm=-1
+Rivet | parent=Refinery Detail | bounds=Center: (5.48, 0.25, -0.69), Extents: (0.04, 0.04, 0.02) | mat=EdgeSteel | lm=-1
+Border | parent=Upgrade Pad | bounds=Center: (-3.70, 0.03, -2.00), Extents: (0.02, 0.01, 0.80) | mat=White Marking | lm=0

@@ -1,0 +1,28 @@
+Interaction polish — existing 1_Gameplay scene, no build
+
+Changes:
+- Pickaxe retains the authored palm socket position and rotation through animation and recovery.
+- Damage remains tied to the downward strike event; swept contact no longer includes the pre-contact wind-up arc.
+- Natural rocks require a close stance (1.1 m from their root) to prevent repeated empty swings beyond the compact strike arc.
+- All 12 natural boulders use their 168-triangle meshes as static convex contact shapes. Legacy square boxes are disabled; no rigidbodies added.
+- Cart handles and visible safety grips raised and angled to a reachable position; cart follows 0.95 m ahead. Both wrists blend onto/off handles over 0.25 seconds.
+- Blocked cart turns restore player position AND facing. Wheel rotation now follows signed travel; attachment resets pickup history.
+- Pickup runs after cart positioning, centered on its tray, with a non-allocating capsule sweep between pickup samples. Parked/full carts do not consume ore.
+
+Verified in isolated Editor Play sessions:
+- 12 cart checks passed: attach, stationary/moving hand reach, pickup, blocked turn, parking, reattachment, capacity, separate saved inventories and fixed ore pool.
+- Final measured cart hand errors: stationary L 0.0001 m / R 0.0006 m; moving/turning peaks L 0.0002 m / R 0.0008 m.
+- 10 pickaxe timing checks passed: cancellation, real contact at 0.420 s, one hit/burst, recovery, occlusion, capacity, collider disabled on depletion and bounded break effects.
+- 3 station checks passed: refinery input, finished output, truck loading.
+- 16 range checks passed: close strikes at 1.09 m and no target/empty swings at 1.24, 1.39 and 1.54 m for four variants.
+- Source changes pass git diff --check. Unity compilation succeeded and console reported zero errors.
+
+Budgets:
+- Existing 96 ore slots reused; dust <=24, chips <=32, sparks <=48 particles.
+- Two reusable wrist-target transforms; no new rendered meshes/materials or per-item rigidbodies.
+- Twelve low-poly convex colliders (2,016 source triangles total); trucks unchanged.
+- Editor checks are not mobile performance measurements. Device/touch profiling remains pending.
+
+Normal player save was not used by tests. No APK or other build was produced.
+
+Final all-rock coverage: 48/48 animated contacts passed (all 12 natural boulders from four directions, exactly one hit per swing). Final verification total: 89 checks passed (48 contact + 16 range + 12 cart + 10 timing + 3 station).

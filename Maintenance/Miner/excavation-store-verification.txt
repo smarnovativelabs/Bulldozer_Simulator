@@ -1,0 +1,25 @@
+PASS Sprint 1 version 3 save migrates without losing upgrades or ownership
+PASS Legacy save starts first excavation unclaimed
+PASS Missing rock blocks completion
+PASS Empty quarry configuration cannot award bonus
+PASS Pending cargo buffer 0 blocks completion
+PASS Pending cargo buffer 1 blocks completion
+PASS Pending cargo buffer 2 blocks completion
+PASS Pending cargo buffer 3 blocks completion
+PASS Pending cargo buffer 4 blocks completion
+PASS Pending cargo buffer 5 blocks completion
+PASS Pending cargo buffer 6 blocks completion
+PASS Pending cargo buffer 7 blocks completion
+PASS Cannot advance an unclaimed round
+PASS Bonus transaction adds $50 and leaves source untouched
+PASS Completed round saved
+PASS Restart cannot duplicate completion bonus
+PASS Next round resets only excavation progress
+PASS Next round preserves cash, all upgrades and purchased cart
+PASS Advanced round survives disk restart
+PASS Repeated next click cannot skip a round
+PASS Cash overflow cannot consume completion
+PASS Late rounds keep difficulty and bonuses bounded
+PASS Round variations change without unbounded difficulty
+PASS Future version remains protected
+PASS Failed disk write cannot claim bonus in memory

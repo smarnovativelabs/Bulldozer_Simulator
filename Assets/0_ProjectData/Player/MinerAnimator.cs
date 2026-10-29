@@ -15,6 +15,8 @@ namespace Bulldozer.Player
         public Quaternion carryRotation = Quaternion.identity;
         public Transform toolGrip;
         public Quaternion carryToolRotation=Quaternion.identity;
+        Vector3 toolRestPosition;
+        Quaternion toolRestRotation;
         Animator animator;
         Transform hand, elbow;
         Transform shoulder;
@@ -29,6 +31,7 @@ namespace Bulldozer.Player
         void Awake()
         {
             animator=GetComponent<Animator>();
+            if(toolGrip){toolRestPosition=toolGrip.localPosition;toolRestRotation=toolGrip.localRotation;}
             hand=animator.GetBoneTransform(HumanBodyBones.RightHand);
             elbow=animator.GetBoneTransform(HumanBodyBones.RightLowerArm);
             shoulder=animator.GetBoneTransform(HumanBodyBones.RightUpperArm);
@@ -102,7 +105,8 @@ namespace Bulldozer.Player
             rightHandIK.Solve();
             hand.rotation=gripTarget.rotation;
             LastGripError=Vector3.Distance(hand.position,gripTarget.position);
-            if(toolGrip)toolGrip.localRotation=Quaternion.identity;
+            // Preserve the authored palm socket, including its position, through every clip.
+            if(toolGrip){toolGrip.localPosition=toolRestPosition;toolGrip.localRotation=toolRestRotation;}
         }
     }
 }
