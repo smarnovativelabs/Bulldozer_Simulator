@@ -1,0 +1,31 @@
+BEFORE Assets/0_ProjectData/Audio/Delivery_Confirm.wav DecompressOnLoad Vorbis
+AFTER Delivery_Confirm 0.9013333s 1ch DecompressOnLoad 24000Hz ADPCM
+BEFORE Assets/0_ProjectData/Audio/footstep_concrete_000.ogg DecompressOnLoad Vorbis
+AFTER footstep_concrete_000 0.1066667s 1ch DecompressOnLoad 24000Hz ADPCM
+BEFORE Assets/0_ProjectData/Audio/footstep_concrete_001.ogg DecompressOnLoad Vorbis
+AFTER footstep_concrete_001 0.1093333s 1ch DecompressOnLoad 24000Hz ADPCM
+BEFORE Assets/0_ProjectData/Audio/footstep_concrete_002.ogg DecompressOnLoad Vorbis
+AFTER footstep_concrete_002 0.1146667s 1ch DecompressOnLoad 24000Hz ADPCM
+BEFORE Assets/0_ProjectData/Audio/impactMetal_light_001.ogg DecompressOnLoad Vorbis
+AFTER impactMetal_light_001 0.2533333s 1ch DecompressOnLoad 24000Hz ADPCM
+BEFORE Assets/0_ProjectData/Audio/impactMining_000.ogg DecompressOnLoad Vorbis
+AFTER impactMining_000 0.9386666s 1ch DecompressOnLoad 24000Hz ADPCM
+BEFORE Assets/0_ProjectData/Audio/impactMining_001.ogg DecompressOnLoad Vorbis
+AFTER impactMining_001 0.872s 1ch DecompressOnLoad 24000Hz ADPCM
+BEFORE Assets/0_ProjectData/Audio/impactMining_002.ogg DecompressOnLoad Vorbis
+AFTER impactMining_002 0.8053333s 1ch DecompressOnLoad 24000Hz ADPCM
+BEFORE Assets/0_ProjectData/Audio/Ore_Pickup.wav DecompressOnLoad Vorbis
+AFTER Ore_Pickup 0.32s 1ch DecompressOnLoad 24000Hz ADPCM
+BEFORE Assets/0_ProjectData/Audio/Ore_Place.wav DecompressOnLoad Vorbis
+AFTER Ore_Place 0.32s 1ch DecompressOnLoad 24000Hz ADPCM
+BEFORE Assets/0_ProjectData/Audio/Quarry_Dawn_Underscore.wav DecompressOnLoad Vorbis
+AFTER Quarry_Dawn_Underscore 48s 2ch Streaming 24000Hz Vorbis
+BEFORE Assets/0_ProjectData/Audio/Refinery_Loop.wav DecompressOnLoad Vorbis
+AFTER Refinery_Loop 4s 1ch DecompressOnLoad 24000Hz ADPCM
+BEFORE Assets/0_ProjectData/Audio/Refinery_Ready.wav DecompressOnLoad Vorbis
+AFTER Refinery_Ready 0.6506667s 1ch DecompressOnLoad 24000Hz ADPCM
+BEFORE Assets/0_ProjectData/Audio/Stone_Break.wav DecompressOnLoad Vorbis
+AFTER Stone_Break 0.8s 1ch DecompressOnLoad 24000Hz ADPCM
+BEFORE Assets/0_ProjectData/Audio/Truck_Engine_Loop.wav DecompressOnLoad Vorbis
+AFTER Truck_Engine_Loop 4s 1ch DecompressOnLoad 24000Hz ADPCM
+Persistent CommonUI soundtrack configured: 8 world voices + 3 loops + 1 music source; existing Feel UI feedback retained.

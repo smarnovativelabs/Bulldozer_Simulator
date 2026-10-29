@@ -1,0 +1,10 @@
+PASS Wheelbarrow use button emits Feel click and mechanical attach sound
+PASS Wheelbarrow park button emits click and release sound
+PASS Round completion emits restrained reward cue
+PASS Round completion cue does not repeat on polling
+PASS Next excavation button has Feel click
+PASS Loading retry button emits Feel click
+PASS Music continues across next-round and retry loads
+PASS Persistent audio source budget remains bounded
+PASS Spatial audio clips are mono
+PASS Estimated short-clip decoded PCM stays below 2 MiB

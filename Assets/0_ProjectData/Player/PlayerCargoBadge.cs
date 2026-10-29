@@ -24,9 +24,10 @@ namespace Bulldozer.Player
             lastCount=count;lastCapacity=capacity;lastCart=cart;
             label.text=(cart?"CART ":"CARGO ")+count+"/"+capacity;
             var color=count>=capacity?new Color(1,.65f,.2f):new Color(.65f,.9f,.8f);
-            icon.color=fill.color=color;
+            icon.color=Color.white;fill.color=color;
             fill.rectTransform.anchorMax=new Vector2(Mathf.Clamp01(count/(float)Mathf.Max(1,capacity)),1);
             label.color=count>=capacity?color:Color.white;
         }
     }
 }
+

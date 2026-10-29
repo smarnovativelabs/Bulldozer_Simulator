@@ -20,6 +20,7 @@ namespace Bulldozer.Player
         public MeshRenderer pathRenderer;
         public Material pathMaterial;
         public int agentTypeId;
+        public bool useQueuedUINotifications;
         public Goal CurrentGoal {get;private set;}
         public Vector3 Destination {get;private set;}
         public bool HasRoute {get;private set;}
@@ -51,7 +52,7 @@ namespace Bulldozer.Player
             dialog.anchoredPosition=restingPosition+Vector2.up*(1-ease)*28;dialogGroup.alpha=ease;
             dialog.localScale=Vector3.one*(1+Mathf.Sin(t*Mathf.PI)*.035f);
             message.maxVisibleCharacters=Mathf.CeilToInt(Mathf.Max(0,age-.12f)*65);
-            completionLabel.gameObject.SetActive(Time.unscaledTime<celebrateUntil);
+            completionLabel.gameObject.SetActive(!useQueuedUINotifications&&Time.unscaledTime<celebrateUntil);
             if(completionLabel.gameObject.activeSelf)completionLabel.color=new Color(.5f,1,.7f,Mathf.Clamp01((celebrateUntil-Time.unscaledTime)*2));
             if(Time.unscaledTime>=drawAt){drawAt=Time.unscaledTime+.05f;DrawPath();}
         }
@@ -147,6 +148,7 @@ namespace Bulldozer.Player
         void OnDestroy(){if(mesh)Destroy(mesh);}
     }
 }
+
 
 
 

@@ -1,0 +1,33 @@
+  int displayedCash=int.MinValue;
+  readonly int[] inventoryTotals=new int[12];
+  public void Refresh(){
+   if(!equipment)return;
+   int current=equipment.Cash;
+   if(current!=displayedCash){displayedCash=current;cash.text="$"+current;}
+   // Hidden panels must not copy save data, build inventory arrays or rebuild labels.
+   if(!modal.gameObject.activeSelf)return;
+   if(settingsPage.activeSelf)performanceLabel.text=PlayerPrefs.GetInt(QuarryUIFeedback.PreferencePrefix+"Performance",0)==0?"BATTERY SAVER  /  30 FPS":"BALANCED  /  60 FPS";
+   if(inventoryPage.activeSelf)RefreshInventory();
+   if(upgradePage.activeSelf)RefreshUpgrades();
+  }
+  void RefreshInventory(){
+   var s=equipment.Snapshot;Array.Clear(inventoryTotals,0,inventoryTotals.Length);int count=0;
+   void Count(int[] items){foreach(int id in items)if(id>=0&&id<inventoryTotals.Length){inventoryTotals[id]++;count++;}}
+   if(storage==0)Count(s.items);else if(storage==1){Count(s.backpackItems);Count(s.barrowItems);}else if(storage==2){Count(s.refineryInput);Count(s.refineryOutput);}else{Count(s.loadingQueue);Count(s.truckItems);}
+   string name=storage==0?(equipment.UsingWheelbarrow?"CART":"BACKPACK"):storage==1?"PARKED STORAGE":storage==2?"REFINERY":"LOADING & TRUCK";
+   inventorySummary.text=name+"  /  "+count+" ITEMS";
+   for(int i=0;i<6;i++)inventoryCounts[i].text=inventoryTotals[i]+" RAW   /   "+inventoryTotals[i+6]+" REFINED";
+   inventoryFooter.text="Carrying "+equipment.CargoCount+" / "+equipment.Capacity+"    |    Loose stones: "+s.groundDrops.Length+"    |    Deliveries: "+s.trucksCompleted;
+  }
+  void RefreshUpgrades(){
+   bool near=MiningProduction.Contains(workbench.zone,player.transform.position);
+   upgradeFooter.text=near?"Purchases save immediately. Your upgrades carry into every excavation.":"Visit the workbench to purchase. Follow the quarry guide back to the upgrade pad.";
+   for(int i=0;i<3;i++){
+    int level=i==0?equipment.DamageLevel:i==1?equipment.CapacityLevel:equipment.SpeedLevel;
+    int limit=i==0?10:i==1?15:5;
+    int cost=i==0?equipment.DamageCost:i==1?equipment.CapacityCost:equipment.SpeedCost;
+    bool max=level>=limit;buyButtons[i].interactable=!max;
+    upgradePrices[i].text=max?"MAX LEVEL":"$"+cost+(equipment.Cash<cost?"  /  NEED CASH":"  /  UPGRADE");
+    if(valueTweens[i]==null||!valueTweens[i].IsActive())upgradeValues[i].text=i==0?"POWER  "+equipment.Damage+(max?"":"  >  "+(equipment.Damage+1)):i==1?"CAPACITY  "+(5+equipment.CapacityLevel)+(max?"":"  >  "+(6+equipment.CapacityLevel)):"MOVE SPEED  "+Mathf.RoundToInt(equipment.MovementMultiplier*100)+"%"+(max?"":"  >  "+Mathf.RoundToInt((equipment.MovementMultiplier+.08f)*100)+"%");
+   }
+  }

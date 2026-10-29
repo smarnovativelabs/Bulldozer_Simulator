@@ -1,0 +1,8 @@
+PASS Valid inventory fixture accepted
+PASS Carrying tab retains exact raw/refined counts
+PASS Parked tab combines stored items correctly
+PASS Refinery tab counts both input/output without concatenating arrays
+PASS Loading tab includes queued and on-truck items
+PASS Upgrade cards populate on opening
+PASS Settings labels populate on opening
+PASS Cash updates independently of panel visibility

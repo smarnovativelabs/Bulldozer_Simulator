@@ -91,7 +91,7 @@ namespace Bulldozer.Player
                     {
                         hitThisSwing=true;
                         if(Target.TryHit(equipment,collider.ClosestPoint(point)))
-                        {SuccessfulHits++;Status=Target.Depleted?"Rock broken - walk over the stones to collect":$"Rock {Target.Health}/{Target.maxHealth}";}
+                        {SuccessfulHits++;Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Hit,point);if(Target.Depleted)Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Break,point);Status=Target.Depleted?"Rock broken - walk over the stones to collect":$"Rock {Target.Health}/{Target.maxHealth}";}
                     }
                 }
                 previous[i]=point;
@@ -101,6 +101,7 @@ namespace Bulldozer.Player
         }
     }
 }
+
 
 
 

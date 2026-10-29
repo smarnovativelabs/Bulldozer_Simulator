@@ -9,7 +9,7 @@ namespace Bulldozer.UI
     public sealed class SceneLoadingService : MonoBehaviour
     {
         [SerializeField] private LoadingPanel panel;
-        [SerializeField, Min(0f)] private float minimumDisplaySeconds = .8f;
+
         [SerializeField, Min(10f)] private float slowLoadNoticeSeconds = 30f;
         private AsyncOperation operation;
         private Coroutine routine;
@@ -57,7 +57,7 @@ namespace Bulldozer.UI
             operation.allowSceneActivation = false;
             try
             {
-                while (operation.progress < .9f || Time.realtimeSinceStartup - shownAt < minimumDisplaySeconds)
+                while (operation.progress < .9f)
                 {
                     Progress = Mathf.Clamp01(operation.progress / .9f) * .9f;
                     panel.Report(Progress, Time.realtimeSinceStartup - shownAt > slowLoadNoticeSeconds
@@ -104,3 +104,4 @@ namespace Bulldozer.UI
         private void OnDestroy() { if (panel != null) panel.RetryRequested -= Retry; }
     }
 }
+

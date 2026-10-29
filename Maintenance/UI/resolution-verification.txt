@@ -1,0 +1,154 @@
+PASS 2796x1242 actual rendered resolution
+PASS 2796x1242 settings fits safe area
+PASS 2796x1242 settings uniform scale
+PASS 2796x1242 settings no text overflow
+PASS 2796x1242 pause fits safe area
+PASS 2796x1242 pause uniform scale
+PASS 2796x1242 pause no text overflow
+PASS 2796x1242 upgrades fits safe area
+PASS 2796x1242 upgrades uniform scale
+PASS 2796x1242 upgrades no text overflow
+PASS 2796x1242 inventory fits safe area
+PASS 2796x1242 inventory uniform scale
+PASS 2796x1242 inventory no text overflow
+PASS 2796x1242 confirmation fits safe area
+PASS 2796x1242 confirmation uniform scale
+PASS 2796x1242 confirmation no text overflow
+PASS 2796x1242 cash inside simulated notch
+PASS 2796x1242 toolbar inside simulated notch
+PASS 2796x1242 header blocks do not overlap
+PASS 2796x1242 modal fits simulated notch
+PASS 2796x1242 loading information fits notch safe area
+PASS 2796x1242 loading artwork uses uniform scaling
+PASS 2688x1242 actual rendered resolution
+PASS 2688x1242 settings fits safe area
+PASS 2688x1242 settings uniform scale
+PASS 2688x1242 settings no text overflow
+PASS 2688x1242 pause fits safe area
+PASS 2688x1242 pause uniform scale
+PASS 2688x1242 pause no text overflow
+PASS 2688x1242 upgrades fits safe area
+PASS 2688x1242 upgrades uniform scale
+PASS 2688x1242 upgrades no text overflow
+PASS 2688x1242 inventory fits safe area
+PASS 2688x1242 inventory uniform scale
+PASS 2688x1242 inventory no text overflow
+PASS 2688x1242 confirmation fits safe area
+PASS 2688x1242 confirmation uniform scale
+PASS 2688x1242 confirmation no text overflow
+PASS 2688x1242 cash inside simulated notch
+PASS 2688x1242 toolbar inside simulated notch
+PASS 2688x1242 header blocks do not overlap
+PASS 2688x1242 modal fits simulated notch
+PASS 2688x1242 loading information fits notch safe area
+PASS 2688x1242 loading artwork uses uniform scaling
+PASS 1280x720 actual rendered resolution
+PASS 1280x720 settings fits safe area
+PASS 1280x720 settings uniform scale
+PASS 1280x720 settings no text overflow
+PASS 1280x720 pause fits safe area
+PASS 1280x720 pause uniform scale
+PASS 1280x720 pause no text overflow
+PASS 1280x720 upgrades fits safe area
+PASS 1280x720 upgrades uniform scale
+PASS 1280x720 upgrades no text overflow
+PASS 1280x720 inventory fits safe area
+PASS 1280x720 inventory uniform scale
+PASS 1280x720 inventory no text overflow
+PASS 1280x720 confirmation fits safe area
+PASS 1280x720 confirmation uniform scale
+PASS 1280x720 confirmation no text overflow
+PASS 1280x720 cash inside simulated notch
+PASS 1280x720 toolbar inside simulated notch
+PASS 1280x720 header blocks do not overlap
+PASS 1280x720 modal fits simulated notch
+PASS 1280x720 loading information fits notch safe area
+PASS 1280x720 loading artwork uses uniform scaling
+PASS 2732x2048 actual rendered resolution
+PASS 2732x2048 settings fits safe area
+PASS 2732x2048 settings uniform scale
+PASS 2732x2048 settings no text overflow
+PASS 2732x2048 pause fits safe area
+PASS 2732x2048 pause uniform scale
+PASS 2732x2048 pause no text overflow
+PASS 2732x2048 upgrades fits safe area
+PASS 2732x2048 upgrades uniform scale
+PASS 2732x2048 upgrades no text overflow
+PASS 2732x2048 inventory fits safe area
+PASS 2732x2048 inventory uniform scale
+PASS 2732x2048 inventory no text overflow
+PASS 2732x2048 confirmation fits safe area
+PASS 2732x2048 confirmation uniform scale
+PASS 2732x2048 confirmation no text overflow
+PASS 2732x2048 cash inside simulated notch
+PASS 2732x2048 toolbar inside simulated notch
+PASS 2732x2048 header blocks do not overlap
+PASS 2732x2048 modal fits simulated notch
+PASS 2732x2048 loading information fits notch safe area
+PASS 2732x2048 loading artwork uses uniform scaling
+PASS 1670x720 actual rendered resolution
+PASS 1670x720 settings fits safe area
+PASS 1670x720 settings uniform scale
+PASS 1670x720 settings no text overflow
+PASS 1670x720 pause fits safe area
+PASS 1670x720 pause uniform scale
+PASS 1670x720 pause no text overflow
+PASS 1670x720 upgrades fits safe area
+PASS 1670x720 upgrades uniform scale
+PASS 1670x720 upgrades no text overflow
+PASS 1670x720 inventory fits safe area
+PASS 1670x720 inventory uniform scale
+PASS 1670x720 inventory no text overflow
+PASS 1670x720 confirmation fits safe area
+PASS 1670x720 confirmation uniform scale
+PASS 1670x720 confirmation no text overflow
+PASS 1670x720 cash inside simulated notch
+PASS 1670x720 toolbar inside simulated notch
+PASS 1670x720 header blocks do not overlap
+PASS 1670x720 modal fits simulated notch
+PASS 1670x720 loading information fits notch safe area
+PASS 1670x720 loading artwork uses uniform scaling
+PASS 2400x1080 actual rendered resolution
+PASS 2400x1080 settings fits safe area
+PASS 2400x1080 settings uniform scale
+PASS 2400x1080 settings no text overflow
+PASS 2400x1080 pause fits safe area
+PASS 2400x1080 pause uniform scale
+PASS 2400x1080 pause no text overflow
+PASS 2400x1080 upgrades fits safe area
+PASS 2400x1080 upgrades uniform scale
+PASS 2400x1080 upgrades no text overflow
+PASS 2400x1080 inventory fits safe area
+PASS 2400x1080 inventory uniform scale
+PASS 2400x1080 inventory no text overflow
+PASS 2400x1080 confirmation fits safe area
+PASS 2400x1080 confirmation uniform scale
+PASS 2400x1080 confirmation no text overflow
+PASS 2400x1080 cash inside simulated notch
+PASS 2400x1080 toolbar inside simulated notch
+PASS 2400x1080 header blocks do not overlap
+PASS 2400x1080 modal fits simulated notch
+PASS 2400x1080 loading information fits notch safe area
+PASS 2400x1080 loading artwork uses uniform scaling
+PASS 1920x1080 actual rendered resolution
+PASS 1920x1080 settings fits safe area
+PASS 1920x1080 settings uniform scale
+PASS 1920x1080 settings no text overflow
+PASS 1920x1080 pause fits safe area
+PASS 1920x1080 pause uniform scale
+PASS 1920x1080 pause no text overflow
+PASS 1920x1080 upgrades fits safe area
+PASS 1920x1080 upgrades uniform scale
+PASS 1920x1080 upgrades no text overflow
+PASS 1920x1080 inventory fits safe area
+PASS 1920x1080 inventory uniform scale
+PASS 1920x1080 inventory no text overflow
+PASS 1920x1080 confirmation fits safe area
+PASS 1920x1080 confirmation uniform scale
+PASS 1920x1080 confirmation no text overflow
+PASS 1920x1080 cash inside simulated notch
+PASS 1920x1080 toolbar inside simulated notch
+PASS 1920x1080 header blocks do not overlap
+PASS 1920x1080 modal fits simulated notch
+PASS 1920x1080 loading information fits notch safe area
+PASS 1920x1080 loading artwork uses uniform scaling

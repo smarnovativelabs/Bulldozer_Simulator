@@ -1,0 +1,19 @@
+Quarry audio implementation - 29 October 2026
+
+Audit: Android target, 48 kHz output, one gameplay AudioListener, no authored gameplay AudioSources. Existing UI used cached Feel click/confirmation/error feedback. The existing Feel mixer asset was left unchanged.
+
+Added original quiet 48-second quarry instrumental music (80 BPM). Stereo Vorbis streaming, source gain 0.12, pause/loading gain 0.054, smooth unscaled fade. CommonUI owns the persistent soundtrack, so normal next-round and retry scene loads keep the same music source without duplication.
+
+Added three alternating pickaxe impacts at real successful animation contacts, a break/crumble cue, ore pickup/placement, refinery running/finished sounds, moving truck engines and delivery confirmation, footsteps while grounded and moving, cart attach/release and round completion. UI retains Feel feedback. Missing cart button, next-round and loading retry click feedback is wired. Sound OFF and saved Sound Level control the whole mix through the existing master listener settings.
+
+Runtime: QuarryAudio.cs uses eight pooled world effect voices, three machine loops and one music source. Including the cached loading UI feedback, the persistent hierarchy has 15 sources; gameplay UI has its existing three additional cached sources. Spatial effects are mono at 24 kHz. Estimated decoded short-clip PCM: 1,362,432 bytes (about 1.3 MiB); this excludes streaming buffers and existing UI/plugin overhead. No per-hit audio GameObjects, DSP reverb or new mixer graph.
+
+Music and synthesized foley were made for this project; deterministic generation recipe is create_audio.py. Three impact variations, three footsteps and the cart metal sound come from the existing Kenney Impact Sounds pack; copied CC0 license and provenance are in Assets/0_ProjectData/Audio. Plugin source assets/import settings were preserved.
+
+Validation: 24 normal-running Play-mode integration checks plus 10 focused button/budget checks passed (34 total). Actual audio clips were observed playing while a natural rock was mined, its three drops collected/refined/loaded and a paid truck departed. Verified master mute/volume, quiet music, pause ducking, stopped machinery in pause, footsteps, fixed voice count, next-round/retry music continuity, cart/round/button sounds and single listener. Final console query had zero errors/exceptions.
+
+Earlier diagnostic failures were test setup issues: Unity Editor frame-stepping pauses the audio engine, and the initial truck observation ran before its departure delay. Final tests ran unpaused and awaited actual truck engine playback. Diagnostic files retained separately from passing reports.
+
+All tests used isolated saves and preference keys. Normal player save was not overwritten. Test overrides and temporary Play start scene restored; Editor stopped. No build was generated. Device speaker/headphone listening and mobile profiling remain separate from these Editor playback checks.
+
+Evidence: play-verification.txt, observed-playing-clips.txt, button-verification.txt, import-report.txt, budget.txt.

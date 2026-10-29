@@ -1,0 +1,24 @@
+FAIL Music advances through actual audio playback
+PASS 48-second music loops with streaming import
+PASS Music gain stays restrained at 0.12 or below
+PASS World effects use fixed eight-voice pool
+PASS Exactly one listener
+PASS Settings pause ducks music using unscaled time
+PASS Settings button plays cached Feel click
+PASS Sound OFF mutes master and suppresses new world cues
+PASS Sound ON restores saved master slider level
+PASS Closing settings resumes controls
+PASS Actual animated mining emits impact and break cues
+PASS Actual loose ore collected without inventory changes from audio
+PASS Refinery processes all three real mined items
+FAIL Impact and crumble clips observed playing during mining
+FAIL Pickup and placement clips observed during real transfers
+FAIL Refinery working loop and completion cue observed
+FAIL Paid delivery cue and moving truck engine observed
+PASS Pause stops machinery loops
+FAIL Actual player movement emits footsteps
+PASS No AudioSources allocated per action
+PASS Real reload accepted for music continuity check
+PASS Scene reload retains the same persistent music source
+FAIL No duplicated soundtrack after reload
+PASS Master volume survives scene reload

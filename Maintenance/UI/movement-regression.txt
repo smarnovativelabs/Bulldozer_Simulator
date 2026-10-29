@@ -1,0 +1,5 @@
+PASS Joystick pointer moves actual player
+PASS Inventory cancels held movement and freezes player
+PASS Inventory closes and releases gameplay
+PASS New touch resumes actual movement after inventory
+PASS Releasing touch stops player without drift

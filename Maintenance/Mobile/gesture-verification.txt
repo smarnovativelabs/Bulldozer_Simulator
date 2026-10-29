@@ -1,0 +1,21 @@
+PASS 2796x1242 Joystick screen-to-local input remains correctly scaled
+PASS 2796x1242 Pause releases held pointer and recenters joystick
+PASS 2796x1242 Fresh pointer works after closing modal
+PASS 2688x1242 Joystick screen-to-local input remains correctly scaled
+PASS 2688x1242 Pause releases held pointer and recenters joystick
+PASS 2688x1242 Fresh pointer works after closing modal
+PASS 1280x720 Joystick screen-to-local input remains correctly scaled
+PASS 1280x720 Pause releases held pointer and recenters joystick
+PASS 1280x720 Fresh pointer works after closing modal
+PASS 2732x2048 Joystick screen-to-local input remains correctly scaled
+PASS 2732x2048 Pause releases held pointer and recenters joystick
+PASS 2732x2048 Fresh pointer works after closing modal
+PASS 1670x720 Joystick screen-to-local input remains correctly scaled
+PASS 1670x720 Pause releases held pointer and recenters joystick
+PASS 1670x720 Fresh pointer works after closing modal
+PASS 2400x1080 Joystick screen-to-local input remains correctly scaled
+PASS 2400x1080 Pause releases held pointer and recenters joystick
+PASS 2400x1080 Fresh pointer works after closing modal
+PASS 1920x1080 Joystick screen-to-local input remains correctly scaled
+PASS 1920x1080 Pause releases held pointer and recenters joystick
+PASS 1920x1080 Fresh pointer works after closing modal

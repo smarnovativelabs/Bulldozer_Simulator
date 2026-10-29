@@ -1,0 +1,27 @@
+PASS Fresh isolated start
+PASS Modal blocks controls during mine
+PASS Player stays still during mine modal
+PASS Production/save state frozen during mine modal
+PASS Closing modal resumes mine
+PASS Modal blocks controls during deposit
+PASS Player stays still during deposit modal
+PASS Production/save state frozen during deposit modal
+PASS Closing modal resumes deposit
+PASS Modal blocks controls during load
+PASS Player stays still during load modal
+PASS Production/save state frozen during load modal
+PASS Closing modal resumes load
+PASS New UI button buys pickaxe using earned cash
+PASS New UI button buys speed using earned cash
+PASS New UI button buys rack using earned cash
+PASS All 78 rocks broken by animation contact
+PASS Repeated animated strikes exercised
+PASS All ground, carried, refinery and truck inventory settled
+PASS Every mined item refined once: 234
+PASS Every refined item sold once: 234
+PASS Both trucks dispatched through the shared lane
+PASS Truck separation stays safe: 5
+PASS Pause, inventory and settings exercised across mining/refinery/loading
+PASS Earned-cash pickaxe, rack and speed purchases completed
+PASS Completion bonus cannot pay twice
+PASS Round complete; ready for restart and next-round verification

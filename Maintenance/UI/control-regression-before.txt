@@ -1,0 +1,7 @@
+PASS Touch joystick accepts pointer input before pause
+FAIL Opening modal resets held joystick visual
+FAIL Previously held pointer cannot write movement behind modal
+PASS Modal intercepts pointer raycast over underlying joystick
+PASS Close returns control and normal time
+FAIL Fresh pointer works after pause without old pointer-up
+PASS Pointer release resets movement and knob

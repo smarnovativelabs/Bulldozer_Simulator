@@ -1,0 +1,1 @@
+elapsed=357.6s goal=mine quarry-v1-3-4 rocks=26 refined=78 deliveries=22 cash=1935 position=(1.77, 0.03, 4.89) target=(1.77, 0.03, 4.83) firstUpgrade=8.6s firstDelivery=20.9s

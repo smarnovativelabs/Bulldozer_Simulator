@@ -1,0 +1,1 @@
+t=588.7 activity=drain target= broken=78/78 hits=186 drops=0 cargo=0 input=0 output=0 queue=0 truck=0 deliveries=68 sold=234 cash=5975 pos=(0.00, 0.03, -3.00) mining=Final delivery +$10

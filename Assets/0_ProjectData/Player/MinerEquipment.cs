@@ -117,6 +117,7 @@ namespace Bulldozer.Player
             next.items=next.items.Append(next.groundDrops[index].item).ToArray();next.groundDrops=next.groundDrops.Where((_,i)=>i!=index).ToArray();
             if(!Commit(next))return false;
             if(drops)drops.Sync(next.groundDrops,Vector3.zero,false);
+            Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Pickup,origin);
             if(!UsingWheelbarrow&&cargoSlots[cargoCount-1])StartCoroutine(FlyToRack(cargoCount-1,origin));return true;
         }
         public bool TryCollect(Vector3 origin)=>TryCollect(0,origin,null);
@@ -154,6 +155,7 @@ namespace Bulldozer.Player
         }
     }
 }
+
 
 
 

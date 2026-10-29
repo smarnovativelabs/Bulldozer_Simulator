@@ -1,0 +1,1 @@
+Closed UI Refresh 500 calls: Mono used delta=12288 bytes, elapsed=69.18ms (Editor microbenchmark)

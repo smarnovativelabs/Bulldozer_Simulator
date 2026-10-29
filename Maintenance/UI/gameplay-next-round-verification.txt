@@ -1,0 +1,14 @@
+PASS Play restart restores exact cash and all earned upgrades
+PASS Restart retains completed round and reward claims without duplicate payment
+PASS Cash reconciles to all ore, delivery/task/round bonuses minus purchases: $5975
+PASS Completed-round restart shows next-round panel
+PASS Next-round button reachable through actual UI raycasts
+PASS Double next-round click advances and saves once
+PASS Next round uses same scene
+PASS Cash and all three upgrades carry to round two
+PASS All 78 rocks and hit colliders restored
+PASS Round and optional task claims reset
+PASS Completion overlay closes and player control resumes
+PASS New round saved durably
+
+PASS Round two natural rock breaks through actual pickaxe animation and saves new progress

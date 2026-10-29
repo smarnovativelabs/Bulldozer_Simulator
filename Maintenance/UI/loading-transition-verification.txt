@@ -1,0 +1,11 @@
+PASS Load test starts from paused settings
+PASS Actual async worksite load accepted
+PASS Overlapping load rejected
+PASS Real scene activation creates new gameplay UI
+PASS Actual loading never reports premature 100%
+PASS Actual load releases cover and gameplay input
+PASS Pause time scale restored on scene transition
+PASS UI transition preserves saved cash and upgrades
+PASS Shared loader leaves one active EventSystem
+PASS Slider fill stays within its 12px track
+PASS Shared UI singleton does not duplicate on load

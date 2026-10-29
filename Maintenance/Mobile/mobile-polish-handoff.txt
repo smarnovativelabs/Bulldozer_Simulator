@@ -1,0 +1,26 @@
+Mobile usability and performance polish - 29 October 2026
+
+Changes (no new gameplay features or build):
+1. Volume slider now has a 56-unit transparent touch surface while its visible 12-unit bar remains unchanged. Sound/vibration toggle raycast bounds expand to 56 units high without stretching artwork. Edge-hit regressions that failed before now pass at every requested resolution.
+2. QuarryGameUI no longer copies snapshots, concatenates arrays or refreshes inventory/upgrade/settings text while those panels are hidden. Cash updates only when its value changes. Open inventory uses a reusable 12-element counting array; all four storage tabs retain correct totals.
+3. Disabled shadow casting only on tiny Embedded Minerals meshes on rocks. Rock geometry, textures, colliders and main rock shadows remain unchanged. Repeated frozen-world, same-camera Editor A/B: 210 batches / 58,575 triangles with patch shadows versus 176 batches / 50,871 triangles without; SetPass stays 15. Both repeated measurements matched. This is about 16% fewer batches in that view, not a device FPS claim.
+
+Fresh-player session:
+360.1 seconds of normal running Play mode with a fresh isolated save. Automated NavMesh-guided joystick walking, with no teleporting between rocks/stations. Actual pickaxe contacts, pickup detection, production timers, truck deliveries and workbench purchases ran normally.
+Outcome: 26 rocks, 61 successful contacts, 78 refined items, 22 deliveries, cash $1935. No route/station deadlock. First pickaxe upgrade bought at 8.6 seconds, first delivery at 20.9 seconds. These are timings for an automated driver that immediately knows the controls/routes, not measured human onboarding or proof of fun/retention.
+Busy-session Editor maxima sampled: 335 batches, 27 SetPass, 63 active particles, 7 playing AudioSources. The high whole-session batch peak was investigated with the controlled shadow A/B above. Whole-Editor allocated memory peaked near 1.35 GB; this includes Editor/package overhead and is not player/device memory.
+
+UI/control verification:
+182 passing layout/touch-target checks across 2796x1242, 2688x1242, 1280x720, 2732x2048, 1670x720, 2400x1080 and 1920x1080, including simulated iPhone X safe area, five modal pages, loading layout and joystick bounds. No stretching or TMP overflow detected.
+21 passing gesture checks: correctly scaled joystick input, held-pointer cancellation during pause, and fresh touch after close at all seven sizes.
+8 passing inventory/settings/upgrade/cash regressions after the refresh optimization.
+Closed UI Refresh microbenchmark (500 synchronous calls): before 69.18 ms, final after 0.0639 ms. After sample reported zero change in Mono used memory. This microbenchmark is local Editor evidence, not an overall frame-time or allocation guarantee.
+Final console query: zero errors/exceptions. Visual check: settings-polished.png.
+
+Budgets preserved: each delivery truck is 4400 triangles, one material and one skinned renderer. No added particle systems, world meshes, textures or audio voices. The existing pooling remains in place.
+
+Test notes: the first inventory fixture accidentally put raw ore in the truck queue; save validation correctly rejected it. Corrected valid refined-item fixtures passed. This was a harness issue, not a production inventory failure. Before-fix target misses and the invalid-fixture diagnostic are kept separately from passing reports.
+
+Original player save was not overwritten. Isolated session save: Maintenance/Miner/SaveTests/639288750714008346/play-progress.json. Test preference/save overrides cleared, original Play start scene and Game View restored, 14 temporary Game View sizes removed, Editor stopped. No APK/build created. Physical touchscreen comfort, actual device FPS/thermal/battery/memory and human 5-10 minute usability still require later device/human validation.
+
+Evidence: first-session-report.txt, resolution-verification.txt, gesture-verification.txt, ui-regression.txt, ui-refresh-before.txt, ui-refresh-after.txt, shadow-ab.txt, final-budget.txt.

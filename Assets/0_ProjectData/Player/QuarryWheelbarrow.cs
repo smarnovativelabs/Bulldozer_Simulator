@@ -24,6 +24,7 @@ namespace Bulldozer.Player
             // Resume parked, retaining both inventories; never force a player into a moving carrier on load.
             if(s.usingWheelbarrow){s.barrowItems=s.items;s.items=s.backpackItems;s.backpackItems=Array.Empty<int>();s.usingWheelbarrow=false;equipment.Commit(s);}
             actionButton.onClick.AddListener(Interact);
+            actionButton.onClick.AddListener(()=>Bulldozer.UI.QuarryGameUI.Instance?.feedback.Play());
             var animator=player.visual.GetComponent<Animator>();rightIK=player.visual.GetComponent<MinerAnimator>().rightHandIK;oldRightTarget=rightIK.Target;
             leftHand=animator.GetBoneTransform(HumanBodyBones.LeftHand);rightHand=animator.GetBoneTransform(HumanBodyBones.RightHand);
             leftTarget=new GameObject("Cart left wrist target").transform;leftTarget.SetParent(transform,false);
@@ -50,7 +51,7 @@ namespace Bulldozer.Player
             lastRotation=player.visual.rotation;
             if(Pushing)transform.SetPositionAndRotation(CartPosition(),lastRotation);
             lastWheel=transform.position;equipment.drops.ResetPickupSweep();
-            actionCooldown=Time.time+.35f;
+            actionCooldown=Time.time+.35f;Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Cart,transform.position);
             player.visual.GetComponent<MinerMining>().ShowStatus(Pushing?"Wheelbarrow ready - push over ore to collect":"Wheelbarrow parked - cargo kept inside");
             var dust=equipment.drops.dust;if(dust){var burst=new ParticleSystem.EmitParams();burst.position=transform.position+Vector3.up*.08f;burst.startSize=.3f;burst.startLifetime=.4f;burst.startColor=new Color(.65f,.59f,.48f,.35f);burst.velocity=Vector3.up*.25f;dust.Emit(burst,6);}
         }
@@ -101,3 +102,4 @@ namespace Bulldozer.Player
         void OnDisable(){if(player)player.runSpeed=originalSpeed;if(equipment&&backpackRoot)equipment.cargoRoot=backpackRoot;if(rightIK&&oldRightTarget)rightIK.Target=oldRightTarget;}
     }
 }
+

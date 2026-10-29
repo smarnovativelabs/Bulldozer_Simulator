@@ -1,0 +1,4 @@
+ON batches=210 setPass=15 triangles=58575 patchRenderers=65
+OFF batches=176 setPass=15 triangles=50871 patchRenderers=65
+ON batches=210 setPass=15 triangles=58575 patchRenderers=65
+OFF batches=176 setPass=15 triangles=50871 patchRenderers=65

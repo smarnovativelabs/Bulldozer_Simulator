@@ -1,0 +1,7 @@
+FAIL Carrying tab retains exact raw/refined counts
+FAIL Parked tab combines stored items correctly
+FAIL Refinery tab counts both input/output without concatenating arrays
+FAIL Loading tab includes queued and on-truck items
+PASS Upgrade cards populate on opening
+PASS Settings labels populate on opening
+PASS Cash updates independently of panel visibility

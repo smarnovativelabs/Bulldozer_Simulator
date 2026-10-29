@@ -1,0 +1,23 @@
+Quarry UI implementation - 29 October 2026
+
+Implemented loading screen, gameplay HUD, settings, pause/confirmation, equipment upgrades and read-only inventory. Main menu design was not changed. No player build was produced.
+
+Fonts: Barlow Condensed Bold for headings/buttons and Barlow Medium for labels/descriptions, including dynamic TextMeshPro font assets. Four supplied sprite sheets were sliced into 130 named sprites. Supplied artwork is reusable/replacable through Image references. Sprites keep their aspect ratio; panels use sliced borders.
+
+Gameplay scene: Assets/0_ProjectData/0_Scenes/1_Gameplay.unity
+Runtime UI: Assets/0_ProjectData/UI/Runtime
+Shared loading behavior: Assets/0_ProjectData/UI/Common
+Scene authoring recipe: Maintenance/UI/author-ui.cs (initial authoring only; not safe to rerun on existing UI)
+
+Modal panels use unscaled DOTween fades/scales, block underlying gameplay, restore time scale after closing, and cancel interrupted animations. Feel owns sound feedback; DOTween owns animated UI properties. Sound, volume, vibration and performance preferences persist. Performance choices are frame-rate targets, not measured device performance promises.
+
+Upgrade cards use existing pickaxe, cargo rack and speed progression. Purchases require the workbench. Inventory reports actual carried/parked/refinery/loading counts, without adding unsupported selling actions. Cash reward notices are queued. Loading follows actual asynchronous progress, caps the percentage below 100 until ready, uses a subtle uniform artwork push-in and lightweight dust graphic, and adds no artificial minimum loading delay.
+
+Verification: 26 interaction checks, 154 resolution/safe-area checks and 11 real async scene transition checks passed (191 total). Detailed evidence is in interaction-results.txt, resolution-verification.txt and loading-transition-verification.txt. Final Unity console error/exception query returned zero entries.
+Resolutions: 2796x1242, 2688x1242, 1280x720, 2732x2048, 1670x720, 2400x1080, 1920x1080; simulated iPhone X notch also checked. Modal bounds, uniform scale and text overflow checks passed.
+
+Tests used isolated save files and preference keys; normal player cash/upgrades were not overwritten. Test overrides were cleared, original Game View restored, and 21 temporary test sizes removed. Unity was left out of Play mode.
+
+Final preview images: gameplay-final.png, settings-final.png, upgrades-final.png, inventory-final.png and loading-final.png. These show an isolated test fixture (including sample cash/inventory and loading percentage), not the user's saved progression.
+
+Limits: Editor validation is not physical-device profiling. Mobile touch, vibration, audio perception, GPU/memory use and real device safe areas still require device testing. The dust overlay has 96 triangles and updates at 20 Hz while active; no heavy particle system was added. Truck meshes/rigs were not changed by this UI work.

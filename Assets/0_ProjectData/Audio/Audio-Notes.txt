@@ -1,0 +1,9 @@
+Quarry audio
+
+Quarry_Dawn_Underscore.wav: original 48-second instrumental composition generated for this project from synthesized tones, 80 BPM, no sampled/reference-game music. Source recipe: Maintenance/Audio/create_audio.py.
+Stone_Break, Ore_Pickup, Ore_Place, Refinery_Ready, Delivery_Confirm, Refinery_Loop and Truck_Engine_Loop: original synthesized effects from the same recipe.
+impactMining_000/001/002, footstep_concrete_000/001/002 and impactMetal_light_001: copies from the project's Kenney Impact Sounds pack. CC0 license included in Kenney-License.txt.
+
+Runtime controller: QuarryAudio on persistent CommonUI prefab. Music volume 0.12 before master Sound Level; pause/loading reduces it to 45% of that. Master Sound and Sound Level affect all music, gameplay and Feel UI sounds.
+Fixed budget: 8 reusable world effect voices, 3 reusable machine loops and 1 streaming music source. Existing cached Feel UI sources remain in use. No runtime audio objects are created per hit, pickup or delivery.
+All spatial effects are mono at 24 kHz. Music is stereo Vorbis streaming; short effects and four-second machine loops are preloaded for low runtime decode cost. No AudioMixer asset or plugin audio assets were changed.

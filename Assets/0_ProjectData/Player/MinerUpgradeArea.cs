@@ -10,6 +10,7 @@ namespace Bulldozer.Player
         public UnityEngine.UI.Button speedButton;
         public TMPro.TMP_Text speedText;
         MinerController player;MinerEquipment equipment;
+        public bool useQuarryUI;
         void Start()
         {
             player=FindFirstObjectByType<MinerController>();equipment=player.visual.GetComponent<MinerEquipment>();
@@ -18,6 +19,7 @@ namespace Bulldozer.Player
         }
         void Update()
         {
+            if(useQuarryUI)return;
             bool inside=player&&!player.InputBlocked&&MiningProduction.Contains(zone,player.transform.position);panel.SetActive(inside);if(!inside)return;
             damageText.text=equipment.DamageLevel>=10?"PICKAXE MAX":$"PICKAXE {equipment.Damage} > {equipment.Damage+1}\n${equipment.DamageCost}";
             capacityText.text=equipment.CapacityLevel>=15?"RACK MAX":$"RACK {equipment.Capacity} > {equipment.Capacity+1}\n${equipment.CapacityCost}";
@@ -39,4 +41,5 @@ namespace Bulldozer.Player
         void OnDisable(){if(panel)panel.SetActive(false);}
     }
 }
+
 

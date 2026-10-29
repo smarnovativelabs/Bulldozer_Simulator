@@ -1,0 +1,5 @@
+Persistent sources including cached loading UI: 15
+World pool: 8; machine loops: 3; music: 1
+Estimated decoded short-clip PCM bytes: 1362432
+Music: stereo 48s, streaming Vorbis, source gain .12, pause gain .054
+Editor validation only; no device profile or build.

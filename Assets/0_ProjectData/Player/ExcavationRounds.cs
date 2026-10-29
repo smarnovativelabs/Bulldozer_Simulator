@@ -49,7 +49,7 @@ namespace Bulldozer.Player
             int remaining=ids.Count(id=>System.Array.IndexOf(s.depletedBlocks,id)<0);
             roundLabel.text="EXCAVATION "+((long)s.roundIndex+1)+"  |  "+remaining+" ROCKS LEFT";
             if(!s.roundBonusClaimed||!ExcavationRules.Cleared(s,ids)||presented)return;
-            presented=true;player.ExcavationInputBlocked=true;player.CancelMining();if(player.touchControls)player.touchControls.Move=Vector2.zero;
+            Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Round,player.transform.position);presented=true;player.ExcavationInputBlocked=true;player.CancelMining();if(player.touchControls)player.touchControls.Move=Vector2.zero;
             heading.text="EXCAVATION "+((long)s.roundIndex+1)+" COMPLETE";
             summary.text="All stone delivered\nCompletion bonus  +$"+ExcavationRules.Bonus(s.roundIndex)+"\nCash balance  $"+s.coins+"\n\nYour cash, equipment and upgrades carry forward.";
             completionPanel.gameObject.SetActive(true);completionPanel.blocksRaycasts=true;completionPanel.interactable=true;
@@ -60,9 +60,11 @@ namespace Bulldozer.Player
             if(transitioning||!ExcavationRules.TryAdvance(equipment.Snapshot,ids,out var next))return;
             // Durable round state is written before any visual transition or scene reload.
             if(!equipment.Commit(next)){summary.text="Could not save the next excavation. Please retry.\nYour current progress is unchanged.";return;}
-            transitioning=true;nextButton.interactable=false;player.ExcavationInputBlocked=true;fade.blocksRaycasts=true;
-            fadeTween=fade.DOFade(1,.45f).SetUpdate(true).SetLink(gameObject).OnComplete(()=>SceneManager.LoadSceneAsync(gameObject.scene.path));
+            Bulldozer.UI.QuarryGameUI.Instance?.feedback.Play();transitioning=true;nextButton.interactable=false;player.ExcavationInputBlocked=true;fade.blocksRaycasts=true;
+            fadeTween=fade.DOFade(1,.45f).SetUpdate(true).SetLink(gameObject).OnComplete(()=>{var ui=Bulldozer.UI.CommonUI.Instance;if(ui!=null)ui.SceneLoading.TryLoadScene(gameObject.scene.path);else SceneManager.LoadSceneAsync(gameObject.scene.path);});
         }
         void OnDestroy(){panelTween?.Kill();fadeTween?.Kill();if(player)player.ExcavationInputBlocked=false;}
     }
 }
+
+

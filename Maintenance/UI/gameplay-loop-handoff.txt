@@ -1,0 +1,31 @@
+New UI gameplay loop verification - 29 October 2026
+
+Outcome: complete mining/refinery/truck/next-round loop passed. One reproducible touch ownership bug was fixed and its failing cases passed on retest. No player build produced.
+
+Full fresh-save run with new UI:
+78 rocks broken through 186 animated contacts, including natural rocks.
+234 real ore drops collected, refined through normal timers and sold exactly once.
+68 deliveries, including the final partial truck. Both trucks used the shared lane; minimum observed separation was 5 units. All ground/cargo/refinery/loading/truck buffers settled before completion.
+New UI buy-button callbacks purchased pickaxe, speed and rack level 1 using earned cash.
+Final cash reconciled to $5975: ore $5265 + delivery bonuses $660 + optional rewards $45 + round bonus $50 - upgrades $45.
+Pause, inventory and settings opened during mining, refining and loading: player/progression froze, underlying input was blocked, and closing restored play.
+
+Restart and next round:
+Real Play restart restored exact cash, all three upgrades and paid reward claims. Completion could not pay twice. Actual UI raycasts reached NEXT EXCAVATION; double clicking advanced once. The real asynchronous loading service reloaded the same scene. All 78 rocks/colliders returned, round tasks reset, controls resumed, and the new round was written to disk. A natural rock in round two subsequently broke through the pickaxe animation and saved its progress.
+
+Bug fix: Assets/0_ProjectData/Player/MinerTouchZone.cs
+Previously, a finger held on the joystick retained pointer ownership when a modal opened. Its knob stayed displaced, drag callbacks could write movement behind the modal, and a fresh pointer could be ignored after closing until the old pointer-up arrived. Controls now release pointer ownership on input blocking, focus loss and application pause; blocked pointer-down/drag events are ignored, and knob/movement/look state is cleared. No materials, meshes or particles were added.
+
+Verification evidence:
+gameplay-loop-verification.txt: 27 PASS
+gameplay-next-round-verification.txt: 13 PASS
+control-regression.txt: 11 PASS (pre-fix failures retained in control-regression-before.txt)
+movement-regression.txt: 5 PASS
+Total final checks: 56 PASS, 0 FAIL.
+Final Play-session console error/exception query: zero entries. An earlier reload emitted an unrelated Unity AI Assistant relay connection timeout; no gameplay exception accompanied it.
+
+Scope: automated Unity Editor integration testing. Player positioning shortened travel; animated hits, pickup detection, production timers, truck movement, UI callbacks/raycast blocking and actual movement used runtime code. Some full-loop frames were stepped at a simulated 15 Hz delta; this is not a physical-device performance measurement or manual touchscreen certification.
+
+Isolated test save: Maintenance/Miner/SaveTests/639288700343533573/play-progress.json
+Normal user save was not overwritten. Test save routing/preferences were cleared; original background, audio, frame-rate and vSync settings restored. Editor left out of Play mode. Existing scene assets were not changed by this test/fix task.
+Screenshots: loop-in-progress.png, loop-complete.png, loop-round-two.png. Completion/round-two captures were taken immediately after assertions while stepping; polling HUD labels can show the preceding frame (the persisted balances/counts are verified in the reports).

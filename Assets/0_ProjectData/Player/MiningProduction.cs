@@ -78,21 +78,21 @@ namespace Bulldozer.Player
             if(!equipment.Commit(s))return false;
             if(empty)inputReady=Time.time+.9f;
             if(effects)effects.Fly(id,equipment.cargoRoot.position,inputStack.position);
-            Status("Stone placed on refinery input");return true;
+            Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Place,inputStack.position);Status("Stone placed on refinery input");return true;
         }
         public bool ProcessOne()
         {
             var s=equipment.Snapshot;if(s.refineryInput.Length==0||s.refineryOutput.Length>=100)return false;
             int id=s.refineryInput[0]+6;s.refineryOutput=s.refineryOutput.Append(id).ToArray();s.refineryInput=s.refineryInput.Skip(1).ToArray();
             OptionalTaskRules.Refined(s);
-            if(!equipment.Commit(s))return false;if(effects)effects.Finished(id);return true;
+            if(!equipment.Commit(s))return false;if(effects)effects.Finished(id);Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Ready,outputStack.position);return true;
         }
         public bool CollectOutput()
         {
             var s=equipment.Snapshot;if(equipment.IsFull||s.refineryOutput.Length==0)return false;
             int id=s.refineryOutput[0];s.items=s.items.Append(id).ToArray();s.refineryOutput=s.refineryOutput.Skip(1).ToArray();
             if(!equipment.Commit(s))return false;if(effects)effects.Fly(id,effects.tray.position,equipment.cargoRoot.position,equipment.cargoRoot);
-            Status("Finished stone collected - take it to LOADING");return true;
+            Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Pickup,outputStack.position);Status("Finished stone collected - take it to LOADING");return true;
         }
         // The ground buffer accepts goods even when both vehicles are travelling.
         public bool LoadTruck()
@@ -102,7 +102,7 @@ namespace Bulldozer.Player
             bool empty=s.loadingQueue.Length==0;int id=s.items[i];s.loadingQueue=s.loadingQueue.Append(id).ToArray();s.items=s.items.Where((_,n)=>n!=i).ToArray();
             if(!equipment.Commit(s))return false;if(empty)loadingReady=Time.time+.9f;
             if(effects)effects.Fly(id,equipment.cargoRoot.position,loadingStack.position);
-            Status("Stone placed on loading pad");return true;
+            Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Place,loadingStack.position);Status("Stone placed on loading pad");return true;
         }
         public bool TransferToTruck()
         {
@@ -123,10 +123,10 @@ namespace Bulldozer.Player
                 OptionalTaskRules.Delivered(s);
             }
             if(!equipment.Commit(s))return false;
-            if(effects)effects.Fly(id,loadingStack.position,truck.cargo.position,truck.cargo);
+            if(effects)effects.Fly(id,loadingStack.position,truck.cargo.position,truck.cargo);Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Place,truck.cargo.position);
             if(complete)
             {
-                departingItems[activeTruck]=loaded;truck.loadedCount=loaded.Length;truck.orderCapacity=capacity;truck.Dispatch();
+                departingItems[activeTruck]=loaded;truck.loadedCount=loaded.Length;truck.orderCapacity=capacity;truck.Dispatch();Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Delivery,truck.transform.position);
                 Status("Delivery +$"+payment+(bonus?" | 3-delivery bonus +$30!":""));
                 if(rewardFeedback)rewardFeedback.PlayReward(truck.cargo.position,payment);
                 if(Truck(1-activeTruck))activeTruck=1-activeTruck;
@@ -149,7 +149,7 @@ namespace Bulldozer.Player
             s.coins+=payment;s.trucksCompleted++;s.truckItems=Array.Empty<int>();
             OptionalTaskRules.Delivered(s);
             if(!equipment.Commit(s))return false;
-            departingItems[activeTruck]=loaded;truck.loadedCount=loaded.Length;truck.orderCapacity=capacity;truck.Dispatch();
+            departingItems[activeTruck]=loaded;truck.loadedCount=loaded.Length;truck.orderCapacity=capacity;truck.Dispatch();Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Delivery,truck.transform.position);
             Status("Final delivery +$"+payment+(bonus?" | 3-delivery bonus +$30!":""));
             if(rewardFeedback)rewardFeedback.PlayReward(truck.cargo.position,payment);
             if(Truck(1-activeTruck))activeTruck=1-activeTruck;
@@ -188,4 +188,5 @@ namespace Bulldozer.Player
         }
     }
 }
+
 
