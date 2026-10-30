@@ -1,0 +1,101 @@
+PASS v1 loads and migrates wallet/cargo
+PASS v1 load does not overwrite original
+PASS v1 migrated state commits
+PASS v1 second launch preserves exact migrated state
+PASS v2 loads and migrates wallet/cargo
+PASS v2 load does not overwrite original
+PASS v2 preserves upgrades and production
+PASS v2 migrated state commits
+PASS v2 second launch preserves exact migrated state
+PASS v3 loads and migrates wallet/cargo
+PASS v3 load does not overwrite original
+PASS v3 preserves upgrades and production
+PASS v3 retains ground pickups
+PASS v3 migrated state commits
+PASS v3 second launch preserves exact migrated state
+PASS v4 loads and migrates wallet/cargo
+PASS v4 load does not overwrite original
+PASS v4 preserves upgrades and production
+PASS v4 retains ground pickups
+PASS v4 retains excavation
+PASS v4 migrated state commits
+PASS v4 second launch preserves exact migrated state
+PASS v5 loads and migrates wallet/cargo
+PASS v5 load does not overwrite original
+PASS v5 preserves upgrades and production
+PASS v5 retains ground pickups
+PASS v5 retains excavation
+PASS v5 retains cart, queues and claimed tasks
+PASS v5 migrated state commits
+PASS v5 second launch preserves exact migrated state
+PASS v6 loads and migrates wallet/cargo
+PASS v6 load does not overwrite original
+PASS v6 preserves upgrades and production
+PASS v6 retains ground pickups
+PASS v6 retains excavation
+PASS v6 retains cart, queues and claimed tasks
+PASS v6 retains purchases
+PASS v6 migrated state commits
+PASS v6 second launch preserves exact migrated state
+PASS v7 loads and migrates wallet/cargo
+PASS v7 load does not overwrite original
+PASS v7 preserves upgrades and production
+PASS v7 retains ground pickups
+PASS v7 retains excavation
+PASS v7 retains cart, queues and claimed tasks
+PASS v7 retains purchases
+PASS v7 retains partial rock damage
+PASS v7 migrated state commits
+PASS v7 second launch preserves exact migrated state
+PASS v8 loads and migrates wallet/cargo
+PASS v8 load does not overwrite original
+PASS v8 preserves upgrades and production
+PASS v8 retains ground pickups
+PASS v8 retains excavation
+PASS v8 retains cart, queues and claimed tasks
+PASS v8 retains purchases
+PASS v7 retains partial rock damage
+PASS v8 migrated state commits
+PASS v8 second launch preserves exact migrated state
+PASS first save
+PASS backup save
+PASS corrupt primary recovers backup
+PASS recovered primary repairs safely
+PASS missing primary recovers backup
+PASS future save cannot be overwritten or rolled back to old backup
+PASS both corrupt copies preserved
+PASS failed write leaves in-memory balance unchanged
+PASS duplicate rock damage rejected
+PASS invalid processing timer rejected
+PASS round 1 pays once
+PASS round 1 duplicate completion rejected
+PASS round 1 advance retains permanent progress
+PASS round 2 pays once
+PASS round 2 duplicate completion rejected
+PASS round 2 advance retains permanent progress
+PASS round 3 pays once
+PASS round 3 duplicate completion rejected
+PASS round 3 advance retains permanent progress
+PASS round 4 pays once
+PASS round 4 duplicate completion rejected
+PASS round 4 advance retains permanent progress
+PASS round 5 pays once
+PASS round 5 duplicate completion rejected
+PASS round 5 advance retains permanent progress
+PASS round 6 pays once
+PASS round 6 duplicate completion rejected
+PASS round 6 advance retains permanent progress
+PASS round 7 pays once
+PASS round 7 duplicate completion rejected
+PASS round 7 advance retains permanent progress
+PASS round 8 pays once
+PASS round 8 duplicate completion rejected
+PASS round 8 advance retains permanent progress
+PASS round 9 pays once
+PASS round 9 duplicate completion rejected
+PASS round 9 advance retains permanent progress
+PASS round 10 pays once
+PASS round 10 duplicate completion rejected
+PASS round 10 advance retains permanent progress
+PASS cannot advance uncleared round
+COMPLETE 100 checks; fixtures=C:\Users\Administrator\Desktop\TalhaProjects\Bulldozer_Simulator\Temp\Sprint1SaveChecks\639289423865650406

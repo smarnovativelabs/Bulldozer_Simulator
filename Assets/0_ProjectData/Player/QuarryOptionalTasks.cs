@@ -8,6 +8,7 @@ namespace Bulldozer.Player
     {
         public MinerEquipment equipment;
         public TMPro.TMP_Text shiftLabel,title;
+        public TMPro.TMP_Text contractLabel,milestoneLabel;
         public TMPro.TMP_Text[] rows;
         public RectTransform card;
         float poll,celebrateUntil;
@@ -29,7 +30,9 @@ namespace Bulldozer.Player
             if(earned>0){lastReward=earned;celebrateUntil=Time.unscaledTime+3;rewardPulse?.Restart();}
             previousMask=s.taskClaimedMask;
             bool complete=s.taskClaimedMask==7&&Time.unscaledTime>=celebrateUntil;
-            card.sizeDelta=new Vector2(card.sizeDelta.x,complete?64:154);
+            card.sizeDelta=new Vector2(card.sizeDelta.x,254);
+            if(contractLabel)contractLabel.text="SPECIAL CONTRACT  "+(s.contractClaimed?"[PAID]":"+$"+QuarryProgressionRules.Reward(s))+"\n"+QuarryProgressionRules.ContractName(s.contractKind)+"  "+s.contractProgress+"/"+QuarryProgressionRules.Target(s);
+            if(milestoneLabel)milestoneLabel.text=QuarryProgressionRules.Phase(s.roundIndex)+"\n"+QuarryProgressionRules.Milestone(s);
             shiftLabel.text=s.roundIndex==0&&s.damageLevel>0?"FIRST SHIFT: upgrades carry into every round":QuarryBalance.Shift(s.roundIndex);
             title.text=Time.unscaledTime<celebrateUntil?"TASK BONUS  +$"+lastReward:complete?"ALL OPTIONAL TASKS COMPLETE":"OPTIONAL TASKS  /  AUTO REWARDS";
             for(int i=0;i<3;i++)

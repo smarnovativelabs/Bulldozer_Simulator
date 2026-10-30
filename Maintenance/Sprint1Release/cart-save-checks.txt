@@ -1,0 +1,9 @@
+START
+PASS Save active cart plus separately stored backpack
+PASS Reload 0 parks unlocked cart safely
+PASS Reload 0 keeps both inventories exactly once
+PASS Reload 0 preserves cash and excavation
+PASS Reload 1 parks unlocked cart safely
+PASS Reload 1 keeps both inventories exactly once
+PASS Reload 1 preserves cash and excavation
+COMPLETE

@@ -1,0 +1,6 @@
+PASS Player reaches east approach around existing bank
+PASS Player physically passes through unlocked entrance
+PASS West ridge boundary blocks player
+PASS East ridge boundary blocks player
+PASS North ridge boundary blocks player
+COMPLETE character-controller traversal and perimeter checks

@@ -1,0 +1,13 @@
+PASS Case 0 attached
+FAIL Case 0 parallel turn: seconds=-1.000 travel=3.089 angle=89.8
+PASS Case 0 overlap frames=0
+PASS Case 1 attached
+FAIL Case 1 parallel turn: seconds=-1.000 travel=5.338 angle=89.7
+PASS Case 1 overlap frames=0
+PASS Case 2 attached
+FAIL Case 2 parallel turn: seconds=-1.000 travel=5.262 angle=89.9
+PASS Case 2 overlap frames=0
+PASS Case 3 attached
+FAIL Case 3 parallel turn: seconds=-1.000 travel=2.427 angle=104.3
+PASS Case 3 overlap frames=0
+COMPLETE failures=4 frame=2638

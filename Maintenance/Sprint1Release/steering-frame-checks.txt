@@ -1,0 +1,5 @@
+PASS 60 Hz simulated delta: 180-degree turn within 15 degrees in 0.583s; speed bounded=True
+PASS 30 Hz simulated delta: 180-degree turn within 15 degrees in 0.600s; speed bounded=True
+PASS 15 Hz simulated delta: 180-degree turn within 15 degrees in 0.600s; speed bounded=True
+PASS 10 Hz simulated delta: 180-degree turn within 15 degrees in 0.600s; speed bounded=True
+COMPLETE failures=0 (math timestep checks, not device FPS)

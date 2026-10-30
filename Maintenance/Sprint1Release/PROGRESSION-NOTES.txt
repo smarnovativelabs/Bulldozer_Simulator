@@ -1,0 +1,37 @@
+SPRINT 1 PROGRESSION
+
+Excavation 1: deliver 12 refined stones for $40. Completion grants free permanent wheelbarrow ownership (no second charge or refund if already owned).
+Excavation 2: collect 12 raw pickups while using the wheelbarrow for $60. Existing rich-vein modifier remains.
+Excavation 3: deliver 12 copper ingots for $90. Completion permanently unlocks Copper Ridge.
+Excavation 4 onward: Copper Ridge opens, adding six copper deposits (84 total rocks rather than 78). Contracts rotate delivery / copper / tough rocks, paying $100. Existing shift modifiers, upgrades and optional tasks continue.
+Contracts are optional and cannot block completing the excavation. Rewards are automatically included in the same durable gameplay transaction as the action that completes them.
+The next-round preview shows destination/milestone and the next contract. Ridge deposits become active on excavation 4, never halfway through excavation 3.
+
+SAVE CONTRACT
+Schema 8 adds contract ID/progress/claimed and permanent area ownership. Stable numeric contract IDs and existing rock IDs must not be renumbered.
+Version 7 and earlier saves retain existing progression through the migration chain. Existing in-progress saves receive an achievable 'finish this excavation' contract; already-completed saves do not receive retroactive contract cash. Earned milestones are restored from round progress.
+New contracts reset only when a new excavation is durably committed. Upgrades, wallet, purchases and ownership persist.
+Future releases must preserve app data identity and add migrations; this does not guarantee arbitrary later schema changes without testing.
+
+IMPLEMENTATION
+Six deposits reuse existing meshes/materials and crack visuals. Five perimeter sections are static-batched; one gate enables/disables once on scene start. No added particles, lights, Update loops or runtime navigation baking for the area.
+Navigation is baked in CopperRidgeNavigation.asset. The gate carves the baked route while closed. Guidance ignores unavailable rocks.
+HUD uses existing fonts/card assets plus two replaceable text labels; no final artwork added.
+Fixed a fast-next-round race: wait for the previous loading reveal to release SceneLoadingService before starting the next load.
+
+VALIDATION
+SaveCompatibilityChecks: synthetic versions 1-8, backups, failed writes, future-save protection, permanent progression retention.
+ProgressionChecks: isolated live Play-mode fixtures covering three contracts, mid-contract reload, completion milestones, duplicate rewards/Next clicks, locked/open gate, 78/84 rock goals, baked route, new-deposit damage reload, and completed-v7 migration.
+ReleaseLoopChecks: accelerated gameplay API test of all rocks/pickups/refining/deliveries over three excavations with real scene transitions. It does not simulate every player touch or walk every route.
+See the accompanying *-checks.txt reports for outcomes. All test saves are isolated under Temp.
+No Android device performance, install-over-update test or production APK build was performed by this change.
+
+VERIFIED RESULTS (2026-10-30)
+- 100 save compatibility checks passed.
+- 74 live progression fixture checks passed, including fast Next/reload and v7 milestone migration.
+- Full gameplay API loop: excavations 1 and 2 completed; report polling interrupted the harness during excavation 3 with a Windows sharing violation. Logging was corrected. ResumeThirdChecks resumed the same checkpoint and completed all 78 rocks / 234 ore, then verified fresh excavation 4 with 84 active rocks. This was a harness I/O failure, not a game-save failure; evidence is retained in gameplay-checks.txt and third-gameplay-checks.txt.
+- Actual third-round truck deliveries reached and paid the copper contract (live-contract-delivery.txt).
+- Five character-controller approach, entrance and boundary checks passed.
+- Completion preview and both new HUD labels fit without TMP text overflow at 1280x720. The saved preview screenshot is a presentation fixture displayed over the fourth-round test scene.
+- Added area geometry before runtime batching: 3,864 triangles including inactive crack stages, 37 total renderers including inactive stages, four shared materials, zero lights/particles. Fresh open area normally has 18 active renderers; static perimeter geometry batches with existing scene geometry. These are Editor asset counts, not phone frame-rate measurements.
+- Play mode stopped; normal save override restored to empty; normal user save was not used for these tests. Scene saved.

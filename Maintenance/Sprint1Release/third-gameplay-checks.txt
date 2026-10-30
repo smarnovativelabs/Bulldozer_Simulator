@@ -1,0 +1,1211 @@
+PASS Resume third excavation after report file-lock interruption
+PASS Excavation index 3
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Atomic delivery payment/removal 147
+PASS Atomic delivery payment/removal 148
+PASS Mine quarry-expansion-0-5-3
+PASS Mine quarry-expansion-0-5-3
+PASS Mine quarry-expansion-0-5-3
+PASS Mine quarry-expansion-0-5-3
+PASS Pickup quarry-expansion-0-5-3/0
+PASS Pickup cannot repeat quarry-expansion-0-5-3/0
+PASS Pickup quarry-expansion-0-5-3/1
+PASS Pickup cannot repeat quarry-expansion-0-5-3/1
+PASS Pickup quarry-expansion-0-5-3/2
+PASS Pickup cannot repeat quarry-expansion-0-5-3/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-expansion-1-0-0
+PASS Mine quarry-expansion-1-0-0
+PASS Pickup quarry-expansion-1-0-0/0
+PASS Pickup cannot repeat quarry-expansion-1-0-0/0
+PASS Pickup quarry-expansion-1-0-0/1
+PASS Pickup cannot repeat quarry-expansion-1-0-0/1
+PASS Pickup quarry-expansion-1-0-0/2
+PASS Pickup cannot repeat quarry-expansion-1-0-0/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-expansion-1-0-1
+PASS Pickup quarry-expansion-1-0-1/0
+PASS Pickup cannot repeat quarry-expansion-1-0-1/0
+PASS Pickup quarry-expansion-1-0-1/1
+PASS Pickup cannot repeat quarry-expansion-1-0-1/1
+PASS Pickup quarry-expansion-1-0-1/2
+PASS Pickup cannot repeat quarry-expansion-1-0-1/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Atomic delivery payment/removal 149
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-expansion-1-0-2
+PASS Mine quarry-expansion-1-0-2
+PASS Pickup quarry-expansion-1-0-2/0
+PASS Pickup cannot repeat quarry-expansion-1-0-2/0
+PASS Pickup quarry-expansion-1-0-2/1
+PASS Pickup cannot repeat quarry-expansion-1-0-2/1
+PASS Pickup quarry-expansion-1-0-2/2
+PASS Pickup cannot repeat quarry-expansion-1-0-2/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-expansion-1-0-3
+PASS Pickup quarry-expansion-1-0-3/0
+PASS Pickup cannot repeat quarry-expansion-1-0-3/0
+PASS Pickup quarry-expansion-1-0-3/1
+PASS Pickup cannot repeat quarry-expansion-1-0-3/1
+PASS Pickup quarry-expansion-1-0-3/2
+PASS Pickup cannot repeat quarry-expansion-1-0-3/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Atomic delivery payment/removal 150
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-expansion-1-1-0
+PASS Pickup quarry-expansion-1-1-0/0
+PASS Pickup cannot repeat quarry-expansion-1-1-0/0
+PASS Pickup quarry-expansion-1-1-0/1
+PASS Pickup cannot repeat quarry-expansion-1-1-0/1
+PASS Pickup quarry-expansion-1-1-0/2
+PASS Pickup cannot repeat quarry-expansion-1-1-0/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-expansion-1-1-1
+PASS Mine quarry-expansion-1-1-1
+PASS Pickup quarry-expansion-1-1-1/0
+PASS Pickup cannot repeat quarry-expansion-1-1-1/0
+PASS Pickup quarry-expansion-1-1-1/1
+PASS Pickup cannot repeat quarry-expansion-1-1-1/1
+PASS Pickup quarry-expansion-1-1-1/2
+PASS Pickup cannot repeat quarry-expansion-1-1-1/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-expansion-1-1-2
+PASS Pickup quarry-expansion-1-1-2/0
+PASS Pickup cannot repeat quarry-expansion-1-1-2/0
+PASS Pickup quarry-expansion-1-1-2/1
+PASS Pickup cannot repeat quarry-expansion-1-1-2/1
+PASS Pickup quarry-expansion-1-1-2/2
+PASS Pickup cannot repeat quarry-expansion-1-1-2/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-expansion-1-1-3
+PASS Mine quarry-expansion-1-1-3
+PASS Pickup quarry-expansion-1-1-3/0
+PASS Pickup cannot repeat quarry-expansion-1-1-3/0
+PASS Pickup quarry-expansion-1-1-3/1
+PASS Pickup cannot repeat quarry-expansion-1-1-3/1
+PASS Pickup quarry-expansion-1-1-3/2
+PASS Pickup cannot repeat quarry-expansion-1-1-3/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Atomic delivery payment/removal 151
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-expansion-1-2-0
+PASS Mine quarry-expansion-1-2-0
+PASS Pickup quarry-expansion-1-2-0/0
+PASS Pickup cannot repeat quarry-expansion-1-2-0/0
+PASS Pickup quarry-expansion-1-2-0/1
+PASS Pickup cannot repeat quarry-expansion-1-2-0/1
+PASS Pickup quarry-expansion-1-2-0/2
+PASS Pickup cannot repeat quarry-expansion-1-2-0/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-expansion-1-2-1
+PASS Mine quarry-expansion-1-2-1
+PASS Mine quarry-expansion-1-2-1
+PASS Mine quarry-expansion-1-2-1
+PASS Pickup quarry-expansion-1-2-1/0
+PASS Pickup cannot repeat quarry-expansion-1-2-1/0
+PASS Pickup quarry-expansion-1-2-1/1
+PASS Pickup cannot repeat quarry-expansion-1-2-1/1
+PASS Pickup quarry-expansion-1-2-1/2
+PASS Pickup cannot repeat quarry-expansion-1-2-1/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-expansion-1-2-2
+PASS Mine quarry-expansion-1-2-2
+PASS Pickup quarry-expansion-1-2-2/0
+PASS Pickup cannot repeat quarry-expansion-1-2-2/0
+PASS Pickup quarry-expansion-1-2-2/1
+PASS Pickup cannot repeat quarry-expansion-1-2-2/1
+PASS Pickup quarry-expansion-1-2-2/2
+PASS Pickup cannot repeat quarry-expansion-1-2-2/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Atomic delivery payment/removal 152
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-expansion-1-2-3
+PASS Pickup quarry-expansion-1-2-3/0
+PASS Pickup cannot repeat quarry-expansion-1-2-3/0
+PASS Pickup quarry-expansion-1-2-3/1
+PASS Pickup cannot repeat quarry-expansion-1-2-3/1
+PASS Pickup quarry-expansion-1-2-3/2
+PASS Pickup cannot repeat quarry-expansion-1-2-3/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Atomic delivery payment/removal 153
+PASS Mine quarry-expansion-1-3-0
+PASS Mine quarry-expansion-1-3-0
+PASS Pickup quarry-expansion-1-3-0/0
+PASS Pickup cannot repeat quarry-expansion-1-3-0/0
+PASS Pickup quarry-expansion-1-3-0/1
+PASS Pickup cannot repeat quarry-expansion-1-3-0/1
+PASS Pickup quarry-expansion-1-3-0/2
+PASS Pickup cannot repeat quarry-expansion-1-3-0/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-expansion-1-3-1
+PASS Mine quarry-expansion-1-3-1
+PASS Pickup quarry-expansion-1-3-1/0
+PASS Pickup cannot repeat quarry-expansion-1-3-1/0
+PASS Pickup quarry-expansion-1-3-1/1
+PASS Pickup cannot repeat quarry-expansion-1-3-1/1
+PASS Pickup quarry-expansion-1-3-1/2
+PASS Pickup cannot repeat quarry-expansion-1-3-1/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-expansion-1-3-2
+PASS Pickup quarry-expansion-1-3-2/0
+PASS Pickup cannot repeat quarry-expansion-1-3-2/0
+PASS Pickup quarry-expansion-1-3-2/1
+PASS Pickup cannot repeat quarry-expansion-1-3-2/1
+PASS Pickup quarry-expansion-1-3-2/2
+PASS Pickup cannot repeat quarry-expansion-1-3-2/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-expansion-1-3-3
+PASS Mine quarry-expansion-1-3-3
+PASS Pickup quarry-expansion-1-3-3/0
+PASS Pickup cannot repeat quarry-expansion-1-3-3/0
+PASS Pickup quarry-expansion-1-3-3/1
+PASS Pickup cannot repeat quarry-expansion-1-3-3/1
+PASS Pickup quarry-expansion-1-3-3/2
+PASS Pickup cannot repeat quarry-expansion-1-3-3/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Atomic delivery payment/removal 154
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-expansion-1-4-0
+PASS Mine quarry-expansion-1-4-0
+PASS Mine quarry-expansion-1-4-0
+PASS Pickup quarry-expansion-1-4-0/0
+PASS Pickup cannot repeat quarry-expansion-1-4-0/0
+PASS Pickup quarry-expansion-1-4-0/1
+PASS Pickup cannot repeat quarry-expansion-1-4-0/1
+PASS Pickup quarry-expansion-1-4-0/2
+PASS Pickup cannot repeat quarry-expansion-1-4-0/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-expansion-1-4-1
+PASS Mine quarry-expansion-1-4-1
+PASS Mine quarry-expansion-1-4-1
+PASS Pickup quarry-expansion-1-4-1/0
+PASS Pickup cannot repeat quarry-expansion-1-4-1/0
+PASS Pickup quarry-expansion-1-4-1/1
+PASS Pickup cannot repeat quarry-expansion-1-4-1/1
+PASS Pickup quarry-expansion-1-4-1/2
+PASS Pickup cannot repeat quarry-expansion-1-4-1/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Atomic delivery payment/removal 155
+PASS Mine quarry-expansion-1-4-2
+PASS Mine quarry-expansion-1-4-2
+PASS Pickup quarry-expansion-1-4-2/0
+PASS Pickup cannot repeat quarry-expansion-1-4-2/0
+PASS Pickup quarry-expansion-1-4-2/1
+PASS Pickup cannot repeat quarry-expansion-1-4-2/1
+PASS Pickup quarry-expansion-1-4-2/2
+PASS Pickup cannot repeat quarry-expansion-1-4-2/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-expansion-1-4-3
+PASS Pickup quarry-expansion-1-4-3/0
+PASS Pickup cannot repeat quarry-expansion-1-4-3/0
+PASS Pickup quarry-expansion-1-4-3/1
+PASS Pickup cannot repeat quarry-expansion-1-4-3/1
+PASS Pickup quarry-expansion-1-4-3/2
+PASS Pickup cannot repeat quarry-expansion-1-4-3/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-expansion-1-5-0
+PASS Mine quarry-expansion-1-5-0
+PASS Pickup quarry-expansion-1-5-0/0
+PASS Pickup cannot repeat quarry-expansion-1-5-0/0
+PASS Pickup quarry-expansion-1-5-0/1
+PASS Pickup cannot repeat quarry-expansion-1-5-0/1
+PASS Pickup quarry-expansion-1-5-0/2
+PASS Pickup cannot repeat quarry-expansion-1-5-0/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-expansion-1-5-1
+PASS Mine quarry-expansion-1-5-1
+PASS Mine quarry-expansion-1-5-1
+PASS Mine quarry-expansion-1-5-1
+PASS Pickup quarry-expansion-1-5-1/0
+PASS Pickup cannot repeat quarry-expansion-1-5-1/0
+PASS Pickup quarry-expansion-1-5-1/1
+PASS Pickup cannot repeat quarry-expansion-1-5-1/1
+PASS Pickup quarry-expansion-1-5-1/2
+PASS Pickup cannot repeat quarry-expansion-1-5-1/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Atomic delivery payment/removal 156
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-expansion-1-5-2
+PASS Pickup quarry-expansion-1-5-2/0
+PASS Pickup cannot repeat quarry-expansion-1-5-2/0
+PASS Pickup quarry-expansion-1-5-2/1
+PASS Pickup cannot repeat quarry-expansion-1-5-2/1
+PASS Pickup quarry-expansion-1-5-2/2
+PASS Pickup cannot repeat quarry-expansion-1-5-2/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Atomic delivery payment/removal 157
+PASS Mine quarry-expansion-1-5-3
+PASS Mine quarry-expansion-1-5-3
+PASS Pickup quarry-expansion-1-5-3/0
+PASS Pickup cannot repeat quarry-expansion-1-5-3/0
+PASS Pickup quarry-expansion-1-5-3/1
+PASS Pickup cannot repeat quarry-expansion-1-5-3/1
+PASS Pickup quarry-expansion-1-5-3/2
+PASS Pickup cannot repeat quarry-expansion-1-5-3/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-v1-0-0
+PASS Mine quarry-v1-0-0
+PASS Pickup quarry-v1-0-0/0
+PASS Pickup cannot repeat quarry-v1-0-0/0
+PASS Pickup quarry-v1-0-0/1
+PASS Pickup cannot repeat quarry-v1-0-0/1
+PASS Pickup quarry-v1-0-0/2
+PASS Pickup cannot repeat quarry-v1-0-0/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-v1-0-1
+PASS Pickup quarry-v1-0-1/0
+PASS Pickup cannot repeat quarry-v1-0-1/0
+PASS Pickup quarry-v1-0-1/1
+PASS Pickup cannot repeat quarry-v1-0-1/1
+PASS Pickup quarry-v1-0-1/2
+PASS Pickup cannot repeat quarry-v1-0-1/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-v1-0-2
+PASS Mine quarry-v1-0-2
+PASS Pickup quarry-v1-0-2/0
+PASS Pickup cannot repeat quarry-v1-0-2/0
+PASS Pickup quarry-v1-0-2/1
+PASS Pickup cannot repeat quarry-v1-0-2/1
+PASS Pickup quarry-v1-0-2/2
+PASS Pickup cannot repeat quarry-v1-0-2/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Atomic delivery payment/removal 158
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-v1-0-3
+PASS Pickup quarry-v1-0-3/0
+PASS Pickup cannot repeat quarry-v1-0-3/0
+PASS Pickup quarry-v1-0-3/1
+PASS Pickup cannot repeat quarry-v1-0-3/1
+PASS Pickup quarry-v1-0-3/2
+PASS Pickup cannot repeat quarry-v1-0-3/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-v1-0-4
+PASS Mine quarry-v1-0-4
+PASS Pickup quarry-v1-0-4/0
+PASS Pickup cannot repeat quarry-v1-0-4/0
+PASS Pickup quarry-v1-0-4/1
+PASS Pickup cannot repeat quarry-v1-0-4/1
+PASS Pickup quarry-v1-0-4/2
+PASS Pickup cannot repeat quarry-v1-0-4/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Atomic delivery payment/removal 159
+PASS Mine quarry-v1-0-5
+PASS Pickup quarry-v1-0-5/0
+PASS Pickup cannot repeat quarry-v1-0-5/0
+PASS Pickup quarry-v1-0-5/1
+PASS Pickup cannot repeat quarry-v1-0-5/1
+PASS Pickup quarry-v1-0-5/2
+PASS Pickup cannot repeat quarry-v1-0-5/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-v1-1-0
+PASS Pickup quarry-v1-1-0/0
+PASS Pickup cannot repeat quarry-v1-1-0/0
+PASS Pickup quarry-v1-1-0/1
+PASS Pickup cannot repeat quarry-v1-1-0/1
+PASS Pickup quarry-v1-1-0/2
+PASS Pickup cannot repeat quarry-v1-1-0/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-v1-1-1
+PASS Mine quarry-v1-1-1
+PASS Pickup quarry-v1-1-1/0
+PASS Pickup cannot repeat quarry-v1-1-1/0
+PASS Pickup quarry-v1-1-1/1
+PASS Pickup cannot repeat quarry-v1-1-1/1
+PASS Pickup quarry-v1-1-1/2
+PASS Pickup cannot repeat quarry-v1-1-1/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-v1-1-2
+PASS Pickup quarry-v1-1-2/0
+PASS Pickup cannot repeat quarry-v1-1-2/0
+PASS Pickup quarry-v1-1-2/1
+PASS Pickup cannot repeat quarry-v1-1-2/1
+PASS Pickup quarry-v1-1-2/2
+PASS Pickup cannot repeat quarry-v1-1-2/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Atomic delivery payment/removal 160
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-v1-1-3
+PASS Mine quarry-v1-1-3
+PASS Pickup quarry-v1-1-3/0
+PASS Pickup cannot repeat quarry-v1-1-3/0
+PASS Pickup quarry-v1-1-3/1
+PASS Pickup cannot repeat quarry-v1-1-3/1
+PASS Pickup quarry-v1-1-3/2
+PASS Pickup cannot repeat quarry-v1-1-3/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Atomic delivery payment/removal 161
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-v1-1-4
+PASS Pickup quarry-v1-1-4/0
+PASS Pickup cannot repeat quarry-v1-1-4/0
+PASS Pickup quarry-v1-1-4/1
+PASS Pickup cannot repeat quarry-v1-1-4/1
+PASS Pickup quarry-v1-1-4/2
+PASS Pickup cannot repeat quarry-v1-1-4/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-v1-1-5
+PASS Mine quarry-v1-1-5
+PASS Pickup quarry-v1-1-5/0
+PASS Pickup cannot repeat quarry-v1-1-5/0
+PASS Pickup quarry-v1-1-5/1
+PASS Pickup cannot repeat quarry-v1-1-5/1
+PASS Pickup quarry-v1-1-5/2
+PASS Pickup cannot repeat quarry-v1-1-5/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-v1-2-0
+PASS Mine quarry-v1-2-0
+PASS Mine quarry-v1-2-0
+PASS Pickup quarry-v1-2-0/0
+PASS Pickup cannot repeat quarry-v1-2-0/0
+PASS Pickup quarry-v1-2-0/1
+PASS Pickup cannot repeat quarry-v1-2-0/1
+PASS Pickup quarry-v1-2-0/2
+PASS Pickup cannot repeat quarry-v1-2-0/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Atomic delivery payment/removal 162
+PASS Mine quarry-v1-2-1
+PASS Mine quarry-v1-2-1
+PASS Mine quarry-v1-2-1
+PASS Mine quarry-v1-2-1
+PASS Pickup quarry-v1-2-1/0
+PASS Pickup cannot repeat quarry-v1-2-1/0
+PASS Pickup quarry-v1-2-1/1
+PASS Pickup cannot repeat quarry-v1-2-1/1
+PASS Pickup quarry-v1-2-1/2
+PASS Pickup cannot repeat quarry-v1-2-1/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-v1-2-2
+PASS Mine quarry-v1-2-2
+PASS Mine quarry-v1-2-2
+PASS Mine quarry-v1-2-2
+PASS Pickup quarry-v1-2-2/0
+PASS Pickup cannot repeat quarry-v1-2-2/0
+PASS Pickup quarry-v1-2-2/1
+PASS Pickup cannot repeat quarry-v1-2-2/1
+PASS Pickup quarry-v1-2-2/2
+PASS Pickup cannot repeat quarry-v1-2-2/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Atomic delivery payment/removal 163
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-v1-2-3
+PASS Mine quarry-v1-2-3
+PASS Mine quarry-v1-2-3
+PASS Mine quarry-v1-2-3
+PASS Pickup quarry-v1-2-3/0
+PASS Pickup cannot repeat quarry-v1-2-3/0
+PASS Pickup quarry-v1-2-3/1
+PASS Pickup cannot repeat quarry-v1-2-3/1
+PASS Pickup quarry-v1-2-3/2
+PASS Pickup cannot repeat quarry-v1-2-3/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Atomic delivery payment/removal 164
+PASS Mine quarry-v1-2-4
+PASS Mine quarry-v1-2-4
+PASS Mine quarry-v1-2-4
+PASS Mine quarry-v1-2-4
+PASS Mine quarry-v1-2-4
+PASS Mine quarry-v1-2-4
+PASS Pickup quarry-v1-2-4/0
+PASS Pickup cannot repeat quarry-v1-2-4/0
+PASS Pickup quarry-v1-2-4/1
+PASS Pickup cannot repeat quarry-v1-2-4/1
+PASS Pickup quarry-v1-2-4/2
+PASS Pickup cannot repeat quarry-v1-2-4/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Atomic delivery payment/removal 165
+PASS Queue refined item
+PASS Mine quarry-v1-2-5
+PASS Mine quarry-v1-2-5
+PASS Pickup quarry-v1-2-5/0
+PASS Pickup cannot repeat quarry-v1-2-5/0
+PASS Pickup quarry-v1-2-5/1
+PASS Pickup cannot repeat quarry-v1-2-5/1
+PASS Pickup quarry-v1-2-5/2
+PASS Pickup cannot repeat quarry-v1-2-5/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Atomic delivery payment/removal 166
+PASS Queue refined item
+PASS Mine quarry-v1-3-0
+PASS Mine quarry-v1-3-0
+PASS Pickup quarry-v1-3-0/0
+PASS Pickup cannot repeat quarry-v1-3-0/0
+PASS Pickup quarry-v1-3-0/1
+PASS Pickup cannot repeat quarry-v1-3-0/1
+PASS Pickup quarry-v1-3-0/2
+PASS Pickup cannot repeat quarry-v1-3-0/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Atomic delivery payment/removal 167
+PASS Mine quarry-v1-3-1
+PASS Mine quarry-v1-3-1
+PASS Mine quarry-v1-3-1
+PASS Mine quarry-v1-3-1
+PASS Pickup quarry-v1-3-1/0
+PASS Pickup cannot repeat quarry-v1-3-1/0
+PASS Pickup quarry-v1-3-1/1
+PASS Pickup cannot repeat quarry-v1-3-1/1
+PASS Pickup quarry-v1-3-1/2
+PASS Pickup cannot repeat quarry-v1-3-1/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-v1-3-2
+PASS Mine quarry-v1-3-2
+PASS Mine quarry-v1-3-2
+PASS Mine quarry-v1-3-2
+PASS Mine quarry-v1-3-2
+PASS Mine quarry-v1-3-2
+PASS Pickup quarry-v1-3-2/0
+PASS Pickup cannot repeat quarry-v1-3-2/0
+PASS Pickup quarry-v1-3-2/1
+PASS Pickup cannot repeat quarry-v1-3-2/1
+PASS Pickup quarry-v1-3-2/2
+PASS Pickup cannot repeat quarry-v1-3-2/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Atomic delivery payment/removal 168
+PASS Queue refined item
+PASS Mine quarry-v1-3-3
+PASS Mine quarry-v1-3-3
+PASS Mine quarry-v1-3-3
+PASS Mine quarry-v1-3-3
+PASS Mine quarry-v1-3-3
+PASS Pickup quarry-v1-3-3/0
+PASS Pickup cannot repeat quarry-v1-3-3/0
+PASS Pickup quarry-v1-3-3/1
+PASS Pickup cannot repeat quarry-v1-3-3/1
+PASS Pickup quarry-v1-3-3/2
+PASS Pickup cannot repeat quarry-v1-3-3/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Atomic delivery payment/removal 169
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-v1-3-4
+PASS Mine quarry-v1-3-4
+PASS Mine quarry-v1-3-4
+PASS Mine quarry-v1-3-4
+PASS Mine quarry-v1-3-4
+PASS Mine quarry-v1-3-4
+PASS Pickup quarry-v1-3-4/0
+PASS Pickup cannot repeat quarry-v1-3-4/0
+PASS Pickup quarry-v1-3-4/1
+PASS Pickup cannot repeat quarry-v1-3-4/1
+PASS Pickup quarry-v1-3-4/2
+PASS Pickup cannot repeat quarry-v1-3-4/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Atomic delivery payment/removal 170
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-v1-3-5
+PASS Mine quarry-v1-3-5
+PASS Mine quarry-v1-3-5
+PASS Mine quarry-v1-3-5
+PASS Pickup quarry-v1-3-5/0
+PASS Pickup cannot repeat quarry-v1-3-5/0
+PASS Pickup quarry-v1-3-5/1
+PASS Pickup cannot repeat quarry-v1-3-5/1
+PASS Pickup quarry-v1-3-5/2
+PASS Pickup cannot repeat quarry-v1-3-5/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Atomic delivery payment/removal 171
+PASS Queue refined item
+PASS Mine quarry-v1-4-0
+PASS Mine quarry-v1-4-0
+PASS Mine quarry-v1-4-0
+PASS Pickup quarry-v1-4-0/0
+PASS Pickup cannot repeat quarry-v1-4-0/0
+PASS Pickup quarry-v1-4-0/1
+PASS Pickup cannot repeat quarry-v1-4-0/1
+PASS Pickup quarry-v1-4-0/2
+PASS Pickup cannot repeat quarry-v1-4-0/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-v1-4-1
+PASS Mine quarry-v1-4-1
+PASS Mine quarry-v1-4-1
+PASS Mine quarry-v1-4-1
+PASS Mine quarry-v1-4-1
+PASS Mine quarry-v1-4-1
+PASS Pickup quarry-v1-4-1/0
+PASS Pickup cannot repeat quarry-v1-4-1/0
+PASS Pickup quarry-v1-4-1/1
+PASS Pickup cannot repeat quarry-v1-4-1/1
+PASS Pickup quarry-v1-4-1/2
+PASS Pickup cannot repeat quarry-v1-4-1/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Atomic delivery payment/removal 172
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Atomic delivery payment/removal 173
+PASS Mine quarry-v1-4-2
+PASS Mine quarry-v1-4-2
+PASS Mine quarry-v1-4-2
+PASS Mine quarry-v1-4-2
+PASS Mine quarry-v1-4-2
+PASS Mine quarry-v1-4-2
+PASS Pickup quarry-v1-4-2/0
+PASS Pickup cannot repeat quarry-v1-4-2/0
+PASS Pickup quarry-v1-4-2/1
+PASS Pickup cannot repeat quarry-v1-4-2/1
+PASS Pickup quarry-v1-4-2/2
+PASS Pickup cannot repeat quarry-v1-4-2/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Atomic delivery payment/removal 174
+PASS Mine quarry-v1-4-3
+PASS Mine quarry-v1-4-3
+PASS Mine quarry-v1-4-3
+PASS Mine quarry-v1-4-3
+PASS Mine quarry-v1-4-3
+PASS Pickup quarry-v1-4-3/0
+PASS Pickup cannot repeat quarry-v1-4-3/0
+PASS Pickup quarry-v1-4-3/1
+PASS Pickup cannot repeat quarry-v1-4-3/1
+PASS Pickup quarry-v1-4-3/2
+PASS Pickup cannot repeat quarry-v1-4-3/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-v1-4-4
+PASS Mine quarry-v1-4-4
+PASS Mine quarry-v1-4-4
+PASS Mine quarry-v1-4-4
+PASS Pickup quarry-v1-4-4/0
+PASS Pickup cannot repeat quarry-v1-4-4/0
+PASS Pickup quarry-v1-4-4/1
+PASS Pickup cannot repeat quarry-v1-4-4/1
+PASS Pickup quarry-v1-4-4/2
+PASS Pickup cannot repeat quarry-v1-4-4/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Atomic delivery payment/removal 175
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Mine quarry-v1-4-5
+PASS Mine quarry-v1-4-5
+PASS Mine quarry-v1-4-5
+PASS Pickup quarry-v1-4-5/0
+PASS Pickup cannot repeat quarry-v1-4-5/0
+PASS Pickup quarry-v1-4-5/1
+PASS Pickup cannot repeat quarry-v1-4-5/1
+PASS Pickup quarry-v1-4-5/2
+PASS Pickup cannot repeat quarry-v1-4-5/2
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Deposit raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Refine raw item
+PASS Collect refined item
+PASS Collect refined item
+PASS Collect refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Queue refined item
+PASS Atomic delivery payment/removal 176
+PASS Atomic delivery payment/removal 177
+PASS Atomic delivery payment/removal 178
+PASS Atomic delivery payment/removal 179
+PASS Atomic delivery payment/removal 180
+PASS Atomic delivery payment/removal 181
+PASS Atomic delivery payment/removal 182
+PASS Atomic delivery payment/removal 183
+PASS Atomic delivery payment/removal 184
+PASS Atomic delivery payment/removal 185
+PASS Atomic delivery payment/removal 186
+PASS Atomic delivery payment/removal 187
+PASS Atomic delivery payment/removal 188
+PASS Atomic delivery payment/removal 189
+PASS Atomic delivery payment/removal 190
+PASS Atomic delivery payment/removal 191
+PASS Atomic delivery payment/removal 192
+PASS Atomic delivery payment/removal 193
+PASS Atomic delivery payment/removal 194
+PASS Atomic delivery payment/removal 195
+PASS Atomic delivery payment/removal 196
+PASS Atomic delivery payment/removal 197
+PASS Atomic delivery payment/removal 198
+PASS Atomic delivery payment/removal 199
+PASS Atomic delivery payment/removal 200
+PASS Atomic delivery payment/removal 201
+PASS Atomic delivery payment/removal 202
+PASS Atomic delivery payment/removal 203
+PASS All rocks refined and delivered in excavation 3
+PASS No stale partial damage after depletion
+PASS No duplicate completion bonus
+PASS Disk matches runtime at completed excavation 3
+PASS Double next click advances only once
+PASS Next excavation retains wallet and upgrades
+PASS New excavation restores every rock and collider
+PASS New excavation resets only round progress
+PASS Disk matches runtime at fresh excavation 4
+PASS Earned upgrade path exercised
+COMPLETE third excavation resumed from checkpoint; all 78 rocks refined/delivered; fourth round reloaded, frame=15484

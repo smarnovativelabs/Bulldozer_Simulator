@@ -1,0 +1,25 @@
+PASS West entrance cart attaches
+PASS West entrance stationary wall camera: samples=30 distanceRange=0.0000 offsetStep=0.0000
+PASS West entrance cart penetration frames=0
+PASS West entrance turn back: response=0.189 turn=0.791 escape=6.41
+PASS West entrance turning penetration frames=0
+PASS West entrance turn camera zoom reversals=0
+PASS East entrance cart attaches
+PASS East entrance stationary wall camera: samples=30 distanceRange=0.0000 offsetStep=0.0000
+PASS East entrance cart penetration frames=0
+PASS East entrance turn back: response=0.232 turn=0.781 escape=6.40
+PASS East entrance turning penetration frames=0
+PASS East entrance turn camera zoom reversals=0
+PASS South rail cart attaches
+PASS South rail stationary wall camera: samples=17 distanceRange=0.0000 offsetStep=0.0000
+PASS South rail cart penetration frames=0
+FAIL South rail turn back: response=0.174 turn=2.519 escape=6.68
+PASS South rail turning penetration frames=0
+PASS South rail turn camera zoom reversals=0
+PASS South-west corner cart attaches
+PASS South-west corner stationary wall camera: samples=13 distanceRange=0.0000 offsetStep=0.0000
+PASS South-west corner cart penetration frames=0
+PASS South-west corner turn back: response=0.310 turn=1.516 escape=6.52
+PASS South-west corner turning penetration frames=0
+PASS South-west corner turn camera zoom reversals=0
+COMPLETE failures=1 frame=804

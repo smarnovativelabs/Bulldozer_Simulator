@@ -12,12 +12,14 @@ namespace Bulldozer.Player.Persistence
         public static bool TryComplete(MiningSnapshot s,string[] ids,out MiningSnapshot next)
         {
             next=null;if(s.roundBonusClaimed||!Cleared(s,ids)||s.coins>int.MaxValue-Bonus(s.roundIndex))return false;
-            next=s.Copy();next.coins+=Bonus(s.roundIndex);next.roundBonusClaimed=true;return true;
+            next=s.Copy();next.coins+=Bonus(s.roundIndex);next.roundBonusClaimed=true;QuarryProgressionRules.Complete(next);return true;
         }
         public static bool TryAdvance(MiningSnapshot s,string[] ids,out MiningSnapshot next)
         {
             next=null;if(!s.roundBonusClaimed||!Cleared(s,ids)||s.roundIndex==int.MaxValue)return false;
             next=s.Copy();next.roundIndex++;next.roundBonusClaimed=false;next.depletedBlocks=Array.Empty<string>();next.refiningSeconds=0;
+            next.damagedBlocks=Array.Empty<RockDamageState>();
+            QuarryProgressionRules.ResetContract(next);
             // A new excavation starts on foot. Both inventories are already empty.
             next.usingWheelbarrow=false;next.barrowPosition=UnityEngine.Vector3.zero;OptionalTaskRules.Reset(next);return true;
         }

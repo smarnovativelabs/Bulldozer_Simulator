@@ -24,7 +24,8 @@ namespace Bulldozer.Player
         public long RoundNumber=>(long)equipment.Snapshot.roundIndex+1;
         void Start()
         {
-            ids=FindObjectsByType<MineableRock>(FindObjectsInactive.Include,FindObjectsSortMode.None).Select(r=>r.blockId).Where(id=>!string.IsNullOrEmpty(id)).Distinct().ToArray();
+            var state=equipment.Snapshot;
+            ids=FindObjectsByType<MineableRock>(FindObjectsInactive.Include,FindObjectsSortMode.None).Where(r=>r.Available(state)).Select(r=>r.blockId).Where(id=>!string.IsNullOrEmpty(id)).Distinct().ToArray();
             completionPanel.alpha=0;completionPanel.gameObject.SetActive(false);fade.alpha=0;fade.blocksRaycasts=false;
             nextButton.onClick.AddListener(NextRound);
             celebration=gameObject.AddComponent<MMF_Player>();
@@ -51,7 +52,9 @@ namespace Bulldozer.Player
             if(!s.roundBonusClaimed||!ExcavationRules.Cleared(s,ids)||presented)return;
             Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Round,player.transform.position);presented=true;player.ExcavationInputBlocked=true;player.CancelMining();if(player.touchControls)player.touchControls.Move=Vector2.zero;
             heading.text="EXCAVATION "+((long)s.roundIndex+1)+" COMPLETE";
-            summary.text="All stone delivered\nCompletion bonus  +$"+ExcavationRules.Bonus(s.roundIndex)+"\nCash balance  $"+s.coins+"\n\nYour cash, equipment and upgrades carry forward.";
+            summary.text="All stone delivered  |  Completion +$"+ExcavationRules.Bonus(s.roundIndex)+"  |  Cash $"+s.coins+
+                "\n"+QuarryProgressionRules.Milestone(s)+"\n\n"+QuarryProgressionRules.NextPreview(s)+
+                "\n\nCash, equipment and upgrades carry forward.";
             completionPanel.gameObject.SetActive(true);completionPanel.blocksRaycasts=true;completionPanel.interactable=true;
             panelTween=completionPanel.DOFade(1,.3f).SetUpdate(true).SetLink(gameObject);celebration.PlayFeedbacks();
         }
@@ -61,8 +64,16 @@ namespace Bulldozer.Player
             // Durable round state is written before any visual transition or scene reload.
             if(!equipment.Commit(next)){summary.text="Could not save the next excavation. Please retry.\nYour current progress is unchanged.";return;}
             Bulldozer.UI.QuarryGameUI.Instance?.feedback.Play();transitioning=true;nextButton.interactable=false;player.ExcavationInputBlocked=true;fade.blocksRaycasts=true;
-            System.Action proceed=()=>{fadeTween=fade.DOFade(1,.45f).SetUpdate(true).SetLink(gameObject).OnComplete(()=>{var ui=Bulldozer.UI.CommonUI.Instance;if(ui!=null)ui.SceneLoading.TryLoadScene(gameObject.scene.path);else SceneManager.LoadSceneAsync(gameObject.scene.path);});};
+            System.Action proceed=()=>{fadeTween=fade.DOFade(1,.45f).SetUpdate(true).SetLink(gameObject).OnComplete(()=>StartCoroutine(LoadNextScene()));};
             var services=Bulldozer.Services.QuarryOnlineServices.Instance;if(services){services.Event("quarry_round_complete",next.roundIndex);services.RoundBreak(proceed);}else proceed();
+        }
+        System.Collections.IEnumerator LoadNextScene()
+        {
+            var ui=Bulldozer.UI.CommonUI.Instance;
+            // A fast completion can overlap the previous scene's reveal. Wait for its owner.
+            while(ui&&ui.SceneLoading.IsLoading)yield return null;
+            if(ui&&ui.SceneLoading.isActiveAndEnabled)ui.SceneLoading.TryLoadScene(gameObject.scene.path);
+            else SceneManager.LoadSceneAsync(gameObject.scene.path);
         }
         void OnDestroy(){panelTween?.Kill();fadeTween?.Kill();if(player)player.ExcavationInputBlocked=false;}
     }

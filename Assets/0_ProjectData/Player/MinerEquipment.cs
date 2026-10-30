@@ -100,6 +100,22 @@ namespace Bulldozer.Player
             ApplyCargoCount(state.cargo);return true;
         }
         public bool IsBlockDepleted(string id)=>!string.IsNullOrEmpty(id)&&progress!=null&&Array.IndexOf(progress.Current.depletedBlocks,id)>=0;
+        public int SavedRockDamage(string id)=>progress?.Current.damagedBlocks.FirstOrDefault(d=>d.id==id)?.damage??0;
+        public bool SaveRockDamage(string id,int damage)
+        {
+            if(progress==null||string.IsNullOrEmpty(id)||damage<=0||IsBlockDepleted(id))return false;
+            var next=Snapshot;
+            next.damagedBlocks=next.damagedBlocks.Where(d=>d.id!=id).Append(new RockDamageState{id=id,damage=damage}).ToArray();
+            return progress.TryCommit(next);
+        }
+        // Timer-only saves must not cancel cargo-flight animations or rebuild the inventory UI.
+        public bool SaveRefiningProgress(float seconds)
+        {
+            if(progress==null)return false;
+            var next=Snapshot;next.refiningSeconds=next.refineryInput.Length>0?seconds:0;
+            if(Mathf.Abs(next.refiningSeconds-progress.Current.refiningSeconds)<.001f)return true;
+            return progress.TryCommit(next);
+        }
         public bool TryBreakIntoDrops(int item,string blockId,Vector3 center,bool tough=false)
         {
             if(UsingWheelbarrow||IsFull||progress==null||string.IsNullOrEmpty(blockId)||IsBlockDepleted(blockId)||item<0||item>=6)return false;
@@ -107,7 +123,9 @@ namespace Bulldozer.Player
             int n=next.groundDrops.Length;Array.Resize(ref next.groundDrops,n+3);
             for(int i=0;i<3;i++)next.groundDrops[n+i]=new GroundOreState{id=blockId+"/"+i,item=item,position=new Vector3(center.x+(i-1)*.30f,.13f,center.z+(i==1?.20f:-.20f))};
             next.depletedBlocks=next.depletedBlocks.Append(blockId).ToArray();
+            next.damagedBlocks=next.damagedBlocks.Where(d=>d.id!=blockId).ToArray();
             OptionalTaskRules.Rock(next,item,tough);
+            if(tough)QuarryProgressionRules.Add(next,QuarryContract.ToughRocks,1);
             if(!Commit(next))return false;
             if(drops)drops.Sync(next.groundDrops,center+Vector3.up*.6f,true);return true;
         }
@@ -115,6 +133,7 @@ namespace Bulldozer.Player
         {
             if(IsFull||progress==null)return false;var next=Snapshot;int index=Array.FindIndex(next.groundDrops,d=>d.id==id);if(index<0)return false;
             next.items=next.items.Append(next.groundDrops[index].item).ToArray();next.groundDrops=next.groundDrops.Where((_,i)=>i!=index).ToArray();
+            if(UsingWheelbarrow)QuarryProgressionRules.Add(next,QuarryContract.CartPickup,1);
             if(!Commit(next))return false;
             if(drops)drops.Sync(next.groundDrops,Vector3.zero,false);
             Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Pickup,origin);

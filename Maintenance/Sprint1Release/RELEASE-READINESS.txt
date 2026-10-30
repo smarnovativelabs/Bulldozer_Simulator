@@ -1,0 +1,56 @@
+SPRINT 1 SAVE / GAMEPLAY RELEASE CHECK
+Scope: current mining game, repeated excavations, forward-compatible progress.
+Public release status: NOT SIGNED OFF. This is an Editor validation pass, not Android device QA or evidence of player enjoyment.
+
+Fixes made:
+- Save schema 7 stores partial rock damage. A successful partial strike is committed before changing rock health; the entry is removed in the same transaction that creates ore on destruction.
+- Partially mined rock health and crack visuals restore on scene reload.
+- Refinery elapsed time restores on load, checkpoints at 0.5-second intervals, and flushes on pause, loss of focus and disable.
+- Completing a refinery item clears its saved timer in the same transaction as input removal and output creation.
+- Timer-only saves do not rebuild cargo UI or cancel cargo animations.
+- New excavations clear partial damage, preserving permanent progress.
+- Existing migrations from versions 1 through 6 remain supported; future-version saves remain protected.
+
+Validation commands (run against this project's Unity Editor):
+unity command script run --caller plugin --skill unity-cli --file Maintenance/Sprint1Release/SaveCompatibilityChecks.cs --entry SaveCompatibilityChecks.Main
+Run ReleaseLoopChecks.Main only in isolated Play mode using the SessionState key Bulldozer.Mining.TestSavePath.
+Run CartSaveResumeChecks.Main during/after the full loop.
+These harnesses live outside Assets and are not included in the shipped game.
+
+Test method:
+SaveCompatibilityChecks writes synthetic legacy-schema fixtures to Temp, migrates them, checks retained fields, commits and reloads them.
+ReleaseLoopChecks runs gameplay transaction APIs in live Play mode and real scene reloads. It directly invokes rock hit, pickup and production actions to accelerate three full excavations. It is NOT an unassisted player run or complete touch/navigation/animation coverage. The initial refinery item runs on the actual gameplay timer. Trucks and round transitions run live.
+CartSaveResumeChecks verifies active-cart/backpack inventory separation over two scene reloads.
+All test progress is separate from the user's normal save.
+
+Future-update contract:
+- Choose the final Android application ID and release signing identity BEFORE the first public release; preserve them for future updates.
+- Keep the save path Mining/progress.json under the same application data directory.
+- Keep item numeric IDs, purchase IDs and existing rock block IDs stable. Add new IDs rather than reusing old ones.
+- Bump MiningSnapshot.CurrentVersion when changing the format and add an explicit migration from the previous schema.
+- Retain legacy fixtures and test the last shipped build's real saves in addition to synthetic fixtures.
+- Never reset user progress as a migration fallback. Invalid/future files must remain untouched.
+- A regular forward update is supported by this design. Downgrading to an old binary that does not understand schema 7 is not supported; older readers should refuse to overwrite newer saves.
+- Before each release, install the new version over the last release on Android without uninstalling, then verify wallet, upgrades, both inventories, excavation progress, partial mining and refinery state.
+
+Remaining release gates:
+- No Android device is connected; on-device install/update, background/kill/relaunch and low-end performance have not been verified in this pass.
+- No build has been publicly distributed yet, per the user.
+- Existing Builds/Sprint1/Quarry-Sprint1-Test.apk is an internal development APK, package com.UnityTechnologies.com.unity.template.urpblank, version code 1, Android Debug certificate SHA256 298c1c583d8412271c2bfcedf3a4eabda1362ced6f4f5fcd268340e65d1dcd05.
+- That debug APK does not establish a production signing identity. Do not publish using the template package or assume it upgrades into an unrelated release-signed app.
+- Configure production package identity, signing, privacy policy and any enabled ads/purchases before public distribution.
+- Run fresh-player tests to establish first-session clarity and enjoyment. Repeating excavation mechanics alone does not establish long-term retention.
+- A new Android APK has not been built by this validation pass. ReleaseBuildCheck.cs is an optional INTERNAL debug-build helper, not a store-release builder.
+
+VERIFIED RESULTS
+Save compatibility/recovery/rules: 90 checks passed.
+Live gameplay API and scene reload checks: 5015 checks passed; three excavations completed, 78 rocks and 234 ore per excavation, fourth excavation opened.
+Wheelbarrow save/resume: 7 checks passed across two reloads.
+Partial mining, partial pickup and active refinery checkpoint reload: passed.
+Completed-round reload, repeat completion attempt, double Next click: passed.
+Compile state at finish: no compilation failure. Final Console ground-truth: zero errors (historical tooling/compile errors remain in Pipeline's accumulated log).
+Normal save path restored; Play mode stopped. User progress was not used for test rewards.
+No new renderers, materials, particles or runtime pools were added by these save fixes.
+Current system disk free space: approximately 1.66 GiB. The accumulated compiler log includes an earlier disk-full error; current compilation succeeded. Free sufficient build space before generating the next Android build. No unrelated files were deleted.
+
+PROGRESSION UPDATE: Save format is now schema 8. See PROGRESSION-NOTES.txt, progression-checks.txt and the refreshed gameplay-checks.txt for the first-three-excavation milestones, Copper Ridge, special contracts, next-round preview and transition-race fix. Earlier schema-7 notes above describe the preceding save fixes.

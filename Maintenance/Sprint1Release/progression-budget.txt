@@ -1,0 +1,1 @@
+Added area: 3864 mesh triangles, 37 renderers, 4 shared materials, 0 lights, 0 particle systems. Editor asset counts; not device profiling.

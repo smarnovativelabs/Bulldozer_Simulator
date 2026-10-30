@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 using TMPro;
@@ -36,7 +37,8 @@ namespace Bulldozer.Player
         void Start()
         {
             route=new NavMeshPath();
-            rocks=FindObjectsByType<MineableRock>(FindObjectsSortMode.None);rockObstacles=new NavMeshObstacle[rocks.Length];
+            var state=equipment.Snapshot;
+            rocks=FindObjectsByType<MineableRock>(FindObjectsSortMode.None).Where(r=>r.Available(state)).ToArray();rockObstacles=new NavMeshObstacle[rocks.Length];
             for(int i=0;i<rocks.Length;i++)rockObstacles[i]=rocks[i].GetComponent<NavMeshObstacle>();
             mesh=new Mesh{name="Guidance pooled arrow mesh"};mesh.MarkDynamic();pathFilter.sharedMesh=mesh;pathRenderer.sharedMaterial=pathMaterial;
             restingPosition=dialog.anchoredPosition;lastDeliveries=equipment.TrucksCompleted;lastLevel=equipment.DamageLevel+equipment.CapacityLevel+equipment.SpeedLevel;

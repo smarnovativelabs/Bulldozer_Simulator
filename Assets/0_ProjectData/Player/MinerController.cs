@@ -29,14 +29,16 @@ namespace Bulldozer.Player
         public bool InputBlocked => ExcavationInputBlocked || Bulldozer.UI.QuarryGameUI.BlocksInput || (Bulldozer.UI.CommonUI.Instance != null && Bulldozer.UI.CommonUI.Instance.BlocksGameplayInput);
         CharacterController motor;
         Vector3 velocity, spawn;
+        Vector3 cartAcceleration;
         float vertical, swingTime, idleTime, nextSwing;
         bool jumpRequested, mineRequested;
         MinerMining mining;
         MinerEquipment movementEquipment;
+        public QuarryWheelbarrow ActiveWheelbarrow { get; set; }
         public void Jump() => jumpRequested = true;
         public void Mine() => mineRequested = true;
         void Awake() { motor = GetComponent<CharacterController>(); spawn = transform.position; mining=visual ? visual.GetComponent<MinerMining>() : null;movementEquipment=visual?visual.GetComponent<MinerEquipment>():null; }
-        void OnEnable() { velocity = Vector3.zero; vertical = 0; jumpRequested = mineRequested = false; }
+        void OnEnable() { velocity = cartAcceleration = Vector3.zero; vertical = 0; jumpRequested = mineRequested = false; }
         void Update()
         {
             var keyboard = Keyboard.current;
@@ -61,12 +63,46 @@ namespace Bulldozer.Player
             float yaw = followCamera ? followCamera.Yaw : 0;
             Vector3 direction = Quaternion.Euler(0, yaw, 0) * new Vector3(MoveInput.x, 0, MoveInput.y);
             float movementMultiplier=movementEquipment?movementEquipment.MovementMultiplier:1f;
-            velocity = Vector3.MoveTowards(velocity, direction * ((run||analogRun ? runSpeed : walkSpeed)*movementMultiplier), acceleration * Time.deltaTime);
-            if (direction.sqrMagnitude > .01f && visual) visual.rotation = Quaternion.Slerp(visual.rotation, Quaternion.LookRotation(direction), 1 - Mathf.Exp(-14 * Time.deltaTime));
+            bool pushing = ActiveWheelbarrow && ActiveWheelbarrow.Pushing;
+            Vector3 desiredVelocity = direction * ((run||analogRun ? runSpeed : walkSpeed)*movementMultiplier);
+            if (pushing)
+            {
+                // Ease into motion, but brake and reverse promptly when the input changes.
+                bool braking = direction.sqrMagnitude < .01f || Vector3.Dot(velocity, desiredVelocity) < 0;
+                velocity = Vector3.SmoothDamp(velocity, desiredVelocity, ref cartAcceleration,
+                    braking ? ActiveWheelbarrow.brakingTime : ActiveWheelbarrow.accelerationTime,
+                    Mathf.Infinity, Time.deltaTime);
+                if (direction == Vector3.zero && velocity.sqrMagnitude < .0001f)
+                    velocity = cartAcceleration = Vector3.zero;
+            }
+            else
+            {
+                cartAcceleration = Vector3.zero;
+                velocity = Vector3.MoveTowards(velocity, desiredVelocity, acceleration * Time.deltaTime);
+            }
+            Quaternion facing = visual ? visual.rotation : transform.rotation;
+            if (pushing) facing = ActiveWheelbarrow.SmoothFacing(direction, facing, Time.deltaTime);
+            else if (direction.sqrMagnitude > .01f && visual) facing = Quaternion.Slerp(facing, Quaternion.LookRotation(direction), 1 - Mathf.Exp(-14 * Time.deltaTime));
+            Vector3 movement = velocity * Time.deltaTime;
+            if (pushing)
+            {
+                Vector3 requestedMovement = movement;
+                ActiveWheelbarrow.ConstrainMovement(ref movement, ref facing);
+                // Do not retain smoothing momentum into a wall after the sweep has stopped us.
+                if ((movement-requestedMovement).sqrMagnitude > .00000001f) cartAcceleration = Vector3.zero;
+                velocity = Time.deltaTime > 0 ? movement / Time.deltaTime : Vector3.zero;
+                jumpRequested = false;
+            }
+            if (visual) visual.rotation = facing;
             if (motor.isGrounded && vertical < 0) vertical = -2;
             if (jumpRequested && motor.isGrounded) vertical = Mathf.Sqrt(jumpHeight * -2 * gravity);
             vertical = Mathf.Max(vertical + gravity * Time.deltaTime, -35);
-            var flags = motor.Move((velocity + Vector3.up * vertical) * Time.deltaTime);
+            var flags = motor.Move(movement + Vector3.up * vertical * Time.deltaTime);
+            if (pushing && (flags & CollisionFlags.Sides) != 0)
+            {
+                velocity = new Vector3(motor.velocity.x, 0, motor.velocity.z);
+                cartAcceleration = Vector3.zero;
+            }
             if ((flags & CollisionFlags.Above) != 0 && vertical > 0) vertical = 0;
             Speed = new Vector2(motor.velocity.x, motor.velocity.z).magnitude;
             idleTime=MoveInput.sqrMagnitude<.01f?idleTime+Time.deltaTime:0;

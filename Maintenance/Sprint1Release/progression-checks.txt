@@ -1,0 +1,75 @@
+PASS Player loop advances
+PASS 84 unique IDs including six ridge rocks
+PASS Excavation 1 loaded
+PASS Locked ridge cannot be mined or entered
+PASS Only original 78 rocks count toward completion
+PASS Entrance physically blocked before unlock
+PASS Contract waits for required amount
+PASS Save partial contract
+PASS Partial contract survives scene reload
+PASS Delivery contract reward
+PASS Persist awarded contract
+PASS Repeated contract event cannot duplicate payout
+PASS Disk and runtime match
+PASS Seed cleared excavation fixture
+PASS Completion unlocks cart and awards completion
+PASS Ridge opens only on next round after third completion
+PASS Completion displays next-round preview
+PASS Completion reward cannot duplicate
+PASS Disk and runtime match
+PASS Double next press advances once and resets contract
+PASS Excavation 2 loaded
+PASS Locked ridge cannot be mined or entered
+PASS Only original 78 rocks count toward completion
+PASS Entrance physically blocked before unlock
+PASS Seed isolated cart contract pickup fixture
+PASS Cart pickup recorded contract-drop-0
+PASS Cart pickup recorded contract-drop-1
+PASS Cart pickup recorded contract-drop-2
+PASS Cart pickup recorded contract-drop-3
+PASS Cart pickup recorded contract-drop-4
+PASS Cart pickup recorded contract-drop-5
+PASS Cart pickup recorded contract-drop-6
+PASS Cart pickup recorded contract-drop-7
+PASS Cart pickup recorded contract-drop-8
+PASS Cart pickup recorded contract-drop-9
+PASS Cart pickup recorded contract-drop-10
+PASS Cart pickup recorded contract-drop-11
+PASS Cart contract pays exactly once
+PASS Clear test cargo
+PASS Repeated contract event cannot duplicate payout
+PASS Disk and runtime match
+PASS Seed cleared excavation fixture
+PASS Completion unlocks cart and awards completion
+PASS Ridge opens only on next round after third completion
+PASS Completion displays next-round preview
+PASS Completion reward cannot duplicate
+PASS Disk and runtime match
+PASS Double next press advances once and resets contract
+PASS Excavation 3 loaded
+PASS Locked ridge cannot be mined or entered
+PASS Only original 78 rocks count toward completion
+PASS Entrance physically blocked before unlock
+PASS Contract waits for required amount
+PASS Save partial contract
+PASS Partial contract survives scene reload
+PASS Delivery contract reward
+PASS Persist awarded contract
+PASS Repeated contract event cannot duplicate payout
+PASS Disk and runtime match
+PASS Seed cleared excavation fixture
+PASS Completion unlocks cart and awards completion
+PASS Ridge opens only on next round after third completion
+PASS Completion displays next-round preview
+PASS Completion reward cannot duplicate
+PASS Disk and runtime match
+PASS Double next press advances once and resets contract
+PASS Fourth excavation opens gate and enables six deposits
+PASS Fourth excavation includes all 84 rocks
+PASS Unlocked entrance is unobstructed
+PASS Baked guide route reaches new area through entrance
+PASS Unlocked deposit can be mined
+PASS Unlock and ridge damage survive reload
+PASS Disk and runtime match
+PASS Completed v7 migration retains wallet/upgrades/purchases and earned unlocks
+COMPLETE at live frame 58

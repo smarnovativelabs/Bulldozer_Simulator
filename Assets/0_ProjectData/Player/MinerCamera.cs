@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 namespace Bulldozer.Player
 {
+    [DefaultExecutionOrder(250)]
     public sealed class MinerCamera : MonoBehaviour
     {
         public MinerController target;

@@ -1,0 +1,19 @@
+WHEELBARROW / NEW BOUNDARY COLLIDERS
+
+Reproduced before fix:
+- Four wall-parallel turn cases slid sideways while heading remained blocked (about 90 degrees from requested heading).
+- South-rail reversal completed its turn in 2.519 seconds.
+- Camera was stable during settled wall contact; no collision penetration was observed.
+
+Fix in QuarryWheelbarrow.cs:
+- Smooth angular velocity with acceleration and a turn-rate limit, avoiding SmoothDampAngle's slower angular response on long frames.
+- When an attempted turn is blocked and input points along/away from the wall, add a small retreat within the requested movement budget. The existing swept collision checks and CharacterController apply the motion. No transform rollback/teleport or collision disabling.
+- No new allocations or additional physics-query passes in the steering path. Existing substeps still check the turning cart footprint.
+- Camera code did not require changes for these tested scenarios.
+
+Validation:
+- BoundaryParallelChecks: four real-input wall/corner cases, turn completion, penetration and camera zoom reversal checks.
+- BoundaryCartChecks: four real-input pressure/reversal cases, reaction time, escape distance, penetration and settled camera stability.
+- SteeringFrameChecks: 10/15/30/60 Hz simulated time steps; 180-degree turn reaches within 15 degrees in 0.583-0.600 seconds, respecting angular speed cap.
+- Reports retain before/after results. Tests use an isolated BoundaryCartTest save, not normal player progress.
+- These are Unity Editor gameplay and math checks, not Android device performance measurements or exhaustive collision coverage.
