@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using DitzelGames.FastIK;
+
 namespace Bulldozer.Player
 {
     [DefaultExecutionOrder(150)]
@@ -20,11 +20,12 @@ namespace Bulldozer.Player
         readonly RaycastHit[] sweepHits = new RaycastHit[32];
         static readonly Vector3 CartExtents = new Vector3(.335f,.32f,.55f);
         const float CollisionSkin = .025f;
-        Transform leftTarget,rightTarget,leftHand,rightHand;
+        Transform leftHand,rightHand;
+
         public float LeftGripError {get;private set;}
         public float RightGripError {get;private set;}
         public bool Pushing=>equipment&&equipment.UsingWheelbarrow;
-        Transform backpackRoot;Vector3 dock,lastPlayer,lastWheel;float originalSpeed,saveAt,poll;FastIKFabric leftIK,rightIK;Transform oldRightTarget;BoxCollider bodyCollider;readonly Collider[] overlaps=new Collider[16];
+        Transform backpackRoot;Vector3 dock,lastPlayer,lastWheel;float originalSpeed,saveAt,poll;BoxCollider bodyCollider;readonly Collider[] overlaps=new Collider[16];
         void Start()
         {
             backpackRoot=equipment.cargoRoot;dock=transform.position;originalSpeed=player.runSpeed;bodyCollider=GetComponent<BoxCollider>();
@@ -34,11 +35,8 @@ namespace Bulldozer.Player
             if(s.usingWheelbarrow){s.barrowItems=s.items;s.items=s.backpackItems;s.backpackItems=Array.Empty<int>();s.usingWheelbarrow=false;equipment.Commit(s);}
             actionButton.onClick.AddListener(Interact);
             actionButton.onClick.AddListener(()=>Bulldozer.UI.QuarryGameUI.Instance?.feedback.Play());
-            var animator=player.visual.GetComponent<Animator>();rightIK=player.visual.GetComponent<MinerAnimator>().rightHandIK;oldRightTarget=rightIK.Target;
+            var animator=player.visual.GetComponent<Animator>();
             leftHand=animator.GetBoneTransform(HumanBodyBones.LeftHand);rightHand=animator.GetBoneTransform(HumanBodyBones.RightHand);
-            leftTarget=new GameObject("Cart left wrist target").transform;leftTarget.SetParent(transform,false);
-            rightTarget=new GameObject("Cart right wrist target").transform;rightTarget.SetParent(transform,false);
-            leftIK=leftHand.gameObject.AddComponent<FastIKFabric>();leftIK.enabled=false;leftIK.Iterations=8;var generatedTarget=leftIK.Target;leftIK.Target=leftTarget;if(generatedTarget)Destroy(generatedTarget.gameObject);
             lastPlayer=player.transform.position;lastWheel=transform.position;lastRotation=player.visual.rotation;Refresh();
         }
         public void Interact()
@@ -83,11 +81,6 @@ namespace Bulldozer.Player
                 float distance=Vector3.Dot(transform.position-lastWheel,transform.forward);if(wheel)wheel.Rotate(Vector3.forward,distance/.18f*Mathf.Rad2Deg,Space.Self);lastWheel=transform.position;
             }
             if(engagement<=0)return;
-            float blend=Mathf.SmoothStep(0,1,engagement);
-            leftTarget.SetPositionAndRotation(Vector3.Lerp(leftHand.position,leftGrip.position,blend),Quaternion.Slerp(leftHand.rotation,leftGrip.rotation,blend));
-            rightTarget.SetPositionAndRotation(Vector3.Lerp(rightHand.position,rightGrip.position,blend),Quaternion.Slerp(rightHand.rotation,rightGrip.rotation,blend));
-            rightIK.Target=rightTarget;rightIK.Solve();leftIK.Solve();rightIK.Target=oldRightTarget;
-            leftHand.rotation=leftTarget.rotation;rightHand.rotation=rightTarget.rotation;
             LeftGripError=Vector3.Distance(leftHand.position,leftGrip.position);RightGripError=Vector3.Distance(rightHand.position,rightGrip.position);
         }
         Vector3 CartPosition()=>CartPosition(player.transform.position,player.visual.rotation);
@@ -189,7 +182,8 @@ namespace Bulldozer.Player
             if(Camera.main)counter.transform.rotation=Camera.main.transform.rotation;
             for(int i=0;i<loadSlots.Length;i++){loadSlots[i].gameObject.SetActive(i<items.Length);if(i>=items.Length)continue;loadSlots[i].GetComponent<MeshFilter>().sharedMesh=equipment.MeshForItem(items[i]);loadSlots[i].GetComponent<MeshRenderer>().sharedMaterial=stockMaterials[items[i]];}
         }
-        void OnDisable(){if(player){player.runSpeed=originalSpeed;if(player.ActiveWheelbarrow==this)player.ActiveWheelbarrow=null;}if(equipment&&backpackRoot)equipment.cargoRoot=backpackRoot;if(rightIK&&oldRightTarget)rightIK.Target=oldRightTarget;}
+        void OnDisable(){if(player){player.runSpeed=originalSpeed;if(player.ActiveWheelbarrow==this)player.ActiveWheelbarrow=null;}if(equipment&&backpackRoot)equipment.cargoRoot=backpackRoot;}
     }
 }
+
 

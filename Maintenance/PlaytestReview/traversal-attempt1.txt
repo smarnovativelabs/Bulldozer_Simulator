@@ -1,0 +1,25 @@
+START frame=5035 live joystick input; fixture excavation 4, intact rocks; no production code changed
+ROCK Copper Ridge Deposit 1 bounds=Center: (19.20, 0.58, 4.00), Extents: (0.56, 0.58, 0.56)
+ROCK Copper Ridge Deposit 2 bounds=Center: (21.70, 0.58, 4.00), Extents: (0.56, 0.58, 0.56)
+ROCK Copper Ridge Deposit 3 bounds=Center: (19.20, 0.58, 6.20), Extents: (0.56, 0.58, 0.56)
+ROCK Copper Ridge Deposit 6 bounds=Center: (21.70, 0.58, 8.40), Extents: (0.56, 0.58, 0.56)
+ROCK Copper Ridge Deposit 4 bounds=Center: (21.70, 0.58, 6.20), Extents: (0.56, 0.58, 0.56)
+ROCK Copper Ridge Deposit 5 bounds=Center: (19.20, 0.58, 8.40), Extents: (0.56, 0.58, 0.56)
+ATTACH False player=(19.20, 0.03, 2.24) cart=(19.20, 0.05, 1.10)
+CONTACT position=(19.20, 0.03, 3.11) overlaps=Entrance Left
+PROBE backward sweep allowed=(0.00, 0.00, 0.00) facing=(0.00, 0.00, 0.00)
+REVERSE displacement=0.870 position=(19.20, 0.03, 2.24) facing=(0.00, 180.00, 0.00) overlaps=Entrance Left
+SIDE escape position=(22.99, 0.03, 2.24) facing=(0.00, 90.00, 0.00) overlaps=Entrance Left
+PASS Foot ridge centre aisle exit target=(20.45, 0.05, 2.20) actual=(20.45, 0.03, 2.44) error=0.24
+PASS Foot through south ridge entrance target=(20.45, 0.05, -3.80) actual=(20.45, 0.03, -3.56) error=0.24
+PASS Foot return west below side bank target=(12.00, 0.05, -3.80) actual=(12.24, 0.03, -3.79) error=0.24
+PASS Foot exterior west ridge corridor south target=(16.70, 0.05, -3.80) actual=(16.70, 0.03, -3.58) error=0.22
+PASS Foot exterior corridor to quarry target=(12.00, 0.05, -3.80) actual=(12.24, 0.03, -3.79) error=0.24
+ATTACH True player=(20.45, 0.03, 9.40) cart=(20.45, 0.08, 8.45)
+PASS Cart ridge centre aisle exit target=(20.45, 0.05, 2.20) actual=(20.45, 0.03, 2.38) error=0.18
+PASS Cart south entrance exit target=(20.45, 0.05, -3.80) actual=(20.45, 0.03, -3.62) error=0.18
+PASS Cart return west below side bank target=(12.00, 0.05, -3.80) actual=(12.18, 0.03, -3.80) error=0.18
+ATTACH True player=(16.70, 0.03, 8.00) cart=(16.70, 0.08, 7.05)
+PASS Cart exterior west ridge corridor south target=(16.70, 0.05, -3.80) actual=(16.70, 0.03, -3.63) error=0.17
+PASS Cart exterior corridor to quarry target=(12.00, 0.05, -3.80) actual=(12.16, 0.03, -3.80) error=0.16
+COMPLETE frame=6484

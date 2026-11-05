@@ -73,7 +73,7 @@ namespace Bulldozer.Player
         {
             switch(goal){case QuarryGuidance.Goal.Mine:return "MINE";case QuarryGuidance.Goal.PickUp:return "COLLECT";
                 case QuarryGuidance.Goal.Refine:return "REFINERY";case QuarryGuidance.Goal.Collect:return "READY ORE";
-                case QuarryGuidance.Goal.Load:return "LOADING";case QuarryGuidance.Goal.Upgrade:return "WORKBENCH";default:return "";}
+                case QuarryGuidance.Goal.Load:return "LOADING";case QuarryGuidance.Goal.Upgrade:return "WORKBENCH";case QuarryGuidance.Goal.Return:return "EXIT";default:return "";}
         }
         bool PlayShine(UIShiny effect)
         {

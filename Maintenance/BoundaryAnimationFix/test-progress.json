@@ -1,0 +1,117 @@
+{
+    "format": "bulldozer-mining",
+    "version": 10,
+    "cargo": 0,
+    "coins": 0,
+    "damageLevel": 0,
+    "capacityLevel": 0,
+    "speedLevel": 0,
+    "roundIndex": 3,
+    "roundBonusClaimed": false,
+    "shortFirstShift": true,
+    "firstRefineryDeposit": true,
+    "gradualShifts": true,
+    "guidanceSeenMask": 15,
+    "copperRidgeUnlocked": true,
+    "contractClaimed": false,
+    "contractKind": 0,
+    "contractProgress": 0,
+    "taskRocks": 2,
+    "taskDense": 0,
+    "taskOreMask": 12,
+    "taskRefined": 0,
+    "taskDeliveries": 0,
+    "taskClaimedMask": 0,
+    "items": [],
+    "refineryInput": [],
+    "refineryOutput": [],
+    "truckItems": [],
+    "depletedBlocks": [
+        "quarry-v1-0-3",
+        "quarry-v1-0-2"
+    ],
+    "damagedBlocks": [],
+    "groundDrops": [
+        {
+            "id": "quarry-v1-0-3/0",
+            "item": 3,
+            "position": {
+                "x": 0.28999996185302737,
+                "y": 0.12999999523162843,
+                "z": 2.299999952316284
+            }
+        },
+        {
+            "id": "quarry-v1-0-3/1",
+            "item": 3,
+            "position": {
+                "x": 0.5899999737739563,
+                "y": 0.12999999523162843,
+                "z": 2.700000047683716
+            }
+        },
+        {
+            "id": "quarry-v1-0-3/2",
+            "item": 3,
+            "position": {
+                "x": 0.8899999856948853,
+                "y": 0.12999999523162843,
+                "z": 2.299999952316284
+            }
+        },
+        {
+            "id": "quarry-v1-0-2/0",
+            "item": 2,
+            "position": {
+                "x": -0.8899999856948853,
+                "y": 0.12999999523162843,
+                "z": 2.299999952316284
+            }
+        },
+        {
+            "id": "quarry-v1-0-2/1",
+            "item": 2,
+            "position": {
+                "x": -0.5899999737739563,
+                "y": 0.12999999523162843,
+                "z": 2.700000047683716
+            }
+        },
+        {
+            "id": "quarry-v1-0-2/2",
+            "item": 2,
+            "position": {
+                "x": -0.28999996185302737,
+                "y": 0.12999999523162843,
+                "z": 2.299999952316284
+            }
+        }
+    ],
+    "trucksCompleted": 0,
+    "loadingQueue": [],
+    "wheelbarrowUnlocked": true,
+    "usingWheelbarrow": false,
+    "backpackItems": [],
+    "barrowItems": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+    ],
+    "barrowPosition": {
+        "x": 21.549116134643556,
+        "y": 0.08499983698129654,
+        "z": 1.4106051921844483
+    },
+    "refiningSeconds": 0.0,
+    "removeAds": false,
+    "fulfilledPurchases": []
+}

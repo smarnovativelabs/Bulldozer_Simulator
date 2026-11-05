@@ -9,7 +9,7 @@ namespace Bulldozer.Player
     public sealed class QuarryGuidance : MonoBehaviour
     {
         const int WorkbenchHint=2;
-        public enum Goal { Mine, PickUp, Refine, Collect, Load, Upgrade, Finished }
+        public enum Goal { Mine, PickUp, Refine, Collect, Load, Upgrade, Finished, Return }
         public MinerController player;
         public MinerEquipment equipment;
         public MiningProduction production;
@@ -86,7 +86,10 @@ namespace Bulldozer.Player
                 body=s.refineryInput.Length>0?"The refinery is working. Follow the arrows and mine more stone while it runs.":s.loadingQueue.Length>0?"Your delivery is being handled. Mine another batch while the trucks work.":"Follow the arrows. Stop beside the marked rock and your miner will swing automatically.";
                 if(target==Vector3.positiveInfinity){goal=Goal.Finished;target=player.transform.position;title="QUARRY CLEARED!";body=s.refineryInput.Length>0?"Your last stones are refining. Collect them when they're ready.":"Great work! Finish your deliveries and spend your cash at the workbench.";step=5;}
             }
-            if(equipment.UsingWheelbarrow&&(goal==Goal.Mine||goal==Goal.Upgrade)){title="PARK TO USE YOUR PICKAXE";body="Tap PARK CART to leave the wheelbarrow. Its cargo stays safe while you mine on foot.";target=player.transform.position;}
+            if(equipment.UsingWheelbarrow&&(goal==Goal.Mine||goal==Goal.Upgrade)){
+                if(player.transform.position.x>16){goal=Goal.Return;title="RETURN TO THE MAIN QUARRY";body="Follow the exit lane to the refinery. You can park the cart anywhere to mine.";target=production.inputZone.transform.position;}
+                else {title="PARK TO USE YOUR PICKAXE";body="Tap PARK CART to leave the wheelbarrow. Its cargo stays safe while you mine on foot.";target=player.transform.position;}
+            }
             bool changed=!initialized||goal!=CurrentGoal||body!=currentBody;
             if(s.trucksCompleted>lastDeliveries)Celebrate("DELIVERY PAID!  CASH +");
             if(s.damageLevel+s.capacityLevel+s.speedLevel>lastLevel)Celebrate("UPGRADE COMPLETE!");
@@ -118,8 +121,16 @@ namespace Bulldozer.Player
         void CalculateRoute()
         {
             HasRoute=false;count=0;if(CurrentGoal==Goal.Finished)return;
+            // The cart needs room to turn around the quarry bank. Route through the
+            // marked entrance and turn pocket rather than cutting its inside corner.
+            Vector3 routeDestination=Destination,position=player.transform.position;
+            if(equipment.UsingWheelbarrow&&Destination.x<14&&position.x>16){
+                if(position.z>2.4f&&position.x>18)routeDestination=new Vector3(20.45f,0,2.1f);
+                else if(position.z>-3.4f)routeDestination=new Vector3(position.x>18?20.45f:16.7f,0,-3.8f);
+                else routeDestination=new Vector3(12,0,-3.8f);
+            }
             var filter=new NavMeshQueryFilter{agentTypeID=agentTypeId,areaMask=NavMesh.AllAreas};
-            if(!NavMesh.SamplePosition(player.transform.position,out var from,1.5f,filter)||!NavMesh.SamplePosition(Destination,out var to,.85f,filter))return;
+            if(!NavMesh.SamplePosition(player.transform.position,out var from,1.5f,filter)||!NavMesh.SamplePosition(routeDestination,out var to,.85f,filter))return;
             if(!NavMesh.CalculatePath(from.position,to.position,filter,route)||route.status!=NavMeshPathStatus.PathComplete)return;
             count=route.GetCornersNonAlloc(corners);HasRoute=count>0;Destination=to.position;
         }

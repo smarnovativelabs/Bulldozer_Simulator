@@ -1,0 +1,5 @@
+Previously seen=True
+Started=True
+Controls released=True
+Repeat suppressed=True
+Saved flag=True

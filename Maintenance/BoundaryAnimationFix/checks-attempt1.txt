@@ -1,0 +1,13 @@
+PASS No FastIK solver on player hierarchy
+PASS Three carry clips and masked animation layer wired
+PASS Pickaxe socket belongs to animated hand
+PASS Exit lettering sits on ground at (22.80, 0.01, 2.30)
+PASS Exit lettering sits on ground at (22.80, 0.01, -2.80)
+PASS Player blocked at marked exterior entrance
+PASS Gap blocker cannot be jumped
+PASS Intended copper entrance remains open
+PASS Marked west return corridor remains open
+PASS Carry pose restored on foot
+PASS Camera distance unchanged near walls and movement; error=0.000000
+PASS Real animated mining contact still damages a rock
+FAIL Carry layer releases during authored mining swing

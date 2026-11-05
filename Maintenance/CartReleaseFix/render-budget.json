@@ -1,0 +1,30 @@
+{
+  "laneTriangles": 180,
+  "laneRenderers": 3,
+  "trucks": [
+    {
+      "triangles": 4400,
+      "bodyRenderers": 1,
+      "wheels": 6
+    },
+    {
+      "triangles": 4400,
+      "bodyRenderers": 1,
+      "wheels": 6
+    }
+  ],
+  "clips": [
+    {
+      "name": "CartPull",
+      "editorRuntimeBytes": 436696
+    },
+    {
+      "name": "CartIdle",
+      "editorRuntimeBytes": 669100
+    },
+    {
+      "name": "CartPush",
+      "editorRuntimeBytes": 417492
+    }
+  ]
+}

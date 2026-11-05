@@ -13,7 +13,9 @@ namespace Bulldozer.Player
         public bool requiresCopperRidge;
         [Tooltip("Included in the short first shift. Zero means later shifts only.")]
         public int starterHealth;
-        public bool Available(Persistence.MiningSnapshot state)=>(!requiresCopperRidge||Persistence.QuarryProgressionRules.AreaAvailable(state))&&(!state.shortFirstShift||state.roundIndex!=0||starterHealth>0);
+        [Tooltip("First full-size shift containing this rock: 2, 3 or 4. Zero preserves legacy availability.")]
+        public int firstRampShift;
+        public bool Available(Persistence.MiningSnapshot state)=>(!requiresCopperRidge||Persistence.QuarryProgressionRules.AreaAvailable(state))&&(!state.shortFirstShift||state.roundIndex!=0||starterHealth>0)&&(!state.gradualShifts||state.roundIndex==0||firstRampShift==0||state.roundIndex+1>=firstRampShift);
         public Collider contactCollider;
         public Renderer rockRenderer;
         public GameObject cracks;

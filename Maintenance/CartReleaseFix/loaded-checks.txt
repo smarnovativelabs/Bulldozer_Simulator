@@ -1,0 +1,27 @@
+PASS Cart attaches at target 30
+PASS Load 12 mixed ore
+PASS Loaded reverse escapes contact at target 30
+PASS Reverse never faces away from handles
+PASS Cart animation state active
+PASS Steer clear after reverse at target 30
+PASS Release input brakes without forward kick
+PASS Zero cart penetration frames at target 30
+PASS Baked hand contact max error=0.024
+PASS Loaded cargo unchanged by reverse/collision
+PASS No active cart IK components
+PASS Parking retains all twelve cargo
+PASS Parking restores on-foot animation and pickaxe
+PASS Cart attaches at target 60
+PASS Load 12 mixed ore
+PASS Loaded reverse escapes contact at target 60
+PASS Reverse never faces away from handles
+PASS Cart animation state active
+PASS Steer clear after reverse at target 60
+PASS Release input brakes without forward kick
+PASS Zero cart penetration frames at target 60
+PASS Baked hand contact max error=0.027
+PASS Loaded cargo unchanged by reverse/collision
+PASS No active cart IK components
+PASS Parking retains all twelve cargo
+PASS Parking restores on-foot animation and pickaxe
+COMPLETE 26 checks; target frame rates are editor settings, not device measurements

@@ -70,6 +70,7 @@ namespace Bulldozer.Player.Persistence
             string destination = next.roundIndex == 1 ? "Your wheelbarrow is ready. Collect more ore per trip." :
                 next.roundIndex == 2 ? "Complete this shift to unlock Copper Ridge." :
                 next.roundIndex == 3 ? "COPPER RIDGE OPENS: six new copper deposits beyond the east gate." : QuarryBalance.Shift(next.roundIndex);
+            if(s.gradualShifts&&next.roundIndex<3)destination+=(next.roundIndex==1?"\n24 rocks - a bigger working section.":"\n48 rocks - prepare for the ridge.");
             return "NEXT: EXCAVATION " + ((long)next.roundIndex + 1) + "\n" + destination + "\nContract: " +
                 ContractName(next.contractKind) + "  " + Target(next) + "  |  +$" + Reward(next);
         }

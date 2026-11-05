@@ -1,0 +1,37 @@
+PLAYTEST REVIEW - 2026-11-05
+
+Method and limits
+Live Unity Editor, isolated save files. Desktop computer-use capture failed; no claim of a full manual mouse/keyboard playthrough. Traversal used real MinerTouchControls.Move inputs, MinerController.Update, CharacterController collision, cart steering and live rendered frames. Scenario starts were positioned fixtures. Four-excavation progression used actual gameplay transaction APIs with accelerated time and live truck transitions; this verifies state/rewards, not normal-speed pacing. No Android/device FPS or thermal test. No production gameplay fix was applied in this review.
+
+CONFIRMED RELEASE BLOCKER: CART CANNOT REVERSE AWAY FROM A ROCK
+TraversalReview.cs, final traversal.txt: excavation 4, first copper deposit intact. Player (19.20,0.03,1.91), cart attached, facing north. Four seconds of reverse input produced 0.000m escape; right input also failed. Cart overlap query was empty: this reproduced a collision deadlock, not penetration. An unchanged-facing backward sweep allowed the full 0.20m test distance.
+Cause: MinerController projects velocity onto the proposed forward direction and clamps input alignment to [0,1]. Opposite input becomes zero movement while SmoothFacing attempts a turn. QuarryWheelbarrow.ConstrainMovement blocks the turn against the rock. Its backup nudge requires nonzero requested movement, so it cannot resolve this zero-motion case.
+Recommended fix: allow controlled backward pulling with existing heading when turn clearance is blocked; sweep the reverse movement and keep CharacterController collision authoritative. Turn after space is gained. Preserve cargo, do not teleport or disable rock colliders. Include straight, angled, tight-corner and loaded-cart tests. Simply narrowing the cart further does not fix this logic.
+
+COPPER RETURN ROUTES
+All ten waypoint checks passed with foot and cart across two routes with intact copper deposits.
+Inside ridge: centre aisle x=20.45 from z=9.4 to z=2.2, through south entrance to z=-3.8, then west to x=12 before returning toward refinery.
+Outside west ridge: corridor x=16.7 from z=8 south to z=-3.8, then west to x=12.
+Actual end positions were within 0.25m foot / 0.20m cart of targets.
+Unlocked-ridge NavMesh query returned PathComplete from (20.45,.05,9.4) to refinery input (3.1,0,0). A closed-gate query was partial as expected.
+Navigation is built for radius .5m; player radius .3m. Cart sits .95m ahead with .55m half-length. A circular navigation agent does not validate the cart's turning sweep.
+Recommendation: visibly marked continuous return lane, generous turn pockets, junction arrows toward REFINERY / MAIN QUARRY, optional return destination even with empty cart. Guide currently replaces mine goals with PARK TO USE PICKAXE and targets the player when pushing, which is unhelpful for finding the exit. Avoid opening the outer world boundary; create readable connected passages inside the play area.
+
+VISUAL / ANIMATION
+cart-rock-reverse.png confirms oversized Copper Ridge world-space text covers the view near the entrance. Use a smaller mounted sign and sensible viewing distance.
+Current implementation uses DitzelGames.FastIK.FastIKFabric, not Final IK. MinerAnimator corrects right-hand carry and QuarryWheelbarrow manually solves both wrists while pushing. Current Animator clips contain idle/locomotion/jump/fall/mining, but no dedicated push/pull or pickup clips.
+Recommendation: authored idle, walk/run, ground/wall mining, brief pickup/put-down and cart push/pull/idle clips, tool sockets parented to hands, animation-timed contact. Keep ore collection responsive: do not interrupt movement with a full pickup animation for every item. Optional small hand correction only where necessary; do not use IK to substitute for the entire pushing pose. Removing IK alone without replacement poses will not improve hand contact.
+
+PROGRESSION RESULTS
+four-round-checks.txt COMPLETE, 5452 transaction/state assertions passed. All ore mined/refined/delivered across excavations 1-4; final partial truck load emptied; completion paid once; double next-click advanced once; cash and all purchased upgrade types survived reload; next excavation regenerated colliders and reset round-specific state. Ended at fresh excavation 5.
+First-session-specific checks passed 67 assertions before an already-seen workbench cue expectation failed. Separate camera-check.txt resets only the isolated cue flag and confirms start, input release, saved seen flag, and repeat suppression. Do not count the initial entire first-session suite as passed.
+First session: 12 rocks, 2/4/6 HP tiers, 36 ore total. First two-rock bonus funds optional $10 damage upgrade (1 to 2 damage). First full bag prompts deposit; after first raw deposit, full bag no longer stops mining. Ground ore stays until collected.
+Loop: mine -> collect -> raw input -> refine -> output pickup -> loading pad -> truck payment. Ore values depend on mineral and shift; every third delivery adds $30. Optional task and contract rewards are automatic.
+Area completion requires all rocks depleted AND all cargo/ground/refinery/loading/truck buffers empty, including parked cart/backpack. Final under-capacity truck can dispatch after all remaining material is loaded. Completion bonus: $50/$60/$70/$80 for excavations 1/2/3/4.
+First completion unlocks free wheelbarrow. Excavations 2/3 contain 78 rocks. Third completion unlocks Copper Ridge for excavation 4: 84 total rocks including six extra copper deposits. Next Excavation carries wallet/upgrades/unlocks forward and resets rocks, tasks, contracts. Later play repeats this map with rotating shift modifiers/contracts and increasing rock health; it does not currently unlock an endless series of unique areas.
+Design concern: 12 -> 78 rocks is a large jump in shift length. Consider smaller intermediate sections/checkpoints or a measured gradual ramp, based on real player timing. After ridge opens, additional long-term goals/areas belong in the next content sprint.
+
+SAFETY / HANDOFF
+Original save backup user-progress-backup.json SHA256 9CE6468C82A619F45EA14CECC94EC025FAACC50B13A1DF1B367CB9D0E8DCF729. Original file matched during testing; final verification recorded separately. Tests stopped, editor test save override removed, run-in-background override disabled. Final current console had no gameplay errors; historical Unity AI connection error and startup warnings remain separate editor concerns.
+
+Final verification: original save SHA256 still matches backup exactly. PlayerSettings.runInBackground restored false. Unity Play mode stopped. Production source/scene files unchanged by this review.

@@ -20,7 +20,7 @@ namespace Bulldozer.Player
                 rock.enabled=open;
                 foreach(var collider in rock.GetComponentsInChildren<Collider>())collider.enabled=open;
             }
-            sign.text=open?"COPPER RIDGE\nOPEN - 6 COPPER DEPOSITS":"COPPER RIDGE\nFINISH 3 EXCAVATIONS TO OPEN";
+            sign.text=open?"COPPER RIDGE\n6 DEPOSITS":"COPPER RIDGE\nOPENS AFTER SHIFT 3";
         }
     }
 }

@@ -27,6 +27,8 @@ namespace Bulldozer.Player.Persistence
         public int roundIndex;
         public bool roundBonusClaimed;
         public bool shortFirstShift,firstRefineryDeposit;
+        // Additive opt-in: missing on existing v10 saves means preserve their full quarry.
+        public bool gradualShifts;
         public int guidanceSeenMask;
         public bool copperRidgeUnlocked,contractClaimed;
         public QuarryContract contractKind;
@@ -46,7 +48,7 @@ namespace Bulldozer.Player.Persistence
         public string[] fulfilledPurchases = Array.Empty<string>();
         public MiningSnapshot Copy()=>JsonUtility.FromJson<MiningSnapshot>(JsonUtility.ToJson(this));
         public const int CurrentVersion = 10;
-        public static MiningSnapshot Create(int cargo,int coins)=>new MiningSnapshot{format="bulldozer-mining",version=CurrentVersion,shortFirstShift=true,cargo=cargo,coins=coins,items=new int[Mathf.Max(0,cargo)]};
+        public static MiningSnapshot Create(int cargo,int coins)=>new MiningSnapshot{format="bulldozer-mining",version=CurrentVersion,shortFirstShift=true,gradualShifts=true,cargo=cargo,coins=coins,items=new int[Mathf.Max(0,cargo)]};
     }
     public sealed class MiningProgressStore
     {
@@ -122,7 +124,7 @@ namespace Bulldozer.Player.Persistence
                 if(data!=null&&data.format=="bulldozer-mining"&&data.version==6){data.version=7;data.damagedBlocks=Array.Empty<RockDamageState>();}
                 if(data!=null&&data.format=="bulldozer-mining"&&data.version==7){data.version=8;QuarryProgressionRules.MigrateExisting(data);}
                 // Existing excavations retain their original rock set and never replay onboarding.
-                if(data!=null&&data.format=="bulldozer-mining"&&data.version==8){data.version=9;data.shortFirstShift=false;data.firstRefineryDeposit=true;data.guidanceSeenMask=7;}
+                if(data!=null&&data.format=="bulldozer-mining"&&data.version==8){data.version=9;data.gradualShifts=false;data.shortFirstShift=false;data.firstRefineryDeposit=true;data.guidanceSeenMask=7;}
                 // Existing saves retain every gameplay field and skip the new first-launch intro.
                 if(data!=null&&data.format=="bulldozer-mining"&&data.version==9){data.version=10;data.guidanceSeenMask|=8;}
                 return Valid(data);
@@ -145,5 +147,6 @@ namespace Bulldozer.Player.Persistence
         }
     }
 }
+
 
 

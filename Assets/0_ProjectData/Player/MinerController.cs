@@ -16,6 +16,7 @@ namespace Bulldozer.Player
         public float gravity = -24f;
         public Vector2 MoveInput { get; private set; }
         public float Speed { get; private set; }
+        public float CartSignedSpeed { get; private set; }
         public bool Grounded => motor && motor.isGrounded;
         public float Swing { get; private set; }
         public bool IsMining => swingTime > 0;
@@ -78,7 +79,10 @@ namespace Bulldozer.Player
             Vector3 direction = Quaternion.Euler(0, yaw, 0) * new Vector3(MoveInput.x, 0, MoveInput.y);
             float movementMultiplier=movementEquipment?movementEquipment.MovementMultiplier:1f;
             bool pushing = ActiveWheelbarrow && ActiveWheelbarrow.Pushing;
+            Quaternion facing = visual ? visual.rotation : transform.rotation;
+            bool pulling = pushing && direction.sqrMagnitude > .01f && Vector3.Dot(facing*Vector3.forward,direction.normalized)<-.35f;
             Vector3 desiredVelocity = direction * ((run||analogRun ? runSpeed : walkSpeed)*movementMultiplier);
+            if(pulling)desiredVelocity*=.65f;
             if (pushing)
             {
                 // Ease into motion, but brake and reverse promptly when the input changes.
@@ -94,16 +98,15 @@ namespace Bulldozer.Player
                 cartAcceleration = Vector3.zero;
                 velocity = Vector3.MoveTowards(velocity, desiredVelocity, acceleration * Time.deltaTime);
             }
-            Quaternion facing = visual ? visual.rotation : transform.rotation;
-            if (pushing) facing = ActiveWheelbarrow.SmoothFacing(direction, facing, Time.deltaTime);
+            // Pull away without first requiring room for a 180-degree cart turn.
+            if (pushing) facing = ActiveWheelbarrow.SmoothFacing(pulling?-direction:direction, facing, Time.deltaTime);
             else if (direction.sqrMagnitude > .01f && visual) facing = Quaternion.Slerp(facing, Quaternion.LookRotation(direction), 1 - Mathf.Exp(-14 * Time.deltaTime));
             if(pushing)
             {
                 // Push along the handles, never strafe sideways while the cart is turning.
-                // A reversal pivots first; analogue input still supports every heading.
                 Vector3 forward=facing*Vector3.forward;
-                float alignment=direction.sqrMagnitude>.01f?Mathf.Clamp01(Vector3.Dot(forward,direction.normalized)):1;
-                velocity=forward*velocity.magnitude*alignment;
+                // Preserve the sign while braking too; releasing reverse must not kick forward.
+                velocity=forward*Vector3.Dot(velocity,forward);
             }
             if(InputBlocked)velocity=cartAcceleration=Vector3.zero;
             Vector3 movement = velocity * Time.deltaTime;
@@ -128,6 +131,7 @@ namespace Bulldozer.Player
             }
             if ((flags & CollisionFlags.Above) != 0 && vertical > 0) vertical = 0;
             Speed = new Vector2(motor.velocity.x, motor.velocity.z).magnitude;
+            CartSignedSpeed=pushing?Vector3.Dot(motor.velocity,visual.forward):0;
             idleTime=MoveInput.sqrMagnitude<.01f?idleTime+Time.deltaTime:0;
             bool autoRequested=autoMine&&idleTime>.16f&&Time.time>=nextSwing&&Speed<.12f&&!InputBlocked;
             if ((mineRequested||autoRequested) && swingTime <= 0 && Grounded && visual && visual.TryGetComponent<MinerEquipment>(out var equipment) && equipment.PickaxeVisible)

@@ -1,0 +1,293 @@
+{
+    "format": "bulldozer-mining",
+    "version": 10,
+    "cargo": 7,
+    "coins": 6090,
+    "damageLevel": 1,
+    "capacityLevel": 2,
+    "speedLevel": 0,
+    "roundIndex": 1,
+    "roundBonusClaimed": false,
+    "shortFirstShift": false,
+    "firstRefineryDeposit": true,
+    "gradualShifts": false,
+    "guidanceSeenMask": 15,
+    "copperRidgeUnlocked": false,
+    "contractClaimed": true,
+    "contractKind": 1,
+    "contractProgress": 12,
+    "taskRocks": 43,
+    "taskDense": 17,
+    "taskOreMask": 63,
+    "taskRefined": 112,
+    "taskDeliveries": 5,
+    "taskClaimedMask": 7,
+    "items": [
+        2,
+        2,
+        1,
+        1,
+        1,
+        3,
+        2
+    ],
+    "refineryInput": [],
+    "refineryOutput": [
+        9,
+        11,
+        11,
+        11,
+        6,
+        6,
+        7,
+        7,
+        6,
+        7,
+        9,
+        8,
+        7,
+        7,
+        7,
+        9,
+        10,
+        9,
+        9,
+        8,
+        8,
+        7,
+        7,
+        6,
+        6,
+        6,
+        8,
+        8,
+        8,
+        11,
+        10,
+        11,
+        11,
+        10,
+        10,
+        6,
+        6,
+        6,
+        8,
+        10,
+        11,
+        10,
+        11,
+        8,
+        8,
+        9,
+        9,
+        11,
+        11,
+        7,
+        7,
+        7,
+        6,
+        6,
+        6,
+        11,
+        10,
+        11,
+        10,
+        10,
+        9,
+        9,
+        7,
+        6,
+        6,
+        6,
+        8,
+        9,
+        8,
+        8,
+        9,
+        9,
+        11,
+        10,
+        10,
+        10,
+        9,
+        9,
+        9,
+        10,
+        11,
+        11,
+        11,
+        7,
+        7,
+        7,
+        10,
+        10,
+        11,
+        11,
+        11,
+        6
+    ],
+    "truckItems": [
+        9
+    ],
+    "depletedBlocks": [
+        "quarry-v1-0-4",
+        "quarry-v1-0-2",
+        "quarry-v1-0-3",
+        "quarry-v1-1-2",
+        "quarry-v1-1-3",
+        "quarry-v1-0-1",
+        "quarry-v1-1-1",
+        "quarry-v1-0-5",
+        "quarry-v1-1-4",
+        "quarry-v1-1-5",
+        "quarry-v1-2-5",
+        "quarry-v1-2-4",
+        "quarry-v1-2-3",
+        "quarry-v1-2-2",
+        "quarry-v1-0-0",
+        "quarry-v1-1-0",
+        "quarry-v1-2-1",
+        "quarry-v1-2-0",
+        "quarry-v1-3-0",
+        "quarry-v1-3-1",
+        "quarry-v1-3-2",
+        "quarry-v1-4-1",
+        "quarry-v1-4-2",
+        "quarry-v1-4-0",
+        "quarry-v1-3-3",
+        "quarry-v1-4-3",
+        "quarry-v1-4-4",
+        "quarry-v1-3-4",
+        "quarry-v1-4-5",
+        "quarry-v1-3-5",
+        "quarry-expansion-1-3-0",
+        "quarry-expansion-1-0-3",
+        "quarry-expansion-1-0-2",
+        "quarry-expansion-1-0-1",
+        "quarry-expansion-1-0-0",
+        "quarry-expansion-1-1-0",
+        "quarry-expansion-1-1-1",
+        "quarry-expansion-1-2-0",
+        "quarry-expansion-1-4-0",
+        "quarry-expansion-1-5-0",
+        "quarry-expansion-1-2-1",
+        "quarry-expansion-0-3-3",
+        "quarry-expansion-0-3-2"
+    ],
+    "damagedBlocks": [
+        {
+            "id": "quarry-expansion-1-5-1",
+            "damage": 6
+        },
+        {
+            "id": "quarry-expansion-0-4-3",
+            "damage": 2
+        }
+    ],
+    "groundDrops": [
+        {
+            "id": "quarry-expansion-1-5-0/1",
+            "item": 0,
+            "position": {
+                "x": 5.099999904632568,
+                "y": 0.12999999523162843,
+                "z": 8.899999618530274
+            }
+        },
+        {
+            "id": "quarry-expansion-1-5-0/2",
+            "item": 0,
+            "position": {
+                "x": 5.400000095367432,
+                "y": 0.12999999523162843,
+                "z": 8.5
+            }
+        },
+        {
+            "id": "quarry-expansion-1-2-1/1",
+            "item": 5,
+            "position": {
+                "x": 6.279999732971191,
+                "y": 0.12999999523162843,
+                "z": 5.359999656677246
+            }
+        },
+        {
+            "id": "quarry-expansion-1-2-1/2",
+            "item": 5,
+            "position": {
+                "x": 6.579999923706055,
+                "y": 0.12999999523162843,
+                "z": 4.960000038146973
+            }
+        },
+        {
+            "id": "quarry-expansion-0-3-3/0",
+            "item": 3,
+            "position": {
+                "x": -5.560000419616699,
+                "y": 0.12999999523162843,
+                "z": 6.139999866485596
+            }
+        },
+        {
+            "id": "quarry-expansion-0-3-3/1",
+            "item": 3,
+            "position": {
+                "x": -5.260000228881836,
+                "y": 0.12999999523162843,
+                "z": 6.539999485015869
+            }
+        },
+        {
+            "id": "quarry-expansion-0-3-3/2",
+            "item": 3,
+            "position": {
+                "x": -4.960000038146973,
+                "y": 0.12999999523162843,
+                "z": 6.139999866485596
+            }
+        },
+        {
+            "id": "quarry-expansion-0-3-2/0",
+            "item": 1,
+            "position": {
+                "x": -6.7400007247924809,
+                "y": 0.12999999523162843,
+                "z": 6.139999866485596
+            }
+        },
+        {
+            "id": "quarry-expansion-0-3-2/1",
+            "item": 1,
+            "position": {
+                "x": -6.440000534057617,
+                "y": 0.12999999523162843,
+                "z": 6.539999485015869
+            }
+        },
+        {
+            "id": "quarry-expansion-0-3-2/2",
+            "item": 1,
+            "position": {
+                "x": -6.140000343322754,
+                "y": 0.12999999523162843,
+                "z": 6.139999866485596
+            }
+        }
+    ],
+    "trucksCompleted": 68,
+    "loadingQueue": [],
+    "wheelbarrowUnlocked": true,
+    "usingWheelbarrow": false,
+    "backpackItems": [],
+    "barrowItems": [],
+    "barrowPosition": {
+        "x": -6.800000190734863,
+        "y": 0.05000000074505806,
+        "z": -2.200000047683716
+    },
+    "refiningSeconds": 0.0,
+    "removeAds": false,
+    "fulfilledPurchases": []
+}

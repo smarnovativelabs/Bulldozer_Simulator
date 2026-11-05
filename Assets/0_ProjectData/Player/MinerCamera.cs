@@ -13,13 +13,15 @@ namespace Bulldozer.Player
         public float startYaw;
         public LayerMask obstacleMask = ~0;
         public float Yaw { get; private set; }
-        float pitch = 18, actualDistance;
-        readonly RaycastHit[] hits = new RaycastHit[32];
-        void OnEnable() { actualDistance = distance; pitch=startPitch; Yaw=startYaw; }
+        float pitch = 18;
+        readonly RaycastHit[] visibilityHits=new RaycastHit[32];
+        readonly Renderer[] hiddenWalls=new Renderer[32];
+        int hiddenCount;
+        void OnEnable() { pitch=startPitch; Yaw=startYaw; }
         void LateUpdate()
         {
             if (!target) return;
-            if (target.GuidanceInputBlocked) { if(target.touchControls)target.touchControls.ConsumeLook(); return; }
+            if (target.GuidanceInputBlocked) { RestoreWalls(); if(target.touchControls)target.touchControls.ConsumeLook(); return; }
             Vector2 look = target.touchControls ? target.touchControls.ConsumeLook() * .13f : Vector2.zero;
             if (Mouse.current != null && Mouse.current.rightButton.isPressed) look += Mouse.current.delta.ReadValue() * sensitivity;
             if (Gamepad.current != null) look += Gamepad.current.rightStick.ReadValue() * (110 * Time.deltaTime);
@@ -28,11 +30,25 @@ namespace Bulldozer.Player
             Vector3 pivot = target.transform.position + Vector3.up * 1.35f;
             Quaternion rotation = Quaternion.Euler(pitch, Yaw, 0);
             Vector3 backward = rotation * Vector3.back;
-            float desired = distance;
-            int count = Physics.SphereCastNonAlloc(pivot, .22f, backward, hits, distance, obstacleMask, QueryTriggerInteraction.Ignore);
-            for (int i = 0; i < count; i++) if (!hits[i].transform.IsChildOf(target.transform)) desired = Mathf.Min(desired, Mathf.Max(.3f, hits[i].distance - .08f));
-            actualDistance = desired < actualDistance ? desired : Mathf.Lerp(actualDistance, desired, 1 - Mathf.Exp(-8 * Time.deltaTime));
-            transform.SetPositionAndRotation(pivot + backward * actualDistance, rotation);
+            ShowPlayerThroughScenery(pivot,backward);
+            // Stable arcade follow. Walls never pull the camera into the player;
+            // one-time guidance still owns the camera while its input lock is held.
+            transform.SetPositionAndRotation(pivot + backward * distance, rotation);
         }
+        void RestoreWalls(){for(int i=0;i<hiddenCount;i++)if(hiddenWalls[i])hiddenWalls[i].forceRenderingOff=false;hiddenCount=0;}
+        void ShowPlayerThroughScenery(Vector3 pivot,Vector3 backward)
+        {
+            RestoreWalls();
+            int count=Physics.RaycastNonAlloc(pivot,backward,visibilityHits,distance+.3f,obstacleMask,QueryTriggerInteraction.Ignore);
+            for(int i=0;i<count;i++){
+                var hit=visibilityHits[i];if(hit.transform.IsChildOf(target.transform))continue;
+                var renderer=hit.collider.GetComponent<Renderer>();if(!renderer||renderer.forceRenderingOff||!renderer.enabled||renderer.bounds.size.y<2.5f)continue;
+                if(hit.collider.GetComponentInParent<MineableRock>()||hit.collider.GetComponentInParent<TruckDelivery>())continue;
+                string label=renderer.name;
+                if(label.IndexOf("boundary",System.StringComparison.OrdinalIgnoreCase)<0&&label.IndexOf("bank",System.StringComparison.OrdinalIgnoreCase)<0&&label.IndexOf("Cut Rock",System.StringComparison.OrdinalIgnoreCase)<0&&label.IndexOf("blocker",System.StringComparison.OrdinalIgnoreCase)<0&&label.IndexOf("Entrance",System.StringComparison.OrdinalIgnoreCase)<0&&label.IndexOf("north cap",System.StringComparison.OrdinalIgnoreCase)<0)continue;
+                renderer.forceRenderingOff=true;hiddenWalls[hiddenCount++]=renderer;
+            }
+        }
+        void OnDisable(){RestoreWalls();}
     }
 }

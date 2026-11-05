@@ -1,0 +1,22 @@
+PASS Fresh saves opt into gradual shifts
+PASS Shift 1 rocks=12
+PASS All six ore types remain available in shift 1
+PASS Shift 2 rocks=24
+PASS All six ore types remain available in shift 2
+PASS Shift 3 rocks=48
+PASS All six ore types remain available in shift 3
+PASS Shift 4 rocks=84
+PASS All six ore types remain available in shift 4
+PASS Shift 5 rocks=84
+PASS All six ore types remain available in shift 5
+PASS Existing v10 save reads with original progression
+PASS Existing excavation 2 retains 78 rocks
+PASS Clone retains every saved field
+PASS Existing save commits to isolated roundtrip file
+PASS Roundtrip retains cargo, cash, partial rocks and purchases
+PASS Advancing legacy progress never opts into reduced rock sets
+PASS Animator references idle, push and pull clips
+PASS Authored cart animations enabled
+PASS Return lane geometry below 500 triangles
+PASS Copper sign compact
+COMPLETE 21 checks

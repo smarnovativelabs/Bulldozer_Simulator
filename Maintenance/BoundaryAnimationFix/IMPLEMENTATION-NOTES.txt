@@ -1,0 +1,28 @@
+Boundary, animation and camera fixes — 2026-11-05
+
+Implemented through Unity Editor authoring:
+- Copper exterior gap blocker and north cap, with solid BoxColliders and carving navigation obstacles. Intended entrance and west return corridor remain open.
+- Both EXIT REFINERY ground labels aligned to the actual ground surface, 0.006 m above it.
+- Three baked pickaxe carry clips (idle/walk/run), a masked right-arm layer and release of that layer during existing authored mining swings.
+- Removed FastIK components from the live player hierarchy and cart runtime solver fallback. Offline authoring can still use the installed IK package to bake clips.
+- Removed collision-driven camera distance changes; one-time Cinemachine guidance retains camera ownership during its shot.
+- Added nonalloc scenery visibility handling for tall walls between the player and fixed camera. Colliders remain active.
+
+Validation completed before final camera visibility compilation:
+- 20 live boundary/animation/camera/guidance checks passed.
+- 26 loaded-cart checks passed at Editor target rates 30 and 60: zero penetration frames, reverse/steer/brake, unchanged 12-item cargo, animated hand contact maximum error 0.024 m.
+- Four complete excavation cycles (12/24/48/84 rocks), refinery, truck deliveries, upgrades, round completion and reload: 3637 assertions passed.
+- Initial animation test used stale loaded assemblies and failed. Explicit recompilation and runtime field inspection resolved this; rerun passed.
+
+Tests use isolated saves under this directory. Original progress backup SHA256:
+A04C56CEB39DECB593D459275E653E8658812F3BCF5ACFE3AD1488A382EF7618
+
+Budget: two cube blockers add 24 triangles and reuse an existing shared material. No new postprocessing or runtime IK solver. Truck geometry/rig untouched (previously verified 4400 triangles, single body renderer).
+These are automated Editor gameplay tests plus screenshot inspection, not a complete manual playthrough or actual low-end-device FPS profiling.
+
+Final verification:
+- Latest camera fields verified in the loaded assembly after explicit compilation; compilation reported zero errors/warnings.
+- Expanded final runtime suite: 21/21 passed, including actual occluder hiding. blocked-gap.png reviewed: player visible at closed gap, fixed camera distance retained.
+- No new console error entries since the successful gameplay-test baseline (cursor 161 through 191).
+- Stopped Play mode; test save override verified empty and run-in-background restored false. Test-populated TMP font atlases restored to their original baseline.
+- Original progress hash still exactly matches the backup. No save migration or format change introduced by this fix.

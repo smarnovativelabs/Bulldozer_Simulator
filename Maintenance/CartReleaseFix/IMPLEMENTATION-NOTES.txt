@@ -1,0 +1,30 @@
+Cart / copper return / progression release fixes - 2026-11-05
+
+Implemented
+- Cart opposite-direction input now pulls backward at 65% speed while retaining its facing. Signed forward velocity is preserved through braking; the existing cart sweeps and CharacterController remain authoritative. No rock collision disabling or teleport recovery.
+- Copper return lanes: one combined 180-triangle marking mesh, one new shared unlit material, two small TMP floor labels. Existing physically traversable centre and exterior-west routes are marked down to the south turn pocket. No extra lights, cameras, particles, or colliders.
+- Cart guidance uses safe entrance/turn-pocket waypoints when returning to refinery. An empty cart in the copper area now offers a return route instead of targeting the player's own position with a park-only hint.
+- Copper entrance sign is smaller, offset to the side and uses a short caption.
+- Three baked humanoid clips: CartIdle / CartPush / CartPull. Forward/backward locomotion and arm poses are baked into reusable clips, blended by signed actual cart speed. Cart hand IK solving is bypassed in this scene. Existing pickaxe animations remain. Tools are restored when parking.
+- Clip key reduction retains original curves whenever error exceeds .001 or the result would have more keys. 19,970 original keys -> 8,944. Measured accepted scalar-curve differences are recorded in clip-budget.json. Do not interpret serialized asset sizes as build/device memory.
+- New profiles opt into 12 / 24 / 48 / 84-rock shifts. Each shift retains all six minerals, optional upgrades, contracts, and free cart / copper unlock milestones. Ore pool prewarming still uses available rocks only.
+- Save schema version remains 10 with an additive gradualShifts boolean. Missing field defaults false for existing profiles, retaining their full rock layout, partial mining and completion criteria. Legacy v1 migration explicitly retains old progression too. Fresh profiles set true. No existing save file was edited or reset.
+
+Validation
+- rules-checks.txt: 21 setup/progression/legacy roundtrip checks passed.
+- save-checks.txt: 130 save migration, backup, corrupted/future-file protection checks passed (old fixtures omit gradualShifts).
+- traversal.txt: original rock-contact deadlock now retreats .613m before the entrance obstacle and can steer clear; collision overlap remained empty. Both marked return routes passed for foot and cart, ten waypoint assertions. Steady animation grip maximum .049m before curve reduction.
+- loaded-checks.txt: final optimized clips passed 26 assertions at editor target rates 30 and 60: 12 mixed ore, retreat, side escape, braking, no penetration frames, cargo conservation, parking, pickaxe restoration. Maximum stable grip gaps .024m / .027m. These target rates are not device FPS measurements.
+- four-round-checks.txt: 3637 transaction/state assertions, COMPLETE four excavations and reload checks. Every available rock refined and sold; final partial truck dispatch; completion paid once; double-click advances once; wallet/upgrades persist; next excavation restores appropriate rocks/colliders and resets round state. Repeated transactions use test APIs and accelerated time, not a full manual real-time player session.
+- Final current Console: no compilation failure, no current gameplay errors; historical Unity AI connection error and existing startup warnings remain separate.
+
+Budget / review
+- render-budget.json: 180 lane triangles, one lane renderer plus two text renderers. Truck bodies unchanged: 4400 triangles, one body renderer and six-wheel rig each.
+- Three clips reported ~1.45 MiB combined by the Editor runtime memory API after optimization. No new runtime IK solves for cart arms. Actual Android draw calls, thermal behaviour, FPS and build memory still require device profiling.
+- Screenshots cart-rock-contact.png, cart-rock-reverse.png and ridge-return-route.png show live movement/markings/sign. Screenshots preceded the final curve optimization; final optimized clips were subsequently validated by loaded-checks.txt.
+
+Save / environment handoff
+Original progress SHA256 remained 9CE6468C82A619F45EA14CECC94EC025FAACC50B13A1DF1B367CB9D0E8DCF729, identical to user-save-backup.json. All tests used isolated files under this folder. Play stopped; test-save SessionState erased; run-in-background restored false. Test-generated dynamic font atlases restored to their baseline. Existing unrelated build_info modification preserved. No APK produced or published.
+
+Authoring reproducibility
+In Edit mode with gameplay scene open: run Author.cs / AuthorCartRelease.Main, then OptimizeClips.cs / OptimizeCartClips.Main. Both use Editor APIs and save the assets/scene. Runtime source files are separate. Placeholder lane/sign visuals remain easy to replace.
