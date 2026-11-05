@@ -2315,6 +2315,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1652108396}
   cracks: {fileID: 1212875299}
@@ -3351,6 +3352,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 178273137}
   cracks: {fileID: 69205601}
@@ -3600,6 +3602,8 @@ GameObject:
   - component: {fileID: 65412766}
   - component: {fileID: 65412765}
   - component: {fileID: 65412764}
+  - component: {fileID: 65412767}
+  - component: {fileID: 65412768}
   m_Layer: 0
   m_Name: Quarry Guidance
   m_TagString: Untagged
@@ -3684,6 +3688,42 @@ Transform:
   - {fileID: 395040532}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &65412767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65412763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899f9c0b7a0a5cd40893f79ec0de437e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.QuarryCameraGuidance
+  guide: {fileID: 65412765}
+  cart: {fileID: 1663049324}
+  blendSeconds: 0.65
+  holdSeconds: 2
+--- !u!114 &65412768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65412763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11c616a944b02a5419725dcb7625bbc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.QuarryPluginPolish
+  guide: {fileID: 65412765}
+  indicatorPanel: {fileID: 586780792}
+  marker: {fileID: 655424779}
+  arrow: {fileID: 1110804139}
+  caption: {fileID: 602218898}
+  rewardShine: {fileID: 1715512487}
+  cartShine: {fileID: 1324884543}
+  shinyShader: {fileID: 4800000, guid: c6fb048d9d46b814d9a540c80eb1cf09, type: 3}
 --- !u!1 &66643579
 GameObject:
   m_ObjectHideFlags: 0
@@ -5060,6 +5100,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1384816264}
   cracks: {fileID: 1717401709}
@@ -5391,6 +5432,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 1
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 794268551}
   cracks: {fileID: 119981939}
@@ -6744,6 +6786,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 4
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1842559041}
   cracks: {fileID: 1578597013}
@@ -7017,6 +7060,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 4
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 2093021753}
   cracks: {fileID: 1922919260}
@@ -7713,6 +7757,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 2086565230}
   cracks: {fileID: 311987630}
@@ -7896,6 +7941,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 448836780}
   cracks: {fileID: 1602033097}
@@ -13535,6 +13581,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1782190843}
   cracks: {fileID: 392393278}
@@ -15100,6 +15147,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1488695653}
   cracks: {fileID: 1295372101}
@@ -15510,12 +15558,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 222270835}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25038, y: 0, z: 0, w: 0.96814764}
-  m_LocalPosition: {x: 0.3, y: 1, z: -0.425}
-  m_LocalScale: {x: 0.06, y: 0.06, z: 0.66}
+  m_LocalRotation: {x: 0.25038, y: -0, z: -0, w: 0.96814764}
+  m_LocalPosition: {x: 0.3000002, y: 1, z: -0.42499995}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.6600001}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1663049325}
+  m_Father: {fileID: 1182605050}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &222270837
 MeshRenderer:
@@ -15542,7 +15590,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 882b9fd954d33e5429242be7cc47bc23, type: 2}
+  - {fileID: 2100000, guid: 4983d000b941fd24ab3e42a375bbe8cf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15780,6 +15828,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1149370327}
   cracks: {fileID: 1704454296}
@@ -15836,12 +15885,12 @@ MonoBehaviour:
   equipment: {fileID: 5866666020923161179}
   player: {fileID: 1993466818}
   materials:
-  - {fileID: 2100000, guid: 5b30edfedee10e54e95ec06339da8276, type: 2}
-  - {fileID: 2100000, guid: 52e49d8afbdc80f4dab77caeb1a33fcd, type: 2}
-  - {fileID: 2100000, guid: 9d9b6a4637b8d8c44a178c058568a46f, type: 2}
-  - {fileID: 2100000, guid: c242cf01b02c31f428e1c1dedcd47e2a, type: 2}
-  - {fileID: 2100000, guid: b6430bc26f70058479f31404d6be99ff, type: 2}
-  - {fileID: 2100000, guid: 56f60c9ffa69b3042928c7d21a9d5e97, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
   dust: {fileID: 1167717531}
   chips: {fileID: 542278694}
   sparks: {fileID: 2033065219}
@@ -16706,6 +16755,7 @@ MonoBehaviour:
   wallMining: 0
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 11140658}
   cracks: {fileID: 0}
@@ -17666,6 +17716,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 912674512}
   cracks: {fileID: 1447741091}
@@ -17743,6 +17794,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 6
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1478926502}
   cracks: {fileID: 1016874799}
@@ -18187,6 +18239,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 2
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 970711334}
   cracks: {fileID: 434509819}
@@ -19840,6 +19893,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 1
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 703459875}
   rockRenderer: {fileID: 703459873}
   cracks: {fileID: 1020157596}
@@ -20659,6 +20713,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 33722995}
   cracks: {fileID: 2070934625}
@@ -21098,6 +21153,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 2
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1387556004}
   cracks: {fileID: 1227500180}
@@ -22904,6 +22960,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 2137070308}
   cracks: {fileID: 1315696938}
@@ -24845,6 +24902,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 1
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 1526451016}
   rockRenderer: {fileID: 1526451014}
   cracks: {fileID: 1718448887}
@@ -25013,6 +25071,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 2
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1348787312}
   cracks: {fileID: 1343994643}
@@ -25293,6 +25352,7 @@ RectTransform:
   - {fileID: 2078394724}
   - {fileID: 975751100}
   - {fileID: 1545880852}
+  - {fileID: 586780792}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -26375,6 +26435,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 875541313}
   cracks: {fileID: 64287567}
@@ -26698,6 +26759,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1418104626}
   cracks: {fileID: 42720576}
@@ -33031,7 +33093,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5ca9b2b46cdafce42b66af69c24c6b39, type: 2}
+  - {fileID: 2100000, guid: ca8059c310e3b2146b220f384b5c1c4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -34732,6 +34794,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 197689603}
   cracks: {fileID: 687461287}
@@ -35330,6 +35393,66 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 585875488}
   m_Mesh: {fileID: 4300000, guid: 56a265f726888604aaf96391f6d338fc, type: 2}
+--- !u!1 &586780791
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 586780792}
+  - component: {fileID: 586780793}
+  m_Layer: 0
+  m_Name: Objective direction overlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &586780792
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586780791}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 655424779}
+  m_Father: {fileID: 469102717}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &586780793
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586780791}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &587339696
 GameObject:
   m_ObjectHideFlags: 0
@@ -35388,13 +35511,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588779725}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.15, z: 0.45}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.15, z: 0.45000005}
+  m_LocalScale: {x: 0.75000006, y: 0.75, z: 0.75000006}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1057753036}
-  m_Father: {fileID: 1663049325}
+  m_Father: {fileID: 1182605050}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &588920907
 GameObject:
@@ -35783,12 +35906,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592968686}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 1.15, z: -0.7}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.3000002, y: 1.15, z: -0.70000005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1663049325}
+  m_Father: {fileID: 1182605050}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &593400345
 GameObject:
@@ -35912,6 +36035,143 @@ RectTransform:
   m_AnchoredPosition: {x: -16, y: -20}
   m_SizeDelta: {x: 270, y: 64}
   m_Pivot: {x: 1, y: 1}
+--- !u!1 &602218896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 602218897}
+  - component: {fileID: 602218899}
+  - component: {fileID: 602218898}
+  m_Layer: 0
+  m_Name: Destination and distance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &602218897
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602218896}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 655424779}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -18}
+  m_SizeDelta: {x: 170, y: 28}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &602218898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602218896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: REFINERY  12m
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: bffac54882bfb7446aed2788d95133af, type: 2}
+  m_sharedMaterial: {fileID: 2050681743207674731, guid: bffac54882bfb7446aed2788d95133af, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 17
+  m_fontSizeBase: 17
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 0
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &602218899
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602218896}
+  m_CullTransparentMesh: 1
 --- !u!1 &605044907
 GameObject:
   m_ObjectHideFlags: 0
@@ -36543,6 +36803,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 53024168}
   cracks: {fileID: 649907489}
@@ -38229,6 +38490,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 826379404}
   cracks: {fileID: 996386445}
@@ -38343,6 +38605,44 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654395011}
   m_Mesh: {fileID: 4300000, guid: 7f5c89166bde4024abafd631da51d12e, type: 2}
+--- !u!1 &655424778
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 655424779}
+  m_Layer: 0
+  m_Name: Objective marker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &655424779
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655424778}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1916077589}
+  - {fileID: 1110804139}
+  - {fileID: 602218897}
+  m_Father: {fileID: 586780792}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 140, y: 70}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &655591609
 GameObject:
   m_ObjectHideFlags: 0
@@ -40694,6 +40994,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1201750418}
   cracks: {fileID: 1637896854}
@@ -40861,6 +41162,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 1
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1219587051}
   cracks: {fileID: 1849106871}
@@ -41514,6 +41816,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 1
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 1689840944}
   rockRenderer: {fileID: 1689840942}
   cracks: {fileID: 543831497}
@@ -41731,6 +42034,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1454885310}
   cracks: {fileID: 733900968}
@@ -42141,12 +42445,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 747071633}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.43, y: 0.63, z: 0.17}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.42999983, y: 0.63, z: 0.17000008}
   m_LocalScale: {x: 0.17, y: 0.27, z: 0.48}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1663049325}
+  m_Father: {fileID: 1182605050}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &747071635
 MeshRenderer:
@@ -42173,7 +42477,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c65b27c4dba3d6344bcd78c683701b0d, type: 2}
+  - {fileID: 2100000, guid: 4c75ff845d5725d4c97bb7b80ea76d1c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -42580,8 +42884,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 756006361}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.68, z: 0.2}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.68, z: 0.20000005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -42597,7 +42901,7 @@ Transform:
   - {fileID: 375654856}
   - {fileID: 2141423101}
   - {fileID: 768126683}
-  m_Father: {fileID: 1663049325}
+  m_Father: {fileID: 1182605050}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &756252639
 GameObject:
@@ -44465,6 +44769,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 884473663}
   cracks: {fileID: 2053803350}
@@ -45525,6 +45830,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 131906312}
   cracks: {fileID: 697577915}
@@ -46497,6 +46803,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 1
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 1370590282}
   rockRenderer: {fileID: 1370590280}
   cracks: {fileID: 1286540048}
@@ -46590,6 +46897,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1115013024}
   cracks: {fileID: 1405751954}
@@ -47801,6 +48109,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 12340745}
   cracks: {fileID: 951444445}
@@ -48197,6 +48506,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1820852566}
   cracks: {fileID: 1416794415}
@@ -49863,12 +50173,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909619751}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 1.15, z: -0.7}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.3000002, y: 1.15, z: -0.70000005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1663049325}
+  m_Father: {fileID: 1182605050}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &909825392
 GameObject:
@@ -50012,6 +50322,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 115985738}
   cracks: {fileID: 0}
@@ -51057,6 +51368,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 2055024710}
   cracks: {fileID: 0}
@@ -51135,6 +51447,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1423014477}
   cracks: {fileID: 188984559}
@@ -51965,6 +52278,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 2062632782}
   cracks: {fileID: 858785808}
@@ -53323,6 +53637,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1253342558}
   cracks: {fileID: 551263549}
@@ -54075,6 +54390,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 1
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 41620989}
   rockRenderer: {fileID: 41620987}
   cracks: {fileID: 1775132582}
@@ -54152,6 +54468,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1487514408}
   cracks: {fileID: 1971831385}
@@ -54532,6 +54849,7 @@ MonoBehaviour:
   wallMining: 0
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 621795112}
   cracks: {fileID: 0}
@@ -54895,6 +55213,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1117039689}
   cracks: {fileID: 103214370}
@@ -55136,6 +55455,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 1
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 835934768}
   cracks: {fileID: 1690216424}
@@ -55652,6 +55972,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1839203413}
   cracks: {fileID: 615386152}
@@ -56103,7 +56424,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c65b27c4dba3d6344bcd78c683701b0d, type: 2}
+  - {fileID: 2100000, guid: 4c75ff845d5725d4c97bb7b80ea76d1c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -56954,6 +57275,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 1
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 70299494}
   cracks: {fileID: 246862035}
@@ -57153,6 +57475,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 4
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1574473948}
   cracks: {fileID: 1997101146}
@@ -58230,6 +58553,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108561632}
   m_CullTransparentMesh: 1
+--- !u!1 &1110804138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1110804139}
+  - component: {fileID: 1110804141}
+  - component: {fileID: 1110804140}
+  m_Layer: 0
+  m_Name: Direction arrow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1110804139
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110804138}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 655424779}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 12}
+  m_SizeDelta: {x: 32, y: 32}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1110804140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110804138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.79, b: 0.28, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 82febcb779c6cb141a93253c67d9b9aa, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1110804141
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110804138}
+  m_CullTransparentMesh: 1
 --- !u!1 &1114287373
 GameObject:
   m_ObjectHideFlags: 0
@@ -58283,6 +58681,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 4
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 345690809}
   cracks: {fileID: 66750308}
@@ -58392,6 +58791,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 844195855}
   cracks: {fileID: 1478298371}
@@ -59066,6 +59466,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 144315123}
   cracks: {fileID: 1465935752}
@@ -59155,8 +59556,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4289124761
-  m_fontColor: {r: 0.6, g: 0.85, b: 0.65, a: 1}
+    rgba: 4292474879
+  m_fontColor: {r: 1, g: 0.97, b: 0.85, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -59173,13 +59574,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 3.2
-  m_fontSizeBase: 3.2
+  m_fontSize: 2.35
+  m_fontSizeBase: 2.35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -59190,7 +59591,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -59278,7 +59679,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134165479}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -0.52}
+  m_LocalPosition: {x: 0, y: 0, z: -0.42999983}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -59286,8 +59687,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.055}
-  m_SizeDelta: {x: 1.6, y: 1.5}
+  m_AnchoredPosition: {x: 0, y: 0.065}
+  m_SizeDelta: {x: 1.48, y: 0.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1139133028
 GameObject:
@@ -65665,6 +66066,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 1
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 1534883296}
   rockRenderer: {fileID: 1534883294}
   cracks: {fileID: 587339696}
@@ -66214,6 +66616,46 @@ MonoBehaviour:
   crashReports: {fileID: 1453755939}
   attribution: {fileID: 540747755}
   status: {fileID: 1729402904}
+--- !u!1 &1182605049
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1182605050}
+  m_Layer: 0
+  m_Name: Slim cart assembly
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1182605050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182605049}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.88, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 588779726}
+  - {fileID: 747071634}
+  - {fileID: 1372081705}
+  - {fileID: 1381165377}
+  - {fileID: 222270836}
+  - {fileID: 1858235935}
+  - {fileID: 592968687}
+  - {fileID: 909619752}
+  - {fileID: 756006362}
+  m_Father: {fileID: 1663049325}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1186374133
 GameObject:
   m_ObjectHideFlags: 0
@@ -67325,6 +67767,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 680336045}
   cracks: {fileID: 1625555080}
@@ -67582,6 +68025,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 585875490}
   cracks: {fileID: 964967113}
@@ -67705,8 +68149,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4291938181
-  m_fontColor: {r: 0.52, g: 0.78, b: 0.82, a: 1}
+    rgba: 4292474879
+  m_fontColor: {r: 1, g: 0.97, b: 0.85, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -67723,13 +68167,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 3.2
-  m_fontSizeBase: 3.2
+  m_fontSize: 2.35
+  m_fontSizeBase: 2.35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -67740,7 +68184,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -67828,7 +68272,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215110329}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -0.52}
+  m_LocalPosition: {x: 0, y: 0, z: -0.43000007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -67836,8 +68280,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.055}
-  m_SizeDelta: {x: 1.6, y: 1.5}
+  m_AnchoredPosition: {x: 0, y: 0.065}
+  m_SizeDelta: {x: 1.48, y: 0.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1215441043
 GameObject:
@@ -67908,6 +68352,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 1
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 1900781684}
   rockRenderer: {fileID: 1900781682}
   cracks: {fileID: 1339188493}
@@ -68747,6 +69192,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1189073515}
   cracks: {fileID: 71720752}
@@ -69697,6 +70143,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 486282770}
   cracks: {fileID: 1632115707}
@@ -71472,6 +71919,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 6
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 803687270}
   cracks: {fileID: 1439943113}
@@ -71524,6 +71972,7 @@ GameObject:
   - component: {fileID: 1324884541}
   - component: {fileID: 1324884540}
   - component: {fileID: 1324884542}
+  - component: {fileID: 1324884543}
   m_Layer: 0
   m_Name: Wheelbarrow Action
   m_TagString: Untagged
@@ -71633,6 +72082,33 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1324884543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324884538}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7412d9c14d36032408a1176f3df72df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.QuarryUIShiny
+  m_EffectFactor: 0
+  m_Width: 0.16
+  m_Rotation: 110
+  m_Softness: 0.8
+  m_Brightness: 0.3
+  m_Gloss: 0.15
+  m_EffectArea: 0
+  m_Player:
+    play: 0
+    initialPlayDelay: 0
+    duration: 0.65
+    loop: 0
+    loopDelay: 0
+    updateMode: 0
+  compatibleShader: {fileID: 4800000, guid: c6fb048d9d46b814d9a540c80eb1cf09, type: 3}
 --- !u!1 &1325265592
 GameObject:
   m_ObjectHideFlags: 0
@@ -73700,12 +74176,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1372081704}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25038, y: 0, z: 0, w: 0.96814764}
-  m_LocalPosition: {x: -0.3, y: 1, z: -0.425}
-  m_LocalScale: {x: 0.06, y: 0.06, z: 0.66}
+  m_LocalRotation: {x: 0.25038, y: -0, z: -0, w: 0.96814764}
+  m_LocalPosition: {x: -0.3000002, y: 1, z: -0.42499995}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.6600001}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1663049325}
+  m_Father: {fileID: 1182605050}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1372081706
 MeshRenderer:
@@ -73732,7 +74208,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 882b9fd954d33e5429242be7cc47bc23, type: 2}
+  - {fileID: 2100000, guid: 4983d000b941fd24ab3e42a375bbe8cf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -74145,12 +74621,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381165376}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25038, y: 0, z: 0, w: 0.96814764}
-  m_LocalPosition: {x: -0.3, y: 1.15, z: -0.7}
-  m_LocalScale: {x: 0.075, y: 0.075, z: 0.18}
+  m_LocalRotation: {x: 0.25038, y: -0, z: -0, w: 0.96814764}
+  m_LocalPosition: {x: -0.3000002, y: 1.15, z: -0.70000005}
+  m_LocalScale: {x: 0.075, y: 0.07500001, z: 0.18000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1663049325}
+  m_Father: {fileID: 1182605050}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1381165378
 MeshRenderer:
@@ -74177,7 +74653,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 188357572ccd6b9419c6f8715fd7aa98, type: 2}
+  - {fileID: 2100000, guid: f2ee6d1c6b2a6b048bf8674f3bfa5119, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -74970,6 +75446,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 916776603}
   cracks: {fileID: 1002780624}
@@ -75982,6 +76459,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 1
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 948117834}
   rockRenderer: {fileID: 948117832}
   cracks: {fileID: 1586894511}
@@ -76055,8 +76533,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282890482
-  m_fontColor: {r: 0.95, g: 0.72, b: 0.28, a: 1}
+    rgba: 4292474879
+  m_fontColor: {r: 1, g: 0.97, b: 0.85, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -76073,13 +76551,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 3.2
-  m_fontSizeBase: 3.2
+  m_fontSize: 2.35
+  m_fontSizeBase: 2.35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -76090,7 +76568,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -76178,7 +76656,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438202851}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -0.52}
+  m_LocalPosition: {x: 0, y: 0, z: -0.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76186,8 +76664,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.055}
-  m_SizeDelta: {x: 1.6, y: 1.5}
+  m_AnchoredPosition: {x: 0, y: 0.065}
+  m_SizeDelta: {x: 1.48, y: 0.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1439943113
 GameObject:
@@ -77349,6 +77827,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 4
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 456514223}
   cracks: {fileID: 260993455}
@@ -77772,7 +78251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 567aaa100070c5f409932bffdd5cb81f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.RockFractureEffects
-  sourceMesh: {fileID: 4300000, guid: 1416facc54361ec4aa660ba3d1403267, type: 2}
+  sourceMesh: {fileID: 4300000, guid: a803d3b279b339e4b8792b738c61f3b1, type: 2}
 --- !u!23 &1471342603
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -77798,7 +78277,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d4f0b0b36e656134eb57400354ecf50b, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78803,6 +79282,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 1
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1835254396}
   cracks: {fileID: 2025672291}
@@ -79233,6 +79713,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 555726415}
   cracks: {fileID: 295023489}
@@ -80207,6 +80688,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 1
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 1775573288}
   rockRenderer: {fileID: 1775573286}
   cracks: {fileID: 506586123}
@@ -80897,6 +81379,7 @@ MonoBehaviour:
   wallMining: 0
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1962766952}
   cracks: {fileID: 0}
@@ -81200,6 +81683,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 1
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1907473723}
   cracks: {fileID: 273494116}
@@ -81794,6 +82278,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 6
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 923140382}
   cracks: {fileID: 445396427}
@@ -82120,6 +82605,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 472232701}
   cracks: {fileID: 1327984134}
@@ -83005,6 +83491,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 2042230026}
   cracks: {fileID: 263886309}
@@ -83296,6 +83783,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 6
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 494986431}
   cracks: {fileID: 749700236}
@@ -86002,6 +86490,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1600410082}
   cracks: {fileID: 190192436}
@@ -86249,7 +86738,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.85, y: 0.8, z: 1.2}
+  m_Size: {x: 0.748, y: 0.8, z: 1.2}
   m_Center: {x: 0, y: 0.45, z: 0.2}
 --- !u!114 &1663049324
 MonoBehaviour:
@@ -86286,18 +86775,18 @@ MonoBehaviour:
   actionText: {fileID: 1690414579}
   counter: {fileID: 2080753561}
   stockMaterials:
-  - {fileID: 2100000, guid: 5b30edfedee10e54e95ec06339da8276, type: 2}
-  - {fileID: 2100000, guid: 52e49d8afbdc80f4dab77caeb1a33fcd, type: 2}
-  - {fileID: 2100000, guid: 9d9b6a4637b8d8c44a178c058568a46f, type: 2}
-  - {fileID: 2100000, guid: c242cf01b02c31f428e1c1dedcd47e2a, type: 2}
-  - {fileID: 2100000, guid: b6430bc26f70058479f31404d6be99ff, type: 2}
-  - {fileID: 2100000, guid: 56f60c9ffa69b3042928c7d21a9d5e97, type: 2}
-  - {fileID: 2100000, guid: d71156bbbed0da74a9d9bd7f5bda1b96, type: 2}
-  - {fileID: 2100000, guid: 2aeb666f1d05b0742bccf93d081841dd, type: 2}
-  - {fileID: 2100000, guid: 289994e6d83f0e24c981e3fe400f8e4e, type: 2}
-  - {fileID: 2100000, guid: 10d5a6d6ff534ba448355b849a68d966, type: 2}
-  - {fileID: 2100000, guid: ea53766a643a6a141bd4824848403d46, type: 2}
-  - {fileID: 2100000, guid: f8f4f095bdf94b848a29223f9984b329, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
+  - {fileID: 2100000, guid: 959eeb77ca2132748adb86461baccb8c, type: 2}
+  - {fileID: 2100000, guid: 959eeb77ca2132748adb86461baccb8c, type: 2}
+  - {fileID: 2100000, guid: 959eeb77ca2132748adb86461baccb8c, type: 2}
+  - {fileID: 2100000, guid: 959eeb77ca2132748adb86461baccb8c, type: 2}
+  - {fileID: 2100000, guid: 959eeb77ca2132748adb86461baccb8c, type: 2}
+  - {fileID: 2100000, guid: 959eeb77ca2132748adb86461baccb8c, type: 2}
   unlockCost: 60
   accelerationTime: 0.16
   brakingTime: 0.09
@@ -86316,16 +86805,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 588779726}
-  - {fileID: 747071634}
-  - {fileID: 1372081705}
-  - {fileID: 1381165377}
-  - {fileID: 222270836}
-  - {fileID: 1858235935}
-  - {fileID: 592968687}
-  - {fileID: 909619752}
-  - {fileID: 756006362}
   - {fileID: 2080753564}
+  - {fileID: 1182605050}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1669188716
@@ -86561,6 +87042,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 14632804}
   cracks: {fileID: 1714417543}
@@ -86850,6 +87332,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 2070504820}
   cracks: {fileID: 962012526}
@@ -87541,6 +88024,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 2052708524}
   cracks: {fileID: 391940652}
@@ -87941,6 +88425,7 @@ GameObject:
   - component: {fileID: 1715512485}
   - component: {fileID: 1715512484}
   - component: {fileID: 1715512486}
+  - component: {fileID: 1715512487}
   m_Layer: 0
   m_Name: Cash Header
   m_TagString: Untagged
@@ -88063,6 +88548,33 @@ MonoBehaviour:
           m_StringArgument: shop
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1715512487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715512482}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7412d9c14d36032408a1176f3df72df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.QuarryUIShiny
+  m_EffectFactor: 0
+  m_Width: 0.16
+  m_Rotation: 110
+  m_Softness: 0.8
+  m_Brightness: 0.3
+  m_Gloss: 0.15
+  m_EffectArea: 0
+  m_Player:
+    play: 0
+    initialPlayDelay: 0
+    duration: 0.65
+    loop: 0
+    loopDelay: 0
+    updateMode: 0
+  compatibleShader: {fileID: 4800000, guid: c6fb048d9d46b814d9a540c80eb1cf09, type: 3}
 --- !u!1 &1717401709
 GameObject:
   m_ObjectHideFlags: 0
@@ -88380,6 +88892,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1837215962}
   cracks: {fileID: 24439389}
@@ -90849,6 +91362,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 280614277}
   cracks: {fileID: 1871594857}
@@ -91652,6 +92166,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1028465321}
   cracks: {fileID: 655591609}
@@ -92202,7 +92717,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5ca9b2b46cdafce42b66af69c24c6b39, type: 2}
+  - {fileID: 2100000, guid: ca8059c310e3b2146b220f384b5c1c4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -92303,6 +92818,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 1
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 1411586526}
   rockRenderer: {fileID: 1411586524}
   cracks: {fileID: 1560317276}
@@ -92911,6 +93427,7 @@ MonoBehaviour:
   wallMining: 0
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 272138000}
   cracks: {fileID: 0}
@@ -98315,12 +98832,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858235934}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25038, y: 0, z: 0, w: 0.96814764}
-  m_LocalPosition: {x: 0.3, y: 1.15, z: -0.7}
-  m_LocalScale: {x: 0.075, y: 0.075, z: 0.18}
+  m_LocalRotation: {x: 0.25038, y: -0, z: -0, w: 0.96814764}
+  m_LocalPosition: {x: 0.3000002, y: 1.15, z: -0.70000005}
+  m_LocalScale: {x: 0.075, y: 0.07500001, z: 0.18000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1663049325}
+  m_Father: {fileID: 1182605050}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1858235936
 MeshRenderer:
@@ -98347,7 +98864,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 188357572ccd6b9419c6f8715fd7aa98, type: 2}
+  - {fileID: 2100000, guid: f2ee6d1c6b2a6b048bf8674f3bfa5119, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98871,7 +99388,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 882b9fd954d33e5429242be7cc47bc23, type: 2}
+  - {fileID: 2100000, guid: f2ee6d1c6b2a6b048bf8674f3bfa5119, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99866,6 +100383,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 382598170}
   cracks: {fileID: 635123429}
@@ -100545,18 +101063,18 @@ MonoBehaviour:
   secondDelivery: {fileID: 1197707456}
   rewardFeedback: {fileID: 1398566479}
   stockMaterials:
-  - {fileID: 2100000, guid: 5b30edfedee10e54e95ec06339da8276, type: 2}
-  - {fileID: 2100000, guid: 52e49d8afbdc80f4dab77caeb1a33fcd, type: 2}
-  - {fileID: 2100000, guid: 9d9b6a4637b8d8c44a178c058568a46f, type: 2}
-  - {fileID: 2100000, guid: c242cf01b02c31f428e1c1dedcd47e2a, type: 2}
-  - {fileID: 2100000, guid: b6430bc26f70058479f31404d6be99ff, type: 2}
-  - {fileID: 2100000, guid: 56f60c9ffa69b3042928c7d21a9d5e97, type: 2}
-  - {fileID: 2100000, guid: d71156bbbed0da74a9d9bd7f5bda1b96, type: 2}
-  - {fileID: 2100000, guid: 2aeb666f1d05b0742bccf93d081841dd, type: 2}
-  - {fileID: 2100000, guid: 289994e6d83f0e24c981e3fe400f8e4e, type: 2}
-  - {fileID: 2100000, guid: 10d5a6d6ff534ba448355b849a68d966, type: 2}
-  - {fileID: 2100000, guid: ea53766a643a6a141bd4824848403d46, type: 2}
-  - {fileID: 2100000, guid: f8f4f095bdf94b848a29223f9984b329, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
+  - {fileID: 2100000, guid: 959eeb77ca2132748adb86461baccb8c, type: 2}
+  - {fileID: 2100000, guid: 959eeb77ca2132748adb86461baccb8c, type: 2}
+  - {fileID: 2100000, guid: 959eeb77ca2132748adb86461baccb8c, type: 2}
+  - {fileID: 2100000, guid: 959eeb77ca2132748adb86461baccb8c, type: 2}
+  - {fileID: 2100000, guid: 959eeb77ca2132748adb86461baccb8c, type: 2}
+  - {fileID: 2100000, guid: 959eeb77ca2132748adb86461baccb8c, type: 2}
   secondsPerItem: 1.5
 --- !u!4 &1896738951
 Transform:
@@ -101288,6 +101806,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 305562111}
   cracks: {fileID: 458252509}
@@ -101508,6 +102027,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912996717}
   m_Mesh: {fileID: 4300000, guid: b7677254e9cb7394489dec2735615f68, type: 2}
+--- !u!1 &1916077588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1916077589}
+  - component: {fileID: 1916077591}
+  - component: {fileID: 1916077590}
+  m_Layer: 0
+  m_Name: Marker contrast plate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1916077589
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916077588}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 655424779}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 154, y: 68}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1916077590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916077588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.035, g: 0.055, b: 0.065, a: 0.9}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1916077591
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916077588}
+  m_CullTransparentMesh: 1
 --- !u!1 &1918389197
 GameObject:
   m_ObjectHideFlags: 0
@@ -101881,6 +102475,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 169767682}
   cracks: {fileID: 1060020155}
@@ -102154,6 +102749,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 1
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 1640268852}
   rockRenderer: {fileID: 1640268850}
   cracks: {fileID: 1874011544}
@@ -103286,6 +103882,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 1
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 1783935367}
   rockRenderer: {fileID: 1783935365}
   cracks: {fileID: 1741827950}
@@ -103899,6 +104496,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 118756410}
   cracks: {fileID: 414133823}
@@ -104417,6 +105015,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 625879403}
   cracks: {fileID: 1483084788}
@@ -105087,6 +105686,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1523913973}
   cracks: {fileID: 860836798}
@@ -105180,6 +105780,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1539120054}
   cracks: {fileID: 1618487253}
@@ -112404,6 +113005,7 @@ MonoBehaviour:
   wallMining: 1
   naturalBoulder: 0
   requiresCopperRidge: 0
+  starterHealth: 0
   contactCollider: {fileID: 0}
   rockRenderer: {fileID: 1192958710}
   cracks: {fileID: 201059521}
@@ -118863,7 +119465,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2080753560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -118871,7 +119473,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1.5}
+  m_AnchoredPosition: {x: 0, y: 1.65}
   m_SizeDelta: {x: 3.4, y: 1.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2083108266
@@ -122637,18 +123239,31 @@ MonoBehaviour:
   rawCargoMesh: {fileID: 4300000, guid: b21a3ca5ed611ce41a475c7e9861a384, type: 2}
   ingotCargoMesh: {fileID: 4300000, guid: 2c2aa2534bd3f2f45961553929bb2974, type: 2}
   resourceMeshes:
-  - {fileID: 4300000, guid: b21a3ca5ed611ce41a475c7e9861a384, type: 2}
-  - {fileID: 4300000, guid: b21a3ca5ed611ce41a475c7e9861a384, type: 2}
-  - {fileID: 4300000, guid: 093dd68358e26e44a88e7f9a65f4f675, type: 2}
-  - {fileID: 4300000, guid: de782f5cfd58a884fa75278dc9089c48, type: 2}
-  - {fileID: 4300000, guid: 1cb07b6a5731bf9449241240ea57a156, type: 2}
-  - {fileID: 4300000, guid: 8caef2c353046214ebef653afc878884, type: 2}
-  - {fileID: 4300000, guid: 2c2aa2534bd3f2f45961553929bb2974, type: 2}
-  - {fileID: 4300000, guid: 2c2aa2534bd3f2f45961553929bb2974, type: 2}
-  - {fileID: 4300000, guid: 2c2aa2534bd3f2f45961553929bb2974, type: 2}
-  - {fileID: 4300000, guid: de782f5cfd58a884fa75278dc9089c48, type: 2}
-  - {fileID: 4300000, guid: 2c2aa2534bd3f2f45961553929bb2974, type: 2}
-  - {fileID: 4300000, guid: 8caef2c353046214ebef653afc878884, type: 2}
+  - {fileID: 4300000, guid: a803d3b279b339e4b8792b738c61f3b1, type: 2}
+  - {fileID: 4300000, guid: 22b2fce5b43ab1246a0d426559a63c08, type: 2}
+  - {fileID: 4300000, guid: c3477f85d70615845a1546d8447f0739, type: 2}
+  - {fileID: 4300000, guid: 0995d23cdc3415a44a075320f8f882d0, type: 2}
+  - {fileID: 4300000, guid: 519d58b246c780745b0bbb1d97421c01, type: 2}
+  - {fileID: 4300000, guid: 1ae194baec1c5aa4c88ed92b7fcebee3, type: 2}
+  - {fileID: 4300000, guid: 46fcc001542208e4997e2ead3106a22c, type: 2}
+  - {fileID: 4300000, guid: d889aad902c7aac4b972743130f9b87d, type: 2}
+  - {fileID: 4300000, guid: 61c6e0cebc902ae45ae29abe6552dd5b, type: 2}
+  - {fileID: 4300000, guid: d67cdcca2d4113045a48aeefea0d5c84, type: 2}
+  - {fileID: 4300000, guid: acef30427594bd143a0de03f1a5e08a3, type: 2}
+  - {fileID: 4300000, guid: a3fa3b936ddd03b4c8c7f4eeac1ed7c0, type: 2}
+  resourceMaterials:
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
+  - {fileID: 2100000, guid: 31ee355a2c19b2e43affdbdfed3828ff, type: 2}
+  - {fileID: 2100000, guid: 959eeb77ca2132748adb86461baccb8c, type: 2}
+  - {fileID: 2100000, guid: 959eeb77ca2132748adb86461baccb8c, type: 2}
+  - {fileID: 2100000, guid: 959eeb77ca2132748adb86461baccb8c, type: 2}
+  - {fileID: 2100000, guid: 959eeb77ca2132748adb86461baccb8c, type: 2}
+  - {fileID: 2100000, guid: 959eeb77ca2132748adb86461baccb8c, type: 2}
+  - {fileID: 2100000, guid: 959eeb77ca2132748adb86461baccb8c, type: 2}
   drops: {fileID: 233702073}
   cargoCount: 0
 --- !u!114 &5866666020923161180

@@ -11,7 +11,9 @@ namespace Bulldozer.Player
         public bool wallMining;
         public bool naturalBoulder;
         public bool requiresCopperRidge;
-        public bool Available(Persistence.MiningSnapshot state)=>!requiresCopperRidge||Persistence.QuarryProgressionRules.AreaAvailable(state);
+        [Tooltip("Included in the short first shift. Zero means later shifts only.")]
+        public int starterHealth;
+        public bool Available(Persistence.MiningSnapshot state)=>(!requiresCopperRidge||Persistence.QuarryProgressionRules.AreaAvailable(state))&&(!state.shortFirstShift||state.roundIndex!=0||starterHealth>0);
         public Collider contactCollider;
         public Renderer rockRenderer;
         public GameObject cracks;
@@ -24,7 +26,9 @@ namespace Bulldozer.Player
         void Start()
         {
             var e=FindFirstObjectByType<MinerEquipment>();
+            if(e&&!Available(e.Snapshot)&&!requiresCopperRidge){gameObject.SetActive(false);return;}
             if(e){int round=e.Snapshot.roundIndex;maxHealth=Persistence.ExcavationRules.Health(maxHealth,round,blockId,transform.position.z<4.1f||Mathf.Abs(transform.position.x)>7.4f);Health=maxHealth;
+                if(round==0&&e.Snapshot.shortFirstShift&&starterHealth>0)Health=maxHealth=starterHealth;
                 if(naturalBoulder&&round>0)rockRenderer.transform.Rotate(0,(round%4)*13,0,Space.Self);
                 if(e.IsBlockDepleted(blockId)){Health=0;Hide();}
                 else Health=Mathf.Max(1,maxHealth-e.SavedRockDamage(blockId));}
@@ -34,7 +38,7 @@ namespace Bulldozer.Player
         void Hide(){HitCollider.enabled=false;foreach(var r in GetComponentsInChildren<Renderer>())r.enabled=false;}
         public bool TryHit(MinerEquipment collector,Vector3 point)
         {
-            if(Depleted||!collector||collector.IsFull||(requiresCopperRidge&&!Available(collector.Snapshot)))return false;
+            if(Depleted||!collector||collector.UsingWheelbarrow||collector.MiningBlockedByCapacity||!Available(collector.Snapshot))return false;
             if(Health<=collector.Damage&&!collector.TryBreakIntoDrops(resourceType,blockId,transform.position,maxHealth>=6))return false;
             if(Health>collector.Damage&&!collector.SaveRockDamage(blockId,maxHealth-Health+collector.Damage))return false;
             Health=Mathf.Max(0,Health-collector.Damage);flash=.24f;

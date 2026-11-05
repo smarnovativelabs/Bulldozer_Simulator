@@ -1,0 +1,49 @@
+PASS Prepare isolated fresh profile
+PASS Real gameplay frames advance
+PASS Scene load stays grounded without airborne/jump animation
+PASS Fresh profile plays one intro and holds input
+PASS Intro automatically returns control
+PASS Intro completion flag persisted
+PASS Reload does not repeat intro or lock controls
+PASS Intentional jump and landing still work
+PASS Prepare cart inventory fixture
+PASS Attach preserves backpack and cart cargo
+PASS Continuous cart turn to 0 degrees at target 30
+PASS Cart follows facing without sideways movement at 0 / 30
+PASS Continuous cart turn to 23 degrees at target 30
+PASS Cart follows facing without sideways movement at 23 / 30
+PASS Continuous cart turn to 67 degrees at target 30
+PASS Cart follows facing without sideways movement at 67 / 30
+PASS Continuous cart turn to 135 degrees at target 30
+PASS Cart follows facing without sideways movement at 135 / 30
+PASS Continuous cart turn to 225 degrees at target 30
+PASS Cart follows facing without sideways movement at 225 / 30
+PASS Continuous cart turn to 300 degrees at target 30
+PASS Cart follows facing without sideways movement at 300 / 30
+PASS Continuous cart turn to 0 degrees at target 60
+PASS Cart follows facing without sideways movement at 0 / 60
+PASS Continuous cart turn to 23 degrees at target 60
+PASS Cart follows facing without sideways movement at 23 / 60
+PASS Continuous cart turn to 67 degrees at target 60
+PASS Cart follows facing without sideways movement at 67 / 60
+PASS Continuous cart turn to 135 degrees at target 60
+PASS Cart follows facing without sideways movement at 135 / 60
+PASS Continuous cart turn to 225 degrees at target 60
+PASS Cart follows facing without sideways movement at 225 / 60
+PASS Continuous cart turn to 300 degrees at target 60
+PASS Cart follows facing without sideways movement at 300 / 60
+PASS Cart brakes after input release
+PASS Narrow cart retains reachable hand grips
+PASS Cart sweep stops before solid obstacle
+PASS Parking restores exact backpack and retains cart cargo
+PASS Seed isolated visual/counter fixture
+PASS Boundary counters show actual raw, ready and queued inventories
+PASS Counter rectangle remains inside boundary 0
+PASS Counter rectangle remains inside boundary 1
+PASS Counter rectangle remains inside boundary 2
+PASS Ore uses two shared materials and 32 triangles per raw chunk
+PASS Finished products have bevelled 44-triangle meshes
+PASS Ground ore retained after scene reload
+PASS Ore resting rotations reproduce exactly on reload
+PASS Cart and refined inventory retained on reload
+COMPLETE 48 checks; frame=8141

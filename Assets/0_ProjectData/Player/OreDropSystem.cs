@@ -1,11 +1,14 @@
 using UnityEngine;
+using System.Linq;
 using Bulldozer.Player.Persistence;
 namespace Bulldozer.Player
 {
     [DefaultExecutionOrder(250)]
     public sealed class OreDropSystem : MonoBehaviour
     {
-        public const int PoolSize=96;
+        // 84 rocks x 3 ore: enough for the entire largest excavation without a pickup.
+        // Shared materials and GPU instancing still cap ore submission at six draws.
+        public const int PoolSize=256;
         public MinerEquipment equipment;
         public MinerController player;
         public Material[] materials;
@@ -15,8 +18,9 @@ namespace Bulldozer.Player
         public RockFractureEffects fracture;
         public float pickupRadius=.72f;
         public Transform carrierPickup;
-        sealed class Slot {public string id;public int item;public Transform root,visual;public MeshFilter mesh;public MeshRenderer renderer;public SphereCollider trigger;public Vector3 start,end;public float age;}
-        readonly Slot[] slots=new Slot[PoolSize];
+        sealed class Slot {public string id;public int item;public Transform root,visual;public MeshFilter mesh;public MeshRenderer renderer;public SphereCollider trigger;public Vector3 start,end;public Quaternion rest;public float age;}
+        Slot[] slots;
+        public int PoolCapacity=>slots?.Length??0;
         readonly Matrix4x4[][] instances=new Matrix4x4[6][];
         readonly int[] instanceCounts=new int[6];
         bool instanced;
@@ -28,8 +32,12 @@ namespace Bulldozer.Player
         public int ActiveCount {get;private set;}
         void Awake()
         {
-            instanced=SystemInfo.supportsInstancing;for(int i=0;i<6;i++){instances[i]=new Matrix4x4[PoolSize];materials[i].enableInstancing=true;}
-            for(int i=0;i<PoolSize;i++)
+            var state=equipment.Snapshot;
+            int rocks=FindObjectsByType<MineableRock>(FindObjectsInactive.Include,FindObjectsSortMode.None).Count(r=>!string.IsNullOrEmpty(r.blockId)&&r.Available(state));
+            // Prewarm only this excavation: 36 slots for the short first shift, up to 252 later.
+            slots=new Slot[Mathf.Clamp(Mathf.Max(state.groundDrops.Length,rocks*3),1,PoolSize)];
+            instanced=SystemInfo.supportsInstancing;for(int i=0;i<6;i++){instances[i]=new Matrix4x4[slots.Length];materials[i].enableInstancing=true;}
+            for(int i=0;i<slots.Length;i++)
             {
                 var go=new GameObject("Pooled Ore "+i,typeof(SphereCollider));go.transform.SetParent(transform,false);
                 var trigger=go.GetComponent<SphereCollider>();trigger.isTrigger=true;trigger.radius=.16f;
@@ -60,7 +68,11 @@ namespace Bulldozer.Player
                 foreach(var slot in slots)if(slot.id==null)
                 {
                     slot.id=d.id;slot.item=d.item;slot.end=d.position;slot.start=scatter?origin:d.position;slot.age=scatter?0:1;
-                    slot.root.position=d.position;slot.visual.position=slot.start;slot.visual.localScale=Vector3.one*1.25f;
+                    // Stable per-pickup variation: reloading or reusing a pool slot keeps the same pose.
+                    uint seed=2166136261;foreach(char c in d.id)seed=unchecked((seed^c)*16777619);
+                    slot.rest=Quaternion.Euler(0,seed%360,0);
+                    slot.root.position=d.position;slot.visual.position=slot.start;slot.visual.localScale=Vector3.one*(1.15f+(seed%21)*.01f);
+                    slot.visual.localRotation=slot.rest;
                     slot.mesh.sharedMesh=equipment.MeshForItem(d.item);slot.renderer.sharedMaterial=materials[d.item];slot.renderer.enabled=!instanced;
                     slot.trigger.enabled=!scatter;slot.root.gameObject.SetActive(true);break;
                 }
@@ -105,7 +117,7 @@ namespace Bulldozer.Player
             {
                 slot.age=Mathf.Min(1,slot.age+Time.deltaTime/.5f);
                 slot.visual.position=Vector3.Lerp(slot.start,slot.end,slot.age)+Vector3.up*Mathf.Sin(slot.age*Mathf.PI)*.5f;
-                slot.visual.localRotation=Quaternion.Euler(slot.age*80,slot.age*135,slot.age*30);
+                slot.visual.localRotation=slot.rest*Quaternion.Euler((1-slot.age)*100,(1-slot.age)*150,(1-slot.age)*45);
                 if(slot.age>=1)slot.trigger.enabled=true;
             }
         }
@@ -134,5 +146,3 @@ namespace Bulldozer.Player
         }
     }
 }
-
-

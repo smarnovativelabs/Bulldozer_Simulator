@@ -26,6 +26,8 @@ namespace Bulldozer.Player.Persistence
         public int speedLevel;
         public int roundIndex;
         public bool roundBonusClaimed;
+        public bool shortFirstShift,firstRefineryDeposit;
+        public int guidanceSeenMask;
         public bool copperRidgeUnlocked,contractClaimed;
         public QuarryContract contractKind;
         public int contractProgress;
@@ -43,8 +45,8 @@ namespace Bulldozer.Player.Persistence
         public bool removeAds;
         public string[] fulfilledPurchases = Array.Empty<string>();
         public MiningSnapshot Copy()=>JsonUtility.FromJson<MiningSnapshot>(JsonUtility.ToJson(this));
-        public const int CurrentVersion = 8;
-        public static MiningSnapshot Create(int cargo,int coins)=>new MiningSnapshot{format="bulldozer-mining",version=CurrentVersion,cargo=cargo,coins=coins,items=new int[Mathf.Max(0,cargo)]};
+        public const int CurrentVersion = 10;
+        public static MiningSnapshot Create(int cargo,int coins)=>new MiningSnapshot{format="bulldozer-mining",version=CurrentVersion,shortFirstShift=true,cargo=cargo,coins=coins,items=new int[Mathf.Max(0,cargo)]};
     }
     public sealed class MiningProgressStore
     {
@@ -79,6 +81,7 @@ namespace Bulldozer.Player.Persistence
                 && s.fulfilledPurchases.Distinct().Count()==s.fulfilledPurchases.Length
                 && s.contractKind>=QuarryContract.DeliverStone && s.contractKind<=QuarryContract.FinishExcavation
                 && s.contractProgress>=0 && s.contractProgress<=1000
+                && s.guidanceSeenMask>=0 && s.guidanceSeenMask<=15
                 && s.taskRocks>=0&&s.taskRocks<=1000&&s.taskDense>=0&&s.taskDense<=1000&&s.taskOreMask>=0&&s.taskOreMask<=63
                 && s.taskRefined>=0&&s.taskRefined<=1000&&s.taskDeliveries>=0&&s.taskDeliveries<=1000&&s.taskClaimedMask>=0&&s.taskClaimedMask<=7
                 && s.damageLevel>=0 && s.damageLevel<=10 && s.capacityLevel>=0 && s.capacityLevel<=15
@@ -91,7 +94,7 @@ namespace Bulldozer.Player.Persistence
                 && s.refineryOutput!=null && s.refineryOutput.Length<=100 && s.refineryOutput.All(i=>i>=6&&i<12)
                 && s.truckItems!=null && s.truckItems.Length<=5 && s.truckItems.All(i=>i>=6&&i<12)
                 && s.loadingQueue!=null && s.loadingQueue.Length<=100 && s.loadingQueue.All(i=>i>=6&&i<12)
-                && s.depletedBlocks!=null && s.groundDrops!=null && s.groundDrops.Length<=96
+                && s.depletedBlocks!=null && s.groundDrops!=null && s.groundDrops.Length<=OreDropSystem.PoolSize
                 && s.damagedBlocks!=null && s.damagedBlocks.All(d=>d!=null&&!string.IsNullOrWhiteSpace(d.id)&&d.damage>0&&Array.IndexOf(s.depletedBlocks,d.id)<0)
                 && s.damagedBlocks.Select(d=>d.id).Distinct().Count()==s.damagedBlocks.Length
                 && s.groundDrops.All(d=>d!=null&&!string.IsNullOrEmpty(d.id)&&d.item>=0&&d.item<6&&Finite(d.position))
@@ -111,13 +114,17 @@ namespace Bulldozer.Player.Persistence
                 if(data!=null&&data.barrowItems==null)data.barrowItems=Array.Empty<int>();
                 future=data!=null&&data.format=="bulldozer-mining"&&data.version>MiningSnapshot.CurrentVersion;
                 if(data!=null&&data.format=="bulldozer-mining"&&data.version==1&&data.cargo>=0&&data.cargo<=100000&&data.coins>=0)
-                    data=MiningSnapshot.Create(data.cargo,data.coins);
+                {data=MiningSnapshot.Create(data.cargo,data.coins);data.version=8;}
                 if(data!=null&&data.format=="bulldozer-mining"&&data.version==2){data.version=3;data.groundDrops=Array.Empty<GroundOreState>();}
                 if(data!=null&&data.format=="bulldozer-mining"&&data.version==3){data.version=4;data.roundIndex=0;data.roundBonusClaimed=false;}
                 if(data!=null&&data.format=="bulldozer-mining"&&data.version==4){data.version=5;OptionalTaskRules.Reset(data);}
                 if(data!=null&&data.format=="bulldozer-mining"&&data.version==5){data.version=6;data.fulfilledPurchases=Array.Empty<string>();data.removeAds=false;}
                 if(data!=null&&data.format=="bulldozer-mining"&&data.version==6){data.version=7;data.damagedBlocks=Array.Empty<RockDamageState>();}
                 if(data!=null&&data.format=="bulldozer-mining"&&data.version==7){data.version=8;QuarryProgressionRules.MigrateExisting(data);}
+                // Existing excavations retain their original rock set and never replay onboarding.
+                if(data!=null&&data.format=="bulldozer-mining"&&data.version==8){data.version=9;data.shortFirstShift=false;data.firstRefineryDeposit=true;data.guidanceSeenMask=7;}
+                // Existing saves retain every gameplay field and skip the new first-launch intro.
+                if(data!=null&&data.format=="bulldozer-mining"&&data.version==9){data.version=10;data.guidanceSeenMask|=8;}
                 return Valid(data);
             }
             catch(Exception){return false;}

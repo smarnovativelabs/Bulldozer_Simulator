@@ -8,6 +8,7 @@ namespace Bulldozer.Player
     // Read-only guide: never mutates inventory, moves the player or blocks controls.
     public sealed class QuarryGuidance : MonoBehaviour
     {
+        const int WorkbenchHint=2;
         public enum Goal { Mine, PickUp, Refine, Collect, Load, Upgrade, Finished }
         public MinerController player;
         public MinerEquipment equipment;
@@ -33,7 +34,7 @@ namespace Bulldozer.Player
         readonly List<int> indices=new List<int>(768);
         MineableRock[] rocks;NavMeshObstacle[] rockObstacles;
         Mesh mesh;Vector2 restingPosition;float evaluateAt,drawAt,changedAt,celebrateUntil;int count,lastDeliveries,lastLevel;bool initialized;
-        string currentBody;Color tint=new Color(.35f,1,.7f);
+        bool cameraHint; string currentBody;Color tint=new Color(.35f,1,.7f);
         void Start()
         {
             route=new NavMeshPath();
@@ -48,33 +49,36 @@ namespace Bulldozer.Player
         {
             if(Time.unscaledTime>=evaluateAt){evaluateAt=Time.unscaledTime+.4f;RefreshObjective();}
             float age=Time.unscaledTime-changedAt,t=Mathf.Clamp01(age/.35f),ease=1-Mathf.Pow(1-t,3);
-            bool expanded=age<5f;
+            bool expanded=cameraHint||age<5f;
             message.gameObject.SetActive(expanded);
             dialog.sizeDelta=new Vector2(dialog.sizeDelta.x,expanded?126:54);
             dialog.anchoredPosition=restingPosition+Vector2.up*(1-ease)*28;dialogGroup.alpha=ease;
             dialog.localScale=Vector3.one*(1+Mathf.Sin(t*Mathf.PI)*.035f);
-            message.maxVisibleCharacters=Mathf.CeilToInt(Mathf.Max(0,age-.12f)*65);
+            message.maxVisibleCharacters=cameraHint?int.MaxValue:Mathf.CeilToInt(Mathf.Max(0,age-.12f)*65);
             completionLabel.gameObject.SetActive(!useQueuedUINotifications&&Time.unscaledTime<celebrateUntil);
             if(completionLabel.gameObject.activeSelf)completionLabel.color=new Color(.5f,1,.7f,Mathf.Clamp01((celebrateUntil-Time.unscaledTime)*2));
             if(Time.unscaledTime>=drawAt){drawAt=Time.unscaledTime+.05f;DrawPath();}
         }
+        public void ShowCameraHint(string title,string body){cameraHint=true;changedAt=Time.unscaledTime;heading.text=title;message.text=body;stepLabel.text="LOOK AROUND / TAP TO CONTINUE";}
+        public void EndCameraHint(){cameraHint=false;initialized=false;RefreshObjective();}
         public void RefreshObjective()
         {
-            if(!equipment||rocks==null)return;
+            if(!equipment||rocks==null||cameraHint)return;
             for(int i=0;i<rocks.Length;i++)if(rocks[i]&&rockObstacles[i])rockObstacles[i].enabled=!rocks[i].Depleted;
             var s=equipment.Snapshot;int raw=0,refined=0;foreach(int id in s.items){if(MiningResources.Refined(id))refined++;else raw++;}
             Goal goal;Vector3 target;string title,body;int step;
             if(s.roundBonusClaimed){goal=Goal.Finished;target=player.transform.position;title="EXCAVATION COMPLETE";body="Choose NEXT EXCAVATION to continue. Your cash and upgrades carry forward.";step=5;}
-            else if(upgrades&&s.damageLevel==0&&s.coins>=equipment.DamageCost&&!equipment.UsingWheelbarrow){goal=Goal.Upgrade;target=upgrades.zone.transform.position;title="YOUR FIRST PICKAXE UPGRADE";body="You have enough cash! Visit the workbench: $"+equipment.DamageCost+" doubles your pickaxe damage. Your loose stone stays here.";step=5;}
+            else if(equipment.MiningBlockedByCapacity){goal=Goal.Refine;target=production.inputZone.transform.position;title="FIRST FULL BAG";body="Place ore on the refinery input once. After that, mining stays available even when your bag is full.";step=2;}
+            else if(upgrades&&s.firstRefineryDeposit&&s.damageLevel==0&&(s.guidanceSeenMask&WorkbenchHint)==0&&s.coins>=equipment.DamageCost&&!equipment.UsingWheelbarrow){goal=Goal.Upgrade;target=upgrades.zone.transform.position;title="YOUR FIRST PICKAXE UPGRADE";body="You have enough cash! Optional workbench upgrade: $"+equipment.DamageCost+" doubles your pickaxe damage. Your loose stone stays here.";step=5;}
             else if(refined>0){goal=Goal.Load;target=production.sellZone.transform.position;title="SHIP IT!";body="Walk onto the loading pad. Your stone will stack here, then load onto a truck automatically.";step=4;}
             else if(s.roundIndex==0&&s.damageLevel==0&&s.taskRocks<2&&!equipment.IsFull&&s.groundDrops.Length==0&&s.depletedBlocks.Length<rocks.Length){goal=Goal.Mine;target=NearestRock();if(target==Vector3.positiveInfinity)target=player.transform.position;title="STARTER BONUS: BREAK 2 ROCKS";body="Break two rocks to earn $10 for your first pickaxe upgrade. Collect loose stone as you go.";step=1;}
-            else if(raw>0&&(equipment.IsFull||s.groundDrops.Length==0)){goal=Goal.Refine;target=production.inputZone.transform.position;title="FEED THE REFINERY";body="Stand inside the input outline. Put your stones down and watch them feed into the machine.";step=2;}
+            else if(raw>0&&(equipment.IsFull||s.groundDrops.Length==0)){goal=Goal.Refine;target=production.inputZone.transform.position;title="FEED THE REFINERY";body="Unload here to collect more ore. You can also keep mining: extra ore stays on the ground.";step=2;}
             else if(s.groundDrops.Length>0&&!equipment.IsFull){goal=Goal.PickUp;target=s.groundDrops[0].position;foreach(var drop in s.groundDrops)if((drop.position-player.transform.position).sqrMagnitude<(target-player.transform.position).sqrMagnitude)target=drop.position;title="PICK UP YOUR STONES";body="Walk over the loose stones to collect them. Let's fill that rack!";step=1;}
             else if(raw>0){goal=Goal.Refine;target=production.inputZone.transform.position;title="FEED THE REFINERY";body="Follow the arrows to the input pad. Unloading happens automatically.";step=2;}
             else if(s.refineryOutput.Length>0){goal=Goal.Collect;target=production.outputZone.transform.position;title="YOUR STONE IS READY";body="Step onto COLLECT to pick up the finished stone. Next stop: the trucks!";step=3;}
             else if(!equipment.UsingWheelbarrow&&s.barrowItems.Length>0&&equipment.drops&&equipment.drops.carrierPickup){goal=Goal.PickUp;target=equipment.drops.carrierPickup.position;title="CARGO IN YOUR CART";body="Return to your wheelbarrow and tap USE CART to finish unloading its cargo.";step=2;}
             else if(equipment.UsingWheelbarrow&&s.backpackItems.Length>0){goal=Goal.PickUp;target=player.transform.position;title="CHECK YOUR BACKPACK";body="Tap PARK CART to carry and unload the stones stored in your backpack.";step=2;}
-            else if(upgrades&&s.trucksCompleted>0&&s.damageLevel<3&&s.coins>=equipment.DamageCost){goal=Goal.Upgrade;target=upgrades.zone.transform.position;title="PUT THAT CASH TO WORK";body="Visit the workbench and upgrade your pickaxe for tougher rocks. Break rocks with fewer swings!";step=5;}
+            else if(upgrades&&s.trucksCompleted>0&&s.damageLevel<3&&(s.guidanceSeenMask&WorkbenchHint)==0&&s.coins>=equipment.DamageCost){goal=Goal.Upgrade;target=upgrades.zone.transform.position;title="PUT THAT CASH TO WORK";body="Visit the workbench and upgrade your pickaxe for tougher rocks. Break rocks with fewer swings!";step=5;}
             else
             {
                 goal=Goal.Mine;target=NearestRock();step=1;
@@ -150,8 +154,3 @@ namespace Bulldozer.Player
         void OnDestroy(){if(mesh)Destroy(mesh);}
     }
 }
-
-
-
-
-

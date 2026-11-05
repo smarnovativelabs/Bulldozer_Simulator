@@ -19,6 +19,7 @@ namespace Bulldozer.Player
         void LateUpdate()
         {
             if (!target) return;
+            if (target.GuidanceInputBlocked) { if(target.touchControls)target.touchControls.ConsumeLook(); return; }
             Vector2 look = target.touchControls ? target.touchControls.ConsumeLook() * .13f : Vector2.zero;
             if (Mouse.current != null && Mouse.current.rightButton.isPressed) look += Mouse.current.delta.ReadValue() * sensitivity;
             if (Gamepad.current != null) look += Gamepad.current.rightStick.ReadValue() * (110 * Time.deltaTime);
@@ -35,4 +36,3 @@ namespace Bulldozer.Player
         }
     }
 }
-

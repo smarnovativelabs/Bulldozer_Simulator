@@ -1,0 +1,11 @@
+PASS Live frames advance
+PASS UI Shiny shader available and supported
+PASS Restored profile does not trigger reward effects
+PASS Objective overlay never intercepts input
+PASS Seed full first bag
+FAILED System.NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.AI.NavMesh.CalculatePath (UnityEngine.Vector3 sourcePosition, UnityEngine.Vector3 targetPosition, UnityEngine.AI.NavMeshQueryFilter filter, UnityEngine.AI.NavMeshPath path) [0x00001] in <b5d7f0518e734952a8ebf147bc559b7e>:0 
+  at Bulldozer.Player.QuarryGuidance.CalculateRoute () [0x0006c] in C:\Users\Administrator\Desktop\TalhaProjects\Bulldozer_Simulator\Assets\0_ProjectData\Player\QuarryGuidance.cs:123 
+  at Bulldozer.Player.QuarryGuidance.RefreshObjective () [0x00719] in C:\Users\Administrator\Desktop\TalhaProjects\Bulldozer_Simulator\Assets\0_ProjectData\Player\QuarryGuidance.cs:97 
+  at PluginCheckRunner+<Run>d__10.MoveNext () [0x0022f] in C:\Users\Administrator\Desktop\TalhaProjects\Bulldozer_Simulator\Maintenance\PluginPolish\Checks.cs:25 
+  at PluginCheckRunner+<Guard>d__9.MoveNext () [0x0002a] in C:\Users\Administrator\Desktop\TalhaProjects\Bulldozer_Simulator\Maintenance\PluginPolish\Checks.cs:20 

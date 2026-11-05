@@ -1,0 +1,2 @@
+PASS Localized rendered shine changes 3840 of 11340 reward-panel pixels
+PASS Both effect targets reuse one cached plugin material

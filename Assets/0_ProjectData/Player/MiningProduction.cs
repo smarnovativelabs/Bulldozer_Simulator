@@ -84,6 +84,7 @@ namespace Bulldozer.Player
             var s=equipment.Snapshot;int i=Array.FindIndex(s.items,id=>!MiningResources.Refined(id));
             if(i<0||s.refineryInput.Length>=100)return false;
             bool empty=s.refineryInput.Length==0;int id=s.items[i];s.refineryInput=s.refineryInput.Append(id).ToArray();s.items=s.items.Where((_,n)=>n!=i).ToArray();
+            s.firstRefineryDeposit=true; // Same durable transaction: a failed deposit cannot unlock mining.
             if(!equipment.Commit(s))return false;
             if(empty)inputReady=Time.time+.9f;
             if(effects)effects.Fly(id,equipment.cargoRoot.position,inputStack.position);
@@ -96,7 +97,8 @@ namespace Bulldozer.Player
             OptionalTaskRules.Refined(s);
             s.refiningSeconds=0;
             if(!equipment.Commit(s))return false;processing=0;feeding=false;
-            if(effects)effects.Finished(id);Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Ready,outputStack.position);return true;
+            if(effects)effects.Finished(id);Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Ready,outputStack.position);
+            if(s.refineryOutput.Length==1)Status("Refined ore ready - collect from the output tray");return true;
         }
         void OnApplicationPause(bool paused){if(paused&&equipment)equipment.SaveRefiningProgress(processing);}
         void OnApplicationFocus(bool focused){if(!focused&&equipment)equipment.SaveRefiningProgress(processing);}
@@ -197,7 +199,9 @@ namespace Bulldozer.Player
             for(int i=0;i<root.childCount;i++)
             {
                 var item=root.GetChild(i);item.gameObject.SetActive(i<visible);if(i>=visible)continue;
-                item.localPosition=new Vector3((i%2)*.26f,(i/4)*.16f,(i/2%2)*.35f);item.localScale=Vector3.one;item.localRotation=Quaternion.identity;
+                bool refined=MiningResources.Refined(items[i]);
+                item.localPosition=new Vector3((i%2)*.28f,(i/4)*.17f,(i/2%2)*.37f);item.localScale=Vector3.one;
+                item.localRotation=refined?Quaternion.identity:Quaternion.Euler(0,i*67+items[i]*23,0);
                 item.GetComponent<MeshFilter>().sharedMesh=equipment.MeshForItem(items[i]);
                 if(stockMaterials!=null&&stockMaterials.Length==12)item.GetComponent<Renderer>().sharedMaterial=stockMaterials[items[i]];
             }

@@ -1,0 +1,71 @@
+Plugin review and gameplay presentation - 2026-11-03
+
+Local assets reviewed
+- Pixel Play: off-screen indicator core, target manager, pools and placeholder sprites.
+- Coffee UI Shiny/UIEffect: effect controller, material cache, parameter texture,
+  sprite mesh mapping and shaders.
+- Awesome Mask: UI hollow/raycast masking; useful for directed UI tutorials, but no
+  new full-screen mask is warranted for the current optional gameplay guidance.
+- Feel/MMFeedbacks, DOTween/LeanTween, haptics and existing particle libraries are
+  present. Existing sound/upgrade feedback and pooled mining effects already use
+  relevant functionality; no duplicate feedback systems or particle packs added.
+- Cinemachine and AI Navigation already support the existing camera/ground guidance.
+- No separate outline plugin implementation, shader, DLL or unitypackage found in
+  Assets. Existing TMP outlines and the ground destination ring are retained.
+
+Implemented
+QuarryPluginPolish integrates Pixel Play's projection/arrow-angle core with the
+existing current objective. A single reusable marker shows destination and metres
+only when the goal is off-screen, reachable and farther than two metres. It hides
+for mining, camera guidance, blocked input, pause, on-screen targets and completion.
+Its safe-area region avoids the existing joystick, action button and task HUD.
+Three non-raycast graphics (backplate, arrow and caption), one small nested canvas,
+no GraphicRaycaster, no additional rendering camera, no world meshes or particles.
+
+UI Shiny gives the cash header a short sweep after cash increases and the cart
+button one sweep when unlocked. Events earned during blocked input defer until
+control returns. Restored state never replays a celebration; spending does not
+celebrate. Cash sweeps have a three-second cooldown; no loops. Both components are
+reused, disable after the effect and restore the original default UI material.
+No shader or material work is performed per-frame while those effects are idle.
+
+Atlas compatibility
+Screenshot review caught cyan atlas rectangles from the bundled legacy UIShiny's
+packed UV0 mapping. The final project-local QuarryUIShiny adapter preserves UV0,
+uses normalized UV1 parameters and retains the plugin's effect player/parameter
+texture/material-cache system. Its small single-pass shader is explicitly referenced
+by scene assets for builds. Third-party plugin source was not modified. Both active
+targets share one cached effect material. Existing UI canvas TexCoord1 is enabled
+for the adapter. Shader fallback: unsupported shader means no sweep.
+
+Save and input
+Presentation component has no save writes, PlayerPrefs writes or inventory mutation.
+MinerEquipment only gained a read-only WheelbarrowUnlocked accessor. No save schema
+change or migration. No new input locks, modal flows or forced purchases.
+Tests used an isolated Temp/PluginPolish progress file; normal progress was not reset.
+
+Validation
+26 live checks passed (checks.txt): live frames, shader availability, marker visibility,
+safe bounds, input pass-through, deferred events, single sweeps, original sprite UVs,
+idle material restoration, state/disk equality, spending, disable cleanup and reload.
+Two rendered-image/material checks passed (shine-pixels.txt): localized shine changed
+3840/11340 reward-panel pixels; both targets shared one cached material.
+Screenshots reviewed: offscreen-objective.png and reward-shine.png. Final artwork
+and alpha are intact; no cyan atlas artifact remains.
+An earlier Editor hot-reload invalidated transient navigation/audio state; a fresh
+Play session initialized normally. A fixture assertion before LateUpdate was moved
+after rendering. Earlier attempts remain for diagnosis. Current Unity console has
+zero errors/compilation failures; historical hot-reload/tool diagnostics remain in
+the Pipeline log. No new errors in the fresh final session.
+
+Cleanup
+Play mode stopped; test override erased; original background setting restored.
+Generated font-atlas changes reverted. Existing unrelated edits preserved.
+
+Performance limits
+This pass adds no post-processing, full-screen outline pass, lights or particles.
+Indicator is one reused object; no per-frame scene searches or save snapshot copies.
+Text changes only when the goal or rounded distance changes. The two effects run
+briefly on events and share their active material. Measurements are Editor-side;
+low-end Android FPS, thermal behavior and release-build shader/device checks still
+require a real device. No new packages downloaded or purchased.

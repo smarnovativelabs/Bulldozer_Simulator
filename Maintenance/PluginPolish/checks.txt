@@ -1,0 +1,27 @@
+PASS Live frames advance
+PASS UI Shiny shader available and supported
+PASS Restored profile does not trigger reward effects
+PASS Objective overlay never intercepts input
+PASS Seed full first bag
+PASS Off-screen first-deposit objective gets labelled direction arrow
+PASS Arrow remains finite and inside safe area
+PASS On-screen objective uses existing ground guidance without duplicate marker
+PASS Blocking modal/camera input hides indicator
+PASS Seed earned reward and cart unlock while blocked
+PASS Effects defer while input is blocked
+PASS Reward and cart unlock each trigger one sweep after control returns
+PASS Reward image renders with the intended UI Shiny shader
+PASS Shine preserves original sprite UV range without packed atlas coordinates
+PASS Shine components disable after the short sweep
+PASS Plugin effects leave progress and inventory unchanged
+PASS Saved progress matches runtime after effects
+PASS Idle image restores original UI shader/batching
+PASS Effects do not loop while idle
+PASS Seed spending transaction
+PASS Spending does not replay earned-cash shine
+PASS Disabling controller cleans up presentation
+PASS Reload keeps earned cart without replaying celebration
+PASS Reload retains exact cash and cargo
+PASS Reload retains one controller and only three overlay graphics
+PASS Plugin never owns or leaves an input lock
+COMPLETE 26 checks

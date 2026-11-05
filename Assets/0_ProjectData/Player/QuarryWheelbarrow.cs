@@ -18,7 +18,7 @@ namespace Bulldozer.Player
         float turnVelocity;
         Transform chassis;Quaternion chassisRest,lastRotation;float engagement;float actionCooldown;
         readonly RaycastHit[] sweepHits = new RaycastHit[32];
-        static readonly Vector3 CartExtents = new Vector3(.38f,.32f,.55f);
+        static readonly Vector3 CartExtents = new Vector3(.335f,.32f,.55f);
         const float CollisionSkin = .025f;
         Transform leftTarget,rightTarget,leftHand,rightHand;
         public float LeftGripError {get;private set;}
@@ -90,10 +90,10 @@ namespace Bulldozer.Player
             leftHand.rotation=leftTarget.rotation;rightHand.rotation=rightTarget.rotation;
             LeftGripError=Vector3.Distance(leftHand.position,leftGrip.position);RightGripError=Vector3.Distance(rightHand.position,rightGrip.position);
         }
-        Vector3 CartPosition(){var pos=player.transform.position+player.visual.forward*.95f;pos.y=.05f;return pos;}
+        Vector3 CartPosition()=>CartPosition(player.transform.position,player.visual.rotation);
         Vector3 CartPosition(Vector3 playerPosition, Quaternion rotation)
         {
-            Vector3 pos=playerPosition+rotation*Vector3.forward*.95f;pos.y=.05f;return pos;
+            Vector3 pos=playerPosition+rotation*Vector3.forward*.95f;pos.y=playerPosition.y+.05f;return pos;
         }
         // Resolve the cart before CharacterController.Move and camera follow. Never rewind the player.
         public Quaternion SmoothFacing(Vector3 direction, Quaternion current, float deltaTime)

@@ -1,0 +1,15 @@
+PASS Second shift restores normal 78 rocks and unlocked cart
+PASS Tutorial state persists between shifts
+PASS Prepare isolated cart-camera fixture
+PASS Wheelbarrow location reveal starts once unlocked
+PASS Camera returns automatically
+PASS Workbench reveal starts
+PASS Interrupted guidance preserves another owner's input lock
+PASS Runtime matches durable save
+PASS All three one-time camera flags survive reload
+PASS Prepare largest excavation stress fixture
+PASS Largest excavation has 84 rocks
+PASS Entire 84-rock quarry can be mined with a full bag; 252 drops retained
+PASS Runtime matches durable save
+PASS All 252 ore survive reload
+COMPLETE 14 checks; frame=11626

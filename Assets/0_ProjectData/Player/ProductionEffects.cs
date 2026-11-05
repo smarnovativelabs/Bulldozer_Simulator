@@ -10,7 +10,7 @@ namespace Bulldozer.Player
         public Material itemMaterial;
         public MinerEquipment equipment;
         const int PoolSize=12;
-        sealed class Flight {public Transform transform;public MeshFilter mesh;public Renderer renderer;public Vector3 from,to;public Transform destination;public float age,duration;public bool active;public MaterialPropertyBlock properties=new MaterialPropertyBlock();}
+        sealed class Flight {public Transform transform;public MeshFilter mesh;public Renderer renderer;public Vector3 from,to;public Transform destination;public float age,duration;public bool active,refined;public MaterialPropertyBlock properties=new MaterialPropertyBlock();}
         readonly Flight[] flights=new Flight[PoolSize];
         int cursor;
         public int ActiveFlights {get;private set;}
@@ -27,7 +27,10 @@ namespace Bulldozer.Player
         public void Fly(int id,Vector3 from,Vector3 to,Transform follow=null)
         {
             if(flights[0]==null)return;var f=flights[cursor++%PoolSize];f.from=from;f.to=to;f.destination=follow;f.age=0;f.duration=.65f;f.active=true;
-            f.mesh.sharedMesh=equipment.MeshForItem(id);f.properties.SetColor("_BaseColor",MiningResources.Color(id));f.renderer.SetPropertyBlock(f.properties);f.transform.position=from;f.transform.localScale=Vector3.one*1.6f;f.transform.gameObject.SetActive(true);
+            f.mesh.sharedMesh=equipment.MeshForItem(id);f.refined=MiningResources.Refined(id);
+            if(equipment.resourceMaterials!=null&&equipment.resourceMaterials.Length==12){f.renderer.sharedMaterial=equipment.resourceMaterials[id];f.renderer.SetPropertyBlock(null);}
+            else{f.renderer.sharedMaterial=itemMaterial;f.properties.SetColor("_BaseColor",MiningResources.Color(id));f.renderer.SetPropertyBlock(f.properties);}
+            f.transform.position=from;f.transform.rotation=Quaternion.identity;f.transform.localScale=Vector3.one*1.25f;f.transform.gameObject.SetActive(true);
         }
         public void Finished(int id){Fly(id,mouth.position,tray.position);if(completionSparks)completionSparks.Emit(6);}
         void Update()
@@ -38,7 +41,8 @@ namespace Bulldozer.Player
             foreach(var f in flights)
             {
                 if(f==null||!f.active)continue;f.age+=Time.deltaTime;float t=Mathf.Clamp01(f.age/f.duration);Vector3 end=f.destination?f.destination.position:f.to;
-                f.transform.position=Vector3.Lerp(f.from,end,t)+Vector3.up*(Mathf.Sin(t*Mathf.PI)*.65f);f.transform.rotation=Quaternion.Euler(t*80,t*140,0);
+                f.transform.position=Vector3.Lerp(f.from,end,t)+Vector3.up*(Mathf.Sin(t*Mathf.PI)*.65f);
+                f.transform.rotation=f.refined?Quaternion.Euler(0,0,Mathf.Sin(t*Mathf.PI)*12):Quaternion.Euler((1-t)*80,(1-t)*140,0);
                 if(t>=1){f.active=false;f.transform.gameObject.SetActive(false);}else ActiveFlights++;
             }
         }

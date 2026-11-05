@@ -1,0 +1,68 @@
+Gameplay visual polish - 2026-11-03
+
+Reference review
+Reviewed local Downloads/videoplayback.mp4 (32m51s, 360x640) using contact sheets
+sampled every 30 seconds across the video and 2 fps close sequences at 6:00,
+17:00, 19:00 and 31:00. This was a sampled visual review, not full real-time playback.
+Reference sheets are under Reference/. Focus: rough mineral fragments, clean
+refined stacks, readable floor interactions and separate queue/truck counts.
+
+Changes
+- Cart model, cargo and grip assembly 12% narrower; parked collision width adjusted.
+- Push velocity follows continuous smoothed facing, reducing sideways sliding.
+  Cart height follows the player's ground height instead of a fixed global Y.
+- Initial CharacterController Move settles only a nearby authored spawn gap before
+  animation evaluation. Normal jumps and falls remain supported.
+- First-profile Cinemachine player intro takes about 2.5 seconds, supports skip,
+  waits for loading/modal UI, and releases its own input lock on finish/disable.
+- Save schema 10 adds intro bit 8. Existing schema 9 retains all gameplay fields and
+  skips the intro; schema 1-8 migrations remain chained. Fresh profiles see it once.
+- Six raw mineral meshes with uneven angular surfaces, shared palette, deterministic
+  scale/yaw per saved pickup; restored pool objects keep the same resting pose.
+- Six bevelled refined-product meshes, aligned stacks and level transfer animation.
+  Backpack, cart, loose ore, stock piles and flights share the same item artwork.
+- Fracture effects use angular geometry within the existing 24-piece single-draw pool.
+- Three compact floor counters sit inside refinery input/output and loading boundaries.
+  Truck loaded/capacity counters remain separate from the loading queue count.
+- Reduced ground texture contrast; clean enamel/rubber/steel cart materials;
+  parked cart label moved forward to reduce overlap with player cargo label.
+- First ready output announces collection through existing status feedback. Existing
+  transactional delivery payment/coin feedback retained.
+- Earlier first-shift, optional upgrades, camera hints and full-bag mining rules retained.
+
+Validation (isolated temporary saves; normal player save never reset)
+130 save/schema/backup/corruption/round progression checks: save-checks.txt
+48 live movement, spawn, intro, cart cargo, collision, counter and reload checks:
+  gameplay-checks.txt
+76 first-session regression checks, including full-bag animated mining after deposit,
+  optional upgrade, all starter ore delivery, free cart, camera hints and 252 ore reload:
+  progression-checks.txt
+3 final smoke checks: final-smoke-checks.txt (angular fracture lifecycle and intro skip).
+257 final assertions passed. Earlier fixture runs are retained as attempts: movement
+crossed automatic loading zones; nearby ore was auto-collected. The corrected fixture
+isolates production during steering and positions ore outside pickup range.
+An initial capture-time debris assertion was inconclusive; the diagnostic rerun
+recorded 8 visible pieces, positive lift, and complete retirement of the pooled mesh.
+No compilation errors or runtime console errors in the final console check.
+Existing transient EventSystem reconciliation warning leaves exactly one active
+EventSystem; a Unity AI account/network warning is unrelated to gameplay.
+
+Low-end budgets (Editor/asset inspection, not device profiling)
+Raw mineral 32 triangles; maximum 252 loose ore = 8064 triangles, six instanced
+submissions when instancing is supported. Refined product 44 triangles.
+All raw/refined item artwork uses two shared materials and one 64x64 palette.
+Fracture pool 24 x 32 = 768 triangles, one dynamic renderer; transfer pool remains 12.
+Smoke cap remains 24. Ground texture 256x256 with mipmaps.
+Each delivery truck remains 4400 triangles, one body renderer/material and existing
+wheel rig. Cart report includes its text renderer: see budgets.json.
+No new runtime particle systems, rendering cameras or lights were introduced.
+
+Cleanup
+Play stopped, test save override erased, original background setting restored.
+Test-generated dynamic font atlas changes reverted; captures live outside Assets.
+Existing unrelated StreamingAssets/build_info edit preserved.
+
+Before release
+Actual low-end Android playthrough/performance/input/aspect-ratio validation and a
+release build remain to be done. Ads, Firebase and IAP credentials/integration were
+not part of this gameplay pass. No device FPS or publication-readiness certification.

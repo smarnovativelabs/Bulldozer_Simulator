@@ -1,0 +1,18 @@
+Editor visual fixture; not phone profiling.
+PASS automatic REFINERY INPUT trigger
+REFINERY INPUT Objective overflow=False
+REFINERY INPUT Guidance Dialogue overflow=False
+REFINERY INPUT Guide Step overflow=False
+PASS automatic OPTIONAL PICKAXE UPGRADE trigger
+OPTIONAL PICKAXE UPGRADE Objective overflow=False
+OPTIONAL PICKAXE UPGRADE Guidance Dialogue overflow=False
+OPTIONAL PICKAXE UPGRADE Guide Step overflow=False
+PASS automatic YOUR WHEELBARROW trigger
+YOUR WHEELBARROW Objective overflow=False
+YOUR WHEELBARROW Guidance Dialogue overflow=False
+YOUR WHEELBARROW Guide Step overflow=False
+First-shift prewarmed ore slots=36; upper pool cap=256; whole-quarry live ore max=252; maximum ore mesh triangles=44; worst-case ore triangles <= 11088; ore shared materials=6; GPU instancing=True
+Delivery truck skinned body triangles=4400; body renderers=1; shared materials=1; wheel transforms=6 (both trucks checked directly)
+Guidance adds 2 virtual cameras, 0 rendering cameras, 0 renderers, 0 materials, 0 particles.
+COMPLETE
+

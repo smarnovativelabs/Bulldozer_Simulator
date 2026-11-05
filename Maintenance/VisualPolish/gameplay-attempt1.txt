@@ -1,0 +1,42 @@
+PASS Prepare isolated fresh profile
+PASS Real gameplay frames advance
+PASS Scene load stays grounded without airborne/jump animation
+PASS Fresh profile plays one intro and holds input
+PASS Intro automatically returns control
+PASS Intro completion flag persisted
+PASS Reload does not repeat intro or lock controls
+PASS Intentional jump and landing still work
+PASS Prepare cart inventory fixture
+PASS Attach preserves backpack and cart cargo
+PASS Continuous cart turn to 0 degrees at target 30
+PASS Cart follows facing without sideways movement at 0 / 30
+PASS Continuous cart turn to 23 degrees at target 30
+PASS Cart follows facing without sideways movement at 23 / 30
+PASS Continuous cart turn to 67 degrees at target 30
+PASS Cart follows facing without sideways movement at 67 / 30
+PASS Continuous cart turn to 135 degrees at target 30
+PASS Cart follows facing without sideways movement at 135 / 30
+PASS Continuous cart turn to 225 degrees at target 30
+PASS Cart follows facing without sideways movement at 225 / 30
+PASS Continuous cart turn to 300 degrees at target 30
+PASS Cart follows facing without sideways movement at 300 / 30
+PASS Continuous cart turn to 0 degrees at target 60
+PASS Cart follows facing without sideways movement at 0 / 60
+PASS Continuous cart turn to 23 degrees at target 60
+PASS Cart follows facing without sideways movement at 23 / 60
+PASS Continuous cart turn to 67 degrees at target 60
+PASS Cart follows facing without sideways movement at 67 / 60
+PASS Continuous cart turn to 135 degrees at target 60
+PASS Cart follows facing without sideways movement at 135 / 60
+PASS Continuous cart turn to 225 degrees at target 60
+PASS Cart follows facing without sideways movement at 225 / 60
+PASS Continuous cart turn to 300 degrees at target 60
+PASS Cart follows facing without sideways movement at 300 / 60
+PASS Cart brakes after input release
+PASS Narrow cart retains reachable hand grips
+PASS Cart sweep stops before solid obstacle
+FAIL Parking restores exact backpack and retains cart cargo
+FAILED System.Exception: Parking restores exact backpack and retains cart cargo
+  at VisualPolishRunner.Check (System.Boolean ok, System.String name) [0x00038] in C:\Users\Administrator\Desktop\TalhaProjects\Bulldozer_Simulator\Maintenance\VisualPolish\GameplayChecks.cs:17 
+  at VisualPolishRunner+<Run>d__16.MoveNext () [0x00be1] in C:\Users\Administrator\Desktop\TalhaProjects\Bulldozer_Simulator\Maintenance\VisualPolish\GameplayChecks.cs:43 
+  at VisualPolishRunner+<Guard>d__10.MoveNext () [0x00055] in C:\Users\Administrator\Desktop\TalhaProjects\Bulldozer_Simulator\Maintenance\VisualPolish\GameplayChecks.cs:19 

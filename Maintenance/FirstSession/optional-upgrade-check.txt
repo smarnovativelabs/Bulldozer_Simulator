@@ -1,0 +1,1 @@
+PASS All 12 starter rocks mined in 50 hits with base pickaxe; no upgrade purchase; all 36 ore retained.

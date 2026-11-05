@@ -26,7 +26,7 @@ namespace Bulldozer.Player
         {
             contactOpen=hitThisSwing=tracking=previousContactOpen=false;Target=null;
             if(equipment.UsingWheelbarrow){Status="Park the wheelbarrow before mining";return false;}
-            if(equipment.IsFull){Status="Rack full - deliver raw ore to REFINING or ingots to SELL";return false;}
+            if(equipment.MiningBlockedByCapacity){Status="First full bag: place ore on the REFINERY input to continue";return false;}
             Vector3 origin=controller.transform.position+Vector3.up*.65f;
             int count=Physics.OverlapSphereNonAlloc(origin,reach,nearby,~0,QueryTriggerInteraction.Ignore);
             float score=float.MaxValue;
@@ -76,7 +76,7 @@ namespace Bulldozer.Player
             for(int i=0;i<headProbes.Length;i++)
             {
                 Vector3 point=headProbes[i].position;
-                if(tracking && contactOpen && !hitThisSwing && Target && !Target.Depleted && !equipment.IsFull && ClearPath(Target))
+                if(tracking && contactOpen && !hitThisSwing && Target && !Target.Depleted && !equipment.MiningBlockedByCapacity && ClearPath(Target))
                 {
                     var collider=Target.HitCollider;
                     bool touched=Vector3.Distance(collider.ClosestPoint(point),point)<=contactRadius;

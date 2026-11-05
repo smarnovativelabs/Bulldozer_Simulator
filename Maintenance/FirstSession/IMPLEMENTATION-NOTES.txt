@@ -1,0 +1,37 @@
+FIRST-SESSION GAMEPLAY UPDATE - 2026-11-03
+
+Behavior
+- Fresh saves use 12 starter rocks (36 ore): 3 rocks at 2 HP, 5 at 4 HP, 4 at 6 HP. The next excavation restores the normal 78-rock quarry; Copper Ridge still opens after excavation 3 with 84 rocks.
+- Existing first pickaxe upgrade costs $10 and changes damage from 1 to 2. Starter rock hits therefore change from 2/4/6 to 1/2/3. The existing two-rock bonus funds it; purchase is optional.
+- Completing the shorter first excavation permanently grants the wheelbarrow. Previously owned carts are not charged again.
+- A full bag stops mining only until the first successful raw-ore refinery deposit. The permission is persisted atomically with that deposit. Pickup capacity remains enforced. Subsequent full bags do not stop swings, animation contacts or rock destruction; extra ore remains saved on the ground.
+- Cinemachine shows the refinery on the first full bag, the optional workbench after first deposit when the starter upgrade is affordable, and the cart after ownership unlocks. Each location is shown once per save. Each look blends out and back, can be skipped by tap/click/Space/Escape/gamepad South, and restores camera yaw and controls. Pause, disable and scene transitions release only the guidance input lock.
+- Camera hints show complete text immediately. Workbench/cart camera angles stay below the shed roof. Existing arrow guidance continues afterward; buying an upgrade is not required.
+
+Save safety
+- Schema 9 adds shortFirstShift, firstRefineryDeposit and guidanceSeenMask.
+- Versions 1-8 retain their original excavation layout and migrate to completed onboarding, without resetting balances, upgrades, cargo, partial rock damage or permanent ownership.
+- All runtime tests use the SessionState override Bulldozer.Mining.TestSavePath under Temp. Normal progress is not reset. A fresh install/save is needed to see the new first-shift flow; the existing personal test save intentionally retains its old progression.
+
+Performance (Editor counts, not device FPS)
+- Ore remains pooled with six shared materials and up to six GPU-instanced ore submissions on supported devices. First shift prewarms 36 slots; normal quarry 234; Copper Ridge 252. The safety cap is 256, sufficient for all 84 rocks without pickup. Future larger areas must revise this budget.
+- Largest ore mesh is 44 triangles, so 252 visible ore are at most 11,088 ore triangles. Non-instancing device fallback still needs device profiling.
+- Guidance adds two non-rendering virtual cameras, no meshes/materials/particles/lights, and reuses the gameplay rendering camera and existing UI.
+- Both delivery truck skinned bodies remain 4,400 triangles, one renderer/material and six wheel transforms; rigs unchanged.
+
+Verification artifacts
+- save-checks.txt: 119 legacy migration, backup recovery, invalid/future-save protection and progression checks.
+- gameplay-checks.txt: final isolated live first-shift, real animation hit at full bag, reload, delivery, unlock, camera ownership/skip/return and whole-quarry ore-pool checks.
+- visual-budget-checks.txt and first-shift.png / camera-0.png / camera-1.png / camera-2.png: automatic cue triggers, text overflow and final framing.
+- optional-upgrade-check.txt: all starter rocks can be mined with the base pickaxe.
+- Earlier attempt reports are retained. Initial harness assumptions incorrectly counted six inactive, ID-less templates and attempted to replay an already automatically seen cart cue. The harness now filters persistent rock IDs and isolates the manual cue fixture.
+
+Run through the connected Editor
+unity command script run --caller plugin --skill unity-cli --project-path . --file Maintenance/FirstSession/SaveCompatibilityChecks.cs --entry SaveCompatibilityChecks.Main
+For FirstSessionChecks.Main, start the gameplay scene in Play mode with a FRESH isolated save override first. The test deliberately changes its isolated progress. Keep the Editor ticking and Run In Background enabled during tests; restore the override afterward.
+SetupFirstSession.Main is an edit-mode authoring helper for the gameplay scene, not a runtime operation.
+
+Release scope
+No ads/Firebase/IAP identifiers or production signing were changed. No new Android build or physical-device performance/touch/install/update validation was performed. These gameplay checks do not establish store-release sign-off or measured player retention.
+
+Final results: 76 live gameplay checks passed; 119 save checks passed; all 12 starter rocks also mined without upgrades in 50 hits. All three automatic camera triggers and nine text-overflow checks passed. The visual budget helper initially queried CPU triangles on a non-readable truck mesh; the helper now uses mesh index-count metadata, without enabling Read/Write or changing the truck. This was a test-helper diagnostic, not a gameplay failure.

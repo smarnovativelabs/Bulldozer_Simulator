@@ -1,0 +1,18 @@
+{
+  "rawTrianglesPerItem": 32,
+  "maxLooseOreTriangles": 8064,
+  "oreInstancedSubmissions": 6,
+  "sharedItemMaterials": 2,
+  "refinedTrianglesPerItem": 44,
+  "fractureTriangles": 768,
+  "fractureRendererCount": 1,
+  "cartTriangles": 3154,
+  "cartRenderers": 8,
+  "cartMaterials": 4,
+  "truckTriangles": 4400,
+  "truckBodyRenderersPerVehicle": 1,
+  "truckMaterialPerBody": 1,
+  "transferPool": 12,
+  "smokeMax": 24,
+  "deviceProfiled": false
+}

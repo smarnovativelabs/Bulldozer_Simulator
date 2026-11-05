@@ -12,6 +12,7 @@ namespace Bulldozer.Player
         public GameObject[] cargoSlots;
         public Mesh rawCargoMesh,ingotCargoMesh;
         public Mesh[] resourceMeshes;
+        public Material[] resourceMaterials;
         public OreDropSystem drops;
         public Mesh MeshForItem(int id)=>resourceMeshes!=null && id>=0 && id<resourceMeshes.Length && resourceMeshes[id]?resourceMeshes[id]:MiningResources.Refined(id)?ingotCargoMesh:rawCargoMesh;
         [SerializeField] int cargoCount;
@@ -42,8 +43,10 @@ namespace Bulldozer.Player
         public string SaveError=>progress?.Error;
         public string SavePath=>progress?.Path;
         public bool UsingWheelbarrow=>progress?.Current.usingWheelbarrow??false;
+        public bool WheelbarrowUnlocked=>progress?.Current.wheelbarrowUnlocked??false;
         public int Capacity=>UsingWheelbarrow?12:5+CapacityLevel;
         public bool IsFull=>CargoCount>=Capacity;
+        public bool MiningBlockedByCapacity=>IsFull&&!(progress?.Current.firstRefineryDeposit??false);
         public bool PickaxeVisible=>pickaxe&&pickaxe.activeInHierarchy;
         void OnEnable(){if(Application.isPlaying && progress==null)Awake();}
         void Awake()
@@ -89,7 +92,9 @@ namespace Bulldozer.Player
                 {
                     int id=progress.Current.items[i];
                     var filter=slot.GetComponent<MeshFilter>();if(filter && rawCargoMesh && ingotCargoMesh)filter.sharedMesh=MeshForItem(id);
-                    var renderer=slot.GetComponent<Renderer>();var block=new MaterialPropertyBlock();block.SetColor("_BaseColor",MiningResources.Color(id));renderer.SetPropertyBlock(block);
+                    var renderer=slot.GetComponent<Renderer>();
+                    if(resourceMaterials!=null&&resourceMaterials.Length==12){renderer.sharedMaterial=resourceMaterials[id];renderer.SetPropertyBlock(null);}
+                    else {var block=new MaterialPropertyBlock();block.SetColor("_BaseColor",MiningResources.Color(id));renderer.SetPropertyBlock(block);}
                 }
             }
         }
@@ -118,7 +123,7 @@ namespace Bulldozer.Player
         }
         public bool TryBreakIntoDrops(int item,string blockId,Vector3 center,bool tough=false)
         {
-            if(UsingWheelbarrow||IsFull||progress==null||string.IsNullOrEmpty(blockId)||IsBlockDepleted(blockId)||item<0||item>=6)return false;
+            if(UsingWheelbarrow||MiningBlockedByCapacity||progress==null||string.IsNullOrEmpty(blockId)||IsBlockDepleted(blockId)||item<0||item>=6)return false;
             var next=Snapshot;if(next.groundDrops.Length+3>OreDropSystem.PoolSize)return false;
             int n=next.groundDrops.Length;Array.Resize(ref next.groundDrops,n+3);
             for(int i=0;i<3;i++)next.groundDrops[n+i]=new GroundOreState{id=blockId+"/"+i,item=item,position=new Vector3(center.x+(i-1)*.30f,.13f,center.z+(i==1?.20f:-.20f))};

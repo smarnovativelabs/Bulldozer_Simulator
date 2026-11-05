@@ -1,0 +1,77 @@
+PASS Live player frames advance
+PASS First shift prewarms only 36 ore slots
+PASS Fresh first shift contains 12 active rocks
+PASS Easy, medium and tough starter rocks
+PASS Fresh onboarding and wheelbarrow state
+PASS Empty deposit cannot unlock mining
+PASS Starter hit quarry-v1-0-1 / 0
+PASS Starter hit quarry-v1-0-1 / 1
+PASS Starter hit quarry-v1-0-2 / 0
+PASS Starter hit quarry-v1-0-2 / 1
+PASS Starter bonus makes first upgrade affordable but does not buy it
+PASS Collect first bag
+PASS Collect first bag
+PASS Collect first bag
+PASS Collect first bag
+PASS Collect first bag
+PASS First full bag blocks hits without changing rock health
+PASS Full bag never exceeds pickup capacity
+PASS Refinery Cinemachine cue starts
+PASS Camera owns its own temporary input lock
+PASS Cinemachine moved the real camera toward refinery
+PASS Skip restores controls and original camera yaw
+PASS Seen refinery look never repeats
+PASS Successful refinery deposit permanently unlocks full-bag mining
+PASS Second full bag permits mining
+PASS Full-bag partial/normal strike succeeds after deposit
+PASS Runtime matches durable save
+PASS Deposit permission survives scene reload
+PASS Partial mining survives reload
+PASS Camera one-time state survives reload
+PASS Tough rock can be hit without upgrading
+PASS Optional first upgrade doubles damage
+PASS Upgrade removes two HP per actual hit
+PASS Actual animation contact mines while bag is full
+PASS Full-bag mining quarry-v1-0-0
+PASS Full-bag mining quarry-v1-0-0
+PASS Full-bag mining quarry-v1-0-4
+PASS Full-bag mining quarry-v1-0-4
+PASS Full-bag mining quarry-v1-0-5
+PASS Full-bag mining quarry-v1-0-5
+PASS Full-bag mining quarry-v1-1-2
+PASS Full-bag mining quarry-v1-1-2
+PASS Full-bag mining quarry-v1-1-3
+PASS Full-bag mining quarry-v1-1-3
+PASS Full-bag mining quarry-v1-1-0
+PASS Full-bag mining quarry-v1-1-0
+PASS Full-bag mining quarry-v1-1-1
+PASS Full-bag mining quarry-v1-1-1
+PASS Full-bag mining quarry-v1-1-1
+PASS Full-bag mining quarry-v1-1-4
+PASS Full-bag mining quarry-v1-1-4
+PASS Full-bag mining quarry-v1-1-4
+PASS Full-bag mining quarry-v1-1-5
+PASS Full-bag mining quarry-v1-1-5
+PASS Full-bag mining quarry-v1-1-5
+PASS All 36 starter ore conserved
+PASS Loose ore and undelivered cargo prevent premature completion
+PASS Runtime matches durable save
+PASS Ground ore restored visually after reload
+PASS Short shift grants permanent wheelbarrow and keeps upgrade
+PASS Completion cannot reward twice
+PASS Runtime matches durable save
+PASS Second shift restores normal 78 rocks and unlocked cart
+PASS Tutorial state persists between shifts
+PASS Prepare isolated cart-camera fixture
+PASS Wheelbarrow location reveal starts once unlocked
+PASS Camera returns automatically
+PASS Workbench reveal starts
+PASS Interrupted guidance preserves another owner's input lock
+PASS Runtime matches durable save
+PASS All three one-time camera flags survive reload
+PASS Prepare largest excavation stress fixture
+PASS Largest excavation has 84 rocks and 252 pooled ore slots
+PASS Entire 84-rock quarry can be mined with a full bag; 252 drops retained
+PASS Runtime matches durable save
+PASS All 252 ore survive reload
+COMPLETE 76 checks; frame=11709

@@ -26,7 +26,9 @@ namespace Bulldozer.Player
         public bool analogRun=true;
         public void CancelMining() { swingTime=0; Swing=0; mineRequested=false; }
         public bool ExcavationInputBlocked {get;set;}
-        public bool InputBlocked => ExcavationInputBlocked || Bulldozer.UI.QuarryGameUI.BlocksInput || (Bulldozer.UI.CommonUI.Instance != null && Bulldozer.UI.CommonUI.Instance.BlocksGameplayInput);
+        public bool GuidanceInputBlocked {get;set;}
+        public bool IntroInputBlocked {get;set;}
+        public bool InputBlocked => IntroInputBlocked || GuidanceInputBlocked || ExcavationInputBlocked || Bulldozer.UI.QuarryGameUI.BlocksInput || (Bulldozer.UI.CommonUI.Instance != null && Bulldozer.UI.CommonUI.Instance.BlocksGameplayInput);
         CharacterController motor;
         Vector3 velocity, spawn;
         Vector3 cartAcceleration;
@@ -39,6 +41,18 @@ namespace Bulldozer.Player
         public void Mine() => mineRequested = true;
         void Awake() { motor = GetComponent<CharacterController>(); spawn = transform.position; mining=visual ? visual.GetComponent<MinerMining>() : null;movementEquipment=visual?visual.GetComponent<MinerEquipment>():null; }
         void OnEnable() { velocity = cartAcceleration = Vector3.zero; vertical = 0; jumpRequested = mineRequested = false; }
+        void Start() { SettleSpawn(); }
+        void SettleSpawn()
+        {
+            // CharacterController.isGrounded is undefined until its first Move. Close only
+            // the small authored spawn gap, before the Animator evaluates Airborne.
+            Physics.SyncTransforms();
+            if(Physics.Raycast(transform.position+Vector3.up*.08f,Vector3.down,out var hit,.30f,~0,QueryTriggerInteraction.Ignore))
+            {
+                motor.Move(Vector3.down*Mathf.Max(.02f,hit.distance));
+                if(motor.isGrounded)vertical=-2;
+            }
+        }
         void Update()
         {
             var keyboard = Keyboard.current;
@@ -83,6 +97,15 @@ namespace Bulldozer.Player
             Quaternion facing = visual ? visual.rotation : transform.rotation;
             if (pushing) facing = ActiveWheelbarrow.SmoothFacing(direction, facing, Time.deltaTime);
             else if (direction.sqrMagnitude > .01f && visual) facing = Quaternion.Slerp(facing, Quaternion.LookRotation(direction), 1 - Mathf.Exp(-14 * Time.deltaTime));
+            if(pushing)
+            {
+                // Push along the handles, never strafe sideways while the cart is turning.
+                // A reversal pivots first; analogue input still supports every heading.
+                Vector3 forward=facing*Vector3.forward;
+                float alignment=direction.sqrMagnitude>.01f?Mathf.Clamp01(Vector3.Dot(forward,direction.normalized)):1;
+                velocity=forward*velocity.magnitude*alignment;
+            }
+            if(InputBlocked)velocity=cartAcceleration=Vector3.zero;
             Vector3 movement = velocity * Time.deltaTime;
             if (pushing)
             {
@@ -115,7 +138,7 @@ namespace Bulldozer.Player
             swingTime = Mathf.Max(0, swingTime - Time.deltaTime);
             Swing = swingTime > 0 ? Mathf.Sin((1 - swingTime / miningDuration) * Mathf.PI) : 0;
             jumpRequested = mineRequested = false;
-            if (transform.position.y < -20) { motor.enabled = false; transform.position = spawn; motor.enabled = true; vertical = 0; velocity = Vector3.zero; }
+            if (transform.position.y < -20) { motor.enabled = false; transform.position = spawn; motor.enabled = true; vertical = 0; velocity = Vector3.zero; SettleSpawn(); }
         }
     }
 }

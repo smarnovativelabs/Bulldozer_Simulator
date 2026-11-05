@@ -1,0 +1,12 @@
+PASS Live frames advance
+PASS UI Shiny shader available and supported
+PASS Restored profile does not trigger reward effects
+PASS Objective overlay never intercepts input
+PASS Seed full first bag
+PASS Off-screen first-deposit objective gets labelled direction arrow
+PASS Arrow remains finite and inside safe area
+FAIL On-screen objective uses existing ground guidance without duplicate marker
+FAILED System.Exception: On-screen objective uses existing ground guidance without duplicate marker
+  at PluginCheckRunner.Check (System.Boolean ok, System.String name) [0x00038] in C:\Users\Administrator\Desktop\TalhaProjects\Bulldozer_Simulator\Maintenance\PluginPolish\Checks.cs:17 
+  at PluginCheckRunner+<Run>d__10.MoveNext () [0x0046a] in C:\Users\Administrator\Desktop\TalhaProjects\Bulldozer_Simulator\Maintenance\PluginPolish\Checks.cs:30 
+  at PluginCheckRunner+<Guard>d__9.MoveNext () [0x0002a] in C:\Users\Administrator\Desktop\TalhaProjects\Bulldozer_Simulator\Maintenance\PluginPolish\Checks.cs:20 
