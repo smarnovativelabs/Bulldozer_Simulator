@@ -12,10 +12,11 @@ namespace Bulldozer.Player
         public float startPitch=48f;
         public float startYaw;
         public LayerMask obstacleMask = ~0;
+        public Renderer overheadOccluder;
         public float Yaw { get; private set; }
         float pitch = 18;
         readonly RaycastHit[] visibilityHits=new RaycastHit[32];
-        readonly Renderer[] hiddenWalls=new Renderer[32];
+        readonly Renderer[] hiddenWalls=new Renderer[33];
         int hiddenCount;
         void OnEnable() { pitch=startPitch; Yaw=startYaw; }
         void LateUpdate()
@@ -39,6 +40,10 @@ namespace Bulldozer.Player
         void ShowPlayerThroughScenery(Vector3 pivot,Vector3 backward)
         {
             RestoreWalls();
+            if(overheadOccluder&&overheadOccluder.enabled&&!overheadOccluder.forceRenderingOff&&
+                overheadOccluder.bounds.IntersectRay(new Ray(pivot,backward),out float roofDistance)&&roofDistance<=distance+.3f){
+                overheadOccluder.forceRenderingOff=true;hiddenWalls[hiddenCount++]=overheadOccluder;
+            }
             int count=Physics.RaycastNonAlloc(pivot,backward,visibilityHits,distance+.3f,obstacleMask,QueryTriggerInteraction.Ignore);
             for(int i=0;i<count;i++){
                 var hit=visibilityHits[i];if(hit.transform.IsChildOf(target.transform))continue;

@@ -1,0 +1,143 @@
+{
+    "format": "bulldozer-mining",
+    "version": 10,
+    "cargo": 0,
+    "coins": 1000,
+    "damageLevel": 0,
+    "capacityLevel": 0,
+    "speedLevel": 0,
+    "roundIndex": 3,
+    "roundBonusClaimed": false,
+    "shortFirstShift": true,
+    "firstRefineryDeposit": true,
+    "gradualShifts": true,
+    "guidanceSeenMask": 15,
+    "copperRidgeUnlocked": true,
+    "contractClaimed": false,
+    "contractKind": 0,
+    "contractProgress": 0,
+    "taskRocks": 0,
+    "taskDense": 0,
+    "taskOreMask": 0,
+    "taskRefined": 0,
+    "taskDeliveries": 0,
+    "taskClaimedMask": 0,
+    "items": [],
+    "refineryInput": [],
+    "refineryOutput": [],
+    "truckItems": [],
+    "depletedBlocks": [],
+    "damagedBlocks": [
+        {
+            "id": "quarry-expansion-0-1-0",
+            "damage": 1
+        },
+        {
+            "id": "quarry-expansion-0-0-0",
+            "damage": 1
+        },
+        {
+            "id": "quarry-expansion-0-2-1",
+            "damage": 1
+        },
+        {
+            "id": "quarry-expansion-0-1-1",
+            "damage": 1
+        },
+        {
+            "id": "quarry-expansion-0-2-3",
+            "damage": 1
+        },
+        {
+            "id": "quarry-expansion-0-2-2",
+            "damage": 1
+        },
+        {
+            "id": "quarry-expansion-0-0-3",
+            "damage": 1
+        },
+        {
+            "id": "quarry-expansion-0-1-2",
+            "damage": 1
+        },
+        {
+            "id": "quarry-expansion-0-2-0",
+            "damage": 1
+        },
+        {
+            "id": "quarry-expansion-0-0-2",
+            "damage": 1
+        },
+        {
+            "id": "quarry-expansion-0-0-1",
+            "damage": 1
+        },
+        {
+            "id": "quarry-expansion-0-1-3",
+            "damage": 1
+        },
+        {
+            "id": "quarry-v1-4-2",
+            "damage": 1
+        },
+        {
+            "id": "quarry-v1-2-1",
+            "damage": 1
+        },
+        {
+            "id": "quarry-v1-2-2",
+            "damage": 1
+        },
+        {
+            "id": "quarry-v1-2-3",
+            "damage": 1
+        },
+        {
+            "id": "quarry-v1-2-4",
+            "damage": 1
+        },
+        {
+            "id": "quarry-v1-4-1",
+            "damage": 1
+        },
+        {
+            "id": "copper-ridge-01",
+            "damage": 1
+        },
+        {
+            "id": "copper-ridge-05",
+            "damage": 1
+        },
+        {
+            "id": "copper-ridge-04",
+            "damage": 1
+        },
+        {
+            "id": "copper-ridge-02",
+            "damage": 1
+        },
+        {
+            "id": "copper-ridge-06",
+            "damage": 1
+        },
+        {
+            "id": "copper-ridge-03",
+            "damage": 1
+        }
+    ],
+    "groundDrops": [],
+    "trucksCompleted": 0,
+    "loadingQueue": [],
+    "wheelbarrowUnlocked": true,
+    "usingWheelbarrow": false,
+    "backpackItems": [],
+    "barrowItems": [],
+    "barrowPosition": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "refiningSeconds": 0.0,
+    "removeAds": false,
+    "fulfilledPurchases": []
+}

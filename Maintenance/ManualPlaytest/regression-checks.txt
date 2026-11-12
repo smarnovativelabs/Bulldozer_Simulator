@@ -1,0 +1,9 @@
+PASS Reproduced empty bag, finished output and loose drops fixture
+PASS Ready refinery output takes priority over more loose raw stone
+PASS Separate canopy renderer wired
+PASS Canopy hides when between player and camera
+PASS Occlusion does not move or zoom camera
+PASS Canopy restores when view clears
+PASS Canopy asset keeps original twelve triangles (runtime static batching may combine meshes)
+PASS Canopy reuses existing material
+PASS No active FastIK on player or other live tools

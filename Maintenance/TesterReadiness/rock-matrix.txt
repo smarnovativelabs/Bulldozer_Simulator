@@ -1,0 +1,195 @@
+Isolated geometry fixture: real rock temporarily placed on clear spawn pad; other rock colliders disabled. This tests animation reach, not navigation. 24 rock models, four directions each.
+PASS quarry-expansion-0-1-0 ore=1 natural=True side=0 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-1-0 side=0
+PASS quarry-expansion-0-1-0 ore=1 natural=True side=90 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-1-0 side=90
+PASS quarry-expansion-0-1-0 ore=1 natural=True side=180 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-1-0 side=180
+PASS quarry-expansion-0-1-0 ore=1 natural=True side=270 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-1-0 side=270
+PASS quarry-expansion-0-0-0 ore=0 natural=True side=0 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-0-0 side=0
+PASS quarry-expansion-0-0-0 ore=0 natural=True side=90 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-0-0 side=90
+PASS quarry-expansion-0-0-0 ore=0 natural=True side=180 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-0-0 side=180
+PASS quarry-expansion-0-0-0 ore=0 natural=True side=270 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-0-0 side=270
+PASS quarry-expansion-0-2-1 ore=4 natural=True side=0 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-2-1 side=0
+PASS quarry-expansion-0-2-1 ore=4 natural=True side=90 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-2-1 side=90
+PASS quarry-expansion-0-2-1 ore=4 natural=True side=180 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-2-1 side=180
+PASS quarry-expansion-0-2-1 ore=4 natural=True side=270 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-2-1 side=270
+PASS quarry-expansion-0-1-1 ore=3 natural=True side=0 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-1-1 side=0
+PASS quarry-expansion-0-1-1 ore=3 natural=True side=90 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-1-1 side=90
+PASS quarry-expansion-0-1-1 ore=3 natural=True side=180 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-1-1 side=180
+PASS quarry-expansion-0-1-1 ore=3 natural=True side=270 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-1-1 side=270
+PASS quarry-expansion-0-2-3 ore=2 natural=True side=0 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-2-3 side=0
+PASS quarry-expansion-0-2-3 ore=2 natural=True side=90 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-2-3 side=90
+PASS quarry-expansion-0-2-3 ore=2 natural=True side=180 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-2-3 side=180
+PASS quarry-expansion-0-2-3 ore=2 natural=True side=270 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-2-3 side=270
+PASS quarry-expansion-0-2-2 ore=0 natural=True side=0 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-2-2 side=0
+PASS quarry-expansion-0-2-2 ore=0 natural=True side=90 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-2-2 side=90
+PASS quarry-expansion-0-2-2 ore=0 natural=True side=180 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-2-2 side=180
+PASS quarry-expansion-0-2-2 ore=0 natural=True side=270 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-2-2 side=270
+PASS quarry-expansion-0-0-3 ore=0 natural=True side=0 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-0-3 side=0
+PASS quarry-expansion-0-0-3 ore=0 natural=True side=90 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-0-3 side=90
+PASS quarry-expansion-0-0-3 ore=0 natural=True side=180 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-0-3 side=180
+PASS quarry-expansion-0-0-3 ore=0 natural=True side=270 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-0-3 side=270
+PASS quarry-expansion-0-1-2 ore=5 natural=True side=0 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-1-2 side=0
+PASS quarry-expansion-0-1-2 ore=5 natural=True side=90 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-1-2 side=90
+PASS quarry-expansion-0-1-2 ore=5 natural=True side=180 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-1-2 side=180
+PASS quarry-expansion-0-1-2 ore=5 natural=True side=270 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-1-2 side=270
+PASS quarry-expansion-0-2-0 ore=2 natural=True side=0 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-2-0 side=0
+PASS quarry-expansion-0-2-0 ore=2 natural=True side=90 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-2-0 side=90
+PASS quarry-expansion-0-2-0 ore=2 natural=True side=180 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-2-0 side=180
+PASS quarry-expansion-0-2-0 ore=2 natural=True side=270 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-2-0 side=270
+PASS quarry-expansion-0-0-2 ore=4 natural=True side=0 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-0-2 side=0
+PASS quarry-expansion-0-0-2 ore=4 natural=True side=90 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-0-2 side=90
+PASS quarry-expansion-0-0-2 ore=4 natural=True side=180 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-0-2 side=180
+PASS quarry-expansion-0-0-2 ore=4 natural=True side=270 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-0-2 side=270
+PASS quarry-expansion-0-0-1 ore=2 natural=True side=0 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-0-1 side=0
+PASS quarry-expansion-0-0-1 ore=2 natural=True side=90 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-0-1 side=90
+PASS quarry-expansion-0-0-1 ore=2 natural=True side=180 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-0-1 side=180
+PASS quarry-expansion-0-0-1 ore=2 natural=True side=270 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-0-1 side=270
+PASS quarry-expansion-0-1-3 ore=1 natural=True side=0 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-1-3 side=0
+PASS quarry-expansion-0-1-3 ore=1 natural=True side=90 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-1-3 side=90
+PASS quarry-expansion-0-1-3 ore=1 natural=True side=180 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-1-3 side=180
+PASS quarry-expansion-0-1-3 ore=1 natural=True side=270 contact hits=1
+PASS Mining returns to carry idle: quarry-expansion-0-1-3 side=270
+PASS quarry-v1-4-2 ore=4 natural=False side=0 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-4-2 side=0
+PASS quarry-v1-4-2 ore=4 natural=False side=90 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-4-2 side=90
+PASS quarry-v1-4-2 ore=4 natural=False side=180 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-4-2 side=180
+PASS quarry-v1-4-2 ore=4 natural=False side=270 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-4-2 side=270
+PASS quarry-v1-2-1 ore=5 natural=False side=0 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-2-1 side=0
+PASS quarry-v1-2-1 ore=5 natural=False side=90 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-2-1 side=90
+PASS quarry-v1-2-1 ore=5 natural=False side=180 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-2-1 side=180
+PASS quarry-v1-2-1 ore=5 natural=False side=270 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-2-1 side=270
+PASS quarry-v1-2-2 ore=0 natural=False side=0 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-2-2 side=0
+PASS quarry-v1-2-2 ore=0 natural=False side=90 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-2-2 side=90
+PASS quarry-v1-2-2 ore=0 natural=False side=180 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-2-2 side=180
+PASS quarry-v1-2-2 ore=0 natural=False side=270 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-2-2 side=270
+PASS quarry-v1-2-3 ore=1 natural=False side=0 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-2-3 side=0
+PASS quarry-v1-2-3 ore=1 natural=False side=90 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-2-3 side=90
+PASS quarry-v1-2-3 ore=1 natural=False side=180 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-2-3 side=180
+PASS quarry-v1-2-3 ore=1 natural=False side=270 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-2-3 side=270
+PASS quarry-v1-2-4 ore=2 natural=False side=0 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-2-4 side=0
+PASS quarry-v1-2-4 ore=2 natural=False side=90 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-2-4 side=90
+PASS quarry-v1-2-4 ore=2 natural=False side=180 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-2-4 side=180
+PASS quarry-v1-2-4 ore=2 natural=False side=270 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-2-4 side=270
+PASS quarry-v1-4-1 ore=3 natural=False side=0 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-4-1 side=0
+PASS quarry-v1-4-1 ore=3 natural=False side=90 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-4-1 side=90
+PASS quarry-v1-4-1 ore=3 natural=False side=180 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-4-1 side=180
+PASS quarry-v1-4-1 ore=3 natural=False side=270 contact hits=1
+PASS Mining returns to carry idle: quarry-v1-4-1 side=270
+PASS copper-ridge-01 ore=1 natural=False side=0 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-01 side=0
+PASS copper-ridge-01 ore=1 natural=False side=90 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-01 side=90
+PASS copper-ridge-01 ore=1 natural=False side=180 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-01 side=180
+PASS copper-ridge-01 ore=1 natural=False side=270 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-01 side=270
+PASS copper-ridge-05 ore=1 natural=False side=0 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-05 side=0
+PASS copper-ridge-05 ore=1 natural=False side=90 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-05 side=90
+PASS copper-ridge-05 ore=1 natural=False side=180 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-05 side=180
+PASS copper-ridge-05 ore=1 natural=False side=270 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-05 side=270
+PASS copper-ridge-04 ore=1 natural=False side=0 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-04 side=0
+PASS copper-ridge-04 ore=1 natural=False side=90 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-04 side=90
+PASS copper-ridge-04 ore=1 natural=False side=180 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-04 side=180
+PASS copper-ridge-04 ore=1 natural=False side=270 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-04 side=270
+PASS copper-ridge-02 ore=1 natural=False side=0 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-02 side=0
+PASS copper-ridge-02 ore=1 natural=False side=90 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-02 side=90
+PASS copper-ridge-02 ore=1 natural=False side=180 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-02 side=180
+PASS copper-ridge-02 ore=1 natural=False side=270 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-02 side=270
+PASS copper-ridge-06 ore=1 natural=False side=0 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-06 side=0
+PASS copper-ridge-06 ore=1 natural=False side=90 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-06 side=90
+PASS copper-ridge-06 ore=1 natural=False side=180 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-06 side=180
+PASS copper-ridge-06 ore=1 natural=False side=270 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-06 side=270
+PASS copper-ridge-03 ore=1 natural=False side=0 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-03 side=0
+PASS copper-ridge-03 ore=1 natural=False side=90 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-03 side=90
+PASS copper-ridge-03 ore=1 natural=False side=180 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-03 side=180
+PASS copper-ridge-03 ore=1 natural=False side=270 contact hits=1
+PASS Mining returns to carry idle: copper-ridge-03 side=270
+PASS Movement cancels wind-up without a delayed ghost hit
+COMPLETE failures=0 checks=193

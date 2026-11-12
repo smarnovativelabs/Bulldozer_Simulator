@@ -89,3 +89,93 @@ shot=43 frame=73798 time=2223.746 position=(4.90, 0.03, -2.20) facing=(1.00, 0.0
 shot=44 frame=73807 time=2225.52 position=(1.99, 0.03, -3.98) facing=(-0.85, 0.00, -0.52) blocked=False round=0 cargo=3 cash=215 depleted=12 raw=1 output=1 queue=1 trucks=3
 2026-11-05T17:51:25 wait|3
 shot=45 frame=73844 time=2228.262 position=(1.99, 0.03, -3.98) facing=(-0.85, 0.00, -0.52) blocked=False round=0 cargo=0 cash=365 depleted=12 raw=0 output=2 queue=1 trucks=4
+2026-11-05T18:00:33 move|0|1|2.1
+shot=46 frame=82723 time=2638.54 position=(1.99, 0.03, 3.37) facing=(0.00, 0.00, 1.00) blocked=False round=0 cargo=3 cash=365 depleted=12 raw=0 output=2 queue=0 trucks=4
+2026-11-05T18:00:35 waitgame|2
+shot=47 frame=82769 time=2640.569 position=(1.99, 0.03, 3.37) facing=(0.00, 0.00, 1.00) blocked=False round=0 cargo=3 cash=365 depleted=12 raw=0 output=2 queue=0 trucks=4
+2026-11-05T18:03:14 move|1|0|0.25
+shot=48 frame=86801 time=2797.715 position=(3.01, 0.03, 3.37) facing=(1.00, 0.00, 0.02) blocked=False round=0 cargo=5 cash=365 depleted=12 raw=0 output=2 queue=0 trucks=4
+2026-11-05T18:03:15 waitgame|1
+shot=49 frame=86820 time=2798.737 position=(3.01, 0.03, 3.37) facing=(1.00, 0.00, 0.02) blocked=False round=0 cargo=5 cash=365 depleted=12 raw=0 output=2 queue=0 trucks=4
+2026-11-05T18:03:16 move|0|-1|0.85
+shot=50 frame=86849 time=2800.333 position=(3.01, 0.03, 0.25) facing=(0.00, 0.00, -1.00) blocked=False round=0 cargo=4 cash=365 depleted=12 raw=2 output=2 queue=0 trucks=4
+2026-11-05T18:03:18 waitgame|3
+shot=51 frame=86926 time=2803.356 position=(3.01, 0.03, 0.25) facing=(0.00, 0.00, -1.00) blocked=False round=0 cargo=0 cash=365 depleted=12 raw=5 output=3 queue=0 trucks=4
+2026-11-05T18:03:21 move|0|-1|0.7
+shot=52 frame=86957 time=2804.76 position=(3.01, 0.03, -2.32) facing=(0.00, 0.00, -1.00) blocked=False round=0 cargo=0 cash=365 depleted=12 raw=5 output=3 queue=0 trucks=4
+2026-11-05T18:03:22 move|1|0|0.45
+shot=53 frame=86980 time=2805.958 position=(4.73, 0.03, -2.32) facing=(1.00, 0.00, 0.00) blocked=False round=0 cargo=2 cash=365 depleted=12 raw=4 output=2 queue=0 trucks=4
+2026-11-05T18:03:23 waitgame|18
+shot=54 frame=87447 time=2823.961 position=(4.73, 0.03, -2.32) facing=(1.00, 0.00, 0.00) blocked=False round=0 cargo=6 cash=365 depleted=12 raw=0 output=2 queue=0 trucks=4
+2026-11-05T18:03:41 move|-0.85|-0.52|0.8
+shot=55 frame=87482 time=2825.543 position=(2.24, 0.03, -3.84) facing=(-0.85, 0.00, -0.52) blocked=False round=0 cargo=4 cash=365 depleted=12 raw=0 output=2 queue=2 trucks=4
+2026-11-05T18:03:43 waitgame|3
+shot=56 frame=87556 time=2828.553 position=(2.24, 0.03, -3.84) facing=(-0.85, 0.00, -0.52) blocked=False round=0 cargo=0 cash=415 depleted=12 raw=0 output=2 queue=4 trucks=5
+2026-11-05T18:04:39 move|-0.27|0.96|2.2
+shot=57 frame=89219 time=2884.77 position=(0.19, 0.03, 3.45) facing=(-0.27, 0.00, 0.96) blocked=False round=0 cargo=4 cash=515 depleted=12 raw=0 output=2 queue=0 trucks=6
+2026-11-05T18:04:42 waitgame|2
+shot=58 frame=89274 time=2886.774 position=(0.19, 0.03, 3.45) facing=(-0.27, 0.00, 0.96) blocked=False round=0 cargo=4 cash=515 depleted=12 raw=0 output=2 queue=0 trucks=6
+2026-11-05T18:06:52 move|-1|0|0.35
+shot=59 frame=93109 time=3015.847 position=(-1.19, 0.03, 3.45) facing=(-1.00, 0.00, 0.01) blocked=False round=0 cargo=6 cash=515 depleted=12 raw=0 output=2 queue=0 trucks=6
+2026-11-05T18:06:53 waitgame|1
+shot=60 frame=93131 time=3016.851 position=(-1.19, 0.03, 3.45) facing=(-1.00, 0.00, 0.01) blocked=False round=0 cargo=6 cash=515 depleted=12 raw=0 output=2 queue=0 trucks=6
+2026-11-05T18:06:54 move|0.78|-0.63|1.4
+shot=61 frame=93187 time=3018.94 position=(2.63, 0.03, 0.36) facing=(0.78, 0.00, -0.63) blocked=False round=0 cargo=4 cash=515 depleted=12 raw=2 output=2 queue=0 trucks=6
+2026-11-05T18:06:56 waitgame|3
+shot=62 frame=93264 time=3021.943 position=(2.63, 0.03, 0.36) facing=(0.78, 0.00, -0.63) blocked=False round=0 cargo=0 cash=515 depleted=12 raw=5 output=3 queue=0 trucks=6
+2026-11-05T18:07:00 move|0|-1|0.7
+shot=63 frame=93297 time=3023.383 position=(2.63, 0.03, -2.22) facing=(0.00, 0.00, -1.00) blocked=False round=0 cargo=0 cash=515 depleted=12 raw=5 output=3 queue=0 trucks=6
+2026-11-05T18:07:01 move|1|0|0.5
+shot=64 frame=93323 time=3024.614 position=(4.56, 0.03, -2.22) facing=(1.00, 0.00, 0.00) blocked=False round=0 cargo=2 cash=515 depleted=12 raw=4 output=2 queue=0 trucks=6
+2026-11-05T18:07:02 waitgame|18
+shot=65 frame=93811 time=3042.63 position=(4.56, 0.03, -2.22) facing=(1.00, 0.00, 0.00) blocked=False round=0 cargo=6 cash=515 depleted=12 raw=0 output=2 queue=0 trucks=6
+2026-11-05T18:07:20 move|-0.85|-0.52|0.8
+shot=66 frame=93846 time=3044.135 position=(2.07, 0.03, -3.74) facing=(-0.85, 0.00, -0.52) blocked=False round=0 cargo=4 cash=515 depleted=12 raw=0 output=2 queue=2 trucks=6
+2026-11-05T18:07:22 waitgame|3
+shot=67 frame=93863 time=3047.156 position=(2.07, 0.03, -3.74) facing=(-0.85, 0.00, -0.52) blocked=False round=0 cargo=0 cash=590 depleted=12 raw=0 output=2 queue=4 trucks=7
+2026-11-05T18:09:21 move|-0.48|0.88|2.25
+shot=68 frame=95868 time=3149.286 position=(-1.62, 0.03, 3.02) facing=(-0.48, 0.00, 0.88) blocked=False round=0 cargo=5 cash=590 depleted=12 raw=0 output=2 queue=0 trucks=7
+2026-11-05T18:09:24 waitgame|2
+shot=69 frame=95916 time=3151.332 position=(-1.62, 0.03, 3.02) facing=(-0.48, 0.00, 0.88) blocked=False round=0 cargo=5 cash=590 depleted=12 raw=0 output=2 queue=0 trucks=7
+2026-11-05T18:13:41 move|0.77|0.64|0.3
+shot=70 frame=103068 time=3406.477 position=(-0.66, 0.03, 3.82) facing=(0.76, 0.00, 0.65) blocked=False round=0 cargo=6 cash=590 depleted=12 raw=0 output=2 queue=0 trucks=7
+2026-11-05T18:13:42 waitgame|1
+shot=71 frame=103084 time=3407.507 position=(-0.66, 0.03, 3.82) facing=(0.76, 0.00, 0.65) blocked=False round=0 cargo=6 cash=590 depleted=12 raw=0 output=2 queue=0 trucks=7
+2026-11-05T18:13:43 move|0.73|-0.68|1.5
+shot=72 frame=103113 time=3409.858 position=(3.21, 0.03, 0.21) facing=(0.73, 0.00, -0.68) blocked=False round=0 cargo=3 cash=590 depleted=12 raw=3 output=2 queue=0 trucks=7
+2026-11-05T18:13:46 waitgame|3
+shot=73 frame=103179 time=3412.955 position=(3.21, 0.03, 0.21) facing=(0.73, 0.00, -0.68) blocked=False round=0 cargo=0 cash=590 depleted=12 raw=5 output=3 queue=0 trucks=7
+2026-11-05T18:16:04 move|-0.86|0.51|2.04
+shot=74 frame=106958 time=3548.132 position=(-2.91, 0.03, 3.84) facing=(-0.86, 0.00, 0.51) blocked=False round=0 cargo=1 cash=590 depleted=12 raw=0 output=8 queue=0 trucks=7
+2026-11-05T18:16:07 waitgame|1
+shot=75 frame=106979 time=3549.151 position=(-2.91, 0.03, 3.84) facing=(-0.86, 0.00, 0.51) blocked=False round=0 cargo=1 cash=590 depleted=12 raw=0 output=8 queue=0 trucks=7
+2026-11-05T18:16:08 move|0.86|-0.51|2.04
+shot=76 frame=107031 time=3551.923 position=(3.18, 0.03, 0.23) facing=(0.86, 0.00, -0.51) blocked=False round=0 cargo=0 cash=590 depleted=12 raw=1 output=8 queue=0 trucks=7
+2026-11-05T18:16:11 waitgame|3
+shot=77 frame=107076 time=3554.932 position=(3.18, 0.03, 0.23) facing=(0.86, 0.00, -0.51) blocked=False round=0 cargo=0 cash=590 depleted=12 raw=0 output=9 queue=0 trucks=7
+2026-11-05T18:19:52 move|0|-1|0.75
+shot=78 frame=112228 time=3759.195 position=(3.18, 0.03, -2.74) facing=(0.00, 0.00, -1.00) blocked=False round=0 cargo=0 cash=590 depleted=12 raw=0 output=9 queue=0 trucks=7
+2026-11-05T18:19:53 move|1|0|0.5
+shot=79 frame=112254 time=3760.596 position=(5.31, 0.03, -2.74) facing=(1.00, 0.00, 0.00) blocked=False round=0 cargo=3 cash=590 depleted=12 raw=0 output=6 queue=0 trucks=7
+2026-11-05T18:19:54 waitgame|3
+shot=80 frame=112327 time=3763.602 position=(5.31, 0.03, -2.74) facing=(1.00, 0.00, 0.00) blocked=False round=0 cargo=6 cash=590 depleted=12 raw=0 output=3 queue=0 trucks=7
+2026-11-05T18:19:57 move|-0.85|-0.52|0.8
+shot=81 frame=112362 time=3765.166 position=(2.78, 0.03, -4.29) facing=(-0.85, 0.00, -0.52) blocked=False round=0 cargo=4 cash=590 depleted=12 raw=0 output=3 queue=2 trucks=7
+2026-11-05T18:19:59 waitgame|3
+shot=82 frame=112435 time=3768.211 position=(2.78, 0.03, -4.29) facing=(-0.85, 0.00, -0.52) blocked=False round=0 cargo=0 cash=755 depleted=12 raw=0 output=3 queue=4 trucks=8
+2026-11-05T18:20:02 move|0.85|0.52|0.8
+shot=83 frame=112459 time=3769.774 position=(5.28, 0.03, -2.76) facing=(0.85, 0.00, 0.52) blocked=False round=0 cargo=2 cash=830 depleted=12 raw=0 output=1 queue=3 trucks=9
+2026-11-05T18:20:04 waitgame|2
+shot=84 frame=112503 time=3771.776 position=(5.28, 0.03, -2.76) facing=(0.85, 0.00, 0.52) blocked=False round=0 cargo=3 cash=830 depleted=12 raw=0 output=0 queue=3 trucks=9
+2026-11-05T18:20:06 move|-0.85|-0.52|0.8
+shot=85 frame=112536 time=3773.193 position=(2.76, 0.03, -4.30) facing=(-0.85, 0.00, -0.52) blocked=False round=0 cargo=1 cash=830 depleted=12 raw=0 output=0 queue=5 trucks=9
+2026-11-05T18:20:08 waitgame|12
+shot=86 frame=112852 time=3785.257 position=(2.76, 0.03, -4.30) facing=(-0.85, 0.00, -0.52) blocked=False round=0 cargo=0 cash=885 depleted=12 raw=0 output=0 queue=2 trucks=10
+2026-11-05T18:25:15 wait|0.2
+shot=87 frame=121199 time=4078.118 position=(2.76, 0.03, -4.30) facing=(-0.85, 0.00, -0.52) blocked=True round=0 cargo=0 cash=1010 depleted=12 raw=0 output=0 queue=0 trucks=11
+2026-11-05T18:25:15 click|Next Excavation
+shot=88 frame=121200 time=4078.451 position=(2.76, 0.03, -4.30) facing=(-0.85, 0.00, -0.52) blocked=True round=1 cargo=0 cash=1010 depleted=0 raw=0 output=0 queue=0 trucks=11
+2026-11-05T18:25:17 waitgame|8
+shot=89 frame=121405 time=4086.488 position=(0.00, 0.03, 0.00) facing=(0.00, 0.00, 1.00) blocked=False round=1 cargo=0 cash=1010 depleted=0 raw=0 output=0 queue=0 trucks=11
+2026-11-05T18:26:22 wait|0.2
+shot=90 frame=122813 time=4136.718 position=(0.00, 0.03, 0.00) facing=(0.00, 0.00, 1.00) blocked=False round=1 cargo=0 cash=1010 depleted=0 raw=0 output=0 queue=0 trucks=11

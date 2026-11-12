@@ -1,0 +1,7 @@
+Animation test fixture positioned beside actual rock: quarry-v1-0-0 health=2 damage=1
+PASS Repeated physical hits=5 swings=5
+PASS Actual rock broke from animation contact
+PASS Fixed pickaxe angle: max rotation=0
+PASS Left hand stays away from pickaxe: min distance=0.5436269
+PASS No carry/idle pose between swings: idle frames=0 / recovery frames=20
+PASS Moving away releases recovery and restores carry pose

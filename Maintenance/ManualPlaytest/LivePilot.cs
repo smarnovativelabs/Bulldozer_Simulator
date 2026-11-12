@@ -21,8 +21,9 @@ public class LiveInputPilot:MonoBehaviour {
   }else if(args[0]=="click"){
    var buttons=UnityEngine.Object.FindObjectsByType<Button>(FindObjectsSortMode.None).Where(b=>b.name==args[1]&&b.gameObject.activeInHierarchy&&b.interactable).ToArray();if(buttons.Length!=1)throw new Exception("Expected one active button "+args[1]+" got "+buttons.Length);
    ExecuteEvents.Execute(buttons[0].gameObject,new PointerEventData(EventSystem.current){button=PointerEventData.InputButton.Left},ExecuteEvents.pointerClickHandler);
-  }else if(args[0]!="wait")throw new Exception("Unknown input");
-  yield return new WaitForSecondsRealtime(args[0]=="wait"?float.Parse(args[1],System.Globalization.CultureInfo.InvariantCulture):.7f);
+  }else if(args[0]!="wait"&&args[0]!="waitgame")throw new Exception("Unknown input");
+  if(args[0]=="waitgame")yield return new WaitForSeconds(float.Parse(args[1],System.Globalization.CultureInfo.InvariantCulture));
+  else yield return new WaitForSecondsRealtime(args[0]=="wait"?float.Parse(args[1],System.Globalization.CultureInfo.InvariantCulture):.7f);
   yield return new WaitForEndOfFrame();shot++;ScreenCapture.CaptureScreenshot("Maintenance/ManualPlaytest/view-"+shot.ToString("D3")+".png");
   p=UnityEngine.Object.FindFirstObjectByType<MinerController>();var e=UnityEngine.Object.FindFirstObjectByType<MinerEquipment>();var prod=UnityEngine.Object.FindFirstObjectByType<MiningProduction>();
   string summary="shot="+shot+" frame="+Time.frameCount+" time="+Time.time;

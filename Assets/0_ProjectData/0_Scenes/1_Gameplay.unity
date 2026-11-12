@@ -2657,6 +2657,7 @@ Transform:
   - {fileID: 2138365495}
   - {fileID: 2145049804}
   - {fileID: 1072568942}
+  - {fileID: 1373466479}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &50345309
@@ -13947,6 +13948,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  overheadOccluder: {fileID: 1373466477}
 --- !u!1 &177498726
 GameObject:
   m_ObjectHideFlags: 0
@@ -20126,7 +20128,7 @@ MonoBehaviour:
   maxHealth: 3
   resourceType: 1
   blockId: quarry-expansion-0-1-3
-  wallMining: 1
+  wallMining: 0
   naturalBoulder: 1
   requiresCopperRidge: 0
   starterHealth: 0
@@ -25291,7 +25293,7 @@ MonoBehaviour:
   maxHealth: 3
   resourceType: 1
   blockId: quarry-expansion-0-1-0
-  wallMining: 1
+  wallMining: 0
   naturalBoulder: 1
   requiresCopperRidge: 0
   starterHealth: 0
@@ -42397,7 +42399,7 @@ MonoBehaviour:
   maxHealth: 6
   resourceType: 2
   blockId: quarry-expansion-0-2-3
-  wallMining: 1
+  wallMining: 0
   naturalBoulder: 1
   requiresCopperRidge: 0
   starterHealth: 0
@@ -45301,7 +45303,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794431253}
-  m_Mesh: {fileID: 4300000, guid: 0c39686ee5df4054bb83fee3cc837cd3, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 30e055794e44211449e47303ed7d1356, type: 2}
 --- !u!1 &797059695
 GameObject:
   m_ObjectHideFlags: 0
@@ -47390,7 +47392,7 @@ MonoBehaviour:
   maxHealth: 2
   resourceType: 2
   blockId: quarry-expansion-0-0-1
-  wallMining: 1
+  wallMining: 0
   naturalBoulder: 1
   requiresCopperRidge: 0
   starterHealth: 0
@@ -54183,6 +54185,8 @@ MonoBehaviour:
   carryRotation: {x: 0.8214605, y: 0.04029617, z: -0.55219126, w: 0.1366175}
   toolGrip: {fileID: 383885889}
   carryToolRotation: {x: 0.402912, y: -0.49738008, z: 0.76124066, w: -0.10386744}
+  fixedPickaxeAngle: 1
+  pickaxeFrontRotation: {x: 0.0043784673, y: -0.8450529, z: -0.5095101, w: 0.16206782}
 --- !u!1 &995186793
 GameObject:
   m_ObjectHideFlags: 0
@@ -54987,7 +54991,7 @@ MonoBehaviour:
   maxHealth: 2
   resourceType: 4
   blockId: quarry-expansion-0-2-1
-  wallMining: 1
+  wallMining: 0
   naturalBoulder: 1
   requiresCopperRidge: 0
   starterHealth: 0
@@ -66643,7 +66647,7 @@ MonoBehaviour:
   maxHealth: 3
   resourceType: 5
   blockId: quarry-expansion-0-1-2
-  wallMining: 1
+  wallMining: 0
   naturalBoulder: 1
   requiresCopperRidge: 0
   starterHealth: 0
@@ -68932,7 +68936,7 @@ MonoBehaviour:
   maxHealth: 4
   resourceType: 0
   blockId: quarry-expansion-0-2-2
-  wallMining: 1
+  wallMining: 0
   naturalBoulder: 1
   requiresCopperRidge: 0
   starterHealth: 0
@@ -74827,6 +74831,96 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1372081704}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1373466476
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1373466479}
+  - component: {fileID: 1373466478}
+  - component: {fileID: 1373466477}
+  m_Layer: 0
+  m_Name: Workbench canopy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 5
+  m_IsActive: 1
+--- !u!23 &1373466477
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373466476}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 2
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 6af771d59e7bedf4dac6c77f3c46f257, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1373466478
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373466476}
+  m_Mesh: {fileID: 4300000, guid: 31751290134c77d468dbeeebe9402f19, type: 2}
+--- !u!4 &1373466479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373466476}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 49021322}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1376259468
 GameObject:
   m_ObjectHideFlags: 0
@@ -77044,7 +77138,7 @@ MonoBehaviour:
   maxHealth: 2
   resourceType: 2
   blockId: quarry-expansion-0-2-0
-  wallMining: 1
+  wallMining: 0
   naturalBoulder: 1
   requiresCopperRidge: 0
   starterHealth: 0
@@ -81277,7 +81371,7 @@ MonoBehaviour:
   maxHealth: 3
   resourceType: 3
   blockId: quarry-expansion-0-1-1
-  wallMining: 1
+  wallMining: 0
   naturalBoulder: 1
   requiresCopperRidge: 0
   starterHealth: 0
@@ -93421,7 +93515,7 @@ MonoBehaviour:
   maxHealth: 2
   resourceType: 4
   blockId: quarry-expansion-0-0-2
-  wallMining: 1
+  wallMining: 0
   naturalBoulder: 1
   requiresCopperRidge: 0
   starterHealth: 0
@@ -103357,7 +103451,7 @@ MonoBehaviour:
   maxHealth: 2
   resourceType: 0
   blockId: quarry-expansion-0-0-0
-  wallMining: 1
+  wallMining: 0
   naturalBoulder: 1
   requiresCopperRidge: 0
   starterHealth: 0
@@ -104491,7 +104585,7 @@ MonoBehaviour:
   maxHealth: 2
   resourceType: 0
   blockId: quarry-expansion-0-0-3
-  wallMining: 1
+  wallMining: 0
   naturalBoulder: 1
   requiresCopperRidge: 0
   starterHealth: 0

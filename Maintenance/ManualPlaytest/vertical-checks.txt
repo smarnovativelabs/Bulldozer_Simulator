@@ -1,0 +1,4 @@
+Animation test fixture positioned beside actual rock: quarry-expansion-0-0-0 health=3 damage=2
+PASS Repeated physical hits=2 swings=2
+PASS Actual rock broke from animation contact
+Maximum retargeted support-hand error=0.008820343 over 34 frames

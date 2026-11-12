@@ -1,0 +1,6 @@
+PASS Ground recovery retraces strike; max angle=0 position=2.210077E-06
+PASS Ground matching repeated-swing seam=0
+PASS Ground final-clip support grip=0.02898754 frame=42 target=(0.16, 0.73, 0.69) shoulder=(-0.20, 0.91, 0.37) reach=0.4853016 distance=0.5134282
+PASS Wall recovery retraces strike; max angle=0 position=3.341245E-06
+PASS Wall matching repeated-swing seam=0
+PASS Wall final-clip support grip=1.363332E-05 frame=21 target=(0.02, 1.45, -0.26) shoulder=(-0.25, 1.35, -0.04) reach=0.4853014 distance=0.3670301

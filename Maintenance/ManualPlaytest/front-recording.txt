@@ -1,0 +1,1 @@
+Complete: 160 frames, 20fps; normal movement + automatic mining; round=1

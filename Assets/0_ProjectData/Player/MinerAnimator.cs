@@ -16,6 +16,8 @@ namespace Bulldozer.Player
         public Quaternion carryRotation = Quaternion.identity;
         public Transform toolGrip;
         public Quaternion carryToolRotation=Quaternion.identity;
+        public bool fixedPickaxeAngle;
+        public Quaternion pickaxeFrontRotation=Quaternion.identity;
         Vector3 toolRestPosition;
         Quaternion toolRestRotation;
         Animator animator;
@@ -24,6 +26,8 @@ namespace Bulldozer.Player
         float armLength;
         public float LastGripError {get;private set;}
         float carryWeight=1; int carryLayer=-1;
+        float miningPoseUntil;
+        bool wasMining,holdingMiningPose;
         Transform[] fingers;
         Quaternion[] fingerRotations;
         int rightFingerCount;
@@ -76,7 +80,22 @@ namespace Bulldozer.Player
             animator.SetFloat(Speed,controller.Speed,.12f,Time.deltaTime);
             animator.SetBool("Grounded",controller.Grounded);
             animator.SetFloat("Vertical",controller.VerticalSpeed);
-            animator.SetBool("Mining",controller.IsMining);
+            bool mining=controller.IsMining;
+            bool canHold=equipment&&equipment.PickaxeVisible&&!equipment.UsingWheelbarrow&&
+                controller.Grounded&&!controller.InputBlocked&&controller.MoveInput.sqrMagnitude<.01f&&controller.Speed<.12f;
+            if(mining)miningPoseUntil=Time.time+.35f;
+            // The controller's .22-second repeat delay is recovery, not a return to
+            // the one-handed carry pose. Non-looping clips hold their matching end
+            // pose until the next swing; moving or leaving mining releases it.
+            bool pose=mining||(canHold&&Time.time<miningPoseUntil);
+            if(mining&&!wasMining&&holdingMiningPose){
+                string state=controller.MineWall?"Mine Wall":"Mine Ground";
+                if(animator.GetCurrentAnimatorStateInfo(0).IsName(state))animator.Play(state,0,0);
+                else animator.CrossFadeInFixedTime(state,.08f,0,0);
+            }
+            animator.SetBool("Mining",pose);
+            wasMining=mining;holdingMiningPose=pose;
+            if(!canHold&&!mining)miningPoseUntil=0;
             animator.SetBool("MineWall",controller.MineWall);
             if(carryLayer<0)carryLayer=animator.GetLayerIndex("Pickaxe Carry");
             if(carryLayer>=0){var state=animator.GetCurrentAnimatorStateInfo(0);bool swing=controller.IsMining||state.IsName("Mine Ground")||state.IsName("Mine Wall");if(animator.IsInTransition(0)){var next=animator.GetNextAnimatorStateInfo(0);swing|=next.IsName("Mine Ground")||next.IsName("Mine Wall");}float target=equipment&&equipment.PickaxeVisible&&!equipment.UsingWheelbarrow&&!swing?1:0;carryWeight=Mathf.MoveTowards(carryWeight,target,Time.deltaTime*12);animator.SetLayerWeight(carryLayer,carryWeight);}
@@ -90,7 +109,19 @@ namespace Bulldozer.Player
             // Close the fingers around the shaft, retaining the authored wrist/arm animation.
             for(int i=0;i<rightFingerCount;i++)fingers[i].localRotation=fingerRotations[i];
             // Preserve the authored palm socket, including its position, through every clip.
-            if(toolGrip){toolGrip.localPosition=toolRestPosition;toolGrip.localRotation=toolRestRotation;}
+            if(toolGrip){
+                toolGrip.localPosition=toolRestPosition;
+                var state=animator.GetCurrentAnimatorStateInfo(0);
+                bool authoredStrike=state.IsName("Mine Ground")||state.IsName("Mine Wall");
+                if(animator.IsInTransition(0)){
+                    var next=animator.GetNextAnimatorStateInfo(0);
+                    authoredStrike|=next.IsName("Mine Ground")||next.IsName("Mine Wall");
+                }
+                // The wrist must rotate the head through its overhead strike arc.
+                // Locking its world angle here flattened every authored swing.
+                if(fixedPickaxeAngle&&!authoredStrike)toolGrip.rotation=transform.rotation*pickaxeFrontRotation;
+                else toolGrip.localRotation=toolRestRotation;
+            }
         }
     }
 }
