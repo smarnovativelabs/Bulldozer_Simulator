@@ -22,7 +22,7 @@ namespace Bulldozer.Services
             {
 #if UNITY_EDITOR
                 // Simulation only. This branch is absent from every device build.
-                CanValidate = !string.IsNullOrEmpty(UnityEditor.SessionState.GetString("Bulldozer.Mining.TestSavePath", ""));
+                CanValidate = true; // Editor fake store only; compiled out of device builds.
 #elif UNITY_ANDROID
                 if (string.IsNullOrWhiteSpace(catalog.googlePlayPublicKey))
                     throw new InvalidOperationException("Add the Google Play public licensing key to Shop Catalog.");

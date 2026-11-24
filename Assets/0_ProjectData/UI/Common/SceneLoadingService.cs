@@ -45,6 +45,11 @@ namespace Bulldozer.UI
             // Let the opaque cover render before loading work starts.
             yield return null;
             yield return null;
+            while (Bulldozer.Services.QuarryServiceOverlay.ConnectionBlocked)
+            {
+                panel.Report(0, Bulldozer.Services.QuarryServiceOverlay.ConnectionPanelRequired ? "Waiting for connection - retry available" : "Checking connection...");
+                yield return null;
+            }
             Exception failure = null;
             try { operation = SceneManager.LoadSceneAsync(path, LoadSceneMode.Single); }
             catch (Exception exception) { failure = exception; }

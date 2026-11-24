@@ -28,11 +28,27 @@ namespace Bulldozer.Services
         private string validatedFallbackProbeUrl;
         private int consecutiveProbeFailures;
         private float nextManualCheckTime;
+        private float offlineSince=-1;
+        private bool confirmedConnectionProblem;
+#if UNITY_EDITOR
+        // Exercise the real polling and UI flow without disconnecting the development machine.
+        internal Func<bool> InterfaceAvailableForTests;
+        internal Func<bool> ProbeSuccessForTests;
+#endif
 
         public bool IsReady { get; private set; }
         public ConnectivityStatus Status { get; private set; } = ConnectivityStatus.Unknown;
         public bool HasNetworkInterface => Status == ConnectivityStatus.NetworkAvailable || Status == ConnectivityStatus.Online;
+        public bool ConnectionProblem => confirmedConnectionProblem || (Status == ConnectivityStatus.Offline && offlineSince>=0 && Time.realtimeSinceStartup-offlineSince>=2f) || consecutiveProbeFailures >= 2;
         public event Action<ConnectivityStatus> StatusChanged;
+
+        public void ConfigureDefaultProbes()
+        {
+            if (IsReady) return;
+            if (string.IsNullOrWhiteSpace(probeUrl)) probeUrl = "https://www.google.com/generate_204";
+            if (string.IsNullOrWhiteSpace(fallbackProbeUrl)) fallbackProbeUrl = "https://www.gstatic.com/generate_204";
+            expectedResponseCode = fallbackExpectedResponseCode = 204;
+        }
 
         public IEnumerator InitializeRoutine()
         {
@@ -61,7 +77,6 @@ namespace Bulldozer.Services
             if (activeRequest != null) return;
             if (pollingRoutine != null) StopCoroutine(pollingRoutine);
             pollingRoutine = null;
-            consecutiveProbeFailures = 0;
             ResumePolling();
         }
 
@@ -105,7 +120,7 @@ namespace Bulldozer.Services
                 activeRequest.Dispose();
                 activeRequest = null;
             }
-            SetStatus(ConnectivityStatus.Unknown);
+            // Suspending a probe does not mean internet was lost; retain the last result.
         }
 
         private IEnumerator PollRoutine()
@@ -123,6 +138,15 @@ namespace Bulldozer.Services
                         string url = probeIndex == 0 ? validatedProbeUrl : validatedFallbackProbeUrl;
                         if (url == null) continue;
                         if (!SampleInterface()) break;
+#if UNITY_EDITOR
+                        if (ProbeSuccessForTests != null)
+                        {
+                            yield return null;
+                            succeeded = ProbeSuccessForTests();
+                        }
+                        else
+#endif
+                        {
                         activeRequest = UnityWebRequest.Head(url);
                         activeRequest.timeout = Mathf.Clamp(requestTimeoutSeconds, 1, 30);
                         activeRequest.redirectLimit = 0;
@@ -132,6 +156,7 @@ namespace Bulldozer.Services
                                     && activeRequest.responseCode == expectedCode;
                         activeRequest.Dispose();
                         activeRequest = null;
+                        }
                         if (succeeded) break;
                     }
                     hasInterface = SampleInterface();
@@ -143,6 +168,7 @@ namespace Bulldozer.Services
                     else
                     {
                         consecutiveProbeFailures = Mathf.Min(8, consecutiveProbeFailures + 1);
+                        if(consecutiveProbeFailures>=2)confirmedConnectionProblem=true;
                         // A failed endpoint may be down while the rest of the internet works.
                         if (hasInterface) SetStatus(ConnectivityStatus.NetworkAvailable);
                     }
@@ -152,6 +178,9 @@ namespace Bulldozer.Services
                 float interval = Mathf.Max(2f, checkIntervalSeconds);
                 float delay = Mathf.Min(interval * Mathf.Pow(2f, consecutiveProbeFailures),
                     Mathf.Max(interval, maximumBackoffSeconds));
+                // The mandatory connection panel must recover promptly even when the Wi-Fi
+                // adapter stays connected throughout a router/ISP outage.
+                if (consecutiveProbeFailures > 0) delay = Mathf.Min(delay, consecutiveProbeFailures==1?1f:5f);
                 float nextProbeTime = Time.realtimeSinceStartup + delay;
                 // Sample the local adapter during HTTP backoff so reconnection does not wait up to
                 // two minutes. This does not issue network requests or depend on gameplay timeScale.
@@ -169,6 +198,9 @@ namespace Bulldozer.Services
         private bool SampleInterface()
         {
             bool available = Application.internetReachability != NetworkReachability.NotReachable;
+#if UNITY_EDITOR
+            if (InterfaceAvailableForTests != null) available = InterfaceAvailableForTests();
+#endif
             if (!available) SetStatus(ConnectivityStatus.Offline);
             else if (Status != ConnectivityStatus.Online) SetStatus(ConnectivityStatus.NetworkAvailable);
             return available;
@@ -177,7 +209,12 @@ namespace Bulldozer.Services
         private void SetStatus(ConnectivityStatus value)
         {
             if (Status == value) return;
+            if(Status==ConnectivityStatus.Offline&&offlineSince>=0&&Time.realtimeSinceStartup-offlineSince>=2f)confirmedConnectionProblem=true;
+            if(value==ConnectivityStatus.Online)confirmedConnectionProblem=false;
+            if(value==ConnectivityStatus.Offline)offlineSince=Time.realtimeSinceStartup;
+            else offlineSince=-1;
             Status = value;
+            QuarryOnlineServices.Instance?.Event("connection_status_changed", (long)value);
             if (StatusChanged == null) return;
             foreach (Action<ConnectivityStatus> listener in StatusChanged.GetInvocationList())
             {
@@ -187,4 +224,3 @@ namespace Bulldozer.Services
         }
     }
 }
-

@@ -16,6 +16,9 @@
 //use UNITY_CHANGE4 for unity 2018.3 (Networking system)
 
 using UnityEngine;
+#if ENABLE_INPUT_SYSTEM && !ENABLE_LEGACY_INPUT_MANAGER
+using Input = ReporterInputCompat;
+#endif
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;

@@ -7,6 +7,8 @@ namespace Bulldozer.Services
     {
         public Toggle analytics, crashReports, attribution;
         public TMP_Text status;
+        float nextRefresh;
+        void Update(){if(Time.unscaledTime<nextRefresh)return;nextRefresh=Time.unscaledTime+.5f;var s=QuarryOnlineServices.Instance;if(s&&status)status.text=s.Status;}
         void OnEnable() { var s=QuarryOnlineServices.Instance; if(!s)return; analytics.SetIsOnWithoutNotify(s.Analytics);crashReports.SetIsOnWithoutNotify(s.CrashReports);attribution.SetIsOnWithoutNotify(s.Attribution);status.text=s.Status; }
         public void Analytics(bool value){QuarryOnlineServices.Instance?.SetAnalytics(value);Click();}
         public void CrashReports(bool value){QuarryOnlineServices.Instance?.SetCrashReports(value);Click();}

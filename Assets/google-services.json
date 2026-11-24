@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "294366341744",
+    "project_id": "dozer-crush-dig--mine",
+    "storage_bucket": "dozer-crush-dig--mine.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294366341744:android:f3da22185b146f0b8e22b5",
+        "android_client_info": {
+          "package_name": "com.peri.games.bulldozer.mining.crush.dig.game"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA41v8f7rNHbDpYOhufXkXa1seTHnZbtsY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1403,7 +1403,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: QUARRY SIMULATOR
+  m_text: BULLDOZER CRUSH
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bffac54882bfb7446aed2788d95133af, type: 2}
   m_sharedMaterial: {fileID: 2050681743207674731, guid: bffac54882bfb7446aed2788d95133af, type: 2}
@@ -1694,7 +1694,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MINE  /  REFINE  /  DELIVER
+  m_text: DIG & MINE 3D
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bffac54882bfb7446aed2788d95133af, type: 2}
   m_sharedMaterial: {fileID: 2050681743207674731, guid: bffac54882bfb7446aed2788d95133af, type: 2}

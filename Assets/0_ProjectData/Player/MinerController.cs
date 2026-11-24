@@ -29,7 +29,23 @@ namespace Bulldozer.Player
         public bool ExcavationInputBlocked {get;set;}
         public bool GuidanceInputBlocked {get;set;}
         public bool IntroInputBlocked {get;set;}
-        public bool InputBlocked => IntroInputBlocked || GuidanceInputBlocked || ExcavationInputBlocked || Bulldozer.UI.QuarryGameUI.BlocksInput || (Bulldozer.UI.CommonUI.Instance != null && Bulldozer.UI.CommonUI.Instance.BlocksGameplayInput);
+        public bool InputBlocked => suppressUntilRelease || Bulldozer.Services.QuarryServiceOverlay.BlocksInput || IntroInputBlocked || GuidanceInputBlocked || ExcavationInputBlocked || Bulldozer.UI.QuarryGameUI.BlocksInput || (Bulldozer.UI.CommonUI.Instance != null && Bulldozer.UI.CommonUI.Instance.BlocksGameplayInput);
+        bool suppressUntilRelease;
+        int releaseFrame;
+        public void SuppressInputUntilRelease()
+        {
+            suppressUntilRelease=true;releaseFrame=Time.frameCount;
+            jumpRequested=mineRequested=false;CancelMining();
+            if(touchControls){touchControls.Move=Vector2.zero;touchControls.Sprinting=false;touchControls.ConsumeLook();}
+        }
+        bool ActionHeld()
+        {
+            if(Mouse.current!=null&&Mouse.current.leftButton.isPressed)return true;
+            if(Keyboard.current!=null&&(Keyboard.current.spaceKey.isPressed||Keyboard.current.enterKey.isPressed||Keyboard.current.escapeKey.isPressed))return true;
+            if(Gamepad.current!=null&&(Gamepad.current.buttonSouth.isPressed||Gamepad.current.buttonEast.isPressed))return true;
+            if(Touchscreen.current!=null)foreach(var touch in Touchscreen.current.touches)if(touch.press.isPressed)return true;
+            return false;
+        }
         CharacterController motor;
         Vector3 velocity, spawn;
         Vector3 cartAcceleration;
@@ -38,8 +54,8 @@ namespace Bulldozer.Player
         MinerMining mining;
         MinerEquipment movementEquipment;
         public QuarryWheelbarrow ActiveWheelbarrow { get; set; }
-        public void Jump() => jumpRequested = true;
-        public void Mine() => mineRequested = true;
+        public void Jump() { if(!InputBlocked)jumpRequested = true; }
+        public void Mine() { if(!InputBlocked)mineRequested = true; }
         void Awake() { motor = GetComponent<CharacterController>(); spawn = transform.position; mining=visual ? visual.GetComponent<MinerMining>() : null;movementEquipment=visual?visual.GetComponent<MinerEquipment>():null; }
         void OnEnable() { velocity = cartAcceleration = Vector3.zero; vertical = 0; jumpRequested = mineRequested = false; }
         void Start() { SettleSpawn(); }
@@ -56,6 +72,10 @@ namespace Bulldozer.Player
         }
         void Update()
         {
+            if(suppressUntilRelease&&Time.frameCount>releaseFrame+1&&!ActionHeld())suppressUntilRelease=false;
+            // A zero-distance CharacterController.Move during UI pause clears its
+            // grounded flag and incorrectly sends the animator into the jump state.
+            if(Time.deltaTime<=0){jumpRequested=mineRequested=false;MoveInput=Vector2.zero;Speed=CartSignedSpeed=0;return;}
             var keyboard = Keyboard.current;
             var pad = Gamepad.current;
             Vector2 input = touchControls ? touchControls.Move : Vector2.zero;

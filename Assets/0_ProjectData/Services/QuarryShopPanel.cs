@@ -9,6 +9,8 @@ namespace Bulldozer.Services
         public TMP_Text status, cashDescription, removePrice, cashPrice;
         public Button removeButton, cashButton, restoreButton;
         QuarryStore subscribed;
+        float nextRefresh;
+        void Update() { if (Time.unscaledTime >= nextRefresh) { nextRefresh = Time.unscaledTime + .25f; Refresh(); } }
         void OnEnable() { subscribed = QuarryStore.Instance; if (subscribed) subscribed.Changed += Refresh; Refresh(); }
         void OnDisable() { if (subscribed) subscribed.Changed -= Refresh; subscribed = null; }
         public void Refresh()
@@ -20,7 +22,7 @@ namespace Bulldozer.Services
             cashPrice.text = store ? store.Price(false) : "SETUP PENDING";
             removeButton.interactable = store && store.CanBuy(true);
             cashButton.interactable = store && store.CanBuy(false);
-            restoreButton.interactable = store && store.Ready && !store.Busy;
+            restoreButton.interactable = store && !store.Busy;
         }
         public void BuyRemoveAds() { Click(); QuarryStore.Instance?.Buy(true); }
         public void BuyCash() { Click(); QuarryStore.Instance?.Buy(false); }

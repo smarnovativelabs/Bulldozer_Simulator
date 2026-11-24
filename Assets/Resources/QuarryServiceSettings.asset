@@ -12,19 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb8c7754af110c40bef96766073a368, type: 3}
   m_Name: QuarryServiceSettings
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Services.QuarryServiceSettings
-  androidRemoveAdsId: 
+  androidRemoveAdsId: bulldozer_remove_ads
   iosRemoveAdsId: 
-  androidCashPackId: 
+  androidCashPackId: bulldozer_cash_1000
   iosCashPackId: 
   cashPackAmount: 1000
-  googlePlayPublicKey: 
-  maxSdkKey: 
-  androidInterstitialId: 
+  googlePlayPublicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlRe6hWKR7PVzXIXjpuGjTsQ+TOCvH86COgQmoGqKlvmgPfDStRonH9bcDhmjo5K6rzWp3PbmK9rjNbmWt0K7/f9JRUHuwL/E7Ny4SEVNcWqsyKVNUfUyckf/sXMn9u8yuu1l3uimKwkeTh3UCbc465TXxY8M+mGgRd1xb6tlSkdoHUYl+XJvVg0BK9qiglKKAoA176gUMt1aq0nHZghb6UD732OmpZJa9Ec9NGkaamonRU+9iypUN2Ipq3pOumFBEo5oiFtfRsHkooD0jbibI8IBaygXVrlVfBpvBMYaoEpusRGHPXBQFwvojpLZ0Xlr5/QLuTJQ5v1sWGy5dLIPAwIDAQAB
+  maxSdkKey: TRg6tE6Jqd63wDA1Egi746kgkf6hBDmP1x3ddKVkxqed_NUoJtPlTFEBu1FT03HiToJf035dbl7ZG8wrgvuCWc
+  androidInterstitialId: ead83ac5789327c5
   iosInterstitialId: 
-  androidTenjinKey: 
+  androidRewardedId: 1224f09a76960009
+  iosRewardedId: 
+  androidAdMobInterstitialId: ca-app-pub-9058006185556068/1495859466
+  iosAdMobInterstitialId: 
+  androidAdMobRewardedId: ca-app-pub-9058006185556068/6163743116
+  iosAdMobRewardedId: 
+  androidTenjinKey: ZTHUR81GIXYZ8WHRKYTPK2754OANXVSY
   iosTenjinKey: 
-  firebaseConfigurationAdded: 0
-  adApplicationIdsConfigured: 0
+  firebaseConfigurationAdded: 1
+  adApplicationIdsConfigured: 1
   underAgeOfConsent: 0
-  interstitialCooldown: 180
-  privacyPolicyUrl: 
+  interstitialCooldown: 90
+  privacyPolicyUrl: https://perigames.com/privacy
+  rewardedCashAmount: 50
+  interstitialWarningSeconds: 5
+  testDeviceAdvertisingIds: []

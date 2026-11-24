@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Bulldozer.Services
 {
-    /// <summary>Prepared persistent ownership only. Startup is explicitly opt-in from future boot code.</summary>
+    /// <summary>Persistent service ownership. All services start by default.</summary>
     [DefaultExecutionOrder(-10000), DisallowMultipleComponent]
     public sealed class QuarryServicesRoot : MonoBehaviour
     {
-        [Header("Prepared services — no automatic initialization")]
+        [Header("Automatic online services")]
         public QuarryServiceSettings settings;
         public QuarryStore purchasing;
         [Tooltip("Owns Firebase Analytics/Crashlytics, MAX ads, Google UMP consent and Tenjin.")]
@@ -26,13 +26,28 @@ namespace Bulldozer.Services
             DontDestroyOnLoad(gameObject);
         }
 
-        // Intentionally has no callers in the current game or UI.
+        void Start() => InitializeServices();
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+        static void EnsureServices()
+        {
+            if (Instance) return;
+            var owner = new GameObject("Quarry Services");
+            var root = owner.AddComponent<QuarryServicesRoot>();
+            root.settings = Resources.Load<QuarryServiceSettings>("QuarryServiceSettings");
+            root.connectivity = owner.AddComponent<InternetConnectivity>();
+            root.purchasing = owner.AddComponent<QuarryStore>();
+            root.onlineServices = owner.AddComponent<QuarryOnlineServices>();
+        }
+
         public void InitializeServices()
         {
             if (InitializationRequested || !settings || !purchasing || !onlineServices || !connectivity) return;
             InitializationRequested = true;
             purchasing.settings = settings;
             onlineServices.settings = settings;
+            connectivity.ConfigureDefaultProbes();
+            if (!GetComponent<QuarryServiceOverlay>()) gameObject.AddComponent<QuarryServiceOverlay>();
             StartCoroutine(InitializeRoutine());
         }
 

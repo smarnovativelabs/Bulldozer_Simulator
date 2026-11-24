@@ -24,6 +24,14 @@ namespace Bulldozer.Services.Editor
             plist.root.SetBoolean("GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_USER_DATA", false);
             plist.root.SetString("NSUserTrackingUsageDescription", "Allow attribution to help us understand which ads introduce players to this quarry game.");
             plist.WriteToFile(path);
+            string maxPath = Path.Combine(buildPath, "AppLovin-Settings.plist");
+            if (File.Exists(maxPath))
+            {
+                var max = new PlistDocument(); max.ReadFromFile(maxPath);
+                if (!max.root.values.TryGetValue("ConsentFlowInfo", out var flow)) flow = max.root.CreateDict("ConsentFlowInfo");
+                flow.AsDict().SetBoolean("ConsentFlowEnabled", false);
+                max.WriteToFile(maxPath);
+            }
             string projectPath = PBXProject.GetPBXProjectPath(buildPath);
             var project = new PBXProject(); project.ReadFromFile(projectPath);
             string framework = project.GetUnityFrameworkTargetGuid();

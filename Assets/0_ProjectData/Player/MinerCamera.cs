@@ -11,6 +11,7 @@ namespace Bulldozer.Player
         public float sensitivity = .15f;
         public float startPitch=48f;
         public float startYaw;
+        public bool fixedAngle=true;
         public LayerMask obstacleMask = ~0;
         public Renderer overheadOccluder;
         public float Yaw { get; private set; }
@@ -19,6 +20,11 @@ namespace Bulldozer.Player
         readonly Renderer[] hiddenWalls=new Renderer[33];
         int hiddenCount;
         void OnEnable() { pitch=startPitch; Yaw=startYaw; }
+        public void GetFollowPose(out Vector3 position,out Quaternion rotation)
+        {
+            rotation=Quaternion.Euler(fixedAngle?startPitch:pitch,fixedAngle?startYaw:Yaw,0);
+            position=target.transform.position+Vector3.up*1.35f+rotation*Vector3.back*distance;
+        }
         void LateUpdate()
         {
             if (!target) return;
@@ -27,7 +33,8 @@ namespace Bulldozer.Player
             if (Mouse.current != null && Mouse.current.rightButton.isPressed) look += Mouse.current.delta.ReadValue() * sensitivity;
             if (Gamepad.current != null) look += Gamepad.current.rightStick.ReadValue() * (110 * Time.deltaTime);
             if (target.InputBlocked) look = Vector2.zero;
-            Yaw += look.x; pitch = Mathf.Clamp(pitch - look.y, -20, 65);
+            if(fixedAngle){Yaw=startYaw;pitch=startPitch;}
+            else {Yaw += look.x; pitch = Mathf.Clamp(pitch - look.y, -20, 65);}
             Vector3 pivot = target.transform.position + Vector3.up * 1.35f;
             Quaternion rotation = Quaternion.Euler(pitch, Yaw, 0);
             Vector3 backward = rotation * Vector3.back;

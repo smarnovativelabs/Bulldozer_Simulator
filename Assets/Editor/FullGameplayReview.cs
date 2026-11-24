@@ -1,0 +1,146 @@
+using System;
+using System.IO;
+using System.Linq;
+using UnityEngine;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
+using Bulldozer.Player;
+using Bulldozer.Player.Persistence;
+using Bulldozer.UI;
+using Bulldozer.Services;
+
+[InitializeOnLoad] internal class FullGameplayReview
+{
+    const string Report="Builds/Android/Reviewed-20261124/FullGameplay.txt";
+    string oldSave; int phase,frame=-1,rockIndex,hitsBefore,uiIndex,maxBatches,maxSetPass;
+    double started,at; bool network,realRefinery; Vector3 origin;
+    MinerController player; MinerEquipment equipment; MinerMining mining; MiningProduction production;
+    MineableRock[] rocks; ExcavationRounds rounds; QuarryWheelbarrow cart;
+    readonly string[] pages={"inventory","settings","pause","shop","privacy","upgrades"};
+    static FullGameplayReview(){ EditorApplication.delayCall += StartRequested; } static void StartRequested(){ if(!File.Exists("Library/FullGameplay.request"))return; File.Delete("Library/FullGameplay.request"); new FullGameplayReview().Execute(); } public void Execute()
+    {
+        if(EditorApplication.isPlayingOrWillChangePlaymode||EditorSceneManager.GetActiveScene().isDirty)throw new Exception("Clean edit mode required");
+        oldSave=SessionState.GetString("Bulldozer.Mining.TestSavePath","");
+        SessionState.SetString("Bulldozer.Mining.TestSavePath",Path.GetFullPath("Library/FullGameplay/"+Guid.NewGuid().ToString("N")+"/progress.json"));
+        File.WriteAllText(Report,"Scripted Editor review: real animation/contact and timed production, then gameplay APIs for full first excavation. Native network/ads isolated.\n");
+        EditorSceneManager.OpenScene("Assets/0_ProjectData/0_Scenes/0_MainMenu.unity");
+        started=EditorApplication.timeSinceStartup;EditorApplication.update+=Tick;EditorApplication.isPlaying=true;
+        Debug.Log("Full gameplay review running with isolated save.");
+    }
+    void Check(bool ok,string text){if(!ok)throw new Exception(text);File.AppendAllText(Report,"PASS "+text+"\n");}
+    void Place(Vector3 position)
+    {
+        var motor=player.GetComponent<CharacterController>();motor.enabled=false;player.transform.position=position;motor.enabled=true;
+        player.touchControls.Move=Vector2.zero;player.CancelMining();equipment.drops.ResetPickupSweep();Physics.SyncTransforms();
+    }
+    void Tick()
+    {
+        if(!EditorApplication.isPlaying||EditorApplication.isCompiling||Time.frameCount==frame)return;frame=Time.frameCount;
+        try
+        {
+            if(EditorApplication.timeSinceStartup-started>360)throw new Exception("Review timeout phase="+phase);
+            Application.runInBackground=true;
+            maxBatches=Math.Max(maxBatches,UnityStats.batches);maxSetPass=Math.Max(maxSetPass,UnityStats.setPassCalls);
+            var services=QuarryServicesRoot.Instance;
+            if(!network&&services&&services.connectivity)
+            {
+                var net=services.connectivity;net.enabled=false;var flags=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic;
+                net.GetType().GetField("InterfaceAvailableForTests",flags).SetValue(net,(Func<bool>)(()=>true));
+                net.GetType().GetField("ProbeSuccessForTests",flags).SetValue(net,(Func<bool>)(()=>true));net.enabled=true;
+                services.onlineServices.enabled=false;network=true;
+            }
+            if(phase==0)
+            {
+                player=UnityEngine.Object.FindFirstObjectByType<MinerController>();if(!player||player.InputBlocked)return;
+                equipment=player.visual.GetComponent<MinerEquipment>();mining=player.visual.GetComponent<MinerMining>();
+                production=UnityEngine.Object.FindFirstObjectByType<MiningProduction>();rounds=UnityEngine.Object.FindFirstObjectByType<ExcavationRounds>();
+                cart=UnityEngine.Object.FindFirstObjectByType<QuarryWheelbarrow>();
+                var cue=UnityEngine.Object.FindFirstObjectByType<QuarryCameraGuidance>();cue.Finish();cue.enabled=false;
+                player.autoMine=false;rocks=UnityEngine.Object.FindObjectsByType<MineableRock>(FindObjectsSortMode.None).Where(r=>r.Available(equipment.Snapshot)).OrderBy(r=>r.transform.position.z).ThenBy(r=>r.transform.position.x).ToArray();
+                Check(rocks.Length==12,"fresh first shift has 12 available rocks");
+                origin=player.transform.position;player.touchControls.Move=Vector2.down;at=Time.time;phase=1;
+            }
+            else if(phase==1&&Time.time-at>.5)
+            {
+                player.touchControls.Move=Vector2.zero;Check(Vector3.Distance(origin,player.transform.position)>.2f,"movement input moves grounded player");
+                var rock=rocks[0];Place(rock.transform.position-Vector3.forward*(rock.naturalBoulder?.9f:1.15f)+Vector3.up*.03f);player.visual.rotation=Quaternion.identity;at=Time.time;phase=2;
+            }
+            else if(phase==2&&Time.time-at>.4)
+            {hitsBefore=mining.SuccessfulHits;player.Mine();at=Time.time;phase=3;}
+            else if(phase==3&&Time.time-at>1.5)
+            {
+                Check(mining.SuccessfulHits>hitsBefore,"pickaxe animation makes a real contact hit: "+mining.Status);
+                Place(origin);phase=4;
+            }
+            else if(phase==4)
+            {
+                // Use the same transactions as gameplay; do not fabricate currency/inventory.
+                if(equipment.CargoCount>0){if(equipment.Snapshot.items.Any(i=>i<6))production.DepositRaw();else production.LoadTruck();}
+                else if(equipment.RefineryOutputCount>0)production.CollectOutput();
+                else if(equipment.Snapshot.groundDrops.Length>0&&!equipment.IsFull)
+                {var drop=equipment.Snapshot.groundDrops[0];Check(equipment.TryCollectDrop(drop.id,drop.position),"collect saved ore "+drop.id);}
+                else if(rockIndex<rocks.Length)
+                {
+                    var rock=rocks[rockIndex];if(rock.Depleted){rockIndex++;return;}
+                    Check(rock.TryHit(equipment,rock.HitCollider.bounds.center),"damage rock "+rock.blockId);
+                }
+                if(equipment.RefineryInputCount>0&&!realRefinery)
+                {at=Time.time;phase=5;return;}
+                if(realRefinery&&equipment.RefineryInputCount>0)production.ProcessOne();
+                if(equipment.Snapshot.roundBonusClaimed){phase=6;at=Time.time;}
+            }
+            else if(phase==5)
+            {
+                if(equipment.RefineryOutputCount>0){Check(Time.time-at>.5,"timed refinery produces output after delay");realRefinery=true;phase=4;}
+                else if(Time.time-at>10)throw new Exception("Timed refinery stalled");
+            }
+            else if(phase==6)
+            {
+                var s=equipment.Snapshot;
+                Check(ExcavationRules.Cleared(s,rocks.Select(r=>r.blockId).ToArray()),"all first-shift rocks mined, ore refined and deliveries settled");
+                Check(s.coins>0&&s.trucksCompleted>0&&s.wheelbarrowUnlocked,"cash paid and free wheelbarrow unlocked");
+                int cash=s.coins;Check(!rounds.TryComplete()&&equipment.Cash==cash,"completion reward cannot be duplicated");
+                ScreenCapture.CaptureScreenshot("Builds/Android/Reviewed-20261124/ExcavationComplete.png");
+                rounds.NextRound();phase=7;at=Time.time;
+            }
+            else if(phase==7)
+            {
+                var fresh=UnityEngine.Object.FindFirstObjectByType<MinerController>();if(!fresh||fresh==player||fresh.InputBlocked)return;
+                player=fresh;equipment=player.visual.GetComponent<MinerEquipment>();player.autoMine=false;cart=UnityEngine.Object.FindFirstObjectByType<QuarryWheelbarrow>();
+                Check(equipment.RoundIndex==1&&equipment.WheelbarrowUnlocked,"next excavation loads and retains unlocks");
+                var cue=UnityEngine.Object.FindFirstObjectByType<QuarryCameraGuidance>();cue.Finish();cue.enabled=false;
+                Check(equipment.TryUpgrade(false)&&equipment.TryUpgrade(true)&&equipment.TryUpgradeSpeed(),"earned cash buys power, capacity and speed upgrades");
+                var disk=new MiningProgressStore(equipment.SavePath).Current;
+                Check(disk.damageLevel==equipment.DamageLevel&&disk.capacityLevel==equipment.CapacityLevel&&disk.speedLevel==equipment.SpeedLevel&&disk.coins==equipment.Cash,"upgrades and wallet survive disk reload");
+                Place(cart.transform.position-Vector3.forward*.95f);player.visual.rotation=Quaternion.identity;at=Time.time;phase=8;
+            }
+            else if(phase==8&&Time.time-at>.5)
+            {cart.Interact();Check(cart.Pushing&&equipment.Capacity==12&&!equipment.PickaxeVisible,"wheelbarrow equips with 12-slot capacity and hides pickaxe");at=Time.time;phase=9;}
+            else if(phase==9&&Time.time-at>.5)
+            {cart.Interact();Check(!cart.Pushing&&equipment.PickaxeVisible,"parking restores mining equipment");Place(new Vector3(0,.03f,-3));phase=10;at=Time.unscaledTime;}
+            else if(phase==10&&Time.unscaledTime-at>.5)
+            {
+                if(player.InputBlocked)return;
+                QuarryGameUI.Instance.Open(pages[uiIndex]);Check(QuarryGameUI.BlocksInput,"UI opens: "+pages[uiIndex]);phase=11;at=Time.unscaledTime;
+            }
+            else if(phase==11&&Time.unscaledTime-at>.4)
+            {ScreenCapture.CaptureScreenshot("Builds/Android/Reviewed-20261124/UI-"+pages[uiIndex]+".png");phase=13;at=Time.unscaledTime;}
+            else if(phase==13&&Time.unscaledTime-at>.4){QuarryGameUI.Instance.Close();phase=12;at=Time.unscaledTime;}
+            else if(phase==12&&Time.unscaledTime-at>.5)
+            {
+                if(player.InputBlocked && Time.unscaledTime-at<10)return; Check(!QuarryGameUI.BlocksInput&&!player.InputBlocked,"UI closes and releases input: "+pages[uiIndex]+" guidance="+player.GuidanceInputBlocked+" intro="+player.IntroInputBlocked+" excavation="+player.ExcavationInputBlocked+" services="+QuarryServiceOverlay.BlocksInput+" common="+CommonUI.Instance.BlocksGameplayInput);
+                if(++uiIndex<pages.Length){phase=10;at=Time.unscaledTime;return;}
+                var s=MiningSnapshot.Create(0,0);var ids=new[]{"review-rock"};
+                for(int i=0;i<4;i++){s.depletedBlocks=ids;Check(ExcavationRules.TryComplete(s,ids,out var completed),"progression completion transaction round "+i);Check(ExcavationRules.TryAdvance(completed,ids,out s),"progression advance transaction round "+i);}
+                Check(QuarryProgressionRules.AreaAvailable(s),"Copper Ridge becomes available after required completions");
+                File.AppendAllText(Report,"EDITOR ONLY max batches="+maxBatches+", max SetPass="+maxSetPass+". No device FPS claim.\nCOMPLETE\n");Finish();
+            }
+        }
+        catch(Exception ex){File.AppendAllText(Report,"FAILED "+ex+"\n");Finish();}
+    }
+    void Finish(){EditorApplication.update-=Tick;SessionState.SetString("Bulldozer.Mining.TestSavePath",oldSave);EditorApplication.isPlaying=false;}
+}
+
+
+
