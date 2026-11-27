@@ -23,6 +23,14 @@ namespace Bulldozer.Player
         public float VerticalSpeed => vertical;
         public bool MineWall;
         public float miningDuration = .967f;
+        // Playback multiplier for the authored strike clip; its contact events scale with it.
+        [Min(.5f)] public float swingSpeed = 1.6f;
+        public float SwingDuration => miningDuration / Mathf.Max(.5f, swingSpeed);
+        // Brief freeze of the strike on contact so each hit lands with weight. Only the
+        // miner's swing pauses; world time, physics and UI keep running.
+        float hitStopUntil;
+        public bool InHitStop => Time.time < hitStopUntil;
+        public void HitStop(float seconds) { hitStopUntil = Mathf.Max(hitStopUntil, Time.time + seconds); }
         public bool autoMine=true;
         public bool analogRun=true;
         public void CancelMining() { swingTime=0; Swing=0; mineRequested=false; }
@@ -153,14 +161,15 @@ namespace Bulldozer.Player
             Speed = new Vector2(motor.velocity.x, motor.velocity.z).magnitude;
             CartSignedSpeed=pushing?Vector3.Dot(motor.velocity,visual.forward):0;
             idleTime=MoveInput.sqrMagnitude<.01f?idleTime+Time.deltaTime:0;
-            bool autoRequested=autoMine&&idleTime>.16f&&Time.time>=nextSwing&&Speed<.12f&&!InputBlocked;
+            bool autoRequested=autoMine&&idleTime>.08f&&Time.time>=nextSwing&&Speed<.12f&&!InputBlocked;
             if ((mineRequested||autoRequested) && swingTime <= 0 && Grounded && visual && visual.TryGetComponent<MinerEquipment>(out var equipment) && equipment.PickaxeVisible)
             {
-                nextSwing=Time.time+.16f;
-                if(mining&&mining.TryBeginSwing()){swingTime=miningDuration;nextSwing=Time.time+miningDuration+.22f;velocity=Vector3.zero;}
+                nextSwing=Time.time+.1f;
+                if(mining&&mining.TryBeginSwing()){swingTime=SwingDuration;nextSwing=Time.time+SwingDuration+.06f;velocity=Vector3.zero;}
             }
-            swingTime = Mathf.Max(0, swingTime - Time.deltaTime);
-            Swing = swingTime > 0 ? Mathf.Sin((1 - swingTime / miningDuration) * Mathf.PI) : 0;
+            // The swing clock waits during hit-stop so the clip and swing stay in step.
+            if (!InHitStop) swingTime = Mathf.Max(0, swingTime - Time.deltaTime);
+            Swing = swingTime > 0 ? Mathf.Sin((1 - swingTime / SwingDuration) * Mathf.PI) : 0;
             jumpRequested = mineRequested = false;
             if (transform.position.y < -20) { motor.enabled = false; transform.position = spawn; motor.enabled = true; vertical = 0; velocity = Vector3.zero; SettleSpawn(); }
         }

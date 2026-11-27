@@ -35,7 +35,11 @@ namespace Bulldozer.Player
                 if(e.IsBlockDepleted(blockId)){Health=0;Hide();}
                 else Health=Mathf.Max(1,maxHealth-e.SavedRockDamage(blockId));}
             RefreshCracks();
-            impactTween=rockRenderer.transform.DOPunchPosition(Vector3.up*.025f,.18f,3,.15f).SetAutoKill(false).Pause().SetLink(gameObject);
+            // Squash on impact (wider and shorter) plus a small hop, scaled to each rock's size.
+            impactTween=DOTween.Sequence()
+                .Join(rockRenderer.transform.DOPunchScale(Vector3.Scale(baseScale,new Vector3(.07f,-.10f,.07f)),.16f,4,.6f))
+                .Join(rockRenderer.transform.DOPunchPosition(Vector3.up*.035f,.16f,3,.15f))
+                .SetAutoKill(false).Pause().SetLink(gameObject);
         }
         void Hide(){HitCollider.enabled=false;foreach(var r in GetComponentsInChildren<Renderer>())r.enabled=false;}
         public bool TryHit(MinerEquipment collector,Vector3 point)

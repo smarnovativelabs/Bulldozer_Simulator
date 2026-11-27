@@ -46,7 +46,7 @@ namespace Bulldozer.Player
             {
                 case DeliveryPhase.Loading:
                     // Allow the final .65-second cargo flight to land first.
-                    if (elapsed >= .85f) { parkingCollider.enabled = false; Next(DeliveryPhase.Departing); }
+                    if (elapsed >= .6f) { parkingCollider.enabled = false; Next(DeliveryPhase.Departing); }
                     break;
                 case DeliveryPhase.Departing:
                     float depart = Mathf.Clamp01(elapsed / travelSeconds);
@@ -75,7 +75,7 @@ namespace Bulldozer.Player
             Vector3 direction=localTravelDirection.normalized;
             float progress=Vector3.Dot(transform.localPosition-queueBay,direction);
             if(Phase==DeliveryPhase.Parked)return;
-            if(Phase==DeliveryPhase.Loading){if(elapsed>=.85f){parkingCollider.enabled=false;Next(DeliveryPhase.Departing);}return;}
+            if(Phase==DeliveryPhase.Loading){if(elapsed>=.6f){parkingCollider.enabled=false;Next(DeliveryPhase.Departing);}return;}
             if(Phase==DeliveryPhase.Departing)
             {
                 MoveTo(transform.localPosition+direction*(Mathf.Min(12,2+elapsed*5)*Time.deltaTime));

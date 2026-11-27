@@ -503,6 +503,8 @@ MonoBehaviour:
   action: 2
   controls: {fileID: 1693739824130559319}
   knob: {fileID: 0}
+  floatingStick: {fileID: 0}
+  stickRadius: 0.35
 --- !u!1 &1979921709803370079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,6 +1085,8 @@ MonoBehaviour:
   action: 4
   controls: {fileID: 1693739824130559319}
   knob: {fileID: 0}
+  floatingStick: {fileID: 0}
+  stickRadius: 0.35
 --- !u!1 &5808083132775554245
 GameObject:
   m_ObjectHideFlags: 0
@@ -1632,6 +1636,8 @@ MonoBehaviour:
   action: 1
   controls: {fileID: 1693739824130559319}
   knob: {fileID: 0}
+  floatingStick: {fileID: 0}
+  stickRadius: 0.35
 --- !u!1 &6691713314671275435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1724,6 +1730,8 @@ MonoBehaviour:
   action: 3
   controls: {fileID: 1693739824130559319}
   knob: {fileID: 0}
+  floatingStick: {fileID: 0}
+  stickRadius: 0.35
 --- !u!1 &7398500862146655311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1846,7 +1854,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1280, y: 720}
+  m_ReferenceResolution: {x: 720, y: 1280}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
@@ -1885,6 +1893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MinerTouchControls
   player: {fileID: 0}
   safeArea: {fileID: 6001926700589566211}
+  externalSafeArea: 0
 --- !u!1 &9039937624399404507
 GameObject:
   m_ObjectHideFlags: 0
@@ -2343,3 +2352,5 @@ MonoBehaviour:
   action: 0
   controls: {fileID: 1693739824130559319}
   knob: {fileID: 74588030534042778}
+  floatingStick: {fileID: 0}
+  stickRadius: 0.35

@@ -16,7 +16,24 @@ namespace Bulldozer.Player
         public TruckDelivery delivery,secondDelivery;
         public RewardCoinFeedback rewardFeedback;
         public Material[] stockMaterials;
-        [Min(.1f)] public float secondsPerItem=1.5f;
+        [Min(.1f)] public float secondsPerItem=.7f;
+        // Hopper flight that precedes each processing countdown, and the short pauses
+        // before a first item / first loaded block starts moving.
+        const float FeedSeconds=.3f, StartDelay=.25f, TruckFlightSeconds=.45f, TruckTransferInterval=.3f;
+        // Truck bed grid (local to the cargo root): a floor layer filled in a spread-out
+        // order so blocks never overlap and even a partial load looks like it covers the bed.
+        // Measured against the delivery truck bed (about 2.7 m long x 1.2 m wide, cargo root at its rear-centre).
+        public Vector2 truckSlotOrigin=new Vector2(-.6f,-.05f);
+        public Vector2 truckSlotSpacing=new Vector2(.7f,.5f);
+        public float truckLayerHeight=.2f;
+        static readonly Vector2Int[] TruckSlotOrder={new Vector2Int(0,0),new Vector2Int(2,1),new Vector2Int(1,0),new Vector2Int(0,1),new Vector2Int(2,0),new Vector2Int(1,1)};
+        public Vector3 TruckSlot(int index)
+        {
+            var cell=TruckSlotOrder[index%TruckSlotOrder.Length];int layer=index/TruckSlotOrder.Length;
+            // Deterministic jitter keeps a load natural without per-frame randomness.
+            float jx=((index*37)%7-3)*.01f,jz=((index*53)%7-3)*.01f;
+            return new Vector3(truckSlotOrigin.x+cell.x*truckSlotSpacing.x+jx,layer*truckLayerHeight,truckSlotOrigin.y+cell.y*truckSlotSpacing.y+jz);
+        }
         MinerEquipment equipment; MinerController player;
         int[] shownInput,shownOutput,shownLoading;
         readonly int[][] shownTrucks=new int[2][];
@@ -28,7 +45,7 @@ namespace Bulldozer.Player
         float nextProgressSave;
         public int TruckCapacity=>2+(equipment?equipment.TrucksCompleted:0)%4;
         public float ProcessingSeconds=>secondsPerItem*QuarryBalance.ProcessingMultiplier(equipment?equipment.RoundIndex:0);
-        public float ProcessingRemaining=>Mathf.Clamp(ProcessingSeconds+.65f-processing,0,ProcessingSeconds);
+        public float ProcessingRemaining=>Mathf.Clamp(ProcessingSeconds+FeedSeconds-processing,0,ProcessingSeconds);
         public TruckDelivery ActiveTruck=>activeTruck==0?delivery:secondDelivery;
         TruckDelivery Truck(int index)=>index==0?delivery:secondDelivery;
         void Start()
@@ -38,9 +55,9 @@ namespace Bulldozer.Player
             quarryBlockIds=FindObjectsByType<MineableRock>(FindObjectsInactive.Include,FindObjectsSortMode.None).Where(r=>r.Available(initialState)).Select(r=>r.blockId).Where(id=>!string.IsNullOrEmpty(id)).Distinct().ToArray();
             Prewarm(inputStack);Prewarm(outputStack);Prewarm(truckStack);
             if(secondDelivery)Prewarm(secondDelivery.cargo);if(loadingStack)Prewarm(loadingStack);
-            processing=equipment.RefineryInputCount>0?Mathf.Min(equipment.Snapshot.refiningSeconds,ProcessingSeconds+.65f):0;
+            processing=equipment.RefineryInputCount>0?Mathf.Min(equipment.Snapshot.refiningSeconds,ProcessingSeconds+FeedSeconds):0;
             feeding=processing>0;
-            inputReady=Time.time+(feeding?0:.85f);loadingReady=Time.time+.85f;Refresh();
+            inputReady=Time.time+(feeding?0:StartDelay);loadingReady=Time.time+StartDelay;Refresh();
         }
         void Prewarm(Transform root)
         {
@@ -53,10 +70,10 @@ namespace Bulldozer.Player
             if(!equipment)return;
             if(equipment.RefineryInputCount>0&&equipment.RefineryOutputCount<100&&Time.time>=inputReady)
             {
-                if(!feeding){feeding=true;if(effects)effects.Fly(equipment.Snapshot.refineryInput[0],inputStack.position,effects.hopper.position);Refresh();}
+                if(!feeding){feeding=true;if(effects)effects.Fly(equipment.Snapshot.refineryInput[0],inputStack.position,effects.hopper.position,null,FeedSeconds);Refresh();}
                 processing+=Time.deltaTime;
                 // Feed flight precedes the processing countdown.
-                if(processing>=ProcessingSeconds+.65f&&ProcessOne()){processing=0;feeding=false;}
+                if(processing>=ProcessingSeconds+FeedSeconds&&ProcessOne()){processing=0;feeding=false;}
             }
             else if(equipment.RefineryInputCount==0){processing=0;feeding=false;}
             if(Time.unscaledTime>=nextProgressSave)
@@ -68,7 +85,7 @@ namespace Bulldozer.Player
             transfer-=Time.deltaTime;
             if(transfer<=0&&!player.InputBlocked&&!player.IsMining)
             {
-                transfer=.35f;
+                transfer=.22f;
                 Vector3 interaction=equipment.UsingWheelbarrow&&equipment.drops&&equipment.drops.carrierPickup?equipment.drops.carrierPickup.position:player.transform.position;
                 interaction.y=player.transform.position.y;
                 if(Contains(inputZone,interaction))DepositRaw();
@@ -76,7 +93,7 @@ namespace Bulldozer.Player
                 else if(Contains(sellZone,interaction))LoadTruck();
             }
             truckTransfer-=Time.deltaTime;
-            if(truckTransfer<=0&&Time.time>=loadingReady){truckTransfer=.8f;if(!TransferToTruck())TryDispatchFinalLoad();}
+            if(truckTransfer<=0&&Time.time>=loadingReady){truckTransfer=TruckTransferInterval;if(!TransferToTruck())TryDispatchFinalLoad();}
             poll-=Time.deltaTime;if(poll<=0){poll=.1f;Refresh();}
         }
         public bool DepositRaw()
@@ -86,7 +103,7 @@ namespace Bulldozer.Player
             bool empty=s.refineryInput.Length==0;int id=s.items[i];s.refineryInput=s.refineryInput.Append(id).ToArray();s.items=s.items.Where((_,n)=>n!=i).ToArray();
             s.firstRefineryDeposit=true; // Same durable transaction: a failed deposit cannot unlock mining.
             if(!equipment.Commit(s))return false;
-            if(empty)inputReady=Time.time+.9f;
+            if(empty)inputReady=Time.time+StartDelay;
             if(effects)effects.Fly(id,equipment.cargoRoot.position,inputStack.position);
             Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Place,inputStack.position);Status("Stone placed on refinery input");return true;
         }
@@ -116,7 +133,7 @@ namespace Bulldozer.Player
             var s=equipment.Snapshot;int i=Array.FindIndex(s.items,MiningResources.Refined);
             if(i<0||s.loadingQueue.Length>=100)return false;
             bool empty=s.loadingQueue.Length==0;int id=s.items[i];s.loadingQueue=s.loadingQueue.Append(id).ToArray();s.items=s.items.Where((_,n)=>n!=i).ToArray();
-            if(!equipment.Commit(s))return false;if(empty)loadingReady=Time.time+.9f;
+            if(!equipment.Commit(s))return false;if(empty)loadingReady=Time.time+StartDelay;
             if(effects)effects.Fly(id,equipment.cargoRoot.position,loadingStack.position);
             Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Place,loadingStack.position);Status("Stone placed on loading pad");return true;
         }
@@ -140,7 +157,8 @@ namespace Bulldozer.Player
                 QuarryProgressionRules.Delivered(s,loaded);
             }
             if(!equipment.Commit(s))return false;
-            if(effects)effects.Fly(id,loadingStack.position,truck.cargo.position,truck.cargo);Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Place,truck.cargo.position);
+            // Land on the exact bed slot this block will occupy, not the cargo root.
+            if(effects)effects.Fly(id,loadingStack.position,truck.cargo.TransformPoint(TruckSlot(loaded.Length-1)),null,TruckFlightSeconds);Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Place,truck.cargo.position);
             if(complete)
             {
                 departingItems[activeTruck]=loaded;truck.loadedCount=loaded.Length;truck.orderCapacity=capacity;truck.Dispatch();Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Delivery,truck.transform.position);
@@ -179,7 +197,7 @@ namespace Bulldozer.Player
             inputLabel.text="REFINE\n"+s.refineryInput.Length+" RAW";
             outputLabel.text="COLLECT\n"+s.refineryOutput.Length+" READY";
             truckLabel.text="LOAD\n"+s.loadingQueue.Length+" QUEUED";
-            if(refineryTimer)refineryTimer.text=s.refineryOutput.Length>=100?"OUTPUT FULL":s.refineryInput.Length==0?"ADD STONE":!feeding||processing<.65f?"FEEDING":MiningResources.Names[s.refineryInput[0]].ToUpperInvariant()+"\n"+ProcessingRemaining.ToString("0.0")+"s";
+            if(refineryTimer)refineryTimer.text=s.refineryOutput.Length>=100?"OUTPUT FULL":s.refineryInput.Length==0?"ADD STONE":!feeding||processing<FeedSeconds?"FEEDING":MiningResources.Names[s.refineryInput[0]].ToUpperInvariant()+"\n"+ProcessingRemaining.ToString("0.0")+"s";
             if(orderLabel)orderLabel.text="DELIVERY BONUS "+(s.trucksCompleted%3)+"/3\n3 DELIVERIES = +$30";
             Stack(inputStack,feeding?s.refineryInput.Skip(1).ToArray():s.refineryInput,ref shownInput);
             Stack(outputStack,s.refineryOutput,ref shownOutput);Stack(loadingStack,s.loadingQueue,ref shownLoading);
@@ -188,11 +206,11 @@ namespace Bulldozer.Player
                 var truck=Truck(i);if(!truck)continue;
                 if(!truck.IsBusy)departingItems[i]=Array.Empty<int>();
                 int[] items=truck.ShowDepartingCargo?departingItems[i]:i==activeTruck&&!truck.IsBusy?s.truckItems:Array.Empty<int>();
-                Stack(truck.cargo,items,ref shownTrucks[i]);
+                Stack(truck.cargo,items,ref shownTrucks[i],true);
                 if(!truck.IsBusy){truck.loadedCount=items.Length;truck.orderCapacity=TruckCapacity;}
             }
         }
-        void Stack(Transform root,int[] items,ref int[] shown)
+        void Stack(Transform root,int[] items,ref int[] shown,bool truckBed=false)
         {
             if(!root||shown!=null&&shown.SequenceEqual(items))return;shown=items;
             int visible=Mathf.Min(items.Length,8);
@@ -200,8 +218,8 @@ namespace Bulldozer.Player
             {
                 var item=root.GetChild(i);item.gameObject.SetActive(i<visible);if(i>=visible)continue;
                 bool refined=MiningResources.Refined(items[i]);
-                item.localPosition=new Vector3((i%2)*.28f,(i/4)*.17f,(i/2%2)*.37f);item.localScale=Vector3.one;
-                item.localRotation=refined?Quaternion.identity:Quaternion.Euler(0,i*67+items[i]*23,0);
+                item.localPosition=truckBed?TruckSlot(i):new Vector3((i%2)*.28f,(i/4)*.17f,(i/2%2)*.37f);item.localScale=Vector3.one;
+                item.localRotation=truckBed?Quaternion.Euler(0,((i*29)%5-2)*4f,0):refined?Quaternion.identity:Quaternion.Euler(0,i*67+items[i]*23,0);
                 item.GetComponent<MeshFilter>().sharedMesh=equipment.MeshForItem(items[i]);
                 if(stockMaterials!=null&&stockMaterials.Length==12)item.GetComponent<Renderer>().sharedMaterial=stockMaterials[items[i]];
             }

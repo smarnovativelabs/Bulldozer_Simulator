@@ -1,0 +1,16 @@
+duration 4.87s frames 339 hitStopFrames 20 animZeroFrames 14
+max camera frame jump 2.2881 m, max rock scale deviation 6.4%
+hits 6 rock depleted True status 'Rock 2/4'
+0.33s swing start
+1.00s swing start
+1.33s hit-stop start, hits 1, rock hp 3, animSpeed 1.6, since swing 0.33s
+1.70s swing start
+2.06s hit-stop start, hits 2, rock hp 2, animSpeed 1.6, since swing 0.36s
+2.37s swing start
+2.67s hit-stop start, hits 3, rock hp 1, animSpeed 1.6, since swing 0.30s
+3.05s swing start
+3.35s hit-stop start, hits 4, rock hp 0, animSpeed 1.6, since swing 0.30s
+3.76s swing start
+4.18s hit-stop start, hits 5, rock hp 0, animSpeed 1.6, since swing 0.41s
+4.44s swing start
+4.71s hit-stop start, hits 6, rock hp 0, animSpeed 1.6, since swing 0.27s

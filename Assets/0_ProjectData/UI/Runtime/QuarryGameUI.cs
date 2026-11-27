@@ -25,7 +25,7 @@ namespace Bulldozer.UI {
   public void SetVolume(float v){PlayerPrefs.SetFloat(QuarryUIFeedback.PreferencePrefix+"Volume",v);PlayerPrefs.Save();QuarryUIFeedback.ApplySettings();}
   public void TogglePerformance(){performanceOptions.transform.SetAsLastSibling();performanceOptions.SetActive(!performanceOptions.activeSelf);feedback.Play();}
   public void SetPerformance(int mode){PlayerPrefs.SetInt(QuarryUIFeedback.PreferencePrefix+"Performance",mode);PlayerPrefs.Save();QuarryUIFeedback.ApplySettings();performanceOptions.SetActive(false);feedback.Play();Refresh();}
-  public void ResetSettings(){foreach(var key in new[]{"Sound","Volume","Vibration","Performance"})PlayerPrefs.DeleteKey(QuarryUIFeedback.PreferencePrefix+key);PlayerPrefs.Save();QuarryUIFeedback.ApplySettings();volume.SetValueWithoutNotify(.8f);soundToggle.Refresh();vibrationToggle.Refresh();Open("settings");Notify("SETTINGS RESTORED");}
+  public void ResetSettings(){foreach(var key in new[]{"Sound","Volume","Vibration","Performance","AutoLowFps"})PlayerPrefs.DeleteKey(QuarryUIFeedback.PreferencePrefix+key);PlayerPrefs.Save();QuarryUIFeedback.ApplySettings();if(QuarryFrameRateGuard.Instance)QuarryFrameRateGuard.Instance.Restart();volume.SetValueWithoutNotify(.8f);soundToggle.Refresh();vibrationToggle.Refresh();Open("settings");Notify("SETTINGS RESTORED");}
   public void SelectStorage(int value){storage=value;feedback.Play();Refresh();}
   int displayedCash=int.MinValue;
   readonly int[] inventoryTotals=new int[12];
@@ -35,7 +35,7 @@ namespace Bulldozer.UI {
    if(current!=displayedCash){displayedCash=current;cash.text="$"+current;}
    // Hidden panels must not copy save data, build inventory arrays or rebuild labels.
    if(!modal.gameObject.activeSelf)return;
-   if(settingsPage.activeSelf)performanceLabel.text=PlayerPrefs.GetInt(QuarryUIFeedback.PreferencePrefix+"Performance",0)==0?"BATTERY SAVER  /  30 FPS":"BALANCED  /  60 FPS";
+   if(settingsPage.activeSelf)performanceLabel.text=QuarryUIFeedback.PerformanceMode==1?"BALANCED  /  60 FPS":QuarryUIFeedback.PerformanceChosen?"BATTERY SAVER  /  30 FPS":"AUTO  /  30 FPS";
    if(inventoryPage.activeSelf)RefreshInventory();
    if(upgradePage.activeSelf)RefreshUpgrades();
   }

@@ -18,6 +18,7 @@ using Bulldozer.Services;
     MinerController player; MinerEquipment equipment; MinerMining mining; MiningProduction production;
     MineableRock[] rocks; ExcavationRounds rounds; QuarryWheelbarrow cart;
     readonly string[] pages={"inventory","settings","pause","shop","privacy","upgrades"};
+    [MenuItem("Bulldozer/Run Full Gameplay Review")] static void RunFromMenu(){ new FullGameplayReview().Execute(); }
     static FullGameplayReview(){ EditorApplication.delayCall += StartRequested; } static void StartRequested(){ if(!File.Exists("Library/FullGameplay.request"))return; File.Delete("Library/FullGameplay.request"); new FullGameplayReview().Execute(); } public void Execute()
     {
         if(EditorApplication.isPlayingOrWillChangePlaymode||EditorSceneManager.GetActiveScene().isDirty)throw new Exception("Clean edit mode required");
@@ -129,7 +130,7 @@ using Bulldozer.Services;
             else if(phase==13&&Time.unscaledTime-at>.4){QuarryGameUI.Instance.Close();phase=12;at=Time.unscaledTime;}
             else if(phase==12&&Time.unscaledTime-at>.5)
             {
-                if(player.InputBlocked && Time.unscaledTime-at<10)return; Check(!QuarryGameUI.BlocksInput&&!player.InputBlocked,"UI closes and releases input: "+pages[uiIndex]+" guidance="+player.GuidanceInputBlocked+" intro="+player.IntroInputBlocked+" excavation="+player.ExcavationInputBlocked+" services="+QuarryServiceOverlay.BlocksInput+" common="+CommonUI.Instance.BlocksGameplayInput);
+                if(player.InputBlocked && Time.unscaledTime-at<10)return; Check(!QuarryGameUI.BlocksInput&&!player.InputBlocked,"UI closes and releases input: "+pages[uiIndex]+" guidance="+player.GuidanceInputBlocked+" intro="+player.IntroInputBlocked+" excavation="+player.ExcavationInputBlocked+" services="+QuarryServiceOverlay.BlocksInput+" common="+CommonUI.Instance.BlocksGameplayInput+" "+UiDiagnostics());
                 if(++uiIndex<pages.Length){phase=10;at=Time.unscaledTime;return;}
                 var s=MiningSnapshot.Create(0,0);var ids=new[]{"review-rock"};
                 for(int i=0;i<4;i++){s.depletedBlocks=ids;Check(ExcavationRules.TryComplete(s,ids,out var completed),"progression completion transaction round "+i);Check(ExcavationRules.TryAdvance(completed,ids,out s),"progression advance transaction round "+i);}
@@ -138,6 +139,16 @@ using Bulldozer.Services;
             }
         }
         catch(Exception ex){File.AppendAllText(Report,"FAILED "+ex+"\n");Finish();}
+    }
+    static string UiDiagnostics()
+    {
+        var ui=QuarryGameUI.Instance;var modal=ui?ui.modal:null;
+        var mouse=UnityEngine.InputSystem.Mouse.current;var keys=UnityEngine.InputSystem.Keyboard.current;var pad=UnityEngine.InputSystem.Gamepad.current;
+        bool touch=false;if(UnityEngine.InputSystem.Touchscreen.current!=null)foreach(var t in UnityEngine.InputSystem.Touchscreen.current.touches)touch|=t.press.isPressed;
+        return "ui="+QuarryGameUI.BlocksInput+" modalActive="+(modal&&modal.gameObject.activeSelf)+" modalOpen="+(modal&&modal.IsOpen)+" modalBusy="+(modal&&modal.Busy)
+            +" timeScale="+Time.timeScale+" mouse="+(mouse!=null&&mouse.leftButton.isPressed)
+            +" keys="+(keys!=null&&(keys.spaceKey.isPressed||keys.enterKey.isPressed||keys.escapeKey.isPressed))
+            +" pad="+(pad!=null&&(pad.buttonSouth.isPressed||pad.buttonEast.isPressed))+" touch="+touch+" tweens="+DG.Tweening.DOTween.TotalPlayingTweens();
     }
     void Finish(){EditorApplication.update-=Tick;SessionState.SetString("Bulldozer.Mining.TestSavePath",oldSave);EditorApplication.isPlaying=false;}
 }

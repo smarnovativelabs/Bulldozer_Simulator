@@ -24,9 +24,9 @@ namespace Bulldozer.Player
             }
         }
         void OnEnable(){if(Application.isPlaying)foreach(var s in smoke)if(s)s.Play();}
-        public void Fly(int id,Vector3 from,Vector3 to,Transform follow=null)
+        public void Fly(int id,Vector3 from,Vector3 to,Transform follow=null,float duration=.65f)
         {
-            if(flights[0]==null)return;var f=flights[cursor++%PoolSize];f.from=from;f.to=to;f.destination=follow;f.age=0;f.duration=.65f;f.active=true;
+            if(flights[0]==null)return;var f=flights[cursor++%PoolSize];f.from=from;f.to=to;f.destination=follow;f.age=0;f.duration=Mathf.Max(.1f,duration);f.active=true;
             f.mesh.sharedMesh=equipment.MeshForItem(id);f.refined=MiningResources.Refined(id);
             if(equipment.resourceMaterials!=null&&equipment.resourceMaterials.Length==12){f.renderer.sharedMaterial=equipment.resourceMaterials[id];f.renderer.SetPropertyBlock(null);}
             else{f.renderer.sharedMaterial=itemMaterial;f.properties.SetColor("_BaseColor",MiningResources.Color(id));f.renderer.SetPropertyBlock(f.properties);}

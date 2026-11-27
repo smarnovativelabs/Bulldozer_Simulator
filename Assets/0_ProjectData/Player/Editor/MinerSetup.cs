@@ -28,9 +28,9 @@ namespace Bulldozer.Player.Editor
             if (current.isDirty) EditorSceneManager.SaveScene(current);
             var scene = EditorSceneManager.OpenScene("Assets/0_ProjectData/0_Scenes/1_Gameplay.unity");
             if (GameObject.Find("MinerPlayer")) throw new InvalidOperationException("Miner already exists; edit the existing prefab instead.");
-            PlayerSettings.defaultInterfaceOrientation = UIOrientation.LandscapeLeft;
-            PlayerSettings.allowedAutorotateToPortrait = false; PlayerSettings.allowedAutorotateToPortraitUpsideDown = false;
-            PlayerSettings.allowedAutorotateToLandscapeLeft = true; PlayerSettings.allowedAutorotateToLandscapeRight = true;
+            PlayerSettings.defaultInterfaceOrientation = UIOrientation.Portrait;
+            PlayerSettings.allowedAutorotateToPortrait = true; PlayerSettings.allowedAutorotateToPortraitUpsideDown = false;
+            PlayerSettings.allowedAutorotateToLandscapeLeft = false; PlayerSettings.allowedAutorotateToLandscapeRight = false;
             PlayerSettings.defaultScreenWidth = 1280; PlayerSettings.defaultScreenHeight = 720;
             var model = AssetDatabase.LoadAssetAtPath<GameObject>(Root + "Art/Miner.fbx");
             if (!model) throw new InvalidOperationException("Miner FBX is missing.");
@@ -58,7 +58,7 @@ namespace Bulldozer.Player.Editor
             if (!UnityEngine.Object.FindFirstObjectByType<EventSystem>()) new GameObject("EventSystem", typeof(EventSystem), typeof(InputSystemUIInputModule));
             var canvasGO = new GameObject("MinerControls", typeof(RectTransform), typeof(Canvas), typeof(UnityEngine.UI.CanvasScaler), typeof(UnityEngine.UI.GraphicRaycaster));
             canvasGO.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
-            var scaler = canvasGO.GetComponent<UnityEngine.UI.CanvasScaler>(); scaler.uiScaleMode = UnityEngine.UI.CanvasScaler.ScaleMode.ScaleWithScreenSize; scaler.referenceResolution = new Vector2(1280,720); scaler.matchWidthOrHeight = .5f;
+            var scaler = canvasGO.GetComponent<UnityEngine.UI.CanvasScaler>(); scaler.uiScaleMode = UnityEngine.UI.CanvasScaler.ScaleMode.ScaleWithScreenSize; scaler.referenceResolution = new Vector2(720,1280); scaler.matchWidthOrHeight = .5f;
             var controls = canvasGO.AddComponent<MinerTouchControls>(); controls.player = controller; controller.touchControls = controls;
             var safe = Rect("SafeArea", canvasGO.transform, Vector2.zero, Vector2.one, Vector2.zero, Vector2.zero); controls.safeArea = safe;
             var look = Zone("LookArea", safe, new Vector2(.45f,0), Vector2.one, Vector2.zero, Vector2.zero, controls, MinerTouchZone.Action.Look, new Color(0,0,0,.001f));

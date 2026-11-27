@@ -29,7 +29,7 @@ namespace Bulldozer.Services
             var canvasObject = new GameObject("Online Services UI", typeof(RectTransform), typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
             canvasObject.transform.SetParent(transform, false);
             var canvas = canvasObject.GetComponent<Canvas>(); canvas.renderMode = RenderMode.ScreenSpaceOverlay; canvas.sortingOrder = 32000;
-            var scaler = canvasObject.GetComponent<CanvasScaler>(); scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize; scaler.referenceResolution = new Vector2(1280, 720); scaler.matchWidthOrHeight = .5f;
+            var scaler = canvasObject.GetComponent<CanvasScaler>(); scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize; scaler.referenceResolution = new Vector2(720, 1280); scaler.matchWidthOrHeight = .5f;
             gate = Panel(canvasObject.transform, "Internet Required", new Vector2(0,0), Vector2.zero, true);
             gateText = Label(gate.transform, "Connection", new Vector2(0, 50), new Vector2(720, 150), 30);
             MakeButton(gate.transform, "RETRY", new Vector2(0, -90), new Vector2(240, 64), () => { QuarryServicesRoot.Instance?.connectivity.CheckNow(); }).name = "Retry Internet";

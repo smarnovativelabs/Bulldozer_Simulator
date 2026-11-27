@@ -25,6 +25,7 @@ namespace Bulldozer.Player
         protected override void Awake(){base.Awake();raycastTarget=false;}
         public void PlayReward(Vector3 worldPosition,int paidCoins)
         {
+            if(paidCoins>0)Bulldozer.UI.QuarryHaptics.Play(Bulldozer.UI.QuarryHaptics.Kind.Cash);
             if(paidCoins<=0||!isActiveAndEnabled||!balanceText)return;
             if(!worldCamera)worldCamera=Camera.main;
             balanceText.ForceMeshUpdate();target=BalancePosition();

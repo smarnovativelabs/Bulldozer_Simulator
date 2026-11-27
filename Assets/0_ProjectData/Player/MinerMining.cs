@@ -62,6 +62,15 @@ namespace Bulldozer.Player
             for(int i=0;i<n;i++)if(!sweep[i].transform.IsChildOf(controller.transform) && sweep[i].collider!=rock.HitCollider)return false;
             return true;
         }
+        [Header("Impact feel")]
+        public float hitStopSeconds=.045f, breakStopSeconds=.075f;
+        public float hitShake=.02f, breakShake=.09f;
+        void ImpactJuice(bool broken)
+        {
+            controller.HitStop(broken?breakStopSeconds:hitStopSeconds);
+            if(controller.followCamera)controller.followCamera.Shake(broken?breakShake:hitShake,broken?.22f:.09f);
+            Bulldozer.UI.QuarryHaptics.Play(broken?Bulldozer.UI.QuarryHaptics.Kind.Break:Bulldozer.UI.QuarryHaptics.Kind.Hit);
+        }
         // Animation events open only the downward/forward strike portion of each clip.
         public void BeginMiningContact(){if(controller.IsMining)contactOpen=true;}
         public void EndMiningContact(){contactOpen=false;}
@@ -91,7 +100,8 @@ namespace Bulldozer.Player
                     {
                         hitThisSwing=true;
                         if(Target.TryHit(equipment,collider.ClosestPoint(point)))
-                        {SuccessfulHits++;Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Hit,point);if(Target.Depleted)Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Break,point);Status=Target.Depleted?"Rock broken - walk over the stones to collect":$"Rock {Target.Health}/{Target.maxHealth}";}
+                        {SuccessfulHits++;Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Hit,point);if(Target.Depleted)Bulldozer.UI.QuarryAudio.Play(Bulldozer.UI.QuarryAudio.Cue.Break,point);
+                        ImpactJuice(Target.Depleted);Status=Target.Depleted?"Rock broken - walk near the stones to collect":$"Rock {Target.Health}/{Target.maxHealth}";}
                     }
                 }
                 previous[i]=point;

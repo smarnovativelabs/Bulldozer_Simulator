@@ -1,0 +1,1 @@
+hit-stops 10, rock broken False; camera frame jump near normal hits max 39.4 mm, near break max 0.0 mm; other frames max 0.0 mm, mean 0.00 mm

@@ -19,6 +19,14 @@ namespace Bulldozer.Player
         readonly RaycastHit[] visibilityHits=new RaycastHit[32];
         readonly Renderer[] hiddenWalls=new Renderer[33];
         int hiddenCount;
+        float shakeTime, shakeDuration, shakeAmplitude;
+        // Short, decaying camera shake for impacts. A stronger request overrides a weaker one.
+        public void Shake(float amplitude, float duration)
+        {
+            float remaining = shakeDuration > 0 ? shakeAmplitude * (shakeTime / shakeDuration) : 0;
+            if (amplitude < remaining) return;
+            shakeAmplitude = amplitude; shakeDuration = shakeTime = Mathf.Max(.01f, duration);
+        }
         void OnEnable() { pitch=startPitch; Yaw=startYaw; }
         public void GetFollowPose(out Vector3 position,out Quaternion rotation)
         {
@@ -41,7 +49,16 @@ namespace Bulldozer.Player
             ShowPlayerThroughScenery(pivot,backward);
             // Stable arcade follow. Walls never pull the camera into the player;
             // one-time guidance still owns the camera while its input lock is held.
-            transform.SetPositionAndRotation(pivot + backward * distance, rotation);
+            Vector3 position = pivot + backward * distance;
+            if (shakeTime > 0)
+            {
+                shakeTime = Mathf.Max(0, shakeTime - Time.deltaTime);
+                float strength = shakeAmplitude * (shakeTime / shakeDuration);
+                float t = Time.time * 45f;
+                // Smooth noise (not random jumps) offset in screen space.
+                position += rotation * new Vector3(Mathf.PerlinNoise(t, 0f) - .5f, Mathf.PerlinNoise(0f, t) - .5f, 0) * (2f * strength);
+            }
+            transform.SetPositionAndRotation(position, rotation);
         }
         void RestoreWalls(){for(int i=0;i<hiddenCount;i++)if(hiddenWalls[i])hiddenWalls[i].forceRenderingOff=false;hiddenCount=0;}
         void ShowPlayerThroughScenery(Vector3 pivot,Vector3 backward)

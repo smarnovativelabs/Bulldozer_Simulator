@@ -1,0 +1,6 @@
+1 default: targetFrameRate 60, mode 1, chosen False, guard True
+2 healthy window: 53.4 fps, strikes 0, targetFrameRate 60, autoLow False
+3 slow device: after 16.3s autoLow True, last window 22.0 fps, strikes 2, targetFrameRate 30, mode 0
+4 player picks Balanced while autoLow: targetFrameRate 60
+5 player picks Battery Saver: targetFrameRate 30
+6 reset settings: targetFrameRate 60, mode 1

@@ -3707,6 +3707,8 @@ MonoBehaviour:
   cart: {fileID: 1663049324}
   blendSeconds: 0.65
   holdSeconds: 2
+  introRevealSeconds: 3
+  introReturnSeconds: 1.3
 --- !u!114 &65412768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13941,10 +13943,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MinerCamera
   target: {fileID: 1993466818}
-  distance: 5.8
+  distance: 8.5
   sensitivity: 0.15
-  startPitch: 46
+  startPitch: 50
   startYaw: -22
+  fixedAngle: 1
   obstacleMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -25885,9 +25888,9 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1280, y: 720}
+  m_ReferenceResolution: {x: 720, y: 1280}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 1
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -35051,6 +35054,8 @@ MonoBehaviour:
   action: 4
   controls: {fileID: 469102713}
   knob: {fileID: 0}
+  floatingStick: {fileID: 0}
+  stickRadius: 0.35
 --- !u!114 &565544198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37661,8 +37666,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 150, y: 145}
-  m_SizeDelta: {x: 180, y: 180}
+  m_AnchoredPosition: {x: 170, y: 200}
+  m_SizeDelta: {x: 220, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &619687625
 MonoBehaviour:
@@ -37671,7 +37676,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619687623}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97929129ef1059f4ea1569d97d49b01b, type: 3}
   m_Name: 
@@ -37679,6 +37684,8 @@ MonoBehaviour:
   action: 0
   controls: {fileID: 469102713}
   knob: {fileID: 696232823}
+  floatingStick: {fileID: 0}
+  stickRadius: 0.35
 --- !u!114 &619687626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37693,7 +37700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.65}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -40816,7 +40823,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 70, y: 70}
+  m_SizeDelta: {x: 86, y: 86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &696232824
 MonoBehaviour:
@@ -44994,6 +45001,8 @@ MonoBehaviour:
   action: 3
   controls: {fileID: 469102713}
   knob: {fileID: 0}
+  floatingStick: {fileID: 0}
+  stickRadius: 0.35
 --- !u!114 &793987479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50495,6 +50504,8 @@ MonoBehaviour:
   action: 2
   controls: {fileID: 469102713}
   knob: {fileID: 0}
+  floatingStick: {fileID: 0}
+  stickRadius: 0.35
 --- !u!114 &901952936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72418,6 +72429,8 @@ MonoBehaviour:
   action: 1
   controls: {fileID: 469102713}
   knob: {fileID: 0}
+  floatingStick: {fileID: 0}
+  stickRadius: 0.35
 --- !u!114 &1321940682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88567,6 +88580,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 791045314538465792, guid: 2c700cb93ca394986a6da79d5459fd33, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 791045314538465792, guid: 2c700cb93ca394986a6da79d5459fd33, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
@@ -101778,7 +101795,10 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 959eeb77ca2132748adb86461baccb8c, type: 2}
   - {fileID: 2100000, guid: 959eeb77ca2132748adb86461baccb8c, type: 2}
   - {fileID: 2100000, guid: 959eeb77ca2132748adb86461baccb8c, type: 2}
-  secondsPerItem: 1.5
+  secondsPerItem: 0.7
+  truckSlotOrigin: {x: -0.6, y: -0.05}
+  truckSlotSpacing: {x: 0.7, y: 0.5}
+  truckLayerHeight: 0.2
 --- !u!4 &1896738951
 Transform:
   m_ObjectHideFlags: 0
@@ -105134,6 +105154,99 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962766950}
   m_Mesh: {fileID: 4300000, guid: beac79b761a6a904bbc22f951e7470de, type: 2}
+--- !u!1 &1964840119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1964840120}
+  - component: {fileID: 1964840123}
+  - component: {fileID: 1964840122}
+  - component: {fileID: 1964840121}
+  m_Layer: 0
+  m_Name: Move Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1964840120
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964840119}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2078394724}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0.55}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1964840121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964840119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97929129ef1059f4ea1569d97d49b01b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bulldozer.Player.MinerTouchZone
+  action: 0
+  controls: {fileID: 469102713}
+  knob: {fileID: 696232823}
+  floatingStick: {fileID: 619687624}
+  stickRadius: 0.35
+--- !u!114 &1964840122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964840119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1964840123
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964840119}
+  m_CullTransparentMesh: 1
 --- !u!1 &1966286472
 GameObject:
   m_ObjectHideFlags: 0
@@ -106816,6 +106929,7 @@ MonoBehaviour:
   gravity: -24
   MineWall: 0
   miningDuration: 0.9666667
+  swingSpeed: 1.6
   autoMine: 1
   analogRun: 1
 --- !u!4 &1993466819
@@ -107579,7 +107693,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 21, y: -28}
-  m_SizeDelta: {x: 360, y: 40}
+  m_SizeDelta: {x: 180, y: 40}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &2011478529
 CanvasRenderer:
@@ -107636,7 +107750,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
+  m_fontSize: 17
   m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -119953,6 +120067,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1321940680}
+  - {fileID: 1964840120}
   - {fileID: 619687624}
   - {fileID: 793987477}
   - {fileID: 565544196}

@@ -81,9 +81,11 @@ namespace Bulldozer.Player
             animator.SetBool("Grounded",controller.Grounded);
             animator.SetFloat("Vertical",controller.VerticalSpeed);
             bool mining=controller.IsMining;
+            // Speed up only the strike; walking and carry animations keep normal playback.
+            animator.speed=mining?(controller.InHitStop?0f:controller.swingSpeed):1f;
             bool canHold=equipment&&equipment.PickaxeVisible&&!equipment.UsingWheelbarrow&&
                 controller.Grounded&&!controller.InputBlocked&&controller.MoveInput.sqrMagnitude<.01f&&controller.Speed<.12f;
-            if(mining)miningPoseUntil=Time.time+.35f;
+            if(mining)miningPoseUntil=Time.time+.25f;
             // The controller's .22-second repeat delay is recovery, not a return to
             // the one-handed carry pose. Non-looping clips hold their matching end
             // pose until the next swing; moving or leaving mining releases it.

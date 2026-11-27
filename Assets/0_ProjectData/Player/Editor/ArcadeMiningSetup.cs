@@ -39,7 +39,8 @@ namespace Bulldozer.Player.Editor
             foreach(var zone in p.touchControls.GetComponentsInChildren<MinerTouchZone>(true))
             {
                 if(zone.action==MinerTouchZone.Action.Mine||zone.action==MinerTouchZone.Action.Sprint||zone.action==MinerTouchZone.Action.Jump)zone.gameObject.SetActive(false);
-                if(zone.action==MinerTouchZone.Action.Move)
+                // The floating-joystick touch area stays invisible; only the stick visual is styled.
+                if(zone.action==MinerTouchZone.Action.Move&&!zone.floatingStick)
                 {
                     var bg=zone.GetComponent<UnityEngine.UI.Image>();var knob=AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/Knob.psd");
                     if(bg){bg.sprite=knob;bg.color=new Color(.1f,.13f,.14f,.32f);}

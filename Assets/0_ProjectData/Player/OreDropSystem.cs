@@ -18,7 +18,15 @@ namespace Bulldozer.Player
         public RockFractureEffects fracture;
         public float pickupRadius=.72f;
         public Transform carrierPickup;
-        sealed class Slot {public string id;public int item;public Transform root,visual;public MeshFilter mesh;public MeshRenderer renderer;public SphereCollider trigger;public Vector3 start,end;public Quaternion rest;public float age;}
+        [Header("Magnet pickup")]
+        [Tooltip("Settled ore within this distance flies to the player or cart. Zero turns the magnet off.")]
+        public float magnetRadius=2f;
+        [Tooltip("Top flight speed in metres per second; ore accelerates to it.")]
+        public float magnetSpeed=9f;
+        sealed class Slot {public string id;public int item;public Transform root,visual;public MeshFilter mesh;public MeshRenderer renderer;public SphereCollider trigger;public Vector3 start,end;public Quaternion rest;public float age,pull;public bool pulled;}
+        float magnetTimer;
+        public int PulledCount {get;private set;}
+        public int MagnetPickups {get;private set;}
         Slot[] slots;
         public int PoolCapacity=>slots?.Length??0;
         readonly Matrix4x4[][] instances=new Matrix4x4[6][];
@@ -60,14 +68,14 @@ namespace Bulldozer.Player
             foreach(var slot in slots)
             {
                 if(slot.id==null)continue;bool exists=false;foreach(var d in state)if(d.id==slot.id){exists=true;break;}
-                if(!exists){slot.id=null;slot.root.gameObject.SetActive(false);}
+                if(!exists){slot.id=null;slot.pulled=false;slot.root.gameObject.SetActive(false);}
             }
             foreach(var d in state)
             {
                 bool exists=false;foreach(var slot in slots)if(slot.id==d.id){exists=true;break;}if(exists)continue;
                 foreach(var slot in slots)if(slot.id==null)
                 {
-                    slot.id=d.id;slot.item=d.item;slot.end=d.position;slot.start=scatter?origin:d.position;slot.age=scatter?0:1;
+                    slot.id=d.id;slot.item=d.item;slot.end=d.position;slot.start=scatter?origin:d.position;slot.age=scatter?0:1;slot.pulled=false;
                     // Stable per-pickup variation: reloading or reusing a pool slot keeps the same pose.
                     uint seed=2166136261;foreach(char c in d.id)seed=unchecked((seed^c)*16777619);
                     slot.rest=Quaternion.Euler(0,seed%360,0);
@@ -129,12 +137,54 @@ namespace Bulldozer.Player
             Vector3 pickup=equipment.UsingWheelbarrow&&carrierPickup?carrierPickup.position:player.transform.position;
             pickup.y=player.transform.position.y+.18f;
             if(!hasPickupSample||player.InputBlocked||equipment.IsFull||(pickup-previousPickup).sqrMagnitude>4f){previousPickup=pickup;hasPickupSample=true;}
+            Magnet(pickup);
             pickupTimer-=Time.deltaTime;if(player.InputBlocked||equipment.IsFull||pickupTimer>0)return;pickupTimer=.12f;
             int n=Physics.OverlapCapsuleNonAlloc(previousPickup,pickup,equipment.UsingWheelbarrow?.75f:pickupRadius,overlaps,~0,QueryTriggerInteraction.Collide);
             previousPickup=pickup;
             for(int i=0;i<n;i++)foreach(var slot in slots)
-                if(slot.id!=null&&slot.age>=1&&overlaps[i]==slot.trigger){equipment.TryCollectDrop(slot.id,slot.visual.position);return;}
+                if(slot.id!=null&&slot.age>=1&&!slot.pulled&&overlaps[i]==slot.trigger){if(equipment.TryCollectDrop(slot.id,slot.visual.position))Bulldozer.UI.QuarryHaptics.Play(Bulldozer.UI.QuarryHaptics.Kind.Pickup);return;}
         }
+        // Settled ore near the collector flies in and is collected through the same saved
+        // transaction as walking over it. Only as many pieces as there is free space are pulled,
+        // and at most one is committed per frame so arrivals never batch several disk writes.
+        void Magnet(Vector3 pickup)
+        {
+            if(PulledCount>0&&equipment.IsFull){foreach(var slot in slots)if(slot.pulled)Release(slot);PulledCount=0;}
+            if(magnetRadius<=0||Time.deltaTime<=0)return;
+            magnetTimer-=Time.deltaTime;
+            if(magnetTimer<=0&&!player.InputBlocked&&!equipment.IsFull)
+            {
+                magnetTimer=.1f;int room=equipment.Capacity-equipment.CargoCount-PulledCount;float r2=magnetRadius*magnetRadius;
+                for(int i=0;i<slots.Length&&room>0;i++)
+                {
+                    var slot=slots[i];if(slot.id==null||slot.pulled||slot.age<1)continue;
+                    Vector3 d=slot.visual.position-pickup;d.y=0;if(d.sqrMagnitude>r2)continue;
+                    slot.pulled=true;slot.pull=0;slot.trigger.enabled=false;PulledCount++;room--;
+                }
+            }
+            if(PulledCount==0)return;
+            Vector3 target=pickup+Vector3.up*.35f;bool committed=false;int pulled=0;
+            foreach(var slot in slots)
+            {
+                if(!slot.pulled)continue;
+                slot.pull+=Time.deltaTime;
+                // Short hop up, then accelerate in: reads as "sucked in" rather than sliding.
+                float speed=Mathf.Lerp(1.5f,magnetSpeed,Mathf.Clamp01(slot.pull/.3f));
+                Vector3 p=Vector3.MoveTowards(slot.visual.position,target,speed*Time.deltaTime);
+                p.y+=Mathf.Max(0,.25f-slot.pull)*2.2f*Time.deltaTime;
+                slot.visual.position=p;slot.visual.Rotate(0,540*Time.deltaTime,0,Space.World);
+                if(!committed&&(p-target).sqrMagnitude<.09f)
+                {
+                    committed=true;
+                    if(equipment.TryCollectDrop(slot.id,p)){MagnetPickups++;Bulldozer.UI.QuarryHaptics.Play(Bulldozer.UI.QuarryHaptics.Kind.Pickup);continue;}
+                    Release(slot);continue;
+                }
+                pulled++;
+            }
+            PulledCount=pulled;
+        }
+        // Return an uncollected piece to its saved ground position using the landing arc.
+        void Release(Slot slot){slot.pulled=false;slot.start=slot.visual.position;slot.age=0;slot.trigger.enabled=false;}
         void LateUpdate()
         {
             CollectNearby();

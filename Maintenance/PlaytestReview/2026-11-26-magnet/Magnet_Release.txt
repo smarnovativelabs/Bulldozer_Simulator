@@ -1,0 +1,1 @@
+pull seen (3) -> bag filled 5/5; 1.5s later: pulled 0, ground 3, magnet pickups this test 0

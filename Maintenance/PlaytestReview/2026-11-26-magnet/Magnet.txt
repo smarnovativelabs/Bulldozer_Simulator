@@ -1,0 +1,6 @@
+-- target Weathered Gold ore (2 HP) hp 4 cargo 0/5
+break at 3.35s, cargo 0, ground drops for rock 3
+screenshot with 1 pulled
+A: all 3 ore collected 0.87s after break; cargo 3; magnet pickups 3; pulled now 0
+-- target Weathered Blue mineral (2 HP) hp 2 cargo 4/5
+TIMEOUT phase 2 rock hp 1 status First full bag: place ore on the REFINERY input to continue
